@@ -1,0 +1,1832 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>Registry SQL Patch</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00024_edb360_323688_1a_16_registry_sql_patch.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 1a.16. Registry SQL Patch <em>(DBA_REGISTRY_SQLPATCH)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+PATCH_ID
+</th>
+<th scope="col">
+PATCH_UID
+</th>
+<th scope="col">
+VERSION
+</th>
+<th scope="col">
+FLAGS
+</th>
+<th scope="col">
+ACTION
+</th>
+<th scope="col">
+STATUS
+</th>
+<th scope="col">
+INSTALL_ID
+</th>
+<th scope="col">
+ACTION_TIME
+</th>
+<th scope="col">
+DESCRIPTION
+</th>
+<th scope="col">
+BUNDLE_SERIES
+</th>
+<th scope="col">
+BUNDLE_ID
+</th>
+<th scope="col">
+BUNDLE_DATA
+</th>
+<th scope="col">
+PATCH_DESCRIPTOR
+</th>
+<th scope="col">
+PATCH_DIRECTORY
+</th>
+<th scope="col">
+LOGFILE
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+            21948354
+</td>
+<td align="right">
+            19553095
+</td>
+<td>
+12.1.0.2
+</td>
+<td>
+NB
+</td>
+<td>
+APPLY
+</td>
+<td>
+SUCCESS
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+2016-03-22T09:29:50.149623
+</td>
+<td>
+Database Patch Set Update : 12.1.0.2.160119 (21948354)
+</td>
+<td>
+PSU
+</td>
+<td align="right">
+              160119
+</td>
+<td>
+&lt;bundledata version=&quot;12.1.0.2.1&quot; series=&quot;Patch Set Update&quot;&gt;
+  &lt;bundle id=&quot;1&quot; description=&quot;PSU 12.1.0.2.1&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpckl.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;2&quot; description=&quot;PSU 12.1.0.2.2&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;3&quot; description=&quot;PSU 12.1.0.2.3&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug18909599.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;4&quot; description=&quot;PSU 12.1.0.2.4&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;APS&quot; name=&quot;OLAP Analytic Workspace&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/bug20558005.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;XOQ&quot; name=&quot;Oracle OLAP API&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/xoqclnup.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;5&quot; description=&quot;PSU 12.1.0.2.5&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpexei.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,
+rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19587324.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160119&quot; description=&quot;PSU 12.1.0.2.160119&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_apply_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_rollback_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtqopi.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+&lt;/bundledata&gt;
+
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+/orahome/app/oracle/cfgtoollogs/sqlpatch/21948354/19553095/21948354_apply_FRSTPROD_2016Mar22_09_29_49.log
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+            26925311
+</td>
+<td align="right">
+            21850549
+</td>
+<td>
+12.1.0.2
+</td>
+<td>
+NB
+</td>
+<td>
+APPLY
+</td>
+<td>
+SUCCESS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2018-03-03T20:02:37.011686
+</td>
+<td>
+DATABASE PATCH SET UPDATE 12.1.0.2.180116
+</td>
+<td>
+PSU
+</td>
+<td align="right">
+              180116
+</td>
+<td>
+&lt;bundledata version=&quot;12.1.0.2.1&quot; series=&quot;Patch Set Update&quot;&gt;
+  &lt;bundle id=&quot;1&quot; description=&quot;PSU 12.1.0.2.1&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpckl.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;2&quot; description=&quot;PSU 12.1.0.2.2&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;3&quot; description=&quot;PSU 12.1.0.2.3&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug18909599.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;4&quot; description=&quot;PSU 12.1.0.2.4&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;APS&quot; name=&quot;OLAP Analytic Workspace&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/bug20558005.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;XOQ&quot; name=&quot;Oracle OLAP API&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/xoqclnup.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;5&quot; description=&quot;PSU 12.1.0.2.5&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpexei.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollb
+ack&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19587324.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160119&quot; description=&quot;PSU 12.1.0.2.160119&quot;&gt;
+    &lt;component id=&quot;&quot; name=&quot;&quot; schema=&quot;&quot;&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_apply_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_rollback_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtqopi.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160419&quot; description=&quot;PSU 12.1.0.2.160419&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20596234.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160719&quot; description=&quot;PSU 12.1.0.2.160719&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22380919.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;/com
+ponent&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;161018&quot; description=&quot;12.1.0.2.161018PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmspdb.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22160989_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22160989_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsxdbc.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtxdb.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170117&quot; description=&quot;12.1.0.2.170117PSU&quot;&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170418&quot; description=&quot;12.1.0.2.170418PSU&quot;/&gt;
+  &lt;bundle id=&quot;170718&quot; description=&quot;12.1.0.2.170718PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtamgt.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catamgt.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170814&quot; description=&quot;12.1.0.2.170814PSU&quot;&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;171017&quot; description=&quot;12.1.0.2.171017PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/p
+rvtaqds.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180116&quot; description=&quot;12.1.0.2.180116PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catcdbviews.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+&lt;/bundledata&gt;
+
+</td>
+<td>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;sqlPatch ID=&quot;26925311&quot; uniquePatchID=&quot;21850549&quot; applicationPatch=&quot;NO&quot; bundle=&quot;YES&quot; jvm=&quot;NO&quot; bundleSeries=&quot;PSU&quot; bundleID=&quot;180116&quot;   startupMode=&quot;normal&quot; estimatedTime=&quot;5&quot;&gt;
+  &lt;patchDescription&gt;DATABASE PATCH SET UPDATE 12.1.0.2.180116&lt;/patchDescription&gt;
+  &lt;component&gt;CATPROC&lt;/component&gt;
+  &lt;component&gt;CATALOG&lt;/component&gt;
+  &lt;component&gt;APS&lt;/component&gt;
+  &lt;component&gt;XOQ&lt;/component&gt;
+  &lt;component&gt;DV&lt;/component&gt;
+  &lt;sqlFiles&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtpckl.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug18909599.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;APS&quot;&gt;olap/admin/bug20558005.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;XOQ&quot;&gt;olap/admin/xoqclnup.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtpexei.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug19587324.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/fix_apply_2076
+6944.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/fix_rollback_20766944.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtqopi.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20596234.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug22380919.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmspdb.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22160989_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22160989_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsxdbc.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtxdb.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtamgt.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catamgt.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtrmns.p
+lb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtaqds.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/catcdbviews.sql&lt;/file&gt;
+  &lt;/sqlFiles&gt;
+&lt;/sqlPatch&gt;
+</td>
+<td>
+504B0304140000000800BD76254C9E392835410400001A2600001200000032363932353331315F6170706C792E73716CCD9A6D6F9B3A14C7DFF329FC622AADD4DB020969B8D1AEC652B789442002B2A9F70D728064A840280F5D36EDC35F1B7046FA30A5D37A7BFC8A9CD8E7FCFDE31C63841DEC2207DB9FB06D2DDCF9C245962908369E213DCBE26FA8F0F3282BD16A93A38C94FE17A40C3445EDC9F2B9220F5549ED6BC225BE9A9A180561D337DAA4E83D3A92B93DDEAC57511C0651CECC0A37AF62B22E98A5C72DCB2A0DE2D02BC23C0AEB7FFA8230B68CC5CC44C55D5C47F75A67C8C49FBD4FBAB1A07EAA38E66641101C6CE0B18BC4A39F6145F4E30712B96E8FB07979CC28A0A68D7507A3CF136CA2E3E25BE1F99BB40CB7E5B1585129617A2F9E22D10F965E4A92503C415307990BC338417C78DD5C369CF5D8B362837A66D65A421D14E56116133F7C3ED4266D43D11FEFC4933D87089B97CC896B79E3896E33276594844549928C76F76E689B6DD2CB4B6F3251FADE6CEA390ED5FC73AE7B4D3CA39444A43B8F00D3EE57B63543F7EF0252922529C211653BB72C031DED137768FECCF56BEC4CFFC548DAF1774A929751BA4635EE5FE50FA2F9D2BD1BCE8DE34E67D871F5D9BC111154241EED07922541F888AFA7663D2A582685C7A770D64C244AA3322271F43D3CCEBCD6143411DEFFB35371FA2497078D8FAF5A076C7C2BFEC0F14DB2F346C78B47B5493C707CB7B6DAF11DD3A15E88DF3AD8A9D0E773E3E6D0E1BCF6BA93E8A4C2A16E1E943973B367124F4602CDF29170BE2BFF28A5094E233D287D7AC7BD06022D7CDD70B14D5732C7995A2662C9325ED836365DCF194FF04CA70B0ACDACD1B3093BA60158BEE62C99CE499044E9F9B25ACB9A3ABCE829FD331A8C67EAE1293AA7FFCD5D34BD362D5BFF6860846DDBB29DBFD16EA1DA4FDDEE448FC55F48A1354DABB6DB9D576CA3E4C387A3FF838E22A9DA40E941A0D39502840EBD613D45922FBC2A5BE72408FF3025FAF32F49D254F53793E9913628D8861A9D95A60148AAAE14207414451E48DA506BF63100183D1604815455C65596DDAEFF3020D332F18B2175B54060E39332217EA31A009E07722010AA9F27C38B414F1AC2A9B347822090A2378FBE1BDD47E1D702482E75E54020B48AB6ED3BA7225D0C065AFFCD774B4F2B82C0AA7E9CF48692264378FA77A540A093E5F765E6DFC66759BC7CEB42EB6A81C086163E49D6259035884B8140865D66C1F2155E3E06AA22692FC6D3D103054F14271012A72305021956E2711240596D5A2910C8B0CBE56D0E62C7D3D502814DFD6008B76104256F7662A0D061250E844D2B050A1972171450D0702D60D8B02D051436AD16286CEE361998E5866B81C2867CCDE1D454AB050A9B3C49C1B0E15AA0B0A9F71440D8702D6FC56613936CEF4B933A9424F5353EE7F4A57EEF2044CF4B020069BBB9F3E3B4CA5E8390A20CB553FEEDABAFB49772BFA7BC945B572584AA6397DB60E94379ABE05A20B061AB00D50365416AA5BC944C7D62E5C9D32AAB28ADCFAA8C103FFAF00C9CAB288D8A2F6170D0B99ADF3A56D39CF2D9AC56FF01504B0304140000000800BD76254CF7A78DC706040000C62200001500000032363932353331315F726F6C6C6261636B2E73716CCD9A5B6F9B4814C7DFF914F3509944EA26802F316B7555E24C62AB182CC0ADBA2F68B8D81D855B0027E9AA1F7E87CB38384D2AA78A9A334FF8C09CF9F3E37F8641631B3BC8C6D6676C992B67B97290690882851748CBB2E83B2AFC9C66255AA739CA48E97F43CA4855867D593E55E4F1501A0E54E1025FCE0D8C82B0B996A609FA807A328F47E9664DA330A079155678781D914D5145FA3CE26D93200ADD22CC69589F1908C2D4D4570B031537513DBADB264306FEE27ED6F415CBB38D221E1604C1C63A9E3A48EC3D0C2BA21F3F90C875BB791A451EF1AFDD2A2EA0A64D351BA32F336CA0A3E27BE1FA695286F7E591B8656AC2E4567C8F443FF0DC84C4A1788CE6363256BA7E8C78F7BA3955F7EA8ABD28D659E62A5AABA80745799845C40F9F1F2A4DDAA1D88F77E2F15E42848D8B2A8963BAD3996655494A1A874549E28C5DEE7E656D91261717EE6CA60CDCC5DCB56DA6F9E15EF79A78C2408948B37F62CC2EBFB4CC05BA7D17909278A408270CEFD23475D4DB876E330B2DB52B6CCFFFC548DA3D02BB247949930DE2C47FE522C45CD37D20F657DB992FB0ED688B65A323D89268B23F962C09C239BE9A1B75AFC08B0B97DFC549732F34A1252511FD2F3CCADC361434237CF867A7E2FD93681E35DE7FDB26A8FAB7E20FECDF589E37D65FECD521F1C0FEDD0A6BFB77428766217E9B60A7C23275FD5C9B7E3A34032FC2EE7D740C71689A47F55EA5D90B89C71381797D229CEEE6019A309BB3911ECD01ECA1BB0D07360368BA832D36A5D9F6DC3450E597E9CAB2B0E1B8F67486171A9B5998B926CFDA76CA06A85D5BF9E99404314D4EBDED4656877D4592CFDC20BD4B363909C213362CB7EDE17E5DB2734B07CDAF0CD3D2CE758CB0659996FD37623FFF92E4813CDE4D62FB86EEDEFB9178903A56F6ACB0BB1D795137E23E7EECFD2174E3B3BE32786560BFC9692705081D451AAA23A50F814E570A103AF25895D4A1AA02A0D39502848EA2C823491DABBB450D004C4F6A82C06B5B46DB2CBBDEBC3223C334F08B3975B54060E39332267EB3C0C9BDB776D1CF6A2030AA27C8F1D9A82F8D41D5DB539A20F0624F917D33DDD2F0AE8050728FE44020B4A6F70F9FA38A74361AA983375F073C2B0A02
+B12CBF2D33FF3A3AC922EFAD0DD5D502810D3338893725905AE3522090A90EB3E0B55F6BD507DB68A848EA8BF174F440C143A31882713A522090A94A3C8A0328B34D2B050299EAD0BBCE41BCD9BB5A20B0A95F0CE17D48A1F86627060A9DAAC481B069A54021436E82020A1AAE050C9B6A4901854DAB050A9B9B340333DD702D50D890BB1C4E4DB55AA0B0C9E3040C1BAE050A9B7A4D01840DD702814D75781F783E94B51FD702814DF5AC981E28B669A5BC944CBDA9FEE486FA9A26F576FA04F1ADD967E05CD28416DFC2E0D0DDFFDFDAFC6FFE8E90AED7FF03504B0304140000000800BD76254C2E4C15C398020000A41000000C00000032363932353331312E786D6CBD98DB729B301086EFFB141A5DB736E0806106C8D0D83DCCB4B55B3B99F6CA2390E2AA9684CCC176DEBE124D9A838F49801B0F68F17EECAFFD25D9FEF98633B022594E531140B36340404492622AE6012C8BEB772E3C0FDFF8F9928D5191FC069F0701B41CCFB27BA6094129E8B22455A40A98AE6DD8671E04484A461354A8AC553480DF4610C4A5C08C04F0D77002C19F157F383A2119257900C793CBBB219DD2740DD3742000202F505694F26B8A550691661C31F5AE7941392A089E52AE866D18BE01C0971A3920799251A95F211C44D3E87D3419827134BDF80426C329B81CABC12130AD8E2ABAA33E2B90DFDDFAAE4E98A45CA6828822BC88A6E31FA30BBF7B3FB4F540F465F471FF03D178B23FF873F47D7F7070F534A6A6E5036524D737EAF65A5D035E09A427E0E66D963216A3640181206BADDA0EC5C0FF9401BCAD0E86198E79DE459853D195D9AA90C98275248BFDAE66348A2B0B564AB9987754710771B7941B92BF04139773D3B37B9661F667A59C67089343C427A5D500C5E95A1CC5EED4F51570D7333CDBF36AD556B7FB16C932DCBED333DC5995AE6E650F23EF32D657A5F22C0C5386E4439A6DBB8661D70751DE7F04D9A4CB8489523EBB3F4EF1DDB682DAE68CE3465CBE9B26C986D0167994F167D35EDE8ECAE86EBF679D35ECB56BBAF9E7B19965F41DC73B3B08ACA73ACDBCCB7412B6E6895CA6B299BED95E34F5A5EE9B268ADB4D8B1759DEE296A0D631CFB17ACD4CDFEEC3045AAB0ADB993E8DAB043D867BFDEE63F55CC3334FDE5A8FD633B87ACC50A7698E92EA785AABC30F706659DC62E34B7C9CF6FA76B74CC7F05CAF9973C961E4C9E792FA34DDE03869D1D90AD7E27E8EF8BC68691D51A6A868ED499971D1CC22B947CB256E0BA7B44C70BCA264FD649FF3BBF7BF67ABEBEAAF83F02F504B0304140000000000F899634C0000000000000000000000000F000000726F6C6C6261636B5F66696C65732F504B0304140000000000F899634C00000000000000000000000015000000726F6C6C6261636B5F66696C65732F7264626D732F504B0304140000000000F899634C0000000000000000000000001B000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F504B0304140000000800BD76254CBB304225BD0200002706000034000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F62756731393533323031375F646F776E67726164652E73716CB554DB6E9B40107DF757CC431E1229E6665B89ADA80D86B58D6AC005A2367D410BBBB651311016E7F2F71DE32BAAD35495BA12D20C7BCE99033BB31E5FB53CBE828B09A78C97032859B4123265AB2493A3F542EDF73A9AA2DE842C7FC916256224F194822CAAB04686AA26A992226992C2A242AC650D10DE93154D563A180E7AFD414F0121E265CEE83390D7022E3615EBAAEF1638208CBC782B93C5B282CBF86A23DDBDAE0B5C835BD238E5403326E7252495003A9F2769422B2E24A8C97A9A424D165072C1CB67CEA483322E47B7C93E86F7CD401BEEF28CB7D324E3C05F0B9A8924CF209F43B5E490D115FF74AA6A12DFF0AC5960B9CE51FC4E2CF3B202C6455C2645B5E3C7F9AA40E5AC42A54400DAE70889538A7665C6E7585034B41D3720FE896A8E0E4A580B3E5FA71BB5156A896B785AD334992731DD14C29C57B1D4D01992B1E580FF751A8EAC29096D12E8A61EE8B0DFDFECF8EE8367901AF0B76DD1A04FACD98C98FFCC9F4D741F89861E4C6DC76B2807BA173CCC42DB3511E0B89EAD4F1B546B8C2FF5217E18F13CD7F30780691B7B47BD8506D0D0A753CB19EF3C3AAE736807E298BFFF9ED33F88C5AD91454C0C2F6D5B364DF9F1F16ABF7968775CF524C86A0FBB6848E39F05B6C1F100CFAE3D3B8C9330DA51424DE96ABD9BBE721CB81E8BA202E665BEFA48EFDCAC46C559B3AAACF59B668F76F0DCDA7B1BFFAF6E5C721C614832C65F21A6193ED8DFDB1354BA9D3EBC2C376352C3926CF181875A668FA15189EDB6DD50FAB286C7D2C58A669917BB7A9431CE207A6B5C06EBA2712FFD41C9A8BDB3BA4F5A3E0980181317F01ED8C42342CCA16E7C01B54E9D07FB9B65061350953AC74624BEF583C0ED360F3CCBF667AE3BDDF3037D08EE6854C7337DBC05AB8AD26ADDDF7F964F070C8D0A2E84A86859D5AE4DCF9D81E598E43BF88F7E406C69EA8E71AA42AB63986474D1925BE72578C66A815F504B0304140000000800C076254CDD037B48C1020000600500002A000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F62756731393538373332342E73716C95944B6FDB300CC7EFF9143CECD0029D1D672BFAD8B0D58995C458FC98EDA2E82E8163298930D94E25396BBFFD68A5CEA31B06CC2749247FFC931695B0B297B012DE4D59
+</td>
+<td>
+/orahome/app/oracle/cfgtoollogs/sqlpatch/26925311/21850549/26925311_apply_FRSTPROD_2018Mar03_20_02_20.log
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+            27547329
+</td>
+<td align="right">
+            22280349
+</td>
+<td>
+12.1.0.2
+</td>
+<td>
+NB
+</td>
+<td>
+APPLY
+</td>
+<td>
+SUCCESS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2018-12-08T21:08:39.181012
+</td>
+<td>
+DATABASE PATCH SET UPDATE 12.1.0.2.180717
+</td>
+<td>
+PSU
+</td>
+<td align="right">
+              180717
+</td>
+<td>
+&lt;bundledata version=&quot;12.1.0.2.1&quot; series=&quot;Patch Set Update&quot;&gt;
+  &lt;bundle id=&quot;1&quot; description=&quot;PSU 12.1.0.2.1&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpckl.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;2&quot; description=&quot;PSU 12.1.0.2.2&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;3&quot; description=&quot;PSU 12.1.0.2.3&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug18909599.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;4&quot; description=&quot;PSU 12.1.0.2.4&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;APS&quot; name=&quot;OLAP Analytic Workspace&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/bug20558005.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;XOQ&quot; name=&quot;Oracle OLAP API&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/xoqclnup.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;5&quot; description=&quot;PSU 12.1.0.2.5&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpexei.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollb
+ack&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19587324.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160119&quot; description=&quot;PSU 12.1.0.2.160119&quot;&gt;
+    &lt;component id=&quot;&quot; name=&quot;&quot; schema=&quot;&quot;&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_apply_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_rollback_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtqopi.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160419&quot; description=&quot;PSU 12.1.0.2.160419&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20596234.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160719&quot; description=&quot;PSU 12.1.0.2.160719&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22380919.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;/com
+ponent&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;161018&quot; description=&quot;12.1.0.2.161018PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmspdb.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22160989_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22160989_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsxdbc.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtxdb.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170117&quot; description=&quot;12.1.0.2.170117PSU&quot;&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170418&quot; description=&quot;12.1.0.2.170418PSU&quot;/&gt;
+  &lt;bundle id=&quot;170718&quot; description=&quot;12.1.0.2.170718PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtamgt.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catamgt.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170814&quot; description=&quot;12.1.0.2.170814PSU&quot;&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;171017&quot; description=&quot;12.1.0.2.171017PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/p
+rvtaqds.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180116&quot; description=&quot;12.1.0.2.180116PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catcdbviews.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180417&quot; description=&quot;12.1.0.2.180417PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug25856821_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtqopi.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvsash.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtash.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180717&quot; description=&quot;12.1.0.2.180717PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtblin.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtir.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtslrt.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbsts.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtplts.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtash.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CONTEXT&quot; name=&quot;Oracle Text&quot; schema=&quot;CTXSYS&quot;&gt;
+
+     &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/dr0ddl.pkh&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/dr0ddl.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;ctx/admin/compinvobj.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+&lt;/bundledata&gt;
+
+</td>
+<td>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;sqlPatch ID=&quot;27547329&quot; uniquePatchID=&quot;22280349&quot; applicationPatch=&quot;NO&quot; bundle=&quot;YES&quot; jvm=&quot;NO&quot; bundleSeries=&quot;PSU&quot; bundleID=&quot;180717&quot;   startupMode=&quot;normal&quot; estimatedTime=&quot;5&quot;&gt;
+  &lt;patchDescription&gt;DATABASE PATCH SET UPDATE 12.1.0.2.180717&lt;/patchDescription&gt;
+  &lt;component&gt;CATPROC&lt;/component&gt;
+  &lt;component&gt;CATALOG&lt;/component&gt;
+  &lt;component&gt;APS&lt;/component&gt;
+  &lt;component&gt;XOQ&lt;/component&gt;
+  &lt;component&gt;DV&lt;/component&gt;
+  &lt;component&gt;CONTEXT&lt;/component&gt;
+  &lt;sqlFiles&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtpckl.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug18909599.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;APS&quot;&gt;olap/admin/bug20558005.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;XOQ&quot;&gt;olap/admin/xoqclnup.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtpexei.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug19587324.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CA
+TALOG&quot;&gt;rdbms/admin/fix_apply_20766944.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/fix_rollback_20766944.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20596234.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug22380919.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmspdb.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22160989_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22160989_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsxdbc.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtxdb.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtamgt.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catamgt.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component
+=&quot;CATALOG&quot;&gt;rdbms/admin/prvtaqds.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/catcdbviews.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug25856821_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvsash.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtash.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtblin.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/dr0ddl.pkh&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/dr0ddl.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/compinvobj.sql&lt;/file&gt;
+  &lt;/sqlFiles&gt;
+&lt;/sqlPatch&gt;
+</td>
+<td>
+504B0304140000000800E830F04C86D22000CC0400004F3300001200000032373534373332395F6170706C792E73716CCD9B596FDB3810C7DFF529F8504409904D64F988B54617551D2631604B8624B79B7D11A8C30E37BAA2237517FDF04B1D74E51C851D24CDF0491E8BC33F7F9AE1615326B690898D2FD8D017D67C61215D130403CF909A24C17794B9294D72B48C539490DCBD41F259BF77D695955359968752B7A708E7F862A261E4F9F5BD348ED04774D0E1F6205E2D69E07B342DCD32372F03B2CA4A4B975B9C22F202DFCEFC94FAD5373D4118EBD3C54C43D95D50B56E37CE9086BFDA5FD4E982F92982809B054130F1148F2D241EFC6C56443F7E2091EBB649D92FBB340AA82E63D5C4E8EB15D6D061F63DB3DD38CAFD757E28164C8A1FDD8BC748743DC78E48E88B476862226D319D1E215EBD2A5659BDBC63CB8AA7CC7369AD24548DA2D44F02E2FACF3715474D53ECC307F168CB21C2DA79E9C4D2EDF1956A944E721AFA594EC284DD6E5FB3328BA3F373FBEA4AEED9B3896D9A4CF3CFBE6E15F1845112916A3E02CC6EBF30F419BAFFE0919C3824F3478CED5CD7A7E8609BB8C9E267AE5E6273F20F46D286BF999334A7D10A55B87F153F88C54BFB6998D7A6359961D35267F35A84579060B4DD50471284CFF872A255B53C27CC6CDE8593BA2334A2392501FDCF3F4CECC6E4D52D7CFC6BA3E2F8492E0F0AAF5F340ECAFA8DF81DEBD7C1CE0BAB2F1E542671C7FAEDDC6AEAB74CBB7A216EE360A3429DCFA7D7BB56E7B9D7EE442B147675F320CD4B375B26F16824B0281F09A79BF4A7110B70D6D283D4674FDCAE21B0C457A71636D848669A135D4365B08C17868135CB36C75778A6B2018545D6E8D9801DB306CA784DCB603A255E48A353A758C9525F19C8DDDE096B8C47EAEE213A67DFCD2D34B9D47443FD3CC5081B866E987FA2CD40B51DBAED8E1E8ABF90C2729A656DFB769EB1B5924F9F0E7E079D8ED21FB2348240A72D050E9DAE2C75CEEC2259A5C4F35F9912FBF8872429FDFE0B713DD20605DB5061BD52140841D59202848E2C770692326CD63100183D1604815491074592DCAE5E1990A66B786F486D2D10D8B8240F895BAB0680E7811C0884AAD9767836E84A433879F648100452ECE1B1BDD13DF5BF654062A92D0702A1255D377B4E593A1B0C94DEBBAF969E56048155359D748792D28130FBB7A540A093A4F779E2DE062749E0BC77A2B5B54060C3129F84AB1CC818C4A54020535E269EF3069B8F415F9694BDF1B4F440C0C3023923D90D909CE2522090292F69104248A996142864D2904450D0702D50D838B72988D5605B0B0436E5A419841E90B1864B8142C661562868B816286CC89D974161C3B54061731727140A1BAE050A9B6A210A840DD702854DE2AF7D3081B31103854EB9DC02C2A69102850CF996C2198B1B2D60D880D949E58076522EC997459682F833A2AD05029BF251A5610426A3B816286CAAFD0B10365C0B1436348542A65602854B16A460567D5C0B14364E96C3C9A7460B14364900870DD7F25E6CE280245B67AFFA4349EABFC5119E9ED4EBEE84E879490020ADE33B37888AE46D0E39F5E4E3FA5296874A73D9E975E57DB9B555BE01B4B1F5F74EDCDC7CCD7FA24C25CF0B4E92DB9BDFFD67E7531A402179D571E88548DE64FCD91F891B87098DEE63E7DFD74DAF3DA96CCB80306B95976BCF7121ECACDA5A20B0296751A607CA84DE48D9974C75CAFFC913FE4B1A55E7FB47881F177F06CE058D6876E37B3BBD8BF0A25711EA3723E2E552F81F504B0304140000000800E830F04C3339971FA00400002F3100001500000032373534373332395F726F6C6C6261636B2E73716CCD9A5B739B381480DFF9157AE89864A69B607C89594F774A1C25F12C060FE076BB2F8CB8D8D1865B0027EE4E7FFC8A8B1C9C753A4E266D8F9EF031923E3E8E84B065611B59D8FC844D6361CF173632744130F10CA9691A7E45B997D1B440CB24432929BC1B249F0DFA673D593995657924F5FA8A70812FA73A467E509F4B93187D409D2E8F87C96A49C3C0A759199679781992555E467A3CE2AE633F0C9C3CC868507DD3178489A12D663ACAEFC2AA77A7690CE9F8B3F349D516AC9D7518F2B0200816D6F0C44662E7B15B117DFB8644CEED644918BAC4BB75CAB880EA32512D8C3E5F631D1DE55F73C74BE222D81447E29AD104F1BDF81E899EEF3A318902F1184D2DA42F34ED18F1EA55B1CBEAE5193B51ACB196CB684551758AB2200D89173CDF5512375DB10FEFC4E39D0611D62FCA466CC3995CAB66D94841A3202F4894B2D39D2FACCC92F8E2C2B9BE96FBCE6CEA5816637EBCD69D229E30512252ADFF3966A75F9AC60CDDBFF349415C920763A6776E181AEAEC4AB7580ACDD52B6C4DFFC648DADE02AB205941E315E2C6BF974588654DFB86585F2C7B3AC396ADCEE63587BF26E178B7AFAE2408E7F86AAA57B57C37CA1D7E1527F5B5D098169484F4DFE028759A905FF7F0E18F2DC5FBBD6A9E145E7FDD3450D66FE00FAC5FA73C2FACBED8A942E281F5DB23ACA9DF0A1DDA0AF19A06B614A6A169E7EAE4CF435BE083B07D1DAD8438B49927E3BD6C6627241E8F0596EB63E1743B0FD098A539EBE9C91CC06EBA537B603380AAD9D864539A654D0D1D95F932599826D66DC79A5CE399CA6616965CE367D376C23AA8B2B6CCA753E247343E75D72B591A2843B9D73F619DF1643D3C4BE7ECBBB98DA657BA61AAE71A46D8340DD3FA1D6D67ACDDEC6D5FE891F81D1436B2D9D86D9FCEC76D4DF2F163E767D8E92A839E2C75CF1C3F7988
+5719F18337F6C43EFE2675FBDDD16B84EDA783A36EC426210889D546816267A448CA405120D869A100B1230F4683E148EE6E17350034ED6582E24BEE0E2565A480F2B58F0982AF7511AED3F476F5C68E7443C72FF6D46681E0A67A0A8FCE863D69042A97F63141F0E53176DFBDA7C1430E219D9EE04030B4A49BC75753593A1B0E95FE2F5F133C0B05C1589ADD17A9771B9EA4A1FBAB13AACD02C10D4B7012AD0A20638DA34030531EA6BEFB035E4F860359525EACA7C503410F4BE49CE43740C614478160A63CA461046148B550A098C922124351C359A0B8716F3310AB9E360B0437E543338C7C20730D478162C66551286A380B1437E4CECFA1B8E12C50DCDC252985E286B34071532D4481B8E12C50DC940B0A206A1A142866D260138019525B182876C84306672E6E58C0B801F32655007A93F248B15CE719881F96DB2C10DC94B72A8B6230238AB3407153BDBF0071C359A0B8A11914333509142F79988159F57116286EDCBC80339E1A16286ED2108E1BCEF203DC4CECBF0ED2E3151BFE435226F97E7892DEDEFCEC3FA7F6318052F2A6D9F24A2540B2C44BA294C6F789FBCFDB2EF45E68651703C2DCC2D69C11F1EADDA4D95BFF13F5DA55F01322089ECAC38DEF7A100CB55920B8299F098C07CAE3A94179A9996AF3F6DE8DDB4B1A57DBB6C7886F017E46CE258D697E13F887EE327FD526F37ADB7BB25C0AFF01504B0304140000000800E830F04C05A4EE87DF0200003B1400000C00000032373534373332392E786D6CBD985D73A2301486EFFB2B32B9DE55405198513A6E753F6676ABBBDA4EF7CA0924DAD410D2006AFFFD26B46E3FAC685BCC8D13123C0FE7256F4E48E7741D33B02432A509EF42BB664140789460CAE75D9867B3CF1E3C0D4E3AE92D1BA12CBA063FFA5DE8B4DD66BBE1F810E49CDEE6A41829061CC7B31A4D358084603442998A5A8C76E1F9108230E798912EFC3B184370B38C9FF68E89A424EDC2D1F862D3A543DA9ED5B6DB100090664866B9F8956015812732464C3D6B9AD11865044F68ACBA5D189C00D0111AD9276924A9D08F10F47B93DE97DE780046BDC9D977301E4CC0C548750E80EDD454D235F55B803AF5ADFFEA8051128B84139E0567BDC9E8CFF0AC537FECDABAA1F773F86DF70DBDD178F7E0D5F0F7EEC1FE650976783E195C4D5EDEA0DEDB57CA48AA2FD4E54CB5415C28A8DFD0DD27993016A2680101272B2DEB2B9282FF21BBF0217D18481CC6691DE198F2BA90CB4C440B56132CECD435E3A8B83C63B9108B794D25578A7BA0DC91F43D98309FDBBEDB702CBB3DCDC55C224CCA882F52AB008A9315DF8B7D55D70FC03DDFF25DDFAF545BED872D926379ED56C3F2A645B8AA952D476E225697A532350C1286C4539AEB7A96E55607518BC333C83AB98D18CFC59BE7C721BEDB5650DB9CC5F8282E7F9D26C89A50833CCAE237D3DE3F1D95D13D55469B47F6DA8CAEEF3D3675AC76ABE5374B81D564A7999B4807612B2C0FBAA95FA4395AB890A9C1355A2D2C7ECB6998D2531B03AD548666AABBC61582EEC37DBC1C380DCFF2ED836BDDDE7CFA97CF196AFF1BA3A8D850566AB912CE54860627BEC0FB691F9FEE8EDDB27CCF3FCE46A11C79F046A13A4DD7388C0C3A5BE10C165814CF3343EB883245413327A58CF97116C91D5ADE625338A56584C32525ABD23A57DD46DDF5DC96E7D8C7F5DF365A37658CB8B94993A2F4DA6061354B0B19E5E6DC3ECB53B9FF4CE0EDB8FB83151844D97A334DA48531AB89C5B53154F51F25DB2C3D4AF932096F9EABD8A93F9E2215EDE2442FF807504B030414000000000013A4884D0000000000000000000000000F000000726F6C6C6261636B5F66696C65732F504B030414000000000013A4884D00000000000000000000000015000000726F6C6C6261636B5F66696C65732F7264626D732F504B030414000000000013A4884D0000000000000000000000001B000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F504B0304140000000800E830F04CDF2A920FBB0100007E03000033000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F62756732353835363832315F726F6C6C6261636B2E73716C9D534D6FA33014BCF32BDEA18776B58B8155DA347BD8BAE03648E1A3861E7A42069C042D5F6B93EEE6DFAFB1429A48AD54AD2FD89E79F3DE680CE58D417903174BCE4A2E1620CABC9188954DD5A27CB77166F3D9F5DCB133D1D575CE8A5FA6FC5D039243A68999ED98B669998E6995792F77C806C7B2E7C8B2913303EB76F1FD766139B0935BB61E80FCEDE1626CA75B7EA47E24B85DBF17D5663BC0657135EADE7C8548B0A2E6C0DA127502AA41025BAFABBA62039726E0BA065D214170C9C52B2FCDA39C5A210EC8B4870F07806F400F4758AB2E8A0713F154CD23894BFD38F5A3F04D34618D1A4FC2B0559F62A8BA16AA16B8ADC6FF328A2FA0145DAFE196FF815E35611B6D08E4BEEDDA7D7336709492E4F4E29E3CFA21244FABECC15F912C2029F6708A27780492E899BA44E39F8BF3AC78E9C731F1FEB33A5EE24495C538759767AA29A6E9739C0591A7E030A2015E9DE2FEA3BAC3F7CA10A134A2C9C8098F4991D07BDFF14450B2FE834F3CB5BD0C02E479E8E5E56A020F6F4F2FEB1A597364DFA8845DC1D59B29B58C7177F7139D7A55B62497520E4C0CDAA3A143EB77795D15534EA07F0026B73F0EE821CAB76BE37D59DE965A148C7F504B0304140000000800E830F04C76B5CF6B110A0000BE0D000026000000726F6C6C62
+</td>
+<td>
+/orahome/app/oracle/cfgtoollogs/sqlpatch/27547329/22280349/27547329_apply_FRSTPROD_2018Dec08_21_08_33.log
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+            27547329
+</td>
+<td align="right">
+            22280349
+</td>
+<td>
+12.1.0.2
+</td>
+<td>
+NBM
+</td>
+<td>
+ROLLBACK
+</td>
+<td>
+SUCCESS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2020-09-18T19:45:54.242814
+</td>
+<td>
+DATABASE PATCH SET UPDATE 12.1.0.2.180717
+</td>
+<td>
+PSU
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&lt;bundledata version=&quot;12.1.0.2.1&quot; series=&quot;Patch Set Update&quot;&gt;
+  &lt;bundle id=&quot;1&quot; description=&quot;PSU 12.1.0.2.1&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpckl.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;2&quot; description=&quot;PSU 12.1.0.2.2&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;3&quot; description=&quot;PSU 12.1.0.2.3&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug18909599.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;4&quot; description=&quot;PSU 12.1.0.2.4&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;APS&quot; name=&quot;OLAP Analytic Workspace&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/bug20558005.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;XOQ&quot; name=&quot;Oracle OLAP API&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/xoqclnup.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;5&quot; description=&quot;PSU 12.1.0.2.5&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpexei.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollb
+ack&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19587324.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160119&quot; description=&quot;PSU 12.1.0.2.160119&quot;&gt;
+    &lt;component id=&quot;&quot; name=&quot;&quot; schema=&quot;&quot;&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_apply_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_rollback_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtqopi.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160419&quot; description=&quot;PSU 12.1.0.2.160419&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20596234.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160719&quot; description=&quot;PSU 12.1.0.2.160719&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22380919.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;/com
+ponent&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;161018&quot; description=&quot;12.1.0.2.161018PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmspdb.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22160989_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22160989_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsxdbc.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtxdb.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170117&quot; description=&quot;12.1.0.2.170117PSU&quot;&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170418&quot; description=&quot;12.1.0.2.170418PSU&quot;/&gt;
+  &lt;bundle id=&quot;170718&quot; description=&quot;12.1.0.2.170718PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtamgt.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catamgt.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170814&quot; description=&quot;12.1.0.2.170814PSU&quot;&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;171017&quot; description=&quot;12.1.0.2.171017PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/p
+rvtaqds.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180116&quot; description=&quot;12.1.0.2.180116PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catcdbviews.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180417&quot; description=&quot;12.1.0.2.180417PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug25856821_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtqopi.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvsash.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtash.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180717&quot; description=&quot;12.1.0.2.180717PSU&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtblin.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtir.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtslrt.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbsts.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtplts.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtash.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CONTEXT&quot; name=&quot;Oracle Text&quot; schema=&quot;CTXSYS&quot;&gt;
+
+     &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/dr0ddl.pkh&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/dr0ddl.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;ctx/admin/compinvobj.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+&lt;/bundledata&gt;
+
+</td>
+<td>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;sqlPatch ID=&quot;27547329&quot; uniquePatchID=&quot;22280349&quot; applicationPatch=&quot;NO&quot; bundle=&quot;YES&quot; jvm=&quot;NO&quot; bundleSeries=&quot;PSU&quot; bundleID=&quot;180717&quot;   startupMode=&quot;normal&quot; estimatedTime=&quot;5&quot;&gt;
+  &lt;patchDescription&gt;DATABASE PATCH SET UPDATE 12.1.0.2.180717&lt;/patchDescription&gt;
+  &lt;component&gt;CATPROC&lt;/component&gt;
+  &lt;component&gt;CATALOG&lt;/component&gt;
+  &lt;component&gt;APS&lt;/component&gt;
+  &lt;component&gt;XOQ&lt;/component&gt;
+  &lt;component&gt;DV&lt;/component&gt;
+  &lt;component&gt;CONTEXT&lt;/component&gt;
+  &lt;sqlFiles&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtpckl.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug18909599.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;APS&quot;&gt;olap/admin/bug20558005.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;XOQ&quot;&gt;olap/admin/xoqclnup.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtpexei.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug19587324.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CA
+TALOG&quot;&gt;rdbms/admin/fix_apply_20766944.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/fix_rollback_20766944.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20596234.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug22380919.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmspdb.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22160989_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22160989_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsxdbc.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtxdb.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtamgt.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catamgt.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component
+=&quot;CATALOG&quot;&gt;rdbms/admin/prvtaqds.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/catcdbviews.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug25856821_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvsash.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtash.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtblin.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/dr0ddl.pkh&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/dr0ddl.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/compinvobj.sql&lt;/file&gt;
+  &lt;/sqlFiles&gt;
+&lt;/sqlPatch&gt;
+</td>
+<td>
+504B0304140000000800E830F04C86D22000CC0400004F3300001200000032373534373332395F6170706C792E73716CCD9B596FDB3810C7DFF529F8504409904D64F988B54617551D2631604B8624B79B7D11A8C30E37BAA2237517FDF04B1D74E51C851D24CDF0491E8BC33F7F9AE1615326B690898D2FD8D017D67C61215D130403CF909A24C17794B9294D72B48C539490DCBD41F259BF77D695955359968752B7A708E7F862A261E4F9F5BD348ED04774D0E1F6205E2D69E07B342DCD32372F03B2CA4A4B975B9C22F202DFCEFC94FAD5373D4118EBD3C54C43D95D50B56E37CE9086BFDA5FD4E982F92982809B054130F1148F2D241EFC6C56443F7E2091EBB649D92FBB340AA82E63D5C4E8EB15D6D061F63DB3DD38CAFD757E28164C8A1FDD8BC748743DC78E48E88B476862226D319D1E215EBD2A5659BDBC63CB8AA7CC7369AD24548DA2D44F02E2FACF3715474D53ECC307F168CB21C2DA79E9C4D2EDF1956A944E721AFA594EC284DD6E5FB3328BA3F373FBEA4AEED9B3896D9A4CF3CFBE6E15F1845112916A3E02CC6EBF30F419BAFFE0919C3824F3478CED5CD7A7E8609BB8C9E267AE5E6273F20F46D286BF999334A7D10A55B87F153F88C54BFB6998D7A6359961D35267F35A84579060B4DD50471284CFF872A255B53C27CC6CDE8593BA2334A2392501FDCF3F4CECC6E4D52D7CFC6BA3E2F8492E0F0AAF5F340ECAFA8DF81DEBD7C1CE0BAB2F1E542671C7FAEDDC6AEAB74CBB7A216EE360A3429DCFA7D7BB56E7B9D7EE442B147675F320CD4B375B26F16824B0281F09A79BF4A7110B70D6D283D4674FDCAE21B0C457A71636D848669A135D4365B08C17868135CB36C75778A6B2018545D6E8D9801DB306CA784DCB603A255E48A353A758C9525F19C8DDDE096B8C47EAEE213A67DFCD2D34B9D47443FD3CC5081B866E987FA2CD40B51DBAED8E1E8ABF90C2729A656DFB769EB1B5924F9F0E7E079D8ED21FB2348240A72D050E9DAE2C75CEEC2259A5C4F35F9912FBF8872429FDFE0B713DD20605DB5061BD52140841D59202848E2C770692326CD63100183D1604815491074592DCAE5E1990A66B786F486D2D10D8B8240F895BAB0680E7811C0884AAD9767836E84A433879F648100452ECE1B1BDD13DF5BF654062A92D0702A1255D377B4E593A1B0C94DEBBAF969E56048155359D748792D28130FBB7A540A093A4F779E2DE062749E0BC77A2B5B54060C3129F84AB1CC818C4A54020535E269EF3069B8F415F9694BDF1B4F440C0C3023923D90D909CE2522090292F69104248A996142864D2904450D0702D50D838B72988D5605B0B0436E5A419841E90B1864B8142C661562868B816286CC89D974161C3B54061731727140A1BAE050A9B6A210A840DD702854DE2AF7D3081B31103854EB9DC02C2A69102850CF996C2198B1B2D60D880D949E58076522EC997459682F833A2AD05029BF251A5610426A3B816286CAAFD0B10365C0B1436348542A65602854B16A460567D5C0B14364E96C3C9A7460B14364900870DD7F25E6CE280245B67AFFA4349EABFC5119E9ED4EBEE84E879490020ADE33B37888AE46D0E39F5E4E3FA5296874A73D9E975E57DB9B555BE01B4B1F5F74EDCDC7CCD7FA24C25CF0B4E92DB9BDFFD67E7531A402179D571E88548DE64FCD91F891B87098DEE63E7DFD74DAF3DA96CCB80306B95976BCF7121ECACDA5A20B0296751A607CA84DE48D9974C75CAFFC913FE4B1A55E7FB47881F177F06CE058D6876E37B3BBD8BF0A25711EA3723E2E552F81F504B0304140000000800E830F04C3339971FA00400002F3100001500000032373534373332395F726F6C6C6261636B2E73716CCD9A5B739B381480DFF9157AE89864A69B607C89594F774A1C25F12C060FE076BB2F8CB8D8D1865B0027EE4E7FFC8A8B1C9C753A4E266D8F9EF031923E3E8E84B065611B59D8FC844D6361CF173632744130F10CA9691A7E45B997D1B440CB24432929BC1B249F0DFA673D593995657924F5FA8A70812FA73A467E509F4B93187D409D2E8F87C96A49C3C0A759199679781992555E467A3CE2AE633F0C9C3CC868507DD3178489A12D663ACAEFC2AA77A7690CE9F8B3F349D516AC9D7518F2B0200816D6F0C44662E7B15B117DFB8644CEED644918BAC4BB75CAB880EA32512D8C3E5F631D1DE55F73C74BE222D81447E29AD104F1BDF81E899EEF3A318902F1184D2DA42F34ED18F1EA55B1CBEAE5193B51ACB196CB684551758AB2200D89173CDF5512375DB10FEFC4E39D0611D62FCA466CC3995CAB66D94841A3202F4894B2D39D2FACCC92F8E2C2B9BE96FBCE6CEA5816637EBCD69D229E30512252ADFF3966A75F9AC60CDDBFF349415C920763A6776E181AEAEC4AB7580ACDD52B6C4DFFC648DADE02AB205941E315E2C6BF974588654DFB86585F2C7B3AC396ADCEE63587BF26E178B7AFAE2408E7F86AAA57B57C37CA1D7E1527F5B5D098169484F4DFE028759A905FF7F0E18F2DC5FBBD6A9E145E7FDD3450D66FE00FAC5FA73C2FACBED8A942E281F5DB23ACA9DF0A1DDA0AF19A06B614A6A169E7EAE4CF435BE083B07D1DAD8438B49927E3BD6C6627241E8F0596EB63E1743B0FD098A539EBE9C91CC06EBA537B603380AAD9D864539A654D0D1D95F932599826D66DC79A5CE399CA6616965CE367D376C23AA8B2B6CCA753E247343E75D72B591A2843B9D73F619DF1643D3C4BE7ECBBB98DA657BA61AAE71A46D8340DD3FA1D6D67ACDDEC6D5FE891F81D1436B2D9D86D9FCEC76D4DF2F163E767D8E92A839E2C75CF1C3F7988
+5719F18337F6C43EFE2675FBDDD16B84EDA783A36EC426210889D546816267A448CA405120D869A100B1230F4683E148EE6E17350034ED6582E24BEE0E2565A480F2B58F0982AF7511AED3F476F5C68E7443C72FF6D46681E0A67A0A8FCE863D69042A97F63141F0E53176DFBDA7C1430E219D9EE04030B4A49BC75753593A1B0E95FE2F5F133C0B05C1589ADD17A9771B9EA4A1FBAB13AACD02C10D4B7012AD0A20638DA34030531EA6BEFB035E4F860359525EACA7C503410F4BE49CE43740C614478160A63CA461046148B550A098C922124351C359A0B8716F3310AB9E360B0437E543338C7C20730D478162C66551286A380B1437E4CECFA1B8E12C50DCDC252985E286B34071532D4481B8E12C50DC940B0A206A1A142866D260138019525B182876C84306672E6E58C0B801F32655007A93F248B15CE719881F96DB2C10DC94B72A8B6230238AB3407153BDBF0071C359A0B8A11914333509142F79988159F57116286EDCBC80339E1A16286ED2108E1BCEF203DC4CECBF0ED2E3151BFE435226F97E7892DEDEFCEC3FA7F6318052F2A6D9F24A2540B2C44BA294C6F789FBCFDB2EF45E68651703C2DCC2D69C11F1EADDA4D95BFF13F5DA55F01322089ECAC38DEF7A100CB55920B8299F098C07CAE3A94179A9996AF3F6DE8DDB4B1A57DBB6C7886F017E46CE258D697E13F887EE327FD526F37ADB7BB25C0AFF01504B0304140000000800E830F04C05A4EE87DF0200003B1400000C00000032373534373332392E786D6CBD985D73A2301486EFFB2B32B9DE55405198513A6E753F6676ABBBDA4EF7CA0924DAD410D2006AFFFD26B46E3FAC685BCC8D13123C0FE7256F4E48E7741D33B02432A509EF42BB664140789460CAE75D9867B3CF1E3C0D4E3AE92D1BA12CBA063FFA5DE8B4DD66BBE1F810E49CDEE6A41829061CC7B31A4D358084603442998A5A8C76E1F9108230E798912EFC3B184370B38C9FF68E89A424EDC2D1F862D3A543DA9ED5B6DB100090664866B9F8956015812732464C3D6B9AD11865044F68ACBA5D189C00D0111AD9276924A9D08F10F47B93DE97DE780046BDC9D977301E4CC0C548750E80EDD454D235F55B803AF5ADFFEA8051128B84139E0567BDC9E8CFF0AC537FECDABAA1F773F86DF70DBDD178F7E0D5F0F7EEC1FE650976783E195C4D5EDEA0DEDB57CA48AA2FD4E54CB5415C28A8DFD0DD27993016A2680101272B2DEB2B9282FF21BBF0217D18481CC6691DE198F2BA90CB4C440B56132CECD435E3A8B83C63B9108B794D25578A7BA0DC91F43D98309FDBBEDB702CBB3DCDC55C224CCA882F52AB008A9315DF8B7D55D70FC03DDFF25DDFAF545BED872D926379ED56C3F2A645B8AA952D476E225697A532350C1286C4539AEB7A96E55607518BC333C83AB98D18CFC59BE7C721BEDB5650DB9CC5F8282E7F9D26C89A50833CCAE237D3DE3F1D95D13D55469B47F6DA8CAEEF3D3675AC76ABE5374B81D564A7999B4807612B2C0FBAA95FA4395AB890A9C1355A2D2C7ECB6998D2531B03AD548666AABBC61582EEC37DBC1C380DCFF2ED836BDDDE7CFA97CF196AFF1BA3A8D850566AB912CE54860627BEC0FB691F9FEE8EDDB27CCF3FCE46A11C79F046A13A4DD7388C0C3A5BE10C165814CF3343EB883245413327A58CF97116C91D5ADE625338A56584C32525ABD23A57DD46DDF5DC96E7D8C7F5DF365A37658CB8B94993A2F4DA6061354B0B19E5E6DC3ECB53B9FF4CE0EDB8FB83151844D97A334DA48531AB89C5B53154F51F25DB2C3D4AF932096F9EABD8A93F9E2215EDE2442FF807504B030414000000000013A4884D0000000000000000000000000F000000726F6C6C6261636B5F66696C65732F504B030414000000000013A4884D00000000000000000000000015000000726F6C6C6261636B5F66696C65732F7264626D732F504B030414000000000013A4884D0000000000000000000000001B000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F504B0304140000000800E830F04CDF2A920FBB0100007E03000033000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F62756732353835363832315F726F6C6C6261636B2E73716C9D534D6FA33014BCF32BDEA18776B58B8155DA347BD8BAE03648E1A3861E7A42069C042D5F6B93EEE6DFAFB1429A48AD54AD2FD89E79F3DE680CE58D417903174BCE4A2E1620CABC9188954DD5A27CB77166F3D9F5DCB133D1D575CE8A5FA6FC5D039243A68999ED98B669998E6995792F77C806C7B2E7C8B2913303EB76F1FD766139B0935BB61E80FCEDE1626CA75B7EA47E24B85DBF17D5663BC0657135EADE7C8548B0A2E6C0DA127502AA41025BAFABBA62039726E0BA065D214170C9C52B2FCDA39C5A210EC8B4870F07806F400F4758AB2E8A0713F154CD23894BFD38F5A3F04D34618D1A4FC2B0559F62A8BA16AA16B8ADC6FF328A2FA0145DAFE196FF815E35611B6D08E4BEEDDA7D7336709492E4F4E29E3CFA21244FABECC15F912C2029F6708A27780492E899BA44E39F8BF3AC78E9C731F1FEB33A5EE24495C538759767AA29A6E9739C0591A7E030A2015E9DE2FEA3BAC3F7CA10A134A2C9C8098F4991D07BDFF14450B2FE834F3CB5BD0C02E479E8E5E56A020F6F4F2FEB1A597364DFA8845DC1D59B29B58C7177F7139D7A55B62497520E4C0CDAA3A143EB77795D15534EA07F0026B73F0EE821CAB76BE37D59DE965A148C7F504B0304140000000800E830F04C76B5CF6B110A0000BE0D000026000000726F6C6C62
+</td>
+<td>
+/u01/app/oracle/cfgtoollogs/sqlpatch/27547329/22280349/27547329_rollback_FRSTPROD_2020Sep18_19_21_34.log
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+            27923320
+</td>
+<td align="right">
+            22224206
+</td>
+<td>
+12.1.0.2
+</td>
+<td>
+NJJ
+</td>
+<td>
+APPLY
+</td>
+<td>
+SUCCESS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2018-12-08T21:08:39.054113
+</td>
+<td>
+Database PSU 12.1.0.2.180717, Oracle JavaVM Component (JUL2018)
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+504B03041400000008000085BD4CFC2E0D5E90020000C30600001200000032373932333332305F6170706C792E73716C9D545D4FDB30147DF7AFB80FA86E25444B409BB68A89901A1A295F8AD321F662B98D0B466992356935267EFC9CAF92304011F72D27BEF7DC7B7D8E29098012FF27F1DD45E02D02701D847C62839EA6D11364ABAD4C7358275B4879BE7A00EDEB37EDEC4C9B8C3515E7DAE40B9A916BD321108AEAAC4C62B880C1698347C9FD5A462294DB02D61A781DF1FBAC40CE1A64B98BC348B04C6CA528FF9C2364B8D6C27620FB1D95ECAC2E060EB9653F756BA1EAECA2A8811125163102C08317520CCFCF809BAE192FA6620588A00A43A7046EE7C48161F694B15512E7E24F3EC43BD58888F7F818F02A5CB2986F041E8149C15958D6089AF4328222BD38D14189A52A1768D942490A5B91467C25DEA74AE29A4A7D1CE151A72010675614095C66CC75BF2892CB8DC872BE49D57176A7C24EE2D98CCDE7DA39B34D46A9EAF965D64EE013B5250C3AFD6FBDEAF8B5EFDAB03F0A79CE973C135384A8E7BA160C3AFB560B0FC0D36F08357F11981CF64F73BECD657C0FE5BA3F520F28B5B46F83DED1C0B4090D74DBAB9A08773C9A76894E27085D911BD329B3C2E52663CD0827D5203296B9E491FC2B8629ABA1B062B8F871E8E2F8CDBDBC8A267F571728F2EBE67BE657526F42E5E34109E19EF96D67D5F92DA86F15BEAA0B1CBAD03DCFBAEB9BDE38AF3D444B0A7DCBBC327951A603E1D11429954FD1F8607E192B812BA657C65737CEAA252084742B20BE7AC728355D070AB1180BDF274EC0A83127B6AE9E13A5ACE9BB82351441A1D747BEE7FBCDB8A61C3FEE3769B64BE589226B94DA5FA29EFAE70560DE38AEAF5F590488EFBB3EFD0E8EAB9E3BD49077F5DB9E76883FE847195B59B77DBCB16DD5CEE5E5E0732BAAACF5A6ADD6322E4D3585E68EDED9E7B53260F620C25E0FC0A7FC5F3D47C97A8DD03F504B03041400000008000085BD4C61AB184298020000D00600001500000032373932333332305F726F6C6C6261636B2E73716C9D545D4FA340147D9F5F711F4C6913632B9ADDEC366E443A5AB27C340CD5B82F93294C159702026DD68D3F7E878FA9E0AA21DE370E73CFB973E7DC4BB00704BBD7D87596DE62E9816323E4620BB4348D9E20F7B3302D609D6490B2C2BF07F5EB37F5E4449D8C5511A7EAE40B9AE14BC3C610F0FA6C98C4700683638947C9DD3A8C78106625AC4A781DB1BBBC444E24B2DAC641C469CEB390577F4E11D21D7369D9903F46953A6DC8C0C637F45A339782671B451246049B58F74019BC882AF0FC0C8AAC9A664914AD98FF9B9638823A748D60B899631B86F9534EFD242EF89F62A86C452D3CDE2987A0F8C18AC66CC395111804ECA5698E40A657E195E9E5890E8A4DC15CA255159528643C8D98CFDF974AE2464A7C1C28A30E21607B5692780ED5E79A5B9214E186E705DBA4E238BD156125F16C46E773F5945A062544D4FC72D74E2847A2510A68E4BF0E8BE397AE63C1EE2060055BB19C4F11220BC73161D069B9E8B9070BED0A13E31786C9FE0948C1B2228CEF4076FC230F81F04CFB41C82DF10C0B134FB316751DC19645D3AED6F104A10B7C65D85556B0DAE454DEE2A8BE4B188745C8A2F02F1FA6B481825AE1ECC7BE8AC3375BF32A64FEB62128F39BE27BE6D7869721F2954105293DF3DBF3D5E4B7A0BE2CCC6F08F655B88E695E68FACFBE0C7204DBF76819A22FCDAB692F693A90329A22E1F5291AEFB740180B9B0BA5571B403C3AADFB8010D24C0FBB62A111623836947ED197AE8B6D8F127D8E2D4DEC1561AEE9BBB6D58540E9DA07B663BBCDB8911C3FEC3669BE4D83F048A849B7F6B7E942FC5B78605CD98EAB5D9818B0EB3A2EF90EB6636324C5BB166EDF76A87C548F986F31C1EDF3727AEB72CECF079FEB513D5E6F8ED63A8CABC19A827CA4771A7A298630BFE741DF3DF0A935502FA664BD46E81F504B030414000000000036A6884D0000000000000000000000000F000000726F6C6C6261636B5F66696C65732F504B030414000000000036A6884D00000000000000000000000016000000726F6C6C6261636B5F66696C65732F6A617661766D2F504B030414000000000036A6884D0000000000000000000000001E000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F504B03041400000008001D6BBD4C7997891B250300003706000028000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D7073752E73716C9554DF73DA38107EF75FB137CD0C30936020D39B36191E1C2C8253FCA3B6E95DEEC5A3D80B28B565579249F9EF4FB62181BB697BA717ADB4DFF769B5BB528885116201170BA4198A1B78A63BBA2B4CC6A5A2796E3EEF8A4AD643F92D07B3A08C9B13988CC6D7E678624EDEC3E4FA66F2FE66740D8AD3EC2B151CC8F70A2E1AC556F58DFDBA352BABBD609BAD827E3A68B52EC11734CD1128CFCC52005312E87ACD724615CA2158790E2D438240896287D9F0554E0FCF72C9D1869323E10A1EAC2FD6171702AAD22D44A86055655A14642A58A54E456C12CD4227881DDF7BD38A5A18A8129E1044CD21AB05E31BA84AA9AE0E1902C6814210ADCE63F26312BD09C5AF0A5442F4189D425DDF76E60EB1B5D9775DD3B6CDC7C7C1D1C939625E8BBAB1471FCCF1EFE6F8FAED5E6771747782B5CEA08EE6170233813A0FD9691C77E4DEF120FABC4CE6CE92242E892DDB8A2D38FA1B4FE4AFC21969013FEB9433CAC20902
+62FF2F4EB0B0220D76BC28B696CB33B5D80AE35590E8A46980E787AEB53CA33AF77AD3BAD3172061E8875103F2C81964A6351DEFFE10514AD553CDB31C8F5DDAC08867FF3B1386119118C86CE1836E92C69E1362DF59B34F306E97DECAFDC3B1E3058C47ED5A9F4222E72F021FBA751C3A6E14F8FEF2C88FAD3BF0E7F3D60EACFB0E3C1E8D0CE3EA0A9C353CE86C019370481766979095307B882E01553A348CB66606803387ECA99089C00D934AEC874C263B9AB3ACDFEB5AA577F90F80C01CA9C4648742B2920F600A638817C4338C26018C33A58B43EBEFC34C9455224529FB83DBCE49FE24B3554CC0715D623B96B67A69DB4FA07B4F6095D314DB4A83DC4B8545EFC0ABBBC79761853C439EEE2F8CEE7948FD32AB44B102F53D8B6ADA973ABA54816CB6602DCA02CAA7E70B78D9A2C0C67C37AD92661A1C043AC77FA7FD363D39AEF9770E3ADD38EAA87D85EF7EAA339D7C841FD2CB178EE217FCD16D5B6B88A84EF81ED22DA65F6F406D11BED528F6FAD7C8CB1790DBB2CE33E0A50241996C7ECA3DA010A518FEA82287887A8758DAE2372519E625DF705A60BFD76BD6664EF9C68CBA3AF5065DB4594DF3B668CD3B70E6B7869E6F0DD330D2B22898D29EBF01504B03041400000008001D6BBD4C23CB161A05020000FE0300002C000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D707375706469692E73716C8D524D73DA3010BDF32BF6904332D3D8164DA62DA7085B8052DB726D934E7A610416411963BB92609A7F5FD940F8E821D5E9EDEEDB7DBBAB4DC5BA978A355C4D042F841AC02BDFF2EDDA959536BC2CDDD7EDBAD19BA690D2D1BF4B70B599ED1833D47790E3397DC7AB2D69DEB808FA1EBA7311729107C81BDC7F1EDC7F01FD526F655570207F1AB86AB53ABDF3BAEF6EBF6EDE947C5919B85EDC74F53E01537C510AE055E1D60AA4D1C0974B594A6E847600972574191A94D0426D45E1BC97B32FC6113960B890855B608F4F1124D9149A5A9BDB42ECE7065919A12A5EC269AD80647E4A939CB2F84C82E5243B6AE42BA9412F946C0C58A43615CCDF8ECA9DB05CC2237EC256DB32F69AA2B008CC4A1C4B15DCF039D7C201A0062A210A0DA686455D196EB96DA3967FD93B5F1859571A96B53A966A798761CF163424631A43F6239C8D68486611C97180730C87781BC9D834F54947F8E842CED226344948B0CF3B8D24139C5DB8B21CA7F93499452CB09198A5110ECF08746C9D78687B2469CAD2AC25C5E48CE2E330A4F1F84290C4C1BFF39DAEC04AD211258185D751E40681FBFC7C73085676EDE5466D5A8C3CB7FFCD4577FF71381FA4FB4AD8FB2DBA2E7A19C981F81306F6AE5A3C22241862FF3BA0CE8CA7D14F1AE4139BDFD9764492D15F04BEEEEC3CA5519630161EF2733C04361A7538C1E31D19795EAFD77B78D8FDD7EEAFFE02504B03041400000008001D6BBD4C246E6560A60200003B0500002B000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D7073757064692E73716C8D53DB6EDA40107DF7574CA5A80952836D92A82DA86A0C5EC029BED43654E98BB5D80B6CE45B77D724F9FBAE0D049CA84AFD343BE7CC3933BB639F648A4F32389B129C10D68707BCC5DB4CA53917384DD5876D56F2AA4C6897FF4941E522DA1122BDD7D5BB5AB7D7D50AC95996AA0E3D4DBF56755DD535D0B5FECD55FFE633F075B1A57982013D9570565B35762DD997ECA8289F195D6F045CC49D46EE13B80CC729019C276AC1800A0E78B5A229C582F02E18690A4D05074638615B92745FE4E4E718363AC4D076854B70EF163678C11CCA828BCB84EC87865305130523DFF242CB755AC26E8882A372B8A11C78CC6829E0914A892501B121C069BE96DDEF11F2248D4802983760DBF528B667AFE4BC870E5B430DD1C47220F8398BC6D60C45360A0DD3080D38E03512B8737F841AC23B6FDAAA9A5A9E87CC7DD929E24D8DE0552A080D3F9C7B91ED9A12715CDF36662D8235914963285B44BEEFFA414D72508B32326633CB99BC32448EF976BCD31B9096D6D842A60C2F6C5B354DF5FEBE7300F39C90B462551DEB9ADAFBAAEAD7FF7EEC77AA468CC84D4B1A73254021A0D1D405B90B753C46C81C1AA31FA03747676EFFB2CC702AEB9BB39C0C05D66F045F76E7D0B7ECC073DDD9A13E3486E08EC74DEC19931D59D73445D96246F1526E8E7CABFD3AC854BCC1AC7771A375064A5CA4559643FF88E7E431DAE2B46A6AA243B22819CDC540511212A7981145AE97C0276A57B5DA92AC692EA113B9FE3738FFAEBEDD1C9295E2B95E9CF341AD4552128B46B2E2209D8A9DFC8A1519244B1C31A9CC057B86C70D6104E2222B239A8014BF3316C6C26E54E86A57F541A67D64BB0B649ED77F48DDD27F35B55B67FAD216C913293A50C8534C4A418BBCB6CFE56D440916385A159524882655A5A9E4E5C9405115653FCE89E36E900A4B92727BFBF178B58AF217504B03041400000008001D6BBD4C3A8DDC9A48050000C613000029000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D707375692E73716CC5585B6FE238147ECFAF38A3A9044834B75EA053559A14429B6EB96C927677F6250A895BDC86246B073AFCFB3D76A0050AED8CB6CC444838B1CFF79DAB9363978C15978C61EF928431615FE0219C86D3B146535E8449A23D4CC7399F5095FF9B80C68BA09C0E0C5335545D35553DC315C35C334FC0D48DA6A61F696603CC832F7AE38BA9031F4E78
+</td>
+<td>
+/orahome/app/oracle/cfgtoollogs/sqlpatch/27923320/22224206/27923320_apply_FRSTPROD_2018Dec08_21_07_57.log
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+            27923320
+</td>
+<td align="right">
+            22224206
+</td>
+<td>
+12.1.0.2
+</td>
+<td>
+NJJ
+</td>
+<td>
+ROLLBACK
+</td>
+<td>
+SUCCESS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2020-09-18T19:45:54.213612
+</td>
+<td>
+Database PSU 12.1.0.2.180717, Oracle JavaVM Component (JUL2018)
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+504B03041400000008000085BD4CFC2E0D5E90020000C30600001200000032373932333332305F6170706C792E73716C9D545D4FDB30147DF7AFB80FA86E25444B409BB68A89901A1A295F8AD321F662B98D0B466992356935267EFC9CAF92304011F72D27BEF7DC7B7D8E29098012FF27F1DD45E02D02701D847C62839EA6D11364ABAD4C7358275B4879BE7A00EDEB37EDEC4C9B8C3515E7DAE40B9A916BD321108AEAAC4C62B880C1698347C9FD5A462294DB02D61A781DF1FBAC40CE1A64B98BC348B04C6CA528FF9C2364B8D6C27620FB1D95ECAC2E060EB9653F756BA1EAECA2A8811125163102C08317520CCFCF809BAE192FA6620588A00A43A7046EE7C48161F694B15512E7E24F3EC43BD58888F7F818F02A5CB2986F041E8149C15958D6089AF4328222BD38D14189A52A1768D942490A5B91467C25DEA74AE29A4A7D1CE151A72010675614095C66CC75BF2892CB8DC872BE49D57176A7C24EE2D98CCDE7DA39B34D46A9EAF965D64EE013B5250C3AFD6FBDEAF8B5EFDAB03F0A79CE973C135384A8E7BA160C3AFB560B0FC0D36F08357F11981CF64F73BECD657C0FE5BA3F520F28B5B46F83DED1C0B4090D74DBAB9A08773C9A76894E27085D911BD329B3C2E52663CD0827D5203296B9E491FC2B8629ABA1B062B8F871E8E2F8CDBDBC8A267F571728F2EBE67BE657526F42E5E34109E19EF96D67D5F92DA86F15BEAA0B1CBAD03DCFBAEB9BDE38AF3D444B0A7DCBBC327951A603E1D11429954FD1F8607E192B812BA657C65737CEAA252084742B20BE7AC728355D070AB1180BDF274EC0A83127B6AE9E13A5ACE9BB82351441A1D747BEE7FBCDB8A61C3FEE3769B64BE589226B94DA5FA29EFAE70560DE38AEAF5F590488EFBB3EFD0E8EAB9E3BD49077F5DB9E76883FE847195B59B77DBCB16DD5CEE5E5E0732BAAACF5A6ADD6322E4D3585E68EDED9E7B53260F620C25E0FC0A7FC5F3D47C97A8DD03F504B03041400000008000085BD4C61AB184298020000D00600001500000032373932333332305F726F6C6C6261636B2E73716C9D545D4FA340147D9F5F711F4C6913632B9ADDEC366E443A5AB27C340CD5B82F93294C159702026DD68D3F7E878FA9E0AA21DE370E73CFB973E7DC4BB00704BBD7D87596DE62E9816323E4620BB4348D9E20F7B3302D609D6490B2C2BF07F5EB37F5E4449D8C5511A7EAE40B9AE14BC3C610F0FA6C98C4700683638947C9DD3A8C78106625AC4A781DB1BBBC444E24B2DAC641C469CEB390577F4E11D21D7369D9903F46953A6DC8C0C637F45A339782671B451246049B58F74019BC882AF0FC0C8AAC9A664914AD98FF9B9638823A748D60B899631B86F9534EFD242EF89F62A86C452D3CDE2987A0F8C18AC66CC395111804ECA5698E40A657E195E9E5890E8A4DC15CA255159528643C8D98CFDF974AE2464A7C1C28A30E21607B5692780ED5E79A5B9214E186E705DBA4E238BD156125F16C46E773F5945A062544D4FC72D74E2847A2510A68E4BF0E8BE397AE63C1EE2060055BB19C4F11220BC73161D069B9E8B9070BED0A13E31786C9FE0948C1B2228CEF4076FC230F81F04CFB41C82DF10C0B134FB316751DC19645D3AED6F104A10B7C65D85556B0DAE454DEE2A8BE4B188745C8A2F02F1FA6B481825AE1ECC7BE8AC3375BF32A64FEB62128F39BE27BE6D7869721F2954105293DF3DBF3D5E4B7A0BE2CCC6F08F655B88E695E68FACFBE0C7204DBF76819A22FCDAB692F693A90329A22E1F5291AEFB740180B9B0BA5571B403C3AADFB8010D24C0FBB62A111623836947ED197AE8B6D8F127D8E2D4DEC1561AEE9BBB6D58540E9DA07B663BBCDB8911C3FEC3669BE4D83F048A849B7F6B7E942FC5B78605CD98EAB5D9818B0EB3A2EF90EB6636324C5BB166EDF76A87C548F986F31C1EDF3727AEB72CECF079FEB513D5E6F8ED63A8CABC19A827CA4771A7A298630BFE741DF3DF0A935502FA664BD46E81F504B030414000000000036A6884D0000000000000000000000000F000000726F6C6C6261636B5F66696C65732F504B030414000000000036A6884D00000000000000000000000016000000726F6C6C6261636B5F66696C65732F6A617661766D2F504B030414000000000036A6884D0000000000000000000000001E000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F504B03041400000008001D6BBD4C7997891B250300003706000028000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D7073752E73716C9554DF73DA38107EF75FB137CD0C30936020D39B36191E1C2C8253FCA3B6E95DEEC5A3D80B28B565579249F9EF4FB62181BB697BA717ADB4DFF769B5BB528885116201170BA4198A1B78A63BBA2B4CC6A5A2796E3EEF8A4AD643F92D07B3A08C9B13988CC6D7E678624EDEC3E4FA66F2FE66740D8AD3EC2B151CC8F70A2E1AC556F58DFDBA352BABBD609BAD827E3A68B52EC11734CD1128CFCC52005312E87ACD724615CA2158790E2D438240896287D9F0554E0FCF72C9D1869323E10A1EAC2FD6171702AAD22D44A86055655A14642A58A54E456C12CD4227881DDF7BD38A5A18A8129E1044CD21AB05E31BA84AA9AE0E1902C6814210ADCE63F26312BD09C5AF0A5442F4189D425DDF76E60EB1B5D9775DD3B6CDC7C7C1D1C939625E8BBAB1471FCCF1EFE6F8FAED5E6771747782B5CEA08EE6170233813A0FD9691C77E4DEF120FABC4CE6CE92242E892DDB8A2D38FA1B4FE4AFC21969013FEB9433CAC20902
+62FF2F4EB0B0220D76BC28B696CB33B5D80AE35590E8A46980E787AEB53CA33AF77AD3BAD3172061E8875103F2C81964A6351DEFFE10514AD553CDB31C8F5DDAC08867FF3B1386119118C86CE1836E92C69E1362DF59B34F306E97DECAFDC3B1E3058C47ED5A9F4222E72F021FBA751C3A6E14F8FEF2C88FAD3BF0E7F3D60EACFB0E3C1E8D0CE3EA0A9C353CE86C019370481766979095307B882E01553A348CB66606803387ECA99089C00D934AEC874C263B9AB3ACDFEB5AA577F90F80C01CA9C4648742B2920F600A638817C4338C26018C33A58B43EBEFC34C9455224529FB83DBCE49FE24B3554CC0715D623B96B67A69DB4FA07B4F6095D314DB4A83DC4B8545EFC0ABBBC79761853C439EEE2F8CEE7948FD32AB44B102F53D8B6ADA973ABA54816CB6602DCA02CAA7E70B78D9A2C0C67C37AD92661A1C043AC77FA7FD363D39AEF9770E3ADD38EAA87D85EF7EAA339D7C841FD2CB178EE217FCD16D5B6B88A84EF81ED22DA65F6F406D11BED528F6FAD7C8CB1790DBB2CE33E0A50241996C7ECA3DA010A518FEA82287887A8758DAE2372519E625DF705A60BFD76BD6664EF9C68CBA3AF5065DB4594DF3B668CD3B70E6B7869E6F0DD330D2B22898D29EBF01504B03041400000008001D6BBD4C23CB161A05020000FE0300002C000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D707375706469692E73716C8D524D73DA3010BDF32BF6904332D3D8164DA62DA7085B8052DB726D934E7A610416411963BB92609A7F5FD940F8E821D5E9EDEEDB7DBBAB4DC5BA978A355C4D042F841AC02BDFF2EDDA959536BC2CDDD7EDBAD19BA690D2D1BF4B70B599ED1833D47790E3397DC7AB2D69DEB808FA1EBA7311729107C81BDC7F1EDC7F01FD526F655570207F1AB86AB53ABDF3BAEF6EBF6EDE947C5919B85EDC74F53E01537C510AE055E1D60AA4D1C0974B594A6E847600972574191A94D0426D45E1BC97B32FC6113960B890855B608F4F1124D9149A5A9BDB42ECE7065919A12A5EC269AD80647E4A939CB2F84C82E5243B6AE42BA9412F946C0C58A43615CCDF8ECA9DB05CC2237EC256DB32F69AA2B008CC4A1C4B15DCF039D7C201A0062A210A0DA686455D196EB96DA3967FD93B5F1859571A96B53A966A798761CF163424631A43F6239C8D68486611C97180730C87781BC9D834F54947F8E842CED226344948B0CF3B8D24139C5DB8B21CA7F93499452CB09198A5110ECF08746C9D78687B2469CAD2AC25C5E48CE2E330A4F1F84290C4C1BFF39DAEC04AD211258185D751E40681FBFC7C73085676EDE5466D5A8C3CB7FFCD4577FF71381FA4FB4AD8FB2DBA2E7A19C981F81306F6AE5A3C22241862FF3BA0CE8CA7D14F1AE4139BDFD9764492D15F04BEEEEC3CA5519630161EF2733C04361A7538C1E31D19795EAFD77B78D8FDD7EEAFFE02504B03041400000008001D6BBD4C246E6560A60200003B0500002B000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D7073757064692E73716C8D53DB6EDA40107DF7574CA5A80952836D92A82DA86A0C5EC029BED43654E98BB5D80B6CE45B77D724F9FBAE0D049CA84AFD343BE7CC3933BB639F648A4F32389B129C10D68707BCC5DB4CA53917384DD5876D56F2AA4C6897FF4941E522DA1122BDD7D5BB5AB7D7D50AC95996AA0E3D4DBF56755DD535D0B5FECD55FFE633F075B1A57982013D9570565B35762DD997ECA8289F195D6F045CC49D46EE13B80CC729019C276AC1800A0E78B5A229C582F02E18690A4D05074638615B92745FE4E4E718363AC4D076854B70EF163678C11CCA828BCB84EC87865305130523DFF242CB755AC26E8882A372B8A11C78CC6829E0914A892501B121C069BE96DDEF11F2248D4802983760DBF528B667AFE4BC870E5B430DD1C47220F8398BC6D60C45360A0DD3080D38E03512B8737F841AC23B6FDAAA9A5A9E87CC7DD929E24D8DE0552A080D3F9C7B91ED9A12715CDF36662D8235914963285B44BEEFFA414D72508B32326633CB99BC32448EF976BCD31B9096D6D842A60C2F6C5B354DF5FEBE7300F39C90B462551DEB9ADAFBAAEAD7FF7EEC77AA468CC84D4B1A73254021A0D1D405B90B753C46C81C1AA31FA03747676EFFB2CC702AEB9BB39C0C05D66F045F76E7D0B7ECC073DDD9A13E3486E08EC74DEC19931D59D73445D96246F1526E8E7CABFD3AC854BCC1AC7771A375064A5CA4559643FF88E7E431DAE2B46A6AA243B22819CDC540511212A7981145AE97C0276A57B5DA92AC692EA113B9FE3738FFAEBEDD1C9295E2B95E9CF341AD4552128B46B2E2209D8A9DFC8A1519244B1C31A9CC057B86C70D6104E2222B239A8014BF3316C6C26E54E86A57F541A67D64BB0B649ED77F48DDD27F35B55B67FAD216C913293A50C8534C4A418BBCB6CFE56D440916385A159524882655A5A9E4E5C9405115653FCE89E36E900A4B92727BFBF178B58AF217504B03041400000008001D6BBD4C3A8DDC9A48050000C613000029000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D707375692E73716CC5585B6FE238147ECFAF38A3A9044834B75EA053559A14429B6EB96C927677F6250A895BDC86246B073AFCFB3D76A0050AED8CB6CC444838B1CFF79DAB9363978C15978C61EF928431615FE0219C86D3B146535E8449A23D4CC7399F5095FF9B80C68BA09C0E0C5335545D35553DC315C35C334FC0D48DA6A61F696603CC832F7AE38BA9031F4E78
+</td>
+<td>
+/u01/app/oracle/cfgtoollogs/sqlpatch/27923320/22224206/27923320_rollback_FRSTPROD_2020Sep18_19_20_40.log
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+            30691015
+</td>
+<td align="right">
+            23475349
+</td>
+<td>
+12.1.0.2
+</td>
+<td>
+NBM
+</td>
+<td>
+APPLY
+</td>
+<td>
+SUCCESS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2020-09-18T19:45:56.870531
+</td>
+<td>
+DATABASE BUNDLE PATCH 12.1.0.2.200414
+</td>
+<td>
+DBBP
+</td>
+<td align="right">
+              200414
+</td>
+<td>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;WINDOWS-1252&quot;?&gt;
+&lt;bundledata version=&quot;12.1.0.2.3&quot; series=&quot;Database Bundle Patch&quot;&gt;
+  &lt;bundle id=&quot;1&quot; description=&quot;12.1.0.2.1DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbord.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtemx_cell.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpckl.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19175750.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;2&quot; description=&quot;12.1.0.2.2DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvthxstr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbxstr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;3&quot; description=&quot;12.1.0.2.3DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbord.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/execemx.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19591408.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;4&quot; description=&quot;12.1.0.2.4DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/cdpart.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/d
+bmsrman.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20177577.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;5&quot; description=&quot;12.1.0.2.5DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catsnap.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmscomp.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtcmpr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtpexei.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/bug19954575.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20177577.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;6&quot; description=&quot;12.1.0.2.6DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbord.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtstai.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catilm.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20128644.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/dbmshadp.sql&lt;/fil
+e&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/cathive.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtkubsagt.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvthadoop.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20177577.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/nothing.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;7&quot; description=&quot;12.1.0.2.7DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20020274.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtmeta.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug18909599.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtqopi.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug18783224_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug18783224_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;8&quot; description=&quot;12.1.0.2.8DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20105469_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20105469_remove.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;9&quot; description=&quot;12.1.0.2.9DBBP&quot;&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;10&quot; description=&quot;12.1.0.2.10DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;APS&quot; name=&quot;OLAP Analytic Workspace&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=
+&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/bug20558005.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;XOQ&quot; name=&quot;Oracle OLAP API&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;olap/admin/xoqclnup.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;11&quot; description=&quot;12.1.0.2.11DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtemx_cell.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20609727.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20313052.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;12&quot; description=&quot;12.1.0.2.12DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmcs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlsby.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlms.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmcb.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmrb.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmslms.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;13&quot; description=&quot;12.1.0.2.13DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/catsodacoll.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catjsonv.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/catsodaview.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/uninstall_jsonpatch1.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;r
+dbms/admin/prvtstat.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbcap.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;ODM&quot; name=&quot;Data Mining&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtdmsu.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug21942555.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CONTEXT&quot; name=&quot;Oracle Text&quot; schema=&quot;CTXSYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/ctxrestpatch.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/uninstall_ctxjsonpatch1.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/driexp.pkh&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/dricon.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/driexp.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/driopt.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;SDO&quot; name=&quot;Oracle Spatial&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;md/admin/bug_21306811.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160119&quot; description=&quot;12.1.0.2.160119DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_apply_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/fix_rollback_20766944.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtsnap.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbord.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/dbmshadp.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvthadoop.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160419&quot; description=&quot;12.1.0.2.160419DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SY
+S&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmcb.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/cdcore_mig.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catmetviews_mig.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/cathive.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtemx_cell.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbord.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvthadoop.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22053453.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;160719&quot; description=&quot;12.1.0.2.160719DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22380919.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catdef.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbxstr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtutil.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20596234.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;161018&quot; description=&quot;12.1.0.2.161018DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmspdb.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin
+/dbmsbkrs.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22160989_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22160989_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsxdbc.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtxdb.plb&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170117&quot; description=&quot;12.1.0.2.170117DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtspad.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug25377044.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170418&quot; description=&quot;12.1.0.2.170418DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/dbmsoptim.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvtoptim.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20881961_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20881961_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollba
+ck&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtblin.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170718&quot; description=&quot;12.1.0.2.170718DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtamgt.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtaqim.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catamgt.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/dbmshadp.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/cathive.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtemx_cell.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvthadoop.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug25410017.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug26411662_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug26411662_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;170814&quot; description=&quot;12.1.0.2.170814DBBP&quot;&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;171017&quot; description=&quot;12.1.0.2.171017DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtaqds.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvtoptim.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtemx_cell.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admi
+n/bug26088836.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/execstat.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180116&quot; description=&quot;12.1.0.2.180116DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug26442308_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug26442308_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catcdbviews.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvtoptim.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtblin.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180417&quot; description=&quot;12.1.0.2.180417DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug25856821_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvsash.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtash.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/dbmshadp.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/dbmsbdcluacc.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/cathive.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvthadoop.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvtbdcluacc.plb&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catnobdcluacc.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;180717&quot; description=&quot;12.1.0.2.180717DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; sche
+ma=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug28106999.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtcmpr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catilmtab.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsstat.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catilm.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacc.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CONTEXT&quot; name=&quot;Oracle Text&quot; schema=&quot;CTXSYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/dr0ddl.pkh&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;ctx/admin/dr0ddl.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;ctx/admin/compinvobj.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;181016&quot; description=&quot;12.1.0.2.181016DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug25954054.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtaqim.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtaqds.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmcb.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20703661.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catlsby.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;
+&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug26411662_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug26411662_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug20631846_remove.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;190115&quot; description=&quot;12.1.0.2.190115DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catcdbviews.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;190416&quot; description=&quot;12.1.0.2.190416DBBP&quot;&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/execstat.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;190716&quot; description=&quot;12.1.0.2.190716DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug29676089_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/dbmsoptim.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbord.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/prvtoptim.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Va
+ult&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;191015&quot; description=&quot;12.1.0.2.191015DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug29676089_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtsnap.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbxstr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtcmpr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;200114&quot; description=&quot;12.1.0.2.200114DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug22549364.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug_30252098_rollback.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug_30252098_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmcb.plb&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtspad.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvsawr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/dbmsplts.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbstr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbxstr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtplts.plb&lt;/file&gt;
+      &lt;
+file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawr.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+  &lt;bundle id=&quot;200414&quot; description=&quot;12.1.0.2.200414DBBP&quot;&gt;
+    &lt;component id=&quot;CATALOG&quot; name=&quot;Oracle Database Catalog Views&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtlmcb.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug_30305880_apply.sql&lt;/file&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug_30305880_rollback.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;CATPROC&quot; name=&quot;Oracle Database Packages and Types&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/bug27084613.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtsqld.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtspcu.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/prvtbord.plb&lt;/file&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;rdbms/admin/catilm.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;DV&quot; name=&quot;Oracle Database Vault&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+      &lt;file mode=&quot;apply&quot; new=&quot;no&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+    &lt;/component&gt;
+    &lt;component id=&quot;XOQ&quot; name=&quot;Oracle OLAP API&quot; schema=&quot;SYS&quot;&gt;
+      &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot;&gt;olap/admin/catxoq.sql&lt;/file&gt;
+    &lt;/component&gt;
+  &lt;/bundle&gt;
+&lt;/bundledata&gt;
+
+</td>
+<td>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;sqlPatch ID=&quot;30691015&quot; uniquePatchID=&quot;23475349&quot; applicationPatch=&quot;NO&quot; bundle=&quot;YES&quot; jvm=&quot;NO&quot; bundleSeries=&quot;DBBP&quot; bundleID=&quot;200414&quot; ecbpBundleSeries=&quot;PSU&quot; ecbpBundleID=&quot;200414&quot; startupMode=&quot;normal&quot; estimatedTime=&quot;5&quot;&gt;
+  &lt;patchDescription&gt;DATABASE BUNDLE PATCH 12.1.0.2.200414&lt;/patchDescription&gt;
+  &lt;component&gt;CATPROC&lt;/component&gt;
+  &lt;component&gt;APS&lt;/component&gt;
+  &lt;component&gt;XOQ&lt;/component&gt;
+  &lt;component&gt;CATALOG&lt;/component&gt;
+  &lt;component&gt;ODM&lt;/component&gt;
+  &lt;component&gt;CONTEXT&lt;/component&gt;
+  &lt;component&gt;SDO&lt;/component&gt;
+  &lt;component&gt;DV&lt;/component&gt;
+  &lt;sqlFiles&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtbord.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtemx_cell.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtpckl.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19175750.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19532017_upgrade.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19532017_downgrade.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvthxstr.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtbxstr.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/utluppkg.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtstat.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/execemx.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot;
+component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19591408.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/cdpart.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsrman.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtrmns.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsbkrs.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtbkrs.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20177577.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catsnap.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmscomp.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtcmpr.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtpexei.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtlmd.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug19954575.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtstai.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtawr.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtawrs.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catilm.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20128644.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; co
+mponent=&quot;CATPROC&quot;&gt;rdbms/admin/dbmshadp.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/cathive.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtkubsagt.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvthadoop.plb&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/nothing.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20020274.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsilm.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtilm.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtmeta.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug18909599.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtqopi.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug18783224_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug18783224_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20105469_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20105469_remove.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20876308_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20876308_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;APS&quot;&gt;olap/admin/bug20558005.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;XOQ&quot;&gt;olap/a
+dmin/xoqclnup.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20609727.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20313052.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtlmcs.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtlsby.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtlms.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtlmcb.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtlmrb.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmslms.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catsodacoll.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catjsonv.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catsodaview.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/uninstall_jsonpatch1.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtbcap.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;ODM&quot;&gt;rdbms/admin/prvtdmsu.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;ODM&quot;&gt;rdbms/admin/bug21942555.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;rdbms/admin/ctxrestpatch.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;rdbms/admin/uninstall_ctxjsonpatch1.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/driexp.pkh&lt;/file&gt;
+    &lt;file mo
+de=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/dricon.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/driexp.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/driopt.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;SDO&quot;&gt;md/admin/bug_21306811.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/fix_apply_20766944.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/fix_rollback_20766944.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtsnap.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/cdcore_mig.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catmetviews_mig.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22053453.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22380919.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catdef.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtutil.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20596234.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmspdb.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22160989_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;a
+pply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug22160989_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsxdbc.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtxdb.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtspad.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug25377044.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsoptim.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtoptim.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20881961_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20881961_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtblin.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtamgt.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtaqim.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catamgt.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug25410017.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug26411662_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug26411662_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/prvtaqds.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug26088836
+.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/execstat.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug26442308_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug26442308_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/catcdbviews.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug25856821_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvsash.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtash.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsbdcluacc.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtbdcluacc.plb&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catnobdcluacc.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug28106999.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catilmtab.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsstat.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacc.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/dr0ddl.pkh&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/dr0ddl.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CONTEXT&quot;&gt;ctx/admin/compinvobj.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug25954054.sql&lt;/f
+ile&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20703661.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catlsby.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug20631846_remove.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug29676089_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug22549364.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug_30252098_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug_30252098_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsplts.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvsawr.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtbstr.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtplts.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/bug27084613.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtsqld.plb&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/prvtspcu.plb&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug_30305880_rollback.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/bug_30305880_apply.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;XOQ&quot;&gt;olap/admin/catxoq.sql&lt;/file&gt; 
+&lt;/sqlFiles&gt;
+&lt;/sqlPatch&gt;
+</td>
+<td>
+504B0304140000000800F19C8150637A0EDCC30500004F3E00000C00000033303639313031352E786D6CC59B5973A3381080DFF32B289E771D714395ED2927CE1E5593D8B3F64C659F5C20484CCC2123709C7FBF0D8E73F9C087E87DC308EBA3A5565F12ED6FCB38921641C6C334E9C84A8BC85290D0D40F93C78E5CE40FBFDBF2B7EE459BCFA3A19BD3A9F477BF236BC47414A218B25424E1BC08AA96B241D574CBD07447965CC6A290BA39F45AB576E4BB812C7945E2474147FEF766244B4F8BF8E3DD51908501EFC8FDABABE1FA5ED52721BAA2C35B518F5D7D7A7238FAF9F1F6C78779EE6679C16E531F68499AC56E048FF23C8CDD3CF0C7610CB70DB97B21496D56BE5E3FE0340B59F9BADD7E6FDCBBEA8D6EA4AB9F77FDEF37D2B037BEFE4B52D4160C4E4B6DAD10EDCB8DFF959DD1346669122479F7BA371EFE33B86E5FBEDFFAFC406F38DADD783FF8B1BB11BAEE7D1FFCB9FB8141FF76CFBF0777E39BFBF1EE0746FDC1EEC6FEAFAF6DA0197F8451C0CB1FF0F301AEA5B81AF752075E7ECBD228F25C3A93A524782E2763CB44486F5D76E4D78193BB99EFC5FCD2F5E330B964D922F7D2CC6FB1C86B5F968CC67141BC9CD0208A10918CCE8EC7BD04FC149E573C2A8E621996415A308508128235782878F6588B132098A1A944B126057BCC5C3FD84714389AAF503F7D4E6AB1823567BAE47986A8A91E22AFC8A382B159BDDE88130FDC478E245DB00C28989AA3853B4B511D452736D6B2F719F86224587909CE3E41D4952C4E3892AE9497DE2CE388D255383C97541A50F049169E4BE289CB1095B37C0671FA68CC30DD02036B1622F2A2182B22ACECA663E8102FE1FA21CCE1749F319505685886B34C44A318D1C7821D536D53D71B8E75CBCBA9EBD75B94F330307CD370511FCF9EAD12B3C2E3EE637DE8759E3855C0ECFA69CAF68184285E92C2C825C787AEE7681E51896AD56B9E389F76CAD23A5D474A1A9E918A83DCC54CC96D874078EE208EE73C65F53E46806096ADA9AA3EA9BAC349C8D7C8758FCD171EC0EC1343371D4429DF905910A787DBE87380B6656AC44695F115297E267BC391DC4D23977DA419864D487D9C7730E47EF0E3136499CE6994144DBBED4A169338965A9F4F0920698A460CB511CB5596BBB745FFB4990072078E7B2F98B81855B8987AA8B8AC19DCF608A51CCBC643649EFA2E85376E364C06D0134F93058E3C8B30786EDEC417499840AA1B459352B46A634DC1AC7151776F26701A6ED0BFDD44F9312FC4055B1B88D20E2B8EAE1A8640EFF5BA61F8453FF26506FFAAE64AAC826CA3BD2B08701BD591351D386BFB9185C112F46336C540D13469C02EEE960A0795B2E3B753EA5565D41FC8DDD87FD7FD890A2188692BF58A719EBD7A0897ABE877A212CB349DFD751E3136B264AE7B3A082BBA149934612477EC18D1340B267188B5E507CE0EF2FCD2D7F193A86744CD906C68BAA121C4E7AA661347C1AA2CC090FAC103A27E167988797602E6CD31554DECC2EFFFDAD44B9756BE6E02F1B2A8B8720F06B16AC8FCBD12095C620AE4C0B68359065A236B4B2482C774E97B1471CD010EB114CB997BFC6EDF1993686896454EF0B167ECE5409C14A26D539563BA02365EFD55896D2B8EA9E0D60C57C88397BDC084320A9B88E2771553DCF8802D3381B8F9012A232C8AA884430CC80C5D2144C128989ABAA298A68AB926D6C846D7C42EADF1510F1299B0FE6DCD445AF5E529BEEAD0A0E069DC1CCBD534EA6A33DB21B5C8E6229A4D2EAC7EEA7B555A8633AE866D98B6FA7FB80CEEF229E6D19B0368E747339E4FA3C2A5F511E9F971CC1BEAF0031DA717C693F460C94E3268DB95D35688E9A09D0C589D98CADDFAAC535CF65267404FC36DCF769B4893B6953E89EF4748B5E3154ABC87DD6495AD61B248BD2704CF6338864E0CB434AC4A1D2CA29926D616142864B5B58C9315999A62EBE601A745C4592EC7B4201A3BA20023D06A423CEF68A6F0FAFC56D84423AAA1120733307B6762D79A5894237E88C071CF267BB89F53556389981C59046C8052BFEB20B078378F303FDEE48CEEDD6717B9E63562D836C15DF3AFCC86D6FCD7F36AE0A196E9FC0347BA685FBE7FF75B5D575F7977FF03504B0304140000000800F19C8150BB3FC628C7080000F58A00001200000033303639313031355F6170706C792E73716CCD9DDD6FA3C61A87EFFD57CC4515EF4AE966F88613F5A8DE84DD58726CCB386DF7DC20BE92D0F015C0A95BF58FEF8099183BCE6942EDFAC7C5CA99F5C0E3877786E10506CB9C13CB9CFD64CE2637F3E9CD9C4CC6BDDECCBC26832C8B7E2785978759496ED39C644EE9DD1389AA864005E54C94644D9164A377697E198E4DE207ABEF8669427E2027022F8FD2BBDB300AFC30AF8A455E7C1B3977455522F1127791F8516017411E06F5FFC8BDDEC56474733D26C563546FDD6E5646C6E6CFF64F83D10D5BCF228A7871AFD7B3CC91793127FD93F566FBE4CF3F499F73DB4EF5BBECAAB04756CBC5C032C9CF57E6987C287E2F6C2F4DCA60597EE82F184A903CF54F49DFF35D3B71E2A0FF910C2D32BE198D3E125EBD5EE655F5EA1B1BA5E688ADB92AAD11EA8D923CC822C70B5EDF549A349B627F7CD7FFB8B142628E2FAB95CC27F6C5D56056ADA40CE3A0289D38635FB7BFB1E53A4D2E2FEDAB2B51B6AF87B66531E6F56FDD58FA9F98A53E19582F04B3AF7F994DAEC9D377BE533AAE5304E7CCED74321991934DE3168B9FE9E0AB690DFF6712FAECDF2A9DBC0C933B52EBFE7FF14358BCB4F786F5CD9A0FAF4D6B3EB89EAE
+20FC85139D6F6E48A0BDDE67F3EB705CD7F2DDB8B0F94FF8B4FA21611296A113857F041F32BB29F2575BF8E1BFCF14A73BBD6C2DBCFEA25901ABCFE1DF587F15EC7C61F5FB277551FF8DF5DB6DABA9DF2A7AEB5A1CAF59C133C5603A1D7D7B6B75DEF6DA3FA2150A6F5DCD5633AF56B351D4FF78DE63517EDE3B7B6EFE61C2029C6D69ABE9B33D6EAF24B0863F18CDCD19EBC92C6B3819932A582E6E6633733CB7AD8B2BF37AC03A141659E7AF06EC05DB4015AF79154C678E1F87C999BBB81355591054555C751B9FD82679BCBE3D50A7ECFFA67332FC3A9ECC069F47263167B3C9CCFA0F194FC6E67397B519C4ED9FFCA1FFB750AC8DB356DCAEC45BF08AE9C71F4FFE155B54D7054315B06CBD8002B125188A245241B317D95DEEF8C19E7DB13FBFA7D450942ED276B1816813A962A8AC03DEB3AE6EA1B54641B0537D4CD931213EB69B0D10043359FE54AE80B2C83DA6990D1004337563371459D1946347CD160A881D76B4954589EA0739A8D59DB428AAC2E93FEBAF5F421ECB5EECAFA96C5160236D5D108E351478150624B604DD607BDC30105A5E0B05C48E280A2A3574E3202DAF532B7B0184624A61DD2655F63C26EAA4A8458220C773CAA8700FD26D77EAAB5B3CEFD573C011B5462555DD732FDD6D40BD26C1D0C3F6571C944F61F05B61C7E11DC239ED0E248496B628A345963D40286AB320B8A97699E3ADA801F46CE1E018F270EC78286656292C4D3DD42948C79CDA16108A2945D2342A4324875A28087658587BBE5B1F36405A591B07C1D06DB86C2E0FB27188AA1AC70FA3DD4408AE3CDF4BF3006648B44183E12773F212C30D2741F0529F454B3A350484A4471B05C10EEB14C3282E1DF7206946894AA7FBC9386E702288ABD2EA99F710ED39BDDFA9C1B55950DC1499E3A3B8E12C086E58203BF11D463FBD464130538FF205AAC82A50FEF505D03B4D1D4A94467559152480045A8B04218A5850FBC12D48F36A4840BCFC5AA4C91388996716103745E264871A0275F1C37910F4541FD9F6F77DCCAAFD08862874BAD98303A108CAFC430CA15545A446273F0D0F8C9EA8844802B55910DCD443F78A0764A8CC5940DC144E710FA286A3809829EF97459983B859C320D8A93E7A69BCEFE379E7FE86B3A0B809A37DDFAED9594D838262E6DEF10F320AA4862C36D92F99CAEF1F10B6D9505CB9BE172D402EA06EF3A0388A6298414F838260A63A6044B10733E6E12C086EAA8F79EC242861C35950DCB80F394C93E22C086E56710C93716F5010CCD4771A6BBA248A324C5AF925108A2943D0144DA1088E5A28087656572011FA9E35098897FBF0E940CF12CA62173B9C07414F7DFDB14AE682F4CC9C05C58DEBE1B8E12C306E58298C9B8605C60D50F6CB054A7ED53C48A9411729355801398F3ECCA927674171533F2904E286B3C0B8893D17C64DC382E266C146A4286E380B8A9B2C5806218A9C6718143B71503A2872380B8A1B2FCE600EE39C05C54D95CF0651D3A0A098A9720320661A141433F5DDAE206A380B8A9B28CE81463739D4E8E631CD600EE09C05C54D102F6D2F8860467F6D1E1447CEE3DEA781FA07679C383341D5E9813487B96AC55940DC14CE6F28C33F8E0262A6C43153E2998119187316183730379396603793D677D383A8E12C406E60467F9C05E029B41AE731823978731698B0C9BC058C9B8605246CFCB88051C35950C2E661E1160E4E9AA2858362E8DEF1D314E69E81350D8A9FE71BA1410CB579101C794E79BB28728C69645A2C086EAAFD95C709CC190467417153DFF20BE286B320B8A9671F93054A050DE0D6D1360A8A1DAA52431321ECB45010EC04CBC00BE2254277DC42413053CF1745154956F63CD147C7A9ABD628287654AAEBBAA422D869A1A0D8A19220514544B0D34241B05335F4034C69D1B9D3419ACDA2DA5D82218B8AB2EFF773747F00768B09449360288620531DA081B55140EC88948A54D48E3EA5E9160A8C1D41D4D5E34FF8BA85826347D3146DDFC3E5D59443B2D4ED8D372DA663694A23276B13298A4EE971BBE9D79100242DD3472F4A168799DA4BD48DD317F33BB0E87ADB336BAF501E40DAC5FC97F727C9CA651E1425CE0B04B6788EA889A1F087C0F33058669FB287FB7FBB07DFC500A284FA7EB45F25EF36C211408C845EBAEFC7F8DE1F240D038A923A668F9347DDC581A225CD8E76E56F17078896557BDEA7968E5D0A88916A42B130794ADD5F8F30FFEF6B1808670ED5C7A5EFC2CC49C55910DC54978C180FCAD5AB0605C14C35DD6EEA3B5E1A45877A6BDF297F09827CDA7DDADB2D4E2075D54B7510DADC160EC009282362677747E8A6773220844C9524D005AA1AFB7E096DA79C4E8B04448E2D51B19AF5F920EF5EEBE2680710882A5154644352F79D43EDD4F56CE1BCFB5DA2878B26892ABA4E0F32F75957533BA8DE29ECB3F97538DEDA64FD2FAB9A3851F847704ECCF1E579EFEC55635FC2242CEE039FD40CE436CD49BD0622B12E41A08272264AB2A648B2C18C55C21850BDBCD99B359D4C4624BDBDEDFD05504B0304140000000800F19C8150C35EA7019F080000928400001500000033303639313031355F726F6C6C6261636B2E73716CED9D5B73A3461A86EFF52BBA52296BA66A76CCF91057B6A2B199B12AB2E412720E7B43214016312703F26852F9F1DB1CDA42B69C928858BD17AB2BDC16CDA387AF9B8F061AD39811D398FE624C2777B3DBBB19998C7BBDA971430649127C239993FA494E16714A123B779644E4149DE778F95C1025551625BD77657C1E8E0DE27AD577FD38223F9233
+</td>
+<td>
+/u01/app/oracle/cfgtoollogs/sqlpatch/30691015/23475349/30691015_apply_FRSTPROD_2020Sep18_19_21_36.log
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+            30805558
+</td>
+<td align="right">
+            23410040
+</td>
+<td>
+12.1.0.2
+</td>
+<td>
+NJJ
+</td>
+<td>
+APPLY
+</td>
+<td>
+SUCCESS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2020-09-18T19:45:54.250216
+</td>
+<td>
+Database PSU 12.1.0.2.200414, Oracle JavaVM Component (APR2020)
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+504B0304140000000800C4735A503B4428D392020000C30600001200000033303830353535385F6170706C792E73716C9D54DB4EE330107DF757CC036A5A09D100AD84B66245480D8D949BE214C4BE586EE382519A669BB45A567CFC3A1797840514316F39F1CC99199F6382432038B8C381370FFD79089E8B50801D30D2347E816CB915690EABCD1652962F9FE05CBFD0C7E3F1C5F0EC7C74AAEB231D4DF18DE562887875566C12B884DEA9C2E3CDE34AC43C12DB023E53F02A668F59819C2B64B14BA298D38C6F052FFF8C10323D7BEEB890FD8E4B765A170317DFD33BC39ECB3ABB38563022D8C666085AEF8D5483D757D054D7941553D10244508569100CF733EC423F7BC9E87293E4FC4FDED776B2119EECB563D096D182266CCDB5015804DCB96D0F40A5971116E9C589168A6D59B940CB164A52D8F234664BFE39D526A9A9E4C79136681504EC4E8B22A147CD9911144572B1E659CED6A93C4E1F64389B643AA5B3D9D9883A162544F6FC366B2BB413B9250D0CF2DF7AE5F19BC073607F14B19C2D58C6270811DFF36CE8B5F62D171E826FDC6262FDC2A01FF64F72B6CD45F208E5BABF520F48B5346F833C90D07230090DC7AF9A88762C9EB4894E7584AEF1ADE59659D1629D5135C249358848442E582CFEF27E4A6B28AA182E7F1EBA38FE702FEF42E5EFEA02325F35DF31BF92BA0A99AFF54A48EB98DF74569DDF80BA5661CBBAC0A10BC3F7ED87AEE9CA79CD211A52E85AE69DC98B322D481B4C9054F9040D0FE6178914B8647A677C79E3B45A0242C8B0431CC8778C10CB73A1108B390F02EC86949833EC18F23991CA9A7C2A585312147A7D667BB65F0F6BCAE1F37E9D66BB549C4832A5D4EE12F5E53F3F04EBD6F502E3DAC68083C00BC80F703DF9DC2145DED66F73DABEF6453FD2D8D2BACDE3CAB6553B5757BDEFADA8B2D687B65A89A434D504D41D7DB2CF1B69C0EC89479D1E806FF9BF7A8E36AB1542FF00504B0304140000000800C4735A50A01CD25699020000D00600001500000033303830353535385F726F6C6C6261636B2E73716C9D545D4FA340147D9F5F711F4C691363516B62B67123D2D192E5A361A8C67D994C61AAB81458A0CDBAF1C7EFF031155C35C4FBC661EE3977EE9C7B09F68060F716BBCED25B2C3D706C845C6C8196A6D133E47E16A605AC930C5256F88F70AA9EAB676767E7E393D3C9B1AA4E5434C3D7868D21E0F5D93089E10206C7128F92877518F120CC4AF844C2EB883DE425722A91D5360E224E739E85BCFA33414877CCA56543FE3BAAD469430636BEA3B79AB9143CDB28923022D8C4BA07CAE055548197175064D5344BA268C5FC5FB4C411D4A16B04C3DD1CDB30CC9F73EA2771C1FF1443652B6AE1F14E3904C50F5634661BAE8CC020602F4D730432BD0AAF4C2F4F74506C0AE612ADAAA84421E369C47CFEB154123752E2E34019750801DBB392C473A83ED7DC92A408373C2FD82615C7E9BD082B8967333A9F9F4CA865504244CDAF77ED8472241AA58046FEEBB0387EED3A16EC0E0256B015CBF91421B2701C13069D968B9E7BB0D06E30317E6250F74F400A961561FC00B2E39F79088467DA0F42EE89675898789AB5A8EB08B62C9A76B58E5584AEF08D615759C16A9353798BA3FA2E611C16218BC2BF7C98D2060A6A858BEFFB2A0EDF6DCD9B90F9DB8640E4CBE27BE6D7869721F2954105293DF3DBF3D5E4B7A0BE2CCC6F08F655B88E695E69FA8FBE0C7204DBF76819A22FCD9B692F693A90329A22E1F5291AEFB740180B9B0BA5371B403C3AADFB8010D24C0FBB62A111623836947ED197AE8B6D8F127D8E2D4DEC1561AEE987B6D58540E9DA27B663BBCDB8911C3FED3669BE4D83F048A849B7F6B7E942FC5B7860DCD88EAB5D9918B0EB3A2EF906B6636324C5BB166EDF76A87C568F986F31C1EDF3727AEB722E2F075FEB513D5EEF8ED63A8CABC19A827CA40F1A7A2D86307FE441DF3DF0A535502FA664BD46E81F504B0304140000000000195B91500000000000000000000000000F000000726F6C6C6261636B5F66696C65732F504B0304140000000000195B915000000000000000000000000016000000726F6C6C6261636B5F66696C65732F6A617661766D2F504B0304140000000000195B91500000000000000000000000001E000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F504B030414000000080013675A50246E6560A60200003B0500002B000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D7073757064692E73716C8D53DB6EDA40107DF7574CA5A80952836D92A82DA86A0C5EC029BED43654E98BB5D80B6CE45B77D724F9FBAE0D049CA84AFD343BE7CC3933BB639F648A4F32389B129C10D68707BCC5DB4CA53917384DD5876D56F2AA4C6897FF4941E522DA1122BDD7D5BB5AB7D7D50AC95996AA0E3D4DBF56755DD535D0B5FECD55FFE633F075B1A57982013D9570565B35762DD997ECA8289F195D6F045CC49D46EE13B80CC729019C276AC1800A0E78B5A229C582F02E18690A4D05074638615B92745FE4E4E718363AC4D076854B70EF163678C11CCA828BCB84EC87865305130523DFF242CB755AC26E8882A372B8A11C78CC6829E0914A892501B121C069BE96DDEF11F2248D4802983760DBF528B667AFE4BC870E5B430DD1C47220F8398BC6D60C45360A0DD3080D38E03512B8737F841AC23B6FDAAA9A5A9E87CC7DD929E24D8DE0552A080D3F9C7B91ED9A12715CDF36662D8235914963285B44BEEFFA
+414D72508B32326633CB99BC32448EF976BCD31B9096D6D842A60C2F6C5B354DF5FEBE7300F39C90B462551DEB9ADAFBAAEAD7FF7EEC77AA468CC84D4B1A73254021A0D1D405B90B753C46C81C1AA31FA03747676EFFB2CC702AEB9BB39C0C05D66F045F76E7D0B7ECC073DDD9A13E3486E08EC74DEC19931D59D73445D96246F1526E8E7CABFD3AC854BCC1AC7771A375064A5CA4559643FF88E7E431DAE2B46A6AA243B22819CDC540511212A7981145AE97C0276A57B5DA92AC692EA113B9FE3738FFAEBEDD1C9295E2B95E9CF341AD4552128B46B2E2209D8A9DFC8A1519244B1C31A9CC057B86C70D6104E2222B239A8014BF3316C6C26E54E86A57F541A67D64BB0B649ED77F48DDD27F35B55B67FAD216C913293A50C8534C4A418BBCB6CFE56D440916385A159524882655A5A9E4E5C9405115653FCE89E36E900A4B92727BFBF178B58AF217504B030414000000080013675A505E2A81D89C0500005B17000029000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D707375692E73716CC5586D4FE24A14FEDE5F71366B8226485F14C135265BA16ABDF27269F5DEBD5F9AA11D65B4B4DDCEA0CBBFBF670650C0A26B62DD86846967CEF39CD799F60CE8581BD0316C9D5312D1FC1BDC9107F230D659C2058963FDEE619CF109ABF19F31E85C04B3E9C0B46A66CDA8593523C515C34CDF6B806558866E58BA6981657DAB1BDFEA75E0C30927E0FCCA604BD228AA25C8A767AD349BE6EC7624603BDC412473BFAAF0AAD0CB4918532049A4A73930C181DCDCB0981141790D94B01DC7A08439E494D3FC8146B52764BCBA76C7598C61991E76A17771DD81BE77052C11344F480CCB926DC76B0DDCBEEFF6BA2B803DDFF19E11FD11E3C0C39C6502A2947210230A5CD04C8E8898332AC247C271094B6E81923C6634AF3DC3B8021087250FE93D8D60385D96633770615FDBA8AB5AA262838B58A2B82222C89070BA62F58973E676C1FBFB3238752F9DA0E3F876DBF66D58CCCB19AF773568396AC1AB915F913977FB7DA7FDA6D0B24CFFDCF670B1DBF57CFBF27205CDB707FE553FE8F4DAB8A0DB1B74ECCB153AF70C1FDA2768813318F4069E5CD4755696B410D3ED9ECD355ACC38DDF64BEB971D8494EEA9EBB471B8DDE9E8EDB6FEE3C7CE627296B8B34BE6B4A95B06A6CB0909EFB33417B3F98064B9653C15437017DD37E0264FC7CF412DBC36D75111BDE4AEEBE6E14BFA3B92203D3ABC6C158CA66E99852AA4A1300F57E983BD1214A8EB56B3D8079378BAAE4109FC7BBAD128E4C714289F1E53C044F39B8529F009D663F80F0AE965F89B6F64E03AD2DE3B900E3623D5555514B9446644F315988FF1C97BF8CB8889A54AB2805F6664F9E6BF83FE83ACA76212DED3FC89DE58A39FCF07C3C9EDAE553FD83F6C36663BD11AF6A602DBD7CD46718195EECDF7D03702AB9C0A6F162A807519988D550794B2C3BF478332EA09EBF9B0907FD5F4329CBF913A9E6D268D4F38602D75C214E820EBB9F109DBC96FD39777BE1E14D41F92C79F51FEBF4B5F4EF40F75C32C54205DB73EB861F22BE90FAAD0284D85031D7F8561A8BFD0A19C7D60AFD8052FF8CB28C1BD4D01580351F707B230596CFE71451A1FABC8381DF11149D418CBD2C053B9BEACC8625EBEA9E2D98C38A6F141A9B04C8DD5203785626A7CC1092CB3699A75B533061FA64192501A4FF28932DE5087D2FE728F244BB9D89D7FEA3F374C669D8F37305A39258246EAFB5BF31C1F9CD6790F7A5D353E759CF689DDFA0B4C75DBBDEAFCE3B6FD739457F7F871EF78EE7F0E3467F7FEC0ED78FD5EEF7221EFDB27D03B3D55E3BE7D365B6C1A86A6EDEE429442EBC2ABE2EB6158D334D515D13440F59940E3C9E457ED81C42C42EDE6EE390294EA907B0A7C925360F3A64E920AF09CB3EB2A3C8E680217B876D68CD15EF1395E08C692304D38E3822698CA02A96A5205F714A2E1980739BDC5B97C5A633C50BA6C5766CD9E4A756D414E634A380D1E68CE599AECC0976330C13F77BA08A7F458322BCAD32CE079CAB7778E3435E9FCEBB4AE7C07DC4EC769BB368E2AA18A0BA439E4348B4948554707F814951D57504E094E32E91F886846938826E1746B6E34A702B240B03145B3C6D9F136470D4369243E9ABD7CA7C3BB2DE93274250EBF1E6781FCDB9903CC267E5FECCBF1129DEC0AAE787F8123A619FDFA2ACEB175081BC5D3C784E66FC81B472ABB5A231ADEAB269C8A1C1353489F7A75880F317A484E2F6208433A776704240CD33C62C96D3CAD69EBE15BCF4A456747280579FA285B7F0BC8AD11FEA5082D527C1CB150C64A2C352565D7319F24B58D5980354D7187C1924E5FA06E4AEF6D120ACC41158D2ACC6EAA90108C4D8679548579925681455508D3F118B39FEF6C82437327946F7B3F3CDFED389E6F77FA55A8549E7BA0958ABCF79CC1B533C0F11B5557A93C6D729661EC9BFB7213C33D4CA2181268607761197CA7A28A44760DDD531CE2E048D3354D2ACE842C04743FEEBCF0F469392F1D82DB62CCC22978839EA67DFF8EA09C86079AF63F504B030414000000080013675A507997891B250300003706000028000000726F6C6C6261636B5F66696C65732F6A617661766D2F696E7374616C6C2F6A766D7073752E73716C9554DF73DA38107EF75FB137CD0C30936020D39B36191E1C2C8253FCA3B6E95DEEC5A3D80B28B565579249F9EF4FB62181BB697BA717ADB4DFF769B5BB528885116201170BA4198A1B78A63BBA2B4CC6A5A2796E3EEF8A4AD643F92D07
+</td>
+<td>
+/u01/app/oracle/cfgtoollogs/sqlpatch/30805558/23410040/30805558_apply_FRSTPROD_2020Sep18_19_21_35.log
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+            30972094
+</td>
+<td align="right">
+            23496632
+</td>
+<td>
+12.1.0.2
+</td>
+<td>
+N
+</td>
+<td>
+APPLY
+</td>
+<td>
+SUCCESS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2020-09-18T19:45:58.429349
+</td>
+<td>
+MERGE REQUEST ON TOP OF DATABASE BP 12.1.0.2.200414 FOR BUGS 30941058 22611167
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;sqlPatch ID=&quot;30972094&quot; uniquePatchID=&quot;23496632&quot; applicationPatch=&quot;NO&quot; bundle=&quot;NO&quot; jvm=&quot;NO&quot; bundleSeries=&quot;NONE&quot; bundleID=&quot;0&quot;   startupMode=&quot;normal&quot; estimatedTime=&quot;5&quot;&gt;
+  &lt;patchDescription&gt;MERGE REQUEST ON TOP OF DATABASE BP 12.1.0.2.200414 FOR BUGS 30941058 22611167&lt;/patchDescription&gt;
+  &lt;component&gt;CATALOG&lt;/component&gt;
+  &lt;component&gt;CATPROC&lt;/component&gt;
+  &lt;component&gt;DV&lt;/component&gt;
+  &lt;sqlFiles&gt;
+    &lt;file mode=&quot;apply&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/catmacpatch.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/catnowrr.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/catwrr.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATALOG&quot;&gt;rdbms/admin/dpload.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/dbmsrand.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/catfusrg.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/execsvrm.sql&lt;/file&gt;
+    &lt;file mode=&quot;apply,rollback&quot; new=&quot;no&quot; estimatedTime=&quot;5&quot; component=&quot;CATPROC&quot;&gt;rdbms/admin/execsqlt.sql&lt;/file&gt;
+    &lt;file mode=&quot;rollback&quot; new=&quot;yes&quot; estimatedTime=&quot;5&quot; component=&quot;DV&quot;&gt;rdbms/admin/catmacpatch_rb.sql&lt;/file&gt;
+  &lt;/sqlFiles&gt;
+&lt;/sqlPatch&gt;
+
+</td>
+<td>
+504B0304140000000800782F8D5095A4C8252C030000AD0E00001500000033303937323039345F726F6C6C6261636B2E73716CCD57DB6E9B40107DE72BE6A1328E94C6D7A472AD54217863A372B1589C287D59AD013BA8181CC06952F9E33B8071B113574E5555ECD37AD83973F6CCEC684C89059498B7C43426D6786281A10B82493490964BFF05623BF29609CCC208963CB11FA0D3EC7D6A377BDD46BBD3ED5D5C74DAC280DC283A01C7CDCF7A610097506B15763F9CCF3CDF75BC28356F8FCF7C3E8F534BA7B04C5781E3BB2C7623CFCDBE74054136D489A643FCE867D1D9060C7472C76E257582382BDF2FCC822050A212D902B1F63BAC08EB3588056F1685BE3FE5F67796DA05C8972C51027723A2433D7E89991D0689FB9CD4C515B2718327F11444DB99B2802F5CF104140AFA44554FA070CF9695BAA72776AC4445E4D49AB1C88242E42E7D6EBB874385C12614FEF8209EEC0002D107298865307924992948E22DDC38E18B251E67F7B8B430180CD868D4EE324D61948AA7BB10A2AE5236902CC254491F4EA421B99434622AB2A4E3F5D66BF10CE51341A2AF94479C1BD3D0E0E983C3133EE5B1DB47D1C786A1426D3715140B6B8CC854F946A0B94D0C4D789478C11C8A3CFCA9B6006BA99C267A4F2D4523D492B471CEC35971BFBF1BABD514846B3254F4CCCB992E6256DCE22CBF8B177889C77DEFA75B5FB28DC9C9235C7ED9B2D8D3ECED55F8AF3600E85F903FD23F7F08C5427FB19699F67376C8BFFCEE36FE25D3B128DCDE006C599886AA5E4BF2D763118AA759BE47A9208E85D9EB0229CC8E493CE90BF802FA4243D8B6072FC0EAC7507BAD01B3CE7221F0A8A45AC4C44E47A962E890168C3C314DA25B8CCA23A249D870B0BAFA07EB56C60059D9A605D5E0CEC20B1A364F82F047149D61A4A2548FAFD1317E1B5BA00C75C394AE5502C4340D937E06DDD0C9B693EDD66FF9A675F110177CC3F874CB678B679B53B9BAAAFD0F6DAAA34C857449B7110F9C2A2853E652056D3053B3551CCDABA04D994B15B4719F5D3B7E8A1655D0A6CCA532DA3CFA4965B4D970A9823658C70B6EE7434A34AD8242AF1955412767E987FC5F7765FCF9B1D96D763BA7D90E87CA76BE6BF5DAADC2767E9EED5ADDEE79FBFD2D7C4BFBBD22E633F29BF3F1CC0BB2E9B80FC5A47540C81B9CA4E307D7397698FFAB593EFF7711CE6682F00B504B0304140000000800782F8D50E9D96D72A4010000A20500000C00000033303937323039342E786D6CBD944D73DA301086EFFC8A1D9D5B7FE19030633B03B1613AD3600A24D78EB045AA561F469249F2EF23B949D392D21E3AF56DB52BBDCFEE6B4BC9E5036770204A532952147A0102222A59537197A2D6ECDE5FA0CB6C90E83D5B62537D810F798A86C1F83C0AC6318256D07D4BBA8A2B44C3783C1A0D2304B86918ADB0B1AA5D35458B12C1B6153523DFE3AF07FE73724D1425DA6516C54BCE49DA7E00B4C1CAB4CDB5ACED612115C7CCB6A90DE5D8907A43B94D9FA16C0090348E96135D29DA387A765DACE605AC8A4F37C57A03E50236E512CA19E493CD643A5917305D42187976722FF2A22088C31866E50AA637F335D849E33038BB80281A8561383A4FFC370047AD246FA420C2645756F663394FFCD7D49B0DCB5579757A437E7B5CB3E6CF2823DA2DEC726763E09D17CEE6470482DC3B5F7EE309FC504AD1736B2853F5966B1FD79C0ADF7E238EAB6E28CF7212DFA99F00BD5392B12DAEBEFD2B51C87BA5FAC3F507AB1B2671FD5F60EEA73982D95061D117CE1AB96BB5BAEB09471E48A50F8AF789DB33F327DC11E891E8BF90F2DB9397EDB3DAFE8A4AFCD76BDEC5DDBB990D9E00504B0304140000000800782F8D50B89C9C54210300009B0E00001200000033303937323039345F6170706C792E73716CCD57DB6E9B40107DE72BE62132B694C63792CAB55285E08D8DC44D2C4E94BEACD6801D240C14709A54FEF82E602876E3C8A9AA8A7D5A0F3B3367CF9C1D8D31B20023F31E99FADC32E616E81AC7994805318AFC5748ECD88B525886314434B59F60D81B7D1EF44642773014465757C301374177B286C0718BB35E18C035B4FAA5DD0F574BCF771D2FCECCD5F1A54F574966199696C526707C97246EECB9F91781E3245D99AB1A24DFFD3C3BD905030D3D907B5199B3381BDF2FCD1CC761A420C902BEF53B2D0FDB2DF0256E42B37B91CCC841B12411237898210DDAC96B42EC3048DD97B4CD6F18143778E6CF81B79D0509E8DAE53B2063D0E68AD281D23D5F56E69E9DD8B3228545CEAC39843C29C46EE453DB3D9E2A0C76A9D88F33BEB317109036C982583A9166A2990549BDB59BA4741DB1E3E4912D350C2613329B0D04A2CA0463FE7C3F04AF29984C440B1145D4A673718AAE451599B2246AEC7ADB2D7FC1B8E341C47FD0CEE2DC99BA0ACF670E4DE98226EE98316EE8BA02ADFD3A60A62A8345C6F23704BDAA2A38A571EA052BC88BF09EAA80A9A85E23FC882D5945D81255A300E16CA83FDE4FD4EF71DC2D9ACA5AEEE52CD60929AF70515CC40BBCD4A3BEF7D36D476467728A0CD75F2B140784BDBD4AFFCD2E00F32FC19FE85F3C8172317FBE959B0E0B76CCBFFEE276FE35D3A951A8BD0B50A1100D43793CD5BD7C91F54BD4A4706A9883C79F85D933F19D31C7B43FE6BA5CD515BC80E99EA53AE808ACE4A460811D15150B99ACC1612CEB1A646A91E6A689348B6069865491F51926ADF151C54A2C4126D8385353973A6B2FE8DA345D53BB90154B564AF5748D1AEC9B61813CD57453BC551020D3D44DFC05345D
+43550FDBD76FFDB26DFE1D38EC0DB3A75B3F5E3EDB02CDCD4DEB7F3014843FE2B821F454581AC24D739869102FD936A681D30466EA589AC00DABD47293C4AB267053C7D2046EDC17D74E9EE37513B8A963690C37DFFDB431DCECB034811B27F243FAAFBB0DFBF9A927F484E179BE63B3E4A0D8F547837E69BBBCCC777D41B81C7CBC3555B03F4A62311ABF39162FBD201F8AC750CE584788BC630374F2E43A270DF07F35BF177F27C2E592E37E01504B0304140000000000455B91500000000000000000000000000F000000726F6C6C6261636B5F66696C65732F504B0304140000000000455B915000000000000000000000000015000000726F6C6C6261636B5F66696C65732F7264626D732F504B0304140000000000455B91500000000000000000000000001B000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F504B0304140000000800782F8D50E06CB29D6B0400000206000027000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F70727674687075692E706C62ADD4C9CEA3561005E03D4FF12FB2430A6634286AA5315C2EF33C18362D460366C606CCD3A7D35276C92EB5385249A55A1D7DDFBFFF892D45D6AF585AF4CD80AD73B796EBBABED2E5F5FBCF05115CC0FBE0CB72BF5C60EBBC00BE6C5ED07808BEBCD8FB5D0BECE0B7C05774C55780F74331FDAF7D49A7A92CBE90F4F26B101C49B3BCF89F82432AEAF2459534C2B09D585650C4057C4B826777E25E16CEFCD2B2EBFE40C9990846BF52AEE6157A5D10E19592AE3DF91A872C08598338FC8A43B32B474B88A0473813B998ECBE39B44D723ED6B3ACD668E1C61F0C7BD4ABB968601A99CBADE7EC9EE9B120E3DDC63A68EEB817684CCE72B1095A9B21CFA9744A769A99731C3430F46E7F642AEE019C66C59CD6BC9DAAFA6D7148632D38B9469BECC3D71AEAD569D998C648E75CAEFFFC35ABC81427AA19BFD26C88E8C0418BA6ECB03A1F7C3FD4BA5B78AFACD5F6979B64D86ED761DA534E1799DB4D782666C7E5ABC4014C57617F08C82D5CA34FF17104BA0893485251187EB4A2774373AF7D02A6B66E58967958406D8F066BAB5643356AFC281D2A5A76EA3025B3D6EE21F9C86A0881DE48B201E945A5BDB712724C947B0E8A2525F6F9D8E8E0CB8EDB88C630BA4540A7409621FE145ECB23C2A484CA95A010AE601711AF7B7FAE0CC3AF23E9DFA3C9C3487F5B56BCE52AB68121242D51464B1CF4A9D66CB334116657A583112FC1604C777628AED51ACEA4482195D20F811112AD318067E892F5876CD39FD523D77708D90D4FFB8E0C51FCE5DDA1D09E6E6C439681C47ED95249AE4CC7C380285DAAC640A8D489FAE6B53B5905AF8B5F389CBA0D9A33EF451F323828638C9F518CDED2AD0AC32B6B5BC33B3D48C0411FA7DFE4FB2D07502DF60F86640279F64490279F763AB3417740DC0407BEB85920E293C172F56563E34053E8D9911C03342F1C98B0481714CA49CF995E354ED47A3688A07CD6AEC82177BAC51E2817A2D0B63359F8BE8917A2A2F6FB52138BF5CC500917375E183ACF711F58E5C6BA036187C972F89A8EDCB790E4D510CDEB01CDE6744F2ACD42D52ABDBBECB6E490DE03D85B667A9B782F41178E0E4D4DE846164BEE64A81B42DEFA477034F9B13B60429ECF199EED4A26DBEB3E5E55115C22D88E346D120CF6D2BA87CB13B4AAE43E363EB2907EA5565DB15E7FBB8B4F9848D7878A157BAC773140AE964481597F02C8E9136366F090D6652D46FD8263DB6736335C02569161824D47238E8A5B4B3C75FD3455A619898358D414B43727CD11EA2D3F7C3933E89BD8A91587A5E7356AADEE76D4313F2EDD86DA6E343B192A47EC5DD6A244DFA50B51679AA5ECCCE5C826B571AC334A4AA430DEE55E42E29D0A2F1F780A70C8E8F3D0C46ECBD82C250B45A6742CE0E36DCEDE8FC2BFA049C16EAE417A0A43EF68BBF07E8FF7B16523723DBAB6157EE887064CA0EDCB783A12397E50A1B5B0D96325EA24A88BFBA404B81E524592A44DF8EC353EA8E41D70E8D374DAF055A239A2DB43ED64CFD6E4BF7D43100C812EFF9355700742F037C4E67FC1EB5BFF1CFD10789FD72DF8C3B574F007F2EFC49743F10BF8BF00504B0304140000000800782F8D505FB652494B0B0000070F000027000000726F6C6C6261636B5F66696C65732F7264626D732F61646D696E2F707276746D6574322E706C62AD57B70EAC4A16CCF98A9B232DDE45FBF06E183C03244F7818BC375FBFB32FDE704FD052B7D4D2E953A5EAAABFFEFA37B4E469BF4249DE3703B4CEDD5AACEBBA25CBF6AFDF06E01D91F5C43FA6F3C711AD17CB8B7F2C96D75959FCC39942F4E7BF57FFEE8B2DC9932DF93B6FCAF2CFB924D354E47F8004FEA7000448D22CFF3F2D2980D130F1A74019E0A507E1C8959F21FFB456708FAEC598B1F1E4CF599D158D2E603B4AB53B86A2688FCAA74589C7A78EBDEFA691F4F8484DDB5BCE76F7700067D454D7419D7C60BB0F2D535E53CC5D163A10DF856AC79C3E85C3E4283E26E2687A59E7C47CA308A81FAB863CED72EC6B2667B04837C06130A83A98A9B996EA6861265B7E7E1D24F97BBC1386FFAC927477670A1E8B477E4F21819B24BBB5AC191F5FFA6C6ABB14F1237872CF013664D7B9A1E45FACF27AB78538395CDD7DDE7BD7AA32E9B4BEBB726D7E88BE167B98C417BD08EE3D436227135D0DD97A468E6E02137708F07C33ECC5C5A1E481D9E5D06B7E6341FE9ED4BC9F40B3A26C56E7C1B2F00DAFE39397E57AE25FAA414128CCB82E
+</td>
+<td>
+/u01/app/oracle/cfgtoollogs/sqlpatch/30972094/23496632/30972094_apply_FRSTPROD_2020Sep18_19_41_21.log
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PATCH_ID                                  NOT NULL NUMBER
+ PATCH_UID                                 NOT NULL NUMBER
+ VERSION                                   NOT NULL VARCHAR2(20)
+ FLAGS                                              VARCHAR2(10)
+ ACTION                                    NOT NULL VARCHAR2(15)
+ STATUS                                             VARCHAR2(15)
+ INSTALL_ID                                         NUMBER
+ ACTION_TIME                               NOT NULL TIMESTAMP(6)
+ DESCRIPTION                                        VARCHAR2(100)
+ BUNDLE_SERIES                                      VARCHAR2(30)
+ BUNDLE_ID                                          NUMBER
+ BUNDLE_DATA                                        CLOB
+ PATCH_DESCRIPTOR                                   CLOB
+ PATCH_DIRECTORY                                    BLOB
+ LOGFILE                                            VARCHAR2(500)
+
+SELECT /*+  NO_MERGE  */ /* 1a.16 */
+       *
+  FROM dba_registry_sqlpatch
+ ORDER BY
+       1;
+
+9 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:28:15  </font>
+</body>
+</html>

@@ -1,0 +1,7442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>Non-JDBC Connection usage per JVM Process</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00534_edb360_323688_3j_437_nonjdbc_connection_usage_per_jvm_process.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 3j.437. Non-JDBC Connection usage per JVM Process <em>(GV$SESSION)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+SESSIONS
+</th>
+<th scope="col">
+TYPE
+</th>
+<th scope="col">
+MACHINE
+</th>
+<th scope="col">
+PROCESS
+</th>
+<th scope="col">
+ACTIVE
+</th>
+<th scope="col">
+INACTIVE
+</th>
+<th scope="col">
+KILLED
+</th>
+<th scope="col">
+CACHED
+</th>
+<th scope="col">
+SNIPED
+</th>
+<th scope="col">
+MIN_LAST_CALL_SECS
+</th>
+<th scope="col">
+MAX_LAST_CALL_SECS
+</th>
+<th scope="col">
+MED_LAST_CALL_SECS
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+USER
+</td>
+<td>
+BHCS\BHDALABDB03
+</td>
+<td>
+18780:8484
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               56192
+</td>
+<td align="right">
+              760483
+</td>
+<td align="right">
+              380092
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+USER
+</td>
+<td>
+bswcloud01
+</td>
+<td>
+1234
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               78191
+</td>
+<td align="right">
+              175300
+</td>
+<td align="right">
+              171262
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+123022
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              153930
+</td>
+<td align="right">
+              153930
+</td>
+<td align="right">
+              153930
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+151468
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              166525
+</td>
+<td align="right">
+              166525
+</td>
+<td align="right">
+              166525
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+17842
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              168352
+</td>
+<td align="right">
+              168352
+</td>
+<td align="right">
+              168352
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+220091
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              935140
+</td>
+<td align="right">
+              935140
+</td>
+<td align="right">
+              935140
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+234398
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               14703
+</td>
+<td align="right">
+               14703
+</td>
+<td align="right">
+               14703
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+292367
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              170131
+</td>
+<td align="right">
+              170131
+</td>
+<td align="right">
+              170131
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+311315
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               95664
+</td>
+<td align="right">
+               95664
+</td>
+<td align="right">
+               95664
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+3487
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              308741
+</td>
+<td align="right">
+              308741
+</td>
+<td align="right">
+              308741
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+36493
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              302597
+</td>
+<td align="right">
+              302597
+</td>
+<td align="right">
+              302597
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+377580
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 487
+</td>
+<td align="right">
+                 487
+</td>
+<td align="right">
+                 487
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+385808
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 390
+</td>
+<td align="right">
+                 390
+</td>
+<td align="right">
+                 390
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39899
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39932
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39968
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39975
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39977
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39985
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39987
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39989
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39991
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39993
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39995
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+39999
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40001
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40010
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40012
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40015
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40019
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40023
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40025
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40031
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40050
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40090
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40271
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40296
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40300
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40302
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40304
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40306
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40308
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40310
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40312
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40316
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40318
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40321
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40334
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708206
+</td>
+<td align="right">
+             1708206
+</td>
+<td align="right">
+             1708206
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40388
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40390
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40399
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40417
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708202
+</td>
+<td align="right">
+             1708202
+</td>
+<td align="right">
+             1708202
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40419
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708202
+</td>
+<td align="right">
+             1708202
+</td>
+<td align="right">
+             1708202
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+40871
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708195
+</td>
+<td align="right">
+             1708195
+</td>
+<td align="right">
+             1708195
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+41008
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708190
+</td>
+<td align="right">
+             1708190
+</td>
+<td align="right">
+             1708190
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+42775
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+42777
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+42779
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+42785
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+42787
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+42795
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+4282
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              308719
+</td>
+<td align="right">
+              308719
+</td>
+<td align="right">
+              308719
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+42820
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+42923
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43062
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43076
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43088
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43093
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43095
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43104
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708186
+</td>
+<td align="right">
+             1708186
+</td>
+<td align="right">
+             1708186
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43125
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43129
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43139
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43145
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43159
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43164
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43168
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43174
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43178
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43182
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43631
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708175
+</td>
+<td align="right">
+             1708175
+</td>
+<td align="right">
+             1708175
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+47852
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              233374
+</td>
+<td align="right">
+              233374
+</td>
+<td align="right">
+              233374
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+77232
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1707643
+</td>
+<td align="right">
+             1707643
+</td>
+<td align="right">
+             1707643
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+92231
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              549999
+</td>
+<td align="right">
+              549999
+</td>
+<td align="right">
+              549999
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+175951
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              161138
+</td>
+<td align="right">
+              161138
+</td>
+<td align="right">
+              161138
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210256
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210258
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210262
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+<td align="right">
+             1708212
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210267
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210269
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210273
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210275
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210277
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210279
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210281
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210283
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210285
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210287
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210289
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210292
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210294
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210298
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210302
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210304
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210306
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210308
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210310
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210312
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210314
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210316
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210318
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210320
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210322
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210324
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210327
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210330
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210333
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210335
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210337
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+<td align="right">
+             1708208
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+210431
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708206
+</td>
+<td align="right">
+             1708206
+</td>
+<td align="right">
+             1708206
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+211714
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+211716
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+<td align="right">
+             1708203
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+212042
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708202
+</td>
+<td align="right">
+             1708202
+</td>
+<td align="right">
+             1708202
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+212080
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708201
+</td>
+<td align="right">
+             1708201
+</td>
+<td align="right">
+             1708201
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+212082
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708201
+</td>
+<td align="right">
+             1708201
+</td>
+<td align="right">
+             1708201
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+212099
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708200
+</td>
+<td align="right">
+             1708200
+</td>
+<td align="right">
+             1708200
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+212228
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708195
+</td>
+<td align="right">
+             1708195
+</td>
+<td align="right">
+             1708195
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+213996
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+213998
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214000
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214006
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214008
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+<td align="right">
+             1708194
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214028
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214032
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214034
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214036
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214042
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214046
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214051
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+<td align="right">
+             1708193
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214368
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708191
+</td>
+<td align="right">
+             1708191
+</td>
+<td align="right">
+             1708191
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214430
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+<td align="right">
+             1708188
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214467
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214496
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214525
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214538
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+<td align="right">
+             1708187
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214565
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214569
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214575
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214579
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214583
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214594
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214615
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214638
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214642
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+<td align="right">
+             1708185
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214646
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+214650
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+<td align="right">
+             1708184
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+215522
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1708173
+</td>
+<td align="right">
+             1708173
+</td>
+<td align="right">
+             1708173
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+250322
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              114691
+</td>
+<td align="right">
+              114691
+</td>
+<td align="right">
+              114691
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+300455
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               49827
+</td>
+<td align="right">
+               49827
+</td>
+<td align="right">
+               49827
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+35642
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               14718
+</td>
+<td align="right">
+               14718
+</td>
+<td align="right">
+               14718
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+35986
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               14713
+</td>
+<td align="right">
+               14713
+</td>
+<td align="right">
+               14713
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+374819
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               28858
+</td>
+<td align="right">
+               28858
+</td>
+<td align="right">
+               28858
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+389147
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               28585
+</td>
+<td align="right">
+               28585
+</td>
+<td align="right">
+               28585
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+39565
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                8136
+</td>
+<td align="right">
+                8136
+</td>
+<td align="right">
+                8136
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+398694
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2233
+</td>
+<td align="right">
+                2233
+</td>
+<td align="right">
+                2233
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+4861
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               28369
+</td>
+<td align="right">
+               28369
+</td>
+<td align="right">
+               28369
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+4896
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               28366
+</td>
+<td align="right">
+               28366
+</td>
+<td align="right">
+               28366
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+4942
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               28363
+</td>
+<td align="right">
+               28363
+</td>
+<td align="right">
+               28363
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+BACKGROUND
+</td>
+<td>
+aupp-hroradb-f9exx2
+</td>
+<td>
+84609
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1484466
+</td>
+<td align="right">
+             1484466
+</td>
+<td align="right">
+             1484466
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+USER
+</td>
+<td>
+1903-93S1WT2
+</td>
+<td>
+8108
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2677
+</td>
+<td align="right">
+                2677
+</td>
+<td align="right">
+                2677
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+USER
+</td>
+<td>
+2004-DK5Y333
+</td>
+<td>
+16552
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13682
+</td>
+<td align="right">
+               13682
+</td>
+<td align="right">
+               13682
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+USER
+</td>
+<td>
+BHCS\BHDALABDB03
+</td>
+<td>
+43114
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              491088
+</td>
+<td align="right">
+              491088
+</td>
+<td align="right">
+              491088
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+USER
+</td>
+<td>
+BHCS\BHDALABDB03
+</td>
+<td>
+43116
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              491088
+</td>
+<td align="right">
+              491088
+</td>
+<td align="right">
+              491088
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+USER
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+214552
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+USER
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+274416
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+USER
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td>
+43070
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ SADDR                                              RAW(8)
+ SID                                                NUMBER
+ SERIAL#                                            NUMBER
+ AUDSID                                             NUMBER
+ PADDR                                              RAW(8)
+ USER#                                              NUMBER
+ USERNAME                                           VARCHAR2(30)
+ COMMAND                                            NUMBER
+ OWNERID                                            NUMBER
+ TADDR                                              VARCHAR2(16)
+ LOCKWAIT                                           VARCHAR2(16)
+ STATUS                                             VARCHAR2(8)
+ SERVER                                             VARCHAR2(9)
+ SCHEMA#                                            NUMBER
+ SCHEMANAME                                         VARCHAR2(30)
+ OSUSER                                             VARCHAR2(30)
+ PROCESS                                            VARCHAR2(24)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ TERMINAL                                           VARCHAR2(30)
+ PROGRAM                                            VARCHAR2(48)
+ TYPE                                               VARCHAR2(10)
+ SQL_ADDRESS                                        RAW(8)
+ SQL_HASH_VALUE                                     NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_EXEC_START                                     DATE
+ SQL_EXEC_ID                                        NUMBER
+ PREV_SQL_ADDR                                      RAW(8)
+ PREV_HASH_VALUE                                    NUMBER
+ PREV_SQL_ID                                        VARCHAR2(13)
+ PREV_CHILD_NUMBER                                  NUMBER
+ PREV_EXEC_START                                    DATE
+ PREV_EXEC_ID                                       NUMBER
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ MODULE                                             VARCHAR2(64)
+ MODULE_HASH                                        NUMBER
+ ACTION                                             VARCHAR2(64)
+ ACTION_HASH                                        NUMBER
+ CLIENT_INFO                                        VARCHAR2(64)
+ FIXED_TABLE_SEQUENCE                               NUMBER
+ ROW_WAIT_OBJ#                                      NUMBER
+ ROW_WAIT_FILE#                                     NUMBER
+ ROW_WAIT_BLOCK#                                    NUMBER
+ ROW_WAIT_ROW#                                      NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ LOGON_TIME                                         DATE
+ LAST_CALL_ET                                       NUMBER
+ PDML_ENABLED                                       VARCHAR2(3)
+ FAILOVER_TYPE                                      VARCHAR2(13)
+ FAILOVER_METHOD                                    VARCHAR2(10)
+ FAILED_OVER                                        VARCHAR2(3)
+ RESOURCE_CONSUMER_GROUP                            VARCHAR2(32)
+ PDML_STATUS                                        VARCHAR2(8)
+ PDDL_STATUS                                        VARCHAR2(8)
+ PQ_STATUS                                          VARCHAR2(8)
+ CURRENT_QUEUE_DURATION                             NUMBER
+ CLIENT_IDENTIFIER                                  VARCHAR2(64)
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_INSTANCE                                  NUMBER
+ BLOCKING_SESSION                                   NUMBER
+ FINAL_BLOCKING_SESSION_STATUS                      VARCHAR2(11)
+ FINAL_BLOCKING_INSTANCE                            NUMBER
+ FINAL_BLOCKING_SESSION                             NUMBER
+ SEQ#                                               NUMBER
+ EVENT#                                             NUMBER
+ EVENT                                              VARCHAR2(64)
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P1RAW                                              RAW(8)
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P2RAW                                              RAW(8)
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ P3RAW                                              RAW(8)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_CLASS#                                        NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_TIME                                          NUMBER
+ SECONDS_IN_WAIT                                    NUMBER
+ STATE                                              VARCHAR2(19)
+ WAIT_TIME_MICRO                                    NUMBER
+ TIME_REMAINING_MICRO                               NUMBER
+ TIME_SINCE_LAST_WAIT_MICRO                         NUMBER
+ SERVICE_NAME                                       VARCHAR2(64)
+ SQL_TRACE                                          VARCHAR2(8)
+ SQL_TRACE_WAITS                                    VARCHAR2(5)
+ SQL_TRACE_BINDS                                    VARCHAR2(5)
+ SQL_TRACE_PLAN_STATS                               VARCHAR2(10)
+ SESSION_EDITION_ID                                 NUMBER
+ CREATOR_ADDR                                       RAW(8)
+ CREATOR_SERIAL#                                    NUMBER
+ ECID                                               VARCHAR2(64)
+ SQL_TRANSLATION_PROFILE_ID                         NUMBER
+ PGA_TUNABLE_MEM                                    NUMBER
+ CON_ID                                             NUMBER
+ EXTERNAL_NAME                                      VARCHAR2(1024)
+
+-- from monitor_jdbc_conn.sql
+select count(*) sessions, /* 3j.437 */
+type,
+machine,
+process,
+SUM(CASE status WHEN 'ACTIVE' THEN 1 ELSE 0 END) active,
+SUM(CASE status WHEN 'INACTIVE' THEN 1 ELSE 0 END) inactive,
+SUM(CASE status WHEN 'KILLED' THEN 1 ELSE 0 END) killed,
+SUM(CASE status WHEN 'CACHED' THEN 1 ELSE 0 END) cached,
+SUM(CASE status WHEN 'SNIPED' THEN 1 ELSE 0 END) sniped,
+MIN(last_call_et) min_last_call_secs,
+MAX(last_call_et) max_last_call_secs,
+MEDIAN(last_call_et) med_last_call_secs
+FROM gv$session
+where (program IS NULL OR program not like '%JDBC%')
+group by type,machine, process
+order by 1 DESC, 2, 3, 4;
+
+176 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:50:47  </font>
+</body>
+</html>

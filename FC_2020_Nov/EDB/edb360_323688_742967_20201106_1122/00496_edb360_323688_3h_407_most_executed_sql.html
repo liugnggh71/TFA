@@ -1,0 +1,8870 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>Most executed SQL</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00496_edb360_323688_3h_407_most_executed_sql.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 3h.407. Most executed SQL <em>(DBA_HIST_SQLSTAT)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+SQL_ID
+</th>
+<th scope="col">
+EXECUTIONS
+</th>
+<th scope="col">
+ROWS_PROCESSED
+</th>
+<th scope="col">
+Rows Per Exec
+</th>
+<th scope="col">
+PARSES
+</th>
+<th scope="col">
+FETCHES
+</th>
+<th scope="col">
+BUFFER_GETS
+</th>
+<th scope="col">
+DISK_READS
+</th>
+<th scope="col">
+DIRECT_WRITES
+</th>
+<th scope="col">
+ELAPSED_SECS
+</th>
+<th scope="col">
+CPU_SECS
+</th>
+<th scope="col">
+IO_SECS
+</th>
+<th scope="col">
+CLUST_SECS
+</th>
+<th scope="col">
+APPL_SECS
+</th>
+<th scope="col">
+CONC_SECS
+</th>
+<th scope="col">
+PLS_EXEC_SECS
+</th>
+<th scope="col">
+JAVA_SECS
+</th>
+<th scope="col">
+PLANS
+</th>
+<th scope="col">
+AVG_COST
+</th>
+<th scope="col">
+MODULES
+</th>
+<th scope="col">
+MIN_MODULE
+</th>
+<th scope="col">
+MAX_MODULE
+</th>
+<th scope="col">
+ACTIONS
+</th>
+<th scope="col">
+MIN_ACTION
+</th>
+<th scope="col">
+MAX_ACTION
+</th>
+<th scope="col">
+SQL_TEXT
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+2qt6k5pdx64x1
+</td>
+<td align="right">
+          1597262139
+</td>
+<td align="right">
+          1508708834
+</td>
+<td align="right">
+                .945
+</td>
+<td align="right">
+                 268
+</td>
+<td align="right">
+          1597262136
+</td>
+<td align="right">
+          4694530069
+</td>
+<td align="right">
+             1017073
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               11052
+</td>
+<td align="right">
+               10695
+</td>
+<td align="right">
+                 272
+</td>
+<td align="right">
+                  40
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SQL*Plus
+</td>
+<td>
+SQL*Plus
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT nvl(a_usr.usr_mrgemstr, a_usr.usr_id) FROM a_usr WHERE a_usr.usr_id = :1 AND ( (:2 &gt;= a_usr.v
+alid_from AND :3 &lt;= nvl(a_usr.valid_to,to_date('29990101','yyyymmdd')) ) OR (:4 &lt;= a_usr.valid_from
+AND nvl(:5,to_date('29990101','yyyymmdd')) &gt;= a_usr.valid_from))  AND a_usr.usr_obj_stt != 2 AND ROW
+NUM &lt; 2
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+dsg6rv91fkyuq
+</td>
+<td align="right">
+           103725071
+</td>
+<td align="right">
+           103725071
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+           103725071
+</td>
+<td align="right">
+           416980169
+</td>
+<td align="right">
+               66163
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 881
+</td>
+<td align="right">
+                 859
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SQL*Plus
+</td>
+<td>
+SQL*Plus
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT mbur_rlspto_sbcr FROM a_usr WHERE a_usr.usr_id = :1 AND ( (:2 &gt;= a_usr.valid_from AND :3 &lt;= n
+vl(a_usr.valid_to,to_date('21991231','yyyymmdd')) ) OR (:4 &lt;= a_usr.valid_from AND nvl(:5,to_date('2
+1991231','yyyymmdd')) &gt;= a_usr.valid_from))  AND a_usr.usr_obj_stt != 2 AND ROWNUM &lt; 2
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+1xqnszk1kc75r
+</td>
+<td align="right">
+            72817512
+</td>
+<td align="right">
+            72816698
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1675121
+</td>
+<td align="right">
+            72817406
+</td>
+<td align="right">
+           145550903
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 301
+</td>
+<td align="right">
+                 304
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select text from sumkey$ where rowid = :1
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+739nujnggzyrq
+</td>
+<td align="right">
+            62280526
+</td>
+<td align="right">
+            62279835
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               21937
+</td>
+<td align="right">
+            62280512
+</td>
+<td align="right">
+            54842390
+</td>
+<td align="right">
+                  39
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                6594
+</td>
+<td align="right">
+                6396
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                2719
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT CM_ACCESS_CONTROL.CALCULATE_DAC(:B2 ,:B1 ) FROM DUAL
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0dhq2xrpzzsq9
+</td>
+<td align="right">
+            59410832
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            59410860
+</td>
+<td align="right">
+            59410769
+</td>
+<td align="right">
+            60526255
+</td>
+<td align="right">
+                  69
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2377
+</td>
+<td align="right">
+                2300
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT UMV_CMDAC_SYSDIM.DIM_TYPE, SUM(UMV_CMDAC_PROF2DIMCOUNT.DIM_COUNT) FROM UMV_CMDAC_SYSDIM, UMV_
+CMDAC_PROF2DIMCOUNT WHERE UMV_CMDAC_SYSDIM.DIM_TYPE=UMV_CMDAC_PROF2DIMCOUNT.DIM_TYPE AND PROFILE_ID
+IN (SELECT DAP_ID FROM T_PAYRROLS PAYERROLE_TBL, T_USR_ROLSDAT_ACC_PFLS USERROLES_DAP_TBL , T_DAT_AC
+C_PROF, T_USR WHERE PAYERROLE_TBL.PYRL_USR_ROLS = USERROLES_DAP_TBL.URDP_USR_ROLS AND URDP_DAT_ACC_P
+ROF=DAP_ID AND T_USR.USR_ID=PYRL_PAYR AND NVL(USR_MRGEMSTR,USR_ID) = :B1 GROUP BY NVL(USR_MRGEMSTR,U
+SR_ID) ,DAP_ID) GROUP BY UMV_CMDAC_SYSDIM.DIM_TYPE
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+fkafaq0jba7j7
+</td>
+<td align="right">
+            50063659
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             7524642
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               72545
+</td>
+<td align="right">
+                 752
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1737
+</td>
+<td align="right">
+                1568
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                 184
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL*Plus
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+call CA_LOAD.CA_LOG(:1,:2,:3,:4,:5,null)
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+dbbx8k4x3crut
+</td>
+<td align="right">
+            38114083
+</td>
+<td align="right">
+            38122325
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1512
+</td>
+<td align="right">
+            38152386
+</td>
+<td align="right">
+            24855135
+</td>
+<td align="right">
+                1745
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                8707
+</td>
+<td align="right">
+                7778
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL*Plus
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT EXTRACTVALUE(:B2 ,:B1 ) FROM DUAL
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+1fmnkf3tjpxmm
+</td>
+<td align="right">
+            19296255
+</td>
+<td align="right">
+            19296149
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             3587647
+</td>
+<td align="right">
+            19296238
+</td>
+<td align="right">
+            21542489
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  90
+</td>
+<td align="right">
+                  90
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select value from sumpred$ where rowid = :1
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+7ashfrs8yj29w
+</td>
+<td align="right">
+             3587632
+</td>
+<td align="right">
+            19297651
+</td>
+<td align="right">
+               5.379
+</td>
+<td align="right">
+             3587674
+</td>
+<td align="right">
+            22885333
+</td>
+<td align="right">
+            45977309
+</td>
+<td align="right">
+                 402
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 140
+</td>
+<td align="right">
+                 136
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select sumobj#, clauseid, nodeid, pnodeid, nodetype, numchild, relop,  loptype, roptype, ldobj#, rdo
+bj#, lcolid, rcolid, laggtype, raggtype,  lcanotxt, rcanotxt, lcanotxtlen, rcanotxtlen, ltxt, rtxt,
+ltxtlen, rtxtlen,  rowid, valuelen, colpos, numval, lflags, rflags, linline#, rinline#,  linstance#,
+ rinstance#, qbcid   from sumpred$ where sumobj#=:1 and bitand(clauseid,:2) &gt; 0
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+bunvx480ynf57
+</td>
+<td align="right">
+             2303157
+</td>
+<td align="right">
+             2303074
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1630574
+</td>
+<td align="right">
+             2303083
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  94
+</td>
+<td align="right">
+                  43
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT 1 FROM DUAL
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+471x8c4pz5zkt
+</td>
+<td align="right">
+             2114571
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3017
+</td>
+<td align="right">
+             2114572
+</td>
+<td align="right">
+             2114572
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  17
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT ACCESS_ALLOWED FROM UMV_DAC_CM_ACL ACL INNER JOIN UMV_DAC_PAYER_AGG_XREF AGG ON ACL.AGGREGATE
+_ID = AGG.AGGREGATE_ID WHERE AGG.PAYER_ID = :B2 AND ACL.CMBS_ID = :B1
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+40w5zz6b07bv1
+</td>
+<td align="right">
+             2086940
+</td>
+<td align="right">
+             2088308
+</td>
+<td align="right">
+               1.001
+</td>
+<td align="right">
+                 709
+</td>
+<td align="right">
+             2088323
+</td>
+<td align="right">
+             2789190
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1010
+</td>
+<td align="right">
+                 849
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT EXTRACT(:B2 ,:B1 ) FROM DUAL
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+1aa2fpqtx557g
+</td>
+<td align="right">
+             2013817
+</td>
+<td align="right">
+             2013817
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1236
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             8120471
+</td>
+<td align="right">
+               26753
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 546
+</td>
+<td align="right">
+                 308
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                 228
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+update seq$ set increment$=:2,minvalue=:3,maxvalue=:4,cycle#=:5,order$=:6,cache=:7,highwater=:8,audi
+t$=:9,flags=:10,partcount=:11 where obj#=:1
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+1vtf4fw0h0j16
+</td>
+<td align="right">
+             1992219
+</td>
+<td align="right">
+             1992219
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                8364
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            28282805
+</td>
+<td align="right">
+              176152
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 649
+</td>
+<td align="right">
+                 423
+</td>
+<td align="right">
+                  54
+</td>
+<td align="right">
+                 224
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+insert into CAREADMIN_LOG values (
+        :1,
+        :2,
+        :3,
+        :4,
+        :5,
+
+   systimestamp,
+        :6,
+        :7,
+        :8,
+        :9
+      )
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+16jq5wm9yapgt
+</td>
+<td align="right">
+             1967986
+</td>
+<td align="right">
+             1967987
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1967990
+</td>
+<td align="right">
+             1967988
+</td>
+<td align="right">
+             4081396
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  39
+</td>
+<td align="right">
+                  37
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select text from sumqb$ where rowid = :1
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+86ub50u86rx5t
+</td>
+<td align="right">
+             1876605
+</td>
+<td align="right">
+              548761
+</td>
+<td align="right">
+                .292
+</td>
+<td align="right">
+                 109
+</td>
+<td align="right">
+             1876655
+</td>
+<td align="right">
+            12942308
+</td>
+<td align="right">
+               41878
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 595
+</td>
+<td align="right">
+                 219
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+                 414
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT * FROM T_PRODCAT_PVDR WHERE BENEFIT_NETWORK_NAME = :B3 AND PCPR_IN_NTWKPRODCATS = :B2 AND PCP
+R_IN_NTWKPVRS = :B1
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+8g0yjqqjp4axf
+</td>
+<td align="right">
+             1870666
+</td>
+<td align="right">
+             1870666
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  92
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           128601969
+</td>
+<td align="right">
+              738464
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               11800
+</td>
+<td align="right">
+                2552
+</td>
+<td align="right">
+                 253
+</td>
+<td align="right">
+                3425
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                5973
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+INSERT INTO T_PRODCAT_PVDR ( CLASSTYPE, PCPR_C4C_ID,PCPR_CRTD, PCPR_LAS_ACT, PCPR_LAS_ACT_ACTRTYP, P
+CPR_LAS_ACT_TIM, PCPR_OBJ_STT, PCPR_VERS, PCPR_VSBT, PCPR_DLTDDT, PCPR_LAS_ACT_BY, PCPR_ORIGCRTR, PC
+PR_ORIGCRTRLOGDIN, PCPR_LAS_ACT_BY_LOGDIN, PCPR_UNIVID, PCPR_ID,PCPR_IN_NTWKPRODCATS, PCPR_IN_NTWKPV
+RS, PRACTITIONER_ROLE_ID, APPLIES_TO_ALL_PRACTITIONERS, BENEFIT_NETWORK_NAME ) VALUES ( 'ProductCate
+goryProvider', NULL, SYSDATE, 1, NULL, SYSDATE, :B7 , 1, 1001, NULL, 1, 1, 1, 1, :B6 , S_PRODCAT_PVD
+R.NEXTVAL, :B5 , :B4 , :B3 , :B2 , :B1 )
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+dgyzt19fp7g6m
+</td>
+<td align="right">
+             1870575
+</td>
+<td align="right">
+             1870574
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  92
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            67983562
+</td>
+<td align="right">
+              406093
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9723
+</td>
+<td align="right">
+                1715
+</td>
+<td align="right">
+                 137
+</td>
+<td align="right">
+                2366
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                5889
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+INSERT INTO A_PRODCAT_PVDR ( PCPR_OBJ_STT, PCPR_VERS, PCPR_VSBT, PCPR_DLTDDT, PCPR_LAS_ACT_BY, PCPR_
+ORIGCRTR, PCPR_ORIGCRTRLOGDIN, PCPR_LAS_ACT_BY_LOGDIN, PCPR_UNIVID, PCPR_IN_NTWKPRODCATS, PCPR_IN_NT
+WKPVRS, PRACTITIONER_ROLE_ID, APPLIES_TO_ALL_PRACTITIONERS, BENEFIT_NETWORK_NAME, CLASSTYPE, PCPR_C4
+C_ID, PCPR_CRTD, PCPR_LAS_ACT, PCPR_LAS_ACT_ACTRTYP, PCPR_ID, VALID_FROM, VALID_TO , PCPR_AUDID, PCP
+R_PREV_AUDID, PCPR_NEXT_AUDID ) VALUES ( :B1 , :B2 , :B3 , :B4 , :B5 , :B6 , :B7 , :B8 , :B9 , :B10
+, :B11 , :B12 , :B13 , :B14 , :B15 , :B16 , :B17 , :B18 , :B19 , :B20 , :B21 , NULL, U_PRODCAT_PVDR.
+NEXTVAL, NULL, NULL )
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+3zf6302n6nyh3
+</td>
+<td align="right">
+             1720472
+</td>
+<td align="right">
+            14678595
+</td>
+<td align="right">
+               8.532
+</td>
+<td align="right">
+             1720473
+</td>
+<td align="right">
+            16399058
+</td>
+<td align="right">
+          1656775810
+</td>
+<td align="right">
+                2991
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               12691
+</td>
+<td align="right">
+               12147
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    4
+</td>
+<td align="right">
+                 127
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select sd.detailobj#, sd.detailobjtype, sd.detailalias, sd.refreshscn,         sd.detaileut, sd.spar
+e4, sd.inline#, sd.instance#, sd.dataless,         sd.qbcid, sd.tabscnctr, sd.flags, u.name, o.name,
+ nvl(u.spare1,0),         o.type#  from (select sd.*, rownum sd_rownum from sumdetail$ sd) sd, sys.u
+ser$ u,        sys.obj$ o  where sd.sumobj# = :1 and        o.obj#(+) = sd.detailobj# and        o.o
+wner# = u.user#(+)   order by sd.sd_rownum
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+8bn9dkjnauw35
+</td>
+<td align="right">
+             1680167
+</td>
+<td align="right">
+                 437
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1680171
+</td>
+<td align="right">
+             1680603
+</td>
+<td align="right">
+             1687070
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select sumcolpos#, containercol#, aggfunction, flags, textlen, rowid, exprlen, expression, agginfole
+n, agginfo, qbcid from sumagg$ where sumobj#=:1 order by 1 desc
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+b2hcwvt0mdzb3
+</td>
+<td align="right">
+             1678436
+</td>
+<td align="right">
+            12802552
+</td>
+<td align="right">
+               7.628
+</td>
+<td align="right">
+             1678439
+</td>
+<td align="right">
+            14481000
+</td>
+<td align="right">
+            28999263
+</td>
+<td align="right">
+                  47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  48
+</td>
+<td align="right">
+                  45
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select tab1obj#, tab1col#, tab2obj#, tab2col#, joinop, flags, inline1#, inline2#, instance1#, instan
+ce2#, qbcid from sumjoin$ where sumobj#=:1
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+0h9ak104a3hpb
+</td>
+<td align="right">
+             1674300
+</td>
+<td align="right">
+             1886399
+</td>
+<td align="right">
+               1.127
+</td>
+<td align="right">
+             1674337
+</td>
+<td align="right">
+             3560709
+</td>
+<td align="right">
+           187108014
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 310
+</td>
+<td align="right">
+                 291
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                  39
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select pflags, xpflags, sflags, state, rowid, textlen, marker,  markerlen, hashval, hashval2, rorder
+, sorder, leafcnt,  orignode, nodeid, parent, opttyp, frompo, selcnt, flags,  numdetailtab, numaggre
+gates, numkeycolumns, numjoins, numinlines,  numwhrnodes, numhavnodes  from sumqb$ where sumobj# = :
+1
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td>
+fmm0r4zdc3hu4
+</td>
+<td align="right">
+             1674277
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1674293
+</td>
+<td align="right">
+             1674291
+</td>
+<td align="right">
+             5316368
+</td>
+<td align="right">
+                  88
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  52
+</td>
+<td align="right">
+                  51
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select s1.detailobj#, s1.detaileut,  s2.detailcol#, s2.sumcolpos#,  s2.groupingpos#, s2.detailcolfun
+ction, s1.qbcid, s1.detailalias  from    (select * from sumdetail$ where sumobj# = :1 and detaileut
+!= 0                           and bitand(detaileut, 2147483648) = 0) s1,    (select * from sumkey$
+where sumobj# = :2 and detailcolfunction != 0                         and bitand(detailcolfunction,
+2147483648) =0) s2  where s1.detailobj# = s2.detailobj# (+) and        s1.qbcid = s2.qbcid (+) and
+      decode(s1.detaileut, 1, 1, 2, 1, 4, 2, 12, 3, 0) =           s2.detailcolfunction (+)
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+4xwa73qf56d25
+</td>
+<td align="right">
+             1674246
+</td>
+<td align="right">
+            72843313
+</td>
+<td align="right">
+              43.508
+</td>
+<td align="right">
+             1674253
+</td>
+<td align="right">
+            74517613
+</td>
+<td align="right">
+           149043862
+</td>
+<td align="right">
+                 829
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 185
+</td>
+<td align="right">
+                 181
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select sumcolpos#, containercol#, detailobj#, detailobjtype, detailcol#, groupingpos#, textlen, rowi
+d, exprlen, expression, detailcolfunction, nodetype, ordinalpos, parentpos, inline#, instance#, qbci
+d, spare2, spare3 from sumkey$ where sumobj#=:1
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td>
+dxs63gfzjmqjc
+</td>
+<td align="right">
+             1640092
+</td>
+<td align="right">
+              241457
+</td>
+<td align="right">
+                .147
+</td>
+<td align="right">
+             1640094
+</td>
+<td align="right">
+             1881548
+</td>
+<td align="right">
+             2123941
+</td>
+<td align="right">
+                  69
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select inline#, textspos, textlen, hashval, instance#, rowid,  qbcid from suminline$ where sumobj#=:
+1
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td>
+8fv480az2kx9h
+</td>
+<td align="right">
+             1319415
+</td>
+<td align="right">
+             1319418
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2890
+</td>
+<td align="right">
+             1319420
+</td>
+<td align="right">
+             3959337
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 817
+</td>
+<td align="right">
+                 316
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 695
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select increment$,minvalue,maxvalue,cycle#,order$,cache,highwater,audit$,flags,partcount from seq$ w
+here obj#=:1
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td>
+37g281wz56rv3
+</td>
+<td align="right">
+             1068154
+</td>
+<td align="right">
+             1068154
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               39877
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            12368437
+</td>
+<td align="right">
+              331946
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 247
+</td>
+<td align="right">
+                 100
+</td>
+<td align="right">
+                 103
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+insert into sys.wri$_optstat_histhead_history (obj#,intcol#,savtime,flags, null_cnt,minimum,maximum,
+distcnt,density,lowval,hival,avgcln,sample_distcnt, sample_size,timestamp#,colname)  select h.obj#,
+h.intcol#, :3, bitand(h.spare2, 7) + 8 + decode(h.cache_cnt,0,0,64) +    decode(bitand(h.spare2, 8),
+ 0, 0, 128) +    decode(bitand(h.spare2, 16), 0, 0, 1024) +    decode(bitand(h.spare2, 32), 0, 0, 40
+96) +    decode(bitand(h.spare2, 64), 0, 0, 8192) +    decode(bitand(h.spare2, 128), 0, 0, 16384) +
+   decode(bitand(h.spare2, 256), 0, 0, 65536) +    decode(bitand(h.spare2, 512), 0, 0, 131072),  h.n
+ull_cnt, h.minimum, h.maximum, h.distcnt, h.density, h.lowval, h.hival, h.avgcln, h.spare1, h.sample
+_size, h.timestamp#, :4  from sys.hist_head$ h where h.obj# = :1 and h.intcol# = :2
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td>
+dacsp54tf1qw6
+</td>
+<td align="right">
+             1066297
+</td>
+<td align="right">
+             1066297
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 389
+</td>
+<td align="right">
+             1066297
+</td>
+<td align="right">
+             4265188
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  43
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT WL0.CLASSTYPE, WL0.TRRC_ID, WL0.TRRC_C4C_ID, WL0.TRRC_CMMT, WL0.TRRC_CNV_ID, WL0.TRRC_CRTD, W
+L0.TRRC_DDLNACT, WL0.TRRC_DDLN_DT, WL0.TRRC_DDLN_TIM_IN_DY, WL0.TRRC_DLTDDT, WL0.TRRC_LAS_ACT, WL0.T
+RRC_LAS_ACT_ACTRTYP, WL0.TRRC_LAS_ACT_BY, WL0.TRRC_LAS_ACT_BY_LOGDIN, WL0.TRRC_LAS_ACT_TIM, WL0.TRRC
+_OBJ_STT, WL0.TRRC_ORIGCRTR, WL0.TRRC_ORIGCRTRLOGDIN, WL0.TRRC_ORIGOWNR, WL0.TRRC_PRVSRFNGTSK, WL0.T
+RRC_PRVSRFNGTSK_PRMN, WL0.TRRC_RESN, WL0.TRRC_RCPT, WL0.TRRC_RFRDOBJ_ID, WL0.TRRC_RFRDOBJ_TYP, WL0.T
+RRC_RFNGWKFWTSK, WL0.TRRC_RJTNCMMT, WL0.TRRC_RJTNRESN, WL0.TRRC_SNDR, WL0.TRRC_TMTD, WL0.TRRC_UNIVID
+, WL0.TRRC_VERS, WL0.TRRC_VSBT, WL0.TRRC_WKFWISTCID  FROM T_TNFRREC WL0  WHERE WL0.TRRC_ID = :1
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td>
+9m03jh13hspks
+</td>
+<td align="right">
+              909138
+</td>
+<td align="right">
+              909138
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  37
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             5352183
+</td>
+<td align="right">
+               27084
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 111
+</td>
+<td align="right">
+                  86
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                  41
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE A_PRODCAT_PVDR SET CLASSTYPE = :B19 , PCPR_C4C_ID = :B18 , PCPR_CRTD = :B17 , PCPR_LAS_ACT =
+:B16 , PCPR_LAS_ACT_ACTRTYP = :B15 , PCPR_OBJ_STT = :B14 , PCPR_VERS = :B13 , PCPR_VSBT = :B12 , PCP
+R_DLTDDT = :B11 , PCPR_LAS_ACT_BY = :B10 , PCPR_ORIGCRTR = :B9 , PCPR_ORIGCRTRLOGDIN = :B8 , PCPR_LA
+S_ACT_BY_LOGDIN = :B7 , PCPR_UNIVID = :B6 , PCPR_IN_NTWKPRODCATS = :B5 , PCPR_IN_NTWKPVRS = :B4 , PR
+ACTITIONER_ROLE_ID = :B3 , APPLIES_TO_ALL_PRACTITIONERS = :B2 , BENEFIT_NETWORK_NAME = :B1 WHERE PCP
+R_AUDID = :B20
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td>
+1qmr3x565juaa
+</td>
+<td align="right">
+              909134
+</td>
+<td align="right">
+              909128
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  37
+</td>
+<td align="right">
+              909131
+</td>
+<td align="right">
+            19973087
+</td>
+<td align="right">
+                3920
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 170
+</td>
+<td align="right">
+                 108
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  65
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT PCPR_AUDID FROM A_PRODCAT_PVDR WHERE PCPR_ID = :B1 AND PCPR_NEXT_AUDID IS NULL AND ROWNUM &lt; 2
+ FOR UPDATE
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td>
+6qg99cfg26kwb
+</td>
+<td align="right">
+              772177
+</td>
+<td align="right">
+              772177
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               11415
+</td>
+<td align="right">
+              772177
+</td>
+<td align="right">
+            37804636
+</td>
+<td align="right">
+                 383
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  54
+</td>
+<td align="right">
+                  54
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    2
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+JOB_CUSTOM_ANALYZE
+</td>
+<td>
+ORA$AT_SA_SPC_SY_5529
+</td>
+<td>
+SELECT COUNT(UNQ) UNQ, COUNT(PFX) PFX FROM (SELECT /*+ first_rows(1) leading(cc) */ CD.TYPE# UNQ, NU
+LL PFX FROM SYS.CCOL$ CC, SYS.CDEF$ CD WHERE CC.OBJ# = :B2 AND CC.INTCOL# = :B1 AND CD.CON# = CC.CON
+# AND CD.OBJ# = CC.OBJ# AND CD.ENABLED IS NOT NULL AND CD.INTCOLS = 1 AND CD.TYPE# IN (2,3) AND BITA
+ND(CD.DEFER, 2+4) = 4 AND ROWNUM &lt; 2 UNION ALL SELECT /*+ first_rows(1) leading(i) */ CASE WHEN I.IN
+TCOLS = 1 AND BITAND(I.PROPERTY,1) = 1 THEN 3 ELSE NULL END UNQ, CASE WHEN IC.POS# = 1 THEN 1 ELSE N
+ULL END PFX FROM SYS.IND$ I, SYS.ICOL$ IC WHERE I.BO# = :B2 AND I.BO# = IC.BO# AND IC.INTCOL# = :B1
+AND I.OBJ# = IC.OBJ# AND BITAND(I.FLAGS,1025) = 0 AND ROWNUM &lt; 2 )
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+9ab9bqh60cmbn
+</td>
+<td align="right">
+              702102
+</td>
+<td align="right">
+              159335
+</td>
+<td align="right">
+                .227
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+              701814
+</td>
+<td align="right">
+          2579756900
+</td>
+<td align="right">
+              399757
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                6035
+</td>
+<td align="right">
+                4523
+</td>
+<td align="right">
+                 135
+</td>
+<td align="right">
+                1092
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT * FROM T_PRODCAT_PVDR WHERE BENEFIT_NETWORK_NAME = :B3 AND PCPR_IN_NTWKPRODCATS = :B2 AND PRA
+CTITIONER_ROLE_ID = :B1
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td>
+195bc4dvaaa95
+</td>
+<td align="right">
+              621788
+</td>
+<td align="right">
+              621785
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6828
+</td>
+<td align="right">
+              621794
+</td>
+<td align="right">
+             1865343
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT WL0.CLASSTYPE, WL0.QTN_ID, WL0.QTN_ALM_FRMA, WL0.QTN_ASMTCC, WL0.QTN_C4C_ID, WL0.QTN_CAREBEAN
+FRMA, WL0.QTN_CHCEAS_LIST, WL0.QTN_CRTD, WL0.QTN_DLTDDT, WL0.QTN_DGESFRMA, WL0.QTN_IN_POOL, WL0.QTN_
+LAS_ACT, WL0.QTN_LAS_ACT_ACTRTYP, WL0.QTN_LAS_ACT_BY, WL0.QTN_LAS_ACT_BY_LOGDIN, WL0.QTN_LAS_ACT_TIM
+, WL0.QTN_MNTY, WL0.QTN_MULTMX_SLTD, WL0.QTN_MULTMUSTSEL, WL0.QTN_OBJ_STT, WL0.QTN_OTXTLMIT, WL0.QTN
+_ORD, WL0.QTN_ORIGCRTR, WL0.QTN_ORIGCRTRLOGDIN, WL0.QTN_ORIG, WL0.QTN_PRBLMFRMA, WL0.QTN_PRMT, WL0.Q
+TN_QTN_FRMA, WL0.QTN_QTN_TXT, WL0.QTN_REP_FRMA, WL0.QTN_RSPEFRMT, WL0.QTN_RSPETYP, WL0.QTN_SCLB, WL0
+.QTN_SKIPFRMA, WL0.QTN_STTSFMLS, WL0.QTN_TSK_FRMA, WL0.QTN_TXT_FRMT, WL0.QTN_TYP_SBTY, WL0.QTN_UNIVI
+D, WL0.QTN_VAL_FRMT, WL0.QTN_VERS, WL0.QTN_VSBT, WL0.QTN_WGHT, WL0.QTN_WGHTFRMA  FROM T_QTN WL0  WHE
+RE WL0.QTN_ID = :1
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td>
+95u9z8gj6ttbd
+</td>
+<td align="right">
+              545036
+</td>
+<td align="right">
+              545036
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  43
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            28331484
+</td>
+<td align="right">
+               32795
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 556
+</td>
+<td align="right">
+                 286
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                 171
+</td>
+<td align="right">
+                 102
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE T_PRODCAT_PVDR SET PCPR_OBJ_STT = :B5 , APPLIES_TO_ALL_PRACTITIONERS = :B4 WHERE BENEFIT_NETW
+ORK_NAME = :B3 AND PCPR_IN_NTWKPRODCATS = :B2 AND PCPR_IN_NTWKPVRS = :B1
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td>
+38243c4tqrkxm
+</td>
+<td align="right">
+              528882
+</td>
+<td align="right">
+              528882
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              528882
+</td>
+<td align="right">
+              528882
+</td>
+<td align="right">
+             4759938
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select u.name, o.name, o.namespace, o.type#, decode(bitand(i.property,1024),0,0,1), o.obj# from ind$
+ i,obj$ o,user$ u where i.obj#=:1 and o.obj#=i.bo# and o.owner#=u.user#
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+dzrtcjy445u1g
+</td>
+<td align="right">
+              490365
+</td>
+<td align="right">
+              490365
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               89402
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             8425303
+</td>
+<td align="right">
+               28566
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3534
+</td>
+<td align="right">
+                 196
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                  48
+</td>
+<td align="right">
+                3300
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+INSERT INTO T_OTHER_INSURANCE ( CLASSTYPE, INS_ID, INS_CRTD, INS_OBJ_STT, INS_VERS, INS_MEMBER, INS_
+TYPE, INS_INSURANCE_ID, INS_EFFECTIVE_DATE, INS_TERMINATION_DATE, INS_VSBT, INS_ORIGCRTR, INS_LAS_AC
+T, INS_LAS_ACT_TIM ) VALUES ( 'HRMemberInsuranceId', :B6 , SYSDATE, 1, 1, :B5 , :B4 , :B3 , :B2 , :B
+1 , 1001, 1, 1, SYSDATE )
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+9babjv8yq8ru3
+</td>
+<td align="right">
+              480200
+</td>
+<td align="right">
+              480200
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               54721
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               10624
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  54
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  41
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+SQL*Plus
+</td>
+<td>
+edb360
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+3h
+</td>
+<td>
+3h
+</td>
+<td>
+BEGIN DBMS_OUTPUT.GET_LINES(:LINES, :NUMLINES); END;
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+cvhk2j2gymzhd
+</td>
+<td align="right">
+              470675
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               14343
+</td>
+<td align="right">
+              470675
+</td>
+<td align="right">
+             5182261
+</td>
+<td align="right">
+                1554
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td>
+SQL*Plus
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+JOB_ANALYZE_HROLTP
+</td>
+<td>
+ORA$AT_OS_OPT_SY_1181
+</td>
+<td>
+SELECT SU.NAME, SO.NAME, A.STATSTYPE#, C.INTCOL# FROM ASSOCIATION$ A, OBJ$ O, USER$ U, COL$ C, OBJ$
+SO, USER$ SU, COLTYPE$ CT, OBJ$ TY WHERE O.OWNER#=U.USER# AND A.OBJ#=TY.OBJ# AND O.OBJ#=C.OBJ# AND C
+.INTCOL#=CT.INTCOL# AND O.OBJ#=CT.OBJ# AND CT.TOID=TY.OID$ AND A.STATSTYPE#=SO.OBJ# AND SO.OWNER#=SU
+.USER# AND O.TYPE#=2 AND O.NAME=:B3 AND U.NAME=:B2 AND C.NAME=:B1
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+330q95smuwnv9
+</td>
+<td align="right">
+              470664
+</td>
+<td align="right">
+              470664
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               14330
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1927319
+</td>
+<td align="right">
+               11365
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+update hist_head$ set bucket_cnt=:3, row_cnt=:4, cache_cnt=:5,null_cnt=:6, timestamp#=:7, sample_siz
+e=:8, minimum=:9, maximum=:10,distcnt=:11, lowval=:12, hival=:13, density=:14, spare1=:15, spare2=:1
+6, avgcln=:17, col#=:18 where obj#=:1 and intcol#=:2
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+ca53g40adyujy
+</td>
+<td align="right">
+              464719
+</td>
+<td align="right">
+              464719
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              464719
+</td>
+<td align="right">
+             1867512
+</td>
+<td align="right">
+              162822
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  51
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SQL*Plus
+</td>
+<td>
+SQL*Plus
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT ELNS_AUDID FROM A_ENNS WHERE ELNS_ID = :B1 AND ELNS_NEXT_AUDID IS NULL AND ROWNUM &lt; 2 FOR UPD
+ATE
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+f9up7434za3a6
+</td>
+<td align="right">
+              464719
+</td>
+<td align="right">
+              464719
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             4797475
+</td>
+<td align="right">
+               61251
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  44
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SQL*Plus
+</td>
+<td>
+SQL*Plus
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE A_ENNS SET ELNS_CNRTNMBR = :B28 , ELNS_RESN = :B27 , ELNS_LGCYMEMBENLTID = :B26 , ELNS_BENSPK
+G = :B25 , ELNS_MEMB = :B24 , ELNS_INSCPRSRGRP = :B23 , ELNS_PVDR = :B22 , CLASSTYPE = :B21 , ELNS_C
+4C_ID = :B20 , ELNS_CRTD = :B19 , ELNS_LAS_ACT = :B18 , ELNS_LAS_ACT_ACTRTYP = :B17 , ELNS_OBJ_STT =
+ :B16 , ELNS_VERS = :B15 , ELNS_VSBT = :B14 , ELNS_DLTDDT = :B13 , ELNS_LAS_ACT_BY = :B12 , ELNS_ORI
+GCRTR = :B11 , ELNS_ORIGCRTRLOGDIN = :B10 , ELNS_LAS_ACT_BY_LOGDIN = :B9 , ELNS_UNIVID = :B8 , ELNS_
+ENLTDT = :B7 , ELNS_EFTVDT = :B6 , ELNS_ORIGEFTVDT = :B5 , ELNS_DSNTDT = :B4 , ELNS_TERMDT = :B3 , E
+LNS_CTLYENLD = :B2 , ELNS_MEDICAID_PROD_ID = :B1 WHERE ELNS_AUDID = :B29
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+3s6wmtshbyn88
+</td>
+<td align="right">
+              458351
+</td>
+<td align="right">
+              528932
+</td>
+<td align="right">
+               1.154
+</td>
+<td align="right">
+              454365
+</td>
+<td align="right">
+              458312
+</td>
+<td align="right">
+              480376
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 178
+</td>
+<td align="right">
+                 163
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT * FROM TABLE(XMLSEQUENCE(:B1 ))
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+              453383
+</td>
+<td align="right">
+              453274
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              140325
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            32100378
+</td>
+<td align="right">
+              308844
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              335584
+</td>
+<td align="right">
+                1189
+</td>
+<td align="right">
+                 108
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+              333901
+</td>
+<td align="right">
+                 296
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE T_USR SET &quot;CLASSTYPE&quot; = :B1 ,&quot;USR_C4C_ID&quot; = :B2 ,&quot;USR_CRTD&quot; = :B3 ,&quot;USR_LAS_ACT&quot; = :B4 ,&quot;USR_
+LAS_ACT_ACTRTYP&quot; = :B5 ,&quot;USR_LAS_ACT_TIM&quot; = :B6 ,&quot;USR_OBJ_STT&quot; = :B7 ,&quot;USR_VERS&quot; = :B8 ,&quot;USR_VSBT&quot; =
+ :B9 ,&quot;USR_DLTDDT&quot; = :B10 ,&quot;USR_LAS_ACT_BY&quot; = :B11 ,&quot;USR_ORIGCRTR&quot; = :B12 ,&quot;USR_ORIGCRTRLOGDIN&quot; = :B
+13 ,&quot;USR_LAS_ACT_BY_LOGDIN&quot; = :B14 ,&quot;USR_UNIVID&quot; = :B15 ,&quot;USR_FRSTNAM&quot; = :B16 ,&quot;USR_MDLENAM&quot; = :B17
+,&quot;USR_LAS_NAM&quot; = :B18 ,&quot;USR_DT_OF_BRTH&quot; = :B19 ,&quot;USR_GNDRCODE&quot; = :B20 ,&quot;USR_FRSTATVD&quot; = :B21 ,&quot;USR_L
+AS_ATVD&quot; = :B22 ,&quot;USR_LAS_DCTD&quot; = :B23 ,&quot;USR_WKFWISTCID&quot; = :B24 ,&quot;USR_CNV_ID&quot; = :B25 ,&quot;USR_OWNRCHNDF
+LAG&quot; = :B26 ,&quot;USR_OWNRCHNDCNT&quot; = :B27 ,&quot;USR_SBTDAT&quot; = :B28 ,&quot;USR_ID&quot; = :B29 ,&quot;PRV_PLN_ID&quot; = :B30 ,&quot;P
+RV_UPN_ID&quot; = :B31 ,&quot;PRV_FED_TAX&quot; = :B32 ,&quot;PRV_TOTLPNTS&quot; = :B33 ,&quot;PRV_TOTLPNTSIN_PCTC&quot; = :B34 ,&quot;PRV_T
+OTLPAYRMEMS&quot; = :B35 ,&quot;PRV_TOTLPAYRMEMSIN_PCTC&quot; = :B36 ,&quot;PRV_ACNGNEW_PNTS&quot; = :B37 ,&quot;PRV_ATHDFOR_AUMTD
+TMN&quot; = :B38 ,&quot;PRV_INSCID&quot; = :B39 ,&quot;PRV_IS_ADM&quot; = :B40 ,&quot;PRV_PCP_IND&quot; = :B41 ,&quot;PRV_ID&quot; = :B42 ,&quot;MBUR_
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td>
+fr99pgkyuus43
+</td>
+<td align="right">
+              435164
+</td>
+<td align="right">
+              435023
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              127097
+</td>
+<td align="right">
+              435165
+</td>
+<td align="right">
+          4030282392
+</td>
+<td align="right">
+                 361
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                8188
+</td>
+<td align="right">
+                7714
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    2
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT BENP_ID FROM T_BENSPKG WHERE CLASSTYPE ='BenefitsPackage' AND (BENP_UNIVID = :B1 OR BENP_NAM
+= :B1 ) AND ROWNUM&lt;2
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td>
+c8h20n1d0k95m
+</td>
+<td align="right">
+              404969
+</td>
+<td align="right">
+              404969
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              404970
+</td>
+<td align="right">
+              404969
+</td>
+<td align="right">
+              810010
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td>
+SQL*Plus
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JOB_ANALYZE_HROLTP
+</td>
+<td>
+JOB_ANALYZE_HROLTP
+</td>
+<td>
+select /*+ no_parallel */ spare4 from sys.optstat_hist_control$ where sname=:1
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td>
+69jhgmytmawmx
+</td>
+<td align="right">
+              393537
+</td>
+<td align="right">
+              383419
+</td>
+<td align="right">
+                .974
+</td>
+<td align="right">
+              139835
+</td>
+<td align="right">
+              393537
+</td>
+<td align="right">
+             1575309
+</td>
+<td align="right">
+                 499
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT MIN(IPGP_ID) FROM T_INSCPRSRGRP WHERE IPGP_UNIVID = :B1 AND IPGP_OBJ_STT=1 AND IPGP_VSBT=1001
+ AND CLASSTYPE = 'InsurancePurchaserGroup' GROUP BY IPGP_UNIVID
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td>
+8swypbbr0m372
+</td>
+<td align="right">
+              388475
+</td>
+<td align="right">
+               33256
+</td>
+<td align="right">
+                .086
+</td>
+<td align="right">
+              388481
+</td>
+<td align="right">
+              421735
+</td>
+<td align="right">
+              849102
+</td>
+<td align="right">
+                3505
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select order#,columns,types from access$ where d_obj#=:1
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td>
+3un99a0zwp4vd
+</td>
+<td align="right">
+              387320
+</td>
+<td align="right">
+              226002
+</td>
+<td align="right">
+                .584
+</td>
+<td align="right">
+              387327
+</td>
+<td align="right">
+              613327
+</td>
+<td align="right">
+             1960175
+</td>
+<td align="right">
+                4741
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                  67
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select owner#,name,namespace,remoteowner,linkname,p_timestamp,p_obj#, nvl(property,0),subname,type#,
+flags,d_attrs from dependency$ d, obj$ o where d_obj#=:1 and p_obj#=obj#(+) order by order#
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td>
+b1mpzjt3746g4
+</td>
+<td align="right">
+              370775
+</td>
+<td align="right">
+              353655
+</td>
+<td align="right">
+                .954
+</td>
+<td align="right">
+                1185
+</td>
+<td align="right">
+              370720
+</td>
+<td align="right">
+          1134614547
+</td>
+<td align="right">
+                3218
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                7508
+</td>
+<td align="right">
+                6965
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                1016
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT CLASSTYPE, DSS_ID FROM T_DGIS WHERE (IC10D_ICD10DGESCODE = :B1 OR IC9D_ICD9DGESCODE = :B1 ) A
+ND ROWNUM =1
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td>
+3kywng531fcxu
+</td>
+<td align="right">
+              350450
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              350450
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              700914
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+delete from tab_stats$ where obj#=:1
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td>
+gsfnqdfcvy33q
+</td>
+<td align="right">
+              349290
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              349290
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              349365
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+delete from superobj$ where subobj# = :1
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td>
+13ys8ux8xvrbm
+</td>
+<td align="right">
+              343893
+</td>
+<td align="right">
+              343893
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              343893
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             6510585
+</td>
+<td align="right">
+               94357
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+insert into sys.wri$_optstat_opr_tasks (op_id, job_name, status, start_time, end_time, target, targe
+t_type, target_size, estimated_cost, batching_coeff,  actions, priority, notes, flags, target_objn)
+values (:1,:2,:3,:4,:5,:6,:7,                                               :8,:9,:10,:11,:12,:13,:1
+4,:15)
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td>
+brf7r56as5bz9
+</td>
+<td align="right">
+              332043
+</td>
+<td align="right">
+              332043
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              332043
+</td>
+<td align="right">
+              332043
+</td>
+<td align="right">
+              540073
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+TOAD 13.2.0.258
+</td>
+<td>
+sqld360
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+3a
+</td>
+<td>
+43064640,471690720,490663696
+</td>
+<td>
+select t.CONDITION from SYS.CDEF$ t where t.rowid = :x
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td>
+9tk3mh2sbxww8
+</td>
+<td align="right">
+              328149
+</td>
+<td align="right">
+              328148
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              328136
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             2643474
+</td>
+<td align="right">
+               12543
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  48
+</td>
+<td align="right">
+                  34
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+INSERT /*+ NO_DST_UPGRADE_INSERT_CONV IDX(0) */ INTO &quot;THH_C4C&quot;.&quot;MLOG$_T_MDCLCLM&quot; (dmltype$$,old_new$
+$,snaptime$$,change_vector$$,xid$$,m_row$$,&quot;MCLM_ID&quot;) VALUES (:d,:o,to_date('4000-01-01:00:00:00','Y
+YYY-MM-DD:HH24:MI:SS'),:c,:x,:m,:1)
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td>
+gac15vmmrzgbv
+</td>
+<td align="right">
+              318760
+</td>
+<td align="right">
+                  96
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              318760
+</td>
+<td align="right">
+              318760
+</td>
+<td align="right">
+              318859
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select parttype, partcnt, partkeycols, flags, defts#, defpctfree, defpctused, definitrans, defmaxtra
+ns, deftiniexts, defextsize, defminexts, defmaxexts, defextpct, deflists, defgroups, deflogging, spa
+re1, mod(spare2, 256) subparttype, mod(trunc(spare2/256), 256) subpartkeycols, mod(trunc(spare2/6553
+6), 65536) defsubpartcnt, mod(trunc(spare2/4294967296), 256) defhscflags, mod(trunc(spare2/109951162
+7776), 4096) defimcflags, mod(trunc(spare2/4503599627370496), 8) defimcpl, mod(spare3, 256) interval
+_dty, rowid, defmaxsize from partobj$ where obj# = :1
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td>
+2jfqzrxhrm93b
+</td>
+<td align="right">
+              297168
+</td>
+<td align="right">
+              294485
+</td>
+<td align="right">
+                .991
+</td>
+<td align="right">
+              297168
+</td>
+<td align="right">
+              297168
+</td>
+<td align="right">
+             2361773
+</td>
+<td align="right">
+                 177
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select /*+ rule */ c.name, u.name from con$ c, cdef$ cd, user$ u  where c.con# = cd.con# and cd.enab
+led = :1 and c.owner# = u.user#
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td>
+0yjaq1y2v2cjk
+</td>
+<td align="right">
+              295306
+</td>
+<td align="right">
+              295306
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              295249
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            18218321
+</td>
+<td align="right">
+              618388
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 857
+</td>
+<td align="right">
+                 432
+</td>
+<td align="right">
+                 217
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+                 138
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE T_USR_ADD SET &quot;CLASSTYPE&quot; = :B1 ,&quot;UADD_C4C_ID&quot; = :B2 ,&quot;UADD_CRTD&quot; = :B3 ,&quot;UADD_LAS_ACT&quot; = :B4
+ ,&quot;UADD_LAS_ACT_ACTRTYP&quot; = :B5 ,&quot;UADD_LAS_ACT_TIM&quot; = :B6 ,&quot;UADD_OBJ_STT&quot; = :B7 ,&quot;UADD_VERS&quot; = :B8 ,&quot;
+UADD_VSBT&quot; = :B9 ,&quot;UADD_DLTDDT&quot; = :B10 ,&quot;UADD_LAS_ACT_BY&quot; = :B11 ,&quot;UADD_ORIGCRTR&quot; = :B12 ,&quot;UADD_ORIG
+CRTRLOGDIN&quot; = :B13 ,&quot;UADD_LAS_ACT_BY_LOGDIN&quot; = :B14 ,&quot;UADD_UNIVID&quot; = :B15 ,&quot;UADD_BIZ_TTLE&quot; = :B16 ,&quot;
+UADD_COMPNAM&quot; = :B17 ,&quot;UADD_DSCN&quot; = :B18 ,&quot;UADD_BIZ_MAILSTOP&quot; = :B19 ,&quot;UADD_STT1&quot; = :B20 ,&quot;UADD_STT2
+&quot; = :B21 ,&quot;UADD_STT3&quot; = :B22 ,&quot;UADD_CITYTOWNSTRG&quot; = :B23 ,&quot;UADD_CNTYSTRG&quot; = :B24 ,&quot;UADD_STT_STRG&quot; =
+:B25 ,&quot;UADD_ZIP_COD5DGIT&quot; = :B26 ,&quot;UADD_ZIP_COD4DGIT&quot; = :B27 ,&quot;UADD_PHNE&quot; = :B28 ,&quot;UADD_PHNEEXT&quot; = :
+B29 ,&quot;UADD_FAX_NMBR&quot; = :B30 ,&quot;UADD_OTHRADD_IDX&quot; = :B31 ,&quot;UADD_ID&quot; = :B32 ,&quot;UADD_CNTY&quot; = :B33 ,&quot;UADD_
+CITYTOWN&quot; = :B34 ,&quot;UADD_STT&quot; = :B35 ,&quot;UADD_CNRY&quot; = :B36 ,&quot;UADD_USR_CNCTIFO5&quot; = :B37 ,&quot;UADD_PAYRDAT&quot;
+= :B38 ,&quot;UADD_FROM_DT&quot; = :B39 ,&quot;UADD_TO_DT&quot; = :B40 ,&quot;LATITUDE&quot; = :B41 ,&quot;LONGITUDE&quot; = :B42 ,&quot;UADD_PRI
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td>
+3axxxnjp5jjwj
+</td>
+<td align="right">
+              292723
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              292723
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              292737
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+delete from ind_stats$ where obj#=:1
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td>
+6q42j0018w7t8
+</td>
+<td align="right">
+              288694
+</td>
+<td align="right">
+              288694
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              288694
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             3677141
+</td>
+<td align="right">
+               65165
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+insert into sys.wri$_optstat_ind_history(obj#,rowcnt,leafcnt,distkey, lblkkey, dblkkey,clufac,blevel
+,analyzetime,samplesize,guessq,cachedblk, cachehit,logicalread,savtime,flags) values  (:1,:2,:3,:4,:
+5,:6,:7,:8,:9,:10,:11,:12,:13,:14,:15,:16)
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td>
+b09qw4b47vdwz
+</td>
+<td align="right">
+              288554
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              288554
+</td>
+<td align="right">
+              288554
+</td>
+<td align="right">
+             2599898
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+JOB_ANALYZE_HROLTP
+</td>
+<td>
+ORA$AT_OS_OPT_SY_5391
+</td>
+<td>
+SELECT /*+ leading(u o) */ O.OBJ# POBJN, NVL(IP.PART#, ICP.PART#) PN, O.SUBNAME PNAME, NVL(IP.ANALYZ
+ETIME, ICP.ANALYZETIME) LAST_ANALYZED, NVL(IP.FLAGS, ICP.FLAGS) FLAGS, :B4 REASON FROM SYS.USER$ U,
+SYS.OBJ$ O, SYS.INDPART$ IP, SYS.INDCOMPART$ ICP WHERE :B3 IS NULL AND U.NAME = :B2 AND O.OWNER# = U
+.USER# AND O.NAME = :B1 AND O.NAMESPACE = 4 AND O.REMOTEOWNER IS NULL AND O.LINKNAME IS NULL AND O.T
+YPE# = 20 AND O.OBJ# = IP.OBJ#(+) AND O.OBJ# = ICP.OBJ#(+) UNION ALL SELECT * FROM ( SELECT /*+ lead
+ing(u o) */ O.OBJ# POBJN, NVL(IP.PART#, ICP.PART#) PN, O.SUBNAME PNAME, NVL(IP.ANALYZETIME,ICP.ANALY
+ZETIME) LAST_ANALYZED, NVL(IP.FLAGS, ICP.FLAGS) FLAGS, :B4 REASON FROM SYS.USER$ U, SYS.OBJ$ O, SYS.
+INDPART$ IP, SYS.INDCOMPART$ ICP WHERE U.NAME = :B2 AND O.OWNER# = U.USER# AND O.NAME = :B1 AND O.NA
+MESPACE = 4 AND O.REMOTEOWNER IS NULL AND O.LINKNAME IS NULL AND O.SUBNAME = :B3 AND O.TYPE# = 20 AN
+D O.OBJ# = IP.OBJ#(+) AND O.OBJ# = ICP.OBJ#(+) UNION ALL SELECT /*+ leading(u osp isp op) */ OP.OBJ#
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td>
+9bd8c7920dchm
+</td>
+<td align="right">
+              244976
+</td>
+<td align="right">
+              152341
+</td>
+<td align="right">
+                .622
+</td>
+<td align="right">
+              244975
+</td>
+<td align="right">
+              244975
+</td>
+<td align="right">
+              372788
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  62
+</td>
+<td align="right">
+                  59
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT COLUMN_VALUE FROM TABLE(XMLSEQUENCE(:B1 ))
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td>
+ftj9uawt4wwzb
+</td>
+<td align="right">
+              229006
+</td>
+<td align="right">
+              229006
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              229006
+</td>
+<td align="right">
+              229006
+</td>
+<td align="right">
+              458018
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select condition from cdef$ where rowid=:1
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td>
+5yvhfaspc4hng
+</td>
+<td align="right">
+              212654
+</td>
+<td align="right">
+              212656
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               26086
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            34149207
+</td>
+<td align="right">
+                5217
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 845
+</td>
+<td align="right">
+                 633
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 681
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+BEGIN CA_LOAD.CHECK_DUPLICATE_MESSAGE(
+            :1 ,
+            :2 ,
+            :3 ,
+
+  :4 ,
+            :5 
+        ); END;
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td>
+gj2q3mh3q4h15
+</td>
+<td align="right">
+              209865
+</td>
+<td align="right">
+              209865
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               30738
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             2036574
+</td>
+<td align="right">
+               26591
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  58
+</td>
+<td align="right">
+                  45
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+DERIVE_ELIGIBILITY_JOB
+</td>
+<td>
+DERIVE_ELIGIBILITY_JOB
+</td>
+<td>
+UPDATE A_USR SET MBUR_ENDANGERED = :B130 , MBUR_SAFEWORD = :B129 , MBUR_MEDICAID_RECERT_DATE = :B128
+ , MBUR_RESTRICTED_RCPNT_PRGRM = :B127 , PRV_IS_ADM = :B126 , PRV_PCP_IND = :B125 , PRV_ID = :B124 ,
+ MBUR_DT_OF_DTH = :B123 , MBUR_ELBL = :B122 , MBUR_COB = :B121 , MBUR_COB_NAM = :B120 , MBUR_INSCID_
+AT_OTHRINSR = :B119 , MBUR_PMRYINSR = :B118 , MBUR_CRDTIND = :B117 , MBUR_INSCID = :B116 , MBUR_MEDI
+CAID = :B115 , MBUR_HICNID = :B114 , MBUR_MBI = :B113 , MBUR_SCL_SCTYNMBR = :B112 , MBUR_CNFTCNCT =
+:B111 , MBUR_DNF_CODE = :B110 , MBUR_ID = :B109 , FF_ID = :B108 , PAYR_EMPEID = :B107 , PAYR_SCL_SCT
+YNMBR = :B106 , PAYR_STRTOF_YR = :B105 , PAYR_HREDDT = :B104 , PAYR_TMTDDT = :B103 , PAYR_THNKHLTHST
+RTDT = :B102 , PAYR_THNKHLTHEND_DT = :B101 , PAYR_WKLDLMITBY_ALL_USR_ROLS = :B100 , PAYR_WKLDLMITBY_
+PMRYUSR_ROLE = :B99 , PAYR_WKLDLMITBY = :B98 , PAYR_WKLDLMITFNALDCDR = :B97 , PAYR_WKLDLMITBY_ROLEBY
+_SVTY = :B96 , PAYR_WKLDLMITBY_TOTLWKLD = :B95 , PAYR_WKLDLMTDBY_WORKTYP = :B94 , PAYR_REG_DY_OFF_MO
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td>
+c7rzdkw8bznju
+</td>
+<td align="right">
+              202378
+</td>
+<td align="right">
+              202377
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               13315
+</td>
+<td align="right">
+              202378
+</td>
+<td align="right">
+              404754
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT PROP_VAL FROM CAREADMIN_PROPS WHERE PROP_KEY = :B1
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td>
+52kfqq6q4ntj5
+</td>
+<td align="right">
+              189483
+</td>
+<td align="right">
+              189483
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              189483
+</td>
+<td align="right">
+              189483
+</td>
+<td align="right">
+             1327151
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select o.obj#, t.flags from tab$ t, obj$ o, user$ u where  u.user# = :1 and u.user# = o.owner# and o
+.name = :2 and o.obj# = t.obj#
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td>
+cm0g2mmwspjq9
+</td>
+<td align="right">
+              173099
+</td>
+<td align="right">
+              173099
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 131
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            11249736
+</td>
+<td align="right">
+              151385
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 315
+</td>
+<td align="right">
+                 198
+</td>
+<td align="right">
+                  49
+</td>
+<td align="right">
+                  89
+</td>
+<td align="right">
+                  38
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE T_MDCLCLM SET &quot;CLASSTYPE&quot; = :B1 ,&quot;MCLM_C4C_ID&quot; = :B2 ,&quot;MCLM_CRTD&quot; = :B3 ,&quot;MCLM_LAS_ACT&quot; = :B4
+ ,&quot;MCLM_LAS_ACT_ACTRTYP&quot; = :B5 ,&quot;MCLM_LAS_ACT_TIM&quot; = :B6 ,&quot;MCLM_OBJ_STT&quot; = :B7 ,&quot;MCLM_VERS&quot; = :B8 ,&quot;
+MCLM_VSBT&quot; = :B9 ,&quot;MCLM_DLTDDT&quot; = :B10 ,&quot;MCLM_LAS_ACT_BY&quot; = :B11 ,&quot;MCLM_ORIGCRTR&quot; = :B12 ,&quot;MCLM_ORIG
+CRTRLOGDIN&quot; = :B13 ,&quot;MCLM_LAS_ACT_BY_LOGDIN&quot; = :B14 ,&quot;MCLM_UNIVID&quot; = :B15 ,&quot;MCLM_CLM_ID&quot; = :B16 ,&quot;MC
+LM_GRP_ID&quot; = :B17 ,&quot;MCLM_HOM_GRP_ID&quot; = :B18 ,&quot;MCLM_LINEOF_BIZ&quot; = :B19 ,&quot;MCLM_CLM_TYP&quot; = :B20 ,&quot;MCLM_
+FRSTDT_OF_SRVC&quot; = :B21 ,&quot;MCLM_LAS_DT_OF_SRVC&quot; = :B22 ,&quot;MCLM_LEN_OF_STAY&quot; = :B23 ,&quot;MCLM_AMNTCRGD&quot; = :
+B24 ,&quot;MCLM_AMNTPAID&quot; = :B25 ,&quot;MCLM_DRG&quot; = :B26 ,&quot;MCLM_AMNTALWD&quot; = :B27 ,&quot;MCLM_AMNTDDCT&quot; = :B28 ,&quot;MCL
+M_AMNTCPAY&quot; = :B29 ,&quot;MCLM_AMNTAPRD&quot; = :B30 ,&quot;MCLM_ID&quot; = :B31 ,&quot;MCLM_SCDYIC_D9_POC_CODE&quot; = :B32 ,&quot;MCL
+M_PMRYIC_D9_POC_CODE&quot; = :B33 ,&quot;MCLM_CPT4CODE&quot; = :B34 ,&quot;MCLM_ICD9DX2&quot; = :B35 ,&quot;MCLM_ICD9DX1&quot; = :B36 ,
+&quot;MCLM_ICD9DX3&quot; = :B37 ,&quot;MCLM_MDC_ID&quot; = :B38 ,&quot;MCLM_CSTMFLDS&quot; = :B39 ,&quot;MCLM_SENGPVDR&quot; = :B40 ,&quot;MCLM_R
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td>
+g1xapjmt4vm5c
+</td>
+<td align="right">
+              171140
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                5243
+</td>
+<td align="right">
+              171140
+</td>
+<td align="right">
+             1028596
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+JOB_ANALYZE_HROLTP
+</td>
+<td>
+ORA$AT_OS_OPT_SY_5448
+</td>
+<td>
+SELECT SU.NAME, SO.NAME, A.STATSTYPE#, A.INTCOL# FROM ASSOCIATION$ A, OBJ$ O, USER$ U, COL$ C, OBJ$
+SO, USER$ SU WHERE O.OWNER#=U.USER# AND A.OBJ#=O.OBJ# AND O.OBJ#=C.OBJ# AND C.INTCOL#=A.INTCOL# AND
+A.STATSTYPE#=SO.OBJ# AND SO.OWNER#=SU.USER# AND O.TYPE#=2 AND U.NAME=:B3 AND O.NAME=:B2 AND C.NAME=:
+B1
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td>
+4xndrwmcrhuap
+</td>
+<td align="right">
+              167104
+</td>
+<td align="right">
+              167100
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               59181
+</td>
+<td align="right">
+              167101
+</td>
+<td align="right">
+              551422
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT DDLI_ID FROM T_DDL_ITEM WHERE DDLI_LBL = :B2 AND DDLI_DDL = :B1 AND DDLI_OBJ_STT=101 AND DDLI
+_VSBT = 1001 AND DDLI_PRNT IS NULL AND CLASSTYPE = 'DDLItem' AND ROWNUM &lt; 2
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td>
+cf01ac2k7kxpp
+</td>
+<td align="right">
+              162787
+</td>
+<td align="right">
+              162787
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               66469
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1769951
+</td>
+<td align="right">
+               20054
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  37
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE A_USR_CNCTINFO SET CLASSTYPE = :B33 , UCTI_C4C_ID = :B32 , UCTI_CRTD = :B31 , UCTI_LAS_ACT =
+:B30 , UCTI_LAS_ACT_ACTRTYP = :B29 , UCTI_OBJ_STT = :B28 , UCTI_VERS = :B27 , UCTI_VSBT = :B26 , UCT
+I_DLTDDT = :B25 , UCTI_LAS_ACT_BY = :B24 , UCTI_ORIGCRTR = :B23 , UCTI_ORIGCRTRLOGDIN = :B22 , UCTI_
+LAS_ACT_BY_LOGDIN = :B21 , UCTI_UNIVID = :B20 , UCTI_CLLRPHNE = :B19 , UCTI_PAGR = :B18 , UCTI_EMCYP
+HNE = :B17 , UCTI_EMALADD1 = :B16 , UCTI_EMALADD2 = :B15 , UCTI_WBST = :B14 , UCTI_OFFCHORS = :B13 ,
+ UCTI_CNCTMTHD = :B12 , UCTI_PRFSEMAL = :B11 , UCTI_PRFSPHNE = :B10 , UCTI_PRFSMAIL = :B9 , UCTI_PAY
+RDAT = :B8 , UCTI_BIZ_ADD = :B7 , UCTI_HOM_ADD = :B6 , UCTI_EMALADD3 = :B5 , UCTI_EMALADD4 = :B4 , D
+O_NOT_CONTACT = :B3 , UCTI_CONF_EMAIL = :B2 , UCTI_CONF_ADDR = :B1 WHERE UCTI_AUDID = :B34
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td>
+b28r21qxqj5tc
+</td>
+<td align="right">
+              159840
+</td>
+<td align="right">
+              159841
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               64792
+</td>
+<td align="right">
+              159841
+</td>
+<td align="right">
+              669242
+</td>
+<td align="right">
+               24435
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  29
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT UCTI_AUDID FROM A_USR_CNCTINFO WHERE UCTI_ID = :B1 AND UCTI_NEXT_AUDID IS NULL AND ROWNUM &lt; 2
+ FOR UPDATE
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td>
+7aj9hcj4b6bwx
+</td>
+<td align="right">
+              159131
+</td>
+<td align="right">
+              159131
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           643256965
+</td>
+<td align="right">
+                8182
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1071
+</td>
+<td align="right">
+                 979
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                  71
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE T_PRODCAT_PVDR SET PCPR_OBJ_STT = :B5 , APPLIES_TO_ALL_PRACTITIONERS = :B4 WHERE BENEFIT_NETW
+ORK_NAME = :B3 AND PCPR_IN_NTWKPRODCATS = :B2 AND PRACTITIONER_ROLE_ID = :B1
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td>
+69rfpkbjnqtmy
+</td>
+<td align="right">
+              157637
+</td>
+<td align="right">
+              157546
+</td>
+<td align="right">
+                .999
+</td>
+<td align="right">
+               50823
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          1411135647
+</td>
+<td align="right">
+              989843
+</td>
+<td align="right">
+              675484
+</td>
+<td align="right">
+               19856
+</td>
+<td align="right">
+               13536
+</td>
+<td align="right">
+                1314
+</td>
+<td align="right">
+                 473
+</td>
+<td align="right">
+                3498
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                 648
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+BEGIN :1  := CA_LOAD.LOAD_CLAIM(
+            :2 ,
+            :3 ,
+            :4 ,
+            :5
+
+        ); END;
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td>
+gmdjdqk6p7rf5
+</td>
+<td align="right">
+              156177
+</td>
+<td align="right">
+              156177
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              156172
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1182933
+</td>
+<td align="right">
+                5548
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+INSERT /*+ NO_DST_UPGRADE_INSERT_CONV IDX(0) */ INTO &quot;THH_C4C&quot;.&quot;MLOG$_T_PVDRASTN&quot; (dmltype$$,old_new
+$$,snaptime$$,change_vector$$,xid$$,m_row$$,&quot;PRAS_ID&quot;) VALUES (:d,:o,to_date('4000-01-01:00:00:00','
+YYYY-MM-DD:HH24:MI:SS'),:c,:x,:m,:1)
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td>
+g6kchk3hb1c1s
+</td>
+<td align="right">
+              153816
+</td>
+<td align="right">
+              153813
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               62389
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             6225214
+</td>
+<td align="right">
+              100756
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 170
+</td>
+<td align="right">
+                 126
+</td>
+<td align="right">
+                  35
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE T_USR_CNCTINFO SET &quot;CLASSTYPE&quot; = :B1 ,&quot;UCTI_C4C_ID&quot; = :B2 ,&quot;UCTI_CRTD&quot; = :B3 ,&quot;UCTI_LAS_ACT&quot;
+= :B4 ,&quot;UCTI_LAS_ACT_ACTRTYP&quot; = :B5 ,&quot;UCTI_LAS_ACT_TIM&quot; = :B6 ,&quot;UCTI_OBJ_STT&quot; = :B7 ,&quot;UCTI_VERS&quot; = :
+B8 ,&quot;UCTI_VSBT&quot; = :B9 ,&quot;UCTI_DLTDDT&quot; = :B10 ,&quot;UCTI_LAS_ACT_BY&quot; = :B11 ,&quot;UCTI_ORIGCRTR&quot; = :B12 ,&quot;UCTI
+_ORIGCRTRLOGDIN&quot; = :B13 ,&quot;UCTI_LAS_ACT_BY_LOGDIN&quot; = :B14 ,&quot;UCTI_UNIVID&quot; = :B15 ,&quot;UCTI_CLLRPHNE&quot; = :B
+16 ,&quot;UCTI_PAGR&quot; = :B17 ,&quot;UCTI_EMCYPHNE&quot; = :B18 ,&quot;UCTI_EMALADD1&quot; = :B19 ,&quot;UCTI_EMALADD2&quot; = :B20 ,&quot;UCT
+I_WBST&quot; = :B21 ,&quot;UCTI_OFFCHORS&quot; = :B22 ,&quot;UCTI_ID&quot; = :B23 ,&quot;UCTI_CNCTMTHD&quot; = :B24 ,&quot;UCTI_PRFSEMAL&quot; =
+:B25 ,&quot;UCTI_PRFSPHNE&quot; = :B26 ,&quot;UCTI_PRFSMAIL&quot; = :B27 ,&quot;UCTI_PAYRDAT&quot; = :B28 ,&quot;UCTI_BIZ_ADD&quot; = :B29 ,
+&quot;UCTI_HOM_ADD&quot; = :B30 ,&quot;UCTI_EMALADD3&quot; = :B31 ,&quot;UCTI_EMALADD4&quot; = :B32 ,&quot;DO_NOT_CONTACT&quot; = :B33 ,&quot;UCT
+I_CONF_ADDR&quot; = :B34 ,&quot;UCTI_CONF_EMAIL&quot; = :B35 WHERE T_USR_CNCTINFO.UCTI_ID = :B1
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td>
+1zqw78vct54j8
+</td>
+<td align="right">
+              150904
+</td>
+<td align="right">
+              150904
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              150898
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1301575
+</td>
+<td align="right">
+                6043
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  24
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+INSERT /*+ NO_DST_UPGRADE_INSERT_CONV IDX(0) */ INTO &quot;THH_C4C&quot;.&quot;MLOG$_A_USR&quot; (dmltype$$,old_new$$,sn
+aptime$$,change_vector$$,xid$$,m_row$$,&quot;USR_AUDID&quot;) VALUES (:d,:o,to_date('4000-01-01:00:00:00','YYY
+Y-MM-DD:HH24:MI:SS'),:c,:x,:m,:1)
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td>
+6ta0azw9znyz8
+</td>
+<td align="right">
+              138305
+</td>
+<td align="right">
+              729435
+</td>
+<td align="right">
+               5.274
+</td>
+<td align="right">
+              138329
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          9764844938
+</td>
+<td align="right">
+              118170
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               63006
+</td>
+<td align="right">
+               60333
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+                 299
+</td>
+<td align="right">
+                 260
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    2
+</td>
+<td align="right">
+               24524
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+delete from T_OTHER_INSURANCE where INS_MEMBER= :1 and CLASSTYPE=:2
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td>
+4j946b836gxpx
+</td>
+<td align="right">
+              135364
+</td>
+<td align="right">
+              131662
+</td>
+<td align="right">
+                .973
+</td>
+<td align="right">
+              135300
+</td>
+<td align="right">
+              135364
+</td>
+<td align="right">
+              541196
+</td>
+<td align="right">
+                7259
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT * FROM T_USR_LOGN WHERE ULGN_USR = :B1
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td>
+65bm88u58wsvy
+</td>
+<td align="right">
+              134685
+</td>
+<td align="right">
+                6740
+</td>
+<td align="right">
+                 .05
+</td>
+<td align="right">
+              134846
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          2704471820
+</td>
+<td align="right">
+                 194
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13389
+</td>
+<td align="right">
+               12857
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                 112
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    2
+</td>
+<td align="right">
+                6973
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+DELETE FROM T_PHI WHERE MEMBER_ID = :B1 AND PHI_TYPE = 5
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td>
+2mrjsarqc32h3
+</td>
+<td align="right">
+              133936
+</td>
+<td align="right">
+              178649
+</td>
+<td align="right">
+               1.334
+</td>
+<td align="right">
+              134020
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          3029204854
+</td>
+<td align="right">
+               13292
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               17138
+</td>
+<td align="right">
+               16412
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                 146
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                7797
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+DELETE FROM T_PROVIDER_CHOICE WHERE PRCE_MEMB = :B1
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td>
+bzsm5n1q7g4z6
+</td>
+<td align="right">
+              133636
+</td>
+<td align="right">
+              176601
+</td>
+<td align="right">
+               1.322
+</td>
+<td align="right">
+              133694
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          3022522967
+</td>
+<td align="right">
+               38633
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               16960
+</td>
+<td align="right">
+               16229
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                 101
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                7800
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+DELETE FROM T_PROVIDER_CHOICE_ROLE_XREF WHERE PCRX_PRCE_ID IN (SELECT A.PRCE_ID FROM T_PROVIDER_CHOI
+CE A, T_PROVIDER_CHOICE_ROLE_XREF X WHERE A.PRCE_ID = X.PCRX_PRCE_ID AND A.PRCE_MEMB = :B1 )
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td>
+7rn4p17967pyq
+</td>
+<td align="right">
+              133072
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              133238
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          2721485166
+</td>
+<td align="right">
+               49537
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               14688
+</td>
+<td align="right">
+               12944
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+                1244
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                7042
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+DELETE FROM T_PHI WHERE MEMBER_ID = :B1 AND PHI_TYPE = 2
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td>
+dm4q2g6wv2dtj
+</td>
+<td align="right">
+              132718
+</td>
+<td align="right">
+               48656
+</td>
+<td align="right">
+                .367
+</td>
+<td align="right">
+              132870
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          2713607988
+</td>
+<td align="right">
+                5643
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13522
+</td>
+<td align="right">
+               12910
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+                 192
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                7042
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+DELETE FROM T_PHI WHERE MEMBER_ID = :B1 AND PHI_TYPE = 6
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td>
+4tktkb5c6kjr3
+</td>
+<td align="right">
+              132485
+</td>
+<td align="right">
+                2344
+</td>
+<td align="right">
+                .018
+</td>
+<td align="right">
+              132610
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          2708708954
+</td>
+<td align="right">
+                 350
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13414
+</td>
+<td align="right">
+               12886
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+                  90
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                7042
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+DELETE FROM T_PHI WHERE MEMBER_ID = :B1 AND PHI_TYPE = 3
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td>
+fj7zvxah9qdku
+</td>
+<td align="right">
+              132255
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              132396
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          2703716527
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13392
+</td>
+<td align="right">
+               12862
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                7042
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+DELETE FROM T_PHI WHERE MEMBER_ID = :B1 AND PHI_TYPE = 4
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td>
+9tsvsj15gkx59
+</td>
+<td align="right">
+              131980
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              132158
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          2699058800
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13347
+</td>
+<td align="right">
+               12795
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 185
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                7042
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+DELETE FROM T_PHI WHERE MEMBER_ID = :B1 AND PHI_TYPE = 1
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td>
+4k2uj3nx2t2xj
+</td>
+<td align="right">
+              130907
+</td>
+<td align="right">
+              755302
+</td>
+<td align="right">
+                5.77
+</td>
+<td align="right">
+              130907
+</td>
+<td align="right">
+              130907
+</td>
+<td align="right">
+             2541295
+</td>
+<td align="right">
+                1842
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    3
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DBMS_SCHEDULER
+</td>
+<td>
+SQL*Plus
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+JOB_ANALYZE_HROLTP
+</td>
+<td>
+ORA$AT_OS_OPT_SY_5911
+</td>
+<td>
+SELECT /*+ ordered push_pred(v) */ U.NAME, OT.NAME, DECODE(OT.TYPE#, 34, V.COMPART, OT.SUBNAME) PART
+, DECODE(OT.TYPE#, 34, OT.SUBNAME, NULL) SPART, V.COL, V.GLOB_ST, V.USER_ST, V.DIST, V.DENS, V.SDIST
+, V.SSIZE, V.NCNT, V.TSTAMP, V.CLEN, V.MINVAL, V.MAXVAL, V.NMIN, V.NMAX, V.DMIN, V.DMAX, V.CCNT, V.B
+VAL, V.EVAL, V.EAVAL, V.HISTFLG, V.RPCNT, V.FLAGS FROM SYS.USER$ U, SYS.OBJ$ OT, (SELECT /*+ ordered
+ push_pred(hg) */ C.OBJ# OBJ#, 2 TYPE#, NULL COMPART, C.NAME COL, BITAND(H.SPARE2_KXTTST_CS, 2) GLOB
+_ST, BITAND(H.SPARE2_KXTTST_CS, 1) USER_ST, H.DISTCNT_KXTTST_CS DIST, H.DENSITY_KXTTST_CS DENS, H.SP
+ARE1_KXTTST_CS SDIST, H.SAMPLE_SIZE_KXTTST_CS SSIZE, H.NULL_CNT_KXTTST_CS NCNT, H.TIMESTAMP#_KXTTST_
+CS TSTAMP, H.AVGCLN_KXTTST_CS CLEN, H.LOWVAL_KXTTST_CS MINVAL, H.HIVAL_KXTTST_CS MAXVAL, H.MINIMUM_K
+XTTST_CS NMIN, H.MAXIMUM_KXTTST_CS NMAX, NULL DMIN, NULL DMAX, H.CACHE_CNT_KXTTST_CS CCNT, HG.BUCKET
+_KXTTST_HS BVAL, HG.ENDPOINT_KXTTST_HS EVAL, HG.EPVALUE_RAW_KXTTST_HS EAVAL, BITAND(H.SPARE2_KXTTST_
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td>
+b202u7y9cbkpp
+</td>
+<td align="right">
+              122126
+</td>
+<td align="right">
+              122126
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              122126
+</td>
+<td align="right">
+              122126
+</td>
+<td align="right">
+                8794
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT /* DS_SVC */ /*+ dynamic_sampling(0) no_sql_tune no_monitoring optimizer_features_enable(defa
+ult) no_parallel result_cache(snapshot=3600) */ SUM(C1) FROM (SELECT /*+ qb_name(&quot;innerQuery&quot;) NO_IN
+DEX_FFS( &quot;W&quot;)  */ 1 AS C1 FROM &quot;T_WKFWTSK&quot; SAMPLE BLOCK(2.18472, 8) SEED(1)  &quot;W&quot; WHERE (&quot;W&quot;.&quot;WTSK_RF
+RDOBJ_TYP&quot;=:B1) AND (&quot;W&quot;.&quot;WTSK_OBJ_STT&quot;=:B2 OR &quot;W&quot;.&quot;WTSK_OBJ_STT&quot;=:B3)) innerQuery
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td>
+5n1fs4m2n2y0r
+</td>
+<td align="right">
+              117797
+</td>
+<td align="right">
+              161231
+</td>
+<td align="right">
+               1.369
+</td>
+<td align="right">
+                4429
+</td>
+<td align="right">
+              279028
+</td>
+<td align="right">
+              558032
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select pos#,intcol#,col#,spare1,bo#,spare2,spare3 from icol$ where obj#=:1
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td>
+bfkcggu4cvgjn
+</td>
+<td align="right">
+              115094
+</td>
+<td align="right">
+              115094
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              114394
+</td>
+<td align="right">
+              115094
+</td>
+<td align="right">
+               35938
+</td>
+<td align="right">
+                  67
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT S_CAREADMIN_CONVO.NEXTVAL FROM DUAL
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td>
+78268qcfnt3az
+</td>
+<td align="right">
+              110994
+</td>
+<td align="right">
+              110995
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  68
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             5316532
+</td>
+<td align="right">
+               75346
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3483
+</td>
+<td align="right">
+                 101
+</td>
+<td align="right">
+                  24
+</td>
+<td align="right">
+                  62
+</td>
+<td align="right">
+                3320
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+INSERT INTO T_MDCLCLM ( CLASSTYPE, MCLM_CRTD, MCLM_LAS_ACT, MCLM_LAS_ACT_TIM, MCLM_OBJ_STT, MCLM_VER
+S, MCLM_VSBT, MCLM_LAS_ACT_BY, MCLM_ORIGCRTR, MCLM_ORIGCRTRLOGDIN, MCLM_LAS_ACT_BY_LOGDIN, MCLM_UNIV
+ID, MCLM_ID, MCLM_PAT_ID ) VALUES ( 'MedicalClaim', SYSDATE, 1, SYSDATE, 1, 0, 1001, 1, 1, 1, 1, :B3
+ , :B2 , :B1 )
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td>
+8vtvaqvs7g6z3
+</td>
+<td align="right">
+              109383
+</td>
+<td align="right">
+              109384
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               45713
+</td>
+<td align="right">
+              109384
+</td>
+<td align="right">
+              463119
+</td>
+<td align="right">
+               26964
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT UADD_AUDID FROM A_USR_ADD WHERE UADD_ID = :B1 AND UADD_NEXT_AUDID IS NULL AND ROWNUM &lt; 2 FOR
+UPDATE
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td>
+ak19r2dxycc4s
+</td>
+<td align="right">
+              102795
+</td>
+<td align="right">
+              102794
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               44299
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1249185
+</td>
+<td align="right">
+               25901
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  34
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UPDATE A_USR_ADD SET CLASSTYPE = :B41 , UADD_C4C_ID = :B40 , UADD_CRTD = :B39 , UADD_LAS_ACT = :B38
+, UADD_LAS_ACT_ACTRTYP = :B37 , UADD_OBJ_STT = :B36 , UADD_VERS = :B35 , UADD_VSBT = :B34 , UADD_DLT
+DDT = :B33 , UADD_LAS_ACT_BY = :B32 , UADD_ORIGCRTR = :B31 , UADD_ORIGCRTRLOGDIN = :B30 , UADD_LAS_A
+CT_BY_LOGDIN = :B29 , UADD_UNIVID = :B28 , UADD_BIZ_TTLE = :B27 , UADD_COMPNAM = :B26 , UADD_DSCN =
+:B25 , UADD_BIZ_MAILSTOP = :B24 , UADD_STT1 = :B23 , UADD_STT2 = :B22 , UADD_STT3 = :B21 , UADD_CITY
+TOWNSTRG = :B20 , UADD_CNTYSTRG = :B19 , UADD_STT_STRG = :B18 , UADD_ZIP_COD5DGIT = :B17 , UADD_ZIP_
+COD4DGIT = :B16 , UADD_PHNE = :B15 , UADD_PHNEEXT = :B14 , UADD_FAX_NMBR = :B13 , UADD_OTHRADD_IDX =
+ :B12 , UADD_CNTY = :B11 , UADD_CITYTOWN = :B10 , UADD_STT = :B9 , UADD_CNRY = :B8 , UADD_USR_CNCTIF
+O5 = :B7 , UADD_PAYRDAT = :B6 , UADD_FROM_DT = :B5 , UADD_TO_DT = :B4 , LATITUDE = :B3 , LONGITUDE =
+ :B2 , UADD_PRIMARY = :B1 WHERE UADD_AUDID = :B42
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td>
+121ffmrc95v7g
+</td>
+<td align="right">
+               96751
+</td>
+<td align="right">
+              742828
+</td>
+<td align="right">
+               7.678
+</td>
+<td align="right">
+               49551
+</td>
+<td align="right">
+              839579
+</td>
+<td align="right">
+              751394
+</td>
+<td align="right">
+                4409
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 124
+</td>
+<td align="right">
+                  97
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    2
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select i.obj#,i.ts#,i.file#,i.block#,i.intcols,i.type#,i.flags,i.property,i.pctfree$,i.initrans,i.ma
+xtrans,i.blevel,i.leafcnt,i.distkey,i.lblkkey,i.dblkkey,i.clufac,i.cols,i.analyzetime,i.samplesize,i
+.dataobj#,nvl(i.degree,1),nvl(i.instances,1),i.rowcnt,mod(i.pctthres$,256),i.indmethod#,i.trunccnt,n
+vl(c.unicols,0),nvl(c.deferrable#+c.valid#,0),nvl(i.spare1,i.intcols),i.spare4,i.spare2,i.spare6,dec
+ode(i.pctthres$,null,null,mod(trunc(i.pctthres$/256),256)),nvl(i.evaledition#,1),nvl(i.unusablebefor
+e#,0),nvl(i.unusablebeginning#,0), ist.cachedblk,ist.cachehit,ist.logicalread from ind$ i, ind_stats
+$ ist, (select enabled, min(intcols) unicols,min(to_number(bitand(defer,1))) deferrable#,min(to_numb
+er(bitand(defer,4))) valid# from cdef$ where obj#=:1 and enabled &gt; 1 group by enabled) c where i.obj
+#=c.enabled(+) and i.obj# = ist.obj#(+) and i.bo#=:1 order by i.obj#
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td>
+3c1kubcdjnppq
+</td>
+<td align="right">
+               96632
+</td>
+<td align="right">
+               95399
+</td>
+<td align="right">
+                .987
+</td>
+<td align="right">
+               28618
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              331301
+</td>
+<td align="right">
+                3806
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+update sys.col_usage$ set   equality_preds    = equality_preds    + decode(bitand(:flag,1),0,0,1),
+ equijoin_preds    = equijoin_preds    + decode(bitand(:flag,2),0,0,1),   nonequijoin_preds = nonequ
+ijoin_preds + decode(bitand(:flag,4),0,0,1),   range_preds       = range_preds       + decode(bitand
+(:flag,8),0,0,1),   like_preds        = like_preds        + decode(bitand(:flag,16),0,0,1),   null_p
+reds        = null_preds        + decode(bitand(:flag,32),0,0,1),  timestamp = :time where obj# = :o
+bjn and intcol# = :coln
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td>
+f2jjwnfu4xj0x
+</td>
+<td align="right">
+               92731
+</td>
+<td align="right">
+               92731
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               19641
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              760675
+</td>
+<td align="right">
+                3397
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                  17
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+INSERT INTO A_OTHER_INSURANCE ( CLASSTYPE, INS_ID, INS_C4C_ID, INS_UNIVID, INS_CRTD, INS_OBJ_STT, IN
+S_VERS, INS_MEMBER, INS_TYPE, INS_INSURANCE_ID, INS_EFFECTIVE_DATE, INS_TERMINATION_DATE, INS_VSBT,
+INS_DLTDDT, INS_ORIGCRTR, INS_ORIGCRTRLOGDIN, INS_LAS_ACT, INS_LAS_ACT_BY, INS_LAS_ACT_BY_LOGDIN, IN
+S_LAS_ACT_ACTRTYP, INS_LAS_ACT_TIM, INS_VALID_FROM, INS_VALID_TO, INS_AUDID, INS_PREV_AUDID, INS_NEX
+T_AUDID ) VALUES ( :B1 , :B2 , :B3 , :B4 , :B5 , :B6 , :B7 , :B8 , :B9 , :B10 , :B11 , :B12 , :B13 ,
+ :B14 , :B15 , :B16 , :B17 , :B18 , :B19 , :B20 , :B21 , :B21 , NULL, U_OTHER_INSURANCE.NEXTVAL, NUL
+L, NULL )
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td>
+c08b20wx5tmvg
+</td>
+<td align="right">
+               90170
+</td>
+<td align="right">
+               87790
+</td>
+<td align="right">
+                .974
+</td>
+<td align="right">
+               45572
+</td>
+<td align="right">
+               90173
+</td>
+<td align="right">
+              270642
+</td>
+<td align="right">
+                 541
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+SELECT SORG_ID, SORG_ABBR, CNTY_ID, CNTY_NAM, COTN_ID, 1 FROM THH_ADDRESS.T_POTLCODE_SHRT WHERE POCD
+_PMRYCODE = TO_NUMBER(:B2 ) AND UPPER(COTN_NAM) = UPPER(:B1 )
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td>
+afc6fu7zmwdbq
+</td>
+<td align="right">
+               89137
+</td>
+<td align="right">
+               89135
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               19134
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         37397100467
+</td>
+<td align="right">
+             6376530
+</td>
+<td align="right">
+              854073
+</td>
+<td align="right">
+              584261
+</td>
+<td align="right">
+              214339
+</td>
+<td align="right">
+                2847
+</td>
+<td align="right">
+                3256
+</td>
+<td align="right">
+              353377
+</td>
+<td align="right">
+                2989
+</td>
+<td align="right">
+                1825
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+BEGIN :1  := CA_LOAD.LOAD_MESSAGE(
+            :2 ,
+            :3 ,
+            :4 ,
+            :5
+ 
+        ); END;
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td>
+8f7sk40cknqmu
+</td>
+<td align="right">
+               85233
+</td>
+<td align="right">
+               85233
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               85233
+</td>
+<td align="right">
+               85233
+</td>
+<td align="right">
+              185549
+</td>
+<td align="right">
+                  29
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select text from suminline$ where rowid = :1
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td>
+6tta8ys1c0d81
+</td>
+<td align="right">
+               85148
+</td>
+<td align="right">
+               85150
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               85148
+</td>
+<td align="right">
+               85150
+</td>
+<td align="right">
+          4667870424
+</td>
+<td align="right">
+              198000
+</td>
+<td align="right">
+              174723
+</td>
+<td align="right">
+               12829
+</td>
+<td align="right">
+               11091
+</td>
+<td align="right">
+                 123
+</td>
+<td align="right">
+                  80
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 296
+</td>
+<td align="right">
+                 100
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+    1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+WorkboardManagementImplBeanDelegate
+</td>
+<td>
+WorkboardManagementImplBeanDelegate
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+getRecordIdsWithDueFlag
+</td>
+<td>
+getRecordIdsWithDueFlag
+</td>
+<td>
+SELECT PKG_WB_UM_SEARCHES.LIST_UMEVENT_REQ_IDS(:B3 , :B2 , :B1 ) AS OTHER_REVS, PKG_WB_UM_SEARCHES.L
+IST_UMEVENT_REV_IDS(:B3 , :B2 , :B1 ) AS OTHER_TASKS, PKG_WB_UM_SEARCHES.LIST_UMEVENT_NEW_IDS(:B3 ,
+:B2 , :B1 ), PKG_WB_UM_SEARCHES.LIST_UMEVENT_TASK_IDS(:B3 , :B2 , :B1 ), PKG_WB_CASE_SEARCHES.LIST_C
+ASE_REQ_IDS(:B3 , :B2 , :B1 ), PKG_WB_CASE_SEARCHES.LIST_CASE_REV_IDS(:B3 , :B2 , :B1 ), PKG_WB_CASE
+_SEARCHES.LIST_CASE_NEW_IDS(:B3 , :B2 , :B1 ), PKG_WB_CASE_SEARCHES.LIST_CASE_TASK_IDS(:B3 , :B2 , :
+B1 ), PKG_WB_CM_SEARCHES.LIST_CM_REQ_IDS(:B3 , :B2 , :B1 ), PKG_WB_CM_SEARCHES.LIST_CM_REV_IDS(:B3 ,
+ :B2 , :B1 ), PKG_WB_CM_SEARCHES.LIST_CM_PROJECT_NEW_IDS(:B3 , :B2 , :B1 ), PKG_WB_CM_SEARCHES.LIST_
+CM_PROJECT_TASK_IDS(:B3 , :B2 , :B1 ), PKG_WB_OTHER_SEARCHES.LIST_MEMBER_REV_IDS(:B3 , :B2 , :B1 ),
+PKG_WORKBOARD_MEMBER_SEARCHES.LIST_MEMBER_TASK_IDS(:B3 , :B2 , :B1 ), PKG_WB_APPROVAL_SEARCHES.LIST_
+OTHER_REV_IDS(:B3 , :B2 , :B1 ), PKG_WB_APPROVAL_SEARCHES.LIST_OTHER_TASK_IDS(:B3 , :B2 , :B1 ), PKG
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ SQL_ID                                    NOT NULL VARCHAR2(13)
+ PLAN_HASH_VALUE                           NOT NULL NUMBER
+ OPTIMIZER_COST                                     NUMBER
+ OPTIMIZER_MODE                                     VARCHAR2(10)
+ OPTIMIZER_ENV_HASH_VALUE                           NUMBER
+ SHARABLE_MEM                                       NUMBER
+ LOADED_VERSIONS                                    NUMBER
+ VERSION_COUNT                                      NUMBER
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ SQL_PROFILE                                        VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ PARSING_SCHEMA_ID                                  NUMBER
+ PARSING_SCHEMA_NAME                                VARCHAR2(128)
+ PARSING_USER_ID                                    NUMBER
+ FETCHES_TOTAL                                      NUMBER
+ FETCHES_DELTA                                      NUMBER
+ END_OF_FETCH_COUNT_TOTAL                           NUMBER
+ END_OF_FETCH_COUNT_DELTA                           NUMBER
+ SORTS_TOTAL                                        NUMBER
+ SORTS_DELTA                                        NUMBER
+ EXECUTIONS_TOTAL                                   NUMBER
+ EXECUTIONS_DELTA                                   NUMBER
+ PX_SERVERS_EXECS_TOTAL                             NUMBER
+ PX_SERVERS_EXECS_DELTA                             NUMBER
+ LOADS_TOTAL                                        NUMBER
+ LOADS_DELTA                                        NUMBER
+ INVALIDATIONS_TOTAL                                NUMBER
+ INVALIDATIONS_DELTA                                NUMBER
+ PARSE_CALLS_TOTAL                                  NUMBER
+ PARSE_CALLS_DELTA                                  NUMBER
+ DISK_READS_TOTAL                                   NUMBER
+ DISK_READS_DELTA                                   NUMBER
+ BUFFER_GETS_TOTAL                                  NUMBER
+ BUFFER_GETS_DELTA                                  NUMBER
+ ROWS_PROCESSED_TOTAL                               NUMBER
+ ROWS_PROCESSED_DELTA                               NUMBER
+ CPU_TIME_TOTAL                                     NUMBER
+ CPU_TIME_DELTA                                     NUMBER
+ ELAPSED_TIME_TOTAL                                 NUMBER
+ ELAPSED_TIME_DELTA                                 NUMBER
+ IOWAIT_TOTAL                                       NUMBER
+ IOWAIT_DELTA                                       NUMBER
+ CLWAIT_TOTAL                                       NUMBER
+ CLWAIT_DELTA                                       NUMBER
+ APWAIT_TOTAL                                       NUMBER
+ APWAIT_DELTA                                       NUMBER
+ CCWAIT_TOTAL                                       NUMBER
+ CCWAIT_DELTA                                       NUMBER
+ DIRECT_WRITES_TOTAL                                NUMBER
+ DIRECT_WRITES_DELTA                                NUMBER
+ PLSEXEC_TIME_TOTAL                                 NUMBER
+ PLSEXEC_TIME_DELTA                                 NUMBER
+ JAVEXEC_TIME_TOTAL                                 NUMBER
+ JAVEXEC_TIME_DELTA                                 NUMBER
+ IO_OFFLOAD_ELIG_BYTES_TOTAL                        NUMBER
+ IO_OFFLOAD_ELIG_BYTES_DELTA                        NUMBER
+ IO_INTERCONNECT_BYTES_TOTAL                        NUMBER
+ IO_INTERCONNECT_BYTES_DELTA                        NUMBER
+ PHYSICAL_READ_REQUESTS_TOTAL                       NUMBER
+ PHYSICAL_READ_REQUESTS_DELTA                       NUMBER
+ PHYSICAL_READ_BYTES_TOTAL                          NUMBER
+ PHYSICAL_READ_BYTES_DELTA                          NUMBER
+ PHYSICAL_WRITE_REQUESTS_TOTAL                      NUMBER
+ PHYSICAL_WRITE_REQUESTS_DELTA                      NUMBER
+ PHYSICAL_WRITE_BYTES_TOTAL                         NUMBER
+ PHYSICAL_WRITE_BYTES_DELTA                         NUMBER
+ OPTIMIZED_PHYSICAL_READS_TOTAL                     NUMBER
+ OPTIMIZED_PHYSICAL_READS_DELTA                     NUMBER
+ CELL_UNCOMPRESSED_BYTES_TOTAL                      NUMBER
+ CELL_UNCOMPRESSED_BYTES_DELTA                      NUMBER
+ IO_OFFLOAD_RETURN_BYTES_TOTAL                      NUMBER
+ IO_OFFLOAD_RETURN_BYTES_DELTA                      NUMBER
+ BIND_DATA                                          RAW(2000)
+ FLAG                                               NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+WITH
+totals AS (
+SELECT /*+  MATERIALIZE NO_MERGE   DYNAMIC_SAMPLING(4)  */
+       /* 3h.407 */
+       con_id,
+       sql_id,
+       SUM(executions_delta) executions,
+       SUM(rows_processed_delta) rows_processed,
+       SUM(parse_calls_delta) parses,
+       SUM(fetches_delta) fetches,
+       SUM(buffer_gets_delta) buffer_gets,
+       SUM(disk_reads_delta) disk_reads,
+       SUM(direct_writes_delta) direct_writes,
+       ROUND(SUM(elapsed_time_delta)/1e6) elapsed_secs,
+       ROUND(SUM(cpu_time_delta)/1e6) cpu_secs,
+       ROUND(SUM(iowait_delta)/1e6) io_secs,
+       ROUND(SUM(clwait_delta)/1e6) clust_secs,
+       ROUND(SUM(apwait_delta)/1e6) appl_secs,
+       ROUND(SUM(ccwait_delta)/1e6) conc_secs,
+       ROUND(SUM(plsexec_time_delta)/1e6) pls_exec_secs,
+       ROUND(SUM(javexec_time_delta)/1e6) java_secs,
+       COUNT(DISTINCT plan_hash_value) plans,
+       ROUND(AVG(optimizer_cost)) avg_cost,
+       COUNT(DISTINCT module) modules,
+       MIN(module) min_module,
+       MAX(module) max_module,
+       COUNT(DISTINCT action) actions,
+       MIN(action) min_action,
+       MAX(action) max_action
+  FROM dba_hist_sqlstat
+ WHERE snap_id BETWEEN 3473 AND 4962
+   AND dbid = 2109323688
+ GROUP BY
+       con_id,
+       sql_id
+)
+SELECT * FROM (
+SELECT /*+  NO_MERGE  */ /* 3h.407 */
+       s.sql_id,
+       s.executions,
+       s.rows_processed,
+       ROUND(s.rows_processed/s.executions, 3) rows_per_exec,
+       s.parses,
+       s.fetches,
+       s.buffer_gets,
+       s.disk_reads,
+       s.direct_writes,
+       s.elapsed_secs,
+       s.cpu_secs,
+       s.io_secs,
+       s.clust_secs,
+       s.appl_secs,
+       s.conc_secs,
+       s.pls_exec_secs,
+       s.java_secs,
+       s.plans,
+       s.avg_cost,
+       s.modules,
+       s.min_module,
+       s.max_module,
+       s.actions,
+       s.min_action,
+       s.max_action,
+       DBMS_LOB.SUBSTR(t.sql_text, 1000) sql_text
+  FROM totals s, dba_hist_sqltext t
+ WHERE t.sql_id(+) = s.sql_id
+   AND t.dbid(+) = 2109323688
+   AND t.con_id(+) = s.con_id
+  ORDER BY s.executions DESC
+ )
+   WHERE ROWNUM &lt; 101;
+
+100 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:50:04  </font>
+</body>
+</html>

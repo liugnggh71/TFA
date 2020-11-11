@@ -1,0 +1,1252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>SQL Workarea Histogram</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00068_edb360_323688_1d_60_sql_workarea_histogram.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 1d.60. SQL Workarea Histogram <em>(DBA_HIST_SQL_WORKAREA_HSTGRM)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+CON_ID
+</th>
+<th scope="col">
+INSTANCE_NUMBER
+</th>
+<th scope="col">
+LOW_OPTIMAL_SIZE
+</th>
+<th scope="col">
+HIGH_OPTIMAL_SIZE
+</th>
+<th scope="col">
+OPTIMAL_EXECUTIONS
+</th>
+<th scope="col">
+ONEPASS_EXECUTIONS
+</th>
+<th scope="col">
+MULTIPASSES_EXECUTIONS
+</th>
+<th scope="col">
+TOTAL_EXECUTIONS
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+    2 Kb
+</td>
+<td>
+    4 Kb
+</td>
+<td align="right">
+       1964503519776
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       1964503519776
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+   64 Kb
+</td>
+<td>
+  128 Kb
+</td>
+<td align="right">
+          6514616684
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          6514616684
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+  128 Kb
+</td>
+<td>
+  256 Kb
+</td>
+<td align="right">
+           247413188
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           247413188
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+  256 Kb
+</td>
+<td>
+  512 Kb
+</td>
+<td align="right">
+           207556978
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           207556978
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+  512 Kb
+</td>
+<td>
+    1 Mb
+</td>
+<td align="right">
+           464157736
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           464157736
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+    1 Mb
+</td>
+<td>
+    2 Mb
+</td>
+<td align="right">
+          1562191503
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          1562191503
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+    2 Mb
+</td>
+<td>
+    4 Mb
+</td>
+<td align="right">
+          2493659936
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          2493659936
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+    4 Mb
+</td>
+<td>
+    8 Mb
+</td>
+<td align="right">
+          2020051691
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          2020051691
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+    8 Mb
+</td>
+<td>
+   16 Mb
+</td>
+<td align="right">
+           111037576
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           111037576
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+   16 Mb
+</td>
+<td>
+   32 Mb
+</td>
+<td align="right">
+            18599987
+</td>
+<td align="right">
+               73392
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            18673379
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+   32 Mb
+</td>
+<td>
+   64 Mb
+</td>
+<td align="right">
+            22933327
+</td>
+<td align="right">
+              789447
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            23722774
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+   64 Mb
+</td>
+<td>
+  128 Mb
+</td>
+<td align="right">
+             5617317
+</td>
+<td align="right">
+              246560
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             5863877
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+  128 Mb
+</td>
+<td>
+  256 Mb
+</td>
+<td align="right">
+             4773589
+</td>
+<td align="right">
+              227940
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             5001529
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+  256 Mb
+</td>
+<td>
+  512 Mb
+</td>
+<td align="right">
+              740762
+</td>
+<td align="right">
+              160060
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              900822
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+  512 Mb
+</td>
+<td>
+    1 Gb
+</td>
+<td align="right">
+             3000062
+</td>
+<td align="right">
+              131419
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             3131481
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+    1 Gb
+</td>
+<td>
+    2 Gb
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              314621
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              314621
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+    2 Gb
+</td>
+<td>
+    4 Gb
+</td>
+<td align="right">
+               11290
+</td>
+<td align="right">
+               13697
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               24987
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+    4 Gb
+</td>
+<td>
+    8 Gb
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2504
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2504
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+    8 Gb
+</td>
+<td>
+   16 Gb
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               19991
+</td>
+<td align="right">
+                1082
+</td>
+<td align="right">
+               21073
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+    2 Kb
+</td>
+<td>
+    4 Kb
+</td>
+<td align="right">
+        444247894629
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        444247894629
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+   64 Kb
+</td>
+<td>
+  128 Kb
+</td>
+<td align="right">
+          7652673480
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          7652673480
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+  128 Kb
+</td>
+<td>
+  256 Kb
+</td>
+<td align="right">
+           226245432
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           226245432
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+  256 Kb
+</td>
+<td>
+  512 Kb
+</td>
+<td align="right">
+           227983581
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           227983581
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+  512 Kb
+</td>
+<td>
+    1 Mb
+</td>
+<td align="right">
+           432366469
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           432366469
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+    1 Mb
+</td>
+<td>
+    2 Mb
+</td>
+<td align="right">
+          1619257033
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          1619257033
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+    2 Mb
+</td>
+<td>
+    4 Mb
+</td>
+<td align="right">
+          3391394018
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          3391394018
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+    4 Mb
+</td>
+<td>
+    8 Mb
+</td>
+<td align="right">
+          1871721863
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+          1871721863
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+    8 Mb
+</td>
+<td>
+   16 Mb
+</td>
+<td align="right">
+           122943209
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           122943209
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+   16 Mb
+</td>
+<td>
+   32 Mb
+</td>
+<td align="right">
+             6541884
+</td>
+<td align="right">
+               11572
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             6553456
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+   32 Mb
+</td>
+<td>
+   64 Mb
+</td>
+<td align="right">
+            19027886
+</td>
+<td align="right">
+              141903
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            19169789
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+   64 Mb
+</td>
+<td>
+  128 Mb
+</td>
+<td align="right">
+             1992271
+</td>
+<td align="right">
+               56194
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             2048465
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+  128 Mb
+</td>
+<td>
+  256 Mb
+</td>
+<td align="right">
+             5390710
+</td>
+<td align="right">
+               73416
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             5464126
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+  256 Mb
+</td>
+<td>
+  512 Mb
+</td>
+<td align="right">
+              502303
+</td>
+<td align="right">
+               59428
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              561731
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+  512 Mb
+</td>
+<td>
+    1 Gb
+</td>
+<td align="right">
+             4628155
+</td>
+<td align="right">
+              120456
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             4748611
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+    1 Gb
+</td>
+<td>
+    2 Gb
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              686734
+</td>
+<td align="right">
+                 380
+</td>
+<td align="right">
+              687114
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+    2 Gb
+</td>
+<td>
+    4 Gb
+</td>
+<td align="right">
+               10106
+</td>
+<td align="right">
+               26077
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               36183
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+    4 Gb
+</td>
+<td>
+    8 Gb
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 541
+</td>
+<td align="right">
+                 190
+</td>
+<td align="right">
+                 731
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+    8 Gb
+</td>
+<td>
+   16 Gb
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               19872
+</td>
+<td align="right">
+                 396
+</td>
+<td align="right">
+               20268
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ LOW_OPTIMAL_SIZE                          NOT NULL NUMBER
+ HIGH_OPTIMAL_SIZE                         NOT NULL NUMBER
+ OPTIMAL_EXECUTIONS                                 NUMBER
+ ONEPASS_EXECUTIONS                                 NUMBER
+ MULTIPASSES_EXECUTIONS                             NUMBER
+ TOTAL_EXECUTIONS                                   NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+-- requested by Dimas Chbane, expanded by Abel Macias
+-- replaced V dollar view with historic
+WITH
+totals AS (
+  SELECT /*+  MATERIALIZE NO_MERGE   DYNAMIC_SAMPLING(4)  */
+         /* 1d.60 */
+        con_id,
+        INSTANCE_NUMBER,
+        LOW_OPTIMAL_SIZE lnum,
+        HIGH_OPTIMAL_SIZE+1 hnum,
+        SUM(OPTIMAL_EXECUTIONS) optimal ,
+        SUM(ONEPASS_EXECUTIONS) onepass ,
+        SUM(MULTIPASSES_EXECUTIONS) multipasses,
+        SUM(TOTAL_EXECUTIONS) totex
+   FROM DBA_HIST_SQL_WORKAREA_HSTGRM
+  WHERE snap_id BETWEEN 3473 AND 4962
+    AND dbid = 2109323688
+  GROUP BY
+        con_id,
+        INSTANCE_NUMBER,
+        LOW_OPTIMAL_SIZE,
+        HIGH_OPTIMAL_SIZE
+    )
+SELECT /*+  NO_MERGE  */ /* 1d.60 */
+  con_id,
+  INSTANCE_NUMBER,
+  (case when lnum between 1024           and 1024*1024-1                then to_char(round(lnum /1024),'9999') ||' Kb'
+        when lnum between 1024*1024      and 1024*1024*1024-1           then to_char(round(lnum /1024/1024),'9999') ||' Mb'
+        when lnum between 1024*1024*1024 and 1024*1024*1024*1024-1      then to_char(round(lnum /1024/1024/1024),'9999') ||' Gb'
+        when lnum between 1024*1024*1024 and 1024*1024*1024*1024*1024-1 then to_char(round(lnum /1024/1024/1024/1024),'9999') ||' Tb'
+   else to_char(lnum) end) LOW_OPTIMAL_SIZE,
+  (case when hnum between 1024           and 1024*1024-1                then to_char(round(hnum /1024),'9999') ||' Kb'
+        when hnum between 1024*1024      and 1024*1024*1024-1           then to_char(round(hnum /1024/1024),'9999') ||' Mb'
+        when hnum between 1024*1024*1024 and 1024*1024*1024*1024-1      then to_char(round(hnum /1024/1024/1024),'9999') ||' Gb'
+        when hnum between 1024*1024*1024 and 1024*1024*1024*1024*1024-1 then to_char(round(hnum /1024/1024/1024/1024),'9999') ||' Tb'
+   else to_char(hnum) end) HIGH_OPTIMAL_SIZE,
+  optimal OPTIMAL_EXECUTIONS,
+  onepass ONEPASS_EXECUTIONS,
+  multipasses MULTIPASSES_EXECUTIONS,
+  totex TOTAL_EXECUTIONS
+FROM totals
+ORDER BY con_id,
+         INSTANCE_NUMBER,
+         lnum;
+
+38 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:29:22  </font>
+</body>
+</html>

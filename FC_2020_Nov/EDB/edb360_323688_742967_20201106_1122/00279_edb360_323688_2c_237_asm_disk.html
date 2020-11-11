@@ -1,0 +1,11592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>ASM Disk</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00279_edb360_323688_2c_237_asm_disk.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 2c.237. ASM Disk <em>(V$ASM_DISK)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+GROUP_NUMBER
+</th>
+<th scope="col">
+DISK_NUMBER
+</th>
+<th scope="col">
+COMPOUND_INDEX
+</th>
+<th scope="col">
+INCARNATION
+</th>
+<th scope="col">
+MOUNT_S
+</th>
+<th scope="col">
+HEADER_STATU
+</th>
+<th scope="col">
+MODE_ST
+</th>
+<th scope="col">
+STATE
+</th>
+<th scope="col">
+REDUNDA
+</th>
+<th scope="col">
+LIBRARY
+</th>
+<th scope="col">
+OS_MB
+</th>
+<th scope="col">
+TOTAL_MB
+</th>
+<th scope="col">
+FREE_MB
+</th>
+<th scope="col">
+HOT_USED_MB
+</th>
+<th scope="col">
+COLD_USED_MB
+</th>
+<th scope="col">
+NAME
+</th>
+<th scope="col">
+FAILGROUP
+</th>
+<th scope="col">
+LABEL
+</th>
+<th scope="col">
+PATH
+</th>
+<th scope="col">
+UDID
+</th>
+<th scope="col">
+PRODUCT
+</th>
+<th scope="col">
+CREATE_DATE
+</th>
+<th scope="col">
+MOUNT_DATE
+</th>
+<th scope="col">
+REPAIR_TIMER
+</th>
+<th scope="col">
+READS
+</th>
+<th scope="col">
+WRITES
+</th>
+<th scope="col">
+READ_ERRS
+</th>
+<th scope="col">
+WRITE_ERRS
+</th>
+<th scope="col">
+READ_TIMEOUT
+</th>
+<th scope="col">
+WRITE_TIMEOUT
+</th>
+<th scope="col">
+READ_TIME
+</th>
+<th scope="col">
+WRITE_TIME
+</th>
+<th scope="col">
+BYTES_READ
+</th>
+<th scope="col">
+BYTES_WRITTEN
+</th>
+<th scope="col">
+P
+</th>
+<th scope="col">
+HASH_VALUE
+</th>
+<th scope="col">
+HOT_READS
+</th>
+<th scope="col">
+HOT_WRITES
+</th>
+<th scope="col">
+HOT_BYTES_READ
+</th>
+<th scope="col">
+HOT_BYTES_WRITTEN
+</th>
+<th scope="col">
+COLD_READS
+</th>
+<th scope="col">
+COLD_WRITES
+</th>
+<th scope="col">
+COLD_BYTES_READ
+</th>
+<th scope="col">
+COLD_BYTES_WRITTEN
+</th>
+<th scope="col">
+V
+</th>
+<th scope="col">
+SECTOR_SIZE
+</th>
+<th scope="col">
+FAILGRO
+</th>
+<th scope="col">
+CON_ID
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            16777216
+</td>
+<td align="right">
+          4042310885
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934612
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527596
+</td>
+<td>
+DATAC1_CD_11_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_11_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_11_iad300715exdcl07
+</td>
+<td>
+e1fd4854-f4478e72-3e68578f-9adae480
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           134320759
+</td>
+<td align="right">
+            38799442
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1882460.481767
+</td>
+<td align="right">
+  12396096690.034688
+</td>
+<td align="right">
+       8510153651200
+</td>
+<td align="right">
+       3492247682048
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2947881586
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           132892041
+</td>
+<td align="right">
+            38733251
+</td>
+<td align="right">
+       6089198179328
+</td>
+<td align="right">
+       3431637086208
+</td>
+<td>
+Y
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+            16777217
+</td>
+<td align="right">
+          4042310871
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934832
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527376
+</td>
+<td>
+DATAC1_CD_11_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_11_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_11_iad300715exdcl08
+</td>
+<td>
+2b5d4237-e990af36-3ab0d08b-a538cb69
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           130583312
+</td>
+<td align="right">
+            38694453
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1914862.787578
+</td>
+<td align="right">
+  12343251271.097311
+</td>
+<td align="right">
+       8902875746304
+</td>
+<td align="right">
+       3512039744512
+</td>
+<td>
+U
+</td>
+<td align="right">
+           756995260
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           129217918
+</td>
+<td align="right">
+            38628282
+</td>
+<td align="right">
+       6512682823680
+</td>
+<td align="right">
+       3451538966528
+</td>
+<td>
+Y
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+            16777218
+</td>
+<td align="right">
+          4042310861
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934408
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527800
+</td>
+<td>
+DATAC1_CD_11_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_11_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_11_iad300715exdcl09
+</td>
+<td>
+e6454041-fdcf3a43-a97bdc69-a1aa5671
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           125460760
+</td>
+<td align="right">
+            37798631
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1884354.113109
+</td>
+<td align="right">
+  12499801178.716273
+</td>
+<td align="right">
+       8020739681280
+</td>
+<td align="right">
+       3516403846144
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2700595396
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           124101410
+</td>
+<td align="right">
+            37713324
+</td>
+<td align="right">
+       5632618271744
+</td>
+<td align="right">
+       3455668067328
+</td>
+<td>
+Y
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+            16777219
+</td>
+<td align="right">
+          4042310886
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934904
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527304
+</td>
+<td>
+DATAC1_CD_03_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_03_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_03_iad300715exdcl07
+</td>
+<td>
+8f714197-fee530c3-d634965b-94a61359
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           149985021
+</td>
+<td align="right">
+            39885848
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1920033.967688
+</td>
+<td align="right">
+  12957234547.525302
+</td>
+<td align="right">
+       8910088315904
+</td>
+<td align="right">
+       3564081928704
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1031327562
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           148626377
+</td>
+<td align="right">
+            39852520
+</td>
+<td align="right">
+       6515940422656
+</td>
+<td align="right">
+       3503823510528
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+            16777220
+</td>
+<td align="right">
+          4042310887
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934736
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527472
+</td>
+<td>
+DATAC1_CD_02_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_02_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_02_iad300715exdcl07
+</td>
+<td>
+9be8429d-a9ff7456-f498793b-b338104c
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           134441718
+</td>
+<td align="right">
+            39776010
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1863664.746972
+</td>
+<td align="right">
+  12366295633.920148
+</td>
+<td align="right">
+       8262611702272
+</td>
+<td align="right">
+       3503768841728
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2369876317
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           133096678
+</td>
+<td align="right">
+            39723732
+</td>
+<td align="right">
+       5887454457856
+</td>
+<td align="right">
+       3442787024896
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+            16777221
+</td>
+<td align="right">
+          4042310875
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934352
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527856
+</td>
+<td>
+DATAC1_CD_08_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_08_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_08_iad300715exdcl08
+</td>
+<td>
+c1e04eaf-33adee37-cd96404b-acecd8da
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           122622341
+</td>
+<td align="right">
+            38463853
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1901771.492613
+</td>
+<td align="right">
+   12696770098.36248
+</td>
+<td align="right">
+       8317946602496
+</td>
+<td align="right">
+       3504879526400
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3563495220
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           121234118
+</td>
+<td align="right">
+            38455765
+</td>
+<td align="right">
+       5904537785344
+</td>
+<td align="right">
+       3444893812736
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+            16777222
+</td>
+<td align="right">
+          4042310870
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934684
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527524
+</td>
+<td>
+DATAC1_CD_08_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_08_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_08_iad300715exdcl09
+</td>
+<td>
+7e8540f6-b84d0552-541cc52c-b550e3fb
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           119769566
+</td>
+<td align="right">
+            39517440
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1918488.980408
+</td>
+<td align="right">
+  12700419368.348334
+</td>
+<td align="right">
+       8055632444416
+</td>
+<td align="right">
+       3487099709440
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1272789984
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           118395423
+</td>
+<td align="right">
+            39491751
+</td>
+<td align="right">
+       5659124087808
+</td>
+<td align="right">
+       3426736787456
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+            16777223
+</td>
+<td align="right">
+          4042310889
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934484
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527724
+</td>
+<td>
+DATAC1_CD_08_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_08_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_08_iad300715exdcl07
+</td>
+<td>
+cec149c5-bbc139ac-479d1074-a2abecb4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           129762257
+</td>
+<td align="right">
+            37194188
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1886736.196116
+</td>
+<td align="right">
+  12851644028.354708
+</td>
+<td align="right">
+       8101171252224
+</td>
+<td align="right">
+       3358259115520
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1978099727
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           128424806
+</td>
+<td align="right">
+            37169161
+</td>
+<td align="right">
+       5752081976320
+</td>
+<td align="right">
+       3297841681408
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+            16777224
+</td>
+<td align="right">
+          4042310874
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934720
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527488
+</td>
+<td>
+DATAC1_CD_02_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_02_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_02_iad300715exdcl08
+</td>
+<td>
+4f624761-6bef53a0-239f27f4-bef65093
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           126845503
+</td>
+<td align="right">
+            38719868
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1898068.562615
+</td>
+<td align="right">
+  12542115642.290373
+</td>
+<td align="right">
+       8401435550208
+</td>
+<td align="right">
+       3526832353792
+</td>
+<td>
+U
+</td>
+<td align="right">
+          4181193223
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           125499393
+</td>
+<td align="right">
+            38677758
+</td>
+<td align="right">
+       6013707805184
+</td>
+<td align="right">
+       3466141860352
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+            16777225
+</td>
+<td align="right">
+          4042310865
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934728
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527480
+</td>
+<td>
+DATAC1_CD_10_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_10_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_10_iad300715exdcl09
+</td>
+<td>
+8a6c4791-81e933b7-8f7b1736-8d43a214
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           128974659
+</td>
+<td align="right">
+            38971698
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1884624.289525
+</td>
+<td align="right">
+  12535091687.207139
+</td>
+<td align="right">
+       8700610145280
+</td>
+<td align="right">
+       3482548221440
+</td>
+<td>
+U
+</td>
+<td align="right">
+          4014583648
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           127591666
+</td>
+<td align="right">
+            38943294
+</td>
+<td align="right">
+       6285855796224
+</td>
+<td align="right">
+       3422225943552
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+            16777226
+</td>
+<td align="right">
+          4042310882
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934572
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527636
+</td>
+<td>
+DATAC1_CD_10_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_10_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_10_iad300715exdcl08
+</td>
+<td>
+7f6247fc-af68ca7d-5fe60f0d-9c834979
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           123434647
+</td>
+<td align="right">
+            38383015
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1922866.161229
+</td>
+<td align="right">
+  12767141225.039164
+</td>
+<td align="right">
+       8798093615104
+</td>
+<td align="right">
+       3500549802496
+</td>
+<td>
+U
+</td>
+<td align="right">
+           230239828
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           122060015
+</td>
+<td align="right">
+            38340779
+</td>
+<td align="right">
+       6425176633344
+</td>
+<td align="right">
+       3439829448192
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+            16777227
+</td>
+<td align="right">
+          4042310866
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934588
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527620
+</td>
+<td>
+DATAC1_CD_02_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_02_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_02_iad300715exdcl09
+</td>
+<td>
+e3a44093-a97f8786-8eaeccc5-b4715b81
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           136086973
+</td>
+<td align="right">
+            40668967
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1907386.453113
+</td>
+<td align="right">
+  12925546224.175139
+</td>
+<td align="right">
+       8500670015488
+</td>
+<td align="right">
+       3583775885312
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1477279722
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           134731752
+</td>
+<td align="right">
+            40640830
+</td>
+<td align="right">
+       6149559961600
+</td>
+<td align="right">
+       3523104216576
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+            16777228
+</td>
+<td align="right">
+          4042310883
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934788
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527420
+</td>
+<td>
+DATAC1_CD_10_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_10_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_10_iad300715exdcl07
+</td>
+<td>
+60234517-2b89148e-eb7110f0-b9294729
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           168798341
+</td>
+<td align="right">
+            39559687
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1917157.572005
+</td>
+<td align="right">
+   12928909790.62243
+</td>
+<td align="right">
+       9156199431168
+</td>
+<td align="right">
+       3574805892608
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1687574234
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           167447692
+</td>
+<td align="right">
+            39534147
+</td>
+<td align="right">
+       6791200107520
+</td>
+<td align="right">
+       3514411958784
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+            16777229
+</td>
+<td align="right">
+          4042310878
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934708
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527500
+</td>
+<td>
+DATAC1_CD_04_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_04_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_04_iad300715exdcl08
+</td>
+<td>
+ab8743d6-b781e8d8-5681a64-912bf2ff
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           185144437
+</td>
+<td align="right">
+            39156958
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       1923544.93505
+</td>
+<td align="right">
+  12480606100.689484
+</td>
+<td align="right">
+       8933552027136
+</td>
+<td align="right">
+       3459431801344
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3451877702
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           183778621
+</td>
+<td align="right">
+            39147820
+</td>
+<td align="right">
+       6562519893504
+</td>
+<td align="right">
+       3399344806912
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+            16777230
+</td>
+<td align="right">
+          4042310872
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934784
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527424
+</td>
+<td>
+DATAC1_CD_01_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_01_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_01_iad300715exdcl08
+</td>
+<td>
+20c54d39-650628ba-ce88429f-848aec64
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           150250546
+</td>
+<td align="right">
+            40963576
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1905823.723149
+</td>
+<td align="right">
+  13048571787.652578
+</td>
+<td align="right">
+       8481793064960
+</td>
+<td align="right">
+       3500148329472
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1788919292
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           148877335
+</td>
+<td align="right">
+            40946314
+</td>
+<td align="right">
+       6100313018368
+</td>
+<td align="right">
+       3439726146048
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+            16777231
+</td>
+<td align="right">
+          4042310867
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934708
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527500
+</td>
+<td>
+DATAC1_CD_01_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_01_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_01_iad300715exdcl09
+</td>
+<td>
+2444899-e483cf75-6e410cef-a7460243
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           118050400
+</td>
+<td align="right">
+            38044503
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1890187.134365
+</td>
+<td align="right">
+  12274620713.703045
+</td>
+<td align="right">
+       7874188596736
+</td>
+<td align="right">
+       3411267599360
+</td>
+<td>
+U
+</td>
+<td align="right">
+           943280651
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           116657197
+</td>
+<td align="right">
+            38011673
+</td>
+<td align="right">
+       5529600861696
+</td>
+<td align="right">
+       3350502370304
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+            16777232
+</td>
+<td align="right">
+          4042310892
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934528
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527680
+</td>
+<td>
+DATAC1_CD_04_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_04_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_04_iad300715exdcl07
+</td>
+<td>
+e1c94fd6-618cb3f4-b5e87e4d-8e464ba2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           155445779
+</td>
+<td align="right">
+            39346591
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1889444.511819
+</td>
+<td align="right">
+  12661444895.168535
+</td>
+<td align="right">
+       8969285692416
+</td>
+<td align="right">
+       3504126993408
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3764854379
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           154059974
+</td>
+<td align="right">
+            39335127
+</td>
+<td align="right">
+       6565926546432
+</td>
+<td align="right">
+       3444052978176
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  17
+</td>
+<td align="right">
+            16777233
+</td>
+<td align="right">
+          4042310884
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934492
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527716
+</td>
+<td>
+DATAC1_CD_01_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_01_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_01_iad300715exdcl07
+</td>
+<td>
+f2ed4723-5228ce3f-baf1c524-9f4f7f1f
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           143732378
+</td>
+<td align="right">
+            40620530
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1885358.272251
+</td>
+<td align="right">
+  12084795162.469208
+</td>
+<td align="right">
+       8693386934272
+</td>
+<td align="right">
+       3585386309632
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2357898845
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           142316485
+</td>
+<td align="right">
+            40538116
+</td>
+<td align="right">
+       6250935771648
+</td>
+<td align="right">
+       3524526553088
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+            16777234
+</td>
+<td align="right">
+          4042310891
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934620
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527588
+</td>
+<td>
+DATAC1_CD_09_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_09_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_09_iad300715exdcl07
+</td>
+<td>
+7f174cd5-f984b83d-9f7270ff-a46bf115
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           126510579
+</td>
+<td align="right">
+            38485434
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1872130.647917
+</td>
+<td align="right">
+  12630032988.406025
+</td>
+<td align="right">
+       8369755028480
+</td>
+<td align="right">
+       3529281198592
+</td>
+<td>
+U
+</td>
+<td align="right">
+          4239482619
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           125149451
+</td>
+<td align="right">
+            38468590
+</td>
+<td align="right">
+       5985224731648
+</td>
+<td align="right">
+       3468896963072
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+            16777235
+</td>
+<td align="right">
+          4042310864
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934760
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527448
+</td>
+<td>
+DATAC1_CD_09_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_09_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_09_iad300715exdcl09
+</td>
+<td>
+19a2427b-3135d1c3-d95b7ccb-86ce0483
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           135298143
+</td>
+<td align="right">
+            39499075
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1879004.534649
+</td>
+<td align="right">
+  12390855812.301034
+</td>
+<td align="right">
+       8744472948224
+</td>
+<td align="right">
+       3518528323072
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1092894814
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           133932086
+</td>
+<td align="right">
+            39483121
+</td>
+<td align="right">
+       6361499303424
+</td>
+<td align="right">
+       3458414638592
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+            16777236
+</td>
+<td align="right">
+          4042310876
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934648
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527560
+</td>
+<td>
+DATAC1_CD_09_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_09_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_09_iad300715exdcl08
+</td>
+<td>
+1bd44cbc-b4cf7207-49a73ea0-825b4075
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           124053973
+</td>
+<td align="right">
+            41157159
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1880202.735724
+</td>
+<td align="right">
+  12885240212.842841
+</td>
+<td align="right">
+       8091669176832
+</td>
+<td align="right">
+       3595645515776
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3429509404
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           122691465
+</td>
+<td align="right">
+            41122431
+</td>
+<td align="right">
+       5691895390720
+</td>
+<td align="right">
+       3535096109568
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+            16777237
+</td>
+<td align="right">
+          4042310894
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934636
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527572
+</td>
+<td>
+DATAC1_CD_05_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_05_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_05_iad300715exdcl07
+</td>
+<td>
+c69640fb-fafc9add-c05088b7-add86259
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           139295984
+</td>
+<td align="right">
+            39743116
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1874905.921262
+</td>
+<td align="right">
+  12723266489.118862
+</td>
+<td align="right">
+       8651813545472
+</td>
+<td align="right">
+       3541303096320
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3381178533
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           137928532
+</td>
+<td align="right">
+            39719797
+</td>
+<td align="right">
+       6259337356800
+</td>
+<td align="right">
+       3480910081536
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+            16777238
+</td>
+<td align="right">
+          4042310873
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934864
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527344
+</td>
+<td>
+DATAC1_CD_05_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_05_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_05_iad300715exdcl08
+</td>
+<td>
+cbd4058-17b5737-b51b91bf-bad038c4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           144669305
+</td>
+<td align="right">
+            38661940
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1915153.188826
+</td>
+<td align="right">
+  12714466531.007861
+</td>
+<td align="right">
+       8597727880704
+</td>
+<td align="right">
+       3445763890176
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2432757126
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           143306744
+</td>
+<td align="right">
+            38621589
+</td>
+<td align="right">
+       6236527367168
+</td>
+<td align="right">
+       3385353456640
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+            16777239
+</td>
+<td align="right">
+          4042310868
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934616
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527592
+</td>
+<td>
+DATAC1_CD_00_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_00_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_00_iad300715exdcl09
+</td>
+<td>
+3d5442cb-79f29b09-ec012ba4-a17c9ba7
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           139156480
+</td>
+<td align="right">
+            40860246
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1884413.976439
+</td>
+<td align="right">
+  13027503570.128785
+</td>
+<td align="right">
+       8607359370240
+</td>
+<td align="right">
+       3623185128960
+</td>
+<td>
+U
+</td>
+<td align="right">
+            37571012
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           137788353
+</td>
+<td align="right">
+            40834695
+</td>
+<td align="right">
+       6233072100352
+</td>
+<td align="right">
+       3563012803072
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  24
+</td>
+<td align="right">
+            16777240
+</td>
+<td align="right">
+          4042310860
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934936
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527272
+</td>
+<td>
+DATAC1_CD_05_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_05_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_05_iad300715exdcl09
+</td>
+<td>
+1afb403a-c09812fa-90e5f9b9-8202ca7c
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           123807826
+</td>
+<td align="right">
+            38951739
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1933203.728166
+</td>
+<td align="right">
+  12469905440.013491
+</td>
+<td align="right">
+       8470219724800
+</td>
+<td align="right">
+       3492019209216
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3156179225
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           122460634
+</td>
+<td align="right">
+            38933958
+</td>
+<td align="right">
+       6105383057408
+</td>
+<td align="right">
+       3431674298880
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+            16777241
+</td>
+<td align="right">
+          4042310893
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934720
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527488
+</td>
+<td>
+DATAC1_CD_00_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_00_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_00_iad300715exdcl07
+</td>
+<td>
+dddc42f8-d7dca689-63f92ae-bda901ef
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           132906377
+</td>
+<td align="right">
+            38895516
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1909945.580239
+</td>
+<td align="right">
+  12781269399.743823
+</td>
+<td align="right">
+       8625045960192
+</td>
+<td align="right">
+       3498860267008
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3266221050
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           131557895
+</td>
+<td align="right">
+            38881763
+</td>
+<td align="right">
+       6270535349760
+</td>
+<td align="right">
+       3438763394560
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+            16777242
+</td>
+<td align="right">
+          4042310881
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934640
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527568
+</td>
+<td>
+DATAC1_CD_00_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_00_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_00_iad300715exdcl08
+</td>
+<td>
+4dde46fa-267d19bc-4db24b12-9af90d5f
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           125857845
+</td>
+<td align="right">
+            39266923
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1925056.162014
+</td>
+<td align="right">
+  12580730962.834039
+</td>
+<td align="right">
+       8263949743616
+</td>
+<td align="right">
+       3457068184064
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3839012037
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           124498046
+</td>
+<td align="right">
+            39258420
+</td>
+<td align="right">
+       5883948238336
+</td>
+<td align="right">
+       3396992694784
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+            16777243
+</td>
+<td align="right">
+          4042310879
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934804
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527404
+</td>
+<td>
+DATAC1_CD_06_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_06_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_06_iad300715exdcl08
+</td>
+<td>
+6b034ae7-504d136a-b7162209-beb57445
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           123946237
+</td>
+<td align="right">
+            38777232
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1878999.724734
+</td>
+<td align="right">
+  12487504712.733591
+</td>
+<td align="right">
+       8163165442048
+</td>
+<td align="right">
+       3557757883392
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3693245640
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           122594766
+</td>
+<td align="right">
+            38719567
+</td>
+<td align="right">
+       5811486973952
+</td>
+<td align="right">
+       3497252676096
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+            16777244
+</td>
+<td align="right">
+          4042310869
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934704
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527504
+</td>
+<td>
+DATAC1_CD_04_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_04_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_04_iad300715exdcl09
+</td>
+<td>
+905140f5-69b9ced9-ea7e858a-8acdfabb
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           127085803
+</td>
+<td align="right">
+            38552050
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       1901649.53797
+</td>
+<td align="right">
+  12814602820.631274
+</td>
+<td align="right">
+       8335382969856
+</td>
+<td align="right">
+       3537809524224
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2631593964
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           125685312
+</td>
+<td align="right">
+            38541164
+</td>
+<td align="right">
+       5956871766016
+</td>
+<td align="right">
+       3477733969920
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  29
+</td>
+<td align="right">
+            16777245
+</td>
+<td align="right">
+          4042310863
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934832
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527376
+</td>
+<td>
+DATAC1_CD_06_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_06_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_06_iad300715exdcl09
+</td>
+<td>
+c55e4c66-e21505c5-91706618-9dcd886a
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           131253474
+</td>
+<td align="right">
+            38692698
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1899652.403975
+</td>
+<td align="right">
+   12547302033.24769
+</td>
+<td align="right">
+       8675750865408
+</td>
+<td align="right">
+       3523489203712
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1526002515
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           129909276
+</td>
+<td align="right">
+            38632558
+</td>
+<td align="right">
+       6306459277824
+</td>
+<td align="right">
+       3463056634880
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+            16777246
+</td>
+<td align="right">
+          4042310895
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNKNOWN
+</td>
+<td>
+System
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+                  84
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  44
+</td>
+<td>
+QD_DATAC1_AUPPHRORADBF9EXX2
+</td>
+<td>
+AUPP_HRORADB_F9EXX2
+</td>
+<td>
+QD_DATAC1_AUPPHRORADBF9EXX2
+</td>
+<td>
+/dev/exadata_quorum/QD_DATAC1_AUPPHRORADBF9EXX2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:23:42
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  87
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             .763071
+</td>
+<td align="right">
+             .001414
+</td>
+<td align="right">
+              368640
+</td>
+<td align="right">
+               12288
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3570068430
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  56
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              229376
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+Y
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+QUORUM
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+            16777247
+</td>
+<td align="right">
+          4042310896
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNKNOWN
+</td>
+<td>
+System
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+                  84
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  44
+</td>
+<td>
+QD_DATAC1_AUPPHRORADBF9EXX1
+</td>
+<td>
+AUPP_HRORADB_F9EXX1
+</td>
+<td>
+QD_DATAC1_AUPPHRORADBF9EXX1
+</td>
+<td>
+/dev/exadata_quorum/QD_DATAC1_AUPPHRORADBF9EXX1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:23:42
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  62
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             .724609
+</td>
+<td align="right">
+             .001414
+</td>
+<td align="right">
+              253952
+</td>
+<td align="right">
+               12288
+</td>
+<td>
+U
+</td>
+<td align="right">
+          4134162629
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  51
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              208896
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+Y
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+QUORUM
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+            16777248
+</td>
+<td align="right">
+          4042310890
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934912
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527296
+</td>
+<td>
+DATAC1_CD_06_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_06_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_06_iad300715exdcl07
+</td>
+<td>
+446a4fce-dde39a16-51d9fb85-9f646436
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           132308431
+</td>
+<td align="right">
+            37145273
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1872090.690756
+</td>
+<td align="right">
+  12177955329.730419
+</td>
+<td align="right">
+       8929753428992
+</td>
+<td align="right">
+       3384978458624
+</td>
+<td>
+U
+</td>
+<td align="right">
+          4159429204
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           130949187
+</td>
+<td align="right">
+            37127996
+</td>
+<td align="right">
+       6534461023232
+</td>
+<td align="right">
+       3324832957440
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  33
+</td>
+<td align="right">
+            16777249
+</td>
+<td align="right">
+          4042310888
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934552
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527656
+</td>
+<td>
+DATAC1_CD_07_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+DATAC1_CD_07_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/DATAC1_CD_07_iad300715exdcl07
+</td>
+<td>
+ac1d4da9-2a4b2d6e-c6c34ab7-90fe7b52
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           177390152
+</td>
+<td align="right">
+            40808646
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1883991.900532
+</td>
+<td align="right">
+  13129563346.337486
+</td>
+<td align="right">
+       9202591011328
+</td>
+<td align="right">
+       3641835589120
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1438185153
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           176015019
+</td>
+<td align="right">
+            40800973
+</td>
+<td align="right">
+       6788788790784
+</td>
+<td align="right">
+       3581760439808
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  34
+</td>
+<td align="right">
+            16777250
+</td>
+<td align="right">
+          4042310877
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934608
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527600
+</td>
+<td>
+DATAC1_CD_03_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_03_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_03_iad300715exdcl08
+</td>
+<td>
+72e14dc6-8973f187-e0e1375c-ab472eca
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           192807458
+</td>
+<td align="right">
+            37326480
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1899460.185591
+</td>
+<td align="right">
+  12540276844.620239
+</td>
+<td align="right">
+       9459286995456
+</td>
+<td align="right">
+       3461740204544
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2883902314
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           191444128
+</td>
+<td align="right">
+            37312670
+</td>
+<td align="right">
+       7074159076864
+</td>
+<td align="right">
+       3401513509376
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  35
+</td>
+<td align="right">
+            16777251
+</td>
+<td align="right">
+          4042310859
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934556
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527652
+</td>
+<td>
+DATAC1_CD_03_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_03_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_03_iad300715exdcl09
+</td>
+<td>
+2c82472c-21f2a498-982d0135-9c3e6aeb
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           128625870
+</td>
+<td align="right">
+            39587497
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1860097.719872
+</td>
+<td align="right">
+  12716328542.971717
+</td>
+<td align="right">
+       8743398806016
+</td>
+<td align="right">
+       3413458482688
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2250619723
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           127285659
+</td>
+<td align="right">
+            39554203
+</td>
+<td align="right">
+       6394518401536
+</td>
+<td align="right">
+       3352937388544
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+            16777252
+</td>
+<td align="right">
+          4042310880
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934452
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527756
+</td>
+<td>
+DATAC1_CD_07_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+DATAC1_CD_07_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/DATAC1_CD_07_iad300715exdcl08
+</td>
+<td>
+8fb74ae8-da667a9f-e0571d0a-a7b7803b
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           186284711
+</td>
+<td align="right">
+            40688603
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+      1920349.546467
+</td>
+<td align="right">
+  12601810464.094819
+</td>
+<td align="right">
+       9124200213504
+</td>
+<td align="right">
+       3657064670720
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2702784703
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           184912000
+</td>
+<td align="right">
+            40653574
+</td>
+<td align="right">
+       6724581298176
+</td>
+<td align="right">
+       3596540484096
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  37
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          4042310862
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+            10462208
+</td>
+<td align="right">
+             8934464
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1527744
+</td>
+<td>
+DATAC1_CD_07_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+DATAC1_CD_07_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/DATAC1_CD_07_iad300715exdcl09
+</td>
+<td>
+60b84d48-61092c84-bb790723-a33989b6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T16:40:27
+</td>
+<td>
+2020-09-20T04:18:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           131549525
+</td>
+<td align="right">
+            39115467
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        1872708.7403
+</td>
+<td align="right">
+  12786437493.680753
+</td>
+<td align="right">
+       8285193498112
+</td>
+<td align="right">
+       3589344749056
+</td>
+<td>
+U
+</td>
+<td align="right">
+           926588804
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           122715419
+</td>
+<td align="right">
+            39104299
+</td>
+<td align="right">
+       5867828526592
+</td>
+<td align="right">
+       3529173171712
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            33554432
+</td>
+<td align="right">
+          4042310927
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510300
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104996
+</td>
+<td>
+RECOC1_CD_00_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_00_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_00_iad300715exdcl07
+</td>
+<td>
+85de4e8f-6f3e2bd1-7ce81e1-8cb44548
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1148065
+</td>
+<td align="right">
+             2779816
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       347823.402357
+</td>
+<td align="right">
+        25274.735898
+</td>
+<td align="right">
+        950782483456
+</td>
+<td align="right">
+       1403684166144
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2033095312
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067518
+</td>
+<td align="right">
+             2545616
+</td>
+<td align="right">
+        890271742976
+</td>
+<td align="right">
+       1399743007232
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+            33554433
+</td>
+<td align="right">
+          4042310931
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510604
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104692
+</td>
+<td>
+RECOC1_CD_01_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_01_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_01_iad300715exdcl07
+</td>
+<td>
+545540c5-5b00daca-c91dc982-a3522231
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066765
+</td>
+<td align="right">
+             2758355
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       341396.726854
+</td>
+<td align="right">
+        25153.122803
+</td>
+<td align="right">
+        889537093632
+</td>
+<td align="right">
+       1404335262720
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1646452350
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066262
+</td>
+<td align="right">
+             2545964
+</td>
+<td align="right">
+        889528672256
+</td>
+<td align="right">
+       1399803591680
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+            33554434
+</td>
+<td align="right">
+          4042310923
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510452
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104844
+</td>
+<td>
+RECOC1_CD_02_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_02_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_02_iad300715exdcl07
+</td>
+<td>
+d4284c1d-ba3a813d-f0f388ad-ac29f236
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1072308
+</td>
+<td align="right">
+             2783434
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       341308.428903
+</td>
+<td align="right">
+        25522.980107
+</td>
+<td align="right">
+        889758320128
+</td>
+<td align="right">
+       1402931664896
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2336292326
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066955
+</td>
+<td align="right">
+             2552617
+</td>
+<td align="right">
+        889729500672
+</td>
+<td align="right">
+       1399252060160
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+            33554435
+</td>
+<td align="right">
+          4042310930
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510640
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104656
+</td>
+<td>
+RECOC1_CD_03_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_03_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_03_iad300715exdcl07
+</td>
+<td>
+9f144fba-aba6e8b3-5e881434-b9eeb890
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067631
+</td>
+<td align="right">
+             2660192
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        339981.44113
+</td>
+<td align="right">
+        25119.845791
+</td>
+<td align="right">
+        890473416704
+</td>
+<td align="right">
+       1401760356352
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1603228891
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067203
+</td>
+<td align="right">
+             2550710
+</td>
+<td align="right">
+        890466355200
+</td>
+<td align="right">
+       1399548835840
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+            33554436
+</td>
+<td align="right">
+          4042310926
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510440
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104856
+</td>
+<td>
+RECOC1_CD_04_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_04_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_04_iad300715exdcl07
+</td>
+<td>
+e8e4865-ae64ccd9-1bb4eacb-81c1826d
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066644
+</td>
+<td align="right">
+             2601091
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       351340.366073
+</td>
+<td align="right">
+        24957.291404
+</td>
+<td align="right">
+        889719295488
+</td>
+<td align="right">
+       1401458699776
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1839488362
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066250
+</td>
+<td align="right">
+             2557215
+</td>
+<td align="right">
+        889712778752
+</td>
+<td align="right">
+       1399678840320
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+            33554437
+</td>
+<td align="right">
+          4042310929
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510592
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104704
+</td>
+<td>
+RECOC1_CD_05_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_05_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_05_iad300715exdcl07
+</td>
+<td>
+be1249af-52143dd9-202f0456-900d060f
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1175970
+</td>
+<td align="right">
+             2716456
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       338364.607265
+</td>
+<td align="right">
+        24907.035092
+</td>
+<td align="right">
+        939069152256
+</td>
+<td align="right">
+       1401364051456
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2008535785
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066838
+</td>
+<td align="right">
+             2546352
+</td>
+<td align="right">
+        890411990016
+</td>
+<td align="right">
+       1398531855872
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+            33554438
+</td>
+<td align="right">
+          4042310921
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510668
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104628
+</td>
+<td>
+RECOC1_CD_06_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_06_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_06_iad300715exdcl07
+</td>
+<td>
+560e4101-ac5fdd76-e3b7cba-9c017596
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1071638
+</td>
+<td align="right">
+             2680892
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        342825.31012
+</td>
+<td align="right">
+        25459.263515
+</td>
+<td align="right">
+        890094652928
+</td>
+<td align="right">
+       1401161670144
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3591307571
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067874
+</td>
+<td align="right">
+             2541335
+</td>
+<td align="right">
+        890071457792
+</td>
+<td align="right">
+       1398701624832
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+            33554439
+</td>
+<td align="right">
+          4042310925
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510700
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104596
+</td>
+<td>
+RECOC1_CD_07_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_07_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_07_iad300715exdcl07
+</td>
+<td>
+ce254f36-43b1b039-3c2df8d-9c4f9527
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1073762
+</td>
+<td align="right">
+             2610136
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       338822.611104
+</td>
+<td align="right">
+        24755.536168
+</td>
+<td align="right">
+        890214080512
+</td>
+<td align="right">
+       1400354376192
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3108194777
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1071581
+</td>
+<td align="right">
+             2546405
+</td>
+<td align="right">
+        890196418560
+</td>
+<td align="right">
+       1398292650496
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+            33554440
+</td>
+<td align="right">
+          4042310928
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510580
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104716
+</td>
+<td>
+RECOC1_CD_08_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_08_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_08_iad300715exdcl07
+</td>
+<td>
+ea714892-3681b32d-bfecfe24-8d5bdc8f
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1069406
+</td>
+<td align="right">
+             2608575
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       343591.318323
+</td>
+<td align="right">
+        24981.448645
+</td>
+<td align="right">
+        890030903808
+</td>
+<td align="right">
+       1400935351296
+</td>
+<td>
+U
+</td>
+<td align="right">
+           268967623
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1068957
+</td>
+<td align="right">
+             2545044
+</td>
+<td align="right">
+        890023064064
+</td>
+<td align="right">
+       1398920401920
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+            33554441
+</td>
+<td align="right">
+          4042310924
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510620
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104676
+</td>
+<td>
+RECOC1_CD_09_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_09_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_09_iad300715exdcl07
+</td>
+<td>
+92484135-de99a3f0-56fb9c89-92c7c160
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1074926
+</td>
+<td align="right">
+             2624078
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       344886.072519
+</td>
+<td align="right">
+        25241.946438
+</td>
+<td align="right">
+        890124951040
+</td>
+<td align="right">
+       1401434615808
+</td>
+<td>
+U
+</td>
+<td align="right">
+           626276161
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1069180
+</td>
+<td align="right">
+             2548120
+</td>
+<td align="right">
+        890096233984
+</td>
+<td align="right">
+       1399423078400
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+            33554442
+</td>
+<td align="right">
+          4042310922
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510704
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104592
+</td>
+<td>
+RECOC1_CD_10_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_10_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_10_iad300715exdcl07
+</td>
+<td>
+c2694306-b4ba306c-f28a1112-84deb4b2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067996
+</td>
+<td align="right">
+             2594308
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        338367.35026
+</td>
+<td align="right">
+        25025.797476
+</td>
+<td align="right">
+        890432980992
+</td>
+<td align="right">
+       1401670020608
+</td>
+<td>
+U
+</td>
+<td align="right">
+           844721712
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067555
+</td>
+<td align="right">
+             2547575
+</td>
+<td align="right">
+        890425075712
+</td>
+<td align="right">
+       1399386754560
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+            33554443
+</td>
+<td align="right">
+          4042310932
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510392
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104904
+</td>
+<td>
+RECOC1_CD_11_IAD300715EXDCL07
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td>
+RECOC1_CD_11_IAD300715EXDCL07
+</td>
+<td>
+o/192.168.136.14;192.168.136.15/RECOC1_CD_11_iad300715exdcl07
+</td>
+<td>
+61f24ce4-49b6e704-83c87847-be48a397
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1136569
+</td>
+<td align="right">
+             2616453
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       340202.902463
+</td>
+<td align="right">
+         25406.26576
+</td>
+<td align="right">
+        949545524736
+</td>
+<td align="right">
+       1401490572800
+</td>
+<td>
+U
+</td>
+<td align="right">
+          4262408403
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1065976
+</td>
+<td align="right">
+             2549348
+</td>
+<td align="right">
+        889697852928
+</td>
+<td align="right">
+       1399523653120
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+            33554444
+</td>
+<td align="right">
+          4042310918
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510756
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104540
+</td>
+<td>
+RECOC1_CD_00_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_00_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_00_iad300715exdcl08
+</td>
+<td>
+1c4044e2-28674afd-1319821-86ecbda5
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1071046
+</td>
+<td align="right">
+             2742454
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       349094.541151
+</td>
+<td align="right">
+        24992.750868
+</td>
+<td align="right">
+        890105217024
+</td>
+<td align="right">
+       1402472617472
+</td>
+<td>
+U
+</td>
+<td align="right">
+           395655141
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1068951
+</td>
+<td align="right">
+             2547965
+</td>
+<td align="right">
+        890089885696
+</td>
+<td align="right">
+       1399055316480
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+            33554445
+</td>
+<td align="right">
+          4042310917
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510508
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104788
+</td>
+<td>
+RECOC1_CD_01_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_01_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_01_iad300715exdcl08
+</td>
+<td>
+967c47d9-9218d2ae-81be28de-9bfbd146
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             8528620
+</td>
+<td align="right">
+             2681587
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       351983.847801
+</td>
+<td align="right">
+        25213.939336
+</td>
+<td align="right">
+        923887677952
+</td>
+<td align="right">
+       1401775461888
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3385721323
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1068147
+</td>
+<td align="right">
+             2549447
+</td>
+<td align="right">
+        890024059392
+</td>
+<td align="right">
+       1399391753728
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+            33554446
+</td>
+<td align="right">
+          4042310909
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510536
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104760
+</td>
+<td>
+RECOC1_CD_02_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_02_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_02_iad300715exdcl08
+</td>
+<td>
+7691441f-6f25bdaf-9aaec7e1-83cde734
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1070676
+</td>
+<td align="right">
+             2689053
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       343486.236424
+</td>
+<td align="right">
+        24804.121126
+</td>
+<td align="right">
+        889995378176
+</td>
+<td align="right">
+       1401974652416
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3412073758
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066894
+</td>
+<td align="right">
+             2545130
+</td>
+<td align="right">
+        889971752448
+</td>
+<td align="right">
+       1399230627328
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+            33554447
+</td>
+<td align="right">
+          4042310920
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510428
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104868
+</td>
+<td>
+RECOC1_CD_03_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_03_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_03_iad300715exdcl08
+</td>
+<td>
+10314ff6-513a6698-20707e93-a2a5a24e
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1068098
+</td>
+<td align="right">
+             2636367
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       348766.069255
+</td>
+<td align="right">
+        25286.178011
+</td>
+<td align="right">
+        890022118400
+</td>
+<td align="right">
+       1401602729984
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3062860772
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067567
+</td>
+<td align="right">
+             2553557
+</td>
+<td align="right">
+        890012214272
+</td>
+<td align="right">
+       1399429441536
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+            33554448
+</td>
+<td align="right">
+          4042310912
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510588
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104708
+</td>
+<td>
+RECOC1_CD_04_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_04_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_04_iad300715exdcl08
+</td>
+<td>
+848c4860-5936f63f-35d93d89-a4ed3798
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1131760
+</td>
+<td align="right">
+             2658985
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       345359.434465
+</td>
+<td align="right">
+        25023.792544
+</td>
+<td align="right">
+        941132273664
+</td>
+<td align="right">
+       1401493623808
+</td>
+<td>
+U
+</td>
+<td align="right">
+           889967787
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066682
+</td>
+<td align="right">
+             2542766
+</td>
+<td align="right">
+        890459564032
+</td>
+<td align="right">
+       1399312999424
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  17
+</td>
+<td align="right">
+            33554449
+</td>
+<td align="right">
+          4042310916
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510568
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104728
+</td>
+<td>
+RECOC1_CD_05_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_05_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_05_iad300715exdcl08
+</td>
+<td>
+c3954dd7-1288a62c-3dcdecbf-ab83d4af
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1070444
+</td>
+<td align="right">
+             2613494
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       345489.694575
+</td>
+<td align="right">
+        25059.763286
+</td>
+<td align="right">
+        890062552576
+</td>
+<td align="right">
+       1401099294208
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3634391863
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066729
+</td>
+<td align="right">
+             2550300
+</td>
+<td align="right">
+        890040106496
+</td>
+<td align="right">
+       1399156753920
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+            33554450
+</td>
+<td align="right">
+          4042310911
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510588
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104708
+</td>
+<td>
+RECOC1_CD_06_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_06_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_06_iad300715exdcl08
+</td>
+<td>
+f074541-a03a59b6-b370e2b7-a7f24b2c
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067710
+</td>
+<td align="right">
+             2675970
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       350021.987804
+</td>
+<td align="right">
+        25079.665997
+</td>
+<td align="right">
+        889942705664
+</td>
+<td align="right">
+       1400620255232
+</td>
+<td>
+U
+</td>
+<td align="right">
+           620662469
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1066946
+</td>
+<td align="right">
+             2542031
+</td>
+<td align="right">
+        889934112256
+</td>
+<td align="right">
+       1398321092608
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+            33554451
+</td>
+<td align="right">
+          4042310913
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510492
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104804
+</td>
+<td>
+RECOC1_CD_07_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_07_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_07_iad300715exdcl08
+</td>
+<td>
+83974898-5ef25375-ef0e7d7-8fb58f6c
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1071435
+</td>
+<td align="right">
+             2615324
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       342248.507162
+</td>
+<td align="right">
+        24837.307887
+</td>
+<td align="right">
+        890671430656
+</td>
+<td align="right">
+       1401335481856
+</td>
+<td>
+U
+</td>
+<td align="right">
+          4262797053
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067667
+</td>
+<td align="right">
+             2551904
+</td>
+<td align="right">
+        890649185280
+</td>
+<td align="right">
+       1399358588416
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+            33554452
+</td>
+<td align="right">
+          4042310914
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510584
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104712
+</td>
+<td>
+RECOC1_CD_08_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_08_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_08_iad300715exdcl08
+</td>
+<td>
+390a41a8-77831d50-3361426f-96c44b77
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1073791
+</td>
+<td align="right">
+             2652267
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       346219.345022
+</td>
+<td align="right">
+         25075.06095
+</td>
+<td align="right">
+        890089653760
+</td>
+<td align="right">
+       1402558170624
+</td>
+<td>
+U
+</td>
+<td align="right">
+           586863352
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1070066
+</td>
+<td align="right">
+             2546647
+</td>
+<td align="right">
+        890068399616
+</td>
+<td align="right">
+       1399889761792
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+            33554453
+</td>
+<td align="right">
+          4042310910
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510496
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104800
+</td>
+<td>
+RECOC1_CD_09_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_09_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_09_iad300715exdcl08
+</td>
+<td>
+d9524f3b-9748989b-7ffd7961-a6cda141
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1078929
+</td>
+<td align="right">
+             2729185
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       341838.239968
+</td>
+<td align="right">
+        25231.891883
+</td>
+<td align="right">
+        889865067008
+</td>
+<td align="right">
+       1402768885760
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3278097071
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1072533
+</td>
+<td align="right">
+             2548144
+</td>
+<td align="right">
+        889833462272
+</td>
+<td align="right">
+       1399020918784
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+            33554454
+</td>
+<td align="right">
+          4042310915
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510640
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104656
+</td>
+<td>
+RECOC1_CD_10_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_10_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_10_iad300715exdcl08
+</td>
+<td>
+e884fb0-239c301b-d5e002bb-bd58cfc5
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1073003
+</td>
+<td align="right">
+             2669297
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       345156.525017
+</td>
+<td align="right">
+        24661.443295
+</td>
+<td align="right">
+        891476503040
+</td>
+<td align="right">
+       1402161633280
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2623905870
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1069300
+</td>
+<td align="right">
+             2551267
+</td>
+<td align="right">
+        891455175168
+</td>
+<td align="right">
+       1399515846656
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+            33554455
+</td>
+<td align="right">
+          4042310919
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510508
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104788
+</td>
+<td>
+RECOC1_CD_11_IAD300715EXDCL08
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td>
+RECOC1_CD_11_IAD300715EXDCL08
+</td>
+<td>
+o/192.168.136.16;192.168.136.17/RECOC1_CD_11_iad300715exdcl08
+</td>
+<td>
+3e0742ec-6fb29b69-684627-87bcf249
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1068048
+</td>
+<td align="right">
+             2669802
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       344264.266602
+</td>
+<td align="right">
+        24782.175447
+</td>
+<td align="right">
+        889982160384
+</td>
+<td align="right">
+       1402714786304
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3036701596
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067055
+</td>
+<td align="right">
+             2547140
+</td>
+<td align="right">
+        889971420672
+</td>
+<td align="right">
+       1399121091072
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  24
+</td>
+<td align="right">
+            33554456
+</td>
+<td align="right">
+          4042310905
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510712
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104584
+</td>
+<td>
+RECOC1_CD_00_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_00_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_00_iad300715exdcl09
+</td>
+<td>
+4a7a49e1-944dab8c-5fc5832f-b9e2ec7d
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067507
+</td>
+<td align="right">
+             2622653
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       344488.080816
+</td>
+<td align="right">
+        25022.263851
+</td>
+<td align="right">
+        890180758528
+</td>
+<td align="right">
+       1400881184256
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1448749410
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067045
+</td>
+<td align="right">
+             2541837
+</td>
+<td align="right">
+        890172066816
+</td>
+<td align="right">
+       1398323797504
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+            33554457
+</td>
+<td align="right">
+          4042310902
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510540
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104756
+</td>
+<td>
+RECOC1_CD_01_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_01_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_01_iad300715exdcl09
+</td>
+<td>
+b9b740a8-60728012-17165e20-ab04b9be
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1068266
+</td>
+<td align="right">
+             2593873
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         352166.2295
+</td>
+<td align="right">
+        25171.801565
+</td>
+<td align="right">
+        890332767232
+</td>
+<td align="right">
+       1401597220864
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2013364631
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067776
+</td>
+<td align="right">
+             2545786
+</td>
+<td align="right">
+        890324730880
+</td>
+<td align="right">
+       1399068293120
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+            33554458
+</td>
+<td align="right">
+          4042310908
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510716
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104580
+</td>
+<td>
+RECOC1_CD_02_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_02_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_02_iad300715exdcl09
+</td>
+<td>
+686c44ef-a699aa11-c6ad1192-b9ee4d37
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1072349
+</td>
+<td align="right">
+             2594282
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       345202.514697
+</td>
+<td align="right">
+         24664.03393
+</td>
+<td align="right">
+        890691992576
+</td>
+<td align="right">
+       1400785754112
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3333160754
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1071855
+</td>
+<td align="right">
+             2550298
+</td>
+<td align="right">
+        890683624448
+</td>
+<td align="right">
+       1398959495168
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+            33554459
+</td>
+<td align="right">
+          4042310899
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510816
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104480
+</td>
+<td>
+RECOC1_CD_03_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_03_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_03_iad300715exdcl09
+</td>
+<td>
+19704d61-9f331f3c-1bacb1d4-8b351071
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1075862
+</td>
+<td align="right">
+             2608008
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       348622.335454
+</td>
+<td align="right">
+        24714.481892
+</td>
+<td align="right">
+        889925984256
+</td>
+<td align="right">
+       1400504471552
+</td>
+<td>
+U
+</td>
+<td align="right">
+          1632750258
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1075419
+</td>
+<td align="right">
+             2541625
+</td>
+<td align="right">
+        889918099456
+</td>
+<td align="right">
+       1397991546880
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+            33554460
+</td>
+<td align="right">
+          4042310897
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510532
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104764
+</td>
+<td>
+RECOC1_CD_04_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_04_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_04_iad300715exdcl09
+</td>
+<td>
+cbb0463b-71fb7040-d275f5e2-9337a14f
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1073689
+</td>
+<td align="right">
+             2707569
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       353349.486494
+</td>
+<td align="right">
+         25313.32259
+</td>
+<td align="right">
+        890056503808
+</td>
+<td align="right">
+       1402306881024
+</td>
+<td>
+U
+</td>
+<td align="right">
+          4259049107
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1069911
+</td>
+<td align="right">
+             2543236
+</td>
+<td align="right">
+        890035347968
+</td>
+<td align="right">
+       1399538902528
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  29
+</td>
+<td align="right">
+            33554461
+</td>
+<td align="right">
+          4042310900
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510640
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104656
+</td>
+<td>
+RECOC1_CD_05_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_05_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_05_iad300715exdcl09
+</td>
+<td>
+9a994681-819c971a-6cda8457-840e26a3
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1073732
+</td>
+<td align="right">
+             2632084
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       350805.738668
+</td>
+<td align="right">
+        25106.593356
+</td>
+<td align="right">
+        890022859264
+</td>
+<td align="right">
+       1401560536576
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2040648241
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1071590
+</td>
+<td align="right">
+             2549716
+</td>
+<td align="right">
+        890006757888
+</td>
+<td align="right">
+       1399480964608
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+            33554462
+</td>
+<td align="right">
+          4042310904
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510628
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104668
+</td>
+<td>
+RECOC1_CD_06_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_06_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_06_iad300715exdcl09
+</td>
+<td>
+f85749cd-9d083a1a-c39a9b73-b0ad8d5e
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1074838
+</td>
+<td align="right">
+             2613813
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       342193.781285
+</td>
+<td align="right">
+        25084.578536
+</td>
+<td align="right">
+        891719148544
+</td>
+<td align="right">
+       1401243618816
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2728121336
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1074389
+</td>
+<td align="right">
+             2550604
+</td>
+<td align="right">
+        891710915584
+</td>
+<td align="right">
+       1399301012992
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+            33554463
+</td>
+<td align="right">
+          4042310901
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510432
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104864
+</td>
+<td>
+RECOC1_CD_07_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_07_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_07_iad300715exdcl09
+</td>
+<td>
+6c3845a5-740e24b4-1e1e7afe-8c326d54
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1072084
+</td>
+<td align="right">
+             2671329
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       351174.528643
+</td>
+<td align="right">
+        25052.381413
+</td>
+<td align="right">
+        890513882112
+</td>
+<td align="right">
+       1401744132096
+</td>
+<td>
+U
+</td>
+<td align="right">
+           484272177
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1068409
+</td>
+<td align="right">
+             2550845
+</td>
+<td align="right">
+        890491894784
+</td>
+<td align="right">
+       1399500081152
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+            33554464
+</td>
+<td align="right">
+          4042310906
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510560
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104736
+</td>
+<td>
+RECOC1_CD_08_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_08_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_08_iad300715exdcl09
+</td>
+<td>
+82034be6-c4f9bda1-7a69f909-b0657e9a
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1069651
+</td>
+<td align="right">
+             2737613
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        343223.20111
+</td>
+<td align="right">
+        25414.713102
+</td>
+<td align="right">
+        890759389184
+</td>
+<td align="right">
+       1402062744576
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2432034057
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067588
+</td>
+<td align="right">
+             2545487
+</td>
+<td align="right">
+        890746040320
+</td>
+<td align="right">
+       1399101828096
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  33
+</td>
+<td align="right">
+            33554465
+</td>
+<td align="right">
+          4042310903
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510360
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104936
+</td>
+<td>
+RECOC1_CD_09_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_09_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_09_iad300715exdcl09
+</td>
+<td>
+ff8649ba-c980ce65-3c3af05e-8fe08ce8
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1068186
+</td>
+<td align="right">
+             2839328
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       350855.240163
+</td>
+<td align="right">
+        25391.666421
+</td>
+<td align="right">
+        889953063424
+</td>
+<td align="right">
+       1404089216512
+</td>
+<td>
+U
+</td>
+<td align="right">
+           724469314
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1067737
+</td>
+<td align="right">
+             2549848
+</td>
+<td align="right">
+        889945240064
+</td>
+<td align="right">
+       1399799463424
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  34
+</td>
+<td align="right">
+            33554466
+</td>
+<td align="right">
+          4042310907
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510288
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              105008
+</td>
+<td>
+RECOC1_CD_10_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_10_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_10_iad300715exdcl09
+</td>
+<td>
+4d424de8-24626cca-cee1f4c2-8d8e0421
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1074661
+</td>
+<td align="right">
+             2779832
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       347053.680374
+</td>
+<td align="right">
+        25315.416738
+</td>
+<td align="right">
+        890404462592
+</td>
+<td align="right">
+       1403682784768
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3897748168
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1070927
+</td>
+<td align="right">
+             2553718
+</td>
+<td align="right">
+        890382594048
+</td>
+<td align="right">
+       1400042284544
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  35
+</td>
+<td align="right">
+            33554467
+</td>
+<td align="right">
+          4042310898
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNPROT
+</td>
+<td>
+CELL
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2615296
+</td>
+<td align="right">
+             2510468
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              104828
+</td>
+<td>
+RECOC1_CD_11_IAD300715EXDCL09
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td>
+RECOC1_CD_11_IAD300715EXDCL09
+</td>
+<td>
+o/192.168.136.18;192.168.136.19/RECOC1_CD_11_iad300715exdcl09
+</td>
+<td>
+64d44560-4f27892f-efea9fb6-a95225cd
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:02:22
+</td>
+<td>
+2020-09-20T04:18:47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1073024
+</td>
+<td align="right">
+             2633401
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       341736.349562
+</td>
+<td align="right">
+          24780.1432
+</td>
+<td align="right">
+        891183114240
+</td>
+<td align="right">
+       1402122177024
+</td>
+<td>
+U
+</td>
+<td align="right">
+          3656958189
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1072567
+</td>
+<td align="right">
+             2553302
+</td>
+<td align="right">
+        891174619136
+</td>
+<td align="right">
+       1399698602496
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+REGULAR
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+            33554468
+</td>
+<td align="right">
+          4042310934
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNKNOWN
+</td>
+<td>
+System
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+                 116
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+QD_RECOC1_AUPPHRORADBF9EXX1
+</td>
+<td>
+AUPP_HRORADB_F9EXX1
+</td>
+<td>
+QD_RECOC1_AUPPHRORADBF9EXX1
+</td>
+<td>
+/dev/exadata_quorum/QD_RECOC1_AUPPHRORADBF9EXX1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:03:53
+</td>
+<td>
+2020-09-20T06:02:51
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  60
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             .728646
+</td>
+<td align="right">
+              .00383
+</td>
+<td align="right">
+              245760
+</td>
+<td align="right">
+               12288
+</td>
+<td>
+U
+</td>
+<td align="right">
+          2259100842
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  51
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              208896
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+QUORUM
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  37
+</td>
+<td align="right">
+            33554469
+</td>
+<td align="right">
+          4042310933
+</td>
+<td>
+CACHED
+</td>
+<td>
+MEMBER
+</td>
+<td>
+ONLINE
+</td>
+<td>
+NORMAL
+</td>
+<td>
+UNKNOWN
+</td>
+<td>
+System
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+                 128
+</td>
+<td align="right">
+                 116
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+QD_RECOC1_AUPPHRORADBF9EXX2
+</td>
+<td>
+AUPP_HRORADB_F9EXX2
+</td>
+<td>
+QD_RECOC1_AUPPHRORADBF9EXX2
+</td>
+<td>
+/dev/exadata_quorum/QD_RECOC1_AUPPHRORADBF9EXX2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-07-13T17:03:57
+</td>
+<td>
+2020-09-20T04:18:50
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  78
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             .847525
+</td>
+<td align="right">
+              .00383
+</td>
+<td align="right">
+              331776
+</td>
+<td align="right">
+               12288
+</td>
+<td>
+U
+</td>
+<td align="right">
+           727366180
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  56
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              229376
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+QUORUM
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ GROUP_NUMBER                                       NUMBER
+ DISK_NUMBER                                        NUMBER
+ COMPOUND_INDEX                                     NUMBER
+ INCARNATION                                        NUMBER
+ MOUNT_STATUS                                       VARCHAR2(7)
+ HEADER_STATUS                                      VARCHAR2(12)
+ MODE_STATUS                                        VARCHAR2(7)
+ STATE                                              VARCHAR2(8)
+ REDUNDANCY                                         VARCHAR2(7)
+ LIBRARY                                            VARCHAR2(64)
+ OS_MB                                              NUMBER
+ TOTAL_MB                                           NUMBER
+ FREE_MB                                            NUMBER
+ HOT_USED_MB                                        NUMBER
+ COLD_USED_MB                                       NUMBER
+ NAME                                               VARCHAR2(30)
+ FAILGROUP                                          VARCHAR2(30)
+ LABEL                                              VARCHAR2(31)
+ PATH                                               VARCHAR2(256)
+ UDID                                               VARCHAR2(64)
+ PRODUCT                                            VARCHAR2(32)
+ CREATE_DATE                                        DATE
+ MOUNT_DATE                                         DATE
+ REPAIR_TIMER                                       NUMBER
+ READS                                              NUMBER
+ WRITES                                             NUMBER
+ READ_ERRS                                          NUMBER
+ WRITE_ERRS                                         NUMBER
+ READ_TIMEOUT                                       NUMBER
+ WRITE_TIMEOUT                                      NUMBER
+ READ_TIME                                          NUMBER
+ WRITE_TIME                                         NUMBER
+ BYTES_READ                                         NUMBER
+ BYTES_WRITTEN                                      NUMBER
+ PREFERRED_READ                                     VARCHAR2(1)
+ HASH_VALUE                                         NUMBER
+ HOT_READS                                          NUMBER
+ HOT_WRITES                                         NUMBER
+ HOT_BYTES_READ                                     NUMBER
+ HOT_BYTES_WRITTEN                                  NUMBER
+ COLD_READS                                         NUMBER
+ COLD_WRITES                                        NUMBER
+ COLD_BYTES_READ                                    NUMBER
+ COLD_BYTES_WRITTEN                                 NUMBER
+ VOTING_FILE                                        VARCHAR2(1)
+ SECTOR_SIZE                                        NUMBER
+ FAILGROUP_TYPE                                     VARCHAR2(7)
+ CON_ID                                             NUMBER
+
+SELECT /*+  NO_MERGE  */ /* 2c.237 */
+       *
+  FROM v$asm_disk
+ ORDER BY
+       1, 2;
+
+76 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:46:44  </font>
+</body>
+</html>

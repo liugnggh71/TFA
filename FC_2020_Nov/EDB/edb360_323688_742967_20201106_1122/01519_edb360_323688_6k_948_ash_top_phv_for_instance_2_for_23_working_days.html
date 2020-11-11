@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>ASH Top PHV for Instance 2 for 23 working days, between 2020-10-06T11:22:16 and 2020-11-06T11:22:16, and between 0730 and 1930 hours</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 01519_edb360_323688_6k_948_ash_top_phv_for_instance_2_for_23_working_days.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 6k.948. ASH Top PHV for Instance 2 for 23 working days, between 2020-10-06T11:22:16 and 2020-11-06T11:22:16, and between 0730 and 1930 hours <em>(DBA_HIST_ACTIVE_SESS_HISTORY)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+PLAN_HASH_VALUE
+</th>
+<th scope="col">
+Samples
+</th>
+<th scope="col">
+PERCENT
+</th>
+<th scope="col">
+SAMPLE_SQL_TEXT
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+Others
+</td>
+<td align="right">
+      12301
+</td>
+<td align="right">
+                  36
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+1854145950(6)
+</td>
+<td align="right">
+       6591
+</td>
+<td align="right">
+                19.3
+</td>
+<td>
+UPDATE T_USR SET USR_LAS_ACT_TIM=SYSDATE WHERE USR_ID = :B1
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+1395218688(1)
+</td>
+<td align="right">
+       3176
+</td>
+<td align="right">
+                 9.3
+</td>
+<td>
+SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+     INNER JOIN T_MEMBDGISBASE diag ON diag.UMDS_DGISUM_EVNT = T.UMBS_ID
+     INNER JOIN T_APBL msrv ON msrv.MSRV_SRVCDGIS = diag.MBDB_ID AND msrv.APBL_IS_ERR = :&quot;SYS_B_0&quot;
+   WHERE T.UMBS_OBJ_STT = :&quot;SYS_B_1&quot; AND (T.UMBS_MEMB = :1  OR T.UMBS_MEMB in (select MBUR_ID from T_USR where USR_MRGEMSTR=:2 ))),
+  (SELECT count(DISTINCT T.UMBS_ID) AS closed
+   FROM T_UM_BASE T
+     INNER JOIN T_MEMBDGISBASE diag ON diag.UMDS_DGISUM_EVNT = T.UMBS_ID
+     INNER JOIN T_APBL msrv ON msrv.MSRV_SRVCDGIS = diag.MBDB_ID AND msrv.APBL_IS_ERR = :&quot;SYS_B_2&quot;
+   WHERE T.UMBS_OBJ_STT = :&quot;SYS_B_3&quot; AND (T.UMBS_MEMB = :3  OR T.UMBS_MEMB in (select MBUR_ID from T_USR where USR_MRGEMSTR=:4 )))
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+2329025058(6)
+</td>
+<td align="right">
+       1930
+</td>
+<td align="right">
+                 5.7
+</td>
+<td>
+DELETE FROM T_PHI WHERE MEMBER_ID = :B1 AND PHI_TYPE = 3
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+312717859(1)
+</td>
+<td align="right">
+       1627
+</td>
+<td align="right">
+                 4.8
+</td>
+<td>
+SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    benefit.BENP_LWSTLVL_PRODCAT productCategoryId,
+    affMember.USR_FRSTNAM affiliatedMemberFirstName,
+    affMember.USR_LAS_NAM affiliatedMemberLastName
+FROM (
+  SELECT INFO.*,
+    CASE
+    WHEN INFO.memberAffiliationId IS NOT NULL THEN (INFO.memberAffiliationId)
+    WHEN INFO.authAffiliationId IS NOT NULL THEN (SELECT UMBS_MEMB FROM T_UM_BASE WHERE UMBS_ID=INFO.authAffiliationId)
+    WHEN INFO.careManagementAffiliationId IS NOT NULL THEN (SELECT CMBS_MEMB FROM T_CM_BASEBASE WHERE CMBB_ID=INFO.careManagementAffiliationId)
+    WHEN INFO.providerAffiliationId IS NOT NULL THEN (INFO.providerAffiliationId)
+    ELSE (NULL)
+    END         affiliatedMemberId
+  FROM (
+  SELECT * FROM (
+    SELECT
+        T.SETK_ID AS id,
+        T.SETK_C4C_ID AS c4cId,
+        T.SETK_UNIVID AS universalId,
+        taskType.TSKT_RCPTTYP AS categoryId,
+        T.SETK_TSK_TYP AS taskTypeId,
+        taskType.DDLI_LBL AS taskTypeLabel,
+
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+3653789528(1)
+</td>
+<td align="right">
+       1491
+</td>
+<td align="right">
+                 4.4
+</td>
+<td>
+delete from T_OTHER_INSURANCE where INS_MEMBER= :1 and CLASSTYPE=:2
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+4066339909(2)
+</td>
+<td align="right">
+       1296
+</td>
+<td align="right">
+                 3.8
+</td>
+<td>
+SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    benefit.BENP_LWSTLVL_PRODCAT productCategoryId,
+    affMember.USR_FRSTNAM affiliatedMemberFirstName,
+    affMember.USR_LAS_NAM affiliatedMemberLastName
+FROM (
+  SELECT INFO.*,
+    CASE
+    WHEN INFO.memberAffiliationId IS NOT NULL THEN (INFO.memberAffiliationId)
+    WHEN INFO.authAffiliationId IS NOT NULL THEN (SELECT UMBS_MEMB FROM T_UM_BASE WHERE UMBS_ID=INFO.authAffiliationId)
+    WHEN INFO.careManagementAffiliationId IS NOT NULL THEN (SELECT CMBS_MEMB FROM T_CM_BASEBASE WHERE CMBB_ID=INFO.careManagementAffiliationId)
+    WHEN INFO.providerAffiliationId IS NOT NULL THEN (INFO.providerAffiliationId)
+    ELSE (NULL)
+    END         affiliatedMemberId
+  FROM (
+  SELECT * FROM (
+    SELECT
+        T.SETK_ID AS id,
+        T.SETK_C4C_ID AS c4cId,
+        T.SETK_UNIVID AS universalId,
+        taskType.TSKT_RCPTTYP AS categoryId,
+        T.SETK_TSK_TYP AS taskTypeId,
+        taskType.DDLI_LBL AS taskTypeLabel,
+
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+1707006562(1)
+</td>
+<td align="right">
+        925
+</td>
+<td align="right">
+                 2.7
+</td>
+<td>
+SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    benefit.BENP_LWSTLVL_PRODCAT productCategoryId,
+    affMember.USR_FRSTNAM affiliatedMemberFirstName,
+    affMember.USR_LAS_NAM affiliatedMemberLastName
+FROM (
+  SELECT INFO.*,
+    CASE
+    WHEN INFO.memberAffiliationId IS NOT NULL THEN (INFO.memberAffiliationId)
+    WHEN INFO.authAffiliationId IS NOT NULL THEN (SELECT UMBS_MEMB FROM T_UM_BASE WHERE UMBS_ID=INFO.authAffiliationId)
+    WHEN INFO.careManagementAffiliationId IS NOT NULL THEN (SELECT CMBS_MEMB FROM T_CM_BASEBASE WHERE CMBB_ID=INFO.careManagementAffiliationId)
+    WHEN INFO.providerAffiliationId IS NOT NULL THEN (INFO.providerAffiliationId)
+    ELSE (NULL)
+    END         affiliatedMemberId
+  FROM (
+  SELECT * FROM (
+    SELECT
+        T.SETK_ID AS id,
+        T.SETK_C4C_ID AS c4cId,
+        T.SETK_UNIVID AS universalId,
+        taskType.TSKT_RCPTTYP AS categoryId,
+        T.SETK_TSK_TYP AS taskTypeId,
+        taskType.DDLI_LBL AS taskTypeLabel,
+
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+4249753125(1)
+</td>
+<td align="right">
+        901
+</td>
+<td align="right">
+                 2.6
+</td>
+<td>
+SELECT /* CM-WB-CASE-QUERY */ MYWORK.*,
+       :1   AS                         requestorId,
+       :2   AS                         viewedWbOwnerId
+FROM (
+ SELECT * FROM (
+  SELECT BASE.*,
+       CASE WHEN dueDate IS NOT NULL THEN dueDate
+            ELSE createDate
+       END sortDate
+  FROM (
+    SELECT T.CLASSTYPE      classType,
+       T.cmbb_id            id,
+       T.cmbb_c4c_id        c4cId,
+       :&quot;SYS_B_00&quot; AS                 affiliationType,
+       T.cmbs_memb          memberId,
+       T.cmbb_las_act_by    lastModifiedById,
+       T.cmbb_las_act_tim   lastModifiedDate,
+       coalesce(T.DUEDATE, T.CSRQ_DDLNDT__DT)            dueDate,
+       T.CSRQ_DDLNDT__TIM_IN_DY           dueDateSeconds,
+       T.cmbb_crtd          createDate,
+       coalesce(T.case_ownr, t.cmpr_ownr, t.csrq_ownr, t.cmpq_ownr)         ownerId,
+       T.CMBB_SRC           sourceId,
+       T.CMBB_RESN          reasonId,
+       T.CMBB_TYP           typeId,
+       CASE WHEN T.CLASSTYPE=:&quot;SYS_B_01&quot; THEN T.CASE_
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+2646870572(1)
+</td>
+<td align="right">
+        839
+</td>
+<td align="right">
+                 2.5
+</td>
+<td>
+SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    benefit.BENP_LWSTLVL_PRODCAT productCategoryId,
+    affMember.USR_FRSTNAM affiliatedMemberFirstName,
+    affMember.USR_LAS_NAM affiliatedMemberLastName
+FROM (
+  SELECT INFO.*,
+    CASE
+    WHEN INFO.memberAffiliationId IS NOT NULL THEN (INFO.memberAffiliationId)
+    WHEN INFO.authAffiliationId IS NOT NULL THEN (SELECT UMBS_MEMB FROM T_UM_BASE WHERE UMBS_ID=INFO.authAffiliationId)
+    WHEN INFO.careManagementAffiliationId IS NOT NULL THEN (SELECT CMBS_MEMB FROM T_CM_BASEBASE WHERE CMBB_ID=INFO.careManagementAffiliationId)
+    WHEN INFO.providerAffiliationId IS NOT NULL THEN (INFO.providerAffiliationId)
+    ELSE (NULL)
+    END         affiliatedMemberId
+  FROM (
+  SELECT * FROM (
+    SELECT
+        T.SETK_ID AS id,
+        T.SETK_C4C_ID AS c4cId,
+        T.SETK_UNIVID AS universalId,
+        taskType.TSKT_RCPTTYP AS categoryId,
+        T.SETK_TSK_TYP AS taskTypeId,
+        taskType.DDLI_LBL AS taskTypeLabel,
+
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+4242918885(1)
+</td>
+<td align="right">
+        831
+</td>
+<td align="right">
+                 2.4
+</td>
+<td>
+SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+     INNER JOIN T_MEMBDGISBASE diag ON diag.UMDS_DGISUM_EVNT = T.UMBS_ID
+     INNER JOIN T_APBL msrv ON msrv.MSRV_SRVCDGIS = diag.MBDB_ID AND msrv.APBL_IS_ERR = :&quot;SYS_B_0&quot;
+   WHERE T.UMBS_OBJ_STT = :&quot;SYS_B_1&quot; AND (T.UMBS_MEMB = :1  OR T.UMBS_MEMB in (select MBUR_ID from T_USR where USR_MRGEMSTR=:2 ))),
+  (SELECT count(DISTINCT T.UMBS_ID) AS closed
+   FROM T_UM_BASE T
+     INNER JOIN T_MEMBDGISBASE diag ON diag.UMDS_DGISUM_EVNT = T.UMBS_ID
+     INNER JOIN T_APBL msrv ON msrv.MSRV_SRVCDGIS = diag.MBDB_ID AND msrv.APBL_IS_ERR = :&quot;SYS_B_2&quot;
+   WHERE T.UMBS_OBJ_STT = :&quot;SYS_B_3&quot; AND (T.UMBS_MEMB = :3  OR T.UMBS_MEMB in (select MBUR_ID from T_USR where USR_MRGEMSTR=:4 )))
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+1388734953(11)
+</td>
+<td align="right">
+        660
+</td>
+<td align="right">
+                 1.9
+</td>
+<td>
+SELECT TO_CHAR(:repo_seq) report_sequence FROM DUAL
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+2570804048(1)
+</td>
+<td align="right">
+        536
+</td>
+<td align="right">
+                 1.6
+</td>
+<td>
+INSERT INTO A_PRODCAT_PVDR ( PCPR_OBJ_STT, PCPR_VERS, PCPR_VSBT, PCPR_DLTDDT, PCPR_LAS_ACT_BY, PCPR_ORIGCRTR, PCPR_ORIGCRTRLOGDIN, PCPR_LAS_ACT_BY_LOGDIN, PCPR_UNIVID, PCPR_IN_NTWKPRODCATS, PCPR_IN_NTWKPVRS, PRACTITIONER_ROLE_ID, APPLIES_TO_ALL_PRACTITIONERS, BENEFIT_NETWORK_NAME, CLASSTYPE, PCPR_C4C_ID, PCPR_CRTD, PCPR_LAS_ACT, PCPR_LAS_ACT_ACTRTYP, PCPR_ID, VALID_FROM, VALID_TO , PCPR_AUDID, PCPR_PREV_AUDID, PCPR_NEXT_AUDID ) VALUES ( :B1 , :B2 , :B3 , :B4 , :B5 , :B6 , :B7 , :B8 , :B9 , :B10 , :B11 , :B12 , :B13 , :B14 , :B15 , :B16 , :B17 , :B18 , :B19 , :B20 , :B21 , NULL, U_PRODCAT_PVDR.NEXTVAL, NULL, NULL )
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+1032098679(1)
+</td>
+<td align="right">
+        532
+</td>
+<td align="right">
+                 1.6
+</td>
+<td>
+SELECT * FROM WORKFLOW_TASK_CURRENTSTEP WHERE ID = :1   FOR UPDATE
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+4085692791(94)
+</td>
+<td align="right">
+        501
+</td>
+<td align="right">
+                 1.5
+</td>
+<td>
+SELECT * FROM (
+ SELECT
+	NOTE.NOTE_ID AS id,
+	NOTE.NOTE_CRTD AS createDate,
+	NOTE.NOTE_UNIVID AS universalId,
+	NOTE.NOTE_OBJ_STT AS noteState,
+	CASE note_phnenote
+   	WHEN :&quot;SYS_B_00&quot; THEN :&quot;SYS_B_01&quot;
+       ELSE (
+      		SELECT ddli_id || :&quot;SYS_B_02&quot; || ddli_lbl
+      		FROM T_DDL_ITEM
+	        WHERE ddli_prnt is null
+      			start with ddli_id = NOTE.note_type
+      			connect by prior ddli_prnt = ddli_id)
+	END typeLabel,
+  	NOTE.NOTE_TYPE AS subtypeId,
+  	type.ddli_lbl AS subtypeLabel,
+	NOTE.NOTE_SOURCE AS sourceId,
+	NOTE.NOTE_REASON AS reasonId,
+	NOTE.NOTE_SUBJ AS subject,
+	NOTE.NOTE_ORIGCRTR AS authorId,
+	author.usr_frstnam as authorFirstName,
+	author.usr_las_nam as authorLastName,
+	NOTE.AFFILIATION_ID AS affiliationId,
+	NOTE.AFFILIATION_TYPE AS affiliationType,
+	NOTE.NOTE_CNV_ID AS noteCnvId,
+   RELATEDCASE.CMBB_ID AS caseId,
+	NOTE.NOTE_PITY AS priorityId,
+	priority.ddli_lbl as priorityLabel,
+	NOTE.NOTE_CALL_OUTCOME AS outcomeId,
+	NOTE.NOTE_CALL_DISPOSITION AS dispositionId,
+	d
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ SAMPLE_ID                                 NOT NULL NUMBER
+ SAMPLE_TIME                               NOT NULL TIMESTAMP(3)
+ SESSION_ID                                NOT NULL NUMBER
+ SESSION_SERIAL#                                    NUMBER
+ SESSION_TYPE                                       VARCHAR2(10)
+ FLAGS                                              NUMBER
+ USER_ID                                            NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ IS_SQLID_CURRENT                                   VARCHAR2(1)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_OPCODE                                         NUMBER
+ SQL_OPNAME                                         VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ TOP_LEVEL_SQL_ID                                   VARCHAR2(13)
+ TOP_LEVEL_SQL_OPCODE                               NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_FULL_PLAN_HASH_VALUE                           NUMBER
+ SQL_ADAPTIVE_PLAN_RESOLVED                         NUMBER
+ SQL_PLAN_LINE_ID                                   NUMBER
+ SQL_PLAN_OPERATION                                 VARCHAR2(64)
+ SQL_PLAN_OPTIONS                                   VARCHAR2(64)
+ SQL_EXEC_ID                                        NUMBER
+ SQL_EXEC_START                                     DATE
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ QC_INSTANCE_ID                                     NUMBER
+ QC_SESSION_ID                                      NUMBER
+ QC_SESSION_SERIAL#                                 NUMBER
+ PX_FLAGS                                           NUMBER
+ EVENT                                              VARCHAR2(64)
+ EVENT_ID                                           NUMBER
+ SEQ#                                               NUMBER
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_TIME                                          NUMBER
+ SESSION_STATE                                      VARCHAR2(7)
+ TIME_WAITED                                        NUMBER
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_SESSION                                   NUMBER
+ BLOCKING_SESSION_SERIAL#                           NUMBER
+ BLOCKING_INST_ID                                   NUMBER
+ BLOCKING_HANGCHAIN_INFO                            VARCHAR2(1)
+ CURRENT_OBJ#                                       NUMBER
+ CURRENT_FILE#                                      NUMBER
+ CURRENT_BLOCK#                                     NUMBER
+ CURRENT_ROW#                                       NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ TOP_LEVEL_CALL_NAME                                VARCHAR2(64)
+ CONSUMER_GROUP_ID                                  NUMBER
+ XID                                                RAW(8)
+ REMOTE_INSTANCE#                                   NUMBER
+ TIME_MODEL                                         NUMBER
+ IN_CONNECTION_MGMT                                 VARCHAR2(1)
+ IN_PARSE                                           VARCHAR2(1)
+ IN_HARD_PARSE                                      VARCHAR2(1)
+ IN_SQL_EXECUTION                                   VARCHAR2(1)
+ IN_PLSQL_EXECUTION                                 VARCHAR2(1)
+ IN_PLSQL_RPC                                       VARCHAR2(1)
+ IN_PLSQL_COMPILATION                               VARCHAR2(1)
+ IN_JAVA_EXECUTION                                  VARCHAR2(1)
+ IN_BIND                                            VARCHAR2(1)
+ IN_CURSOR_CLOSE                                    VARCHAR2(1)
+ IN_SEQUENCE_LOAD                                   VARCHAR2(1)
+ IN_INMEMORY_QUERY                                  VARCHAR2(1)
+ IN_INMEMORY_POPULATE                               VARCHAR2(1)
+ IN_INMEMORY_PREPOPULATE                            VARCHAR2(1)
+ IN_INMEMORY_REPOPULATE                             VARCHAR2(1)
+ IN_INMEMORY_TREPOPULATE                            VARCHAR2(1)
+ CAPTURE_OVERHEAD                                   VARCHAR2(1)
+ REPLAY_OVERHEAD                                    VARCHAR2(1)
+ IS_CAPTURED                                        VARCHAR2(1)
+ IS_REPLAYED                                        VARCHAR2(1)
+ SERVICE_HASH                                       NUMBER
+ PROGRAM                                            VARCHAR2(64)
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ CLIENT_ID                                          VARCHAR2(64)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ ECID                                               VARCHAR2(64)
+ DBREPLAY_FILE_ID                                   NUMBER
+ DBREPLAY_CALL_COUNTER                              NUMBER
+ TM_DELTA_TIME                                      NUMBER
+ TM_DELTA_CPU_TIME                                  NUMBER
+ TM_DELTA_DB_TIME                                   NUMBER
+ DELTA_TIME                                         NUMBER
+ DELTA_READ_IO_REQUESTS                             NUMBER
+ DELTA_WRITE_IO_REQUESTS                            NUMBER
+ DELTA_READ_IO_BYTES                                NUMBER
+ DELTA_WRITE_IO_BYTES                               NUMBER
+ DELTA_INTERCONNECT_IO_BYTES                        NUMBER
+ PGA_ALLOCATED                                      NUMBER
+ TEMP_SPACE_ALLOCATED                               NUMBER
+ DBOP_NAME                                          VARCHAR2(64)
+ DBOP_EXEC_ID                                       NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+WITH
+hist AS (
+SELECT /*+  MATERIALIZE NO_MERGE   DYNAMIC_SAMPLING(4)   FULL(h.ash) FULL(h.evt) FULL(h.sn) USE_HASH(h.sn h.ash h.evt)   FULL(h.INT$DBA_HIST_ACT_SESS_HISTORY.sn) FULL(h.INT$DBA_HIST_ACT_SESS_HISTORY.ash) FULL(h.INT$DBA_HIST_ACT_SESS_HISTORY.evt)   USE_HASH(h.INT$DBA_HIST_ACT_SESS_HISTORY.sn h.INT$DBA_HIST_ACT_SESS_HISTORY.ash h.INT$DBA_HIST_ACT_SESS_HISTORY.evt)  */
+       /* 6k.937 */
+       con_id,
+       sql_plan_hash_value,
+       dbid,
+       ROW_NUMBER () OVER (ORDER BY COUNT(*) DESC) rn,
+       COUNT(DISTINCT sql_id) distinct_sql_id,
+       MIN(sql_id) sample_sql_id,
+       COUNT(*) samples
+  FROM dba_hist_active_sess_history h
+ WHERE instance_number = 2 AND TO_CHAR(sample_time, 'D') BETWEEN '2' AND '6' AND TO_CHAR(sample_time, 'HH24') BETWEEN '0730' AND '1930'
+   AND sql_id IS NOT NULL
+   AND sql_plan_hash_value &gt; 0
+   AND snap_id BETWEEN 3473 AND 4962
+   AND dbid = 2109323688
+ GROUP BY
+       con_id,
+       sql_plan_hash_value,
+       dbid
+),
+total AS (
+SELECT /*+  MATERIALIZE NO_MERGE  */ /* 6k.937 */ SUM(samples) samples FROM hist
+)
+SELECT h.sql_plan_hash_value||'('||h.distinct_sql_id||')' plan_hash_value,
+       h.samples,
+       ROUND(100 * h.samples / t.samples, 1) percent,
+       DBMS_LOB.SUBSTR(s.sql_text, 1000) sample_sql_text
+  FROM hist h,
+       total t,
+       dba_hist_sqltext s
+ WHERE h.samples &gt;= t.samples / 1000 AND rn &lt;= 14
+   AND s.sql_id(+) = h.sample_sql_id AND s.dbid(+) = h.dbid
+   AND s.con_id(+) = h.con_id
+ UNION
+SELECT 'Others',
+       NVL(SUM(h.samples), 0) samples,
+       NVL(ROUND(100 * SUM(h.samples) / AVG(t.samples), 1), 0) percent,
+       NULL sample_sql_text
+  FROM hist h,
+       total t
+ WHERE h.samples &lt; t.samples / 1000 OR rn &gt; 14
+ ORDER BY 2 DESC NULLS LAST;
+
+15 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T13:48:33  </font>
+</body>
+</html>

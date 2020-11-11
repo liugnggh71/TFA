@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>AAS waiting on Network per Instance</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 00983_edb360_323688_5b_673_aas_waiting_on_network_per_instance_line_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Date', 'Inst 1', 'Inst 2']
+, [new Date(2020,9,06,19,57,07), 0, .003]
+, [new Date(2020,9,06,20,00,44), .046, 0]
+, [new Date(2020,9,06,21,57,18), .001, .001]
+, [new Date(2020,9,06,22,27,25), .017, .006]
+, [new Date(2020,9,06,23,49,18), 0, .002]
+, [new Date(2020,9,07,01,43,39), 0, .001]
+, [new Date(2020,9,07,09,54,13), 0, 0]
+, [new Date(2020,9,07,18,23,29), 0, 0]
+, [new Date(2020,9,07,18,31,11), .022, 0]
+, [new Date(2020,9,07,20,23,45), 0, .003]
+, [new Date(2020,9,07,20,53,22), 0, .006]
+, [new Date(2020,9,07,22,27,16), .002, .004]
+, [new Date(2020,9,07,22,51,54), .007, 0]
+, [new Date(2020,9,08,18,38,50), 0, 0]
+, [new Date(2020,9,08,19,13,25), .005, 0]
+, [new Date(2020,9,08,20,09,20), .003, 0]
+, [new Date(2020,9,08,22,06,43), .003, 0]
+, [new Date(2020,9,08,22,54,18), .004, .004]
+, [new Date(2020,9,08,23,29,07), .005, 0]
+, [new Date(2020,9,09,02,10,59), 0, .001]
+, [new Date(2020,9,09,08,50,01), 0, 0]
+, [new Date(2020,9,10,02,00,26), 0, 0]
+, [new Date(2020,9,10,04,26,59), 0, .001]
+, [new Date(2020,9,10,06,34,22), 0, .001]
+, [new Date(2020,9,10,08,26,52), .001, 0]
+, [new Date(2020,9,10,09,12,45), .004, 0]
+, [new Date(2020,9,10,11,19,22), .001, 0]
+, [new Date(2020,9,10,13,09,17), .002, 0]
+, [new Date(2020,9,10,13,49,10), .004, 0]
+, [new Date(2020,9,10,14,26,02), .005, .005]
+, [new Date(2020,9,10,19,02,04), .001, .001]
+, [new Date(2020,9,10,19,41,24), 0, .004]
+, [new Date(2020,9,10,20,58,14), .002, .002]
+, [new Date(2020,9,10,21,39,45), 0, .004]
+, [new Date(2020,9,10,23,51,14), .001, 0]
+, [new Date(2020,9,11,02,27,00), 0, .001]
+, [new Date(2020,9,11,18,31,04), 0, 0]
+, [new Date(2020,9,11,19,33,52), .003, 0]
+, [new Date(2020,9,11,22,16,49), .002, 0]
+, [new Date(2020,9,12,00,13,30), 0, .001]
+, [new Date(2020,9,12,01,00,17), .007, .004]
+, [new Date(2020,9,12,11,44,57), 0, 0]
+, [new Date(2020,9,12,18,07,23), 0, 0]
+, [new Date(2020,9,12,18,39,12), 0, .005]
+, [new Date(2020,9,12,20,26,21), .002, .002]
+, [new Date(2020,9,12,21,17,55), 0, .006]
+, [new Date(2020,9,12,22,26,33), 0, .005]
+, [new Date(2020,9,13,00,22,42), .003, 0]
+, [new Date(2020,9,13,01,41,56), 0, .002]
+, [new Date(2020,9,13,18,20,23), 0, 0]
+, [new Date(2020,9,13,18,53,40), .005, 0]
+, [new Date(2020,9,13,19,22,46), .006, 0]
+, [new Date(2020,9,13,20,27,51), .003, 0]
+, [new Date(2020,9,13,20,32,19), 0, .037]
+, [new Date(2020,9,13,22,53,36), .001, .001]
+, [new Date(2020,9,14,08,23,45), 0, 0]
+, [new Date(2020,9,14,17,01,04), 0, 0]
+, [new Date(2020,9,14,18,57,48), .001, .001]
+, [new Date(2020,9,14,19,21,09), .007, 0]
+, [new Date(2020,9,14,20,56,50), 0, .002]
+, [new Date(2020,9,14,21,25,48), 0, .006]
+, [new Date(2020,9,14,22,41,09), .004, .002]
+, [new Date(2020,9,15,12,59,57), 0, 0]
+, [new Date(2020,9,15,18,19,25), 0, .001]
+, [new Date(2020,9,15,18,52,03), .005, 0]
+, [new Date(2020,9,15,20,08,54), .002, .002]
+, [new Date(2020,9,15,20,36,01), 0, .006]
+, [new Date(2020,9,15,21,31,46), 0, .003]
+, [new Date(2020,9,15,22,17,11), .004, 0]
+, [new Date(2020,9,15,22,59,53), .008, .008]
+, [new Date(2020,9,15,23,56,55), 0, .003]
+, [new Date(2020,9,16,18,55,35), 0, 0]
+, [new Date(2020,9,16,20,28,35), .002, 0]
+, [new Date(2020,9,16,20,55,33), .012, .006]
+, [new Date(2020,9,16,22,46,16), 0, .002]
+, [new Date(2020,9,16,23,13,51), .006, 0]
+, [new Date(2020,9,16,23,48,52), 0, .005]
+, [new Date(2020,9,17,01,52,05), .001, 0]
+, [new Date(2020,9,17,10,59,48), .102, .091]
+, [new Date(2020,9,17,11,14,51), 6.412, 6.944]
+, [new Date(2020,9,18,19,18,22), 0, 0]
+, [new Date(2020,9,18,20,13,49), .003, .003]
+, [new Date(2020,9,18,20,54,00), .008, 0]
+, [new Date(2020,9,18,21,07,00), 0, .013]
+, [new Date(2020,9,18,23,57,39), .002, 0]
+, [new Date(2020,9,19,18,34,39), 0, 0]
+, [new Date(2020,9,19,19,08,38), 0, .005]
+, [new Date(2020,9,19,19,50,53), .004, 0]
+, [new Date(2020,9,19,20,35,41), 0, .004]
+, [new Date(2020,9,19,22,27,36), .001, 0]
+, [new Date(2020,9,20,00,30,33), 0, .001]
+, [new Date(2020,9,20,14,31,37), 0, 0]
+, [new Date(2020,9,20,15,30,26), .442, 0]
+, [new Date(2020,9,20,16,00,35), 1.78, 0]
+, [new Date(2020,9,20,16,30,33), 1.802, 0]
+, [new Date(2020,9,20,17,00,41), 1.809, 0]
+, [new Date(2020,9,20,17,29,49), 1.762, 0]
+, [new Date(2020,9,20,17,59,47), 1.73, 0]
+, [new Date(2020,9,20,18,29,55), 1.753, 0]
+, [new Date(2020,9,20,18,59,44), 1.733, .006]
+, [new Date(2020,9,20,19,54,01), .003, 0]
+, [new Date(2020,9,20,20,27,09), 0, .005]
+, [new Date(2020,9,20,20,53,08), .006, 0]
+, [new Date(2020,9,20,21,28,48), .005, 0]
+, [new Date(2020,9,20,22,27,24), .003, 0]
+, [new Date(2020,9,20,22,31,15), .043, 0]
+, [new Date(2020,9,20,23,31,57), 0, .003]
+, [new Date(2020,9,21,18,45,11), 0, 0]
+, [new Date(2020,9,21,20,00,23), .002, 0]
+, [new Date(2020,9,21,21,41,54), 0, .002]
+, [new Date(2020,9,22,15,54,09), 0, 0]
+, [new Date(2020,9,22,20,47,25), 0, .001]
+, [new Date(2020,9,23,00,00,01), .025, 0]
+, [new Date(2020,9,23,00,30,10), .879, 0]
+, [new Date(2020,9,23,01,00,08), 1.146, 0]
+, [new Date(2020,9,23,01,30,06), 1.802, 0]
+, [new Date(2020,9,23,02,00,14), 1.809, 0]
+, [new Date(2020,9,23,02,30,13), 1.779, 0]
+, [new Date(2020,9,23,03,00,21), 1.798, 0]
+, [new Date(2020,9,23,03,30,19), 1.641, 0]
+, [new Date(2020,9,23,04,00,27), 1.687, 0]
+, [new Date(2020,9,23,04,30,25), 1.791, 0]
+, [new Date(2020,9,23,04,36,27), 1.326, 0]
+, [new Date(2020,9,23,09,39,26), 0, .001]
+, [new Date(2020,9,23,17,24,56), .002, 0]
+, [new Date(2020,9,23,18,27,43), .005, 0]
+, [new Date(2020,9,23,18,55,31), .012, 0]
+, [new Date(2020,9,23,19,45,46), .003, 0]
+, [new Date(2020,9,23,20,03,02), 0, .01]
+, [new Date(2020,9,23,21,35,25), .002, .002]
+, [new Date(2020,9,24,01,33,17), 0, .001]
+, [new Date(2020,9,24,19,25,04), 0, 0]
+, [new Date(2020,9,24,19,38,17), 0, .013]
+, [new Date(2020,9,24,20,07,05), 0, .006]
+, [new Date(2020,9,24,21,04,39), .003, 0]
+, [new Date(2020,9,24,22,58,20), .001, 0]
+, [new Date(2020,9,25,18,41,55), 0, 0]
+, [new Date(2020,9,25,19,55,56), 0, .002]
+, [new Date(2020,9,25,20,05,32), .017, 0]
+, [new Date(2020,9,25,20,55,42), 0, .003]
+, [new Date(2020,9,25,22,25,55), 0, .002]
+, [new Date(2020,9,25,22,49,47), .007, 0]
+, [new Date(2020,9,25,23,18,09), .006, .006]
+, [new Date(2020,9,26,12,00,52), 0, 0]
+, [new Date(2020,9,26,13,41,58), 0, .002]
+, [new Date(2020,9,26,14,52,18), .005, 0]
+, [new Date(2020,9,26,18,19,34), .001, 0]
+, [new Date(2020,9,26,19,15,10), .003, 0]
+, [new Date(2020,9,26,20,29,04), 0, .005]
+, [new Date(2020,9,26,21,23,51), .003, 0]
+, [new Date(2020,9,26,22,05,59), 0, .004]
+, [new Date(2020,9,26,23,04,35), 0, .003]
+, [new Date(2020,9,27,00,20,31), .004, 0]
+, [new Date(2020,9,27,00,43,12), 0, .007]
+, [new Date(2020,9,27,03,41,00), 0, .002]
+, [new Date(2020,9,27,05,13,05), 0, .002]
+, [new Date(2020,9,27,06,53,33), 0, .002]
+, [new Date(2020,9,27,07,06,57), 0, .012]
+, [new Date(2020,9,27,10,53,56), 0, .001]
+, [new Date(2020,9,27,11,39,56), .004, .004]
+, [new Date(2020,9,27,17,33,41), 0, 0]
+, [new Date(2020,9,27,19,07,49), 0, .002]
+, [new Date(2020,9,27,19,57,56), 0, .003]
+, [new Date(2020,9,27,20,08,59), 0, .045]
+, [new Date(2020,9,27,20,54,33), 0, .004]
+, [new Date(2020,9,27,21,04,06), 0, .017]
+, [new Date(2020,9,27,22,19,46), 0, .002]
+, [new Date(2020,9,27,22,50,32), .005, .005]
+, [new Date(2020,9,28,09,19,47), 0, 0]
+, [new Date(2020,9,28,10,57,53), .002, 0]
+, [new Date(2020,9,28,11,55,29), .003, 0]
+, [new Date(2020,9,28,13,46,34), 0, .002]
+, [new Date(2020,9,28,16,39,37), 0, .001]
+, [new Date(2020,9,28,17,56,07), .002, .004]
+, [new Date(2020,9,28,18,26,07), .011, .017]
+, [new Date(2020,9,28,18,38,21), .014, 0]
+, [new Date(2020,9,28,19,00,45), 0, .007]
+, [new Date(2020,9,28,19,38,18), .004, 0]
+, [new Date(2020,9,28,20,28,32), .003, 0]
+, [new Date(2020,9,28,20,54,11), .006, .006]
+, [new Date(2020,9,28,21,30,21), .005, .005]
+, [new Date(2020,9,28,22,14,43), 0, .008]
+, [new Date(2020,9,28,22,41,09), .013, 0]
+, [new Date(2020,9,29,01,17,13), .001, 0]
+, [new Date(2020,9,29,13,42,53), 0, 0]
+, [new Date(2020,9,29,18,04,04), .001, 0]
+, [new Date(2020,9,29,18,39,04), .005, 0]
+, [new Date(2020,9,29,19,13,13), .01, 0]
+, [new Date(2020,9,29,20,12,02), 0, .003]
+, [new Date(2020,9,29,20,50,24), .004, 0]
+, [new Date(2020,9,29,21,03,05), 0, .013]
+, [new Date(2020,9,29,22,40,25), .003, 0]
+, [new Date(2020,9,30,12,18,30), 0, 0]
+, [new Date(2020,9,30,18,32,44), 0, 0]
+, [new Date(2020,9,30,19,03,23), .005, 0]
+, [new Date(2020,9,30,20,19,55), .002, 0]
+, [new Date(2020,9,30,20,54,06), .015, 0]
+, [new Date(2020,9,31,00,32,35), .001, 0]
+, [new Date(2020,9,31,01,16,28), .004, 0]
+, [new Date(2020,9,31,03,05,57), .002, .002]
+, [new Date(2020,9,31,18,26,47), 0, 0]
+, [new Date(2020,9,31,21,04,33), 0, .001]
+, [new Date(2020,9,31,23,38,53), .002, 0]
+, [new Date(2020,10,01,01,29,18), .002, 0]
+, [new Date(2020,10,01,03,18,24), 0, .002]
+, [new Date(2020,10,01,05,02,49), .002, 0]
+, [new Date(2020,10,01,19,42,21), 0, 0]
+, [new Date(2020,10,01,22,49,49), .003, 0]
+, [new Date(2020,10,01,23,06,56), 0, .01]
+, [new Date(2020,10,02,01,06,28), 0, .001]
+, [new Date(2020,10,02,04,18,39), 0, .001]
+, [new Date(2020,10,02,05,14,35), .003, 0]
+, [new Date(2020,10,02,05,32,51), .009, 0]
+, [new Date(2020,10,02,18,38,03), 0, 0]
+, [new Date(2020,10,02,19,09,32), 0, .005]
+, [new Date(2020,10,02,20,35,06), .002, 0]
+, [new Date(2020,10,02,22,10,10), 0, .002]
+, [new Date(2020,10,02,23,29,21), 0, .004]
+, [new Date(2020,10,03,03,59,23), .001, .001]
+, [new Date(2020,10,03,04,01,48), .069, 0]
+, [new Date(2020,10,03,04,38,13), 0, .005]
+, [new Date(2020,10,03,08,51,38), .001, 0]
+, [new Date(2020,10,03,13,57,20), .001, 0]
+, [new Date(2020,10,03,18,27,45), .001, .001]
+, [new Date(2020,10,03,19,27,05), .008, .003]
+, [new Date(2020,10,03,20,39,57), .002, 0]
+, [new Date(2020,10,03,22,29,17), .002, .003]
+, [new Date(2020,10,03,22,40,50), 0, .029]
+, [new Date(2020,10,03,23,44,18), .005, 0]
+, [new Date(2020,10,04,01,13,42), .004, 0]
+, [new Date(2020,10,04,16,17,09), 0, 0]
+, [new Date(2020,10,04,18,58,49), 0, .001]
+, [new Date(2020,10,04,20,09,10), 0, .002]
+, [new Date(2020,10,04,22,25,15), .001, .002]
+, [new Date(2020,10,04,22,38,24), .013, 0]
+, [new Date(2020,10,04,23,25,27), .004, 0]
+, [new Date(2020,10,05,01,01,43), .002, 0]
+, [new Date(2020,10,05,01,58,49), .003, 0]
+, [new Date(2020,10,05,18,22,45), 0, 0]
+, [new Date(2020,10,05,18,52,13), 0, .006]
+, [new Date(2020,10,05,19,12,00), .008, .025]
+, [new Date(2020,10,05,20,13,06), 0, .005]
+, [new Date(2020,10,05,20,30,21), 0, .01]
+, [new Date(2020,10,05,22,15,18), .003, 0]
+]);
+
+var options = {isStacked: true,
+chartArea:{left:90, top:75, width:'65%', height:'70%'},
+backgroundColor: {fill: 'white', stroke: '#336699', strokeWidth: 1},
+explorer: {actions: ['dragToZoom', 'rightClickToReset'], maxZoomIn: 0.01},
+title: '5b.673. AAS waiting on Network per Instance',
+titleTextStyle: {fontSize: 18, bold: false},
+focusTarget: 'category',
+legend: {position: 'right', textStyle: {fontSize: 14}},
+tooltip: {textStyle: {fontSize: 14}},
+hAxis: {title: ' 12.1.0.2.0 cores:16(avg) threads:16(avg) hosts:2(avg)', gridlines: {count: -1}, titleTextStyle: {fontSize: 16, bold: false}},
+series: { 0: { }, 1: { },  2: { },  3: { },  4: { },  5: { },  6: { }, 7: {},
+8: { }, 9: { }, 10: { }, 11: { }, 12: { }, 13: { }, 14: { }
+},
+vAxis: {title: 'Average Active Sessions - AAS (stacked)',  gridlines: {count: -1}, titleTextStyle: {fontSize: 16, bold: false}}
+}
+
+var chart = new google.visualization.AreaChart(document.getElementById('linechart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 5b.673. AAS waiting on Network per Instance <em>(DBA_HIST_ACTIVE_SESS_HISTORY)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="linechart" class="google-chart"></div>
+
+<br />
+<font class="n">Notes:<br />1) drag to zoom, and right click to reset<br />2) up to 31 days of awr history were considered</font>
+<font class="n"><br />3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ SAMPLE_ID                                 NOT NULL NUMBER
+ SAMPLE_TIME                               NOT NULL TIMESTAMP(3)
+ SESSION_ID                                NOT NULL NUMBER
+ SESSION_SERIAL#                                    NUMBER
+ SESSION_TYPE                                       VARCHAR2(10)
+ FLAGS                                              NUMBER
+ USER_ID                                            NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ IS_SQLID_CURRENT                                   VARCHAR2(1)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_OPCODE                                         NUMBER
+ SQL_OPNAME                                         VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ TOP_LEVEL_SQL_ID                                   VARCHAR2(13)
+ TOP_LEVEL_SQL_OPCODE                               NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_FULL_PLAN_HASH_VALUE                           NUMBER
+ SQL_ADAPTIVE_PLAN_RESOLVED                         NUMBER
+ SQL_PLAN_LINE_ID                                   NUMBER
+ SQL_PLAN_OPERATION                                 VARCHAR2(64)
+ SQL_PLAN_OPTIONS                                   VARCHAR2(64)
+ SQL_EXEC_ID                                        NUMBER
+ SQL_EXEC_START                                     DATE
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ QC_INSTANCE_ID                                     NUMBER
+ QC_SESSION_ID                                      NUMBER
+ QC_SESSION_SERIAL#                                 NUMBER
+ PX_FLAGS                                           NUMBER
+ EVENT                                              VARCHAR2(64)
+ EVENT_ID                                           NUMBER
+ SEQ#                                               NUMBER
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_TIME                                          NUMBER
+ SESSION_STATE                                      VARCHAR2(7)
+ TIME_WAITED                                        NUMBER
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_SESSION                                   NUMBER
+ BLOCKING_SESSION_SERIAL#                           NUMBER
+ BLOCKING_INST_ID                                   NUMBER
+ BLOCKING_HANGCHAIN_INFO                            VARCHAR2(1)
+ CURRENT_OBJ#                                       NUMBER
+ CURRENT_FILE#                                      NUMBER
+ CURRENT_BLOCK#                                     NUMBER
+ CURRENT_ROW#                                       NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ TOP_LEVEL_CALL_NAME                                VARCHAR2(64)
+ CONSUMER_GROUP_ID                                  NUMBER
+ XID                                                RAW(8)
+ REMOTE_INSTANCE#                                   NUMBER
+ TIME_MODEL                                         NUMBER
+ IN_CONNECTION_MGMT                                 VARCHAR2(1)
+ IN_PARSE                                           VARCHAR2(1)
+ IN_HARD_PARSE                                      VARCHAR2(1)
+ IN_SQL_EXECUTION                                   VARCHAR2(1)
+ IN_PLSQL_EXECUTION                                 VARCHAR2(1)
+ IN_PLSQL_RPC                                       VARCHAR2(1)
+ IN_PLSQL_COMPILATION                               VARCHAR2(1)
+ IN_JAVA_EXECUTION                                  VARCHAR2(1)
+ IN_BIND                                            VARCHAR2(1)
+ IN_CURSOR_CLOSE                                    VARCHAR2(1)
+ IN_SEQUENCE_LOAD                                   VARCHAR2(1)
+ IN_INMEMORY_QUERY                                  VARCHAR2(1)
+ IN_INMEMORY_POPULATE                               VARCHAR2(1)
+ IN_INMEMORY_PREPOPULATE                            VARCHAR2(1)
+ IN_INMEMORY_REPOPULATE                             VARCHAR2(1)
+ IN_INMEMORY_TREPOPULATE                            VARCHAR2(1)
+ CAPTURE_OVERHEAD                                   VARCHAR2(1)
+ REPLAY_OVERHEAD                                    VARCHAR2(1)
+ IS_CAPTURED                                        VARCHAR2(1)
+ IS_REPLAYED                                        VARCHAR2(1)
+ SERVICE_HASH                                       NUMBER
+ PROGRAM                                            VARCHAR2(64)
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ CLIENT_ID                                          VARCHAR2(64)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ ECID                                               VARCHAR2(64)
+ DBREPLAY_FILE_ID                                   NUMBER
+ DBREPLAY_CALL_COUNTER                              NUMBER
+ TM_DELTA_TIME                                      NUMBER
+ TM_DELTA_CPU_TIME                                  NUMBER
+ TM_DELTA_DB_TIME                                   NUMBER
+ DELTA_TIME                                         NUMBER
+ DELTA_READ_IO_REQUESTS                             NUMBER
+ DELTA_WRITE_IO_REQUESTS                            NUMBER
+ DELTA_READ_IO_BYTES                                NUMBER
+ DELTA_WRITE_IO_BYTES                               NUMBER
+ DELTA_INTERCONNECT_IO_BYTES                        NUMBER
+ PGA_ALLOCATED                                      NUMBER
+ TEMP_SPACE_ALLOCATED                               NUMBER
+ DBOP_NAME                                          VARCHAR2(64)
+ DBOP_EXEC_ID                                       NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+SELECT /*+  DYNAMIC_SAMPLING(4)   FULL(h.ash) FULL(h.evt) FULL(h.sn) USE_HASH(h.sn h.ash h.evt)   FULL(h.INT$DBA_HIST_ACT_SESS_HISTORY.sn) FULL(h.INT$DBA_HIST_ACT_SESS_HISTORY.ash) FULL(h.INT$DBA_HIST_ACT_SESS_HISTORY.evt)   USE_HASH(h.INT$DBA_HIST_ACT_SESS_HISTORY.sn h.INT$DBA_HIST_ACT_SESS_HISTORY.ash h.INT$DBA_HIST_ACT_SESS_HISTORY.evt)  */
+       /* 5b.663 */
+       snap_id,
+       --TO_CHAR(LAG(MAX(sample_time)) OVER (ORDER BY snap_id), 'YYYY-MM-DD HH24:MI:SS') begin_time,
+       TO_CHAR(MIN(sample_time), 'YYYY-MM-DD HH24:MI:SS') begin_time,
+       TO_CHAR(MAX(sample_time), 'YYYY-MM-DD HH24:MI:SS') end_time,
+       ROUND(SUM(CASE instance_number WHEN 1 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_01,
+       ROUND(SUM(CASE instance_number WHEN 2 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_02,
+       ROUND(SUM(CASE instance_number WHEN 3 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_03,
+       ROUND(SUM(CASE instance_number WHEN 4 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_04,
+       ROUND(SUM(CASE instance_number WHEN 5 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_05,
+       ROUND(SUM(CASE instance_number WHEN 6 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_06,
+       ROUND(SUM(CASE instance_number WHEN 7 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_07,
+       ROUND(SUM(CASE instance_number WHEN 8 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_08,
+       0 dummy_09,
+       0 dummy_10,
+       0 dummy_11,
+       0 dummy_12,
+       0 dummy_13,
+       0 dummy_14,
+       0 dummy_15
+  FROM dba_hist_active_sess_history h
+ WHERE snap_id BETWEEN 3473 AND 4962
+   AND dbid = 2109323688
+   AND wait_class = 'Network'
+ GROUP BY
+       snap_id
+ ORDER BY
+       snap_id;
+
+245 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T12:31:15  </font>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>Object Level Privileges (Audit Trail)</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00059_edb360_323688_1c_51_object_level_privileges_audit_trail.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 1c.51. Object Level Privileges (Audit Trail) <em>(DBA_TAB_PRIVS)</em>  </h1>
+
+<br />
+
+
+
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ GRANTEE                                            VARCHAR2(128)
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ GRANTOR                                            VARCHAR2(128)
+ PRIVILEGE                                          VARCHAR2(40)
+ GRANTABLE                                          VARCHAR2(3)
+ HIERARCHY                                          VARCHAR2(3)
+ COMMON                                             VARCHAR2(3)
+ TYPE                                               VARCHAR2(24)
+
+-- provided by Simon Pane
+SELECT /*+  NO_MERGE  */ /* 1c.51 */
+       owner || '.' || table_name "TABLE", grantee, privilege, grantable
+  FROM dba_tab_privs
+ WHERE (   table_name IN ('AUD$','AUDIT$','FGA$','FGA_LOG$')
+        OR table_name IN ('UNIFIED_AUDIT_TRAIL','CDB_UNIFIED_AUDIT_TRAIL','V_$UNIFIED_AUDIT_TRAIL','GV_$UNIFIED_AUDIT_TRAIL') -- 12c UAT
+       )
+   AND grantee NOT IN ('SYS','SYSTEM','DBA','AUDIT_ADMIN','AUDIT_VIEWER')
+   AND owner IN ('SYS','SYSTEM')
+ ORDER BY table_name, owner, grantee, privilege;
+
+0 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:29:21  </font>
+</body>
+</html>

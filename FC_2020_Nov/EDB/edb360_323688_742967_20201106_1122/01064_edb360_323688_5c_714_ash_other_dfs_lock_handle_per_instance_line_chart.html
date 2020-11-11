@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>ASH Other "DFS lock handle" per Instance</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 01064_edb360_323688_5c_714_ash_other_dfs_lock_handle_per_instance_line_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Date', 'Inst 1', 'Inst 2']
+, [new Date(2020,9,06,19,07,24), 0, .038]
+, [new Date(2020,9,07,18,58,43), 0, 0]
+, [new Date(2020,9,08,03,06,02), 0, 0]
+, [new Date(2020,9,08,10,19,11), 0, 0]
+, [new Date(2020,9,08,12,44,59), 0, .001]
+, [new Date(2020,9,08,13,09,27), .007, 0]
+, [new Date(2020,9,08,16,58,24), 0, .001]
+, [new Date(2020,9,08,18,55,39), .01, .001]
+, [new Date(2020,9,08,19,05,52), .016, 0]
+, [new Date(2020,9,09,03,08,57), 0, 0]
+, [new Date(2020,9,09,08,57,53), 0, .001]
+, [new Date(2020,9,09,13,35,54), 0, .001]
+, [new Date(2020,9,09,18,29,04), .001, 0]
+, [new Date(2020,9,09,18,55,38), .031, .025]
+, [new Date(2020,9,09,19,15,07), .06, 0]
+, [new Date(2020,9,10,03,06,14), 0, 0]
+, [new Date(2020,9,10,10,16,13), 0, 0]
+, [new Date(2020,9,10,11,25,54), .002, 0]
+, [new Date(2020,9,10,12,05,14), 0, .004]
+, [new Date(2020,9,10,14,32,44), 0, .001]
+, [new Date(2020,9,11,02,55,17), 0, 0]
+, [new Date(2020,9,11,18,59,26), .001, .001]
+, [new Date(2020,9,11,19,19,06), .017, .008]
+, [new Date(2020,9,12,01,20,17), 0, 0]
+, [new Date(2020,9,12,09,26,41), 0, 0]
+, [new Date(2020,9,12,12,38,33), .001, 0]
+, [new Date(2020,9,12,18,59,33), .003, .002]
+, [new Date(2020,9,12,19,21,32), .015, .023]
+, [new Date(2020,9,12,20,50,17), 0, .002]
+, [new Date(2020,9,13,05,23,00), 0, 0]
+, [new Date(2020,9,13,07,53,33), 0, .001]
+, [new Date(2020,9,13,09,38,54), .002, 0]
+, [new Date(2020,9,13,18,59,24), .003, .001]
+, [new Date(2020,9,13,19,26,01), .025, .013]
+, [new Date(2020,9,13,22,41,03), 0, .001]
+, [new Date(2020,9,14,02,05,17), .001, 0]
+, [new Date(2020,9,14,07,39,04), 0, 0]
+, [new Date(2020,9,14,08,00,37), .008, 0]
+, [new Date(2020,9,14,18,28,20), 0, 0]
+, [new Date(2020,9,14,18,59,40), .027, .037]
+, [new Date(2020,9,14,19,24,11), .034, .014]
+, [new Date(2020,9,15,08,23,58), 0, 0]
+, [new Date(2020,9,15,11,20,18), 0, .001]
+, [new Date(2020,9,15,16,21,52), .001, 0]
+, [new Date(2020,9,15,18,54,43), .003, .005]
+, [new Date(2020,9,15,19,09,28), .011, .011]
+, [new Date(2020,9,16,03,05,01), 0, 0]
+, [new Date(2020,9,16,08,03,50), 0, .001]
+, [new Date(2020,9,16,12,12,00), .001, 0]
+, [new Date(2020,9,16,13,38,33), .002, 0]
+, [new Date(2020,9,16,16,11,03), 0, .002]
+, [new Date(2020,9,16,18,52,15), 0, .004]
+, [new Date(2020,9,16,19,20,02), .012, .018]
+, [new Date(2020,9,17,03,06,16), 0, 0]
+, [new Date(2020,9,17,12,00,14), 0, 0]
+, [new Date(2020,9,18,18,52,36), 0, 0]
+, [new Date(2020,9,18,19,51,52), .008, .003]
+, [new Date(2020,9,18,20,27,33), .009, .019]
+, [new Date(2020,9,19,19,57,01), 0, 0]
+, [new Date(2020,9,19,20,14,50), .019, 0]
+, [new Date(2020,9,20,08,08,45), 0, 0]
+, [new Date(2020,9,20,12,11,00), .001, 0]
+, [new Date(2020,9,20,18,16,02), 0, 0]
+, [new Date(2020,9,20,19,57,12), .012, .003]
+, [new Date(2020,9,20,20,25,10), .018, .012]
+, [new Date(2020,9,21,12,17,53), 0, 0]
+, [new Date(2020,9,21,14,32,23), .001, 0]
+, [new Date(2020,9,21,19,51,46), .001, .003]
+, [new Date(2020,9,21,20,15,48), .021, .014]
+, [new Date(2020,9,22,06,49,01), 0, 0]
+, [new Date(2020,9,22,08,12,55), 0, .002]
+, [new Date(2020,9,22,09,09,58), .003, 0]
+, [new Date(2020,9,22,14,14,35), 0, .001]
+, [new Date(2020,9,22,14,31,09), 0, .01]
+, [new Date(2020,9,22,15,30,44), 0, .003]
+, [new Date(2020,9,22,18,04,11), .001, 0]
+, [new Date(2020,9,22,19,56,52), .003, .007]
+, [new Date(2020,9,22,20,13,58), .039, .029]
+, [new Date(2020,9,23,03,44,13), 0, 0]
+, [new Date(2020,9,23,04,31,36), .004, 0]
+, [new Date(2020,9,23,08,26,37), .001, .001]
+, [new Date(2020,9,23,19,28,11), .001, 0]
+, [new Date(2020,9,23,19,58,11), .017, .011]
+, [new Date(2020,9,23,20,17,25), .009, 0]
+, [new Date(2020,9,24,03,05,35), 0, 0]
+, [new Date(2020,9,24,08,52,39), 0, 0]
+, [new Date(2020,9,24,15,32,36), 0, 0]
+, [new Date(2020,9,24,19,27,54), 0, .001]
+, [new Date(2020,9,24,19,49,30), .023, .008]
+, [new Date(2020,9,24,20,08,15), 0, .009]
+, [new Date(2020,9,25,05,47,12), 0, 0]
+, [new Date(2020,9,25,08,02,36), 0, .001]
+, [new Date(2020,9,25,20,00,38), 0, .001]
+, [new Date(2020,9,25,20,11,43), .015, .015]
+, [new Date(2020,9,26,10,55,06), 0, 0]
+, [new Date(2020,9,26,19,59,26), 0, .001]
+, [new Date(2020,9,26,20,16,20), 0, .01]
+, [new Date(2020,9,27,00,40,06), .001, 0]
+, [new Date(2020,9,27,08,57,36), 0, 0]
+, [new Date(2020,9,27,10,06,00), .002, 0]
+, [new Date(2020,9,27,11,59,45), 0, .001]
+, [new Date(2020,9,27,12,52,16), .003, 0]
+, [new Date(2020,9,27,19,55,11), .001, 0]
+, [new Date(2020,9,27,20,04,38), 0, .035]
+, [new Date(2020,9,28,08,07,49), 0, 0]
+, [new Date(2020,9,28,13,34,46), .001, 0]
+, [new Date(2020,9,28,14,22,19), .004, 0]
+, [new Date(2020,9,28,19,27,45), .001, 0]
+, [new Date(2020,9,28,19,47,40), .042, 0]
+, [new Date(2020,9,28,20,07,05), .009, 0]
+, [new Date(2020,9,28,23,17,20), 0, .001]
+, [new Date(2020,9,29,03,08,34), .001, 0]
+, [new Date(2020,9,29,03,34,50), 0, .006]
+, [new Date(2020,9,29,07,02,18), 0, .001]
+, [new Date(2020,9,29,08,16,43), .004, 0]
+, [new Date(2020,9,29,17,55,42), 0, 0]
+, [new Date(2020,9,29,18,21,49), .013, .013]
+, [new Date(2020,9,29,19,49,06), .008, 0]
+, [new Date(2020,9,29,20,13,23), .007, 0]
+, [new Date(2020,9,30,00,31,58), .001, 0]
+, [new Date(2020,9,30,08,31,52), 0, 0]
+, [new Date(2020,9,30,09,42,20), .002, 0]
+, [new Date(2020,9,30,17,57,46), .001, 0]
+, [new Date(2020,9,30,18,15,49), .046, 0]
+, [new Date(2020,9,30,18,34,25), 0, .018]
+, [new Date(2020,9,30,19,29,51), 0, .003]
+, [new Date(2020,9,30,19,47,15), .01, .019]
+, [new Date(2020,9,30,20,18,23), .005, .005]
+, [new Date(2020,9,31,17,59,52), 0, 0]
+, [new Date(2020,9,31,18,19,05), .009, .017]
+, [new Date(2020,9,31,19,27,13), .002, 0]
+, [new Date(2020,9,31,19,40,27), .025, .025]
+, [new Date(2020,9,31,20,13,09), 0, .01]
+, [new Date(2020,9,31,21,30,30), 0, .002]
+, [new Date(2020,10,01,13,44,46), 0, 0]
+, [new Date(2020,10,01,18,27,18), .001, .001]
+, [new Date(2020,10,01,18,37,03), 0, .051]
+, [new Date(2020,10,01,19,26,57), 0, .003]
+, [new Date(2020,10,01,19,56,51), .017, .011]
+, [new Date(2020,10,01,20,07,24), .016, 0]
+, [new Date(2020,10,02,08,05,08), 0, 0]
+, [new Date(2020,10,02,15,44,47), 0, 0]
+, [new Date(2020,10,02,17,59,04), .001, 0]
+, [new Date(2020,10,02,18,23,38), 0, .007]
+, [new Date(2020,10,02,18,38,43), 0, .033]
+, [new Date(2020,10,02,19,26,57), 0, .003]
+, [new Date(2020,10,02,19,58,16), .016, .005]
+, [new Date(2020,10,02,20,16,31), .009, .027]
+, [new Date(2020,10,03,02,41,55), .001, 0]
+, [new Date(2020,10,03,07,53,22), .001, 0]
+, [new Date(2020,10,03,18,25,43), 0, .001]
+, [new Date(2020,10,03,19,29,46), .003, 0]
+, [new Date(2020,10,03,19,58,49), .011, .006]
+, [new Date(2020,10,03,20,19,01), .017, .008]
+, [new Date(2020,10,04,02,20,50), .001, 0]
+, [new Date(2020,10,04,03,34,51), .002, 0]
+, [new Date(2020,10,04,08,04,05), .001, .001]
+, [new Date(2020,10,04,10,22,33), .002, 0]
+, [new Date(2020,10,04,13,27,21), 0, .001]
+, [new Date(2020,10,04,17,55,20), .001, .001]
+, [new Date(2020,10,04,18,22,08), .019, .012]
+, [new Date(2020,10,04,18,35,22), 0, .025]
+, [new Date(2020,10,04,19,57,19), .006, .002]
+, [new Date(2020,10,04,20,06,41), .018, 0]
+, [new Date(2020,10,05,06,41,35), 0, 0]
+, [new Date(2020,10,05,08,26,12), 0, .002]
+, [new Date(2020,10,05,11,32,39), 0, .001]
+, [new Date(2020,10,05,12,46,55), .002, 0]
+, [new Date(2020,10,05,18,00,18), .001, .001]
+, [new Date(2020,10,05,18,27,16), .012, .025]
+, [new Date(2020,10,05,19,27,53), .003, .003]
+, [new Date(2020,10,05,20,16,47), 0, .007]
+]);
+
+var options = {isStacked: true,
+chartArea:{left:90, top:75, width:'65%', height:'70%'},
+backgroundColor: {fill: 'white', stroke: '#336699', strokeWidth: 1},
+explorer: {actions: ['dragToZoom', 'rightClickToReset'], maxZoomIn: 0.01},
+title: '5c.714. ASH Other "DFS lock handle" per Instance',
+titleTextStyle: {fontSize: 18, bold: false},
+focusTarget: 'category',
+legend: {position: 'right', textStyle: {fontSize: 14}},
+tooltip: {textStyle: {fontSize: 14}},
+hAxis: {title: ' 12.1.0.2.0 cores:16(avg) threads:16(avg) hosts:2(avg)', gridlines: {count: -1}, titleTextStyle: {fontSize: 16, bold: false}},
+series: { 0: { }, 1: { },  2: { },  3: { },  4: { },  5: { },  6: { }, 7: {},
+8: { }, 9: { }, 10: { }, 11: { }, 12: { }, 13: { }, 14: { }
+},
+vAxis: {title: 'Average Active Sessions - AAS (stacked)',  gridlines: {count: -1}, titleTextStyle: {fontSize: 16, bold: false}}
+}
+
+var chart = new google.visualization.AreaChart(document.getElementById('linechart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 5c.714. ASH Other "DFS lock handle" per Instance <em>(DBA_HIST_ACTIVE_SESS_HISTORY)</em>  </h1>
+
+<br />
+Average Active Sessions (AAS) Waiting on Other "DFS lock handle"<br />
+
+<br />
+
+<div id="linechart" class="google-chart"></div>
+
+<br />
+<font class="n">Notes:<br />1) drag to zoom, and right click to reset<br />2) up to 31 days of awr history were considered</font>
+<font class="n"><br />3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ SAMPLE_ID                                 NOT NULL NUMBER
+ SAMPLE_TIME                               NOT NULL TIMESTAMP(3)
+ SESSION_ID                                NOT NULL NUMBER
+ SESSION_SERIAL#                                    NUMBER
+ SESSION_TYPE                                       VARCHAR2(10)
+ FLAGS                                              NUMBER
+ USER_ID                                            NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ IS_SQLID_CURRENT                                   VARCHAR2(1)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_OPCODE                                         NUMBER
+ SQL_OPNAME                                         VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ TOP_LEVEL_SQL_ID                                   VARCHAR2(13)
+ TOP_LEVEL_SQL_OPCODE                               NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_FULL_PLAN_HASH_VALUE                           NUMBER
+ SQL_ADAPTIVE_PLAN_RESOLVED                         NUMBER
+ SQL_PLAN_LINE_ID                                   NUMBER
+ SQL_PLAN_OPERATION                                 VARCHAR2(64)
+ SQL_PLAN_OPTIONS                                   VARCHAR2(64)
+ SQL_EXEC_ID                                        NUMBER
+ SQL_EXEC_START                                     DATE
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ QC_INSTANCE_ID                                     NUMBER
+ QC_SESSION_ID                                      NUMBER
+ QC_SESSION_SERIAL#                                 NUMBER
+ PX_FLAGS                                           NUMBER
+ EVENT                                              VARCHAR2(64)
+ EVENT_ID                                           NUMBER
+ SEQ#                                               NUMBER
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_TIME                                          NUMBER
+ SESSION_STATE                                      VARCHAR2(7)
+ TIME_WAITED                                        NUMBER
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_SESSION                                   NUMBER
+ BLOCKING_SESSION_SERIAL#                           NUMBER
+ BLOCKING_INST_ID                                   NUMBER
+ BLOCKING_HANGCHAIN_INFO                            VARCHAR2(1)
+ CURRENT_OBJ#                                       NUMBER
+ CURRENT_FILE#                                      NUMBER
+ CURRENT_BLOCK#                                     NUMBER
+ CURRENT_ROW#                                       NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ TOP_LEVEL_CALL_NAME                                VARCHAR2(64)
+ CONSUMER_GROUP_ID                                  NUMBER
+ XID                                                RAW(8)
+ REMOTE_INSTANCE#                                   NUMBER
+ TIME_MODEL                                         NUMBER
+ IN_CONNECTION_MGMT                                 VARCHAR2(1)
+ IN_PARSE                                           VARCHAR2(1)
+ IN_HARD_PARSE                                      VARCHAR2(1)
+ IN_SQL_EXECUTION                                   VARCHAR2(1)
+ IN_PLSQL_EXECUTION                                 VARCHAR2(1)
+ IN_PLSQL_RPC                                       VARCHAR2(1)
+ IN_PLSQL_COMPILATION                               VARCHAR2(1)
+ IN_JAVA_EXECUTION                                  VARCHAR2(1)
+ IN_BIND                                            VARCHAR2(1)
+ IN_CURSOR_CLOSE                                    VARCHAR2(1)
+ IN_SEQUENCE_LOAD                                   VARCHAR2(1)
+ IN_INMEMORY_QUERY                                  VARCHAR2(1)
+ IN_INMEMORY_POPULATE                               VARCHAR2(1)
+ IN_INMEMORY_PREPOPULATE                            VARCHAR2(1)
+ IN_INMEMORY_REPOPULATE                             VARCHAR2(1)
+ IN_INMEMORY_TREPOPULATE                            VARCHAR2(1)
+ CAPTURE_OVERHEAD                                   VARCHAR2(1)
+ REPLAY_OVERHEAD                                    VARCHAR2(1)
+ IS_CAPTURED                                        VARCHAR2(1)
+ IS_REPLAYED                                        VARCHAR2(1)
+ SERVICE_HASH                                       NUMBER
+ PROGRAM                                            VARCHAR2(64)
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ CLIENT_ID                                          VARCHAR2(64)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ ECID                                               VARCHAR2(64)
+ DBREPLAY_FILE_ID                                   NUMBER
+ DBREPLAY_CALL_COUNTER                              NUMBER
+ TM_DELTA_TIME                                      NUMBER
+ TM_DELTA_CPU_TIME                                  NUMBER
+ TM_DELTA_DB_TIME                                   NUMBER
+ DELTA_TIME                                         NUMBER
+ DELTA_READ_IO_REQUESTS                             NUMBER
+ DELTA_WRITE_IO_REQUESTS                            NUMBER
+ DELTA_READ_IO_BYTES                                NUMBER
+ DELTA_WRITE_IO_BYTES                               NUMBER
+ DELTA_INTERCONNECT_IO_BYTES                        NUMBER
+ PGA_ALLOCATED                                      NUMBER
+ TEMP_SPACE_ALLOCATED                               NUMBER
+ DBOP_NAME                                          VARCHAR2(64)
+ DBOP_EXEC_ID                                       NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+SELECT /*+  DYNAMIC_SAMPLING(4)   FULL(h.ash) FULL(h.evt) FULL(h.sn) USE_HASH(h.sn h.ash h.evt)   FULL(h.INT$DBA_HIST_ACT_SESS_HISTORY.sn) FULL(h.INT$DBA_HIST_ACT_SESS_HISTORY.ash) FULL(h.INT$DBA_HIST_ACT_SESS_HISTORY.evt)   USE_HASH(h.INT$DBA_HIST_ACT_SESS_HISTORY.sn h.INT$DBA_HIST_ACT_SESS_HISTORY.ash h.INT$DBA_HIST_ACT_SESS_HISTORY.evt)  */
+       /* 5c.677 */
+       snap_id,
+       --TO_CHAR(LAG(MAX(sample_time)) OVER (ORDER BY snap_id), 'YYYY-MM-DD HH24:MI:SS') begin_time,
+       TO_CHAR(MIN(sample_time), 'YYYY-MM-DD HH24:MI:SS') begin_time,
+       TO_CHAR(MAX(sample_time), 'YYYY-MM-DD HH24:MI:SS') end_time,
+       ROUND(SUM(CASE instance_number WHEN 1 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_01,
+       ROUND(SUM(CASE instance_number WHEN 2 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_02,
+       ROUND(SUM(CASE instance_number WHEN 3 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_03,
+       ROUND(SUM(CASE instance_number WHEN 4 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_04,
+       ROUND(SUM(CASE instance_number WHEN 5 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_05,
+       ROUND(SUM(CASE instance_number WHEN 6 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_06,
+       ROUND(SUM(CASE instance_number WHEN 7 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_07,
+       ROUND(SUM(CASE instance_number WHEN 8 THEN 10 ELSE 0 END) / (GREATEST(CAST(MAX(sample_time) AS DATE) - CAST(LAG(MAX(sample_time)) OVER (ORDER BY snap_id) AS DATE), (1/24/3600)) * 24 * 3600), 3) inst_08,
+       0 dummy_09,
+       0 dummy_10,
+       0 dummy_11,
+       0 dummy_12,
+       0 dummy_13,
+       0 dummy_14,
+       0 dummy_15
+  FROM dba_hist_active_sess_history h
+ WHERE snap_id BETWEEN 3473 AND 4962
+   AND dbid = 2109323688
+   AND wait_class = 'Other' AND event = 'DFS lock handle'
+ GROUP BY
+       snap_id
+ ORDER BY
+       snap_id;
+
+173 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T12:38:55  </font>
+</body>
+</html>

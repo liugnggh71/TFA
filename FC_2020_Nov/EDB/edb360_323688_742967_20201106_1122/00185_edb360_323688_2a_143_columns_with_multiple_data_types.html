@@ -1,0 +1,9356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>Columns with multiple Data Types</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00185_edb360_323688_2a_143_columns_with_multiple_data_types.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 2a.143. Columns with multiple Data Types <em>(DBA_TAB_COLUMNS)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+COL_CNT
+</th>
+<th scope="col">
+COLUMN_NAME
+</th>
+<th scope="col">
+TYP_CNT
+</th>
+<th scope="col">
+DATA_TYPE
+</th>
+<th scope="col">
+MIN_TABLE_NAME
+</th>
+<th scope="col">
+MAX_TABLE_NAME
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                 716
+</td>
+<td>
+CLASSTYPE
+</td>
+<td align="right">
+                 715
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_ADDRESS.T_ADD_UPDTKEY
+</td>
+<td>
+THH_C4C_DW.RPT_CONSTANTS
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                 716
+</td>
+<td>
+CLASSTYPE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PHI_DETAILS
+</td>
+<td>
+THH_C4C.A_PHI_DETAILS
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                 163
+</td>
+<td>
+DW_MODIFIED_DATE
+</td>
+<td align="right">
+                 128
+</td>
+<td>
+TIMESTAMP(9)
+</td>
+<td>
+THH_C4C_DW.DW_DIM_ACTION
+</td>
+<td>
+THH_C4C_DW.DW_PIVOT_CSTMFLDSMETADAT
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                 163
+</td>
+<td>
+DW_MODIFIED_DATE
+</td>
+<td align="right">
+                  34
+</td>
+<td>
+TIMESTAMP(6)
+</td>
+<td>
+THH_C4C_DW.DW_DIM_ACTIVE_MEMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_UMEVENT
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                 163
+</td>
+<td>
+DW_MODIFIED_DATE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TIMESTAMP(6) WITH TIME ZONE
+</td>
+<td>
+THH_C4C_DW.DW_BRIDGE_OPPORTUNITY_TO_CP
+</td>
+<td>
+THH_C4C_DW.DW_BRIDGE_OPPORTUNITY_TO_CP
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                 142
+</td>
+<td>
+MEMBER_ID
+</td>
+<td align="right">
+                 141
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.AS_MEMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_UMEVENT
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                 142
+</td>
+<td>
+MEMBER_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.RULENG_MEMHISTORY
+</td>
+<td>
+THH_C4C.RULENG_MEMHISTORY
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                  64
+</td>
+<td>
+DELETED_DATE
+</td>
+<td align="right">
+                  63
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_C4C.AS_UMEVENT
+</td>
+<td>
+THH_C4C_DW.DW_FACT_USER
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                  64
+</td>
+<td>
+DELETED_DATE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER_ASSOCIATION
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER_ASSOCIATION
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                  53
+</td>
+<td>
+START_DATE
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+TIMESTAMP(6)
+</td>
+<td>
+THH_C4C.ALERT_CURRENTSTEP
+</td>
+<td>
+THH_C4C.WORKFLOW_TASK_CURRENTSTEP
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                  53
+</td>
+<td>
+START_DATE
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_C4C.A_PHI
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PHI
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                  53
+</td>
+<td>
+START_DATE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER_ASSOCIATION
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER_ASSOCIATION
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                  51
+</td>
+<td>
+ID
+</td>
+<td align="right">
+                  50
+</td>
+<td>
+NUMBER
+</td>
+<td>
+C4C_LOG.TLOG
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDICAID_PROD_ID
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                  51
+</td>
+<td>
+ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CLINICAL_CRITERIA
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CLINICAL_CRITERIA
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                  50
+</td>
+<td>
+PROVIDER_ID
+</td>
+<td align="right">
+                  49
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.AS_PROVIDER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_TASK
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                  50
+</td>
+<td>
+PROVIDER_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.RULENG_MEMHISTORY
+</td>
+<td>
+THH_C4C.RULENG_MEMHISTORY
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                  41
+</td>
+<td>
+PRIORITY
+</td>
+<td align="right">
+                  33
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.AS_UMEVENT
+</td>
+<td>
+THH_C4C_DW.DW_DIM_UMEVENT_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                  41
+</td>
+<td>
+PRIORITY
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+GSMADMIN_INTERNAL.CHANGE_LOG_QUEUE_TABLE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CAREPLAN_TODO
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                  41
+</td>
+<td>
+STATE
+</td>
+<td align="right">
+                  37
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.ALERT_CURRENTSTEP
+</td>
+<td>
+THH_C4C_DW.DW_DIM_SYSTEM_CONTACT_ADDR
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                  41
+</td>
+<td>
+STATE
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+GSMADMIN_INTERNAL.CHANGE_LOG_QUEUE_TABLE
+</td>
+<td>
+THH_C4C.MV_PATID_PERSONAL_COND_ADDRESS
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                  41
+</td>
+<td>
+STATE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+CHAR
+</td>
+<td>
+GSMADMIN_INTERNAL.SERVICE_PREFERRED_AVAILABLE
+</td>
+<td>
+GSMADMIN_INTERNAL.SERVICE_PREFERRED_AVAILABLE
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                  34
+</td>
+<td>
+MEMBER
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.ALERT
+</td>
+<td>
+THH_C4C.TOSRISKS
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                  34
+</td>
+<td>
+MEMBER
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C_DW.DW_DIM_COB
+</td>
+<td>
+THH_C4C_DW.DW_DIM_OTHER_INSURANCE
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+STATUS
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_ADDRESS.DTL_CDLR_STATE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_OPPORTUNITY
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+STATUS
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+AUDSYS.CLI_SWP$911814c$1$1
+</td>
+<td>
+THH_C4C.T_VIRTUAL_TASK_GROUP
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+STATUS
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CHAR
+</td>
+<td>
+GSMADMIN_INTERNAL.DATABASE
+</td>
+<td>
+GSMADMIN_INTERNAL.SERVICE_PREFERRED_AVAILABLE
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                  31
+</td>
+<td>
+SEVERITY
+</td>
+<td align="right">
+                  25
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_ADDRESS.DTL_ERROR_LOG
+</td>
+<td>
+THH_C4C_DW.DW_DIM_UMEVENT_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                  31
+</td>
+<td>
+SEVERITY
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MAQ_UM_COND_PARAMS
+</td>
+<td>
+THH_C4C.MV_PATID_UM_COND_UMPARAMS
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+GROUP_ID
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.FACT_ADHOCNEGOTIATEDSAVINGS
+</td>
+<td>
+THH_C4C_DW.DW_FACT_PERCONTACTSAVINGS
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+GROUP_ID
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+GSMADMIN_INTERNAL.VNCR
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+TYPE
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DTL_CONTACT_PREFERRED
+</td>
+<td>
+THH_C4C_DW.DW_DIM_UMEVENT_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+TYPE
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.CLINICALDATA_ASSN
+</td>
+<td>
+THH_C4C.MV_PATID_CM_COND_CM_PR_REQ
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+REASON
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_CASE
+</td>
+<td>
+THH_C4C_DW.DW_FACT_NOTE
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+REASON
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.CLINICALDATA_AUTH_ASSN
+</td>
+<td>
+THH_C4C.MV_PATID_CM_COND_CM_PR_REQ
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+SOURCE
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_CASE
+</td>
+<td>
+THH_C4C_DW.DW_FACT_NOTE
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+SOURCE
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MAQ_CLINIC_COND_DIAG
+</td>
+<td>
+THH_C4C.MV_PATID_UM_COND_UMPARAMS
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+END_DATE
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_C4C.A_PHI
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PHI
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+END_DATE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER_ASSOCIATION
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER_ASSOCIATION
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+OBJECTID
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.CDDCDVREF
+</td>
+<td>
+THH_C4C.TYPESUBTYPEKEYS_AUDIT
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+OBJECTID
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.CLINICALDATAVALUE
+</td>
+<td>
+THH_C4C.CLINICALDATAVALUE_AUDIT
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+                  18
+</td>
+<td>
+OBJECT_STATE
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PHI
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PVDR_DIR_DETAILS
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+                  18
+</td>
+<td>
+OBJECT_STATE
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_PROVIDER_ASSOCIATION
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER_CHOICE
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+DETERMINATION
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_APPEAL
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDSERV_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+DETERMINATION
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.AS_UMEVENT
+</td>
+<td>
+THH_C4C_DW.DW_DIM_UMEVENT_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+RECORD_TYPE
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_DATA_ACCESS_PROFILE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_SYSTEM_CONTACT_ADDR
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+RECORD_TYPE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.DTL_CUSTOMFIELDS_RECORDTYPE
+</td>
+<td>
+THH_C4C.DTL_CUSTOMFIELDS_RECORDTYPE
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+AFFILIATION_TYPE
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_ACTIVITY
+</td>
+<td>
+THH_C4C_DW.DW_DIM_NOTE
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+AFFILIATION_TYPE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.CLINICALDATA_ASSN
+</td>
+<td>
+THH_C4C.INSTRUCTION_CARD_ASSOC
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+GENDER
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.AS_MEMBER
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+GENDER
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MAQ_PERS_COND_GENDER
+</td>
+<td>
+THH_C4C.MV_PATID_PERSONAL_COND_GENDER
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+PAYER_ID
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.AS_PAYER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_PAYER
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+PAYER_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.CERME_USERCONFIG
+</td>
+<td>
+THH_C4C.CERME_USERCONFIG
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+USR_ID
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.USER_TEMP
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+USR_ID
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.A_CONFIG
+</td>
+<td>
+THH_C4C.T_CONFIG
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+OUTCOME_REASON
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_CASE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROGRAM_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+OUTCOME_REASON
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_OUTCOME
+</td>
+<td>
+THH_C4C.T_OUTCOME
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+ACTUAL_UNITS
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.FACT_ADHOCNEGOTIATEDSAVINGS
+</td>
+<td>
+THH_C4C_DW.DW_FACT_PERCONTACTSAVINGS
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+ACTUAL_UNITS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.FACT_MEDICAL_SERVICE
+</td>
+<td>
+THH_C4C_DW.DW_FACT_MEDICAL_SERVICE
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+VERSION
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PHI_DETAILS
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER_CHOICE
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+VERSION
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+GSMADMIN_INTERNAL.DATABASE
+</td>
+<td>
+GSMADMIN_INTERNAL.GSM
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+CITY
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_IPG
+</td>
+<td>
+THH_C4C_DW.DW_DIM_SYSTEM_CONTACT_ADDR
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+CITY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MAQ_PERSONAL_COND_ADDR
+</td>
+<td>
+THH_C4C.MV_PATID_PERSONAL_COND_ADDRESS
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+COUNTY
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_IPG
+</td>
+<td>
+THH_C4C_DW.DW_DIM_SYSTEM_CONTACT_ADDR
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+COUNTY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MAQ_PERSONAL_COND_ADDR
+</td>
+<td>
+THH_C4C.MV_PATID_PERSONAL_COND_ADDRESS
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+OWNER
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.AS_MEMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_PAYER
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+OWNER
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.CLINICALDATAENTRY
+</td>
+<td>
+THH_C4C.CLINICALDATAENTRY_AUDIT
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+SOURCE_ID
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.AS_UMEVENT
+</td>
+<td>
+THH_C4C_DW.DW_DIM_UMEVENT_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+SOURCE_ID
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MV_DIM_OPPORTUNITY
+</td>
+<td>
+THH_C4C_DW.DW_DIM_OPPORTUNITY
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+START_TIME
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_C4C.FACT_ACTIVITY
+</td>
+<td>
+THH_C4C_DW.DW_FACT_ACTIVITY
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+START_TIME
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+TIMESTAMP(6)
+</td>
+<td>
+THH_C4C.DTL_EXPORT_TIMESTAMP
+</td>
+<td>
+THH_C4C.OPS_ACTIVITY
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+START_TIME
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.QRTZ_TRIGGERS
+</td>
+<td>
+THH_C4C.QRTZ_TRIGGERS
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+CFMD_REC_TYP
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CSTMFLDSMETADAT
+</td>
+<td>
+THH_C4C_DW.DW_PIVOT_CSTMFLDSMETADAT
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+CFMD_REC_TYP
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DTL_CUSTOMFIELDS_METADATA
+</td>
+<td>
+THH_C4C.DTL_CUSTOMFIELDS_METADATA
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+CLAIM_ID
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.FACT_DRUG_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+CLAIM_ID
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+CLAIM_TYPE
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MAQ_THRESH_COND_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_DIM_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+CLAIM_TYPE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.CLAIM_REVIEW
+</td>
+<td>
+THH_C4C.CLAIM_REVIEW_AUDIT
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+IS_ERROR
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_MEDICAL_SERVICE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDSERV_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+IS_ERROR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MV_DIM_DATA_CAPTURE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_DATA_CAPTURE
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NOTE_CSTMFLDS
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_NOTE1_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_NOTE_EXT
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NOTE_CSTMFLDS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_NOTE
+</td>
+<td>
+THH_C4C.T_NOTE
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NOTE_MRKDGRVCBY
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_NOTE1_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_NOTE_EXT
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NOTE_MRKDGRVCBY
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_NOTE
+</td>
+<td>
+THH_C4C.T_NOTE
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NOTE_MRKDRSLDBY
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_NOTE1_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_NOTE_EXT
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NOTE_MRKDRSLDBY
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_NOTE
+</td>
+<td>
+THH_C4C.T_NOTE
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NOTE_RLTDPVDR
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_NOTE1_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_NOTE_EXT
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NOTE_RLTDPVDR
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_NOTE
+</td>
+<td>
+THH_C4C.T_NOTE
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+LASTMODIFIEDDATE
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_C4C.IHCISCAREOPPORTUNITIESTREEIMPL
+</td>
+<td>
+THH_C4C.T_IHCIS_SUMMARY_PREDICTIONS_DT
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+LASTMODIFIEDDATE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+TIMESTAMP(6)
+</td>
+<td>
+THH_C4C.CLINICALDATAENTRY
+</td>
+<td>
+THH_C4C.CLINICALDATAVALUE
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+POCD_PMRYCODE
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_ADDRESS.TMP_C4C_POTLCODE
+</td>
+<td>
+THH_ADDRESS.ZIP_TEMP
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+POCD_PMRYCODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_ADDRESS.T_POTLCODE_SHRT
+</td>
+<td>
+THH_ADDRESS.T_POTLCODE_SHRT
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+VALUE
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DTL_CONTACT_PREFERRED
+</td>
+<td>
+THH_C4C.T_VTB_VALUE
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+VALUE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MV_PATID_THRESH_COND_RISK
+</td>
+<td>
+THH_C4C.T_IHCIS_ENCOUNTERS_DT
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+VALUE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+RAW
+</td>
+<td>
+THH_C4C.CLINICALDATAVALUE
+</td>
+<td>
+THH_C4C.CLINICALDATAVALUE_AUDIT
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+LAS_ACT
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBLSRVC
+</td>
+<td>
+THH_C4C.T_NOTICE_ATTACHMENTS
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+LAS_ACT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_ADDRESS.DTL_CDLR_STATE
+</td>
+<td>
+THH_C4C.DTL_CDLR_STATE
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+LAS_ACT_TIM
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_C4C.A_APBLSRVC
+</td>
+<td>
+THH_C4C.T_NOTICE_ATTACHMENTS
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+LAS_ACT_TIM
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+TIMESTAMP(6)
+</td>
+<td>
+THH_C4C.CLINICALDATA_ASSN
+</td>
+<td>
+THH_C4C.CLINICALDATA_AUTH_ASSN
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MANDATORY
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.FACT_TKNASSESS_RESP
+</td>
+<td>
+THH_C4C_DW.DW_FACT_TKNASSESS_RESP
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MANDATORY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.CLINICALDATAVALUEDEF
+</td>
+<td>
+THH_C4C.CLINICALDATAVALUEDEF_AUDIT
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MBDB_CSTMFLDS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_MEMBDGISBASE
+</td>
+<td>
+THH_C4C.T_MEMBDGISBASE
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MBDB_CSTMFLDS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_DGIS_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_DGIS_EXT
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MBDB_DGIS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_MEMBDGISBASE
+</td>
+<td>
+THH_C4C.T_MEMBDGISBASE
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MBDB_DGIS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_DGIS_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_DGIS_EXT
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MDSS_MEMB
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_MEMBDGISBASE
+</td>
+<td>
+THH_C4C.T_MEMBDGISBASE
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MDSS_MEMB
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_DGIS_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_DGIS_EXT
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_CSTMFLDS
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL_BAK_423B
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_CSTMFLDS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_LAS_EXTN
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL_BAK_423B
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_LAS_EXTN
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_PVDRASTN
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL_BAK_423B
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_PVDRASTN
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_SNP
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL_BAK_423B
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_SNP
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_SRVCDGIS
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL_BAK_423B
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MSRV_SRVCDGIS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVC_EXT
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+OUTCOME
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_UMEVENT
+</td>
+<td>
+THH_C4C_DW.DW_DIM_UMEVENT_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+OUTCOME
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MV_PATID_CM_COND_CASE
+</td>
+<td>
+THH_C4C.MV_PATID_CM_COND_CM_PROJECT
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+PRAS_PVDR
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PVDRASTN
+</td>
+<td>
+THH_C4C.T_PVDRASTN
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+PRAS_PVDR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_BASEPVDRASTN_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLSRVCPVDRASTN_EXT
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+PRODUCT_ID
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.FACT_ENROLLMENT
+</td>
+<td>
+THH_C4C_DW.DW_FACT_ENROLLMENT
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+PRODUCT_ID
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.T_MEDICAID_PROD_ID
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDICAID_PROD_ID
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+REVENUE_CODE
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBLSRVC
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+REVENUE_CODE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDICAL_SERVICE_CDS
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDSERV_CDS_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+SERVICE_CODE_MODIFIER
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDICAL_SERVICE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDSERV_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+SERVICE_CODE_MODIFIER
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBLSRVC
+</td>
+<td>
+THH_C4C.T_APBLSRVC
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+UMXT_MNLYDRMDBY
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL_BAK_423B
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+UMXT_MNLYDRMDBY
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EXTN_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EXTN_EXT
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+UMXT_PRNTEVNT
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL_BAK_423B
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+UMXT_PRNTEVNT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EXTN_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EXTN_EXT
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+UMXT_XTDD
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL_BAK_423B
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+UMXT_XTDD
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EXTN_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EXTN_EXT
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+USR_NAM_PRFX
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.T_USR
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+USR_NAM_PRFX
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.CARE_TEAM_MEMBERS
+</td>
+<td>
+THH_C4C.CARE_TEAM_MEMBERS
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+USR_NAM_SFIX
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.T_USR
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+USR_NAM_SFIX
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.CARE_TEAM_MEMBERS
+</td>
+<td>
+THH_C4C.CARE_TEAM_MEMBERS
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+ACTION_TYPE
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_ACTION
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDSERV_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+ACTION_TYPE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+LLT_USR_LNGS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MEMB_LNGSLIST_EXT
+</td>
+<td>
+THH_C4C.DLI_PVR_LNGSLIST_EXT
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+LLT_USR_LNGS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_LNGSLIST
+</td>
+<td>
+THH_C4C.T_LNGSLIST
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+PARTICIPATION
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CASE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROGRAM
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+PARTICIPATION
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+PARTICIPATIONSTATUS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CASE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROGRAM
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+PARTICIPATIONSTATUS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+PHONE_TYPE
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PHI
+</td>
+<td>
+THH_C4C.T_PHI
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+PHONE_TYPE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.TELEPHONE
+</td>
+<td>
+THH_C4C.TELEPHONE_AUDIT
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+POCD_CITY
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_ADDRESS.TMP_C4C_POTLCODE
+</td>
+<td>
+THH_ADDRESS.TMP_VEND_ZIP4
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+POCD_CITY
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_ADDRESS.T_POTLCODE
+</td>
+<td>
+THH_ADDRESS.T_POTLCODE
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+POCD_CNTY
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_ADDRESS.TMP_C4C_POTLCODE
+</td>
+<td>
+THH_ADDRESS.TMP_VEND_ZIP4
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+POCD_CNTY
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_ADDRESS.T_POTLCODE
+</td>
+<td>
+THH_ADDRESS.T_POTLCODE
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+POCD_STT
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_ADDRESS.TMP_C4C_POTLCODE
+</td>
+<td>
+THH_ADDRESS.TMP_VEND_ZIP4
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+POCD_STT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_ADDRESS.T_POTLCODE
+</td>
+<td>
+THH_ADDRESS.T_POTLCODE
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+PRIMARY_ROLE
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.FACT_PAYER_DACC_PROFILE
+</td>
+<td>
+THH_C4C.FACT_PAYER_ROLE
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+PRIMARY_ROLE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.FACT_PAYER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_PAYER
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+REQUESTOR
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CASE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROGRAM
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+REQUESTOR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+STAGE
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CASE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROGRAM
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+STAGE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+TGT_INTERVENTION
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CASE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROGRAM
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+TGT_INTERVENTION
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+TIMING
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CASE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROGRAM
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+TIMING
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UADD_CNRY
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MEMB_ADD_EXT
+</td>
+<td>
+THH_C4C.DLI_PVR_ADD_EXT
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UADD_CNRY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR_ADD
+</td>
+<td>
+THH_C4C.T_USR_ADD
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UADD_USR_CNCTIFO5
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MEMB_ADD_EXT
+</td>
+<td>
+THH_C4C.DLI_PVR_ADD_EXT
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UADD_USR_CNCTIFO5
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR_ADD
+</td>
+<td>
+THH_C4C.T_USR_ADD
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UBPS_PRNT
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_BASEPRNS
+</td>
+<td>
+THH_C4C.T_UM_BASEPRNS
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UBPS_PRNT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_BASEPRNS1_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_BASEPRNS2_EXT
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UCTI_PRFSMAIL
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MEMBUSR_EXT
+</td>
+<td>
+THH_C4C.DLI_PVDR_EXT
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UCTI_PRFSMAIL
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR_CNCTINFO
+</td>
+<td>
+THH_C4C.T_USR_CNCTINFO
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UCTI_PRFSPHNE
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MEMBUSR_EXT
+</td>
+<td>
+THH_C4C.DLI_PVDR_EXT
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+UCTI_PRFSPHNE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR_CNCTINFO
+</td>
+<td>
+THH_C4C.T_USR_CNCTINFO
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+USR_CSTMFLDS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MEMBUSR_EXT
+</td>
+<td>
+THH_C4C.DLI_PVDR_EXT
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+USR_CSTMFLDS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.T_USR
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+USR_PMRYLANG
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MEMBUSR_EXT
+</td>
+<td>
+THH_C4C.DLI_PVDR_EXT
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+USR_PMRYLANG
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.T_USR
+</td>
+</tr>
+<tr>
+<td>
+177
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_ALLOWED
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+FLOAT
+</td>
+<td>
+THH_C4C.FACT_CLAIM
+</td>
+<td>
+THH_C4C.FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+178
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_ALLOWED
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+179
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_APPROVED
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+FLOAT
+</td>
+<td>
+THH_C4C.FACT_CLAIM
+</td>
+<td>
+THH_C4C.FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+180
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_APPROVED
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+181
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_CHARGED
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+FLOAT
+</td>
+<td>
+THH_C4C.FACT_CLAIM
+</td>
+<td>
+THH_C4C.FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+182
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_CHARGED
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+183
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_COPAY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+FLOAT
+</td>
+<td>
+THH_C4C.FACT_CLAIM
+</td>
+<td>
+THH_C4C.FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+184
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_COPAY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+185
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_PAID
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+FLOAT
+</td>
+<td>
+THH_C4C.FACT_CLAIM
+</td>
+<td>
+THH_C4C.FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+186
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+AMOUNT_PAID
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+187
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+APPL_RTNGRCPT
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APL
+</td>
+<td>
+THH_C4C.T_APL
+</td>
+</tr>
+<tr>
+<td>
+188
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+APPL_RTNGRCPT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_APL_EXT
+</td>
+<td>
+THH_C4C.DLI_APL_EXT
+</td>
+</tr>
+<tr>
+<td>
+189
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+BENP_CSTMFLDS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_BENSPKG
+</td>
+<td>
+THH_C4C.T_BENSPKG_BACKUP
+</td>
+</tr>
+<tr>
+<td>
+190
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+BENP_CSTMFLDS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_BENSPKG_EXT
+</td>
+<td>
+THH_C4C.DLI_BENSPKG_EXT
+</td>
+</tr>
+<tr>
+<td>
+191
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+BENP_LWSTLVL_PRODCAT
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_BENSPKG
+</td>
+<td>
+THH_C4C.T_BENSPKG_BACKUP
+</td>
+</tr>
+<tr>
+<td>
+192
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+BENP_LWSTLVL_PRODCAT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_BENSPKG_EXT
+</td>
+<td>
+THH_C4C.DLI_BENSPKG_EXT
+</td>
+</tr>
+<tr>
+<td>
+193
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CFMD_DAT_TYP
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CSTMFLDSMETADAT
+</td>
+<td>
+THH_C4C.T_CSTMFLDSMETADAT
+</td>
+</tr>
+<tr>
+<td>
+194
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CFMD_DAT_TYP
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DTL_CUSTOMFIELDS_METADATA
+</td>
+<td>
+THH_C4C.DTL_CUSTOMFIELDS_METADATA
+</td>
+</tr>
+<tr>
+<td>
+195
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CFMD_DDL
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CSTMFLDSMETADAT
+</td>
+<td>
+THH_C4C.T_CSTMFLDSMETADAT
+</td>
+</tr>
+<tr>
+<td>
+196
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CFMD_DDL
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DTL_CUSTOMFIELDS_METADATA
+</td>
+<td>
+THH_C4C.DTL_CUSTOMFIELDS_METADATA_2
+</td>
+</tr>
+<tr>
+<td>
+197
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CMBB_CSTMFLDS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+198
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CMBB_CSTMFLDS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CASE_EXT
+</td>
+<td>
+THH_C4C.DLI_CM_PRJ_EXT
+</td>
+</tr>
+<tr>
+<td>
+199
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CMBB_PMRYPVDR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+200
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CMBB_PMRYPVDR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CASE_EXT
+</td>
+<td>
+THH_C4C.DLI_CM_PRJ_EXT
+</td>
+</tr>
+<tr>
+<td>
+201
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CMBS_MEMB
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+202
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CMBS_MEMB
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CASE_EXT
+</td>
+<td>
+THH_C4C.DLI_CM_PRJ_EXT
+</td>
+</tr>
+<tr>
+<td>
+203
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CMNR_CM_REC
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_NTCERCTS
+</td>
+<td>
+THH_C4C.T_CM_NTCERCTS
+</td>
+</tr>
+<tr>
+<td>
+204
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CMNR_CM_REC
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_NTCERCTS1_EXT
+</td>
+<td>
+THH_C4C.DLI_CM_NTCERCTS2_EXT
+</td>
+</tr>
+<tr>
+<td>
+205
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CNTY_STT
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_ADDRESS.TMP_C4C_CITYIN_CNTY
+</td>
+<td>
+THH_ADDRESS.TMP_VEND_CITYSTATE
+</td>
+</tr>
+<tr>
+<td>
+206
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+CNTY_STT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_ADDRESS.T_CNTY
+</td>
+<td>
+THH_ADDRESS.T_CNTY
+</td>
+</tr>
+<tr>
+<td>
+207
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+DENIAL_SERVICE_CATEGORY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL
+</td>
+</tr>
+<tr>
+<td>
+208
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+DENIAL_SERVICE_CATEGORY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDICAL_SERVICE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDSERV_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+209
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+DENIAL_SERVICE_REASON
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_APBL
+</td>
+<td>
+THH_C4C.T_APBL
+</td>
+</tr>
+<tr>
+<td>
+210
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+DENIAL_SERVICE_REASON
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDICAL_SERVICE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEDSERV_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+211
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+DO_NOT_CONTACT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR_CNCTINFO
+</td>
+<td>
+THH_C4C.T_USR_CNCTINFO
+</td>
+</tr>
+<tr>
+<td>
+212
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+DO_NOT_CONTACT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEMBER
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEMBER_TMPRL
+</td>
+</tr>
+<tr>
+<td>
+213
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+ELNS_BENSPKG
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_ENNS
+</td>
+<td>
+THH_C4C.T_ENNS_BACKUP
+</td>
+</tr>
+<tr>
+<td>
+214
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+ELNS_BENSPKG
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_ENNS_EXT
+</td>
+<td>
+THH_C4C.DLI_ENNS_EXT
+</td>
+</tr>
+<tr>
+<td>
+215
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+ELNS_INSCPRSRGRP
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_ENNS
+</td>
+<td>
+THH_C4C.T_ENNS_BACKUP
+</td>
+</tr>
+<tr>
+<td>
+216
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+ELNS_INSCPRSRGRP
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_ENNS_EXT
+</td>
+<td>
+THH_C4C.DLI_ENNS_EXT
+</td>
+</tr>
+<tr>
+<td>
+217
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+ELNS_MEMB
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_ENNS
+</td>
+<td>
+THH_C4C.T_ENNS_BACKUP
+</td>
+</tr>
+<tr>
+<td>
+218
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+ELNS_MEMB
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_ENNS_EXT
+</td>
+<td>
+THH_C4C.DLI_ENNS_EXT
+</td>
+</tr>
+<tr>
+<td>
+219
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+ELNS_PVDR
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_ENNS
+</td>
+<td>
+THH_C4C.T_ENNS_BACKUP
+</td>
+</tr>
+<tr>
+<td>
+220
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+ELNS_PVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_ENNS_EXT
+</td>
+<td>
+THH_C4C.DLI_ENNS_EXT
+</td>
+</tr>
+<tr>
+<td>
+221
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+FLAGS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.SYS_EXPORT_SCHEMA_01
+</td>
+<td>
+THH_C4C.SYS_EXPORT_SCHEMA_03
+</td>
+</tr>
+<tr>
+<td>
+222
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+FLAGS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+RAW
+</td>
+<td>
+GSMADMIN_INTERNAL.AQ$_CHANGE_LOG_QUEUE_TABLE_L
+</td>
+<td>
+GSMADMIN_INTERNAL.AQ$_CHANGE_LOG_QUEUE_TABLE_L
+</td>
+</tr>
+<tr>
+<td>
+223
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+LOINC
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.LAB
+</td>
+<td>
+THH_C4C.TMP_LAB
+</td>
+</tr>
+<tr>
+<td>
+224
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+LOINC
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MAP_LAB
+</td>
+<td>
+THH_C4C.TMP_MAP_LAB
+</td>
+</tr>
+<tr>
+<td>
+225
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+MCLM_CPT4CODE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MV_DIM_CLAIM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+226
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+MCLM_CPT4CODE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+227
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NDCC_GPI_CODE
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.TMP_VEND_NDC_COMMON_NDC_HELPER
+</td>
+<td>
+THH_C4C.TMP_VEND_NDC_NDCCODE_HELPER
+</td>
+</tr>
+<tr>
+<td>
+228
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NDCC_GPI_CODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_SRVC
+</td>
+<td>
+THH_C4C.T_SRVC
+</td>
+</tr>
+<tr>
+<td>
+229
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NOTE_CM_BASE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_NOTE
+</td>
+<td>
+THH_C4C.T_NOTE
+</td>
+</tr>
+<tr>
+<td>
+230
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NOTE_CM_BASE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_NOTE1_EXT
+</td>
+<td>
+THH_C4C.DLI_CM_NOTE2_EXT
+</td>
+</tr>
+<tr>
+<td>
+231
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NOTE_MDCLSRVC
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_NOTE
+</td>
+<td>
+THH_C4C.T_NOTE
+</td>
+</tr>
+<tr>
+<td>
+232
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NOTE_MDCLSRVC
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_NOTE_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_NOTE_EXT
+</td>
+</tr>
+<tr>
+<td>
+233
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NOTE_UM_EXTN
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_NOTE
+</td>
+<td>
+THH_C4C.T_NOTE
+</td>
+</tr>
+<tr>
+<td>
+234
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NOTE_UM_EXTN
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_NOTE_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_NOTE_EXT
+</td>
+</tr>
+<tr>
+<td>
+235
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PDCY_PRNT
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PRODCAT
+</td>
+<td>
+THH_C4C.T_PRODCAT_BACKUP
+</td>
+</tr>
+<tr>
+<td>
+236
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PDCY_PRNT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_EXT
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_EXT
+</td>
+</tr>
+<tr>
+<td>
+237
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PLAN_ID
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.AS_PROVIDER
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PROVIDER
+</td>
+</tr>
+<tr>
+<td>
+238
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PLAN_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.PATIENT_CENTRIC_SUM
+</td>
+<td>
+THH_C4C.PATIENT_CENTRIC_SUM
+</td>
+</tr>
+<tr>
+<td>
+239
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PRODUCT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.MAQ_PERS_COND_ENROLLM
+</td>
+<td>
+THH_C4C.MV_PATID_PERSONAL_COND_ENROLLM
+</td>
+</tr>
+<tr>
+<td>
+240
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PRODUCT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DB_VERSION
+</td>
+<td>
+THH_C4C.DB_VERSION_DETAILS
+</td>
+</tr>
+<tr>
+<td>
+241
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PYRL_PAYR
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PAYRROLS
+</td>
+<td>
+THH_C4C.T_PAYRROLS
+</td>
+</tr>
+<tr>
+<td>
+242
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PYRL_PAYR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PAYRROLS_EXT
+</td>
+<td>
+THH_C4C.DLI_PAYRROLS_EXT
+</td>
+</tr>
+<tr>
+<td>
+243
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PYRL_USR_ROLS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PAYRROLS
+</td>
+<td>
+THH_C4C.T_PAYRROLS
+</td>
+</tr>
+<tr>
+<td>
+244
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+PYRL_USR_ROLS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PAYRROLS_EXT
+</td>
+<td>
+THH_C4C.DLI_PAYRROLS_EXT
+</td>
+</tr>
+<tr>
+<td>
+245
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+REQUESTED_UNITS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.FACT_DENIALSAVINGS
+</td>
+<td>
+THH_C4C_DW.DW_FACT_DENIALSAVINGS
+</td>
+</tr>
+<tr>
+<td>
+246
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+REQUESTED_UNITS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.FACT_MEDICAL_SERVICE
+</td>
+<td>
+THH_C4C_DW.DW_FACT_MEDICAL_SERVICE
+</td>
+</tr>
+<tr>
+<td>
+247
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+RESOLUTION_COMMENT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+CLOB
+</td>
+<td>
+THH_C4C.MV_DIM_GRIEVANCE
+</td>
+<td>
+THH_C4C_DW.DW_DIM_GRIEVANCE
+</td>
+</tr>
+<tr>
+<td>
+248
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+RESOLUTION_COMMENT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_MEMBER_DIAGNOSIS
+</td>
+<td>
+THH_C4C_DW.DW_DIM_MEMBER_DIAGNOSIS
+</td>
+</tr>
+<tr>
+<td>
+249
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+RESULT_TYPE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.WF_PROPERTYSET
+</td>
+<td>
+THH_C4C.WF_PROPERTYSET_TEMP
+</td>
+</tr>
+<tr>
+<td>
+250
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+RESULT_TYPE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MAP_LAB
+</td>
+<td>
+THH_C4C.TMP_MAP_LAB
+</td>
+</tr>
+<tr>
+<td>
+251
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+RVCD_RVNECODEID
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_RVNECODE
+</td>
+<td>
+THH_C4C.T_RVNECODE
+</td>
+</tr>
+<tr>
+<td>
+252
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+RVCD_RVNECODEID
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.TMP_MCODE_REV
+</td>
+<td>
+THH_C4C.TMP_VEND_REV
+</td>
+</tr>
+<tr>
+<td>
+253
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+TEXT
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CLOB
+</td>
+<td>
+THH_C4C.INSTRUCTION_CARD
+</td>
+<td>
+THH_C4C_DW.DW_DIM_NOTICE
+</td>
+</tr>
+<tr>
+<td>
+254
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+TEXT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+LONG
+</td>
+<td>
+THH_C4C.LARGETEXT
+</td>
+<td>
+THH_C4C.LARGETEXT
+</td>
+</tr>
+<tr>
+<td>
+255
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UENR_UM_EXTN
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_EXTNNTCERCTS
+</td>
+<td>
+THH_C4C.T_UM_EXTNNTCERCTS
+</td>
+</tr>
+<tr>
+<td>
+256
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UENR_UM_EXTN
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EXTNNTCERCTS_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EXTNNTCERCTS_EXT
+</td>
+</tr>
+<tr>
+<td>
+257
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_CSTMFLDS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_BASE
+</td>
+<td>
+THH_C4C.T_UM_BASE
+</td>
+</tr>
+<tr>
+<td>
+258
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_CSTMFLDS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+</tr>
+<tr>
+<td>
+259
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_MEMB
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_BASE
+</td>
+<td>
+THH_C4C.T_UM_BASE
+</td>
+</tr>
+<tr>
+<td>
+260
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_MEMB
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+</tr>
+<tr>
+<td>
+261
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_PFNGPVDR
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_BASE
+</td>
+<td>
+THH_C4C.T_UM_BASE
+</td>
+</tr>
+<tr>
+<td>
+262
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_PFNGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+</tr>
+<tr>
+<td>
+263
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_PMRYPVDR
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_BASE
+</td>
+<td>
+THH_C4C.T_UM_BASE
+</td>
+</tr>
+<tr>
+<td>
+264
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_PMRYPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+</tr>
+<tr>
+<td>
+265
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_RQNGPVDR
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_BASE
+</td>
+<td>
+THH_C4C.T_UM_BASE
+</td>
+</tr>
+<tr>
+<td>
+266
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_RQNGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+</tr>
+<tr>
+<td>
+267
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_RTNGRCPT
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_BASE
+</td>
+<td>
+THH_C4C.T_UM_BASE
+</td>
+</tr>
+<tr>
+<td>
+268
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMBS_RTNGRCPT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+</tr>
+<tr>
+<td>
+269
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMDS_SNP
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_MEMBDGISBASE
+</td>
+<td>
+THH_C4C.T_MEMBDGISBASE
+</td>
+</tr>
+<tr>
+<td>
+270
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMDS_SNP
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_DGIS_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_DGIS_EXT
+</td>
+</tr>
+<tr>
+<td>
+271
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMET_FRSTOPNDBY
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_BASE
+</td>
+<td>
+THH_C4C.T_UM_BASE
+</td>
+</tr>
+<tr>
+<td>
+272
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UMET_FRSTOPNDBY
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_EVNT_EXT
+</td>
+</tr>
+<tr>
+<td>
+273
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UNITS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.FACT_BENEXCEPTSAVINGS
+</td>
+<td>
+THH_C4C_DW.DW_FACT_BENEXCEPTSAVINGS
+</td>
+</tr>
+<tr>
+<td>
+274
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UNITS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.LAB
+</td>
+<td>
+THH_C4C.TMP_LAB
+</td>
+</tr>
+<tr>
+<td>
+275
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UPUE_PEERUM_EVTS
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_UM_PEERUM_EVTS
+</td>
+<td>
+THH_C4C.T_UM_PEERUM_EVTS
+</td>
+</tr>
+<tr>
+<td>
+276
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+UPUE_PEERUM_EVTS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_UM_PEERUM_EVTS_EXT
+</td>
+<td>
+THH_C4C.DLI_UM_PEERUM_EVTS_EXT
+</td>
+</tr>
+<tr>
+<td>
+277
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CAPS_CM_PRNT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CASEPRNS
+</td>
+<td>
+THH_C4C.T_CASEPRNS
+</td>
+</tr>
+<tr>
+<td>
+278
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CAPS_CM_PRNT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CASEPRNS_EXT
+</td>
+<td>
+THH_C4C.DLI_CASEPRNS_EXT
+</td>
+</tr>
+<tr>
+<td>
+279
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CASE_LAS_CLSDBY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+280
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CASE_LAS_CLSDBY
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CASE_EXT
+</td>
+<td>
+THH_C4C.DLI_CASE_EXT
+</td>
+</tr>
+<tr>
+<td>
+281
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CMPP_PERS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_PRJ_PERS
+</td>
+<td>
+THH_C4C.T_CM_PRJ_PERS
+</td>
+</tr>
+<tr>
+<td>
+282
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CMPP_PERS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_PRJ_PERS_EXT
+</td>
+<td>
+THH_C4C.DLI_CM_PRJ_PERS_EXT
+</td>
+</tr>
+<tr>
+<td>
+283
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CMPR_LAS_CLSDBY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_CM_BASEBASE
+</td>
+<td>
+THH_C4C.T_CM_BASEBASE
+</td>
+</tr>
+<tr>
+<td>
+284
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CMPR_LAS_CLSDBY
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_CM_PRJ_EXT
+</td>
+<td>
+THH_C4C.DLI_CM_PRJ_EXT
+</td>
+</tr>
+<tr>
+<td>
+285
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CR_DATE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_C4C.DTL_DB_MAPPING
+</td>
+<td>
+THH_C4C.DTL_UNIT_TEST
+</td>
+</tr>
+<tr>
+<td>
+286
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+CR_DATE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TIMESTAMP(6)
+</td>
+<td>
+THH_C4C.DTL_REDO_LOG
+</td>
+<td>
+THH_C4C.DTL_REDO_LOG
+</td>
+</tr>
+<tr>
+<td>
+287
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+DATE_INFO
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_ADDRESS.DTL_STATISTICS_LOG
+</td>
+<td>
+THH_C4C.DTL_STATISTICS_LOG
+</td>
+</tr>
+<tr>
+<td>
+288
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+DATE_INFO
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TIMESTAMP(6)
+</td>
+<td>
+THH_C4C.DTL_MANAGEMENT_LOG
+</td>
+<td>
+THH_C4C.DTL_MANAGEMENT_LOG
+</td>
+</tr>
+<tr>
+<td>
+289
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+DDPS_PVDRSSPS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_DDL_ITEMPVDRSSPS
+</td>
+<td>
+THH_C4C.T_DDL_ITEMPVDRSSPS
+</td>
+</tr>
+<tr>
+<td>
+290
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+DDPS_PVDRSSPS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_DDL_ITEMPVDRSSPS_EXT
+</td>
+<td>
+THH_C4C.DLI_DDL_ITEMPVDRSSPS_EXT
+</td>
+</tr>
+<tr>
+<td>
+291
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+DLIS_PVDRSLTS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_DDL_ITEMPVDRSLTS
+</td>
+<td>
+THH_C4C.T_DDL_ITEMPVDRSLTS
+</td>
+</tr>
+<tr>
+<td>
+292
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+DLIS_PVDRSLTS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_DDL_ITEMPVDRSLTS_EXT
+</td>
+<td>
+THH_C4C.DLI_DDL_ITEMPVDRSLTS_EXT
+</td>
+</tr>
+<tr>
+<td>
+293
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+END_TIME
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+DATE
+</td>
+<td>
+THH_C4C.OPS_ACTIVITY_INCIDENT
+</td>
+<td>
+THH_C4C.OPS_ACTIVITY_INCIDENT
+</td>
+</tr>
+<tr>
+<td>
+294
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+END_TIME
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.QRTZ_TRIGGERS
+</td>
+<td>
+THH_C4C.QRTZ_TRIGGERS
+</td>
+</tr>
+<tr>
+<td>
+295
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+END_TIME
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TIMESTAMP(6)
+</td>
+<td>
+THH_C4C.OPS_ACTIVITY
+</td>
+<td>
+THH_C4C.OPS_ACTIVITY
+</td>
+</tr>
+<tr>
+<td>
+296
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+FFL_RLSPTO_MEMB
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_FRDSAND_FMLYLIST
+</td>
+<td>
+THH_C4C.T_FRDSAND_FMLYLIST
+</td>
+</tr>
+<tr>
+<td>
+297
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+FFL_RLSPTO_MEMB
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.CARE_TEAM_MEMBERS
+</td>
+<td>
+THH_C4C.CARE_TEAM_MEMBERS
+</td>
+</tr>
+<tr>
+<td>
+298
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IPGP_CNRY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_INSCPRSRGRP
+</td>
+<td>
+THH_C4C.T_INSCPRSRGRP
+</td>
+</tr>
+<tr>
+<td>
+299
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IPGP_CNRY
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_INSCPRSRGRP_EXT
+</td>
+<td>
+THH_C4C.DLI_INSCPRSRGRP_EXT
+</td>
+</tr>
+<tr>
+<td>
+300
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IPGP_PRNT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_INSCPRSRGRP
+</td>
+<td>
+THH_C4C.T_INSCPRSRGRP
+</td>
+</tr>
+<tr>
+<td>
+301
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IPGP_PRNT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_INSCPRSRGRP_EXT
+</td>
+<td>
+THH_C4C.DLI_INSCPRSRGRP_EXT
+</td>
+</tr>
+<tr>
+<td>
+302
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IPPC_INSCPRSRGRP
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_INSCPRSRGRP_PRODCAT
+</td>
+<td>
+THH_C4C.T_INSCPRSRGRP_PRODCAT
+</td>
+</tr>
+<tr>
+<td>
+303
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IPPC_INSCPRSRGRP
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_INSCPRSRGRP_PRODCAT_EXT
+</td>
+<td>
+THH_C4C.DLI_INSCPRSRGRP_PRODCAT_EXT
+</td>
+</tr>
+<tr>
+<td>
+304
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IPPC_PRODCAT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_INSCPRSRGRP_PRODCAT
+</td>
+<td>
+THH_C4C.T_INSCPRSRGRP_PRODCAT
+</td>
+</tr>
+<tr>
+<td>
+305
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IPPC_PRODCAT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_INSCPRSRGRP_PRODCAT_EXT
+</td>
+<td>
+THH_C4C.DLI_INSCPRSRGRP_PRODCAT_EXT
+</td>
+</tr>
+<tr>
+<td>
+306
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+LICL_PVDR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_LCNSLIST
+</td>
+<td>
+THH_C4C.T_LCNSLIST
+</td>
+</tr>
+<tr>
+<td>
+307
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+LICL_PVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_LCNSLIST_EXT
+</td>
+<td>
+THH_C4C.DLI_LCNSLIST_EXT
+</td>
+</tr>
+<tr>
+<td>
+308
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+LINE_OF_BUSINESS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.MV_DIM_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_DIM_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+309
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+LINE_OF_BUSINESS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.CLINICALDATA_AUTH_ASSN
+</td>
+<td>
+THH_C4C.CLINICALDATA_AUTH_ASSN
+</td>
+</tr>
+<tr>
+<td>
+310
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+MAX_TIME
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DATE
+</td>
+<td>
+AUDSYS.CLI_SWP$911814c$1$1
+</td>
+<td>
+AUDSYS.CLI_SWP$e4c0c21a$a$1
+</td>
+</tr>
+<tr>
+<td>
+311
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+MAX_TIME
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FLOAT
+</td>
+<td>
+THH_C4C.T_CORR_MTX_TIMERS
+</td>
+<td>
+THH_C4C.T_CORR_MTX_TIMERS
+</td>
+</tr>
+<tr>
+<td>
+312
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+MBUR_SBCR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.T_USR
+</td>
+</tr>
+<tr>
+<td>
+313
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+MBUR_SBCR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MEMBUSR_EXT
+</td>
+<td>
+THH_C4C.DLI_MEMBUSR_EXT
+</td>
+</tr>
+<tr>
+<td>
+314
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+MIN_TIME
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DATE
+</td>
+<td>
+AUDSYS.CLI_SWP$911814c$1$1
+</td>
+<td>
+AUDSYS.CLI_SWP$e4c0c21a$a$1
+</td>
+</tr>
+<tr>
+<td>
+315
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+MIN_TIME
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FLOAT
+</td>
+<td>
+THH_C4C.T_CORR_MTX_TIMERS
+</td>
+<td>
+THH_C4C.T_CORR_MTX_TIMERS
+</td>
+</tr>
+<tr>
+<td>
+316
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NOTE_ATCDPVDR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_NOTE
+</td>
+<td>
+THH_C4C.T_NOTE
+</td>
+</tr>
+<tr>
+<td>
+317
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NOTE_ATCDPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PVR_NOTE_EXT
+</td>
+<td>
+THH_C4C.DLI_PVR_NOTE_EXT
+</td>
+</tr>
+<tr>
+<td>
+318
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NOTE_MEMB
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_NOTE
+</td>
+<td>
+THH_C4C.T_NOTE
+</td>
+</tr>
+<tr>
+<td>
+319
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NOTE_MEMB
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MEMB_NOTE_EXT
+</td>
+<td>
+THH_C4C.DLI_MEMB_NOTE_EXT
+</td>
+</tr>
+<tr>
+<td>
+320
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+OUTCOME_RESULT
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_OUTCOME
+</td>
+<td>
+THH_C4C.T_OUTCOME
+</td>
+</tr>
+<tr>
+<td>
+321
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+OUTCOME_RESULT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_OUTCOME
+</td>
+<td>
+THH_C4C_DW.DW_DIM_OUTCOME
+</td>
+</tr>
+<tr>
+<td>
+322
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PAYR_BCK1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.T_USR
+</td>
+</tr>
+<tr>
+<td>
+323
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PAYR_BCK1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PAYR_EXT
+</td>
+<td>
+THH_C4C.DLI_PAYR_EXT
+</td>
+</tr>
+<tr>
+<td>
+324
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PAYR_BCK2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.T_USR
+</td>
+</tr>
+<tr>
+<td>
+325
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PAYR_BCK2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PAYR_EXT
+</td>
+<td>
+THH_C4C.DLI_PAYR_EXT
+</td>
+</tr>
+<tr>
+<td>
+326
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PAYR_BCK3
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.T_USR
+</td>
+</tr>
+<tr>
+<td>
+327
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PAYR_BCK3
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PAYR_EXT
+</td>
+<td>
+THH_C4C.DLI_PAYR_EXT
+</td>
+</tr>
+<tr>
+<td>
+328
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PAYR_SVSR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR
+</td>
+<td>
+THH_C4C.T_USR
+</td>
+</tr>
+<tr>
+<td>
+329
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PAYR_SVSR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PAYR_EXT
+</td>
+<td>
+THH_C4C.DLI_PAYR_EXT
+</td>
+</tr>
+<tr>
+<td>
+330
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PCCP_IN_CNRTPRODCATS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PRODCAT_CNTDPVDR
+</td>
+<td>
+THH_C4C.T_PRODCAT_CNTDPVDR
+</td>
+</tr>
+<tr>
+<td>
+331
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PCCP_IN_CNRTPRODCATS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_CNTDPVDR_EXT
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_CNTDPVDR_EXT
+</td>
+</tr>
+<tr>
+<td>
+332
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PCCP_IN_CNRTPVRS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PRODCAT_CNTDPVDR
+</td>
+<td>
+THH_C4C.T_PRODCAT_CNTDPVDR
+</td>
+</tr>
+<tr>
+<td>
+333
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PCCP_IN_CNRTPVRS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_CNTDPVDR_EXT
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_CNTDPVDR_EXT
+</td>
+</tr>
+<tr>
+<td>
+334
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PCPR_IN_NTWKPRODCATS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PRODCAT_PVDR
+</td>
+<td>
+THH_C4C.T_PRODCAT_PVDR
+</td>
+</tr>
+<tr>
+<td>
+335
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PCPR_IN_NTWKPRODCATS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_PVDR_EXT
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_PVDR_EXT
+</td>
+</tr>
+<tr>
+<td>
+336
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PCPR_IN_NTWKPVRS
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PRODCAT_PVDR
+</td>
+<td>
+THH_C4C.T_PRODCAT_PVDR
+</td>
+</tr>
+<tr>
+<td>
+337
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PCPR_IN_NTWKPVRS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_PVDR_EXT
+</td>
+<td>
+THH_C4C.DLI_PRODCAT_PVDR_EXT
+</td>
+</tr>
+<tr>
+<td>
+338
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PDIS_DGISSCTY
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PAYRDGISSCTY
+</td>
+<td>
+THH_C4C.T_PAYRDGISSCTY
+</td>
+</tr>
+<tr>
+<td>
+339
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PDIS_DGISSCTY
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PAYRDGISSCTY_EXT
+</td>
+<td>
+THH_C4C.DLI_PAYRDGISSCTY_EXT
+</td>
+</tr>
+<tr>
+<td>
+340
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PDIS_PAYR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PAYRDGISSCTY
+</td>
+<td>
+THH_C4C.T_PAYRDGISSCTY
+</td>
+</tr>
+<tr>
+<td>
+341
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PDIS_PAYR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PAYRDGISSCTY_EXT
+</td>
+<td>
+THH_C4C.DLI_PAYRDGISSCTY_EXT
+</td>
+</tr>
+<tr>
+<td>
+342
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PHI_TYPE
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PHI
+</td>
+<td>
+THH_C4C.T_PHI
+</td>
+</tr>
+<tr>
+<td>
+343
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PHI_TYPE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PHI
+</td>
+<td>
+THH_C4C_DW.DW_DIM_PHI
+</td>
+</tr>
+<tr>
+<td>
+344
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+POS_TYP
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PLCEOF_SRVC
+</td>
+<td>
+THH_C4C.T_PLCEOF_SRVC
+</td>
+</tr>
+<tr>
+<td>
+345
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+POS_TYP
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PLCEOF_SRVC_EXT
+</td>
+<td>
+THH_C4C.DLI_PLCEOF_SRVC_EXT
+</td>
+</tr>
+<tr>
+<td>
+346
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PYSS_PAYR
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_PAYRSRVCSCTY
+</td>
+<td>
+THH_C4C.T_PAYRSRVCSCTY
+</td>
+</tr>
+<tr>
+<td>
+347
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+PYSS_PAYR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PAYRSRVCSCTY_EXT
+</td>
+<td>
+THH_C4C.DLI_PAYRSRVCSCTY_EXT
+</td>
+</tr>
+<tr>
+<td>
+348
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+UBIO_MEMB
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.A_USR_BIOS
+</td>
+<td>
+THH_C4C.T_USR_BIOS
+</td>
+</tr>
+<tr>
+<td>
+349
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+UBIO_MEMB
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_USR_BIOS_EXT
+</td>
+<td>
+THH_C4C.DLI_USR_BIOS_EXT
+</td>
+</tr>
+<tr>
+<td>
+350
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+AMOUNT_DEDUCTED
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FLOAT
+</td>
+<td>
+THH_C4C.FACT_CLAIM
+</td>
+<td>
+THH_C4C.FACT_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+351
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+AMOUNT_DEDUCTED
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_FACT_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+352
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+AMOUNT_DEDUCTIBLE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FLOAT
+</td>
+<td>
+THH_C4C.FACT_DRUG_CLAIM
+</td>
+<td>
+THH_C4C.FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+353
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+AMOUNT_DEDUCTIBLE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C_DW.DW_FACT_DRUG_CLAIM
+</td>
+<td>
+THH_C4C_DW.DW_FACT_DRUG_CLAIM
+</td>
+</tr>
+<tr>
+<td>
+354
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+COMPONENT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.CLINICALDATA_AUTH_ASSN
+</td>
+<td>
+THH_C4C.CLINICALDATA_AUTH_ASSN
+</td>
+</tr>
+<tr>
+<td>
+355
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+COMPONENT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.OPS_ACTIVITY_INCIDENT
+</td>
+<td>
+THH_C4C.OPS_ACTIVITY_INCIDENT
+</td>
+</tr>
+<tr>
+<td>
+356
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+COTN_STT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_ADDRESS.T_CITYOR_TOWN
+</td>
+<td>
+THH_ADDRESS.T_CITYOR_TOWN
+</td>
+</tr>
+<tr>
+<td>
+357
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+COTN_STT
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_ADDRESS.TMP_C4C_CITYOR_TOWN
+</td>
+<td>
+THH_ADDRESS.TMP_C4C_CITYOR_TOWN
+</td>
+</tr>
+<tr>
+<td>
+358
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_CSTMFLDS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+</tr>
+<tr>
+<td>
+359
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_CSTMFLDS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+360
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_NDC_CODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+</tr>
+<tr>
+<td>
+361
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_NDC_CODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+362
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_PAT_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+</tr>
+<tr>
+<td>
+363
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_PAT_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+364
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_RFNGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+</tr>
+<tr>
+<td>
+365
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_RFNGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+366
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_SENGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+<td>
+THH_C4C.T_DRUGCLM
+</td>
+</tr>
+<tr>
+<td>
+367
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DCLM_SENGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_DRUGCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+368
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DEQUEUE_TIME
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TIMESTAMP(6)
+</td>
+<td>
+GSMADMIN_INTERNAL.AQ$_CHANGE_LOG_QUEUE_TABLE_H
+</td>
+<td>
+GSMADMIN_INTERNAL.AQ$_CHANGE_LOG_QUEUE_TABLE_H
+</td>
+</tr>
+<tr>
+<td>
+369
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DEQUEUE_TIME
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TIMESTAMP(6) WITH TIME ZONE
+</td>
+<td>
+GSMADMIN_INTERNAL.AQ$_CHANGE_LOG_QUEUE_TABLE_L
+</td>
+<td>
+GSMADMIN_INTERNAL.AQ$_CHANGE_LOG_QUEUE_TABLE_L
+</td>
+</tr>
+<tr>
+<td>
+370
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_CSTMFLDS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+371
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_CSTMFLDS
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+372
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_ICD9DX1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+373
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_ICD9DX1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+374
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_ICD9DX2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+375
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_ICD9DX2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+376
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_ICD9DX3
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+377
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_ICD9DX3
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+378
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_MDC_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+379
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_MDC_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+380
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_PAT_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+381
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_PAT_ID
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+382
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_PLCEOF_SRVCCODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+383
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_PLCEOF_SRVCCODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+384
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_PMRYIC_D9_POC_CODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+385
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_PMRYIC_D9_POC_CODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+386
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_RFNGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+387
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_RFNGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+388
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_RVNECODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+389
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_RVNECODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+390
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_SCDYIC_D9_POC_CODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+391
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_SCDYIC_D9_POC_CODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+392
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_SENGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+<td>
+THH_C4C.T_MDCLCLM
+</td>
+</tr>
+<tr>
+<td>
+393
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MCLM_SENGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+<td>
+THH_C4C.DLI_MDCLCLM_EXT
+</td>
+</tr>
+<tr>
+<td>
+394
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRSC_MEMB
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_PRSC
+</td>
+<td>
+THH_C4C.T_PRSC
+</td>
+</tr>
+<tr>
+<td>
+395
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRSC_MEMB
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PRSC_EXT
+</td>
+<td>
+THH_C4C.DLI_PRSC_EXT
+</td>
+</tr>
+<tr>
+<td>
+396
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRSC_NDC_CODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_PRSC
+</td>
+<td>
+THH_C4C.T_PRSC
+</td>
+</tr>
+<tr>
+<td>
+397
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRSC_NDC_CODE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PRSC_EXT
+</td>
+<td>
+THH_C4C.DLI_PRSC_EXT
+</td>
+</tr>
+<tr>
+<td>
+398
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRSC_RFNGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+THH_C4C.T_PRSC
+</td>
+<td>
+THH_C4C.T_PRSC
+</td>
+</tr>
+<tr>
+<td>
+399
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRSC_RFNGPVDR
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+VARCHAR2
+</td>
+<td>
+THH_C4C.DLI_PRSC_EXT
+</td>
+<td>
+THH_C4C.DLI_PRSC_EXT
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ TABLE_NAME                                NOT NULL VARCHAR2(128)
+ COLUMN_NAME                               NOT NULL VARCHAR2(128)
+ DATA_TYPE                                          VARCHAR2(128)
+ DATA_TYPE_MOD                                      VARCHAR2(3)
+ DATA_TYPE_OWNER                                    VARCHAR2(128)
+ DATA_LENGTH                               NOT NULL NUMBER
+ DATA_PRECISION                                     NUMBER
+ DATA_SCALE                                         NUMBER
+ NULLABLE                                           VARCHAR2(1)
+ COLUMN_ID                                          NUMBER
+ DEFAULT_LENGTH                                     NUMBER
+ DATA_DEFAULT                                       LONG
+ NUM_DISTINCT                                       NUMBER
+ LOW_VALUE                                          RAW(1000)
+ HIGH_VALUE                                         RAW(1000)
+ DENSITY                                            NUMBER
+ NUM_NULLS                                          NUMBER
+ NUM_BUCKETS                                        NUMBER
+ LAST_ANALYZED                                      DATE
+ SAMPLE_SIZE                                        NUMBER
+ CHARACTER_SET_NAME                                 VARCHAR2(44)
+ CHAR_COL_DECL_LENGTH                               NUMBER
+ GLOBAL_STATS                                       VARCHAR2(3)
+ USER_STATS                                         VARCHAR2(3)
+ AVG_COL_LEN                                        NUMBER
+ CHAR_LENGTH                                        NUMBER
+ CHAR_USED                                          VARCHAR2(1)
+ V80_FMT_IMAGE                                      VARCHAR2(3)
+ DATA_UPGRADED                                      VARCHAR2(3)
+ HISTOGRAM                                          VARCHAR2(15)
+ DEFAULT_ON_NULL                                    VARCHAR2(3)
+ IDENTITY_COLUMN                                    VARCHAR2(3)
+ SENSITIVE_COLUMN                                   VARCHAR2(3)
+ EVALUATION_EDITION                                 VARCHAR2(128)
+ UNUSABLE_BEFORE                                    VARCHAR2(128)
+ UNUSABLE_BEGINNING                                 VARCHAR2(128)
+
+WITH
+tables AS (
+SELECT /*+  MATERIALIZE NO_MERGE  */ /* 2a.143 */
+       t.owner,
+       t.table_name
+  FROM dba_tables t
+ WHERE t.owner NOT IN ('ANONYMOUS','APEX_030200','APEX_040000','APEX_040200','APEX_SSO','APPQOSSYS','CTXSYS','DBSNMP','DIP','EXFSYS','FLOWS_FILES','MDSYS','OLAPSYS','ORACLE_OCM','ORDDATA','ORDPLUGINS','ORDSYS','OUTLN','OWBSYS')
+   AND t.owner NOT IN ('SI_INFORMTN_SCHEMA','SQLTXADMIN','SQLTXPLAIN','SYS','SYSMAN','SYSTEM','TRCANLZR','WMSYS','XDB','XS$NULL','PERFSTAT','STDBYPERF','MGDSYS','OJVMSYS')
+   AND t.table_name NOT LIKE 'BIN%'
+),
+columns AS (
+SELECT /*+  MATERIALIZE NO_MERGE  */ /* 2a.143 */
+       c.owner,
+       c.table_name,
+       c.column_name,
+       c.data_type
+  FROM dba_tab_columns c
+ WHERE c.owner NOT IN ('ANONYMOUS','APEX_030200','APEX_040000','APEX_040200','APEX_SSO','APPQOSSYS','CTXSYS','DBSNMP','DIP','EXFSYS','FLOWS_FILES','MDSYS','OLAPSYS','ORACLE_OCM','ORDDATA','ORDPLUGINS','ORDSYS','OUTLN','OWBSYS')
+   AND c.owner NOT IN ('SI_INFORMTN_SCHEMA','SQLTXADMIN','SQLTXPLAIN','SYS','SYSMAN','SYSTEM','TRCANLZR','WMSYS','XDB','XS$NULL','PERFSTAT','STDBYPERF','MGDSYS','OJVMSYS')
+   AND c.data_type != 'UNDEFINED'
+   AND c.table_name NOT LIKE 'BIN%'
+   AND c.data_type != 'UNDEFINED'
+),
+table_columns AS (
+SELECT /*+  MATERIALIZE NO_MERGE  */ /* 2a.143 */
+       c.column_name, COUNT(*) typ_cnt, c.data_type,
+       MIN(c.owner||'.'||c.table_name) min_table_name,
+       MAX(c.owner||'.'||c.table_name) max_table_name
+  FROM columns c,
+       tables t
+ WHERE t.owner = c.owner -- this to filter out views
+   AND t.table_name = c.table_name -- this to filter out views
+ GROUP BY
+       c.column_name, c.data_type
+),
+more_than_one_type AS (
+SELECT /*+  MATERIALIZE NO_MERGE  */ /* 2a.143 */
+       column_name, SUM(typ_cnt) col_cnt
+  FROM table_columns
+ GROUP BY
+       column_name
+HAVING COUNT(*) &gt; 1
+)
+SELECT /*+  NO_MERGE  */ /* 2a.143 */
+       m.col_cnt, c.*
+  FROM table_columns c,
+       more_than_one_type m
+ WHERE m.column_name = c.column_name
+ ORDER BY
+       m.col_cnt DESC,
+       c.column_name,
+       c.typ_cnt DESC,
+       c.data_type;
+
+399 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:41:37  </font>
+</body>
+</html>

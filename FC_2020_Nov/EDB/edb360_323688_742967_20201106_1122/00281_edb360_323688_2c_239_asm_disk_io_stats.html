@@ -1,0 +1,12132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>ASM Disk IO Stats</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00281_edb360_323688_2c_239_asm_disk_io_stats.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 2c.239. ASM Disk IO Stats <em>(GV$ASM_DISK_IOSTAT)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INST_ID
+</th>
+<th scope="col">
+INSTNAME
+</th>
+<th scope="col">
+DBNAME
+</th>
+<th scope="col">
+CLUSTERNAME
+</th>
+<th scope="col">
+GROUP_NUMBER
+</th>
+<th scope="col">
+DISK_NUMBER
+</th>
+<th scope="col">
+FAILGROUP
+</th>
+<th scope="col">
+READS
+</th>
+<th scope="col">
+WRITES
+</th>
+<th scope="col">
+READ_ERRS
+</th>
+<th scope="col">
+WRITE_ERRS
+</th>
+<th scope="col">
+READ_TIMEOUT
+</th>
+<th scope="col">
+WRITE_TIMEOUT
+</th>
+<th scope="col">
+READ_TIME
+</th>
+<th scope="col">
+WRITE_TIME
+</th>
+<th scope="col">
+BYTES_READ
+</th>
+<th scope="col">
+BYTES_WRITTEN
+</th>
+<th scope="col">
+HOT_READS
+</th>
+<th scope="col">
+HOT_WRITES
+</th>
+<th scope="col">
+HOT_BYTES_READ
+</th>
+<th scope="col">
+HOT_BYTES_WRITTEN
+</th>
+<th scope="col">
+COLD_READS
+</th>
+<th scope="col">
+COLD_WRITES
+</th>
+<th scope="col">
+COLD_BYTES_READ
+</th>
+<th scope="col">
+COLD_BYTES_WRITTEN
+</th>
+<th scope="col">
+CON_ID
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  35
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            45583698
+</td>
+<td align="right">
+            10376028
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       769092.197505
+</td>
+<td align="right">
+       297509.709316
+</td>
+<td align="right">
+       3015830072832
+</td>
+<td align="right">
+        467448075264
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            45207181
+</td>
+<td align="right">
+            10375982
+</td>
+<td align="right">
+       2224065408512
+</td>
+<td align="right">
+        461817172992
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            42252183
+</td>
+<td align="right">
+             9548659
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       787883.783721
+</td>
+<td align="right">
+       275622.624382
+</td>
+<td align="right">
+       2799321666048
+</td>
+<td align="right">
+        484699455488
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            41877209
+</td>
+<td align="right">
+             9548610
+</td>
+<td align="right">
+       2006121189888
+</td>
+<td align="right">
+        479105459712
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            43806892
+</td>
+<td align="right">
+             9445341
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       768659.759581
+</td>
+<td align="right">
+       260207.907894
+</td>
+<td align="right">
+       2757011602944
+</td>
+<td align="right">
+        487097014784
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            43431475
+</td>
+<td align="right">
+             9445292
+</td>
+<td align="right">
+       1957211479552
+</td>
+<td align="right">
+        481510267392
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  37
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            44483808
+</td>
+<td align="right">
+             9737034
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       769202.981459
+</td>
+<td align="right">
+       257803.094787
+</td>
+<td align="right">
+       2861035866624
+</td>
+<td align="right">
+        471236358656
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            44091532
+</td>
+<td align="right">
+             9736986
+</td>
+<td align="right">
+       2054264064512
+</td>
+<td align="right">
+        465623241216
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            45274201
+</td>
+<td align="right">
+             9794038
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       770343.479503
+</td>
+<td align="right">
+       263925.221387
+</td>
+<td align="right">
+       2842874588672
+</td>
+<td align="right">
+        465797457408
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            44896319
+</td>
+<td align="right">
+             9794004
+</td>
+<td align="right">
+       2043285458432
+</td>
+<td align="right">
+        460188433408
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  19
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            44165442
+</td>
+<td align="right">
+             9504768
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       772643.980389
+</td>
+<td align="right">
+       332309.468371
+</td>
+<td align="right">
+       2882608474624
+</td>
+<td align="right">
+        482206195200
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            43780283
+</td>
+<td align="right">
+             9504723
+</td>
+<td align="right">
+       2075497810432
+</td>
+<td align="right">
+        476599762432
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            44633168
+</td>
+<td align="right">
+             9072648
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        774235.16308
+</td>
+<td align="right">
+       316081.055476
+</td>
+<td align="right">
+       2894716264960
+</td>
+<td align="right">
+        448061403136
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            44241039
+</td>
+<td align="right">
+             9072609
+</td>
+<td align="right">
+       2076873597440
+</td>
+<td align="right">
+        442436792320
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            44943952
+</td>
+<td align="right">
+            10673078
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       778727.616423
+</td>
+<td align="right">
+       337736.814485
+</td>
+<td align="right">
+       2831469754368
+</td>
+<td align="right">
+        522874558976
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            44559498
+</td>
+<td align="right">
+            10673038
+</td>
+<td align="right">
+       2037420464128
+</td>
+<td align="right">
+        517279291904
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            42363092
+</td>
+<td align="right">
+             9496338
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       771799.710882
+</td>
+<td align="right">
+       266814.179217
+</td>
+<td align="right">
+       2720937103360
+</td>
+<td align="right">
+        458481145856
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            41931580
+</td>
+<td align="right">
+             9496295
+</td>
+<td align="right">
+       1932528570368
+</td>
+<td align="right">
+        452856518656
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            45031327
+</td>
+<td align="right">
+            10031077
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       769068.712415
+</td>
+<td align="right">
+       255757.394141
+</td>
+<td align="right">
+       2827779453440
+</td>
+<td align="right">
+        478771025408
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            44649234
+</td>
+<td align="right">
+            10031031
+</td>
+<td align="right">
+       2031181615616
+</td>
+<td align="right">
+        473188234752
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  28
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            45008387
+</td>
+<td align="right">
+             9491775
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       775224.042273
+</td>
+<td align="right">
+       250784.353988
+</td>
+<td align="right">
+       2872622568960
+</td>
+<td align="right">
+        489096657920
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            44589712
+</td>
+<td align="right">
+             9491733
+</td>
+<td align="right">
+       2070663271936
+</td>
+<td align="right">
+        483497221120
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            41832612
+</td>
+<td align="right">
+            10243881
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       785717.248117
+</td>
+<td align="right">
+       259314.258663
+</td>
+<td align="right">
+       2765972306432
+</td>
+<td align="right">
+        481010830336
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            41447479
+</td>
+<td align="right">
+            10243845
+</td>
+<td align="right">
+       1957578185216
+</td>
+<td align="right">
+        475395058688
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            46805294
+</td>
+<td align="right">
+             9407376
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       776535.473696
+</td>
+<td align="right">
+       299828.026801
+</td>
+<td align="right">
+       3075777522688
+</td>
+<td align="right">
+        473972542976
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46421109
+</td>
+<td align="right">
+             9407320
+</td>
+<td align="right">
+       2268927134720
+</td>
+<td align="right">
+        468378400768
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            63450616
+</td>
+<td align="right">
+            10647490
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       784063.569259
+</td>
+<td align="right">
+       259487.226947
+</td>
+<td align="right">
+       3078009159680
+</td>
+<td align="right">
+        489061502976
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            63063880
+</td>
+<td align="right">
+            10647440
+</td>
+<td align="right">
+       2275628834816
+</td>
+<td align="right">
+        483430563840
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            46682371
+</td>
+<td align="right">
+             9712610
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       769099.534527
+</td>
+<td align="right">
+       325068.339387
+</td>
+<td align="right">
+       2858449557504
+</td>
+<td align="right">
+        465100253696
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46289054
+</td>
+<td align="right">
+             9712569
+</td>
+<td align="right">
+       2059313485824
+</td>
+<td align="right">
+        459524516352
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            44371682
+</td>
+<td align="right">
+             9739479
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        763187.94151
+</td>
+<td align="right">
+       301019.088231
+</td>
+<td align="right">
+       2829116674560
+</td>
+<td align="right">
+        477645940736
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            43995064
+</td>
+<td align="right">
+             9739431
+</td>
+<td align="right">
+       2024664830464
+</td>
+<td align="right">
+        472029177856
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            43370336
+</td>
+<td align="right">
+             9464595
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        769703.19346
+</td>
+<td align="right">
+       251059.068784
+</td>
+<td align="right">
+       2801818477056
+</td>
+<td align="right">
+        460885475328
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            42980682
+</td>
+<td align="right">
+             9464554
+</td>
+<td align="right">
+       1992850301440
+</td>
+<td align="right">
+        455269249024
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            43289249
+</td>
+<td align="right">
+             9447310
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       765612.896703
+</td>
+<td align="right">
+       300151.099986
+</td>
+<td align="right">
+       2766497353728
+</td>
+<td align="right">
+        483318520832
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            42908954
+</td>
+<td align="right">
+             9447267
+</td>
+<td align="right">
+       1960196608000
+</td>
+<td align="right">
+        477725465600
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  34
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            77344252
+</td>
+<td align="right">
+             9436638
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       774522.764944
+</td>
+<td align="right">
+       256659.136567
+</td>
+<td align="right">
+       3401974552576
+</td>
+<td align="right">
+        472098600448
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            76959663
+</td>
+<td align="right">
+             9436598
+</td>
+<td align="right">
+       2596962752512
+</td>
+<td align="right">
+        466487909888
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            71365955
+</td>
+<td align="right">
+            10298417
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        776571.09853
+</td>
+<td align="right">
+       341466.020787
+</td>
+<td align="right">
+       3154042419200
+</td>
+<td align="right">
+        493265772032
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            70985482
+</td>
+<td align="right">
+            10298382
+</td>
+<td align="right">
+       2359353382912
+</td>
+<td align="right">
+        487663173120
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  27
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            43878435
+</td>
+<td align="right">
+             9294072
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       761196.525282
+</td>
+<td align="right">
+        267068.01821
+</td>
+<td align="right">
+       2746899192320
+</td>
+<td align="right">
+        467305630720
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            43506624
+</td>
+<td align="right">
+             9294032
+</td>
+<td align="right">
+       1950536071680
+</td>
+<td align="right">
+        461678824448
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  36
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            90445296
+</td>
+<td align="right">
+            10362994
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       777229.270855
+</td>
+<td align="right">
+       253420.510864
+</td>
+<td align="right">
+       3527903631360
+</td>
+<td align="right">
+        503564936704
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            90063608
+</td>
+<td align="right">
+            10362946
+</td>
+<td align="right">
+       2722246032384
+</td>
+<td align="right">
+        497963886080
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            44501969
+</td>
+<td align="right">
+            10161433
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       774411.727692
+</td>
+<td align="right">
+       264015.410613
+</td>
+<td align="right">
+       2857262117376
+</td>
+<td align="right">
+        467482662912
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            44114279
+</td>
+<td align="right">
+            10161392
+</td>
+<td align="right">
+       2052420407808
+</td>
+<td align="right">
+        461860190208
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            43294215
+</td>
+<td align="right">
+             9442113
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       772549.193342
+</td>
+<td align="right">
+       271242.086682
+</td>
+<td align="right">
+       3001261844992
+</td>
+<td align="right">
+        483075247616
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            42895279
+</td>
+<td align="right">
+             9442062
+</td>
+<td align="right">
+       2206234675712
+</td>
+<td align="right">
+        477484191232
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            75349770
+</td>
+<td align="right">
+            10095338
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       782833.825367
+</td>
+<td align="right">
+       256179.379637
+</td>
+<td align="right">
+       3386726841344
+</td>
+<td align="right">
+        497484043776
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            74969729
+</td>
+<td align="right">
+            10095291
+</td>
+<td align="right">
+       2591214992384
+</td>
+<td align="right">
+        491885674496
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  17
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            47917314
+</td>
+<td align="right">
+             9982382
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       764673.646587
+</td>
+<td align="right">
+       277510.093879
+</td>
+<td align="right">
+       2913180606976
+</td>
+<td align="right">
+        489668256256
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47533883
+</td>
+<td align="right">
+             9982341
+</td>
+<td align="right">
+       2107505558016
+</td>
+<td align="right">
+        484071031296
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            47904605
+</td>
+<td align="right">
+             9495106
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       774238.033259
+</td>
+<td align="right">
+       263717.053943
+</td>
+<td align="right">
+       2891753444864
+</td>
+<td align="right">
+        465605211648
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47527112
+</td>
+<td align="right">
+             9495058
+</td>
+<td align="right">
+       2095902070272
+</td>
+<td align="right">
+        459968034304
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            65738732
+</td>
+<td align="right">
+             9691605
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       793447.757656
+</td>
+<td align="right">
+       308889.095046
+</td>
+<td align="right">
+       3224396846592
+</td>
+<td align="right">
+        485800269312
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            65361814
+</td>
+<td align="right">
+             9691574
+</td>
+<td align="right">
+       2422221379072
+</td>
+<td align="right">
+        480227472896
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            47149002
+</td>
+<td align="right">
+            10175121
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       766701.827942
+</td>
+<td align="right">
+       290263.958226
+</td>
+<td align="right">
+       2804199173632
+</td>
+<td align="right">
+        480226591744
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46776513
+</td>
+<td align="right">
+            10175080
+</td>
+<td align="right">
+       2008223576576
+</td>
+<td align="right">
+        474606126080
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  33
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            68147032
+</td>
+<td align="right">
+            10121787
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       770675.696735
+</td>
+<td align="right">
+       272000.815511
+</td>
+<td align="right">
+       3208610732032
+</td>
+<td align="right">
+        506137201152
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            67760722
+</td>
+<td align="right">
+            10121737
+</td>
+<td align="right">
+       2395606407168
+</td>
+<td align="right">
+        500519512576
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            47316493
+</td>
+<td align="right">
+             9466284
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       766394.832811
+</td>
+<td align="right">
+       285580.996074
+</td>
+<td align="right">
+       2846440715776
+</td>
+<td align="right">
+        444218447360
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46940253
+</td>
+<td align="right">
+             9466232
+</td>
+<td align="right">
+       2054013761024
+</td>
+<td align="right">
+        438600185344
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            47437292
+</td>
+<td align="right">
+             9466255
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       763394.038276
+</td>
+<td align="right">
+       270855.269133
+</td>
+<td align="right">
+       3049765298176
+</td>
+<td align="right">
+        459308548608
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47056231
+</td>
+<td align="right">
+             9466215
+</td>
+<td align="right">
+       2241448009728
+</td>
+<td align="right">
+        453721743872
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  18
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            45624310
+</td>
+<td align="right">
+             9918043
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       761640.199526
+</td>
+<td align="right">
+       313145.388295
+</td>
+<td align="right">
+       2846671982592
+</td>
+<td align="right">
+        481587719168
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            45240866
+</td>
+<td align="right">
+             9918002
+</td>
+<td align="right">
+       2042601205760
+</td>
+<td align="right">
+        475971357696
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            56391267
+</td>
+<td align="right">
+             9945496
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       765670.382864
+</td>
+<td align="right">
+       269383.770426
+</td>
+<td align="right">
+       3073393439232
+</td>
+<td align="right">
+        475689357824
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            55997827
+</td>
+<td align="right">
+             9945454
+</td>
+<td align="right">
+       2257325036032
+</td>
+<td align="right">
+        470054094848
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  25
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            45744502
+</td>
+<td align="right">
+             9687899
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       775420.528679
+</td>
+<td align="right">
+       251027.225264
+</td>
+<td align="right">
+       2850283826176
+</td>
+<td align="right">
+        482795379712
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            45369226
+</td>
+<td align="right">
+             9687849
+</td>
+<td align="right">
+       2061853428736
+</td>
+<td align="right">
+        477210491904
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            45531637
+</td>
+<td align="right">
+             9369265
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+       764994.797218
+</td>
+<td align="right">
+       313997.259132
+</td>
+<td align="right">
+       2902326686720
+</td>
+<td align="right">
+        468252355584
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            45153253
+</td>
+<td align="right">
+             9369220
+</td>
+<td align="right">
+       2103270904832
+</td>
+<td align="right">
+        462656859136
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  28
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              250217
+</td>
+<td align="right">
+              558831
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        85506.522032
+</td>
+<td align="right">
+           611.91968
+</td>
+<td align="right">
+        208712109568
+</td>
+<td align="right">
+        238690246144
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250217
+</td>
+<td align="right">
+              558831
+</td>
+<td align="right">
+        208712109568
+</td>
+<td align="right">
+        238690246144
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  35
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              250648
+</td>
+<td align="right">
+              561079
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        84775.745792
+</td>
+<td align="right">
+          607.951724
+</td>
+<td align="right">
+        209022507520
+</td>
+<td align="right">
+        238236050944
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250648
+</td>
+<td align="right">
+              561079
+</td>
+<td align="right">
+        209022507520
+</td>
+<td align="right">
+        238236050944
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  27
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              250168
+</td>
+<td align="right">
+              556851
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         86251.45215
+</td>
+<td align="right">
+          603.784238
+</td>
+<td align="right">
+        208783062528
+</td>
+<td align="right">
+        237982057472
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250168
+</td>
+<td align="right">
+              556851
+</td>
+<td align="right">
+        208783062528
+</td>
+<td align="right">
+        237982057472
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              249971
+</td>
+<td align="right">
+              559098
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        85127.556086
+</td>
+<td align="right">
+          606.894392
+</td>
+<td align="right">
+        208584147968
+</td>
+<td align="right">
+        238497063936
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249971
+</td>
+<td align="right">
+              559098
+</td>
+<td align="right">
+        208584147968
+</td>
+<td align="right">
+        238497063936
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  31
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              250275
+</td>
+<td align="right">
+              560864
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        85253.411596
+</td>
+<td align="right">
+          607.190511
+</td>
+<td align="right">
+        208658991104
+</td>
+<td align="right">
+        238194755584
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250275
+</td>
+<td align="right">
+              560864
+</td>
+<td align="right">
+        208658991104
+</td>
+<td align="right">
+        238194755584
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  25
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              249693
+</td>
+<td align="right">
+              557757
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        85139.922349
+</td>
+<td align="right">
+          603.352164
+</td>
+<td align="right">
+        208391558144
+</td>
+<td align="right">
+        238103899136
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249693
+</td>
+<td align="right">
+              557757
+</td>
+<td align="right">
+        208391558144
+</td>
+<td align="right">
+        238103899136
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  33
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              249548
+</td>
+<td align="right">
+              558319
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        85138.787232
+</td>
+<td align="right">
+          605.835175
+</td>
+<td align="right">
+        208335059968
+</td>
+<td align="right">
+        238261344768
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249548
+</td>
+<td align="right">
+              558319
+</td>
+<td align="right">
+        208335059968
+</td>
+<td align="right">
+        238261344768
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  30
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              250277
+</td>
+<td align="right">
+              558521
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        84498.064185
+</td>
+<td align="right">
+          605.515924
+</td>
+<td align="right">
+        208880721408
+</td>
+<td align="right">
+        238148564480
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250277
+</td>
+<td align="right">
+              558521
+</td>
+<td align="right">
+        208880721408
+</td>
+<td align="right">
+        238148564480
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              250133
+</td>
+<td align="right">
+              557861
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        85139.530383
+</td>
+<td align="right">
+          605.880943
+</td>
+<td align="right">
+        208720888832
+</td>
+<td align="right">
+        238149364224
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250133
+</td>
+<td align="right">
+              557861
+</td>
+<td align="right">
+        208720888832
+</td>
+<td align="right">
+        238149364224
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              250134
+</td>
+<td align="right">
+              557131
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        84612.017973
+</td>
+<td align="right">
+          603.236703
+</td>
+<td align="right">
+        208626548224
+</td>
+<td align="right">
+        237945064448
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250134
+</td>
+<td align="right">
+              557131
+</td>
+<td align="right">
+        208626548224
+</td>
+<td align="right">
+        237945064448
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  34
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              250085
+</td>
+<td align="right">
+              559048
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        86121.924128
+</td>
+<td align="right">
+          604.451809
+</td>
+<td align="right">
+        208622277632
+</td>
+<td align="right">
+        238539166720
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250084
+</td>
+<td align="right">
+              559048
+</td>
+<td align="right">
+        208622277632
+</td>
+<td align="right">
+        238539166720
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              250435
+</td>
+<td align="right">
+              560181
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        85229.460395
+</td>
+<td align="right">
+          607.693099
+</td>
+<td align="right">
+        208855888896
+</td>
+<td align="right">
+        238261351424
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250435
+</td>
+<td align="right">
+              560181
+</td>
+<td align="right">
+        208855888896
+</td>
+<td align="right">
+        238261351424
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              249887
+</td>
+<td align="right">
+              555700
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        81661.305796
+</td>
+<td align="right">
+          608.920534
+</td>
+<td align="right">
+        208499473920
+</td>
+<td align="right">
+        237948014592
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249887
+</td>
+<td align="right">
+              555700
+</td>
+<td align="right">
+        208499473920
+</td>
+<td align="right">
+        237948014592
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              250111
+</td>
+<td align="right">
+              560523
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        82280.140564
+</td>
+<td align="right">
+          609.964919
+</td>
+<td align="right">
+        208657316864
+</td>
+<td align="right">
+        238264171520
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250111
+</td>
+<td align="right">
+              560523
+</td>
+<td align="right">
+        208657316864
+</td>
+<td align="right">
+        238264171520
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  18
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              249889
+</td>
+<td align="right">
+              555562
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        80471.026806
+</td>
+<td align="right">
+          610.397692
+</td>
+<td align="right">
+        208490584064
+</td>
+<td align="right">
+        238117114368
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249889
+</td>
+<td align="right">
+              555562
+</td>
+<td align="right">
+        208490584064
+</td>
+<td align="right">
+        238117114368
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              249933
+</td>
+<td align="right">
+              555918
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        80706.879779
+</td>
+<td align="right">
+          606.730585
+</td>
+<td align="right">
+        208481731072
+</td>
+<td align="right">
+        238064905728
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249933
+</td>
+<td align="right">
+              555918
+</td>
+<td align="right">
+        208481731072
+</td>
+<td align="right">
+        238064905728
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  19
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              250567
+</td>
+<td align="right">
+              560568
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         80880.00101
+</td>
+<td align="right">
+          610.460574
+</td>
+<td align="right">
+        209080107008
+</td>
+<td align="right">
+        238329078784
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250567
+</td>
+<td align="right">
+              560568
+</td>
+<td align="right">
+        209080107008
+</td>
+<td align="right">
+        238329078784
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              250131
+</td>
+<td align="right">
+              556732
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         81842.16429
+</td>
+<td align="right">
+          606.417666
+</td>
+<td align="right">
+        208685448192
+</td>
+<td align="right">
+        238361394176
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250131
+</td>
+<td align="right">
+              556732
+</td>
+<td align="right">
+        208685448192
+</td>
+<td align="right">
+        238361394176
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              250177
+</td>
+<td align="right">
+              560091
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        81898.342018
+</td>
+<td align="right">
+          608.431187
+</td>
+<td align="right">
+        208728977920
+</td>
+<td align="right">
+        238315873280
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250177
+</td>
+<td align="right">
+              560091
+</td>
+<td align="right">
+        208728977920
+</td>
+<td align="right">
+        238315873280
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  17
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              250039
+</td>
+<td align="right">
+              558627
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        80936.840949
+</td>
+<td align="right">
+          605.357243
+</td>
+<td align="right">
+        208606788608
+</td>
+<td align="right">
+        238211788800
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250039
+</td>
+<td align="right">
+              558627
+</td>
+<td align="right">
+        208606788608
+</td>
+<td align="right">
+        238211788800
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              250167
+</td>
+<td align="right">
+              560601
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        81632.796158
+</td>
+<td align="right">
+          611.274446
+</td>
+<td align="right">
+        208738408960
+</td>
+<td align="right">
+        238314033664
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250167
+</td>
+<td align="right">
+              560601
+</td>
+<td align="right">
+        208738408960
+</td>
+<td align="right">
+        238314033664
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              250036
+</td>
+<td align="right">
+              559965
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        81693.045785
+</td>
+<td align="right">
+           610.23387
+</td>
+<td align="right">
+        208670978560
+</td>
+<td align="right">
+        238453621248
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250036
+</td>
+<td align="right">
+              559965
+</td>
+<td align="right">
+        208670978560
+</td>
+<td align="right">
+        238453621248
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              250322
+</td>
+<td align="right">
+              559157
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        81349.840931
+</td>
+<td align="right">
+          606.551765
+</td>
+<td align="right">
+        208694064128
+</td>
+<td align="right">
+        238422367744
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250322
+</td>
+<td align="right">
+              559157
+</td>
+<td align="right">
+        208694064128
+</td>
+<td align="right">
+        238422367744
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              249902
+</td>
+<td align="right">
+              562098
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        81027.465377
+</td>
+<td align="right">
+          609.012298
+</td>
+<td align="right">
+        208654120448
+</td>
+<td align="right">
+        238208662528
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249902
+</td>
+<td align="right">
+              562098
+</td>
+<td align="right">
+        208654120448
+</td>
+<td align="right">
+        238208662528
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              249790
+</td>
+<td align="right">
+              556190
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        83977.973692
+</td>
+<td align="right">
+          617.914066
+</td>
+<td align="right">
+        208416798720
+</td>
+<td align="right">
+        238110427136
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249790
+</td>
+<td align="right">
+              556190
+</td>
+<td align="right">
+        208416798720
+</td>
+<td align="right">
+        238110427136
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              250408
+</td>
+<td align="right">
+              558382
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        83109.756438
+</td>
+<td align="right">
+          611.488423
+</td>
+<td align="right">
+        208896692224
+</td>
+<td align="right">
+        238330170880
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250408
+</td>
+<td align="right">
+              558382
+</td>
+<td align="right">
+        208896692224
+</td>
+<td align="right">
+        238330170880
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              250203
+</td>
+<td align="right">
+              561165
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        83581.023398
+</td>
+<td align="right">
+           625.53974
+</td>
+<td align="right">
+        208609669632
+</td>
+<td align="right">
+        238601478656
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250203
+</td>
+<td align="right">
+              561165
+</td>
+<td align="right">
+        208609669632
+</td>
+<td align="right">
+        238601478656
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              250036
+</td>
+<td align="right">
+              559089
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         82725.36929
+</td>
+<td align="right">
+          610.224169
+</td>
+<td align="right">
+        208547106304
+</td>
+<td align="right">
+        238361603584
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250036
+</td>
+<td align="right">
+              559089
+</td>
+<td align="right">
+        208547106304
+</td>
+<td align="right">
+        238361603584
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              250029
+</td>
+<td align="right">
+              559722
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        83382.897564
+</td>
+<td align="right">
+          616.622625
+</td>
+<td align="right">
+        208708465152
+</td>
+<td align="right">
+        238313256448
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250029
+</td>
+<td align="right">
+              559722
+</td>
+<td align="right">
+        208708465152
+</td>
+<td align="right">
+        238313256448
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              249798
+</td>
+<td align="right">
+              563011
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        83294.522358
+</td>
+<td align="right">
+           619.18909
+</td>
+<td align="right">
+        208353414144
+</td>
+<td align="right">
+        238170726400
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249798
+</td>
+<td align="right">
+              563011
+</td>
+<td align="right">
+        208353414144
+</td>
+<td align="right">
+        238170726400
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              249744
+</td>
+<td align="right">
+              555885
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        83131.497337
+</td>
+<td align="right">
+          617.459909
+</td>
+<td align="right">
+        208402938368
+</td>
+<td align="right">
+        238012790272
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              249744
+</td>
+<td align="right">
+              555885
+</td>
+<td align="right">
+        208402938368
+</td>
+<td align="right">
+        238012790272
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              250079
+</td>
+<td align="right">
+              559269
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        82449.431761
+</td>
+<td align="right">
+          614.999595
+</td>
+<td align="right">
+        208510761984
+</td>
+<td align="right">
+        238001516032
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250079
+</td>
+<td align="right">
+              559269
+</td>
+<td align="right">
+        208510761984
+</td>
+<td align="right">
+        238001516032
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              250216
+</td>
+<td align="right">
+              559061
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        84133.806237
+</td>
+<td align="right">
+          618.601223
+</td>
+<td align="right">
+        208818831360
+</td>
+<td align="right">
+        238126945792
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250216
+</td>
+<td align="right">
+              559061
+</td>
+<td align="right">
+        208818831360
+</td>
+<td align="right">
+        238126945792
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              250042
+</td>
+<td align="right">
+              559131
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        82777.451668
+</td>
+<td align="right">
+          612.654481
+</td>
+<td align="right">
+        208560373760
+</td>
+<td align="right">
+        238255452672
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250042
+</td>
+<td align="right">
+              559131
+</td>
+<td align="right">
+        208560373760
+</td>
+<td align="right">
+        238255452672
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              250177
+</td>
+<td align="right">
+              556735
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        83373.458885
+</td>
+<td align="right">
+           620.64431
+</td>
+<td align="right">
+        208544414720
+</td>
+<td align="right">
+        238373212672
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250177
+</td>
+<td align="right">
+              556735
+</td>
+<td align="right">
+        208544414720
+</td>
+<td align="right">
+        238373212672
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+PRD1
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              250138
+</td>
+<td align="right">
+              557902
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        82277.546343
+</td>
+<td align="right">
+          616.213053
+</td>
+<td align="right">
+        208685579264
+</td>
+<td align="right">
+        238353445888
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              250138
+</td>
+<td align="right">
+              557902
+</td>
+<td align="right">
+        208685579264
+</td>
+<td align="right">
+        238353445888
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  35
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            47509681
+</td>
+<td align="right">
+            14322476
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        38511.576776
+</td>
+<td align="right">
+       731638.394663
+</td>
+<td align="right">
+       1380058200576
+</td>
+<td align="right">
+        994669288960
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47099630
+</td>
+<td align="right">
+            14322448
+</td>
+<td align="right">
+        965024553472
+</td>
+<td align="right">
+        991731130880
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            46241346
+</td>
+<td align="right">
+            14463612
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        37869.067155
+</td>
+<td align="right">
+       748458.752334
+</td>
+<td align="right">
+       1332292507648
+</td>
+<td align="right">
+        996484525056
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            45847344
+</td>
+<td align="right">
+            14463578
+</td>
+<td align="right">
+        934811826176
+</td>
+<td align="right">
+        993519217152
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            48405515
+</td>
+<td align="right">
+            14761354
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        38679.193584
+</td>
+<td align="right">
+       772059.659892
+</td>
+<td align="right">
+       1420969490432
+</td>
+<td align="right">
+       1004519632896
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            48022317
+</td>
+<td align="right">
+            14761314
+</td>
+<td align="right">
+       1034503092224
+</td>
+<td align="right">
+       1001545406464
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  37
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            47473023
+</td>
+<td align="right">
+            14206688
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        39129.813082
+</td>
+<td align="right">
+       735256.381978
+</td>
+<td align="right">
+       1352549080064
+</td>
+<td align="right">
+        984110292480
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47077794
+</td>
+<td align="right">
+            14206657
+</td>
+<td align="right">
+        952139201536
+</td>
+<td align="right">
+        981160238080
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            48425744
+</td>
+<td align="right">
+            14643270
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        37955.955501
+</td>
+<td align="right">
+       757320.690223
+</td>
+<td align="right">
+       1395012914176
+</td>
+<td align="right">
+       1003468319232
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            48039129
+</td>
+<td align="right">
+            14643242
+</td>
+<td align="right">
+        999519480832
+</td>
+<td align="right">
+       1000530228736
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  19
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            47071083
+</td>
+<td align="right">
+            14420757
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        37367.439529
+</td>
+<td align="right">
+       761687.260011
+</td>
+<td align="right">
+       1335730989568
+</td>
+<td align="right">
+        990900385792
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46683828
+</td>
+<td align="right">
+            14420716
+</td>
+<td align="right">
+        942917249536
+</td>
+<td align="right">
+        987946039296
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            47342002
+</td>
+<td align="right">
+            14609128
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        39533.813029
+</td>
+<td align="right">
+        775794.99256
+</td>
+<td align="right">
+       1357895442944
+</td>
+<td align="right">
+        996647798784
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46942479
+</td>
+<td align="right">
+            14609105
+</td>
+<td align="right">
+        951832240640
+</td>
+<td align="right">
+        993711794176
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            48059883
+</td>
+<td align="right">
+            14798340
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        38419.176894
+</td>
+<td align="right">
+       743372.424251
+</td>
+<td align="right">
+       1396667906560
+</td>
+<td align="right">
+        997798166016
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47671722
+</td>
+<td align="right">
+            14798311
+</td>
+<td align="right">
+       1000464906752
+</td>
+<td align="right">
+        994841028096
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            47101600
+</td>
+<td align="right">
+            14516834
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        38160.984459
+</td>
+<td align="right">
+        766420.40041
+</td>
+<td align="right">
+       1413540729344
+</td>
+<td align="right">
+        993954735616
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46588669
+</td>
+<td align="right">
+            14516807
+</td>
+<td align="right">
+       1021666611712
+</td>
+<td align="right">
+        991014324224
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            48919837
+</td>
+<td align="right">
+            14566543
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         37924.54344
+</td>
+<td align="right">
+        737261.52211
+</td>
+<td align="right">
+       1398384942080
+</td>
+<td align="right">
+        989474923520
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            48530353
+</td>
+<td align="right">
+            14566508
+</td>
+<td align="right">
+       1000898870272
+</td>
+<td align="right">
+        986530612224
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  28
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            47907733
+</td>
+<td align="right">
+            14332128
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        38743.998236
+</td>
+<td align="right">
+       759044.156221
+</td>
+<td align="right">
+       1351242872320
+</td>
+<td align="right">
+        996087337984
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47470758
+</td>
+<td align="right">
+            14332095
+</td>
+<td align="right">
+        957421794816
+</td>
+<td align="right">
+        993134482432
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+            46886784
+</td>
+<td align="right">
+            15658771
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         37505.57635
+</td>
+<td align="right">
+       808235.251925
+</td>
+<td align="right">
+       1429751677952
+</td>
+<td align="right">
+       1016070408192
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46494726
+</td>
+<td align="right">
+            15658756
+</td>
+<td align="right">
+       1031445750784
+</td>
+<td align="right">
+       1013136966144
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            48390473
+</td>
+<td align="right">
+            14821601
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        40659.929455
+</td>
+<td align="right">
+       745019.871817
+</td>
+<td align="right">
+       1379380812800
+</td>
+<td align="right">
+        996451287040
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47999405
+</td>
+<td align="right">
+            14821568
+</td>
+<td align="right">
+        981124799488
+</td>
+<td align="right">
+        993506787840
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            69195156
+</td>
+<td align="right">
+            15299491
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        44092.990562
+</td>
+<td align="right">
+       743058.368161
+</td>
+<td align="right">
+       1747574870528
+</td>
+<td align="right">
+       1008909767680
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            68805718
+</td>
+<td align="right">
+            15299460
+</td>
+<td align="right">
+       1351345451520
+</td>
+<td align="right">
+       1005977768448
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            49974905
+</td>
+<td align="right">
+            14266115
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        39297.741208
+</td>
+<td align="right">
+       751433.521597
+</td>
+<td align="right">
+       1397660105216
+</td>
+<td align="right">
+        996726654464
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            49569545
+</td>
+<td align="right">
+            14266090
+</td>
+<td align="right">
+       1004584557056
+</td>
+<td align="right">
+        993766915584
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            48576607
+</td>
+<td align="right">
+            14771533
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        40116.177216
+</td>
+<td align="right">
+       756270.962722
+</td>
+<td align="right">
+       1392785262592
+</td>
+<td align="right">
+        999647681536
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            48194293
+</td>
+<td align="right">
+            14771497
+</td>
+<td align="right">
+       1004305188864
+</td>
+<td align="right">
+        996708165120
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            46359278
+</td>
+<td align="right">
+            14510637
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        39605.392417
+</td>
+<td align="right">
+        750361.15814
+</td>
+<td align="right">
+       1329497086976
+</td>
+<td align="right">
+        993365332480
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            45965656
+</td>
+<td align="right">
+            14510590
+</td>
+<td align="right">
+        930604940288
+</td>
+<td align="right">
+        990394533376
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            47387669
+</td>
+<td align="right">
+            14384743
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        37565.852408
+</td>
+<td align="right">
+        739223.56041
+</td>
+<td align="right">
+       1431343755776
+</td>
+<td align="right">
+        993623923712
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46990442
+</td>
+<td align="right">
+            14384718
+</td>
+<td align="right">
+       1026282533376
+</td>
+<td align="right">
+        990668725248
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  34
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            46327561
+</td>
+<td align="right">
+            14671311
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        36875.268375
+</td>
+<td align="right">
+       765537.489312
+</td>
+<td align="right">
+       1340575218176
+</td>
+<td align="right">
+        997705768960
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            45935963
+</td>
+<td align="right">
+            14671270
+</td>
+<td align="right">
+        939743623680
+</td>
+<td align="right">
+        994755624960
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            55034175
+</td>
+<td align="right">
+            14403374
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        40505.810413
+</td>
+<td align="right">
+       760728.155835
+</td>
+<td align="right">
+       1504214502400
+</td>
+<td align="right">
+        991248025600
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            54618216
+</td>
+<td align="right">
+            14403345
+</td>
+<td align="right">
+       1098754288640
+</td>
+<td align="right">
+        988282431488
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  27
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            48291064
+</td>
+<td align="right">
+            14725797
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        38973.339637
+</td>
+<td align="right">
+       770454.406894
+</td>
+<td align="right">
+       1426825618944
+</td>
+<td align="right">
+        999657881088
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47905790
+</td>
+<td align="right">
+            14725768
+</td>
+<td align="right">
+       1035673363968
+</td>
+<td align="right">
+        996719877120
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  36
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+           100902382
+</td>
+<td align="right">
+            14469694
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        50290.096267
+</td>
+<td align="right">
+       766596.287804
+</td>
+<td align="right">
+       2285926558208
+</td>
+<td align="right">
+        993173184512
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+           100493955
+</td>
+<td align="right">
+            14469661
+</td>
+<td align="right">
+       1878159419904
+</td>
+<td align="right">
+        990224506880
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            48031801
+</td>
+<td align="right">
+            14544933
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        37940.294687
+</td>
+<td align="right">
+       761366.224505
+</td>
+<td align="right">
+       1392872348160
+</td>
+<td align="right">
+        996945418240
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47643371
+</td>
+<td align="right">
+            14544898
+</td>
+<td align="right">
+        995244743168
+</td>
+<td align="right">
+        994021309440
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+            46023206
+</td>
+<td align="right">
+            14430663
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        38410.644069
+</td>
+<td align="right">
+       782618.262908
+</td>
+<td align="right">
+       1353736171520
+</td>
+<td align="right">
+        996726371328
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            45603699
+</td>
+<td align="right">
+            14430633
+</td>
+<td align="right">
+        950436655104
+</td>
+<td align="right">
+        993769477632
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            82655181
+</td>
+<td align="right">
+            15372297
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        47468.990343
+</td>
+<td align="right">
+       771543.930702
+</td>
+<td align="right">
+       1929877667328
+</td>
+<td align="right">
+       1012356820992
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            82265107
+</td>
+<td align="right">
+            15372267
+</td>
+<td align="right">
+       1535797165568
+</td>
+<td align="right">
+       1009407857152
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  17
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            50676627
+</td>
+<td align="right">
+            14513260
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        39786.216135
+</td>
+<td align="right">
+       777737.584379
+</td>
+<td align="right">
+       1403750643200
+</td>
+<td align="right">
+        994288699904
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            50284458
+</td>
+<td align="right">
+            14513241
+</td>
+<td align="right">
+       1006072509952
+</td>
+<td align="right">
+        991343528448
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            50409593
+</td>
+<td align="right">
+            14584091
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        41946.140798
+</td>
+<td align="right">
+       747495.859425
+</td>
+<td align="right">
+       1392620379136
+</td>
+<td align="right">
+        996743001088
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            50015003
+</td>
+<td align="right">
+            14584059
+</td>
+<td align="right">
+        990522727424
+</td>
+<td align="right">
+        993811158016
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            73328778
+</td>
+<td align="right">
+            14407012
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        43724.379561
+</td>
+<td align="right">
+       735554.613007
+</td>
+<td align="right">
+       1773465776128
+</td>
+<td align="right">
+        991793797120
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            72934284
+</td>
+<td align="right">
+            14406986
+</td>
+<td align="right">
+       1375545700352
+</td>
+<td align="right">
+        988814497792
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            46698660
+</td>
+<td align="right">
+            14342810
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        38070.848046
+</td>
+<td align="right">
+       763585.315563
+</td>
+<td align="right">
+       1326292667904
+</td>
+<td align="right">
+        992899509760
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            46310387
+</td>
+<td align="right">
+            14342777
+</td>
+<td align="right">
+        929724967936
+</td>
+<td align="right">
+        989955075072
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  33
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            47591321
+</td>
+<td align="right">
+            14998255
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        37238.525487
+</td>
+<td align="right">
+       746638.881251
+</td>
+<td align="right">
+       1349390995456
+</td>
+<td align="right">
+       1003550531072
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47196589
+</td>
+<td align="right">
+            14998215
+</td>
+<td align="right">
+        948531269632
+</td>
+<td align="right">
+       1000595487744
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            49824545
+</td>
+<td align="right">
+            14381780
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        39813.332917
+</td>
+<td align="right">
+       742996.504972
+</td>
+<td align="right">
+       1380173467648
+</td>
+<td align="right">
+        990473567232
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            49425513
+</td>
+<td align="right">
+            14381751
+</td>
+<td align="right">
+        978288726016
+</td>
+<td align="right">
+        987548048896
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            48379221
+</td>
+<td align="right">
+            14478367
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         38556.36597
+</td>
+<td align="right">
+         788375.8393
+</td>
+<td align="right">
+       1370932809728
+</td>
+<td align="right">
+        996629350400
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47987140
+</td>
+<td align="right">
+            14478328
+</td>
+<td align="right">
+        971931389952
+</td>
+<td align="right">
+        993672177664
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  18
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            49004282
+</td>
+<td align="right">
+            14456974
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        39128.490083
+</td>
+<td align="right">
+       723429.192802
+</td>
+<td align="right">
+       1401276624384
+</td>
+<td align="right">
+        990264227840
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            48616587
+</td>
+<td align="right">
+            14456950
+</td>
+<td align="right">
+       1006962715648
+</td>
+<td align="right">
+        987332208640
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            48276967
+</td>
+<td align="right">
+            15046763
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        40923.476617
+</td>
+<td align="right">
+        768644.61513
+</td>
+<td align="right">
+       1374268122624
+</td>
+<td align="right">
+       1007871919104
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47864626
+</td>
+<td align="right">
+            15046724
+</td>
+<td align="right">
+        954491037184
+</td>
+<td align="right">
+       1004924363776
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  25
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            48466173
+</td>
+<td align="right">
+            14569646
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        37325.806386
+</td>
+<td align="right">
+       767726.101193
+</td>
+<td align="right">
+       1398062751744
+</td>
+<td align="right">
+        997749733888
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            48072697
+</td>
+<td align="right">
+            14569605
+</td>
+<td align="right">
+        996422680576
+</td>
+<td align="right">
+        994777962496
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+            47919514
+</td>
+<td align="right">
+            14148498
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        37999.908213
+</td>
+<td align="right">
+       748731.048549
+</td>
+<td align="right">
+       1352968833536
+</td>
+<td align="right">
+        989562195456
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            47533009
+</td>
+<td align="right">
+            14148471
+</td>
+<td align="right">
+        959626529280
+</td>
+<td align="right">
+        986617720320
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  28
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              172669
+</td>
+<td align="right">
+             1390052
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16457.999915
+</td>
+<td align="right">
+         1587.042484
+</td>
+<td align="right">
+        144246509056
+</td>
+<td align="right">
+        664861754880
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172669
+</td>
+<td align="right">
+             1390052
+</td>
+<td align="right">
+        144246509056
+</td>
+<td align="right">
+        664861754880
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  35
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              173744
+</td>
+<td align="right">
+             1387513
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16564.355966
+</td>
+<td align="right">
+         1581.494306
+</td>
+<td align="right">
+        144644228608
+</td>
+<td align="right">
+        665289784832
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173744
+</td>
+<td align="right">
+             1387513
+</td>
+<td align="right">
+        144644228608
+</td>
+<td align="right">
+        665289784832
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  27
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              173058
+</td>
+<td align="right">
+             1379224
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16605.391385
+</td>
+<td align="right">
+         1573.217356
+</td>
+<td align="right">
+        144441519104
+</td>
+<td align="right">
+        664604525056
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173058
+</td>
+<td align="right">
+             1379224
+</td>
+<td align="right">
+        144441519104
+</td>
+<td align="right">
+        664604525056
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              172382
+</td>
+<td align="right">
+             1381231
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16450.525946
+</td>
+<td align="right">
+         1564.446939
+</td>
+<td align="right">
+        144246193152
+</td>
+<td align="right">
+        664464463360
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172382
+</td>
+<td align="right">
+             1381231
+</td>
+<td align="right">
+        144246193152
+</td>
+<td align="right">
+        664464463360
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  31
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              172867
+</td>
+<td align="right">
+             1384120
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16434.301314
+</td>
+<td align="right">
+         1575.884306
+</td>
+<td align="right">
+        144427512320
+</td>
+<td align="right">
+        665138478080
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172867
+</td>
+<td align="right">
+             1384119
+</td>
+<td align="right">
+        144427512320
+</td>
+<td align="right">
+        665138478080
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  25
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              172623
+</td>
+<td align="right">
+             1380980
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         16543.30304
+</td>
+<td align="right">
+         1567.854164
+</td>
+<td align="right">
+        144294412800
+</td>
+<td align="right">
+        665003799040
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172623
+</td>
+<td align="right">
+             1380980
+</td>
+<td align="right">
+        144294412800
+</td>
+<td align="right">
+        665002750464
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  33
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              172838
+</td>
+<td align="right">
+             1387201
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16432.343792
+</td>
+<td align="right">
+         1578.736778
+</td>
+<td align="right">
+        144412866560
+</td>
+<td align="right">
+        665849991680
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172838
+</td>
+<td align="right">
+             1387201
+</td>
+<td align="right">
+        144412866560
+</td>
+<td align="right">
+        665849991680
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  30
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              172822
+</td>
+<td align="right">
+             1382205
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16498.325656
+</td>
+<td align="right">
+         1567.546958
+</td>
+<td align="right">
+        144349644288
+</td>
+<td align="right">
+        664570659840
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172822
+</td>
+<td align="right">
+             1382205
+</td>
+<td align="right">
+        144349644288
+</td>
+<td align="right">
+        664570659840
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              173184
+</td>
+<td align="right">
+             1386464
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16548.316367
+</td>
+<td align="right">
+         1575.134604
+</td>
+<td align="right">
+        144546377216
+</td>
+<td align="right">
+        664880642048
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173184
+</td>
+<td align="right">
+             1386464
+</td>
+<td align="right">
+        144546377216
+</td>
+<td align="right">
+        664880642048
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              172946
+</td>
+<td align="right">
+             1386325
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16573.874105
+</td>
+<td align="right">
+         1573.202952
+</td>
+<td align="right">
+        144400007168
+</td>
+<td align="right">
+        664919008256
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172946
+</td>
+<td align="right">
+             1386325
+</td>
+<td align="right">
+        144400007168
+</td>
+<td align="right">
+        664919008256
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  34
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              172952
+</td>
+<td align="right">
+             1387189
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16621.810388
+</td>
+<td align="right">
+         1573.449421
+</td>
+<td align="right">
+        144459634176
+</td>
+<td align="right">
+        664914415104
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172952
+</td>
+<td align="right">
+             1387189
+</td>
+<td align="right">
+        144459634176
+</td>
+<td align="right">
+        664914415104
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+IAD300715EXDCL09
+</td>
+<td align="right">
+              173285
+</td>
+<td align="right">
+             1384360
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16565.999713
+</td>
+<td align="right">
+         1575.631143
+</td>
+<td align="right">
+        144576181760
+</td>
+<td align="right">
+        665500131328
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173285
+</td>
+<td align="right">
+             1384360
+</td>
+<td align="right">
+        144576181760
+</td>
+<td align="right">
+        665500131328
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172831
+</td>
+<td align="right">
+             1379819
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16425.384068
+</td>
+<td align="right">
+         1574.682896
+</td>
+<td align="right">
+        144452384256
+</td>
+<td align="right">
+        665003398144
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172831
+</td>
+<td align="right">
+             1379819
+</td>
+<td align="right">
+        144452384256
+</td>
+<td align="right">
+        665003398144
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172861
+</td>
+<td align="right">
+             1388118
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16387.624308
+</td>
+<td align="right">
+         1581.624746
+</td>
+<td align="right">
+        144328988672
+</td>
+<td align="right">
+        664445423104
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172861
+</td>
+<td align="right">
+             1388118
+</td>
+<td align="right">
+        144328988672
+</td>
+<td align="right">
+        664445423104
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  18
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172737
+</td>
+<td align="right">
+             1378456
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16519.008307
+</td>
+<td align="right">
+         1578.557753
+</td>
+<td align="right">
+        144402149888
+</td>
+<td align="right">
+        664030331904
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172737
+</td>
+<td align="right">
+             1378456
+</td>
+<td align="right">
+        144402149888
+</td>
+<td align="right">
+        664030331904
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172862
+</td>
+<td align="right">
+             1385013
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         16550.67974
+</td>
+<td align="right">
+         1583.261747
+</td>
+<td align="right">
+        144439230976
+</td>
+<td align="right">
+        665101273088
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172862
+</td>
+<td align="right">
+             1385013
+</td>
+<td align="right">
+        144439230976
+</td>
+<td align="right">
+        665101273088
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  19
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              173008
+</td>
+<td align="right">
+             1386589
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16621.119647
+</td>
+<td align="right">
+           1577.7242
+</td>
+<td align="right">
+        144521632768
+</td>
+<td align="right">
+        665782389760
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173008
+</td>
+<td align="right">
+             1386589
+</td>
+<td align="right">
+        144521632768
+</td>
+<td align="right">
+        665782389760
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172791
+</td>
+<td align="right">
+             1380891
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         16473.14175
+</td>
+<td align="right">
+         1570.787291
+</td>
+<td align="right">
+        144497174016
+</td>
+<td align="right">
+        665332656640
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172791
+</td>
+<td align="right">
+             1380891
+</td>
+<td align="right">
+        144497174016
+</td>
+<td align="right">
+        665332656640
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172917
+</td>
+<td align="right">
+             1385269
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16415.898122
+</td>
+<td align="right">
+         1578.286933
+</td>
+<td align="right">
+        144424926208
+</td>
+<td align="right">
+        665063998976
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172917
+</td>
+<td align="right">
+             1385269
+</td>
+<td align="right">
+        144424926208
+</td>
+<td align="right">
+        665063998976
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  17
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172677
+</td>
+<td align="right">
+             1382700
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16460.305701
+</td>
+<td align="right">
+         1573.567661
+</td>
+<td align="right">
+        144393682432
+</td>
+<td align="right">
+        665535434752
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172677
+</td>
+<td align="right">
+             1382700
+</td>
+<td align="right">
+        144393682432
+</td>
+<td align="right">
+        665535434752
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172717
+</td>
+<td align="right">
+             1390584
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16230.346792
+</td>
+<td align="right">
+         1584.005316
+</td>
+<td align="right">
+        144352496128
+</td>
+<td align="right">
+        665016769536
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172717
+</td>
+<td align="right">
+             1390584
+</td>
+<td align="right">
+        144352496128
+</td>
+<td align="right">
+        665016769536
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172776
+</td>
+<td align="right">
+             1387399
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16394.414819
+</td>
+<td align="right">
+          1582.50446
+</td>
+<td align="right">
+        144431894528
+</td>
+<td align="right">
+        664819920896
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172776
+</td>
+<td align="right">
+             1387399
+</td>
+<td align="right">
+        144431894528
+</td>
+<td align="right">
+        664819920896
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              173526
+</td>
+<td align="right">
+             1382751
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16476.577471
+</td>
+<td align="right">
+         1576.559491
+</td>
+<td align="right">
+        144503772672
+</td>
+<td align="right">
+        664511155712
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173526
+</td>
+<td align="right">
+             1382751
+</td>
+<td align="right">
+        144503772672
+</td>
+<td align="right">
+        664511155712
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+IAD300715EXDCL08
+</td>
+<td align="right">
+              172891
+</td>
+<td align="right">
+             1389275
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         16369.76193
+</td>
+<td align="right">
+         1585.859481
+</td>
+<td align="right">
+        144511922688
+</td>
+<td align="right">
+        665353860608
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172891
+</td>
+<td align="right">
+             1389274
+</td>
+<td align="right">
+        144511922688
+</td>
+<td align="right">
+        665353860608
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              172718
+</td>
+<td align="right">
+             1386066
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16592.736347
+</td>
+<td align="right">
+         1588.814703
+</td>
+<td align="right">
+        144264507904
+</td>
+<td align="right">
+        664304721408
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172718
+</td>
+<td align="right">
+             1386066
+</td>
+<td align="right">
+        144264507904
+</td>
+<td align="right">
+        664304721408
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              173114
+</td>
+<td align="right">
+             1380636
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         16551.50438
+</td>
+<td align="right">
+          1575.65058
+</td>
+<td align="right">
+        144444099584
+</td>
+<td align="right">
+        664941519360
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173114
+</td>
+<td align="right">
+             1380636
+</td>
+<td align="right">
+        144444099584
+</td>
+<td align="right">
+        664941519360
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              173135
+</td>
+<td align="right">
+             1384592
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16290.372228
+</td>
+<td align="right">
+         1584.779872
+</td>
+<td align="right">
+        144515097600
+</td>
+<td align="right">
+        664776674816
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173135
+</td>
+<td align="right">
+             1384592
+</td>
+<td align="right">
+        144515097600
+</td>
+<td align="right">
+        664776674816
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              172914
+</td>
+<td align="right">
+             1382850
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16528.434881
+</td>
+<td align="right">
+         1571.445906
+</td>
+<td align="right">
+        144492184576
+</td>
+<td align="right">
+        665407104000
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172914
+</td>
+<td align="right">
+             1382850
+</td>
+<td align="right">
+        144492184576
+</td>
+<td align="right">
+        665407104000
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              172864
+</td>
+<td align="right">
+             1384694
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16631.395837
+</td>
+<td align="right">
+         1584.650229
+</td>
+<td align="right">
+        144438327808
+</td>
+<td align="right">
+        664632856064
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172864
+</td>
+<td align="right">
+             1384694
+</td>
+<td align="right">
+        144438327808
+</td>
+<td align="right">
+        664632856064
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              173160
+</td>
+<td align="right">
+             1385834
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16475.563579
+</td>
+<td align="right">
+          1588.11921
+</td>
+<td align="right">
+        144482257920
+</td>
+<td align="right">
+        665650975744
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173160
+</td>
+<td align="right">
+             1385834
+</td>
+<td align="right">
+        144482257920
+</td>
+<td align="right">
+        665650975744
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              173030
+</td>
+<td align="right">
+             1384840
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16432.759591
+</td>
+<td align="right">
+         1593.049209
+</td>
+<td align="right">
+        144433872896
+</td>
+<td align="right">
+        665539031552
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173030
+</td>
+<td align="right">
+             1384840
+</td>
+<td align="right">
+        144433872896
+</td>
+<td align="right">
+        665539031552
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              172758
+</td>
+<td align="right">
+             1388253
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16375.358985
+</td>
+<td align="right">
+          1588.58724
+</td>
+<td align="right">
+        144382867456
+</td>
+<td align="right">
+        665186598912
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172758
+</td>
+<td align="right">
+             1388253
+</td>
+<td align="right">
+        144382867456
+</td>
+<td align="right">
+        665186598912
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              172936
+</td>
+<td align="right">
+             1382443
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16520.440024
+</td>
+<td align="right">
+          1594.14605
+</td>
+<td align="right">
+        144393149440
+</td>
+<td align="right">
+        664747303424
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172936
+</td>
+<td align="right">
+             1382443
+</td>
+<td align="right">
+        144393149440
+</td>
+<td align="right">
+        664747303424
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              172996
+</td>
+<td align="right">
+             1383303
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16433.151981
+</td>
+<td align="right">
+         1574.967333
+</td>
+<td align="right">
+        144346662400
+</td>
+<td align="right">
+        665377686016
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172996
+</td>
+<td align="right">
+             1383303
+</td>
+<td align="right">
+        144346662400
+</td>
+<td align="right">
+        665377686016
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              173039
+</td>
+<td align="right">
+             1386284
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+        16586.707873
+</td>
+<td align="right">
+         1588.556061
+</td>
+<td align="right">
+        144446986240
+</td>
+<td align="right">
+        664393453568
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              173039
+</td>
+<td align="right">
+             1386284
+</td>
+<td align="right">
+        144446986240
+</td>
+<td align="right">
+        664393453568
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD2
+</td>
+<td>
+PRD_iad3
+</td>
+<td>
+cl-s2ymuyrq-103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+IAD300715EXDCL07
+</td>
+<td align="right">
+              172759
+</td>
+<td align="right">
+             1387070
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+         16127.87352
+</td>
+<td align="right">
+         1583.516991
+</td>
+<td align="right">
+        144343245824
+</td>
+<td align="right">
+        665039745024
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              172759
+</td>
+<td align="right">
+             1387070
+</td>
+<td align="right">
+        144343245824
+</td>
+<td align="right">
+        665038696448
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ INSTNAME                                           VARCHAR2(64)
+ DBNAME                                             VARCHAR2(8)
+ CLUSTERNAME                                        VARCHAR2(31)
+ GROUP_NUMBER                                       NUMBER
+ DISK_NUMBER                                        NUMBER
+ FAILGROUP                                          VARCHAR2(30)
+ READS                                              NUMBER
+ WRITES                                             NUMBER
+ READ_ERRS                                          NUMBER
+ WRITE_ERRS                                         NUMBER
+ READ_TIMEOUT                                       NUMBER
+ WRITE_TIMEOUT                                      NUMBER
+ READ_TIME                                          NUMBER
+ WRITE_TIME                                         NUMBER
+ BYTES_READ                                         NUMBER
+ BYTES_WRITTEN                                      NUMBER
+ HOT_READS                                          NUMBER
+ HOT_WRITES                                         NUMBER
+ HOT_BYTES_READ                                     NUMBER
+ HOT_BYTES_WRITTEN                                  NUMBER
+ COLD_READS                                         NUMBER
+ COLD_WRITES                                        NUMBER
+ COLD_BYTES_READ                                    NUMBER
+ COLD_BYTES_WRITTEN                                 NUMBER
+ CON_ID                                             NUMBER
+
+SELECT /*+  NO_MERGE  */ /* 2c.239 */
+       *
+  FROM gv$asm_disk_iostat
+ ORDER BY
+       1, 2, 3, 4, 5;
+
+144 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:46:45  </font>
+</body>
+</html>

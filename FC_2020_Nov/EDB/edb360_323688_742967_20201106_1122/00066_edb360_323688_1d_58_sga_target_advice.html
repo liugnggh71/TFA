@@ -1,0 +1,1999 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>SGA Target Advice</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00066_edb360_323688_1d_58_sga_target_advice.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 1d.58. SGA Target Advice <em>(GV$SGA_TARGET_ADVICE)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INST_ID
+</th>
+<th scope="col">
+SGA_SIZE
+</th>
+<th scope="col">
+SGA_SIZE_FACTOR
+</th>
+<th scope="col">
+ESTD_DB_TIME
+</th>
+<th scope="col">
+ESTD_DB_TIME_FACTOR
+</th>
+<th scope="col">
+ESTD_PHYSICAL_READS
+</th>
+<th scope="col">
+ESTD_BUFFER_CACHE_SIZE
+</th>
+<th scope="col">
+ESTD_SHARED_POOL_SIZE
+</th>
+<th scope="col">
+CON_ID
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               38400
+</td>
+<td align="right">
+               .1875
+</td>
+<td align="right">
+             8971440
+</td>
+<td align="right">
+              1.2171
+</td>
+<td align="right">
+          4551418115
+</td>
+<td align="right">
+               17920
+</td>
+<td align="right">
+               18432
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               51200
+</td>
+<td align="right">
+                 .25
+</td>
+<td align="right">
+             7985916
+</td>
+<td align="right">
+              1.0834
+</td>
+<td align="right">
+          4551418115
+</td>
+<td align="right">
+               17920
+</td>
+<td align="right">
+               29696
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               64000
+</td>
+<td align="right">
+               .3125
+</td>
+<td align="right">
+             7630626
+</td>
+<td align="right">
+              1.0352
+</td>
+<td align="right">
+          3069117007
+</td>
+<td align="right">
+               35840
+</td>
+<td align="right">
+               25600
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               76800
+</td>
+<td align="right">
+                .375
+</td>
+<td align="right">
+             7537749
+</td>
+<td align="right">
+              1.0226
+</td>
+<td align="right">
+          2669146945
+</td>
+<td align="right">
+               53760
+</td>
+<td align="right">
+               23040
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               89600
+</td>
+<td align="right">
+               .4375
+</td>
+<td align="right">
+             7528904
+</td>
+<td align="right">
+              1.0214
+</td>
+<td align="right">
+          2669146945
+</td>
+<td align="right">
+               53760
+</td>
+<td align="right">
+               35840
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              102400
+</td>
+<td align="right">
+                  .5
+</td>
+<td align="right">
+             7481728
+</td>
+<td align="right">
+               1.015
+</td>
+<td align="right">
+          2467152014
+</td>
+<td align="right">
+               71680
+</td>
+<td align="right">
+               31744
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              115200
+</td>
+<td align="right">
+               .5625
+</td>
+<td align="right">
+             7452981
+</td>
+<td align="right">
+              1.0111
+</td>
+<td align="right">
+          2337915457
+</td>
+<td align="right">
+               89600
+</td>
+<td align="right">
+               27648
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              128000
+</td>
+<td align="right">
+                .625
+</td>
+<td align="right">
+             7433816
+</td>
+<td align="right">
+              1.0085
+</td>
+<td align="right">
+          2241641256
+</td>
+<td align="right">
+              107520
+</td>
+<td align="right">
+               23552
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              140800
+</td>
+<td align="right">
+               .6875
+</td>
+<td align="right">
+             7423496
+</td>
+<td align="right">
+              1.0071
+</td>
+<td align="right">
+          2171093773
+</td>
+<td align="right">
+              125440
+</td>
+<td align="right">
+               19456
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              153600
+</td>
+<td align="right">
+                 .75
+</td>
+<td align="right">
+             7410228
+</td>
+<td align="right">
+              1.0053
+</td>
+<td align="right">
+          2171093773
+</td>
+<td align="right">
+              125440
+</td>
+<td align="right">
+               31744
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              166400
+</td>
+<td align="right">
+               .8125
+</td>
+<td align="right">
+             7396960
+</td>
+<td align="right">
+              1.0035
+</td>
+<td align="right">
+          2105571039
+</td>
+<td align="right">
+              143360
+</td>
+<td align="right">
+               27648
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              179200
+</td>
+<td align="right">
+                .875
+</td>
+<td align="right">
+             7388852
+</td>
+<td align="right">
+              1.0024
+</td>
+<td align="right">
+          2057333443
+</td>
+<td align="right">
+              161280
+</td>
+<td align="right">
+               24064
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              192000
+</td>
+<td align="right">
+               .9375
+</td>
+<td align="right">
+             7381481
+</td>
+<td align="right">
+              1.0014
+</td>
+<td align="right">
+          2057333443
+</td>
+<td align="right">
+              161280
+</td>
+<td align="right">
+               35840
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              204800
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             7371161
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+          2009899808
+</td>
+<td align="right">
+              179200
+</td>
+<td align="right">
+               31744
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              217600
+</td>
+<td align="right">
+              1.0625
+</td>
+<td align="right">
+             7363053
+</td>
+<td align="right">
+               .9989
+</td>
+<td align="right">
+          1965280032
+</td>
+<td align="right">
+              197120
+</td>
+<td align="right">
+               27648
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              230400
+</td>
+<td align="right">
+               1.125
+</td>
+<td align="right">
+             7355682
+</td>
+<td align="right">
+               .9979
+</td>
+<td align="right">
+          1921464216
+</td>
+<td align="right">
+              215040
+</td>
+<td align="right">
+               24064
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              243200
+</td>
+<td align="right">
+              1.1875
+</td>
+<td align="right">
+             7348310
+</td>
+<td align="right">
+               .9969
+</td>
+<td align="right">
+          1921464216
+</td>
+<td align="right">
+              215040
+</td>
+<td align="right">
+               35840
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              256000
+</td>
+<td align="right">
+                1.25
+</td>
+<td align="right">
+             7339465
+</td>
+<td align="right">
+               .9957
+</td>
+<td align="right">
+          1879055330
+</td>
+<td align="right">
+              232960
+</td>
+<td align="right">
+               31744
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              268800
+</td>
+<td align="right">
+              1.3125
+</td>
+<td align="right">
+             7330620
+</td>
+<td align="right">
+               .9945
+</td>
+<td align="right">
+          1832626645
+</td>
+<td align="right">
+              250880
+</td>
+<td align="right">
+               27648
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              281600
+</td>
+<td align="right">
+               1.375
+</td>
+<td align="right">
+             7323986
+</td>
+<td align="right">
+               .9936
+</td>
+<td align="right">
+          1790016769
+</td>
+<td align="right">
+              268800
+</td>
+<td align="right">
+               24064
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              294400
+</td>
+<td align="right">
+              1.4375
+</td>
+<td align="right">
+             7316614
+</td>
+<td align="right">
+               .9926
+</td>
+<td align="right">
+          1790016769
+</td>
+<td align="right">
+              268800
+</td>
+<td align="right">
+               37888
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              307200
+</td>
+<td align="right">
+                 1.5
+</td>
+<td align="right">
+             7309980
+</td>
+<td align="right">
+               .9917
+</td>
+<td align="right">
+          1760270252
+</td>
+<td align="right">
+              286720
+</td>
+<td align="right">
+               33792
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              320000
+</td>
+<td align="right">
+              1.5625
+</td>
+<td align="right">
+             7304083
+</td>
+<td align="right">
+               .9909
+</td>
+<td align="right">
+          1727106905
+</td>
+<td align="right">
+              304640
+</td>
+<td align="right">
+               29696
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              332800
+</td>
+<td align="right">
+               1.625
+</td>
+<td align="right">
+             7299661
+</td>
+<td align="right">
+               .9903
+</td>
+<td align="right">
+          1695149498
+</td>
+<td align="right">
+              322560
+</td>
+<td align="right">
+               25600
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              345600
+</td>
+<td align="right">
+              1.6875
+</td>
+<td align="right">
+             7293027
+</td>
+<td align="right">
+               .9894
+</td>
+<td align="right">
+          1695149498
+</td>
+<td align="right">
+              322560
+</td>
+<td align="right">
+               37888
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+                1.75
+</td>
+<td align="right">
+             7287867
+</td>
+<td align="right">
+               .9887
+</td>
+<td align="right">
+          1666809911
+</td>
+<td align="right">
+              340480
+</td>
+<td align="right">
+               33792
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              371200
+</td>
+<td align="right">
+              1.8125
+</td>
+<td align="right">
+             7281970
+</td>
+<td align="right">
+               .9879
+</td>
+<td align="right">
+          1636661414
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+               29696
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              384000
+</td>
+<td align="right">
+               1.875
+</td>
+<td align="right">
+             7279021
+</td>
+<td align="right">
+               .9875
+</td>
+<td align="right">
+          1636661414
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+               39936
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              396800
+</td>
+<td align="right">
+              1.9375
+</td>
+<td align="right">
+             7279021
+</td>
+<td align="right">
+               .9875
+</td>
+<td align="right">
+          1636661414
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+               39936
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              409600
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+             7279021
+</td>
+<td align="right">
+               .9875
+</td>
+<td align="right">
+          1636661414
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+               39936
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               51200
+</td>
+<td align="right">
+                 .25
+</td>
+<td align="right">
+             6388626
+</td>
+<td align="right">
+              1.1472
+</td>
+<td align="right">
+          5151358743
+</td>
+<td align="right">
+               17920
+</td>
+<td align="right">
+               30720
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               64000
+</td>
+<td align="right">
+               .3125
+</td>
+<td align="right">
+             5860139
+</td>
+<td align="right">
+              1.0523
+</td>
+<td align="right">
+          2993430902
+</td>
+<td align="right">
+               35840
+</td>
+<td align="right">
+               26624
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               76800
+</td>
+<td align="right">
+                .375
+</td>
+<td align="right">
+             5757671
+</td>
+<td align="right">
+              1.0339
+</td>
+<td align="right">
+          2557112637
+</td>
+<td align="right">
+               53760
+</td>
+<td align="right">
+               22528
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               89600
+</td>
+<td align="right">
+               .4375
+</td>
+<td align="right">
+             5748761
+</td>
+<td align="right">
+              1.0323
+</td>
+<td align="right">
+          2557112637
+</td>
+<td align="right">
+               53760
+</td>
+<td align="right">
+               34816
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              102400
+</td>
+<td align="right">
+                  .5
+</td>
+<td align="right">
+             5691401
+</td>
+<td align="right">
+               1.022
+</td>
+<td align="right">
+          2318839542
+</td>
+<td align="right">
+               71680
+</td>
+<td align="right">
+               30720
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              115200
+</td>
+<td align="right">
+               .5625
+</td>
+<td align="right">
+             5659659
+</td>
+<td align="right">
+              1.0163
+</td>
+<td align="right">
+          2179224978
+</td>
+<td align="right">
+               89600
+</td>
+<td align="right">
+               26624
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              128000
+</td>
+<td align="right">
+                .625
+</td>
+<td align="right">
+             5639054
+</td>
+<td align="right">
+              1.0126
+</td>
+<td align="right">
+          2078382125
+</td>
+<td align="right">
+              107520
+</td>
+<td align="right">
+               23040
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              140800
+</td>
+<td align="right">
+               .6875
+</td>
+<td align="right">
+             5630701
+</td>
+<td align="right">
+              1.0111
+</td>
+<td align="right">
+          2078382125
+</td>
+<td align="right">
+              107520
+</td>
+<td align="right">
+               34816
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              153600
+</td>
+<td align="right">
+                 .75
+</td>
+<td align="right">
+             5612323
+</td>
+<td align="right">
+              1.0078
+</td>
+<td align="right">
+          1995741953
+</td>
+<td align="right">
+              125440
+</td>
+<td align="right">
+               30720
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              166400
+</td>
+<td align="right">
+               .8125
+</td>
+<td align="right">
+             5597287
+</td>
+<td align="right">
+              1.0051
+</td>
+<td align="right">
+          1925661630
+</td>
+<td align="right">
+              143360
+</td>
+<td align="right">
+               26624
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              179200
+</td>
+<td align="right">
+                .875
+</td>
+<td align="right">
+             5587263
+</td>
+<td align="right">
+              1.0033
+</td>
+<td align="right">
+          1871235614
+</td>
+<td align="right">
+              161280
+</td>
+<td align="right">
+               23552
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              192000
+</td>
+<td align="right">
+               .9375
+</td>
+<td align="right">
+             5580024
+</td>
+<td align="right">
+               1.002
+</td>
+<td align="right">
+          1871235614
+</td>
+<td align="right">
+              161280
+</td>
+<td align="right">
+               34816
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              204800
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             5568886
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+          1820268107
+</td>
+<td align="right">
+              179200
+</td>
+<td align="right">
+               30720
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              217600
+</td>
+<td align="right">
+              1.0625
+</td>
+<td align="right">
+             5559419
+</td>
+<td align="right">
+               .9983
+</td>
+<td align="right">
+          1771666949
+</td>
+<td align="right">
+              197120
+</td>
+<td align="right">
+               26624
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              230400
+</td>
+<td align="right">
+               1.125
+</td>
+<td align="right">
+             5551622
+</td>
+<td align="right">
+               .9969
+</td>
+<td align="right">
+          1726706326
+</td>
+<td align="right">
+              215040
+</td>
+<td align="right">
+               24064
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              243200
+</td>
+<td align="right">
+              1.1875
+</td>
+<td align="right">
+             5543826
+</td>
+<td align="right">
+               .9955
+</td>
+<td align="right">
+          1726706326
+</td>
+<td align="right">
+              215040
+</td>
+<td align="right">
+               36864
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              256000
+</td>
+<td align="right">
+                1.25
+</td>
+<td align="right">
+             5535473
+</td>
+<td align="right">
+                .994
+</td>
+<td align="right">
+          1687570562
+</td>
+<td align="right">
+              232960
+</td>
+<td align="right">
+               32768
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              268800
+</td>
+<td align="right">
+              1.3125
+</td>
+<td align="right">
+             5526006
+</td>
+<td align="right">
+               .9923
+</td>
+<td align="right">
+          1641699806
+</td>
+<td align="right">
+              250880
+</td>
+<td align="right">
+               28672
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              281600
+</td>
+<td align="right">
+               1.375
+</td>
+<td align="right">
+             5518209
+</td>
+<td align="right">
+               .9909
+</td>
+<td align="right">
+          1594918915
+</td>
+<td align="right">
+              268800
+</td>
+<td align="right">
+               24576
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              294400
+</td>
+<td align="right">
+              1.4375
+</td>
+<td align="right">
+             5511526
+</td>
+<td align="right">
+               .9897
+</td>
+<td align="right">
+          1594918915
+</td>
+<td align="right">
+              268800
+</td>
+<td align="right">
+               36864
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              307200
+</td>
+<td align="right">
+                 1.5
+</td>
+<td align="right">
+             5503173
+</td>
+<td align="right">
+               .9882
+</td>
+<td align="right">
+          1556511258
+</td>
+<td align="right">
+              286720
+</td>
+<td align="right">
+               32768
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              320000
+</td>
+<td align="right">
+              1.5625
+</td>
+<td align="right">
+             5495934
+</td>
+<td align="right">
+               .9869
+</td>
+<td align="right">
+          1519559816
+</td>
+<td align="right">
+              304640
+</td>
+<td align="right">
+               28672
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              332800
+</td>
+<td align="right">
+               1.625
+</td>
+<td align="right">
+             5490365
+</td>
+<td align="right">
+               .9859
+</td>
+<td align="right">
+          1483336480
+</td>
+<td align="right">
+              322560
+</td>
+<td align="right">
+               25088
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              345600
+</td>
+<td align="right">
+              1.6875
+</td>
+<td align="right">
+             5483682
+</td>
+<td align="right">
+               .9847
+</td>
+<td align="right">
+          1483336480
+</td>
+<td align="right">
+              322560
+</td>
+<td align="right">
+               36864
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+                1.75
+</td>
+<td align="right">
+             5476442
+</td>
+<td align="right">
+               .9834
+</td>
+<td align="right">
+          1447659225
+</td>
+<td align="right">
+              340480
+</td>
+<td align="right">
+               32768
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              371200
+</td>
+<td align="right">
+              1.8125
+</td>
+<td align="right">
+             5470317
+</td>
+<td align="right">
+               .9823
+</td>
+<td align="right">
+          1414166292
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+               28672
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              384000
+</td>
+<td align="right">
+               1.875
+</td>
+<td align="right">
+             5465862
+</td>
+<td align="right">
+               .9815
+</td>
+<td align="right">
+          1414166292
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+               40960
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              396800
+</td>
+<td align="right">
+              1.9375
+</td>
+<td align="right">
+             5465862
+</td>
+<td align="right">
+               .9815
+</td>
+<td align="right">
+          1414166292
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+               40960
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              409600
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+             5465862
+</td>
+<td align="right">
+               .9815
+</td>
+<td align="right">
+          1414166292
+</td>
+<td align="right">
+              358400
+</td>
+<td align="right">
+               40960
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ SGA_SIZE                                           NUMBER
+ SGA_SIZE_FACTOR                                    NUMBER
+ ESTD_DB_TIME                                       NUMBER
+ ESTD_DB_TIME_FACTOR                                NUMBER
+ ESTD_PHYSICAL_READS                                NUMBER
+ ESTD_BUFFER_CACHE_SIZE                             NUMBER
+ ESTD_SHARED_POOL_SIZE                              NUMBER
+ CON_ID                                             NUMBER
+
+-- requested by Rodrigo Righetti
+SELECT /*+  NO_MERGE  */ /* 1d.58 */
+       *
+  FROM gv$sga_target_advice;
+
+59 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:29:22  </font>
+</body>
+</html>

@@ -1,0 +1,1762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_edb360_323688_index v192 (2019-03-23) carlos.sierra $ -->
+<!-- edb360_copyright (c) 2019, All rights reserved. -->
+<!-- Author: carlos.sierra.usa@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="edb360_favicon.ico" type="image/x-icon" />
+<title>Active Sessions (detail)</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:white;}
+tr:hover         {color:white; background:#0066CC;}
+tr.main          {color:black; background:white;}
+tr.main:hover    {color:black; background:white;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script type="text/javascript" src="sorttable.js"></script>
+
+<!-- 00503_edb360_323688_3h_413_active_sessions_detail.html $ -->
+</head>
+<body>
+<h1> <a href="http://carlos-sierra.net/edb360-an-oracle-database-360-degree-view/" target="_blank"><img src="database.jpg" alt="eDB360" height="33" width="52" /></a> 3h.413. Active Sessions (detail) <em>(GV$SESSION)</em>  </h1>
+
+<br />
+
+
+
+<p>
+<table class="sortable">
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INST_ID
+</th>
+<th scope="col">
+SADDR
+</th>
+<th scope="col">
+SID
+</th>
+<th scope="col">
+SERIAL#
+</th>
+<th scope="col">
+AUDSID
+</th>
+<th scope="col">
+PADDR
+</th>
+<th scope="col">
+USER#
+</th>
+<th scope="col">
+USERNAME
+</th>
+<th scope="col">
+COMMAND
+</th>
+<th scope="col">
+OWNERID
+</th>
+<th scope="col">
+TADDR
+</th>
+<th scope="col">
+LOCKWAIT
+</th>
+<th scope="col">
+STATUS
+</th>
+<th scope="col">
+SERVER
+</th>
+<th scope="col">
+SCHEMA#
+</th>
+<th scope="col">
+SCHEMANAME
+</th>
+<th scope="col">
+OSUSER
+</th>
+<th scope="col">
+PROCESS
+</th>
+<th scope="col">
+MACHINE
+</th>
+<th scope="col">
+PORT
+</th>
+<th scope="col">
+TERMINAL
+</th>
+<th scope="col">
+PROGRAM
+</th>
+<th scope="col">
+TYPE
+</th>
+<th scope="col">
+SQL_ADDRESS
+</th>
+<th scope="col">
+SQL_HASH_VALUE
+</th>
+<th scope="col">
+SQL_ID
+</th>
+<th scope="col">
+SQL_CHILD_NUMBER
+</th>
+<th scope="col">
+SQL_EXEC_START
+</th>
+<th scope="col">
+SQL_EXEC_ID
+</th>
+<th scope="col">
+PREV_SQL_ADDR
+</th>
+<th scope="col">
+PREV_HASH_VALUE
+</th>
+<th scope="col">
+PREV_SQL_ID
+</th>
+<th scope="col">
+PREV_CHILD_NUMBER
+</th>
+<th scope="col">
+PREV_EXEC_START
+</th>
+<th scope="col">
+PREV_EXEC_ID
+</th>
+<th scope="col">
+PLSQL_ENTRY_OBJECT_ID
+</th>
+<th scope="col">
+PLSQL_ENTRY_SUBPROGRAM_ID
+</th>
+<th scope="col">
+PLSQL_OBJECT_ID
+</th>
+<th scope="col">
+PLSQL_SUBPROGRAM_ID
+</th>
+<th scope="col">
+MODULE
+</th>
+<th scope="col">
+MODULE_HASH
+</th>
+<th scope="col">
+ACTION
+</th>
+<th scope="col">
+ACTION_HASH
+</th>
+<th scope="col">
+CLIENT_INFO
+</th>
+<th scope="col">
+FIXED_TABLE_SEQUENCE
+</th>
+<th scope="col">
+ROW_WAIT_OBJ#
+</th>
+<th scope="col">
+ROW_WAIT_FILE#
+</th>
+<th scope="col">
+ROW_WAIT_BLOCK#
+</th>
+<th scope="col">
+ROW_WAIT_ROW#
+</th>
+<th scope="col">
+TOP_LEVEL_CALL#
+</th>
+<th scope="col">
+LOGON_TIME
+</th>
+<th scope="col">
+LAST_CALL_ET
+</th>
+<th scope="col">
+PDM
+</th>
+<th scope="col">
+FAILOVER_TYPE
+</th>
+<th scope="col">
+FAILOVER_M
+</th>
+<th scope="col">
+FAI
+</th>
+<th scope="col">
+RESOURCE_CONSUMER_GROUP
+</th>
+<th scope="col">
+PDML_STA
+</th>
+<th scope="col">
+PDDL_STA
+</th>
+<th scope="col">
+PQ_STATU
+</th>
+<th scope="col">
+CURRENT_QUEUE_DURATION
+</th>
+<th scope="col">
+CLIENT_IDENTIFIER
+</th>
+<th scope="col">
+BLOCKING_SE
+</th>
+<th scope="col">
+BLOCKING_INSTANCE
+</th>
+<th scope="col">
+BLOCKING_SESSION
+</th>
+<th scope="col">
+FINAL_BLOCK
+</th>
+<th scope="col">
+FINAL_BLOCKING_INSTANCE
+</th>
+<th scope="col">
+FINAL_BLOCKING_SESSION
+</th>
+<th scope="col">
+SEQ#
+</th>
+<th scope="col">
+EVENT#
+</th>
+<th scope="col">
+EVENT
+</th>
+<th scope="col">
+P1TEXT
+</th>
+<th scope="col">
+P1
+</th>
+<th scope="col">
+P1RAW
+</th>
+<th scope="col">
+P2TEXT
+</th>
+<th scope="col">
+P2
+</th>
+<th scope="col">
+P2RAW
+</th>
+<th scope="col">
+P3TEXT
+</th>
+<th scope="col">
+P3
+</th>
+<th scope="col">
+P3RAW
+</th>
+<th scope="col">
+WAIT_CLASS_ID
+</th>
+<th scope="col">
+WAIT_CLASS#
+</th>
+<th scope="col">
+WAIT_CLASS
+</th>
+<th scope="col">
+WAIT_TIME
+</th>
+<th scope="col">
+SECONDS_IN_WAIT
+</th>
+<th scope="col">
+STATE
+</th>
+<th scope="col">
+WAIT_TIME_MICRO
+</th>
+<th scope="col">
+TIME_REMAINING_MICRO
+</th>
+<th scope="col">
+TIME_SINCE_LAST_WAIT_MICRO
+</th>
+<th scope="col">
+SERVICE_NAME
+</th>
+<th scope="col">
+SQL_TRAC
+</th>
+<th scope="col">
+SQL_T
+</th>
+<th scope="col">
+SQL_T
+</th>
+<th scope="col">
+SQL_TRACE_
+</th>
+<th scope="col">
+SESSION_EDITION_ID
+</th>
+<th scope="col">
+CREATOR_ADDR
+</th>
+<th scope="col">
+CREATOR_SERIAL#
+</th>
+<th scope="col">
+ECID
+</th>
+<th scope="col">
+SQL_TRANSLATION_PROFILE_ID
+</th>
+<th scope="col">
+PGA_TUNABLE_MEM
+</th>
+<th scope="col">
+CON_ID
+</th>
+<th scope="col">
+EXTERNAL_NAME
+</th>
+<th scope="col">
+SQL_TEXT
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+00000031E3781318
+</td>
+<td align="right">
+                1565
+</td>
+<td align="right">
+               12057
+</td>
+<td align="right">
+            29616995
+</td>
+<td>
+00000031E30458D0
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+SYSTEM
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+               69027
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ACTIVE
+</td>
+<td>
+DEDICATED
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+SYSTEM
+</td>
+<td>
+gangl
+</td>
+<td>
+43116
+</td>
+<td>
+BHCS\BHDALABDB03
+</td>
+<td align="right">
+                3800
+</td>
+<td>
+BHDALABDB03
+</td>
+<td>
+oracle@aupp-hroradb-f9exx1 (P001)
+</td>
+<td>
+USER
+</td>
+<td>
+0000002ECE5A3A08
+</td>
+<td align="right">
+           408403360
+</td>
+<td>
+8904yycc5ggd0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-10-31T20:25:59
+</td>
+<td align="right">
+            16777223
+</td>
+<td>
+00
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+TOAD 13.2.0.258
+</td>
+<td align="right">
+           883150529
+</td>
+<td>
+43064640,278228768,414873712
+</td>
+<td align="right">
+          2580039671
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           653472029
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                 238
+</td>
+<td align="right">
+                 213
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  59
+</td>
+<td>
+2020-10-31T20:25:59
+</td>
+<td align="right">
+              491051
+</td>
+<td>
+NO
+</td>
+<td>
+NONE
+</td>
+<td>
+NONE
+</td>
+<td>
+NO
+</td>
+<td>
+SYS_GROUP
+</td>
+<td>
+DISABLED
+</td>
+<td>
+ENABLED
+</td>
+<td>
+ENABLED
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+UNKNOWN
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UNKNOWN
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                 359
+</td>
+<td>
+PX Deq: Execution Msg
+</td>
+<td>
+sleeptime/senderid
+</td>
+<td align="right">
+           268566527
+</td>
+<td>
+000000001001FFFF
+</td>
+<td>
+passes
+</td>
+<td align="right">
+              196506
+</td>
+<td>
+000000000002FF9A
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+        198112412864
+</td>
+<td>
+0000002E206B84C0
+</td>
+<td align="right">
+          2723168908
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+Idle
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              491051
+</td>
+<td>
+WAITING
+</td>
+<td align="right">
+        491050900395
+</td>
+<td align="right">
+                  -1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+frstprod
+</td>
+<td>
+DISABLED
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FIRST EXEC
+</td>
+<td align="right">
+                 133
+</td>
+<td>
+00000031E30458D0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+select * from dba_source where upper(text) like :&quot;SYS_B_0&quot;
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000003223C5A998
+</td>
+<td align="right">
+                3487
+</td>
+<td align="right">
+               60613
+</td>
+<td align="right">
+          4294967295
+</td>
+<td>
+00000031C3192C28
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SYS
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+               70968
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ACTIVE
+</td>
+<td>
+DEDICATED
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SYS
+</td>
+<td>
+oracle
+</td>
+<td>
+43070
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+pts/0
+</td>
+<td>
+oracle@aupp-hroradb-f9exx1 (PPA7)
+</td>
+<td>
+USER
+</td>
+<td>
+0000002EFA39D8B8
+</td>
+<td align="right">
+          1578906014
+</td>
+<td>
+64uhjxpg1sccy
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06T11:50:10
+</td>
+<td align="right">
+            16777216
+</td>
+<td>
+00
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+edb360
+</td>
+<td align="right">
+            21758999
+</td>
+<td>
+3h
+</td>
+<td align="right">
+          3840791157
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           875136052
+</td>
+<td align="right">
+                  -1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  76
+</td>
+<td>
+2020-11-06T11:50:11
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+NO
+</td>
+<td>
+NONE
+</td>
+<td>
+NONE
+</td>
+<td>
+NO
+</td>
+<td>
+SYS_GROUP
+</td>
+<td>
+DISABLED
+</td>
+<td>
+ENABLED
+</td>
+<td>
+ENABLED
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 359
+</td>
+<td>
+PX Deq: Execution Msg
+</td>
+<td>
+sleeptime/senderid
+</td>
+<td align="right">
+           268566527
+</td>
+<td>
+000000001001FFFF
+</td>
+<td>
+passes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000000000000001
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+        198605780208
+</td>
+<td>
+0000002E3DD3B4F0
+</td>
+<td align="right">
+          2723168908
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+Idle
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+WAITED KNOWN TIME
+</td>
+<td align="right">
+               15820
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                  43
+</td>
+<td>
+frstprod
+</td>
+<td>
+DISABLED
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FIRST EXEC
+</td>
+<td align="right">
+                 133
+</td>
+<td>
+00000031C3192C28
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+oracle
+</td>
+<td>
+SELECT TO_CHAR(ROWNUM) row_num, v0.* FROM /* 3h.413 */ ( SELECT /* active_sessions */        se.*, s
+q.sql_text   FROM gv$session se,        gv$sql sq  WHERE se.status = 'ACTIVE'    AND sq.inst_id = se
+.inst_id    AND sq.sql_id = se.sql_id    AND sq.child_number = se.sql_child_number and sq.con_id = s
+e.con_id    AND sq.sql_text NOT LIKE 'SELECT /* active_sessions */%'  ORDER BY        se.inst_id, se
+.sid, se.serial# ) v0 WHERE ROWNUM &lt;= 10000
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+00000031C40B4468
+</td>
+<td align="right">
+                5432
+</td>
+<td align="right">
+               36853
+</td>
+<td align="right">
+          4294967295
+</td>
+<td>
+000000322313A0B0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SYS
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+          2147483644
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ACTIVE
+</td>
+<td>
+DEDICATED
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SYS
+</td>
+<td>
+oracle
+</td>
+<td>
+274416
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+pts/0
+</td>
+<td>
+sqlplus@aupp-hroradb-f9exx1 (TNS V1-V3)
+</td>
+<td>
+USER
+</td>
+<td>
+0000002EFA39D8B8
+</td>
+<td align="right">
+          1578906014
+</td>
+<td>
+64uhjxpg1sccy
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06T11:50:10
+</td>
+<td align="right">
+            16777216
+</td>
+<td>
+0000002EF0BC0CC0
+</td>
+<td align="right">
+           533431254
+</td>
+<td>
+0aa70r0gwr0yq
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06T11:50:10
+</td>
+<td align="right">
+            16785138
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+edb360
+</td>
+<td align="right">
+            21758999
+</td>
+<td>
+3h
+</td>
+<td align="right">
+          3840791157
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           875135753
+</td>
+<td align="right">
+           -40012659
+</td>
+<td align="right">
+                1032
+</td>
+<td align="right">
+              587676
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  94
+</td>
+<td>
+2020-11-06T11:19:39
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+NO
+</td>
+<td>
+NONE
+</td>
+<td>
+NONE
+</td>
+<td>
+NO
+</td>
+<td>
+SYS_GROUP
+</td>
+<td>
+DISABLED
+</td>
+<td>
+ENABLED
+</td>
+<td>
+ENABLED
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+               13877
+</td>
+<td align="right">
+                 357
+</td>
+<td>
+PX Deq: Parse Reply
+</td>
+<td>
+sleeptime/senderid
+</td>
+<td align="right">
+                 200
+</td>
+<td>
+00000000000000C8
+</td>
+<td>
+passes
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+0000000000000002
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+00
+</td>
+<td align="right">
+          2723168908
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+Idle
+</td>
+<td align="right">
+                  -1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+WAITED SHORT TIME
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                 176
+</td>
+<td>
+frstprod
+</td>
+<td>
+DISABLED
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FIRST EXEC
+</td>
+<td align="right">
+                 133
+</td>
+<td>
+000000322313A0B0
+</td>
+<td align="right">
+                 183
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+oracle
+</td>
+<td>
+SELECT TO_CHAR(ROWNUM) row_num, v0.* FROM /* 3h.413 */ ( SELECT /* active_sessions */        se.*, s
+q.sql_text   FROM gv$session se,        gv$sql sq  WHERE se.status = 'ACTIVE'    AND sq.inst_id = se
+.inst_id    AND sq.sql_id = se.sql_id    AND sq.child_number = se.sql_child_number and sq.con_id = s
+e.con_id    AND sq.sql_text NOT LIKE 'SELECT /* active_sessions */%'  ORDER BY        se.inst_id, se
+.sid, se.serial# ) v0 WHERE ROWNUM &lt;= 10000
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+0000003223D1B5F8
+</td>
+<td align="right">
+                3883
+</td>
+<td align="right">
+               33718
+</td>
+<td align="right">
+          4294967295
+</td>
+<td>
+0000003223127D50
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SYS
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+               70968
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ACTIVE
+</td>
+<td>
+DEDICATED
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SYS
+</td>
+<td>
+oracle
+</td>
+<td>
+214552
+</td>
+<td>
+aupp-hroradb-f9exx1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+pts/0
+</td>
+<td>
+oracle@aupp-hroradb-f9exx2 (PPA7)
+</td>
+<td>
+USER
+</td>
+<td>
+0000002EEA02AB48
+</td>
+<td align="right">
+          1578906014
+</td>
+<td>
+64uhjxpg1sccy
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06T11:50:10
+</td>
+<td align="right">
+            16777216
+</td>
+<td>
+00
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+edb360
+</td>
+<td align="right">
+            21758999
+</td>
+<td>
+3h
+</td>
+<td align="right">
+          3840791157
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           763209907
+</td>
+<td align="right">
+                  -1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  59
+</td>
+<td>
+2020-11-06T11:50:11
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+NO
+</td>
+<td>
+NONE
+</td>
+<td>
+NONE
+</td>
+<td>
+NO
+</td>
+<td>
+SYS_GROUP
+</td>
+<td>
+DISABLED
+</td>
+<td>
+ENABLED
+</td>
+<td>
+ENABLED
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                  17
+</td>
+<td align="right">
+                 355
+</td>
+<td>
+PX Deq Credit: send blkd
+</td>
+<td>
+sleeptime/senderid
+</td>
+<td align="right">
+           268566527
+</td>
+<td>
+000000001001FFFF
+</td>
+<td>
+passes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000000000000001
+</td>
+<td>
+qref
+</td>
+<td align="right">
+        203415197336
+</td>
+<td>
+0000002F5C7D9698
+</td>
+<td align="right">
+          2723168908
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+Idle
+</td>
+<td align="right">
+                  -1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+WAITED SHORT TIME
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+frstprod
+</td>
+<td>
+DISABLED
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FIRST EXEC
+</td>
+<td align="right">
+                 133
+</td>
+<td>
+0000003223127D50
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+oracle
+</td>
+<td>
+SELECT TO_CHAR(ROWNUM) row_num, v0.* FROM /* 3h.413 */ ( SELECT /* active_sessions */        se.*, s
+q.sql_text   FROM gv$session se,        gv$sql sq  WHERE se.status = 'ACTIVE'    AND sq.inst_id = se
+.inst_id    AND sq.sql_id = se.sql_id    AND sq.child_number = se.sql_child_number and sq.con_id = s
+e.con_id    AND sq.sql_text NOT LIKE 'SELECT /* active_sessions */%'  ORDER BY        se.inst_id, se
+.sid, se.serial# ) v0 WHERE ROWNUM &lt;= 10000
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<br />
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ SADDR                                              RAW(8)
+ SID                                                NUMBER
+ SERIAL#                                            NUMBER
+ AUDSID                                             NUMBER
+ PADDR                                              RAW(8)
+ USER#                                              NUMBER
+ USERNAME                                           VARCHAR2(30)
+ COMMAND                                            NUMBER
+ OWNERID                                            NUMBER
+ TADDR                                              VARCHAR2(16)
+ LOCKWAIT                                           VARCHAR2(16)
+ STATUS                                             VARCHAR2(8)
+ SERVER                                             VARCHAR2(9)
+ SCHEMA#                                            NUMBER
+ SCHEMANAME                                         VARCHAR2(30)
+ OSUSER                                             VARCHAR2(30)
+ PROCESS                                            VARCHAR2(24)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ TERMINAL                                           VARCHAR2(30)
+ PROGRAM                                            VARCHAR2(48)
+ TYPE                                               VARCHAR2(10)
+ SQL_ADDRESS                                        RAW(8)
+ SQL_HASH_VALUE                                     NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_EXEC_START                                     DATE
+ SQL_EXEC_ID                                        NUMBER
+ PREV_SQL_ADDR                                      RAW(8)
+ PREV_HASH_VALUE                                    NUMBER
+ PREV_SQL_ID                                        VARCHAR2(13)
+ PREV_CHILD_NUMBER                                  NUMBER
+ PREV_EXEC_START                                    DATE
+ PREV_EXEC_ID                                       NUMBER
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ MODULE                                             VARCHAR2(64)
+ MODULE_HASH                                        NUMBER
+ ACTION                                             VARCHAR2(64)
+ ACTION_HASH                                        NUMBER
+ CLIENT_INFO                                        VARCHAR2(64)
+ FIXED_TABLE_SEQUENCE                               NUMBER
+ ROW_WAIT_OBJ#                                      NUMBER
+ ROW_WAIT_FILE#                                     NUMBER
+ ROW_WAIT_BLOCK#                                    NUMBER
+ ROW_WAIT_ROW#                                      NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ LOGON_TIME                                         DATE
+ LAST_CALL_ET                                       NUMBER
+ PDML_ENABLED                                       VARCHAR2(3)
+ FAILOVER_TYPE                                      VARCHAR2(13)
+ FAILOVER_METHOD                                    VARCHAR2(10)
+ FAILED_OVER                                        VARCHAR2(3)
+ RESOURCE_CONSUMER_GROUP                            VARCHAR2(32)
+ PDML_STATUS                                        VARCHAR2(8)
+ PDDL_STATUS                                        VARCHAR2(8)
+ PQ_STATUS                                          VARCHAR2(8)
+ CURRENT_QUEUE_DURATION                             NUMBER
+ CLIENT_IDENTIFIER                                  VARCHAR2(64)
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_INSTANCE                                  NUMBER
+ BLOCKING_SESSION                                   NUMBER
+ FINAL_BLOCKING_SESSION_STATUS                      VARCHAR2(11)
+ FINAL_BLOCKING_INSTANCE                            NUMBER
+ FINAL_BLOCKING_SESSION                             NUMBER
+ SEQ#                                               NUMBER
+ EVENT#                                             NUMBER
+ EVENT                                              VARCHAR2(64)
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P1RAW                                              RAW(8)
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P2RAW                                              RAW(8)
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ P3RAW                                              RAW(8)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_CLASS#                                        NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_TIME                                          NUMBER
+ SECONDS_IN_WAIT                                    NUMBER
+ STATE                                              VARCHAR2(19)
+ WAIT_TIME_MICRO                                    NUMBER
+ TIME_REMAINING_MICRO                               NUMBER
+ TIME_SINCE_LAST_WAIT_MICRO                         NUMBER
+ SERVICE_NAME                                       VARCHAR2(64)
+ SQL_TRACE                                          VARCHAR2(8)
+ SQL_TRACE_WAITS                                    VARCHAR2(5)
+ SQL_TRACE_BINDS                                    VARCHAR2(5)
+ SQL_TRACE_PLAN_STATS                               VARCHAR2(10)
+ SESSION_EDITION_ID                                 NUMBER
+ CREATOR_ADDR                                       RAW(8)
+ CREATOR_SERIAL#                                    NUMBER
+ ECID                                               VARCHAR2(64)
+ SQL_TRANSLATION_PROFILE_ID                         NUMBER
+ PGA_TUNABLE_MEM                                    NUMBER
+ CON_ID                                             NUMBER
+ EXTERNAL_NAME                                      VARCHAR2(1024)
+
+SELECT /* active_sessions */
+       se.*, sq.sql_text
+  FROM gv$session se,
+       gv$sql sq
+ WHERE se.status = 'ACTIVE'
+   AND sq.inst_id = se.inst_id
+   AND sq.sql_id = se.sql_id
+   AND sq.child_number = se.sql_child_number
+and sq.con_id = se.con_id
+   AND sq.sql_text NOT LIKE 'SELECT /* active_sessions */%'
+ ORDER BY
+       se.inst_id, se.sid, se.serial#;
+
+4 rows selected.
+</pre>
+
+<br />
+<font class="f">edb360 (c) 2019. Version v192 (2019-03-23). Timestamp: 2020-11-06T11:50:11  </font>
+</body>
+</html>

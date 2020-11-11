@@ -1,0 +1,284 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pre-check ASH on AWR                                      awr_ash_pre_check.sql
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Control
+~~~~~~~
+
+DATE_AND_TIME
+---------------------------------------------------------------------------
+2020-11-06T11:20:13
+
+                DBID DB_NAME   DB_UNIQUE_NAME                 VERSION                  DB_BLOCK_SIZE            INSTANCES
+-------------------- --------- ------------------------------ ----------------- -------------------- --------------------
+          2109323688 PRD       PRD_iad3vt                     12.1.0.2.0                        8192                    2
+
+                DBID SNAP_INTERVAL     RETENTION         LAST_SNAP_TIME                                                              LAST_PURGE_TIME                                                             DAYS_SINCE_PURGE
+-------------------- ----------------- ----------------- --------------------------------------------------------------------------- --------------------------------------------------------------------------- ----------------
+          3242645605 +00000 01:00:00.0 +00008 00:00:00.0 2020-09-18T21:40:37                                                         2020-09-18T21:40:37                                                         48.6
+           466198705 +00000 00:30:00.0 +00090 00:00:00.0 2020-09-18T19:24:44                                                         2020-09-18T00:28:18                                                         49.5
+
+                DBID          BASELINE_ID BASELINE_TYPE        START_SNAP_ID START_SNAP_DATE                                                                      END_SNAP_ID END_SNAP_DATE                                                                 MOVING_WINDOW_SIZE
+-------------------- -------------------- ------------- -------------------- --------------------------------------------------------------------------- -------------------- --------------------------------------------------------------------------- --------------------
+          2109323688                    0 MOVING_WINDOW                 4577 2020-10-29T11:30:46                                                                         4962 2020-11-06T11:00:16                                                                            8
+
+         BASELINE_ID CREATION_TIME                                                               BASELINE_NAME
+-------------------- --------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------
+                   0 2020-07-13T19:24:03                                                         SYSTEM_MOVING_WINDOW
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CBO Statistics
+~~~~~~~~~~~~~~
+
+TABLE_NAME                                                                                                                                     BLOCKS             NUM_ROWS LAST_ANALYZED                                                               LOCKED STALE
+-------------------------------------------------------------------------------------------------------------------------------- -------------------- -------------------- --------------------------------------------------------------------------- ------ -----
+WRH$_ACTIVE_SESSION_HISTORY                                                                                                                    308984              6635980 2020-09-19T06:58:17                                                                NO
+
+PARTITION_NAME                                                                                                                                 BLOCKS             NUM_ROWS LAST_ANALYZED                                                               LOCKED STALE
+-------------------------------------------------------------------------------------------------------------------------------- -------------------- -------------------- --------------------------------------------------------------------------- ------ -----
+WRH$_ACTIVE_3242645605_0                                                                                                                            0                    0 2020-09-19T06:56:55                                                                NO
+WRH$_ACTIVE_466198705_41962                                                                                                                     31616               677210 2020-09-19T06:57:03                                                                NO
+WRH$_ACTIVE_466198705_42346                                                                                                                     24989               538520 2020-09-19T06:57:07                                                                NO
+WRH$_ACTIVE_466198705_42730                                                                                                                     39524               845870 2020-09-19T06:57:12                                                                NO
+WRH$_ACTIVE_466198705_43114                                                                                                                     22867               494880 2020-09-19T06:57:16                                                                NO
+WRH$_ACTIVE_466198705_43498                                                                                                                     39066               832670 2020-09-19T06:57:20                                                                NO
+WRH$_ACTIVE_466198705_43882                                                                                                                     17502               381580 2020-09-19T06:57:22                                                                NO
+WRH$_ACTIVE_466198705_44266                                                                                                                     20077               436570 2020-09-19T06:57:35                                                                NO
+WRH$_ACTIVE_466198705_44650                                                                                                                     36643               784630 2020-09-19T06:57:41                                                                NO
+WRH$_ACTIVE_466198705_45034                                                                                                                     28558               596350 2020-09-19T06:57:45                                                                NO
+WRH$_ACTIVE_466198705_45418                                                                                                                     28037               610190 2020-09-19T06:57:50                                                                NO
+WRH$_ACTIVE_466198705_45802                                                                                                                     15273               344590 2020-09-19T06:57:52                                                                NO
+WRH$_ACTIVE_466198705_46186                                                                                                                      4832               113490 2020-09-19T06:57:53                                                                NO
+WRH$_ACTIVE_SES_MXDB_MXSN                                                                                                                           0                    0 2020-09-19T06:57:53                                                                NO
+
+ASH_LAST_ANALYZED   ASH_CBO_STATS_AGE_DAYS
+------------------- ----------------------
+2020-09-19T06:58:17 48.2
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CBO Table Modifications
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+% INS                INSERTS             NUM_ROWS
+------- -------------------- --------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Table Segments
+~~~~~~~~~~~~~~
+
+T PARTITION_NAME                               BLOCKS SIZE_GB
+- ------------------------------ -------------------- ------------
+P WRH$_ACTIVE_3242645605_0                          8      0.0 GBs
+P WRH$_ACTIVE_466198705_41962                   32128      0.3 GBs
+P WRH$_ACTIVE_466198705_42346                   25344      0.2 GBs
+P WRH$_ACTIVE_466198705_42730                   40192      0.3 GBs
+P WRH$_ACTIVE_466198705_43114                   23168      0.2 GBs
+P WRH$_ACTIVE_466198705_43498                   39808      0.3 GBs
+P WRH$_ACTIVE_466198705_43882                   18304      0.1 GBs
+P WRH$_ACTIVE_466198705_44266                   20096      0.2 GBs
+P WRH$_ACTIVE_466198705_44650                   37120      0.3 GBs
+P WRH$_ACTIVE_466198705_45034                   29312      0.2 GBs
+P WRH$_ACTIVE_466198705_45418                   28416      0.2 GBs
+P WRH$_ACTIVE_466198705_45802                   15488      0.1 GBs
+P WRH$_ACTIVE_466198705_46186                    4864      0.0 GBs
+P WRH$_ACTIVE_SES_MXDB_MXSN                         8      0.0 GBs
+
+ALL_SEGMENTS                                 BLOCKS ASH_SIZE_GB
+------------------------------ -------------------- ------------
+WRH$_ACTIVE_SESSION_HISTORY                  314256 2.6 GBs
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Objects
+~~~~~~~
+
+T ASH_OBJECT                     CREATED                                                                     LAST_DDL_TIME
+- ------------------------------ --------------------------------------------------------------------------- -------------------
+T WRH$_ACTIVE_SESSION_HISTORY    2016-03-21T11:58:34                                                         2020-09-18T21:40:39
+P WRH$_ACTIVE_3242645605_0       2020-09-18T21:40:39                                                         2020-09-18T21:40:39
+P WRH$_ACTIVE_466198705_41962    2020-06-18T00:08:58                                                         2020-06-26T00:17:38
+P WRH$_ACTIVE_466198705_42346    2020-06-26T00:17:38                                                         2020-07-04T00:26:07
+P WRH$_ACTIVE_466198705_42730    2020-07-04T00:26:07                                                         2020-07-12T00:00:56
+P WRH$_ACTIVE_466198705_43114    2020-07-12T00:00:56                                                         2020-07-20T00:13:05
+P WRH$_ACTIVE_466198705_43498    2020-07-20T00:13:05                                                         2020-07-28T00:19:13
+P WRH$_ACTIVE_466198705_43882    2020-07-28T00:19:13                                                         2020-08-05T00:01:01
+P WRH$_ACTIVE_466198705_44266    2020-08-05T00:01:01                                                         2020-08-13T00:11:15
+P WRH$_ACTIVE_466198705_44650    2020-08-13T00:11:15                                                         2020-08-21T00:19:18
+P WRH$_ACTIVE_466198705_45034    2020-08-21T00:19:18                                                         2020-08-29T00:29:19
+P WRH$_ACTIVE_466198705_45418    2020-08-29T00:29:19                                                         2020-09-06T00:10:56
+P WRH$_ACTIVE_466198705_45802    2020-09-06T00:10:56                                                         2020-09-14T00:22:08
+P WRH$_ACTIVE_466198705_46186    2020-09-14T00:22:08                                                         2020-09-14T00:22:08
+P WRH$_ACTIVE_SES_MXDB_MXSN      2016-03-21T11:58:34                                                         2020-09-18T21:40:39
+
+SEG_LAST_DDL_TIME              LAST_DDL_AGE_DAYS
+------------------------------ -----------------
+2020-09-18T21:40:39            48.6
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Range of Snapshots per Partition
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+please wait...
+
+WRH$_ACTIVE_3242645605_0
+	*** empty ***
+---
+WRH$_ACTIVE_466198705_41962
+	dbid:466198705 samples:677971
+	min_snap_id:41962 min_sample_date:2020-06-18T00:00:02
+	med_snap_id:42198 med_sample_date:2020-06-22T22:29:29
+	max_snap_id:42345 max_sample_date:2020-06-26T00:00:13
+---
+WRH$_ACTIVE_466198705_42346
+	dbid:466198705 samples:539608
+	min_snap_id:42346 min_sample_date:2020-06-26T00:00:23
+	med_snap_id:42560 med_sample_date:2020-06-30T11:24:14
+	max_snap_id:42729 max_sample_date:2020-07-04T00:00:21
+---
+WRH$_ACTIVE_466198705_42730
+	dbid:466198705 samples:839909
+	min_snap_id:42730 min_sample_date:2020-07-04T00:00:31
+	med_snap_id:42928 med_sample_date:2020-07-08T03:20:17
+	max_snap_id:43113 max_sample_date:2020-07-11T23:59:43
+---
+WRH$_ACTIVE_466198705_43114
+	dbid:466198705 samples:492199
+	min_snap_id:43114 min_sample_date:2020-07-11T23:59:53
+	med_snap_id:43307 med_sample_date:2020-07-16T00:34:19
+	max_snap_id:43497 max_sample_date:2020-07-20T00:00:04
+---
+WRH$_ACTIVE_466198705_43498
+	dbid:466198705 samples:831463
+	min_snap_id:43498 min_sample_date:2020-07-20T00:00:14
+	med_snap_id:43672 med_sample_date:2020-07-23T15:12:42
+	max_snap_id:43881 max_sample_date:2020-07-28T00:00:33
+---
+WRH$_ACTIVE_466198705_43882
+	dbid:466198705 samples:382053
+	min_snap_id:43882 min_sample_date:2020-07-28T00:00:43
+	med_snap_id:44173 med_sample_date:2020-08-03T01:57:49
+	max_snap_id:44265 max_sample_date:2020-08-05T00:00:30
+---
+WRH$_ACTIVE_466198705_44266
+	dbid:466198705 samples:435239
+	min_snap_id:44266 min_sample_date:2020-08-05T00:00:40
+	med_snap_id:44557 med_sample_date:2020-08-11T01:34:13
+	max_snap_id:44649 max_sample_date:2020-08-13T00:00:06
+---
+WRH$_ACTIVE_466198705_44650
+	dbid:466198705 samples:781797
+	min_snap_id:44650 min_sample_date:2020-08-13T00:00:16
+	med_snap_id:44853 med_sample_date:2020-08-17T05:52:19
+	max_snap_id:45033 max_sample_date:2020-08-21T00:00:21
+---
+WRH$_ACTIVE_466198705_45034
+	dbid:466198705 samples:598436
+	min_snap_id:45034 min_sample_date:2020-08-21T00:00:31
+	med_snap_id:45211 med_sample_date:2020-08-24T16:41:48
+	max_snap_id:45417 max_sample_date:2020-08-29T00:00:44
+---
+WRH$_ACTIVE_466198705_45418
+	dbid:466198705 samples:610273
+	min_snap_id:45418 min_sample_date:2020-08-29T00:00:54
+	med_snap_id:45592 med_sample_date:2020-09-01T15:20:27
+	max_snap_id:45801 max_sample_date:2020-09-05T23:59:45
+---
+WRH$_ACTIVE_466198705_45802
+	dbid:466198705 samples:344602
+	min_snap_id:45802 min_sample_date:2020-09-05T23:59:55
+	med_snap_id:45972 med_sample_date:2020-09-09T13:20:12
+	max_snap_id:46185 max_sample_date:2020-09-14T00:00:04
+---
+WRH$_ACTIVE_466198705_46186
+	dbid:466198705 samples:113676
+	min_snap_id:46186 min_sample_date:2020-09-14T00:00:14
+	med_snap_id:46291 med_sample_date:2020-09-16T04:40:21
+	max_snap_id:46414 max_sample_date:2020-09-18T19:24:26
+---
+WRH$_ACTIVE_SES_MXDB_MXSN
+	*** empty ***
+---
+total_ash_samples:6647226 (total db_time: 769.4 days)
+total_days_of_history:92.8
+min_sample_date:2020-06-18T00:00:02
+max_sample_date:2020-09-18T19:24:26
+med_sample_date:2020-07-08T03:20:17 (for largest partition)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Pre-check results
+~~~~~~~~~~~~~~~~~
+
+If there are outdated AWR baselines, use DBMS_WORKLOAD_REPOSITORY.DROP_BASELINE.
+(preserve SYSTEM_MOVING_WINDOW).
+
+ASH stats are 48.2 day(s) old (2020-09-19T06:58:17).
+If older than a week then eDB360 may take long to execute
+(suboptimal execution plans).
+
+There are 92.8 day(s) of history in ASH.
+If more than 31 days then eDB360 may take long to execute
+(default retention is 8 days, and one month is usually enough).
+
+Median age of largest ASH partition is 121.3 day(s) (2020-07-08T03:20:17).
+If older than a month then eDB360 may take long to execute
+(a median older than half the retention days usually means purging not happening).
+
+ASH size is 2.6 GBs
+If larger than 1 GB then eDB360 may take long to execute
+(eDB360 may timeout after default threshold of 24hrs).
+
+Last DDL on ASH objects is 48.6 day(s) old (2020-09-18T21:40:39).
+If older than a day then eDB360 may take long to execute
+(automatic daily partition split may not be happening).
+
+Max percent of INSERTs into an ASH segment since stats gathering is %
+If over 50% then eDB360 may take long to execute
+(statistics may be locked or outdated, thus prone to suboptimal execution plans).
+
+One full scan of ASH takes 122 second(s) on this database.
+One scan of 31 day(s) of data takes 1 second(s) on this database.
+eDB360 performs over 250 scans of 31 day(s) of data on ASH per instance.
+About 1/2 of eDB360 work load is access to ASH.
+
+*******************************************************************************
+*** Estimated ballpark execution time for eDB360 is 1 hour(s),
+*** that is assuming optimal execution plans (with representative CBO stats).
+*******************************************************************************
+
+If pre-check suggests eDB360 may take long to execute (over 24 hrs),
+then take care first of ASH state:
+1. If stats are outdated, use edb360-master/sql/gather_stats_wr_sys.sql.
+2. If last DDL is old, proceed to manually split partition ASH.
+3. If ASH size is over 2 GB, purge ASH.
+4. If retention days are over 31, consider reducing to 31.
+5. If snapshots intervals are more frequent than 1hr, consider setting them to 1hr.
+
+References:
+WRH$_ACTIVE_SESSION_HISTORY Does Not Get Purged Based Upon the Retention Policy (Doc ID 387914.1)
+Bug 14084247 - ORA-1555 or ORA-12571 Failed AWR purge can lead to continued SYSAUX space use (Doc ID 14084247.8)
+Manually Purge the Optimizer Statistics and AWR Snaphots to Reduce Space Usage of SYSAUX Tablespace (Doc ID 1965061.1)
+How to Recreate The AWR ( AUTOMATIC WORKLOAD ) Repository (Doc ID 782974.1)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

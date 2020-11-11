@@ -1,0 +1,2990 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00961_sqld360_323688_3hwq5m5h3gkaq_3a_68_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_CM_BASEBASE.CMBS_MEMB</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 01124_sqld360_323688_3hwq5m5h3gkaq_3a_149_height_balanced_histogram_on_column_tcmbasebasecmbsmemb.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.149. Height Balanced histogram on Column T_CM_BASEBASE.CMBS_MEMB <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+APPROXIMATE_VALUE
+</th>
+<th scope="col">
+ROWS_PER_BUCKET
+</th>
+<th scope="col">
+SELECTIVITY
+</th>
+<th scope="col">
+CHART_TEXT
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+10000122
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+ApproxValue: 10000122 NumRows: 0 Sel: 0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+10085344
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10085344 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+10091528
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10091528 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+10098067
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10098067 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+10104332
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10104332 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+10110325
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10110325 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+10116673
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10116673 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+10122572
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10122572 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+10128290
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10128290 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+10134129
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10134129 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+10140074
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10140074 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+10146266
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10146266 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+10152412
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10152412 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+10158393
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10158393 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+10164461
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10164461 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+10170486
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10170486 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+10176520
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10176520 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+10182814
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10182814 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+10189075
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10189075 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+10195124
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10195124 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+10201462
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10201462 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+10207404
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10207404 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td>
+10213122
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10213122 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+10219134
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10219134 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td>
+10225263
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10225263 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td>
+10231574
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10231574 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td>
+10237364
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10237364 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td>
+10242896
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10242896 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td>
+10248196
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10248196 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td>
+10253845
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10253845 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td>
+10259126
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10259126 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+10269543
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10269543 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td>
+10283004
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10283004 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td>
+10314074
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10314074 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td>
+10350747
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10350747 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+10374682
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10374682 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+10404399
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10404399 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+10439057
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10439057 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+10478258
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10478258 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+10492701
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10492701 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+10503082
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10503082 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+10513303
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10513303 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td>
+10524651
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10524651 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td>
+10534925
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10534925 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td>
+10545078
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10545078 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td>
+10554305
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10554305 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td>
+10568805
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10568805 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td>
+10578445
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10578445 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td>
+10588714
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10588714 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td>
+10598713
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10598713 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td>
+10607827
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10607827 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td>
+10615923
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10615923 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td>
+10622411
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10622411 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td>
+10628683
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10628683 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td>
+10635596
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10635596 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td>
+10642645
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10642645 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td>
+10650885
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10650885 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td>
+10657590
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10657590 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td>
+10663333
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10663333 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td>
+10668398
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10668398 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td>
+10672822
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10672822 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td>
+10679801
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10679801 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td>
+10687413
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10687413 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td>
+10693338
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10693338 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td>
+10698339
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10698339 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td>
+10704840
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10704840 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td>
+10712216
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10712216 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td>
+10718699
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10718699 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td>
+10725034
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10725034 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td>
+10840416
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10840416 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td>
+10882876
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10882876 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td>
+10919075
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 10919075 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td>
+11021025
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11021025 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td>
+11033264
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11033264 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td>
+11042062
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11042062 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td>
+11052196
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11052196 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td>
+11063913
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11063913 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td>
+11072388
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11072388 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td>
+11079364
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11079364 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td>
+11087129
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11087129 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td>
+11096191
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11096191 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td>
+11106787
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11106787 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td>
+11169732
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11169732 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td>
+11181343
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11181343 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td>
+11193794
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11193794 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td>
+11202406
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11202406 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td>
+11212481
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11212481 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td>
+11220134
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11220134 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td>
+11225148
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11225148 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td>
+11230751
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11230751 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td>
+11237382
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11237382 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td>
+11246865
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11246865 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td>
+11257832
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11257832 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td>
+11268030
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11268030 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td>
+11268032
+</td>
+<td align="right">
+              145493
+</td>
+<td align="right">
+             .342519
+</td>
+<td>
+ApproxValue: 11268032 NumRows: 145493 Sel: .342519
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td>
+11276361
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11276361 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td>
+11279093
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11279093 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td>
+11284197
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11284197 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td>
+11287811
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11287811 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td>
+11295080
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11295080 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td>
+11299450
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11299450 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td>
+11304581
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11304581 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td>
+11309286
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11309286 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td>
+11315406
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11315406 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td>
+11319044
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11319044 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td>
+11324178
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11324178 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td>
+11329834
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11329834 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td>
+11332901
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11332901 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td>
+11336098
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11336098 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td>
+11339463
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11339463 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td>
+11341995
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11341995 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td>
+11344573
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11344573 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td>
+11347807
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11347807 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td>
+11350253
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11350253 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td>
+11353311
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11353311 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td>
+11356257
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11356257 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td>
+11358443
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11358443 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td>
+11361459
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11361459 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td>
+11363886
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11363886 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td>
+11367455
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11367455 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td>
+11370114
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11370114 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td>
+11378240
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11378240 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td>
+11425357
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11425357 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td>
+11442680
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11442680 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td>
+11457324
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11457324 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td>
+11472278
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11472278 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td>
+11493362
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11493362 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td>
+11508506
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11508506 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td>
+11517198
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11517198 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td>
+11526320
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11526320 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td>
+11535472
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11535472 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td>
+11544328
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11544328 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td>
+11554342
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11554342 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td>
+11569044
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11569044 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td>
+11587475
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11587475 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td>
+11596357
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11596357 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td>
+11606990
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11606990 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td>
+11617019
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11617019 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td>
+11628982
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11628982 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td>
+11633286
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11633286 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td>
+11634468
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11634468 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td>
+11635610
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11635610 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td>
+11638262
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11638262 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td>
+11642087
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11642087 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td>
+11643816
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11643816 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td>
+11645801
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11645801 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td>
+11649409
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11649409 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td>
+11651347
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11651347 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td>
+11653260
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11653260 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td>
+11657067
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11657067 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td>
+11659290
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11659290 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td>
+11661187
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11661187 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td>
+11663601
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11663601 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td>
+11666176
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11666176 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td>
+11667967
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11667967 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td>
+11670812
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11670812 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td>
+11674454
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11674454 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td>
+11678311
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11678311 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td>
+11682069
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11682069 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td>
+11686785
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11686785 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td>
+11690682
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11690682 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td>
+11695732
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11695732 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td>
+11699519
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11699519 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td>
+11703953
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11703953 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td>
+11730038
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11730038 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td>
+11733677
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11733677 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td>
+11976734
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11976734 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td>
+11982460
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11982460 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td>
+11987407
+</td>
+<td align="right">
+                1672
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 11987407 NumRows: 1672 Sel: .003937
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'NUMBER' = 'DATE' or 'NUMBER' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'NUMBER' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 424774) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'NUMBER' = 'DATE' or 'NUMBER' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'NUMBER' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 424774)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_CM_BASEBASE'
+AND a.column_name = 'CMBS_MEMB'
+ORDER BY a.endpoint_number;
+
+169 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-02/22:11:25 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>
