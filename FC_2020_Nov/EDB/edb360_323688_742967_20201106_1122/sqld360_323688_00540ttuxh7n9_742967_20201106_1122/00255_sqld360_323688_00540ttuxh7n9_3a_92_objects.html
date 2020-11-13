@@ -1,0 +1,6357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_00540ttuxh7n9_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Objects</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00255_sqld360_323688_00540ttuxh7n9_3a_92_objects.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.92. Objects <em>(DBA_OBJECTS)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+OWNER
+</th>
+<th scope="col">
+OBJECT_NAME
+</th>
+<th scope="col">
+SUBOBJECT_NAME
+</th>
+<th scope="col">
+OBJECT_ID
+</th>
+<th scope="col">
+DATA_OBJECT_ID
+</th>
+<th scope="col">
+OBJECT_TYPE
+</th>
+<th scope="col">
+CREATED
+</th>
+<th scope="col">
+LAST_DDL_TIME
+</th>
+<th scope="col">
+TIMESTAMP
+</th>
+<th scope="col">
+STATUS
+</th>
+<th scope="col">
+T
+</th>
+<th scope="col">
+G
+</th>
+<th scope="col">
+S
+</th>
+<th scope="col">
+NAMESPACE
+</th>
+<th scope="col">
+EDITION_NAME
+</th>
+<th scope="col">
+SHARING
+</th>
+<th scope="col">
+E
+</th>
+<th scope="col">
+O
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_ATTP_DFLTLTR_HEAD
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118714
+</td>
+<td align="right">
+              118714
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_ATTP_DSCM
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118722
+</td>
+<td align="right">
+              118722
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15:18:58:16
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_CAREPLAN_NOTE_ID_DDLI_ID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              521744
+</td>
+<td align="right">
+              521744
+</td>
+<td>
+INDEX
+</td>
+<td>
+2019-03-15/23:59:03
+</td>
+<td>
+2019-03-15/23:59:03
+</td>
+<td>
+2019-03-15:23:59:03
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_CCTP_DFLTLDNGMSG
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118744
+</td>
+<td align="right">
+              118744
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_CLASSTYPE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118724
+</td>
+<td align="right">
+              118724
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15:18:58:16
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_CRTD
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118713
+</td>
+<td align="right">
+              118713
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_DDL
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118698
+</td>
+<td align="right">
+              118698
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15:18:58:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_FRSTATVDBY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118710
+</td>
+<td align="right">
+              118710
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_LAS_ATVDBY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118741
+</td>
+<td align="right">
+              118741
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_LAS_DCTDBY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118697
+</td>
+<td align="right">
+              118697
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15:18:58:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_OBJ_STT
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118725
+</td>
+<td align="right">
+              118725
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15:18:58:16
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_OWNR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118719
+</td>
+<td align="right">
+              118719
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_PRNT_ID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118747
+</td>
+<td align="right">
+              118747
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_PRVSOWNR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118727
+</td>
+<td align="right">
+              118727
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15:18:58:16
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_PRVSOWNRPRMN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118694
+</td>
+<td align="right">
+              118694
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15:18:58:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_PRVSRFNGTSK
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118717
+</td>
+<td align="right">
+              118717
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_PRVSRFNGTSK_PRMN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118718
+</td>
+<td align="right">
+              118718
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_PRVSSNDR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118743
+</td>
+<td align="right">
+              118743
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_PRVSTNFR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118721
+</td>
+<td align="right">
+              118721
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15:18:58:16
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_RATNAPVL
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118742
+</td>
+<td align="right">
+              118742
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_RFNGWKFWTSK
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118702
+</td>
+<td align="right">
+              118702
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_TNFR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118720
+</td>
+<td align="right">
+              118720
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15:18:58:16
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_DDLI_UNIVID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118733
+</td>
+<td align="right">
+              118733
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_ATCDPVDR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124860
+</td>
+<td align="right">
+              124860
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_BASENOTE_NID_CT_NCRTD
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              521736
+</td>
+<td align="right">
+              521736
+</td>
+<td>
+INDEX
+</td>
+<td>
+2019-03-15/23:58:58
+</td>
+<td>
+2019-03-15/23:58:58
+</td>
+<td>
+2019-03-15:23:58:58
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_CALLDRTNUNTS
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124854
+</td>
+<td align="right">
+              124854
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15:19:12:40
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_CASENOTETYP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124869
+</td>
+<td align="right">
+              124869
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15:19:12:42
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_CLASSTYPE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124847
+</td>
+<td align="right">
+              124847
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:39
+</td>
+<td>
+2016-04-15/19:12:39
+</td>
+<td>
+2016-04-15:19:12:39
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_CLINICALDATAENTRY_ID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              647608
+</td>
+<td align="right">
+              647608
+</td>
+<td>
+INDEX
+</td>
+<td>
+2020-03-06/19:34:49
+</td>
+<td>
+2020-03-06/19:34:49
+</td>
+<td>
+2020-03-06:19:34:49
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_CM_BASE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124866
+</td>
+<td align="right">
+              124866
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_CM_NOTETYP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124870
+</td>
+<td align="right">
+              124870
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15:19:12:42
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_CRTD
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124876
+</td>
+<td align="right">
+              124876
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:43
+</td>
+<td>
+2016-04-15/19:12:43
+</td>
+<td>
+2016-04-15:19:12:43
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_CSTMFLDS
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124878
+</td>
+<td align="right">
+              124878
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:43
+</td>
+<td>
+2016-04-15/19:12:43
+</td>
+<td>
+2016-04-15:19:12:43
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_GRP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124850
+</td>
+<td align="right">
+              124850
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15:19:12:40
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_MDCLSRVC
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124856
+</td>
+<td align="right">
+              124856
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15:19:12:40
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_MDCLSRVC_NID_CT_NCRTD
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              521737
+</td>
+<td align="right">
+              521737
+</td>
+<td>
+INDEX
+</td>
+<td>
+2019-03-15/23:58:58
+</td>
+<td>
+2019-03-15/23:58:58
+</td>
+<td>
+2019-03-15:23:58:58
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_MEMB
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124877
+</td>
+<td align="right">
+              124877
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:43
+</td>
+<td>
+2016-04-15/19:12:43
+</td>
+<td>
+2016-04-15:19:12:43
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_MEMBNOTETYP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124863
+</td>
+<td align="right">
+              124863
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_MRKDGRVCBY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124849
+</td>
+<td align="right">
+              124849
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:39
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15:19:12:39
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_MRKDRSLDBY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124865
+</td>
+<td align="right">
+              124865
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_NOTEDGIS
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124867
+</td>
+<td align="right">
+              124867
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_NOTEDGIS_NID_CT_NCRTD
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              521738
+</td>
+<td align="right">
+              521738
+</td>
+<td>
+INDEX
+</td>
+<td>
+2019-03-15/23:58:59
+</td>
+<td>
+2019-03-15/23:58:59
+</td>
+<td>
+2019-03-15:23:58:59
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_OBJ_STT
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124875
+</td>
+<td align="right">
+              124875
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15/19:12:43
+</td>
+<td>
+2016-04-15:19:12:42
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_OWNR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124874
+</td>
+<td align="right">
+              124874
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15:19:12:42
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_PITY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124855
+</td>
+<td align="right">
+              124855
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15:19:12:40
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_PRVSOWNR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124871
+</td>
+<td align="right">
+              124871
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15:19:12:42
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_PRVSOWNRPRMN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124848
+</td>
+<td align="right">
+              124848
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:39
+</td>
+<td>
+2016-04-15/19:12:39
+</td>
+<td>
+2016-04-15:19:12:39
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_PRVSRFNGTSK
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124873
+</td>
+<td align="right">
+              124873
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15:19:12:42
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_PRVSRFNGTSK_PRMN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124861
+</td>
+<td align="right">
+              124861
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_PRVSSNDR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124857
+</td>
+<td align="right">
+              124857
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:40
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_PRVSTNFR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124859
+</td>
+<td align="right">
+              124859
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_PVDRNOTETYP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124858
+</td>
+<td align="right">
+              124858
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_RFNGWKFWTSK
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124872
+</td>
+<td align="right">
+              124872
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15:19:12:42
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_RLTDPVDR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124851
+</td>
+<td align="right">
+              124851
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15:19:12:40
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_SETK_NID_CT_NCRTD
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              521742
+</td>
+<td align="right">
+              521742
+</td>
+<td>
+INDEX
+</td>
+<td>
+2019-03-15/23:59:02
+</td>
+<td>
+2019-03-15/23:59:02
+</td>
+<td>
+2019-03-15:23:59:02
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_TNFR
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124862
+</td>
+<td align="right">
+              124862
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_UM_BASENOTE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124868
+</td>
+<td align="right">
+              124868
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15/19:12:42
+</td>
+<td>
+2016-04-15:19:12:42
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_UM_EXTN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124864
+</td>
+<td align="right">
+              124864
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15/19:12:41
+</td>
+<td>
+2016-04-15:19:12:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_UM_NOTETYP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124853
+</td>
+<td align="right">
+              124853
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15:19:12:40
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_NOTE_UNIVID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124852
+</td>
+<td align="right">
+              124852
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15/19:12:40
+</td>
+<td>
+2016-04-15:19:12:40
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_STNT_ID_DDLI_ID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              521743
+</td>
+<td align="right">
+              521743
+</td>
+<td>
+INDEX
+</td>
+<td>
+2019-03-15/23:59:03
+</td>
+<td>
+2019-03-15/23:59:03
+</td>
+<td>
+2019-03-15:23:59:03
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_TSKT_ICON
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118723
+</td>
+<td align="right">
+              118723
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15:18:58:16
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_TSKT_RCPTTYP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118748
+</td>
+<td align="right">
+              118748
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:19
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+PK_T_DDL_ITEM
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118738
+</td>
+<td align="right">
+              118738
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+PK_T_NOTE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124846
+</td>
+<td align="right">
+              124846
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/19:12:38
+</td>
+<td>
+2016-04-15/19:12:39
+</td>
+<td>
+2016-04-15:19:12:38
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+SYS_IL0000116466C00016$$
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              116468
+</td>
+<td align="right">
+              116468
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:27:13
+</td>
+<td>
+2016-04-15/18:27:13
+</td>
+<td>
+2016-04-15:18:27:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+SYS_IL0000116466C00017$$
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              116470
+</td>
+<td align="right">
+              116470
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:27:13
+</td>
+<td>
+2016-04-15/18:27:13
+</td>
+<td>
+2016-04-15:18:27:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+SYS_LOB0000116466C00016$$
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              116467
+</td>
+<td align="right">
+              116467
+</td>
+<td>
+LOB
+</td>
+<td>
+2016-04-15/18:27:13
+</td>
+<td>
+2016-04-15/18:27:13
+</td>
+<td>
+2016-04-15:18:27:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+SYS_LOB0000116466C00017$$
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              116469
+</td>
+<td align="right">
+              116469
+</td>
+<td>
+LOB
+</td>
+<td>
+2016-04-15/18:27:13
+</td>
+<td>
+2016-04-15/18:27:13
+</td>
+<td>
+2016-04-15:18:27:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_DDL_ITEM
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115362
+</td>
+<td align="right">
+              115362
+</td>
+<td>
+TABLE
+</td>
+<td>
+2016-04-15/18:26:58
+</td>
+<td>
+2020-11-01/00:00:24
+</td>
+<td>
+2019-03-16:06:28:35
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_DDL_ITEM_IX_DDLI_LBL
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118746
+</td>
+<td align="right">
+              118746
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_NOTE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              116466
+</td>
+<td align="right">
+              116466
+</td>
+<td>
+TABLE
+</td>
+<td>
+2016-04-15/18:27:13
+</td>
+<td>
+2020-11-01/00:00:24
+</td>
+<td>
+2020-03-06:19:31:41
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_ATTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118729
+</td>
+<td align="right">
+              118729
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_BMTY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118737
+</td>
+<td align="right">
+              118737
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_BPTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118712
+</td>
+<td align="right">
+              118712
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_CBTY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118699
+</td>
+<td align="right">
+              118699
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_CCTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118704
+</td>
+<td align="right">
+              118704
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_CDTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118730
+</td>
+<td align="right">
+              118730
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_CNTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118707
+</td>
+<td align="right">
+              118707
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_CPNY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118734
+</td>
+<td align="right">
+              118734
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_CTYB
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118708
+</td>
+<td align="right">
+              118708
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_ETTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118696
+</td>
+<td align="right">
+              118696
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15:18:58:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_EUCY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118695
+</td>
+<td align="right">
+              118695
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15/18:58:13
+</td>
+<td>
+2016-04-15:18:58:13
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_FCTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118745
+</td>
+<td align="right">
+              118745
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_IMDY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118709
+</td>
+<td align="right">
+              118709
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_LHTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118703
+</td>
+<td align="right">
+              118703
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_LLTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118700
+</td>
+<td align="right">
+              118700
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_LTTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118728
+</td>
+<td align="right">
+              118728
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:16
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_MMGY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118736
+</td>
+<td align="right">
+              118736
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_MNTY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118740
+</td>
+<td align="right">
+              118740
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_NCTY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118705
+</td>
+<td align="right">
+              118705
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_PIQT
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118711
+</td>
+<td align="right">
+              118711
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_PLNS
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118735
+</td>
+<td align="right">
+              118735
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_PRNY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118726
+</td>
+<td align="right">
+              118726
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15/18:58:16
+</td>
+<td>
+2016-04-15:18:58:16
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_PTTP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118732
+</td>
+<td align="right">
+              118732
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_QTYP
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118701
+</td>
+<td align="right">
+              118701
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_RPTY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118731
+</td>
+<td align="right">
+              118731
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15/18:58:17
+</td>
+<td>
+2016-04-15:18:58:17
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_TITY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118715
+</td>
+<td align="right">
+              118715
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_TSKT
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118716
+</td>
+<td align="right">
+              118716
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15/18:58:15
+</td>
+<td>
+2016-04-15:18:58:15
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_UENY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118706
+</td>
+<td align="right">
+              118706
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15/18:58:14
+</td>
+<td>
+2016-04-15:18:58:14
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_UMTY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118739
+</td>
+<td align="right">
+              118739
+</td>
+<td>
+INDEX
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15/18:58:18
+</td>
+<td>
+2016-04-15:18:58:18
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td>
+THH_C4C_DW
+</td>
+<td>
+DW_DIM_NOTE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              252959
+</td>
+<td align="right">
+              252959
+</td>
+<td>
+TABLE
+</td>
+<td>
+2017-03-31/21:17:34
+</td>
+<td>
+2020-11-01/00:00:27
+</td>
+<td>
+2017-03-31:21:17:34
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td>
+THH_C4C_DW
+</td>
+<td>
+PK_DW_DIM_NOTE_ID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              253142
+</td>
+<td align="right">
+              253142
+</td>
+<td>
+INDEX
+</td>
+<td>
+2017-03-31/21:18:59
+</td>
+<td>
+2017-03-31/21:18:59
+</td>
+<td>
+2017-03-31:21:18:59
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td>
+THH_C4C_DW
+</td>
+<td>
+PK_RPT_CONSTANTS
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              699730
+</td>
+<td align="right">
+              699730
+</td>
+<td>
+INDEX
+</td>
+<td>
+2020-09-12/20:06:28
+</td>
+<td>
+2020-09-12/20:06:28
+</td>
+<td>
+2020-09-12:20:06:28
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td>
+THH_C4C_DW
+</td>
+<td>
+RPT_CONSTANTS
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              699729
+</td>
+<td align="right">
+              699729
+</td>
+<td>
+TABLE
+</td>
+<td>
+2020-09-12/20:06:28
+</td>
+<td>
+2020-11-01/00:00:28
+</td>
+<td>
+2020-09-12:20:06:28
+</td>
+<td>
+VALID
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+NONE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ OBJECT_NAME                                        VARCHAR2(128)
+ SUBOBJECT_NAME                                     VARCHAR2(128)
+ OBJECT_ID                                          NUMBER
+ DATA_OBJECT_ID                                     NUMBER
+ OBJECT_TYPE                                        VARCHAR2(23)
+ CREATED                                            DATE
+ LAST_DDL_TIME                                      DATE
+ TIMESTAMP                                          VARCHAR2(19)
+ STATUS                                             VARCHAR2(7)
+ TEMPORARY                                          VARCHAR2(1)
+ GENERATED                                          VARCHAR2(1)
+ SECONDARY                                          VARCHAR2(1)
+ NAMESPACE                                          NUMBER
+ EDITION_NAME                                       VARCHAR2(128)
+ SHARING                                            VARCHAR2(13)
+ EDITIONABLE                                        VARCHAR2(1)
+ ORACLE_MAINTAINED                                  VARCHAR2(1)
+
+SELECT /*+ NO_MERGE */ *
+  FROM dba_objects
+ WHERE (owner, object_name) IN (SELECT /*+ UNNEST */ object_owner, object_name
+                                   FROM plan_table
+                                  WHERE statement_id = 'LIST_OF_TABLES'
+                                    AND remarks = '00540ttuxh7n9'
+                                  UNION ALL
+                                 SELECT owner, index_name
+                                   FROM dba_indexes
+                                  WHERE (table_owner, table_name) IN (SELECT /*+ UNNEST */ object_owner, object_name
+                                                                        FROM plan_table
+                                                                       WHERE statement_id = 'LIST_OF_TABLES'
+                                                                         AND remarks = '00540ttuxh7n9')
+                                  UNION ALL
+                                 SELECT owner, segment_name
+                                   FROM dba_lobs
+                                  WHERE (owner, table_name) IN (SELECT /*+ UNNEST */ object_owner, object_name
+                                                                  FROM plan_table
+                                                                 WHERE statement_id = 'LIST_OF_TABLES'
+                                                                   AND remarks = '00540ttuxh7n9')
+                                 )
+ ORDER BY owner, object_name, object_type DESC;
+
+105 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/16:51:25 for SQL ID 00540ttuxh7n9 (MERGE INTO DW_DIM_NOTE A USING (SELECT MAIN.NOTE_ID AS NOTE_ID, MAIN.NOTE_C4C_ID) </font>
+</body>
+</html>

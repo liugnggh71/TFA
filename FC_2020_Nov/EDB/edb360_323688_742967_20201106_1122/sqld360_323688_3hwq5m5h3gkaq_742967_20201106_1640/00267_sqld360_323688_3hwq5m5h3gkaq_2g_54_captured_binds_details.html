@@ -1,0 +1,2247 @@
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_3hwq5m5h3gkaq_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Captured Binds Details</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<body>
+<h1><em><a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank">SQLd360</a></em> v192: SQL 360-degree view - 2g. Captured Binds Page </h1>
+
+<pre>
+sqlid:3hwq5m5h3gkaq dbname:prd version:12.1.0.2.0 host:742967 license:T days:31 today:2020-11-06/16:41:36
+</pre>
+
+<table><tr class="main">
+<td class="c">B1 (NUMBER)</td>
+<td class="c">B1 (VARCHAR2(2000))</td>
+<td class="c">B10 (DATE)</td>
+<td class="c">B100 (NUMBER)</td>
+<td class="c">B101 (NUMBER)</td>
+<td class="c">B102 (NUMBER)</td>
+<td class="c">B103 (NUMBER)</td>
+<td class="c">B104 (NUMBER)</td>
+<td class="c">B105 (NUMBER)</td>
+<td class="c">B106 (NUMBER)</td>
+<td class="c">B107 (NUMBER)</td>
+<td class="c">B108 (NUMBER)</td>
+<td class="c">B109 (NUMBER)</td>
+<td class="c">B11 (NUMBER)</td>
+<td class="c">B110 (NUMBER)</td>
+<td class="c">B111 (NUMBER)</td>
+<td class="c">B112 (NUMBER)</td>
+<td class="c">B113 (NUMBER)</td>
+<td class="c">B114 (NUMBER)</td>
+<td class="c">B115 (NUMBER)</td>
+<td class="c">B116 (NUMBER)</td>
+<td class="c">B117 (NUMBER)</td>
+<td class="c">B118 (NUMBER)</td>
+<td class="c">B119 (NUMBER)</td>
+<td class="c">B12 (NUMBER)</td>
+<td class="c">B120 (NUMBER)</td>
+<td class="c">B121 (NUMBER)</td>
+<td class="c">B122 (NUMBER)</td>
+<td class="c">B123 (NUMBER)</td>
+<td class="c">B124 (NUMBER)</td>
+<td class="c">B125 (VARCHAR2(32))</td>
+<td class="c">B126 (VARCHAR2(32))</td>
+<td class="c">B127 (NUMBER)</td>
+<td class="c">B128 (DATE)</td>
+<td class="c">B129 (NUMBER)</td>
+<td class="c">B13 (NUMBER)</td>
+<td class="c">B130 (VARCHAR2(32))</td>
+<td class="c">B131 (NUMBER)</td>
+<td class="c">B132 (VARCHAR2(2000))</td>
+<td class="c">B133 (NUMBER)</td>
+<td class="c">B134 (NUMBER)</td>
+<td class="c">B14 (NUMBER)</td>
+<td class="c">B15 (VARCHAR2(32))</td>
+<td class="c">B16 (VARCHAR2(32))</td>
+<td class="c">B17 (VARCHAR2(32))</td>
+<td class="c">B18 (VARCHAR2(128))</td>
+<td class="c">B18 (VARCHAR2(32))</td>
+<td class="c">B19 (DATE)</td>
+<td class="c">B2 (VARCHAR2(32))</td>
+<td class="c">B20 (NUMBER)</td>
+<td class="c">B21 (DATE)</td>
+<td class="c">B22 (DATE)</td>
+<td class="c">B23 (DATE)</td>
+<td class="c">B24 (VARCHAR2(32))</td>
+<td class="c">B25 (VARCHAR2(32))</td>
+<td class="c">B26 (NUMBER)</td>
+<td class="c">B27 (NUMBER)</td>
+<td class="c">B28 (DATE)</td>
+<td class="c">B29 (NUMBER)</td>
+<td class="c">B3 (DATE)</td>
+<td class="c">B30 (VARCHAR2(32))</td>
+<td class="c">B31 (VARCHAR2(32))</td>
+<td class="c">B32 (VARCHAR2(32))</td>
+<td class="c">B33 (NUMBER)</td>
+<td class="c">B34 (NUMBER)</td>
+<td class="c">B35 (NUMBER)</td>
+<td class="c">B36 (NUMBER)</td>
+<td class="c">B37 (NUMBER)</td>
+<td class="c">B38 (NUMBER)</td>
+<td class="c">B39 (VARCHAR2(32))</td>
+<td class="c">B4 (NUMBER)</td>
+<td class="c">B40 (NUMBER)</td>
+<td class="c">B41 (NUMBER)</td>
+<td class="c">B42 (NUMBER)</td>
+<td class="c">B43 (DATE)</td>
+<td class="c">B44 (NUMBER)</td>
+<td class="c">B45 (NUMBER)</td>
+<td class="c">B46 (VARCHAR2(32))</td>
+<td class="c">B47 (VARCHAR2(32))</td>
+<td class="c">B48 (NUMBER)</td>
+<td class="c">B49 (NUMBER)</td>
+<td class="c">B5 (NUMBER)</td>
+<td class="c">B50 (VARCHAR2(32))</td>
+<td class="c">B51 (VARCHAR2(32))</td>
+<td class="c">B52 (NUMBER)</td>
+<td class="c">B53 (VARCHAR2(32))</td>
+<td class="c">B54 (NUMBER)</td>
+<td class="c">B55 (NUMBER)</td>
+<td class="c">B56 (VARCHAR2(32))</td>
+<td class="c">B57 (VARCHAR2(32))</td>
+<td class="c">B58 (VARCHAR2(32))</td>
+<td class="c">B59 (DATE)</td>
+<td class="c">B6 (DATE)</td>
+<td class="c">B60 (DATE)</td>
+<td class="c">B61 (DATE)</td>
+<td class="c">B62 (DATE)</td>
+<td class="c">B63 (NUMBER)</td>
+<td class="c">B64 (NUMBER)</td>
+<td class="c">B65 (NUMBER)</td>
+<td class="c">B66 (NUMBER)</td>
+<td class="c">B67 (NUMBER)</td>
+<td class="c">B68 (NUMBER)</td>
+<td class="c">B69 (NUMBER)</td>
+<td class="c">B7 (NUMBER)</td>
+<td class="c">B70 (NUMBER)</td>
+<td class="c">B71 (NUMBER)</td>
+<td class="c">B72 (NUMBER)</td>
+<td class="c">B73 (NUMBER)</td>
+<td class="c">B74 (NUMBER)</td>
+<td class="c">B75 (NUMBER)</td>
+<td class="c">B76 (NUMBER)</td>
+<td class="c">B77 (NUMBER)</td>
+<td class="c">B78 (NUMBER)</td>
+<td class="c">B79 (NUMBER)</td>
+<td class="c">B8 (NUMBER)</td>
+<td class="c">B80 (NUMBER)</td>
+<td class="c">B81 (NUMBER)</td>
+<td class="c">B82 (NUMBER)</td>
+<td class="c">B83 (NUMBER)</td>
+<td class="c">B84 (NUMBER)</td>
+<td class="c">B85 (NUMBER)</td>
+<td class="c">B86 (NUMBER)</td>
+<td class="c">B87 (NUMBER)</td>
+<td class="c">B88 (NUMBER)</td>
+<td class="c">B89 (NUMBER)</td>
+<td class="c">B9 (NUMBER)</td>
+<td class="c">B90 (NUMBER)</td>
+<td class="c">B91 (NUMBER)</td>
+<td class="c">B92 (NUMBER)</td>
+<td class="c">B93 (NUMBER)</td>
+<td class="c">B94 (NUMBER)</td>
+<td class="c">B95 (NUMBER)</td>
+<td class="c">B96 (NUMBER)</td>
+<td class="c">B97 (NUMBER)</td>
+<td class="c">B98 (NUMBER)</td>
+<td class="c">B99 (NUMBER)</td>
+</tr><tr class="main">
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B1 values over time from memory
+<a href="00268_sqld360_323688_3hwq5m5h3gkaq_2g_54_bind_b1_values_over_time_from_memory.html">html</a>
+<a href="00269_sqld360_323688_3hwq5m5h3gkaq_2g_54_bind_b1_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B1 values over time from history
+<a href="00270_sqld360_323688_3hwq5m5h3gkaq_2g_55_bind_b1_values_over_time_from_history.html">html</a>
+<a href="00271_sqld360_323688_3hwq5m5h3gkaq_2g_55_bind_b1_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B1 values used
+<a href="00272_sqld360_323688_3hwq5m5h3gkaq_2g_56_top_15_bind_b1_values_used.html">html</a>
+<a href="00273_sqld360_323688_3hwq5m5h3gkaq_2g_56_top_15_bind_b1_values_used_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B1 values used
+<a href="00274_sqld360_323688_3hwq5m5h3gkaq_2g_57_top_15_bind_b1_values_used.html">html</a>
+<a href="00275_sqld360_323688_3hwq5m5h3gkaq_2g_57_top_15_bind_b1_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B10 values over time from memory
+<a href="00276_sqld360_323688_3hwq5m5h3gkaq_2g_58_bind_b10_values_over_time_from_memory.html">html</a>
+<a href="00277_sqld360_323688_3hwq5m5h3gkaq_2g_58_bind_b10_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B10 values over time from history
+<a href="00278_sqld360_323688_3hwq5m5h3gkaq_2g_59_bind_b10_values_over_time_from_history.html">html</a>
+<a href="00279_sqld360_323688_3hwq5m5h3gkaq_2g_59_bind_b10_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B10 values used
+<a href="00280_sqld360_323688_3hwq5m5h3gkaq_2g_60_top_15_bind_b10_values_used.html">html</a>
+<a href="00281_sqld360_323688_3hwq5m5h3gkaq_2g_60_top_15_bind_b10_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B100 values over time from memory
+<a href="00282_sqld360_323688_3hwq5m5h3gkaq_2g_61_bind_b100_values_over_time_from_memory.html">html</a>
+<a href="00283_sqld360_323688_3hwq5m5h3gkaq_2g_61_bind_b100_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B100 values over time from history
+<a href="00284_sqld360_323688_3hwq5m5h3gkaq_2g_62_bind_b100_values_over_time_from_history.html">html</a>
+<a href="00285_sqld360_323688_3hwq5m5h3gkaq_2g_62_bind_b100_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B100 values used
+<a href="00286_sqld360_323688_3hwq5m5h3gkaq_2g_63_top_15_bind_b100_values_used.html">html</a>
+<a href="00287_sqld360_323688_3hwq5m5h3gkaq_2g_63_top_15_bind_b100_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B101 values over time from memory
+<a href="00288_sqld360_323688_3hwq5m5h3gkaq_2g_64_bind_b101_values_over_time_from_memory.html">html</a>
+<a href="00289_sqld360_323688_3hwq5m5h3gkaq_2g_64_bind_b101_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B101 values over time from history
+<a href="00290_sqld360_323688_3hwq5m5h3gkaq_2g_65_bind_b101_values_over_time_from_history.html">html</a>
+<a href="00291_sqld360_323688_3hwq5m5h3gkaq_2g_65_bind_b101_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B101 values used
+<a href="00292_sqld360_323688_3hwq5m5h3gkaq_2g_66_top_15_bind_b101_values_used.html">html</a>
+<a href="00293_sqld360_323688_3hwq5m5h3gkaq_2g_66_top_15_bind_b101_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B102 values over time from memory
+<a href="00294_sqld360_323688_3hwq5m5h3gkaq_2g_67_bind_b102_values_over_time_from_memory.html">html</a>
+<a href="00295_sqld360_323688_3hwq5m5h3gkaq_2g_67_bind_b102_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B102 values over time from history
+<a href="00296_sqld360_323688_3hwq5m5h3gkaq_2g_68_bind_b102_values_over_time_from_history.html">html</a>
+<a href="00297_sqld360_323688_3hwq5m5h3gkaq_2g_68_bind_b102_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B102 values used
+<a href="00298_sqld360_323688_3hwq5m5h3gkaq_2g_69_top_15_bind_b102_values_used.html">html</a>
+<a href="00299_sqld360_323688_3hwq5m5h3gkaq_2g_69_top_15_bind_b102_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B103 values over time from memory
+<a href="00300_sqld360_323688_3hwq5m5h3gkaq_2g_70_bind_b103_values_over_time_from_memory.html">html</a>
+<a href="00301_sqld360_323688_3hwq5m5h3gkaq_2g_70_bind_b103_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B103 values over time from history
+<a href="00302_sqld360_323688_3hwq5m5h3gkaq_2g_71_bind_b103_values_over_time_from_history.html">html</a>
+<a href="00303_sqld360_323688_3hwq5m5h3gkaq_2g_71_bind_b103_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B103 values used
+<a href="00304_sqld360_323688_3hwq5m5h3gkaq_2g_72_top_15_bind_b103_values_used.html">html</a>
+<a href="00305_sqld360_323688_3hwq5m5h3gkaq_2g_72_top_15_bind_b103_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B104 values over time from memory
+<a href="00306_sqld360_323688_3hwq5m5h3gkaq_2g_73_bind_b104_values_over_time_from_memory.html">html</a>
+<a href="00307_sqld360_323688_3hwq5m5h3gkaq_2g_73_bind_b104_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B104 values over time from history
+<a href="00308_sqld360_323688_3hwq5m5h3gkaq_2g_74_bind_b104_values_over_time_from_history.html">html</a>
+<a href="00309_sqld360_323688_3hwq5m5h3gkaq_2g_74_bind_b104_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B104 values used
+<a href="00310_sqld360_323688_3hwq5m5h3gkaq_2g_75_top_15_bind_b104_values_used.html">html</a>
+<a href="00311_sqld360_323688_3hwq5m5h3gkaq_2g_75_top_15_bind_b104_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B105 values over time from memory
+<a href="00312_sqld360_323688_3hwq5m5h3gkaq_2g_76_bind_b105_values_over_time_from_memory.html">html</a>
+<a href="00313_sqld360_323688_3hwq5m5h3gkaq_2g_76_bind_b105_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B105 values over time from history
+<a href="00314_sqld360_323688_3hwq5m5h3gkaq_2g_77_bind_b105_values_over_time_from_history.html">html</a>
+<a href="00315_sqld360_323688_3hwq5m5h3gkaq_2g_77_bind_b105_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B105 values used
+<a href="00316_sqld360_323688_3hwq5m5h3gkaq_2g_78_top_15_bind_b105_values_used.html">html</a>
+<a href="00317_sqld360_323688_3hwq5m5h3gkaq_2g_78_top_15_bind_b105_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B106 values over time from memory
+<a href="00318_sqld360_323688_3hwq5m5h3gkaq_2g_79_bind_b106_values_over_time_from_memory.html">html</a>
+<a href="00319_sqld360_323688_3hwq5m5h3gkaq_2g_79_bind_b106_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B106 values over time from history
+<a href="00320_sqld360_323688_3hwq5m5h3gkaq_2g_80_bind_b106_values_over_time_from_history.html">html</a>
+<a href="00321_sqld360_323688_3hwq5m5h3gkaq_2g_80_bind_b106_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B106 values used
+<a href="00322_sqld360_323688_3hwq5m5h3gkaq_2g_81_top_15_bind_b106_values_used.html">html</a>
+<a href="00323_sqld360_323688_3hwq5m5h3gkaq_2g_81_top_15_bind_b106_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B107 values over time from memory
+<a href="00324_sqld360_323688_3hwq5m5h3gkaq_2g_82_bind_b107_values_over_time_from_memory.html">html</a>
+<a href="00325_sqld360_323688_3hwq5m5h3gkaq_2g_82_bind_b107_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B107 values over time from history
+<a href="00326_sqld360_323688_3hwq5m5h3gkaq_2g_83_bind_b107_values_over_time_from_history.html">html</a>
+<a href="00327_sqld360_323688_3hwq5m5h3gkaq_2g_83_bind_b107_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B107 values used
+<a href="00328_sqld360_323688_3hwq5m5h3gkaq_2g_84_top_15_bind_b107_values_used.html">html</a>
+<a href="00329_sqld360_323688_3hwq5m5h3gkaq_2g_84_top_15_bind_b107_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B108 values over time from memory
+<a href="00330_sqld360_323688_3hwq5m5h3gkaq_2g_85_bind_b108_values_over_time_from_memory.html">html</a>
+<a href="00331_sqld360_323688_3hwq5m5h3gkaq_2g_85_bind_b108_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B108 values over time from history
+<a href="00332_sqld360_323688_3hwq5m5h3gkaq_2g_86_bind_b108_values_over_time_from_history.html">html</a>
+<a href="00333_sqld360_323688_3hwq5m5h3gkaq_2g_86_bind_b108_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B108 values used
+<a href="00334_sqld360_323688_3hwq5m5h3gkaq_2g_87_top_15_bind_b108_values_used.html">html</a>
+<a href="00335_sqld360_323688_3hwq5m5h3gkaq_2g_87_top_15_bind_b108_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B109 values over time from memory
+<a href="00336_sqld360_323688_3hwq5m5h3gkaq_2g_88_bind_b109_values_over_time_from_memory.html">html</a>
+<a href="00337_sqld360_323688_3hwq5m5h3gkaq_2g_88_bind_b109_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B109 values over time from history
+<a href="00338_sqld360_323688_3hwq5m5h3gkaq_2g_89_bind_b109_values_over_time_from_history.html">html</a>
+<a href="00339_sqld360_323688_3hwq5m5h3gkaq_2g_89_bind_b109_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B109 values used
+<a href="00340_sqld360_323688_3hwq5m5h3gkaq_2g_90_top_15_bind_b109_values_used.html">html</a>
+<a href="00341_sqld360_323688_3hwq5m5h3gkaq_2g_90_top_15_bind_b109_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B11 values over time from memory
+<a href="00342_sqld360_323688_3hwq5m5h3gkaq_2g_91_bind_b11_values_over_time_from_memory.html">html</a>
+<a href="00343_sqld360_323688_3hwq5m5h3gkaq_2g_91_bind_b11_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B11 values over time from history
+<a href="00344_sqld360_323688_3hwq5m5h3gkaq_2g_92_bind_b11_values_over_time_from_history.html">html</a>
+<a href="00345_sqld360_323688_3hwq5m5h3gkaq_2g_92_bind_b11_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B11 values used
+<a href="00346_sqld360_323688_3hwq5m5h3gkaq_2g_93_top_15_bind_b11_values_used.html">html</a>
+<a href="00347_sqld360_323688_3hwq5m5h3gkaq_2g_93_top_15_bind_b11_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B110 values over time from memory
+<a href="00348_sqld360_323688_3hwq5m5h3gkaq_2g_94_bind_b110_values_over_time_from_memory.html">html</a>
+<a href="00349_sqld360_323688_3hwq5m5h3gkaq_2g_94_bind_b110_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B110 values over time from history
+<a href="00350_sqld360_323688_3hwq5m5h3gkaq_2g_95_bind_b110_values_over_time_from_history.html">html</a>
+<a href="00351_sqld360_323688_3hwq5m5h3gkaq_2g_95_bind_b110_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B110 values used
+<a href="00352_sqld360_323688_3hwq5m5h3gkaq_2g_96_top_15_bind_b110_values_used.html">html</a>
+<a href="00353_sqld360_323688_3hwq5m5h3gkaq_2g_96_top_15_bind_b110_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B111 values over time from memory
+<a href="00354_sqld360_323688_3hwq5m5h3gkaq_2g_97_bind_b111_values_over_time_from_memory.html">html</a>
+<a href="00355_sqld360_323688_3hwq5m5h3gkaq_2g_97_bind_b111_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B111 values over time from history
+<a href="00356_sqld360_323688_3hwq5m5h3gkaq_2g_98_bind_b111_values_over_time_from_history.html">html</a>
+<a href="00357_sqld360_323688_3hwq5m5h3gkaq_2g_98_bind_b111_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B111 values used
+<a href="00358_sqld360_323688_3hwq5m5h3gkaq_2g_99_top_15_bind_b111_values_used.html">html</a>
+<a href="00359_sqld360_323688_3hwq5m5h3gkaq_2g_99_top_15_bind_b111_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B112 values over time from memory
+<a href="00360_sqld360_323688_3hwq5m5h3gkaq_2g_100_bind_b112_values_over_time_from_memory.html">html</a>
+<a href="00361_sqld360_323688_3hwq5m5h3gkaq_2g_100_bind_b112_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B112 values over time from history
+<a href="00362_sqld360_323688_3hwq5m5h3gkaq_2g_101_bind_b112_values_over_time_from_history.html">html</a>
+<a href="00363_sqld360_323688_3hwq5m5h3gkaq_2g_101_bind_b112_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B112 values used
+<a href="00364_sqld360_323688_3hwq5m5h3gkaq_2g_102_top_15_bind_b112_values_used.html">html</a>
+<a href="00365_sqld360_323688_3hwq5m5h3gkaq_2g_102_top_15_bind_b112_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B113 values over time from memory
+<a href="00366_sqld360_323688_3hwq5m5h3gkaq_2g_103_bind_b113_values_over_time_from_memory.html">html</a>
+<a href="00367_sqld360_323688_3hwq5m5h3gkaq_2g_103_bind_b113_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B113 values over time from history
+<a href="00368_sqld360_323688_3hwq5m5h3gkaq_2g_104_bind_b113_values_over_time_from_history.html">html</a>
+<a href="00369_sqld360_323688_3hwq5m5h3gkaq_2g_104_bind_b113_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B113 values used
+<a href="00370_sqld360_323688_3hwq5m5h3gkaq_2g_105_top_15_bind_b113_values_used.html">html</a>
+<a href="00371_sqld360_323688_3hwq5m5h3gkaq_2g_105_top_15_bind_b113_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B114 values over time from memory
+<a href="00372_sqld360_323688_3hwq5m5h3gkaq_2g_106_bind_b114_values_over_time_from_memory.html">html</a>
+<a href="00373_sqld360_323688_3hwq5m5h3gkaq_2g_106_bind_b114_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B114 values over time from history
+<a href="00374_sqld360_323688_3hwq5m5h3gkaq_2g_107_bind_b114_values_over_time_from_history.html">html</a>
+<a href="00375_sqld360_323688_3hwq5m5h3gkaq_2g_107_bind_b114_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B114 values used
+<a href="00376_sqld360_323688_3hwq5m5h3gkaq_2g_108_top_15_bind_b114_values_used.html">html</a>
+<a href="00377_sqld360_323688_3hwq5m5h3gkaq_2g_108_top_15_bind_b114_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B115 values over time from memory
+<a href="00378_sqld360_323688_3hwq5m5h3gkaq_2g_109_bind_b115_values_over_time_from_memory.html">html</a>
+<a href="00379_sqld360_323688_3hwq5m5h3gkaq_2g_109_bind_b115_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B115 values over time from history
+<a href="00380_sqld360_323688_3hwq5m5h3gkaq_2g_110_bind_b115_values_over_time_from_history.html">html</a>
+<a href="00381_sqld360_323688_3hwq5m5h3gkaq_2g_110_bind_b115_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B115 values used
+<a href="00382_sqld360_323688_3hwq5m5h3gkaq_2g_111_top_15_bind_b115_values_used.html">html</a>
+<a href="00383_sqld360_323688_3hwq5m5h3gkaq_2g_111_top_15_bind_b115_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B116 values over time from memory
+<a href="00384_sqld360_323688_3hwq5m5h3gkaq_2g_112_bind_b116_values_over_time_from_memory.html">html</a>
+<a href="00385_sqld360_323688_3hwq5m5h3gkaq_2g_112_bind_b116_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B116 values over time from history
+<a href="00386_sqld360_323688_3hwq5m5h3gkaq_2g_113_bind_b116_values_over_time_from_history.html">html</a>
+<a href="00387_sqld360_323688_3hwq5m5h3gkaq_2g_113_bind_b116_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B116 values used
+<a href="00388_sqld360_323688_3hwq5m5h3gkaq_2g_114_top_15_bind_b116_values_used.html">html</a>
+<a href="00389_sqld360_323688_3hwq5m5h3gkaq_2g_114_top_15_bind_b116_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B117 values over time from memory
+<a href="00390_sqld360_323688_3hwq5m5h3gkaq_2g_115_bind_b117_values_over_time_from_memory.html">html</a>
+<a href="00391_sqld360_323688_3hwq5m5h3gkaq_2g_115_bind_b117_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B117 values over time from history
+<a href="00392_sqld360_323688_3hwq5m5h3gkaq_2g_116_bind_b117_values_over_time_from_history.html">html</a>
+<a href="00393_sqld360_323688_3hwq5m5h3gkaq_2g_116_bind_b117_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B117 values used
+<a href="00394_sqld360_323688_3hwq5m5h3gkaq_2g_117_top_15_bind_b117_values_used.html">html</a>
+<a href="00395_sqld360_323688_3hwq5m5h3gkaq_2g_117_top_15_bind_b117_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B118 values over time from memory
+<a href="00396_sqld360_323688_3hwq5m5h3gkaq_2g_118_bind_b118_values_over_time_from_memory.html">html</a>
+<a href="00397_sqld360_323688_3hwq5m5h3gkaq_2g_118_bind_b118_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B118 values over time from history
+<a href="00398_sqld360_323688_3hwq5m5h3gkaq_2g_119_bind_b118_values_over_time_from_history.html">html</a>
+<a href="00399_sqld360_323688_3hwq5m5h3gkaq_2g_119_bind_b118_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B118 values used
+<a href="00400_sqld360_323688_3hwq5m5h3gkaq_2g_120_top_15_bind_b118_values_used.html">html</a>
+<a href="00401_sqld360_323688_3hwq5m5h3gkaq_2g_120_top_15_bind_b118_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B119 values over time from memory
+<a href="00402_sqld360_323688_3hwq5m5h3gkaq_2g_121_bind_b119_values_over_time_from_memory.html">html</a>
+<a href="00403_sqld360_323688_3hwq5m5h3gkaq_2g_121_bind_b119_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B119 values over time from history
+<a href="00404_sqld360_323688_3hwq5m5h3gkaq_2g_122_bind_b119_values_over_time_from_history.html">html</a>
+<a href="00405_sqld360_323688_3hwq5m5h3gkaq_2g_122_bind_b119_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B119 values used
+<a href="00406_sqld360_323688_3hwq5m5h3gkaq_2g_123_top_15_bind_b119_values_used.html">html</a>
+<a href="00407_sqld360_323688_3hwq5m5h3gkaq_2g_123_top_15_bind_b119_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B12 values over time from memory
+<a href="00408_sqld360_323688_3hwq5m5h3gkaq_2g_124_bind_b12_values_over_time_from_memory.html">html</a>
+<a href="00409_sqld360_323688_3hwq5m5h3gkaq_2g_124_bind_b12_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B12 values over time from history
+<a href="00410_sqld360_323688_3hwq5m5h3gkaq_2g_125_bind_b12_values_over_time_from_history.html">html</a>
+<a href="00411_sqld360_323688_3hwq5m5h3gkaq_2g_125_bind_b12_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B12 values used
+<a href="00412_sqld360_323688_3hwq5m5h3gkaq_2g_126_top_15_bind_b12_values_used.html">html</a>
+<a href="00413_sqld360_323688_3hwq5m5h3gkaq_2g_126_top_15_bind_b12_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B120 values over time from memory
+<a href="00414_sqld360_323688_3hwq5m5h3gkaq_2g_127_bind_b120_values_over_time_from_memory.html">html</a>
+<a href="00415_sqld360_323688_3hwq5m5h3gkaq_2g_127_bind_b120_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B120 values over time from history
+<a href="00416_sqld360_323688_3hwq5m5h3gkaq_2g_128_bind_b120_values_over_time_from_history.html">html</a>
+<a href="00417_sqld360_323688_3hwq5m5h3gkaq_2g_128_bind_b120_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B120 values used
+<a href="00418_sqld360_323688_3hwq5m5h3gkaq_2g_129_top_15_bind_b120_values_used.html">html</a>
+<a href="00419_sqld360_323688_3hwq5m5h3gkaq_2g_129_top_15_bind_b120_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B121 values over time from memory
+<a href="00420_sqld360_323688_3hwq5m5h3gkaq_2g_130_bind_b121_values_over_time_from_memory.html">html</a>
+<a href="00421_sqld360_323688_3hwq5m5h3gkaq_2g_130_bind_b121_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B121 values over time from history
+<a href="00422_sqld360_323688_3hwq5m5h3gkaq_2g_131_bind_b121_values_over_time_from_history.html">html</a>
+<a href="00423_sqld360_323688_3hwq5m5h3gkaq_2g_131_bind_b121_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B121 values used
+<a href="00424_sqld360_323688_3hwq5m5h3gkaq_2g_132_top_15_bind_b121_values_used.html">html</a>
+<a href="00425_sqld360_323688_3hwq5m5h3gkaq_2g_132_top_15_bind_b121_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B122 values over time from memory
+<a href="00426_sqld360_323688_3hwq5m5h3gkaq_2g_133_bind_b122_values_over_time_from_memory.html">html</a>
+<a href="00427_sqld360_323688_3hwq5m5h3gkaq_2g_133_bind_b122_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B122 values over time from history
+<a href="00428_sqld360_323688_3hwq5m5h3gkaq_2g_134_bind_b122_values_over_time_from_history.html">html</a>
+<a href="00429_sqld360_323688_3hwq5m5h3gkaq_2g_134_bind_b122_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B122 values used
+<a href="00430_sqld360_323688_3hwq5m5h3gkaq_2g_135_top_15_bind_b122_values_used.html">html</a>
+<a href="00431_sqld360_323688_3hwq5m5h3gkaq_2g_135_top_15_bind_b122_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B123 values over time from memory
+<a href="00432_sqld360_323688_3hwq5m5h3gkaq_2g_136_bind_b123_values_over_time_from_memory.html">html</a>
+<a href="00433_sqld360_323688_3hwq5m5h3gkaq_2g_136_bind_b123_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B123 values over time from history
+<a href="00434_sqld360_323688_3hwq5m5h3gkaq_2g_137_bind_b123_values_over_time_from_history.html">html</a>
+<a href="00435_sqld360_323688_3hwq5m5h3gkaq_2g_137_bind_b123_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B123 values used
+<a href="00436_sqld360_323688_3hwq5m5h3gkaq_2g_138_top_15_bind_b123_values_used.html">html</a>
+<a href="00437_sqld360_323688_3hwq5m5h3gkaq_2g_138_top_15_bind_b123_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B124 values over time from memory
+<a href="00438_sqld360_323688_3hwq5m5h3gkaq_2g_139_bind_b124_values_over_time_from_memory.html">html</a>
+<a href="00439_sqld360_323688_3hwq5m5h3gkaq_2g_139_bind_b124_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B124 values over time from history
+<a href="00440_sqld360_323688_3hwq5m5h3gkaq_2g_140_bind_b124_values_over_time_from_history.html">html</a>
+<a href="00441_sqld360_323688_3hwq5m5h3gkaq_2g_140_bind_b124_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B124 values used
+<a href="00442_sqld360_323688_3hwq5m5h3gkaq_2g_141_top_15_bind_b124_values_used.html">html</a>
+<a href="00443_sqld360_323688_3hwq5m5h3gkaq_2g_141_top_15_bind_b124_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B125 values used
+<a href="00444_sqld360_323688_3hwq5m5h3gkaq_2g_142_top_15_bind_b125_values_used.html">html</a>
+<a href="00445_sqld360_323688_3hwq5m5h3gkaq_2g_142_top_15_bind_b125_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B126 values used
+<a href="00446_sqld360_323688_3hwq5m5h3gkaq_2g_143_top_15_bind_b126_values_used.html">html</a>
+<a href="00447_sqld360_323688_3hwq5m5h3gkaq_2g_143_top_15_bind_b126_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B127 values over time from memory
+<a href="00448_sqld360_323688_3hwq5m5h3gkaq_2g_144_bind_b127_values_over_time_from_memory.html">html</a>
+<a href="00449_sqld360_323688_3hwq5m5h3gkaq_2g_144_bind_b127_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B127 values over time from history
+<a href="00450_sqld360_323688_3hwq5m5h3gkaq_2g_145_bind_b127_values_over_time_from_history.html">html</a>
+<a href="00451_sqld360_323688_3hwq5m5h3gkaq_2g_145_bind_b127_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B127 values used
+<a href="00452_sqld360_323688_3hwq5m5h3gkaq_2g_146_top_15_bind_b127_values_used.html">html</a>
+<a href="00453_sqld360_323688_3hwq5m5h3gkaq_2g_146_top_15_bind_b127_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B128 values over time from memory
+<a href="00454_sqld360_323688_3hwq5m5h3gkaq_2g_147_bind_b128_values_over_time_from_memory.html">html</a>
+<a href="00455_sqld360_323688_3hwq5m5h3gkaq_2g_147_bind_b128_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B128 values over time from history
+<a href="00456_sqld360_323688_3hwq5m5h3gkaq_2g_148_bind_b128_values_over_time_from_history.html">html</a>
+<a href="00457_sqld360_323688_3hwq5m5h3gkaq_2g_148_bind_b128_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B128 values used
+<a href="00458_sqld360_323688_3hwq5m5h3gkaq_2g_149_top_15_bind_b128_values_used.html">html</a>
+<a href="00459_sqld360_323688_3hwq5m5h3gkaq_2g_149_top_15_bind_b128_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B129 values over time from memory
+<a href="00460_sqld360_323688_3hwq5m5h3gkaq_2g_150_bind_b129_values_over_time_from_memory.html">html</a>
+<a href="00461_sqld360_323688_3hwq5m5h3gkaq_2g_150_bind_b129_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B129 values over time from history
+<a href="00462_sqld360_323688_3hwq5m5h3gkaq_2g_151_bind_b129_values_over_time_from_history.html">html</a>
+<a href="00463_sqld360_323688_3hwq5m5h3gkaq_2g_151_bind_b129_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B129 values used
+<a href="00464_sqld360_323688_3hwq5m5h3gkaq_2g_152_top_15_bind_b129_values_used.html">html</a>
+<a href="00465_sqld360_323688_3hwq5m5h3gkaq_2g_152_top_15_bind_b129_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B13 values over time from memory
+<a href="00466_sqld360_323688_3hwq5m5h3gkaq_2g_153_bind_b13_values_over_time_from_memory.html">html</a>
+<a href="00467_sqld360_323688_3hwq5m5h3gkaq_2g_153_bind_b13_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B13 values over time from history
+<a href="00468_sqld360_323688_3hwq5m5h3gkaq_2g_154_bind_b13_values_over_time_from_history.html">html</a>
+<a href="00469_sqld360_323688_3hwq5m5h3gkaq_2g_154_bind_b13_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B13 values used
+<a href="00470_sqld360_323688_3hwq5m5h3gkaq_2g_155_top_15_bind_b13_values_used.html">html</a>
+<a href="00471_sqld360_323688_3hwq5m5h3gkaq_2g_155_top_15_bind_b13_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B130 values used
+<a href="00472_sqld360_323688_3hwq5m5h3gkaq_2g_156_top_15_bind_b130_values_used.html">html</a>
+<a href="00473_sqld360_323688_3hwq5m5h3gkaq_2g_156_top_15_bind_b130_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B131 values over time from memory
+<a href="00474_sqld360_323688_3hwq5m5h3gkaq_2g_157_bind_b131_values_over_time_from_memory.html">html</a>
+<a href="00475_sqld360_323688_3hwq5m5h3gkaq_2g_157_bind_b131_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B131 values over time from history
+<a href="00476_sqld360_323688_3hwq5m5h3gkaq_2g_158_bind_b131_values_over_time_from_history.html">html</a>
+<a href="00477_sqld360_323688_3hwq5m5h3gkaq_2g_158_bind_b131_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B131 values used
+<a href="00478_sqld360_323688_3hwq5m5h3gkaq_2g_159_top_15_bind_b131_values_used.html">html</a>
+<a href="00479_sqld360_323688_3hwq5m5h3gkaq_2g_159_top_15_bind_b131_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B132 values used
+<a href="00480_sqld360_323688_3hwq5m5h3gkaq_2g_160_top_15_bind_b132_values_used.html">html</a>
+<a href="00481_sqld360_323688_3hwq5m5h3gkaq_2g_160_top_15_bind_b132_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B133 values over time from memory
+<a href="00482_sqld360_323688_3hwq5m5h3gkaq_2g_161_bind_b133_values_over_time_from_memory.html">html</a>
+<a href="00483_sqld360_323688_3hwq5m5h3gkaq_2g_161_bind_b133_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B133 values over time from history
+<a href="00484_sqld360_323688_3hwq5m5h3gkaq_2g_162_bind_b133_values_over_time_from_history.html">html</a>
+<a href="00485_sqld360_323688_3hwq5m5h3gkaq_2g_162_bind_b133_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B133 values used
+<a href="00486_sqld360_323688_3hwq5m5h3gkaq_2g_163_top_15_bind_b133_values_used.html">html</a>
+<a href="00487_sqld360_323688_3hwq5m5h3gkaq_2g_163_top_15_bind_b133_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B134 values over time from memory
+<a href="00488_sqld360_323688_3hwq5m5h3gkaq_2g_164_bind_b134_values_over_time_from_memory.html">html</a>
+<a href="00489_sqld360_323688_3hwq5m5h3gkaq_2g_164_bind_b134_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B134 values over time from history
+<a href="00490_sqld360_323688_3hwq5m5h3gkaq_2g_165_bind_b134_values_over_time_from_history.html">html</a>
+<a href="00491_sqld360_323688_3hwq5m5h3gkaq_2g_165_bind_b134_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B134 values used
+<a href="00492_sqld360_323688_3hwq5m5h3gkaq_2g_166_top_15_bind_b134_values_used.html">html</a>
+<a href="00493_sqld360_323688_3hwq5m5h3gkaq_2g_166_top_15_bind_b134_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B14 values over time from memory
+<a href="00494_sqld360_323688_3hwq5m5h3gkaq_2g_167_bind_b14_values_over_time_from_memory.html">html</a>
+<a href="00495_sqld360_323688_3hwq5m5h3gkaq_2g_167_bind_b14_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B14 values over time from history
+<a href="00496_sqld360_323688_3hwq5m5h3gkaq_2g_168_bind_b14_values_over_time_from_history.html">html</a>
+<a href="00497_sqld360_323688_3hwq5m5h3gkaq_2g_168_bind_b14_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B14 values used
+<a href="00498_sqld360_323688_3hwq5m5h3gkaq_2g_169_top_15_bind_b14_values_used.html">html</a>
+<a href="00499_sqld360_323688_3hwq5m5h3gkaq_2g_169_top_15_bind_b14_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B15 values used
+<a href="00500_sqld360_323688_3hwq5m5h3gkaq_2g_170_top_15_bind_b15_values_used.html">html</a>
+<a href="00501_sqld360_323688_3hwq5m5h3gkaq_2g_170_top_15_bind_b15_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B16 values used
+<a href="00502_sqld360_323688_3hwq5m5h3gkaq_2g_171_top_15_bind_b16_values_used.html">html</a>
+<a href="00503_sqld360_323688_3hwq5m5h3gkaq_2g_171_top_15_bind_b16_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B17 values used
+<a href="00504_sqld360_323688_3hwq5m5h3gkaq_2g_172_top_15_bind_b17_values_used.html">html</a>
+<a href="00505_sqld360_323688_3hwq5m5h3gkaq_2g_172_top_15_bind_b17_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B18 values used
+<a href="00506_sqld360_323688_3hwq5m5h3gkaq_2g_173_top_15_bind_b18_values_used.html">html</a>
+<a href="00507_sqld360_323688_3hwq5m5h3gkaq_2g_173_top_15_bind_b18_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B18 values used
+<a href="00508_sqld360_323688_3hwq5m5h3gkaq_2g_174_top_15_bind_b18_values_used.html">html</a>
+<a href="00509_sqld360_323688_3hwq5m5h3gkaq_2g_174_top_15_bind_b18_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B19 values over time from memory
+<a href="00510_sqld360_323688_3hwq5m5h3gkaq_2g_175_bind_b19_values_over_time_from_memory.html">html</a>
+<a href="00511_sqld360_323688_3hwq5m5h3gkaq_2g_175_bind_b19_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B19 values over time from history
+<a href="00512_sqld360_323688_3hwq5m5h3gkaq_2g_176_bind_b19_values_over_time_from_history.html">html</a>
+<a href="00513_sqld360_323688_3hwq5m5h3gkaq_2g_176_bind_b19_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B19 values used
+<a href="00514_sqld360_323688_3hwq5m5h3gkaq_2g_177_top_15_bind_b19_values_used.html">html</a>
+<a href="00515_sqld360_323688_3hwq5m5h3gkaq_2g_177_top_15_bind_b19_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B2 values used
+<a href="00516_sqld360_323688_3hwq5m5h3gkaq_2g_178_top_15_bind_b2_values_used.html">html</a>
+<a href="00517_sqld360_323688_3hwq5m5h3gkaq_2g_178_top_15_bind_b2_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B20 values over time from memory
+<a href="00518_sqld360_323688_3hwq5m5h3gkaq_2g_179_bind_b20_values_over_time_from_memory.html">html</a>
+<a href="00519_sqld360_323688_3hwq5m5h3gkaq_2g_179_bind_b20_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B20 values over time from history
+<a href="00520_sqld360_323688_3hwq5m5h3gkaq_2g_180_bind_b20_values_over_time_from_history.html">html</a>
+<a href="00521_sqld360_323688_3hwq5m5h3gkaq_2g_180_bind_b20_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B20 values used
+<a href="00522_sqld360_323688_3hwq5m5h3gkaq_2g_181_top_15_bind_b20_values_used.html">html</a>
+<a href="00523_sqld360_323688_3hwq5m5h3gkaq_2g_181_top_15_bind_b20_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B21 values over time from memory
+<a href="00524_sqld360_323688_3hwq5m5h3gkaq_2g_182_bind_b21_values_over_time_from_memory.html">html</a>
+<a href="00525_sqld360_323688_3hwq5m5h3gkaq_2g_182_bind_b21_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B21 values over time from history
+<a href="00526_sqld360_323688_3hwq5m5h3gkaq_2g_183_bind_b21_values_over_time_from_history.html">html</a>
+<a href="00527_sqld360_323688_3hwq5m5h3gkaq_2g_183_bind_b21_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B21 values used
+<a href="00528_sqld360_323688_3hwq5m5h3gkaq_2g_184_top_15_bind_b21_values_used.html">html</a>
+<a href="00529_sqld360_323688_3hwq5m5h3gkaq_2g_184_top_15_bind_b21_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B22 values over time from memory
+<a href="00530_sqld360_323688_3hwq5m5h3gkaq_2g_185_bind_b22_values_over_time_from_memory.html">html</a>
+<a href="00531_sqld360_323688_3hwq5m5h3gkaq_2g_185_bind_b22_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B22 values over time from history
+<a href="00532_sqld360_323688_3hwq5m5h3gkaq_2g_186_bind_b22_values_over_time_from_history.html">html</a>
+<a href="00533_sqld360_323688_3hwq5m5h3gkaq_2g_186_bind_b22_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B22 values used
+<a href="00534_sqld360_323688_3hwq5m5h3gkaq_2g_187_top_15_bind_b22_values_used.html">html</a>
+<a href="00535_sqld360_323688_3hwq5m5h3gkaq_2g_187_top_15_bind_b22_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B23 values over time from memory
+<a href="00536_sqld360_323688_3hwq5m5h3gkaq_2g_188_bind_b23_values_over_time_from_memory.html">html</a>
+<a href="00537_sqld360_323688_3hwq5m5h3gkaq_2g_188_bind_b23_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B23 values over time from history
+<a href="00538_sqld360_323688_3hwq5m5h3gkaq_2g_189_bind_b23_values_over_time_from_history.html">html</a>
+<a href="00539_sqld360_323688_3hwq5m5h3gkaq_2g_189_bind_b23_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B23 values used
+<a href="00540_sqld360_323688_3hwq5m5h3gkaq_2g_190_top_15_bind_b23_values_used.html">html</a>
+<a href="00541_sqld360_323688_3hwq5m5h3gkaq_2g_190_top_15_bind_b23_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B24 values used
+<a href="00542_sqld360_323688_3hwq5m5h3gkaq_2g_191_top_15_bind_b24_values_used.html">html</a>
+<a href="00543_sqld360_323688_3hwq5m5h3gkaq_2g_191_top_15_bind_b24_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B25 values used
+<a href="00544_sqld360_323688_3hwq5m5h3gkaq_2g_192_top_15_bind_b25_values_used.html">html</a>
+<a href="00545_sqld360_323688_3hwq5m5h3gkaq_2g_192_top_15_bind_b25_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B26 values over time from memory
+<a href="00546_sqld360_323688_3hwq5m5h3gkaq_2g_193_bind_b26_values_over_time_from_memory.html">html</a>
+<a href="00547_sqld360_323688_3hwq5m5h3gkaq_2g_193_bind_b26_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B26 values over time from history
+<a href="00548_sqld360_323688_3hwq5m5h3gkaq_2g_194_bind_b26_values_over_time_from_history.html">html</a>
+<a href="00549_sqld360_323688_3hwq5m5h3gkaq_2g_194_bind_b26_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B26 values used
+<a href="00550_sqld360_323688_3hwq5m5h3gkaq_2g_195_top_15_bind_b26_values_used.html">html</a>
+<a href="00551_sqld360_323688_3hwq5m5h3gkaq_2g_195_top_15_bind_b26_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B27 values over time from memory
+<a href="00552_sqld360_323688_3hwq5m5h3gkaq_2g_196_bind_b27_values_over_time_from_memory.html">html</a>
+<a href="00553_sqld360_323688_3hwq5m5h3gkaq_2g_196_bind_b27_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B27 values over time from history
+<a href="00554_sqld360_323688_3hwq5m5h3gkaq_2g_197_bind_b27_values_over_time_from_history.html">html</a>
+<a href="00555_sqld360_323688_3hwq5m5h3gkaq_2g_197_bind_b27_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B27 values used
+<a href="00556_sqld360_323688_3hwq5m5h3gkaq_2g_198_top_15_bind_b27_values_used.html">html</a>
+<a href="00557_sqld360_323688_3hwq5m5h3gkaq_2g_198_top_15_bind_b27_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B28 values over time from memory
+<a href="00558_sqld360_323688_3hwq5m5h3gkaq_2g_199_bind_b28_values_over_time_from_memory.html">html</a>
+<a href="00559_sqld360_323688_3hwq5m5h3gkaq_2g_199_bind_b28_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B28 values over time from history
+<a href="00560_sqld360_323688_3hwq5m5h3gkaq_2g_200_bind_b28_values_over_time_from_history.html">html</a>
+<a href="00561_sqld360_323688_3hwq5m5h3gkaq_2g_200_bind_b28_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B28 values used
+<a href="00562_sqld360_323688_3hwq5m5h3gkaq_2g_201_top_15_bind_b28_values_used.html">html</a>
+<a href="00563_sqld360_323688_3hwq5m5h3gkaq_2g_201_top_15_bind_b28_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B29 values over time from memory
+<a href="00564_sqld360_323688_3hwq5m5h3gkaq_2g_202_bind_b29_values_over_time_from_memory.html">html</a>
+<a href="00565_sqld360_323688_3hwq5m5h3gkaq_2g_202_bind_b29_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B29 values over time from history
+<a href="00566_sqld360_323688_3hwq5m5h3gkaq_2g_203_bind_b29_values_over_time_from_history.html">html</a>
+<a href="00567_sqld360_323688_3hwq5m5h3gkaq_2g_203_bind_b29_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B29 values used
+<a href="00568_sqld360_323688_3hwq5m5h3gkaq_2g_204_top_15_bind_b29_values_used.html">html</a>
+<a href="00569_sqld360_323688_3hwq5m5h3gkaq_2g_204_top_15_bind_b29_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B3 values over time from memory
+<a href="00570_sqld360_323688_3hwq5m5h3gkaq_2g_205_bind_b3_values_over_time_from_memory.html">html</a>
+<a href="00571_sqld360_323688_3hwq5m5h3gkaq_2g_205_bind_b3_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B3 values over time from history
+<a href="00572_sqld360_323688_3hwq5m5h3gkaq_2g_206_bind_b3_values_over_time_from_history.html">html</a>
+<a href="00573_sqld360_323688_3hwq5m5h3gkaq_2g_206_bind_b3_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B3 values used
+<a href="00574_sqld360_323688_3hwq5m5h3gkaq_2g_207_top_15_bind_b3_values_used.html">html</a>
+<a href="00575_sqld360_323688_3hwq5m5h3gkaq_2g_207_top_15_bind_b3_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B30 values used
+<a href="00576_sqld360_323688_3hwq5m5h3gkaq_2g_208_top_15_bind_b30_values_used.html">html</a>
+<a href="00577_sqld360_323688_3hwq5m5h3gkaq_2g_208_top_15_bind_b30_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B31 values used
+<a href="00578_sqld360_323688_3hwq5m5h3gkaq_2g_209_top_15_bind_b31_values_used.html">html</a>
+<a href="00579_sqld360_323688_3hwq5m5h3gkaq_2g_209_top_15_bind_b31_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B32 values used
+<a href="00580_sqld360_323688_3hwq5m5h3gkaq_2g_210_top_15_bind_b32_values_used.html">html</a>
+<a href="00581_sqld360_323688_3hwq5m5h3gkaq_2g_210_top_15_bind_b32_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B33 values over time from memory
+<a href="00582_sqld360_323688_3hwq5m5h3gkaq_2g_211_bind_b33_values_over_time_from_memory.html">html</a>
+<a href="00583_sqld360_323688_3hwq5m5h3gkaq_2g_211_bind_b33_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B33 values over time from history
+<a href="00584_sqld360_323688_3hwq5m5h3gkaq_2g_212_bind_b33_values_over_time_from_history.html">html</a>
+<a href="00585_sqld360_323688_3hwq5m5h3gkaq_2g_212_bind_b33_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B33 values used
+<a href="00586_sqld360_323688_3hwq5m5h3gkaq_2g_213_top_15_bind_b33_values_used.html">html</a>
+<a href="00587_sqld360_323688_3hwq5m5h3gkaq_2g_213_top_15_bind_b33_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B34 values over time from memory
+<a href="00588_sqld360_323688_3hwq5m5h3gkaq_2g_214_bind_b34_values_over_time_from_memory.html">html</a>
+<a href="00589_sqld360_323688_3hwq5m5h3gkaq_2g_214_bind_b34_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B34 values over time from history
+<a href="00590_sqld360_323688_3hwq5m5h3gkaq_2g_215_bind_b34_values_over_time_from_history.html">html</a>
+<a href="00591_sqld360_323688_3hwq5m5h3gkaq_2g_215_bind_b34_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B34 values used
+<a href="00592_sqld360_323688_3hwq5m5h3gkaq_2g_216_top_15_bind_b34_values_used.html">html</a>
+<a href="00593_sqld360_323688_3hwq5m5h3gkaq_2g_216_top_15_bind_b34_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B35 values over time from memory
+<a href="00594_sqld360_323688_3hwq5m5h3gkaq_2g_217_bind_b35_values_over_time_from_memory.html">html</a>
+<a href="00595_sqld360_323688_3hwq5m5h3gkaq_2g_217_bind_b35_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B35 values over time from history
+<a href="00596_sqld360_323688_3hwq5m5h3gkaq_2g_218_bind_b35_values_over_time_from_history.html">html</a>
+<a href="00597_sqld360_323688_3hwq5m5h3gkaq_2g_218_bind_b35_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B35 values used
+<a href="00598_sqld360_323688_3hwq5m5h3gkaq_2g_219_top_15_bind_b35_values_used.html">html</a>
+<a href="00599_sqld360_323688_3hwq5m5h3gkaq_2g_219_top_15_bind_b35_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B36 values over time from memory
+<a href="00600_sqld360_323688_3hwq5m5h3gkaq_2g_220_bind_b36_values_over_time_from_memory.html">html</a>
+<a href="00601_sqld360_323688_3hwq5m5h3gkaq_2g_220_bind_b36_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B36 values over time from history
+<a href="00602_sqld360_323688_3hwq5m5h3gkaq_2g_221_bind_b36_values_over_time_from_history.html">html</a>
+<a href="00603_sqld360_323688_3hwq5m5h3gkaq_2g_221_bind_b36_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B36 values used
+<a href="00604_sqld360_323688_3hwq5m5h3gkaq_2g_222_top_15_bind_b36_values_used.html">html</a>
+<a href="00605_sqld360_323688_3hwq5m5h3gkaq_2g_222_top_15_bind_b36_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B37 values over time from memory
+<a href="00606_sqld360_323688_3hwq5m5h3gkaq_2g_223_bind_b37_values_over_time_from_memory.html">html</a>
+<a href="00607_sqld360_323688_3hwq5m5h3gkaq_2g_223_bind_b37_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B37 values over time from history
+<a href="00608_sqld360_323688_3hwq5m5h3gkaq_2g_224_bind_b37_values_over_time_from_history.html">html</a>
+<a href="00609_sqld360_323688_3hwq5m5h3gkaq_2g_224_bind_b37_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B37 values used
+<a href="00610_sqld360_323688_3hwq5m5h3gkaq_2g_225_top_15_bind_b37_values_used.html">html</a>
+<a href="00611_sqld360_323688_3hwq5m5h3gkaq_2g_225_top_15_bind_b37_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B38 values over time from memory
+<a href="00612_sqld360_323688_3hwq5m5h3gkaq_2g_226_bind_b38_values_over_time_from_memory.html">html</a>
+<a href="00613_sqld360_323688_3hwq5m5h3gkaq_2g_226_bind_b38_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B38 values over time from history
+<a href="00614_sqld360_323688_3hwq5m5h3gkaq_2g_227_bind_b38_values_over_time_from_history.html">html</a>
+<a href="00615_sqld360_323688_3hwq5m5h3gkaq_2g_227_bind_b38_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B38 values used
+<a href="00616_sqld360_323688_3hwq5m5h3gkaq_2g_228_top_15_bind_b38_values_used.html">html</a>
+<a href="00617_sqld360_323688_3hwq5m5h3gkaq_2g_228_top_15_bind_b38_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B39 values used
+<a href="00618_sqld360_323688_3hwq5m5h3gkaq_2g_229_top_15_bind_b39_values_used.html">html</a>
+<a href="00619_sqld360_323688_3hwq5m5h3gkaq_2g_229_top_15_bind_b39_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B4 values over time from memory
+<a href="00620_sqld360_323688_3hwq5m5h3gkaq_2g_230_bind_b4_values_over_time_from_memory.html">html</a>
+<a href="00621_sqld360_323688_3hwq5m5h3gkaq_2g_230_bind_b4_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B4 values over time from history
+<a href="00622_sqld360_323688_3hwq5m5h3gkaq_2g_231_bind_b4_values_over_time_from_history.html">html</a>
+<a href="00623_sqld360_323688_3hwq5m5h3gkaq_2g_231_bind_b4_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B4 values used
+<a href="00624_sqld360_323688_3hwq5m5h3gkaq_2g_232_top_15_bind_b4_values_used.html">html</a>
+<a href="00625_sqld360_323688_3hwq5m5h3gkaq_2g_232_top_15_bind_b4_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B40 values over time from memory
+<a href="00626_sqld360_323688_3hwq5m5h3gkaq_2g_233_bind_b40_values_over_time_from_memory.html">html</a>
+<a href="00627_sqld360_323688_3hwq5m5h3gkaq_2g_233_bind_b40_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B40 values over time from history
+<a href="00628_sqld360_323688_3hwq5m5h3gkaq_2g_234_bind_b40_values_over_time_from_history.html">html</a>
+<a href="00629_sqld360_323688_3hwq5m5h3gkaq_2g_234_bind_b40_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B40 values used
+<a href="00630_sqld360_323688_3hwq5m5h3gkaq_2g_235_top_15_bind_b40_values_used.html">html</a>
+<a href="00631_sqld360_323688_3hwq5m5h3gkaq_2g_235_top_15_bind_b40_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B41 values over time from memory
+<a href="00632_sqld360_323688_3hwq5m5h3gkaq_2g_236_bind_b41_values_over_time_from_memory.html">html</a>
+<a href="00633_sqld360_323688_3hwq5m5h3gkaq_2g_236_bind_b41_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B41 values over time from history
+<a href="00634_sqld360_323688_3hwq5m5h3gkaq_2g_237_bind_b41_values_over_time_from_history.html">html</a>
+<a href="00635_sqld360_323688_3hwq5m5h3gkaq_2g_237_bind_b41_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B41 values used
+<a href="00636_sqld360_323688_3hwq5m5h3gkaq_2g_238_top_15_bind_b41_values_used.html">html</a>
+<a href="00637_sqld360_323688_3hwq5m5h3gkaq_2g_238_top_15_bind_b41_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B42 values over time from memory
+<a href="00638_sqld360_323688_3hwq5m5h3gkaq_2g_239_bind_b42_values_over_time_from_memory.html">html</a>
+<a href="00639_sqld360_323688_3hwq5m5h3gkaq_2g_239_bind_b42_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B42 values over time from history
+<a href="00640_sqld360_323688_3hwq5m5h3gkaq_2g_240_bind_b42_values_over_time_from_history.html">html</a>
+<a href="00641_sqld360_323688_3hwq5m5h3gkaq_2g_240_bind_b42_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B42 values used
+<a href="00642_sqld360_323688_3hwq5m5h3gkaq_2g_241_top_15_bind_b42_values_used.html">html</a>
+<a href="00643_sqld360_323688_3hwq5m5h3gkaq_2g_241_top_15_bind_b42_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B43 values over time from memory
+<a href="00644_sqld360_323688_3hwq5m5h3gkaq_2g_242_bind_b43_values_over_time_from_memory.html">html</a>
+<a href="00645_sqld360_323688_3hwq5m5h3gkaq_2g_242_bind_b43_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B43 values over time from history
+<a href="00646_sqld360_323688_3hwq5m5h3gkaq_2g_243_bind_b43_values_over_time_from_history.html">html</a>
+<a href="00647_sqld360_323688_3hwq5m5h3gkaq_2g_243_bind_b43_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B43 values used
+<a href="00648_sqld360_323688_3hwq5m5h3gkaq_2g_244_top_15_bind_b43_values_used.html">html</a>
+<a href="00649_sqld360_323688_3hwq5m5h3gkaq_2g_244_top_15_bind_b43_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B44 values over time from memory
+<a href="00650_sqld360_323688_3hwq5m5h3gkaq_2g_245_bind_b44_values_over_time_from_memory.html">html</a>
+<a href="00651_sqld360_323688_3hwq5m5h3gkaq_2g_245_bind_b44_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B44 values over time from history
+<a href="00652_sqld360_323688_3hwq5m5h3gkaq_2g_246_bind_b44_values_over_time_from_history.html">html</a>
+<a href="00653_sqld360_323688_3hwq5m5h3gkaq_2g_246_bind_b44_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B44 values used
+<a href="00654_sqld360_323688_3hwq5m5h3gkaq_2g_247_top_15_bind_b44_values_used.html">html</a>
+<a href="00655_sqld360_323688_3hwq5m5h3gkaq_2g_247_top_15_bind_b44_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B45 values over time from memory
+<a href="00656_sqld360_323688_3hwq5m5h3gkaq_2g_248_bind_b45_values_over_time_from_memory.html">html</a>
+<a href="00657_sqld360_323688_3hwq5m5h3gkaq_2g_248_bind_b45_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B45 values over time from history
+<a href="00658_sqld360_323688_3hwq5m5h3gkaq_2g_249_bind_b45_values_over_time_from_history.html">html</a>
+<a href="00659_sqld360_323688_3hwq5m5h3gkaq_2g_249_bind_b45_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B45 values used
+<a href="00660_sqld360_323688_3hwq5m5h3gkaq_2g_250_top_15_bind_b45_values_used.html">html</a>
+<a href="00661_sqld360_323688_3hwq5m5h3gkaq_2g_250_top_15_bind_b45_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B46 values used
+<a href="00662_sqld360_323688_3hwq5m5h3gkaq_2g_251_top_15_bind_b46_values_used.html">html</a>
+<a href="00663_sqld360_323688_3hwq5m5h3gkaq_2g_251_top_15_bind_b46_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B47 values used
+<a href="00664_sqld360_323688_3hwq5m5h3gkaq_2g_252_top_15_bind_b47_values_used.html">html</a>
+<a href="00665_sqld360_323688_3hwq5m5h3gkaq_2g_252_top_15_bind_b47_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B48 values over time from memory
+<a href="00666_sqld360_323688_3hwq5m5h3gkaq_2g_253_bind_b48_values_over_time_from_memory.html">html</a>
+<a href="00667_sqld360_323688_3hwq5m5h3gkaq_2g_253_bind_b48_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B48 values over time from history
+<a href="00668_sqld360_323688_3hwq5m5h3gkaq_2g_254_bind_b48_values_over_time_from_history.html">html</a>
+<a href="00669_sqld360_323688_3hwq5m5h3gkaq_2g_254_bind_b48_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B48 values used
+<a href="00670_sqld360_323688_3hwq5m5h3gkaq_2g_255_top_15_bind_b48_values_used.html">html</a>
+<a href="00671_sqld360_323688_3hwq5m5h3gkaq_2g_255_top_15_bind_b48_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B49 values over time from memory
+<a href="00672_sqld360_323688_3hwq5m5h3gkaq_2g_256_bind_b49_values_over_time_from_memory.html">html</a>
+<a href="00673_sqld360_323688_3hwq5m5h3gkaq_2g_256_bind_b49_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B49 values over time from history
+<a href="00674_sqld360_323688_3hwq5m5h3gkaq_2g_257_bind_b49_values_over_time_from_history.html">html</a>
+<a href="00675_sqld360_323688_3hwq5m5h3gkaq_2g_257_bind_b49_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B49 values used
+<a href="00676_sqld360_323688_3hwq5m5h3gkaq_2g_258_top_15_bind_b49_values_used.html">html</a>
+<a href="00677_sqld360_323688_3hwq5m5h3gkaq_2g_258_top_15_bind_b49_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B5 values over time from memory
+<a href="00678_sqld360_323688_3hwq5m5h3gkaq_2g_259_bind_b5_values_over_time_from_memory.html">html</a>
+<a href="00679_sqld360_323688_3hwq5m5h3gkaq_2g_259_bind_b5_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B5 values over time from history
+<a href="00680_sqld360_323688_3hwq5m5h3gkaq_2g_260_bind_b5_values_over_time_from_history.html">html</a>
+<a href="00681_sqld360_323688_3hwq5m5h3gkaq_2g_260_bind_b5_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B5 values used
+<a href="00682_sqld360_323688_3hwq5m5h3gkaq_2g_261_top_15_bind_b5_values_used.html">html</a>
+<a href="00683_sqld360_323688_3hwq5m5h3gkaq_2g_261_top_15_bind_b5_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B50 values used
+<a href="00684_sqld360_323688_3hwq5m5h3gkaq_2g_262_top_15_bind_b50_values_used.html">html</a>
+<a href="00685_sqld360_323688_3hwq5m5h3gkaq_2g_262_top_15_bind_b50_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B51 values used
+<a href="00686_sqld360_323688_3hwq5m5h3gkaq_2g_263_top_15_bind_b51_values_used.html">html</a>
+<a href="00687_sqld360_323688_3hwq5m5h3gkaq_2g_263_top_15_bind_b51_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B52 values over time from memory
+<a href="00688_sqld360_323688_3hwq5m5h3gkaq_2g_264_bind_b52_values_over_time_from_memory.html">html</a>
+<a href="00689_sqld360_323688_3hwq5m5h3gkaq_2g_264_bind_b52_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B52 values over time from history
+<a href="00690_sqld360_323688_3hwq5m5h3gkaq_2g_265_bind_b52_values_over_time_from_history.html">html</a>
+<a href="00691_sqld360_323688_3hwq5m5h3gkaq_2g_265_bind_b52_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B52 values used
+<a href="00692_sqld360_323688_3hwq5m5h3gkaq_2g_266_top_15_bind_b52_values_used.html">html</a>
+<a href="00693_sqld360_323688_3hwq5m5h3gkaq_2g_266_top_15_bind_b52_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B53 values used
+<a href="00694_sqld360_323688_3hwq5m5h3gkaq_2g_267_top_15_bind_b53_values_used.html">html</a>
+<a href="00695_sqld360_323688_3hwq5m5h3gkaq_2g_267_top_15_bind_b53_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B54 values over time from memory
+<a href="00696_sqld360_323688_3hwq5m5h3gkaq_2g_268_bind_b54_values_over_time_from_memory.html">html</a>
+<a href="00697_sqld360_323688_3hwq5m5h3gkaq_2g_268_bind_b54_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B54 values over time from history
+<a href="00698_sqld360_323688_3hwq5m5h3gkaq_2g_269_bind_b54_values_over_time_from_history.html">html</a>
+<a href="00699_sqld360_323688_3hwq5m5h3gkaq_2g_269_bind_b54_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B54 values used
+<a href="00700_sqld360_323688_3hwq5m5h3gkaq_2g_270_top_15_bind_b54_values_used.html">html</a>
+<a href="00701_sqld360_323688_3hwq5m5h3gkaq_2g_270_top_15_bind_b54_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B55 values over time from memory
+<a href="00702_sqld360_323688_3hwq5m5h3gkaq_2g_271_bind_b55_values_over_time_from_memory.html">html</a>
+<a href="00703_sqld360_323688_3hwq5m5h3gkaq_2g_271_bind_b55_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B55 values over time from history
+<a href="00704_sqld360_323688_3hwq5m5h3gkaq_2g_272_bind_b55_values_over_time_from_history.html">html</a>
+<a href="00705_sqld360_323688_3hwq5m5h3gkaq_2g_272_bind_b55_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B55 values used
+<a href="00706_sqld360_323688_3hwq5m5h3gkaq_2g_273_top_15_bind_b55_values_used.html">html</a>
+<a href="00707_sqld360_323688_3hwq5m5h3gkaq_2g_273_top_15_bind_b55_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B56 values used
+<a href="00708_sqld360_323688_3hwq5m5h3gkaq_2g_274_top_15_bind_b56_values_used.html">html</a>
+<a href="00709_sqld360_323688_3hwq5m5h3gkaq_2g_274_top_15_bind_b56_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B57 values used
+<a href="00710_sqld360_323688_3hwq5m5h3gkaq_2g_275_top_15_bind_b57_values_used.html">html</a>
+<a href="00711_sqld360_323688_3hwq5m5h3gkaq_2g_275_top_15_bind_b57_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B58 values used
+<a href="00712_sqld360_323688_3hwq5m5h3gkaq_2g_276_top_15_bind_b58_values_used.html">html</a>
+<a href="00713_sqld360_323688_3hwq5m5h3gkaq_2g_276_top_15_bind_b58_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B59 values over time from memory
+<a href="00714_sqld360_323688_3hwq5m5h3gkaq_2g_277_bind_b59_values_over_time_from_memory.html">html</a>
+<a href="00715_sqld360_323688_3hwq5m5h3gkaq_2g_277_bind_b59_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B59 values over time from history
+<a href="00716_sqld360_323688_3hwq5m5h3gkaq_2g_278_bind_b59_values_over_time_from_history.html">html</a>
+<a href="00717_sqld360_323688_3hwq5m5h3gkaq_2g_278_bind_b59_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B59 values used
+<a href="00718_sqld360_323688_3hwq5m5h3gkaq_2g_279_top_15_bind_b59_values_used.html">html</a>
+<a href="00719_sqld360_323688_3hwq5m5h3gkaq_2g_279_top_15_bind_b59_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B6 values over time from memory
+<a href="00720_sqld360_323688_3hwq5m5h3gkaq_2g_280_bind_b6_values_over_time_from_memory.html">html</a>
+<a href="00721_sqld360_323688_3hwq5m5h3gkaq_2g_280_bind_b6_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B6 values over time from history
+<a href="00722_sqld360_323688_3hwq5m5h3gkaq_2g_281_bind_b6_values_over_time_from_history.html">html</a>
+<a href="00723_sqld360_323688_3hwq5m5h3gkaq_2g_281_bind_b6_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B6 values used
+<a href="00724_sqld360_323688_3hwq5m5h3gkaq_2g_282_top_15_bind_b6_values_used.html">html</a>
+<a href="00725_sqld360_323688_3hwq5m5h3gkaq_2g_282_top_15_bind_b6_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B60 values over time from memory
+<a href="00726_sqld360_323688_3hwq5m5h3gkaq_2g_283_bind_b60_values_over_time_from_memory.html">html</a>
+<a href="00727_sqld360_323688_3hwq5m5h3gkaq_2g_283_bind_b60_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B60 values over time from history
+<a href="00728_sqld360_323688_3hwq5m5h3gkaq_2g_284_bind_b60_values_over_time_from_history.html">html</a>
+<a href="00729_sqld360_323688_3hwq5m5h3gkaq_2g_284_bind_b60_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B60 values used
+<a href="00730_sqld360_323688_3hwq5m5h3gkaq_2g_285_top_15_bind_b60_values_used.html">html</a>
+<a href="00731_sqld360_323688_3hwq5m5h3gkaq_2g_285_top_15_bind_b60_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B61 values over time from memory
+<a href="00732_sqld360_323688_3hwq5m5h3gkaq_2g_286_bind_b61_values_over_time_from_memory.html">html</a>
+<a href="00733_sqld360_323688_3hwq5m5h3gkaq_2g_286_bind_b61_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B61 values over time from history
+<a href="00734_sqld360_323688_3hwq5m5h3gkaq_2g_287_bind_b61_values_over_time_from_history.html">html</a>
+<a href="00735_sqld360_323688_3hwq5m5h3gkaq_2g_287_bind_b61_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B61 values used
+<a href="00736_sqld360_323688_3hwq5m5h3gkaq_2g_288_top_15_bind_b61_values_used.html">html</a>
+<a href="00737_sqld360_323688_3hwq5m5h3gkaq_2g_288_top_15_bind_b61_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B62 values over time from memory
+<a href="00738_sqld360_323688_3hwq5m5h3gkaq_2g_289_bind_b62_values_over_time_from_memory.html">html</a>
+<a href="00739_sqld360_323688_3hwq5m5h3gkaq_2g_289_bind_b62_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B62 values over time from history
+<a href="00740_sqld360_323688_3hwq5m5h3gkaq_2g_290_bind_b62_values_over_time_from_history.html">html</a>
+<a href="00741_sqld360_323688_3hwq5m5h3gkaq_2g_290_bind_b62_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B62 values used
+<a href="00742_sqld360_323688_3hwq5m5h3gkaq_2g_291_top_15_bind_b62_values_used.html">html</a>
+<a href="00743_sqld360_323688_3hwq5m5h3gkaq_2g_291_top_15_bind_b62_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B63 values over time from memory
+<a href="00744_sqld360_323688_3hwq5m5h3gkaq_2g_292_bind_b63_values_over_time_from_memory.html">html</a>
+<a href="00745_sqld360_323688_3hwq5m5h3gkaq_2g_292_bind_b63_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B63 values over time from history
+<a href="00746_sqld360_323688_3hwq5m5h3gkaq_2g_293_bind_b63_values_over_time_from_history.html">html</a>
+<a href="00747_sqld360_323688_3hwq5m5h3gkaq_2g_293_bind_b63_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B63 values used
+<a href="00748_sqld360_323688_3hwq5m5h3gkaq_2g_294_top_15_bind_b63_values_used.html">html</a>
+<a href="00749_sqld360_323688_3hwq5m5h3gkaq_2g_294_top_15_bind_b63_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B64 values over time from memory
+<a href="00750_sqld360_323688_3hwq5m5h3gkaq_2g_295_bind_b64_values_over_time_from_memory.html">html</a>
+<a href="00751_sqld360_323688_3hwq5m5h3gkaq_2g_295_bind_b64_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B64 values over time from history
+<a href="00752_sqld360_323688_3hwq5m5h3gkaq_2g_296_bind_b64_values_over_time_from_history.html">html</a>
+<a href="00753_sqld360_323688_3hwq5m5h3gkaq_2g_296_bind_b64_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B64 values used
+<a href="00754_sqld360_323688_3hwq5m5h3gkaq_2g_297_top_15_bind_b64_values_used.html">html</a>
+<a href="00755_sqld360_323688_3hwq5m5h3gkaq_2g_297_top_15_bind_b64_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B65 values over time from memory
+<a href="00756_sqld360_323688_3hwq5m5h3gkaq_2g_298_bind_b65_values_over_time_from_memory.html">html</a>
+<a href="00757_sqld360_323688_3hwq5m5h3gkaq_2g_298_bind_b65_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B65 values over time from history
+<a href="00758_sqld360_323688_3hwq5m5h3gkaq_2g_299_bind_b65_values_over_time_from_history.html">html</a>
+<a href="00759_sqld360_323688_3hwq5m5h3gkaq_2g_299_bind_b65_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B65 values used
+<a href="00760_sqld360_323688_3hwq5m5h3gkaq_2g_300_top_15_bind_b65_values_used.html">html</a>
+<a href="00761_sqld360_323688_3hwq5m5h3gkaq_2g_300_top_15_bind_b65_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B66 values over time from memory
+<a href="00762_sqld360_323688_3hwq5m5h3gkaq_2g_301_bind_b66_values_over_time_from_memory.html">html</a>
+<a href="00763_sqld360_323688_3hwq5m5h3gkaq_2g_301_bind_b66_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B66 values over time from history
+<a href="00764_sqld360_323688_3hwq5m5h3gkaq_2g_302_bind_b66_values_over_time_from_history.html">html</a>
+<a href="00765_sqld360_323688_3hwq5m5h3gkaq_2g_302_bind_b66_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B66 values used
+<a href="00766_sqld360_323688_3hwq5m5h3gkaq_2g_303_top_15_bind_b66_values_used.html">html</a>
+<a href="00767_sqld360_323688_3hwq5m5h3gkaq_2g_303_top_15_bind_b66_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B67 values over time from memory
+<a href="00768_sqld360_323688_3hwq5m5h3gkaq_2g_304_bind_b67_values_over_time_from_memory.html">html</a>
+<a href="00769_sqld360_323688_3hwq5m5h3gkaq_2g_304_bind_b67_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B67 values over time from history
+<a href="00770_sqld360_323688_3hwq5m5h3gkaq_2g_305_bind_b67_values_over_time_from_history.html">html</a>
+<a href="00771_sqld360_323688_3hwq5m5h3gkaq_2g_305_bind_b67_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B67 values used
+<a href="00772_sqld360_323688_3hwq5m5h3gkaq_2g_306_top_15_bind_b67_values_used.html">html</a>
+<a href="00773_sqld360_323688_3hwq5m5h3gkaq_2g_306_top_15_bind_b67_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B68 values over time from memory
+<a href="00774_sqld360_323688_3hwq5m5h3gkaq_2g_307_bind_b68_values_over_time_from_memory.html">html</a>
+<a href="00775_sqld360_323688_3hwq5m5h3gkaq_2g_307_bind_b68_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B68 values over time from history
+<a href="00776_sqld360_323688_3hwq5m5h3gkaq_2g_308_bind_b68_values_over_time_from_history.html">html</a>
+<a href="00777_sqld360_323688_3hwq5m5h3gkaq_2g_308_bind_b68_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B68 values used
+<a href="00778_sqld360_323688_3hwq5m5h3gkaq_2g_309_top_15_bind_b68_values_used.html">html</a>
+<a href="00779_sqld360_323688_3hwq5m5h3gkaq_2g_309_top_15_bind_b68_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B69 values over time from memory
+<a href="00780_sqld360_323688_3hwq5m5h3gkaq_2g_310_bind_b69_values_over_time_from_memory.html">html</a>
+<a href="00781_sqld360_323688_3hwq5m5h3gkaq_2g_310_bind_b69_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B69 values over time from history
+<a href="00782_sqld360_323688_3hwq5m5h3gkaq_2g_311_bind_b69_values_over_time_from_history.html">html</a>
+<a href="00783_sqld360_323688_3hwq5m5h3gkaq_2g_311_bind_b69_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B69 values used
+<a href="00784_sqld360_323688_3hwq5m5h3gkaq_2g_312_top_15_bind_b69_values_used.html">html</a>
+<a href="00785_sqld360_323688_3hwq5m5h3gkaq_2g_312_top_15_bind_b69_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B7 values over time from memory
+<a href="00786_sqld360_323688_3hwq5m5h3gkaq_2g_313_bind_b7_values_over_time_from_memory.html">html</a>
+<a href="00787_sqld360_323688_3hwq5m5h3gkaq_2g_313_bind_b7_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B7 values over time from history
+<a href="00788_sqld360_323688_3hwq5m5h3gkaq_2g_314_bind_b7_values_over_time_from_history.html">html</a>
+<a href="00789_sqld360_323688_3hwq5m5h3gkaq_2g_314_bind_b7_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B7 values used
+<a href="00790_sqld360_323688_3hwq5m5h3gkaq_2g_315_top_15_bind_b7_values_used.html">html</a>
+<a href="00791_sqld360_323688_3hwq5m5h3gkaq_2g_315_top_15_bind_b7_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B70 values over time from memory
+<a href="00792_sqld360_323688_3hwq5m5h3gkaq_2g_316_bind_b70_values_over_time_from_memory.html">html</a>
+<a href="00793_sqld360_323688_3hwq5m5h3gkaq_2g_316_bind_b70_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B70 values over time from history
+<a href="00794_sqld360_323688_3hwq5m5h3gkaq_2g_317_bind_b70_values_over_time_from_history.html">html</a>
+<a href="00795_sqld360_323688_3hwq5m5h3gkaq_2g_317_bind_b70_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B70 values used
+<a href="00796_sqld360_323688_3hwq5m5h3gkaq_2g_318_top_15_bind_b70_values_used.html">html</a>
+<a href="00797_sqld360_323688_3hwq5m5h3gkaq_2g_318_top_15_bind_b70_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B71 values over time from memory
+<a href="00798_sqld360_323688_3hwq5m5h3gkaq_2g_319_bind_b71_values_over_time_from_memory.html">html</a>
+<a href="00799_sqld360_323688_3hwq5m5h3gkaq_2g_319_bind_b71_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B71 values over time from history
+<a href="00800_sqld360_323688_3hwq5m5h3gkaq_2g_320_bind_b71_values_over_time_from_history.html">html</a>
+<a href="00801_sqld360_323688_3hwq5m5h3gkaq_2g_320_bind_b71_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B71 values used
+<a href="00802_sqld360_323688_3hwq5m5h3gkaq_2g_321_top_15_bind_b71_values_used.html">html</a>
+<a href="00803_sqld360_323688_3hwq5m5h3gkaq_2g_321_top_15_bind_b71_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B72 values over time from memory
+<a href="00804_sqld360_323688_3hwq5m5h3gkaq_2g_322_bind_b72_values_over_time_from_memory.html">html</a>
+<a href="00805_sqld360_323688_3hwq5m5h3gkaq_2g_322_bind_b72_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B72 values over time from history
+<a href="00806_sqld360_323688_3hwq5m5h3gkaq_2g_323_bind_b72_values_over_time_from_history.html">html</a>
+<a href="00807_sqld360_323688_3hwq5m5h3gkaq_2g_323_bind_b72_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B72 values used
+<a href="00808_sqld360_323688_3hwq5m5h3gkaq_2g_324_top_15_bind_b72_values_used.html">html</a>
+<a href="00809_sqld360_323688_3hwq5m5h3gkaq_2g_324_top_15_bind_b72_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B73 values over time from memory
+<a href="00810_sqld360_323688_3hwq5m5h3gkaq_2g_325_bind_b73_values_over_time_from_memory.html">html</a>
+<a href="00811_sqld360_323688_3hwq5m5h3gkaq_2g_325_bind_b73_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B73 values over time from history
+<a href="00812_sqld360_323688_3hwq5m5h3gkaq_2g_326_bind_b73_values_over_time_from_history.html">html</a>
+<a href="00813_sqld360_323688_3hwq5m5h3gkaq_2g_326_bind_b73_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B73 values used
+<a href="00814_sqld360_323688_3hwq5m5h3gkaq_2g_327_top_15_bind_b73_values_used.html">html</a>
+<a href="00815_sqld360_323688_3hwq5m5h3gkaq_2g_327_top_15_bind_b73_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B74 values over time from memory
+<a href="00816_sqld360_323688_3hwq5m5h3gkaq_2g_328_bind_b74_values_over_time_from_memory.html">html</a>
+<a href="00817_sqld360_323688_3hwq5m5h3gkaq_2g_328_bind_b74_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B74 values over time from history
+<a href="00818_sqld360_323688_3hwq5m5h3gkaq_2g_329_bind_b74_values_over_time_from_history.html">html</a>
+<a href="00819_sqld360_323688_3hwq5m5h3gkaq_2g_329_bind_b74_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B74 values used
+<a href="00820_sqld360_323688_3hwq5m5h3gkaq_2g_330_top_15_bind_b74_values_used.html">html</a>
+<a href="00821_sqld360_323688_3hwq5m5h3gkaq_2g_330_top_15_bind_b74_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B75 values over time from memory
+<a href="00822_sqld360_323688_3hwq5m5h3gkaq_2g_331_bind_b75_values_over_time_from_memory.html">html</a>
+<a href="00823_sqld360_323688_3hwq5m5h3gkaq_2g_331_bind_b75_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B75 values over time from history
+<a href="00824_sqld360_323688_3hwq5m5h3gkaq_2g_332_bind_b75_values_over_time_from_history.html">html</a>
+<a href="00825_sqld360_323688_3hwq5m5h3gkaq_2g_332_bind_b75_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B75 values used
+<a href="00826_sqld360_323688_3hwq5m5h3gkaq_2g_333_top_15_bind_b75_values_used.html">html</a>
+<a href="00827_sqld360_323688_3hwq5m5h3gkaq_2g_333_top_15_bind_b75_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B76 values over time from memory
+<a href="00828_sqld360_323688_3hwq5m5h3gkaq_2g_334_bind_b76_values_over_time_from_memory.html">html</a>
+<a href="00829_sqld360_323688_3hwq5m5h3gkaq_2g_334_bind_b76_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B76 values over time from history
+<a href="00830_sqld360_323688_3hwq5m5h3gkaq_2g_335_bind_b76_values_over_time_from_history.html">html</a>
+<a href="00831_sqld360_323688_3hwq5m5h3gkaq_2g_335_bind_b76_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B76 values used
+<a href="00832_sqld360_323688_3hwq5m5h3gkaq_2g_336_top_15_bind_b76_values_used.html">html</a>
+<a href="00833_sqld360_323688_3hwq5m5h3gkaq_2g_336_top_15_bind_b76_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B77 values over time from memory
+<a href="00834_sqld360_323688_3hwq5m5h3gkaq_2g_337_bind_b77_values_over_time_from_memory.html">html</a>
+<a href="00835_sqld360_323688_3hwq5m5h3gkaq_2g_337_bind_b77_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B77 values over time from history
+<a href="00836_sqld360_323688_3hwq5m5h3gkaq_2g_338_bind_b77_values_over_time_from_history.html">html</a>
+<a href="00837_sqld360_323688_3hwq5m5h3gkaq_2g_338_bind_b77_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B77 values used
+<a href="00838_sqld360_323688_3hwq5m5h3gkaq_2g_339_top_15_bind_b77_values_used.html">html</a>
+<a href="00839_sqld360_323688_3hwq5m5h3gkaq_2g_339_top_15_bind_b77_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B78 values over time from memory
+<a href="00840_sqld360_323688_3hwq5m5h3gkaq_2g_340_bind_b78_values_over_time_from_memory.html">html</a>
+<a href="00841_sqld360_323688_3hwq5m5h3gkaq_2g_340_bind_b78_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B78 values over time from history
+<a href="00842_sqld360_323688_3hwq5m5h3gkaq_2g_341_bind_b78_values_over_time_from_history.html">html</a>
+<a href="00843_sqld360_323688_3hwq5m5h3gkaq_2g_341_bind_b78_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B78 values used
+<a href="00844_sqld360_323688_3hwq5m5h3gkaq_2g_342_top_15_bind_b78_values_used.html">html</a>
+<a href="00845_sqld360_323688_3hwq5m5h3gkaq_2g_342_top_15_bind_b78_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B79 values over time from memory
+<a href="00846_sqld360_323688_3hwq5m5h3gkaq_2g_343_bind_b79_values_over_time_from_memory.html">html</a>
+<a href="00847_sqld360_323688_3hwq5m5h3gkaq_2g_343_bind_b79_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B79 values over time from history
+<a href="00848_sqld360_323688_3hwq5m5h3gkaq_2g_344_bind_b79_values_over_time_from_history.html">html</a>
+<a href="00849_sqld360_323688_3hwq5m5h3gkaq_2g_344_bind_b79_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B79 values used
+<a href="00850_sqld360_323688_3hwq5m5h3gkaq_2g_345_top_15_bind_b79_values_used.html">html</a>
+<a href="00851_sqld360_323688_3hwq5m5h3gkaq_2g_345_top_15_bind_b79_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B8 values over time from memory
+<a href="00852_sqld360_323688_3hwq5m5h3gkaq_2g_346_bind_b8_values_over_time_from_memory.html">html</a>
+<a href="00853_sqld360_323688_3hwq5m5h3gkaq_2g_346_bind_b8_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B8 values over time from history
+<a href="00854_sqld360_323688_3hwq5m5h3gkaq_2g_347_bind_b8_values_over_time_from_history.html">html</a>
+<a href="00855_sqld360_323688_3hwq5m5h3gkaq_2g_347_bind_b8_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B8 values used
+<a href="00856_sqld360_323688_3hwq5m5h3gkaq_2g_348_top_15_bind_b8_values_used.html">html</a>
+<a href="00857_sqld360_323688_3hwq5m5h3gkaq_2g_348_top_15_bind_b8_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B80 values over time from memory
+<a href="00858_sqld360_323688_3hwq5m5h3gkaq_2g_349_bind_b80_values_over_time_from_memory.html">html</a>
+<a href="00859_sqld360_323688_3hwq5m5h3gkaq_2g_349_bind_b80_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B80 values over time from history
+<a href="00860_sqld360_323688_3hwq5m5h3gkaq_2g_350_bind_b80_values_over_time_from_history.html">html</a>
+<a href="00861_sqld360_323688_3hwq5m5h3gkaq_2g_350_bind_b80_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B80 values used
+<a href="00862_sqld360_323688_3hwq5m5h3gkaq_2g_351_top_15_bind_b80_values_used.html">html</a>
+<a href="00863_sqld360_323688_3hwq5m5h3gkaq_2g_351_top_15_bind_b80_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B81 values over time from memory
+<a href="00864_sqld360_323688_3hwq5m5h3gkaq_2g_352_bind_b81_values_over_time_from_memory.html">html</a>
+<a href="00865_sqld360_323688_3hwq5m5h3gkaq_2g_352_bind_b81_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B81 values over time from history
+<a href="00866_sqld360_323688_3hwq5m5h3gkaq_2g_353_bind_b81_values_over_time_from_history.html">html</a>
+<a href="00867_sqld360_323688_3hwq5m5h3gkaq_2g_353_bind_b81_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B81 values used
+<a href="00868_sqld360_323688_3hwq5m5h3gkaq_2g_354_top_15_bind_b81_values_used.html">html</a>
+<a href="00869_sqld360_323688_3hwq5m5h3gkaq_2g_354_top_15_bind_b81_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B82 values over time from memory
+<a href="00870_sqld360_323688_3hwq5m5h3gkaq_2g_355_bind_b82_values_over_time_from_memory.html">html</a>
+<a href="00871_sqld360_323688_3hwq5m5h3gkaq_2g_355_bind_b82_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B82 values over time from history
+<a href="00872_sqld360_323688_3hwq5m5h3gkaq_2g_356_bind_b82_values_over_time_from_history.html">html</a>
+<a href="00873_sqld360_323688_3hwq5m5h3gkaq_2g_356_bind_b82_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B82 values used
+<a href="00874_sqld360_323688_3hwq5m5h3gkaq_2g_357_top_15_bind_b82_values_used.html">html</a>
+<a href="00875_sqld360_323688_3hwq5m5h3gkaq_2g_357_top_15_bind_b82_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B83 values over time from memory
+<a href="00876_sqld360_323688_3hwq5m5h3gkaq_2g_358_bind_b83_values_over_time_from_memory.html">html</a>
+<a href="00877_sqld360_323688_3hwq5m5h3gkaq_2g_358_bind_b83_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B83 values over time from history
+<a href="00878_sqld360_323688_3hwq5m5h3gkaq_2g_359_bind_b83_values_over_time_from_history.html">html</a>
+<a href="00879_sqld360_323688_3hwq5m5h3gkaq_2g_359_bind_b83_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B83 values used
+<a href="00880_sqld360_323688_3hwq5m5h3gkaq_2g_360_top_15_bind_b83_values_used.html">html</a>
+<a href="00881_sqld360_323688_3hwq5m5h3gkaq_2g_360_top_15_bind_b83_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B84 values over time from memory
+<a href="00882_sqld360_323688_3hwq5m5h3gkaq_2g_361_bind_b84_values_over_time_from_memory.html">html</a>
+<a href="00883_sqld360_323688_3hwq5m5h3gkaq_2g_361_bind_b84_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B84 values over time from history
+<a href="00884_sqld360_323688_3hwq5m5h3gkaq_2g_362_bind_b84_values_over_time_from_history.html">html</a>
+<a href="00885_sqld360_323688_3hwq5m5h3gkaq_2g_362_bind_b84_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B84 values used
+<a href="00886_sqld360_323688_3hwq5m5h3gkaq_2g_363_top_15_bind_b84_values_used.html">html</a>
+<a href="00887_sqld360_323688_3hwq5m5h3gkaq_2g_363_top_15_bind_b84_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B85 values over time from memory
+<a href="00888_sqld360_323688_3hwq5m5h3gkaq_2g_364_bind_b85_values_over_time_from_memory.html">html</a>
+<a href="00889_sqld360_323688_3hwq5m5h3gkaq_2g_364_bind_b85_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B85 values over time from history
+<a href="00890_sqld360_323688_3hwq5m5h3gkaq_2g_365_bind_b85_values_over_time_from_history.html">html</a>
+<a href="00891_sqld360_323688_3hwq5m5h3gkaq_2g_365_bind_b85_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B85 values used
+<a href="00892_sqld360_323688_3hwq5m5h3gkaq_2g_366_top_15_bind_b85_values_used.html">html</a>
+<a href="00893_sqld360_323688_3hwq5m5h3gkaq_2g_366_top_15_bind_b85_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B86 values over time from memory
+<a href="00894_sqld360_323688_3hwq5m5h3gkaq_2g_367_bind_b86_values_over_time_from_memory.html">html</a>
+<a href="00895_sqld360_323688_3hwq5m5h3gkaq_2g_367_bind_b86_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B86 values over time from history
+<a href="00896_sqld360_323688_3hwq5m5h3gkaq_2g_368_bind_b86_values_over_time_from_history.html">html</a>
+<a href="00897_sqld360_323688_3hwq5m5h3gkaq_2g_368_bind_b86_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B86 values used
+<a href="00898_sqld360_323688_3hwq5m5h3gkaq_2g_369_top_15_bind_b86_values_used.html">html</a>
+<a href="00899_sqld360_323688_3hwq5m5h3gkaq_2g_369_top_15_bind_b86_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B87 values over time from memory
+<a href="00900_sqld360_323688_3hwq5m5h3gkaq_2g_370_bind_b87_values_over_time_from_memory.html">html</a>
+<a href="00901_sqld360_323688_3hwq5m5h3gkaq_2g_370_bind_b87_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B87 values over time from history
+<a href="00902_sqld360_323688_3hwq5m5h3gkaq_2g_371_bind_b87_values_over_time_from_history.html">html</a>
+<a href="00903_sqld360_323688_3hwq5m5h3gkaq_2g_371_bind_b87_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B87 values used
+<a href="00904_sqld360_323688_3hwq5m5h3gkaq_2g_372_top_15_bind_b87_values_used.html">html</a>
+<a href="00905_sqld360_323688_3hwq5m5h3gkaq_2g_372_top_15_bind_b87_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B88 values over time from memory
+<a href="00906_sqld360_323688_3hwq5m5h3gkaq_2g_373_bind_b88_values_over_time_from_memory.html">html</a>
+<a href="00907_sqld360_323688_3hwq5m5h3gkaq_2g_373_bind_b88_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B88 values over time from history
+<a href="00908_sqld360_323688_3hwq5m5h3gkaq_2g_374_bind_b88_values_over_time_from_history.html">html</a>
+<a href="00909_sqld360_323688_3hwq5m5h3gkaq_2g_374_bind_b88_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B88 values used
+<a href="00910_sqld360_323688_3hwq5m5h3gkaq_2g_375_top_15_bind_b88_values_used.html">html</a>
+<a href="00911_sqld360_323688_3hwq5m5h3gkaq_2g_375_top_15_bind_b88_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B89 values over time from memory
+<a href="00912_sqld360_323688_3hwq5m5h3gkaq_2g_376_bind_b89_values_over_time_from_memory.html">html</a>
+<a href="00913_sqld360_323688_3hwq5m5h3gkaq_2g_376_bind_b89_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B89 values over time from history
+<a href="00914_sqld360_323688_3hwq5m5h3gkaq_2g_377_bind_b89_values_over_time_from_history.html">html</a>
+<a href="00915_sqld360_323688_3hwq5m5h3gkaq_2g_377_bind_b89_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B89 values used
+<a href="00916_sqld360_323688_3hwq5m5h3gkaq_2g_378_top_15_bind_b89_values_used.html">html</a>
+<a href="00917_sqld360_323688_3hwq5m5h3gkaq_2g_378_top_15_bind_b89_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B9 values over time from memory
+<a href="00918_sqld360_323688_3hwq5m5h3gkaq_2g_379_bind_b9_values_over_time_from_memory.html">html</a>
+<a href="00919_sqld360_323688_3hwq5m5h3gkaq_2g_379_bind_b9_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B9 values over time from history
+<a href="00920_sqld360_323688_3hwq5m5h3gkaq_2g_380_bind_b9_values_over_time_from_history.html">html</a>
+<a href="00921_sqld360_323688_3hwq5m5h3gkaq_2g_380_bind_b9_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B9 values used
+<a href="00922_sqld360_323688_3hwq5m5h3gkaq_2g_381_top_15_bind_b9_values_used.html">html</a>
+<a href="00923_sqld360_323688_3hwq5m5h3gkaq_2g_381_top_15_bind_b9_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B90 values over time from memory
+<a href="00924_sqld360_323688_3hwq5m5h3gkaq_2g_382_bind_b90_values_over_time_from_memory.html">html</a>
+<a href="00925_sqld360_323688_3hwq5m5h3gkaq_2g_382_bind_b90_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B90 values over time from history
+<a href="00926_sqld360_323688_3hwq5m5h3gkaq_2g_383_bind_b90_values_over_time_from_history.html">html</a>
+<a href="00927_sqld360_323688_3hwq5m5h3gkaq_2g_383_bind_b90_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B90 values used
+<a href="00928_sqld360_323688_3hwq5m5h3gkaq_2g_384_top_15_bind_b90_values_used.html">html</a>
+<a href="00929_sqld360_323688_3hwq5m5h3gkaq_2g_384_top_15_bind_b90_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B91 values over time from memory
+<a href="00930_sqld360_323688_3hwq5m5h3gkaq_2g_385_bind_b91_values_over_time_from_memory.html">html</a>
+<a href="00931_sqld360_323688_3hwq5m5h3gkaq_2g_385_bind_b91_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B91 values over time from history
+<a href="00932_sqld360_323688_3hwq5m5h3gkaq_2g_386_bind_b91_values_over_time_from_history.html">html</a>
+<a href="00933_sqld360_323688_3hwq5m5h3gkaq_2g_386_bind_b91_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B91 values used
+<a href="00934_sqld360_323688_3hwq5m5h3gkaq_2g_387_top_15_bind_b91_values_used.html">html</a>
+<a href="00935_sqld360_323688_3hwq5m5h3gkaq_2g_387_top_15_bind_b91_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B92 values over time from memory
+<a href="00936_sqld360_323688_3hwq5m5h3gkaq_2g_388_bind_b92_values_over_time_from_memory.html">html</a>
+<a href="00937_sqld360_323688_3hwq5m5h3gkaq_2g_388_bind_b92_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B92 values over time from history
+<a href="00938_sqld360_323688_3hwq5m5h3gkaq_2g_389_bind_b92_values_over_time_from_history.html">html</a>
+<a href="00939_sqld360_323688_3hwq5m5h3gkaq_2g_389_bind_b92_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B92 values used
+<a href="00940_sqld360_323688_3hwq5m5h3gkaq_2g_390_top_15_bind_b92_values_used.html">html</a>
+<a href="00941_sqld360_323688_3hwq5m5h3gkaq_2g_390_top_15_bind_b92_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B93 values over time from memory
+<a href="00942_sqld360_323688_3hwq5m5h3gkaq_2g_391_bind_b93_values_over_time_from_memory.html">html</a>
+<a href="00943_sqld360_323688_3hwq5m5h3gkaq_2g_391_bind_b93_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B93 values over time from history
+<a href="00944_sqld360_323688_3hwq5m5h3gkaq_2g_392_bind_b93_values_over_time_from_history.html">html</a>
+<a href="00945_sqld360_323688_3hwq5m5h3gkaq_2g_392_bind_b93_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B93 values used
+<a href="00946_sqld360_323688_3hwq5m5h3gkaq_2g_393_top_15_bind_b93_values_used.html">html</a>
+<a href="00947_sqld360_323688_3hwq5m5h3gkaq_2g_393_top_15_bind_b93_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B94 values over time from memory
+<a href="00948_sqld360_323688_3hwq5m5h3gkaq_2g_394_bind_b94_values_over_time_from_memory.html">html</a>
+<a href="00949_sqld360_323688_3hwq5m5h3gkaq_2g_394_bind_b94_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B94 values over time from history
+<a href="00950_sqld360_323688_3hwq5m5h3gkaq_2g_395_bind_b94_values_over_time_from_history.html">html</a>
+<a href="00951_sqld360_323688_3hwq5m5h3gkaq_2g_395_bind_b94_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B94 values used
+<a href="00952_sqld360_323688_3hwq5m5h3gkaq_2g_396_top_15_bind_b94_values_used.html">html</a>
+<a href="00953_sqld360_323688_3hwq5m5h3gkaq_2g_396_top_15_bind_b94_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B95 values over time from memory
+<a href="00954_sqld360_323688_3hwq5m5h3gkaq_2g_397_bind_b95_values_over_time_from_memory.html">html</a>
+<a href="00955_sqld360_323688_3hwq5m5h3gkaq_2g_397_bind_b95_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B95 values over time from history
+<a href="00956_sqld360_323688_3hwq5m5h3gkaq_2g_398_bind_b95_values_over_time_from_history.html">html</a>
+<a href="00957_sqld360_323688_3hwq5m5h3gkaq_2g_398_bind_b95_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B95 values used
+<a href="00958_sqld360_323688_3hwq5m5h3gkaq_2g_399_top_15_bind_b95_values_used.html">html</a>
+<a href="00959_sqld360_323688_3hwq5m5h3gkaq_2g_399_top_15_bind_b95_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B96 values over time from memory
+<a href="00960_sqld360_323688_3hwq5m5h3gkaq_2g_400_bind_b96_values_over_time_from_memory.html">html</a>
+<a href="00961_sqld360_323688_3hwq5m5h3gkaq_2g_400_bind_b96_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B96 values over time from history
+<a href="00962_sqld360_323688_3hwq5m5h3gkaq_2g_401_bind_b96_values_over_time_from_history.html">html</a>
+<a href="00963_sqld360_323688_3hwq5m5h3gkaq_2g_401_bind_b96_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B96 values used
+<a href="00964_sqld360_323688_3hwq5m5h3gkaq_2g_402_top_15_bind_b96_values_used.html">html</a>
+<a href="00965_sqld360_323688_3hwq5m5h3gkaq_2g_402_top_15_bind_b96_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B97 values over time from memory
+<a href="00966_sqld360_323688_3hwq5m5h3gkaq_2g_403_bind_b97_values_over_time_from_memory.html">html</a>
+<a href="00967_sqld360_323688_3hwq5m5h3gkaq_2g_403_bind_b97_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B97 values over time from history
+<a href="00968_sqld360_323688_3hwq5m5h3gkaq_2g_404_bind_b97_values_over_time_from_history.html">html</a>
+<a href="00969_sqld360_323688_3hwq5m5h3gkaq_2g_404_bind_b97_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B97 values used
+<a href="00970_sqld360_323688_3hwq5m5h3gkaq_2g_405_top_15_bind_b97_values_used.html">html</a>
+<a href="00971_sqld360_323688_3hwq5m5h3gkaq_2g_405_top_15_bind_b97_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B98 values over time from memory
+<a href="00972_sqld360_323688_3hwq5m5h3gkaq_2g_406_bind_b98_values_over_time_from_memory.html">html</a>
+<a href="00973_sqld360_323688_3hwq5m5h3gkaq_2g_406_bind_b98_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B98 values over time from history
+<a href="00974_sqld360_323688_3hwq5m5h3gkaq_2g_407_bind_b98_values_over_time_from_history.html">html</a>
+<a href="00975_sqld360_323688_3hwq5m5h3gkaq_2g_407_bind_b98_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B98 values used
+<a href="00976_sqld360_323688_3hwq5m5h3gkaq_2g_408_top_15_bind_b98_values_used.html">html</a>
+<a href="00977_sqld360_323688_3hwq5m5h3gkaq_2g_408_top_15_bind_b98_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+<td>
+<li title="GV$SQL_BIND_CAPTURE">Bind :B99 values over time from memory
+<a href="00978_sqld360_323688_3hwq5m5h3gkaq_2g_409_bind_b99_values_over_time_from_memory.html">html</a>
+<a href="00979_sqld360_323688_3hwq5m5h3gkaq_2g_409_bind_b99_values_over_time_from_memory_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Bind :B99 values over time from history
+<a href="00980_sqld360_323688_3hwq5m5h3gkaq_2g_410_bind_b99_values_over_time_from_history.html">html</a>
+<a href="00981_sqld360_323688_3hwq5m5h3gkaq_2g_410_bind_b99_values_over_time_from_history_scatter_chart.html">scatter</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Top 15 bind :B99 values used
+<a href="00982_sqld360_323688_3hwq5m5h3gkaq_2g_411_top_15_bind_b99_values_used.html">html</a>
+<a href="00983_sqld360_323688_3hwq5m5h3gkaq_2g_411_top_15_bind_b99_values_used_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+</td>
+</tr></table>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/16:42:44 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_LAS_ACT" = :B4 ,"USR_) </font>
+</body>
+</html>

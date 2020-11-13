@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00038_sqld360_323688_cydgfyx406q8j_2d_34_plan_details v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>PGA and TEMP usage for SQL_EXEC_ID 16777218 of PHV 49360718</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 00080_sqld360_323688_cydgfyx406q8j_2d_21_pga_and_temp_usage_for_sqlexecid_16777218_of_phv_49360718_line_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Date', 'PGA Usage', 'TEMP Usage']
+, [new Date(2020,9,31,02,54,04,0), 17713152, ]
+, [new Date(2020,9,31,02,54,14,0), 47859712, 168820736]
+, [new Date(2020,9,31,02,54,24,0), 63588352, 395313152]
+, [new Date(2020,9,31,02,54,34,0), 76367872, 594542592]
+, [new Date(2020,9,31,02,54,44,0), 91310080, 799014912]
+, [new Date(2020,9,31,02,54,54,0), 97470464, 986710016]
+, [new Date(2020,9,31,02,55,04,0), 105990144, 1192230912]
+, [new Date(2020,9,31,02,55,14,0), 116672512, 1362100224]
+, [new Date(2020,9,31,02,55,24,0), 116672512, 1516240896]
+, [new Date(2020,9,31,02,55,34,0), 127289344, 1669332992]
+, [new Date(2020,9,31,02,55,45,0), 127289344, 1799356416]
+, [new Date(2020,9,31,02,55,55,0), 137971712, 2005925888]
+, [new Date(2020,9,31,02,56,05,0), 137971712, 2148532224]
+, [new Date(2020,9,31,02,56,15,0), 138889216, 2219835392]
+, [new Date(2020,9,31,02,56,25,0), 150751232, 2377121792]
+, [new Date(2020,9,31,02,56,35,0), 150751232, 2455764992]
+, [new Date(2020,9,31,02,56,45,0), 150751232, 2613051392]
+, [new Date(2020,9,31,02,56,55,0), 150751232, 2691694592]
+, [new Date(2020,9,31,02,57,05,0), 165627904, 2778726400]
+, [new Date(2020,9,31,02,57,15,0), 165627904, 2866806784]
+, [new Date(2020,9,31,02,57,25,0), 165627904, 2953838592]
+, [new Date(2020,9,31,02,57,35,0), 165627904, 3040870400]
+, [new Date(2020,9,31,02,57,45,0), 165627904, 3128950784]
+, [new Date(2020,9,31,02,57,55,0), 165627904, 3128950784]
+, [new Date(2020,9,31,02,58,05,0), 165627904, 3215982592]
+, [new Date(2020,9,31,02,58,15,0), 165627904, 3215982592]
+, [new Date(2020,9,31,02,58,25,0), 165627904, 3304062976]
+, [new Date(2020,9,31,02,58,35,0), 180570112, 3399483392]
+, [new Date(2020,9,31,02,58,45,0), 180570112, 3399483392]
+, [new Date(2020,9,31,02,58,56,0), 181684224, 3495952384]
+, [new Date(2020,9,31,02,59,06,0), 181684224, 3686793216]
+, [new Date(2020,9,31,02,59,16,0), 181684224, 3880779776]
+, [new Date(2020,9,31,02,59,26,0), 198658048, 4083154944]
+, [new Date(2020,9,31,02,59,36,0), 198658048, 4190109696]
+, [new Date(2020,9,31,02,59,46,0), 198658048, 4402970624]
+, [new Date(2020,9,31,02,59,56,0), 198658048, 4615831552]
+, [new Date(2020,9,31,03,00,06,0), 198658048, 4722786304]
+, [new Date(2020,9,31,03,00,16,0), 198658048, 4828692480]
+, [new Date(2020,9,31,03,00,26,0), 217860096, 4947181568]
+, [new Date(2020,9,31,03,00,36,0), 217860096, 5064622080]
+, [new Date(2020,9,31,03,00,46,0), 217860096, 5182062592]
+, [new Date(2020,9,31,03,00,56,0), 217860096, 5299503104]
+, [new Date(2020,9,31,03,01,06,0), 217860096, 5534384128]
+, [new Date(2020,9,31,03,01,16,0), 217860096, 5534384128]
+, [new Date(2020,9,31,03,01,26,0), 217860096, 5651824640]
+, [new Date(2020,9,31,03,01,36,0), 217860096, 5769265152]
+, [new Date(2020,9,31,03,01,46,0), 217860096, 5886705664]
+, [new Date(2020,9,31,03,01,56,0), 217860096, 5886705664]
+, [new Date(2020,9,31,03,02,06,0), 236996608, 6015680512]
+, [new Date(2020,9,31,03,02,16,0), 236996608, 6015680512]
+, [new Date(2020,9,31,03,02,26,0), 236996608, 6144655360]
+, [new Date(2020,9,31,03,02,36,0), 236996608, 6144655360]
+, [new Date(2020,9,31,03,02,46,0), 236996608, 6144655360]
+, [new Date(2020,9,31,03,02,56,0), 236996608, 6272581632]
+, [new Date(2020,9,31,03,03,06,0), 236996608, 6272581632]
+, [new Date(2020,9,31,03,03,16,0), 236996608, 6272581632]
+, [new Date(2020,9,31,03,03,26,0), 236996608, 6290407424]
+, [new Date(2020,9,31,03,03,37,0), 236996608, 6338641920]
+, [new Date(2020,9,31,03,03,47,0), 236996608, 6366953472]
+, [new Date(2020,9,31,03,03,57,0), 236996608, 6396313600]
+, [new Date(2020,9,31,03,04,07,0), 236996608, 6401556480]
+, [new Date(2020,9,31,03,04,17,0), 236996608, 6401556480]
+, [new Date(2020,9,31,03,04,27,0), 236996608, 6449790976]
+, [new Date(2020,9,31,03,04,37,0), 236996608, 6530531328]
+, [new Date(2020,9,31,03,04,47,0), 236996608, 6530531328]
+, [new Date(2020,9,31,03,04,57,0), 240535552, 6619660288]
+, [new Date(2020,9,31,03,05,07,0), 240535552, 6619660288]
+, [new Date(2020,9,31,03,05,17,0), 240535552, 6619660288]
+, [new Date(2020,9,31,03,05,27,0), 240535552, 6619660288]
+, [new Date(2020,9,31,03,05,37,0), 240535552, 6619660288]
+, [new Date(2020,9,31,03,05,47,0), 240535552, 6619660288]
+, [new Date(2020,9,31,03,05,57,0), 32589824, 6619660288]
+, [new Date(2020,9,31,03,06,07,0), 51857408, 6619660288]
+, [new Date(2020,9,31,03,06,17,0), 69552128, 6619660288]
+, [new Date(2020,9,31,03,06,27,0), 89147392, 6619660288]
+, [new Date(2020,9,31,03,06,38,0), 109070336, 6619660288]
+, [new Date(2020,9,31,03,06,48,0), 30558208, 6684672000]
+, [new Date(2020,9,31,03,06,58,0), 43075584, 6695157760]
+, [new Date(2020,9,31,03,07,08,0), 36653056, 6707740672]
+, [new Date(2020,9,31,03,07,18,0), 36653056, 6721372160]
+, [new Date(2020,9,31,03,07,28,0), 36653056, 6727663616]
+, [new Date(2020,9,31,03,07,38,0), 38815744, 6743392256]
+, [new Date(2020,9,31,03,07,48,0), 38815744, 6751780864]
+, [new Date(2020,9,31,03,07,58,0), 38815744, 6767509504]
+, [new Date(2020,9,31,03,08,08,0), 38815744, 6774849536]
+, [new Date(2020,9,31,03,08,18,0), 40912896, 6791626752]
+, [new Date(2020,9,31,03,08,28,0), 40912896, 6800015360]
+, [new Date(2020,9,31,03,08,38,0), 40912896, 6809452544]
+, [new Date(2020,9,31,03,08,49,0), 40912896, 6818889728]
+, [new Date(2020,9,31,03,08,59,0), 40912896, 6828326912]
+, [new Date(2020,9,31,03,09,09,0), 40912896, 6846152704]
+, [new Date(2020,9,31,03,09,19,0), 40912896, 6855589888]
+, [new Date(2020,9,31,03,09,29,0), 43075584, 6866075648]
+, [new Date(2020,9,31,03,09,39,0), 43075584, 6876561408]
+, [new Date(2020,9,31,03,09,49,0), 43075584, 6887047168]
+, [new Date(2020,9,31,03,09,59,0), 43075584, 6897532928]
+, [new Date(2020,9,31,03,10,09,0), 43075584, 6908018688]
+, [new Date(2020,9,31,03,10,19,0), 45172736, 6920601600]
+, [new Date(2020,9,31,03,10,29,0), 45172736, 6932135936]
+, [new Date(2020,9,31,03,10,39,0), 45172736, 6943670272]
+, [new Date(2020,9,31,03,10,49,0), 45172736, 6955204608]
+, [new Date(2020,9,31,03,10,59,0), 47335424, 6969884672]
+, [new Date(2020,9,31,03,11,09,0), 47335424, 6980370432]
+, [new Date(2020,9,31,03,11,19,0), 47335424, 6994001920]
+, [new Date(2020,9,31,03,11,29,0), 47335424, 7006584832]
+, [new Date(2020,9,31,03,11,39,0), 47335424, 7018119168]
+, [new Date(2020,9,31,03,11,49,0), 47335424, 7029653504]
+, [new Date(2020,9,31,03,11,59,0), 47335424, 7041187840]
+, [new Date(2020,9,31,03,12,09,0), 49432576, 7055867904]
+, [new Date(2020,9,31,03,12,19,0), 49432576, 7070547968]
+, [new Date(2020,9,31,03,12,29,0), 49432576, 7085228032]
+, [new Date(2020,9,31,03,12,39,0), 49432576, 7098859520]
+, [new Date(2020,9,31,03,12,49,0), 49432576, 7113539584]
+, [new Date(2020,9,31,03,12,59,0), 49432576, 7128219648]
+, [new Date(2020,9,31,03,13,09,0), 49432576, 7128219648]
+, [new Date(2020,9,31,03,13,19,0), 51595264, 7143948288]
+, [new Date(2020,9,31,03,13,29,0), 51595264, 7159676928]
+, [new Date(2020,9,31,03,13,40,0), 51595264, 7176454144]
+, [new Date(2020,9,31,03,13,50,0), 51595264, 7192182784]
+, [new Date(2020,9,31,03,14,00,0), 51595264, 7207911424]
+, [new Date(2020,9,31,03,14,10,0), 51595264, 7207911424]
+, [new Date(2020,9,31,03,14,20,0), 51595264, 7223640064]
+, [new Date(2020,9,31,03,14,30,0), 51595264, 7239368704]
+, [new Date(2020,9,31,03,14,40,0), 55855104, 7258243072]
+, [new Date(2020,9,31,03,14,50,0), 55855104, 7258243072]
+, [new Date(2020,9,31,03,15,00,0), 55855104, 7277117440]
+, [new Date(2020,9,31,03,15,10,0), 55855104, 7294943232]
+, [new Date(2020,9,31,03,15,20,0), 55855104, 7294943232]
+, [new Date(2020,9,31,03,15,30,0), 55855104, 7313817600]
+, [new Date(2020,9,31,03,15,40,0), 55855104, 7332691968]
+, [new Date(2020,9,31,03,15,50,0), 55855104, 7350517760]
+, [new Date(2020,9,31,03,16,00,0), 55855104, 7350517760]
+, [new Date(2020,9,31,03,16,10,0), 55855104, 7368343552]
+, [new Date(2020,9,31,03,16,20,0), 57952256, 7385120768]
+, [new Date(2020,9,31,03,16,30,0), 57952256, 7385120768]
+, [new Date(2020,9,31,03,16,40,0), 57952256, 7402946560]
+, [new Date(2020,9,31,03,16,51,0), 57952256, 7422869504]
+, [new Date(2020,9,31,03,17,01,0), 57952256, 7422869504]
+, [new Date(2020,9,31,03,17,11,0), 57952256, 7442792448]
+, [new Date(2020,9,31,03,17,21,0), 57952256, 7462715392]
+, [new Date(2020,9,31,03,17,31,0), 57952256, 7462715392]
+, [new Date(2020,9,31,03,17,41,0), 57952256, 7482638336]
+, [new Date(2020,9,31,03,17,51,0), 57952256, 7502561280]
+, [new Date(2020,9,31,03,18,01,0), 57952256, 7502561280]
+, [new Date(2020,9,31,03,18,11,0), 57952256, 7522484224]
+, [new Date(2020,9,31,03,18,21,0), 57952256, 7522484224]
+, [new Date(2020,9,31,03,18,31,0), 62212096, 7544504320]
+, [new Date(2020,9,31,03,18,41,0), 62212096, 7567572992]
+, [new Date(2020,9,31,03,18,51,0), 62212096, 7567572992]
+, [new Date(2020,9,31,03,19,01,0), 62212096, 7589593088]
+, [new Date(2020,9,31,03,19,11,0), 62212096, 7589593088]
+, [new Date(2020,9,31,03,19,21,0), 62212096, 7611613184]
+, [new Date(2020,9,31,03,19,31,0), 62212096, 7611613184]
+, [new Date(2020,9,31,03,19,41,0), 62212096, 7634681856]
+, [new Date(2020,9,31,03,19,51,0), 62212096, 7656701952]
+, [new Date(2020,9,31,03,20,01,0), 62212096, 7656701952]
+, [new Date(2020,9,31,03,20,11,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,20,22,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,20,32,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,20,42,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,20,52,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,21,32,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,21,52,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,22,02,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,22,12,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,22,22,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,22,52,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,23,22,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,23,32,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,23,43,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,24,03,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,24,13,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,24,33,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,24,43,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,24,53,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,25,23,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,25,33,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,25,43,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,25,53,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,26,13,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,26,23,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,26,43,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,27,03,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,27,13,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,27,44,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,27,54,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,28,14,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,28,54,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,29,04,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,29,14,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,30,04,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,30,14,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,30,24,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,31,04,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,31,15,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,31,35,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,31,55,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,32,05,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,32,25,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,32,45,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,33,15,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,33,45,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,33,55,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,34,06,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,34,46,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,34,56,0), 39340032, 1059061760]
+, [new Date(2020,9,31,03,35,16,0), 39340032, 1059061760]
+]);
+
+var options = {
+chartArea:{left:90, top:75, width:'65%', height:'70%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+explorer: {actions: ['dragToZoom', 'rightClickToReset'], maxZoomIn: 0.01},
+title: '2d.21. PGA and TEMP usage for SQL_EXEC_ID 16777218 of PHV 49360718',
+titleTextStyle: {fontSize: 18, bold: false},
+focusTarget: 'category',
+legend: {position: 'right', textStyle: {fontSize: 14}},
+tooltip: {textStyle: {fontSize: 14}},
+hAxis: {title: 'cydgfyx406q8j 12.1.0.2.0 cores:16(avg) threads:16(avg) hosts:2(avg)', gridlines: {count: -1}, titleTextStyle: {fontSize: 16, bold: false}},
+series: { 0: { }, 1: { },  2: { },  3: { },  4: { },  5: { },  6: { }, 7: {},
+8: { }, 9: { }, 10: { }, 11: { }, 12: { }, 13: { }, 14: { }
+},
+vAxes: { 0: {title: 'Bytes', titleTextStyle: {fontSize: 16, bold: false}}, 1: {title: '', titleTextStyle: {fontSize: 16, bold: false}}},
+vAxes: { 0: {title: 'Bytes', titleTextStyle: {fontSize: 16, bold: false}},
+1: {textStyle: {color: 'red'},       title: '', titleTextStyle: {color: 'red',       fontSize: 16, bold: false}}},
+}
+
+var chart = new google.visualization.LineChart(document.getElementById('linechart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2d.21. PGA and TEMP usage for SQL_EXEC_ID 16777218 of PHV 49360718 <em>(DBA_HIST_ACTIVE_SESS_HISTORY)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="linechart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) drag to zoom, and right click to reset<br>2) up to 31 days of awr history were considered</font>
+<font class="n"><br>3) Data is not aggregated, extracted directly from DBA_HIST_ASH</font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ SAMPLE_ID                                 NOT NULL NUMBER
+ SAMPLE_TIME                               NOT NULL TIMESTAMP(3)
+ SESSION_ID                                NOT NULL NUMBER
+ SESSION_SERIAL#                                    NUMBER
+ SESSION_TYPE                                       VARCHAR2(10)
+ FLAGS                                              NUMBER
+ USER_ID                                            NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ IS_SQLID_CURRENT                                   VARCHAR2(1)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_OPCODE                                         NUMBER
+ SQL_OPNAME                                         VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ TOP_LEVEL_SQL_ID                                   VARCHAR2(13)
+ TOP_LEVEL_SQL_OPCODE                               NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_FULL_PLAN_HASH_VALUE                           NUMBER
+ SQL_ADAPTIVE_PLAN_RESOLVED                         NUMBER
+ SQL_PLAN_LINE_ID                                   NUMBER
+ SQL_PLAN_OPERATION                                 VARCHAR2(64)
+ SQL_PLAN_OPTIONS                                   VARCHAR2(64)
+ SQL_EXEC_ID                                        NUMBER
+ SQL_EXEC_START                                     DATE
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ QC_INSTANCE_ID                                     NUMBER
+ QC_SESSION_ID                                      NUMBER
+ QC_SESSION_SERIAL#                                 NUMBER
+ PX_FLAGS                                           NUMBER
+ EVENT                                              VARCHAR2(64)
+ EVENT_ID                                           NUMBER
+ SEQ#                                               NUMBER
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_TIME                                          NUMBER
+ SESSION_STATE                                      VARCHAR2(7)
+ TIME_WAITED                                        NUMBER
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_SESSION                                   NUMBER
+ BLOCKING_SESSION_SERIAL#                           NUMBER
+ BLOCKING_INST_ID                                   NUMBER
+ BLOCKING_HANGCHAIN_INFO                            VARCHAR2(1)
+ CURRENT_OBJ#                                       NUMBER
+ CURRENT_FILE#                                      NUMBER
+ CURRENT_BLOCK#                                     NUMBER
+ CURRENT_ROW#                                       NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ TOP_LEVEL_CALL_NAME                                VARCHAR2(64)
+ CONSUMER_GROUP_ID                                  NUMBER
+ XID                                                RAW(8)
+ REMOTE_INSTANCE#                                   NUMBER
+ TIME_MODEL                                         NUMBER
+ IN_CONNECTION_MGMT                                 VARCHAR2(1)
+ IN_PARSE                                           VARCHAR2(1)
+ IN_HARD_PARSE                                      VARCHAR2(1)
+ IN_SQL_EXECUTION                                   VARCHAR2(1)
+ IN_PLSQL_EXECUTION                                 VARCHAR2(1)
+ IN_PLSQL_RPC                                       VARCHAR2(1)
+ IN_PLSQL_COMPILATION                               VARCHAR2(1)
+ IN_JAVA_EXECUTION                                  VARCHAR2(1)
+ IN_BIND                                            VARCHAR2(1)
+ IN_CURSOR_CLOSE                                    VARCHAR2(1)
+ IN_SEQUENCE_LOAD                                   VARCHAR2(1)
+ IN_INMEMORY_QUERY                                  VARCHAR2(1)
+ IN_INMEMORY_POPULATE                               VARCHAR2(1)
+ IN_INMEMORY_PREPOPULATE                            VARCHAR2(1)
+ IN_INMEMORY_REPOPULATE                             VARCHAR2(1)
+ IN_INMEMORY_TREPOPULATE                            VARCHAR2(1)
+ CAPTURE_OVERHEAD                                   VARCHAR2(1)
+ REPLAY_OVERHEAD                                    VARCHAR2(1)
+ IS_CAPTURED                                        VARCHAR2(1)
+ IS_REPLAYED                                        VARCHAR2(1)
+ SERVICE_HASH                                       NUMBER
+ PROGRAM                                            VARCHAR2(64)
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ CLIENT_ID                                          VARCHAR2(64)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ ECID                                               VARCHAR2(64)
+ DBREPLAY_FILE_ID                                   NUMBER
+ DBREPLAY_CALL_COUNTER                              NUMBER
+ TM_DELTA_TIME                                      NUMBER
+ TM_DELTA_CPU_TIME                                  NUMBER
+ TM_DELTA_DB_TIME                                   NUMBER
+ DELTA_TIME                                         NUMBER
+ DELTA_READ_IO_REQUESTS                             NUMBER
+ DELTA_WRITE_IO_REQUESTS                            NUMBER
+ DELTA_READ_IO_BYTES                                NUMBER
+ DELTA_WRITE_IO_BYTES                               NUMBER
+ DELTA_INTERCONNECT_IO_BYTES                        NUMBER
+ PGA_ALLOCATED                                      NUMBER
+ TEMP_SPACE_ALLOCATED                               NUMBER
+ DBOP_NAME                                          VARCHAR2(64)
+ DBOP_EXEC_ID                                       NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+SELECT 0 snap_id,
+TO_CHAR(end_time, 'YYYY-MM-DD HH24:MI:SS') begin_time,
+TO_CHAR(end_time, 'YYYY-MM-DD HH24:MI:SS') end_time,
+pga_allocated,
+temp_space_allocated,
+0 dummy_03,
+0 dummy_04,
+0 dummy_05,
+0 dummy_06,
+0 dummy_07,
+0 dummy_08,
+0 dummy_09,
+0 dummy_10,
+0 dummy_11,
+0 dummy_12,
+0 dummy_13,
+0 dummy_14,
+0 dummy_15
+FROM (SELECT timestamp end_time,
+SUM(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,11)+1,INSTR(partition_stop,',',1,12)-INSTR(partition_stop,',',1,11)-1))) pga_allocated,
+SUM(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,12)+1,INSTR(partition_stop,',',1,13)-INSTR(partition_stop,',',1,12)-1))) temp_space_allocated
+FROM plan_table
+WHERE statement_id = 'SQLD360_ASH_DATA_HIST'
+AND /*cost*/ bytes =  49360718
+AND NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position) = 1
+AND NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost) = 1568
+AND NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost) = 59938
+AND timestamp BETWEEN TO_DATE('20201031025404', 'YYYYMMDDHH24MISS') AND TO_DATE('20201031033516', 'YYYYMMDDHH24MISS')
+AND remarks = 'cydgfyx406q8j'
+AND NVL(partition_id, 16777218) = 16777218
+AND NVL(distribution, TO_DATE('20201031025404', 'YYYYMMDDHH24MISS')) = TO_DATE('20201031025404', 'YYYYMMDDHH24MISS')
+AND 'Y' = 'Y'
+GROUP BY timestamp)
+ORDER BY 3;
+
+207 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:28:28 for SQL ID cydgfyx406q8j (INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "THH_C4C"."MV_PATID_CM_COND_PROVIDER" ) </font>
+</body>
+</html>

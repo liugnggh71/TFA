@@ -1,0 +1,503 @@
+<html>
+  <head>
+    <title> SQL Monitor List </title>
+    <style type="text/css">
+         body, table, input, select, textarea
+         {font:normal normal 8pt Verdana,Arial;text-decoration:none;
+          color:#000000;}
+         .s8 {font-size:8pt;color:#006699}
+         .s9 {font-size:10pt;color:#006699}
+         .s10 {font-size:14pt;color:#006699;}
+         .s16 {border-width : 1px; border-color : #CCCC99;
+              border-style: solid; color:#006699;font-size:8pt;
+              background-color:#CCCC99; }
+        .s17 {border-width : 1px; border-color : #CCCC99;
+              border-style: solid; font-size:8pt;
+              background-color:#E8E8E6; empty-cells: show }
+        .s17a {border-width : 1px; border-color : #BDCCC3;
+              border-style: solid; font-size:8pt;
+              background-color:#F5F5F5; empty-cells: show}
+        .s17b {border-width : 1px; border-color : #BDCCC3;
+               border-style: solid; font-size:8pt;
+               background-color:#F1F5DD; empty-cells: show}
+        .s27 {border-width : 1px; border-color : #CCCC99;
+              border-style: solid;}
+
+        .graph {
+          border: solid 0px ; empty-cells: show
+        }
+
+        .bar {
+          border-left: solid 0px;
+          padding-right: 0.5em;
+          font-size:1pt;
+        }
+
+        .sql {border-width : 1px; border-color : #CCCC99;
+              border-style: solid; font-size:8pt;
+              background-color:#E8E8E6;
+              empty-cells: show; text-align: left }
+
+        .nodisp { font-size: 1% ; height: 10px; color:#F2F2F2 }
+
+        .bar div {
+          text-align: center;
+          float: left;
+        }
+
+        .executing {
+          background-color: #7CFF44;
+        }
+
+        .error {
+          background-color: red;
+        }
+
+        .div_Cpu {
+          border-top: solid 3px #1EC162;
+          background-color: #19A352;
+          color: #19A352;
+          border-bottom: solid 3px #0E5D2F;
+        }
+
+        .div_cpu_time {
+          border-top: solid 3px #1EC162;
+          background-color: #19A352;
+          color: #19A352;
+          border-bottom: solid 3px #0E5D2F;
+        }
+
+        .div_duration {
+          border-top: solid 3px #A2C8E4;
+          background-color: #8CADC5;
+          color: #8CADC5;
+          border-bottom: solid 3px #617888;
+          cursor: default;
+        }
+
+        .div_executing_time {
+          border-top: solid 3px #A2C8E4;
+          background-color: #8CADC5;
+          color: #8CADC5;
+          border-bottom: solid 3px #617888;
+          cursor: default;
+        }
+
+        .div_queuing_time {
+          border-top: solid 3px #C5FFB7;
+          background-color: #86FF86;
+          color: #86FF86;
+          border-bottom: solid 3px #74DD74;
+          cursor: default;
+        }
+
+        .div_read_reqs {
+          border-top: solid 3px #FFC846;
+          background-color: #DDAD3D;
+          color: #DDAD3D;
+          border-bottom: solid 3px #B99133;
+          cursor: default;
+        }
+
+        .div_write_reqs {
+          border-top: solid 3px #F76838;
+          background-color: #BC4F2B;
+          color: #BC4F2B;
+          border-bottom: solid 3px #9C4223;
+          cursor: default;
+        }
+
+        .div_read_bytes {
+          border-top: solid 3px #FFC846;
+          background-color: #DDAD3D;
+          color: #DDAD3D;
+          border-bottom: solid 3px #B99133;
+          cursor: default;
+        }
+
+        .div_write_bytes {
+          border-top: solid 3px #F76838;
+          background-color: #BC4F2B;
+          color: #BC4F2B;
+          border-bottom: solid 3px #9C4223;
+          cursor: default;
+        }
+
+        .div_buffer_gets {
+          border-top: solid 3px #FFAB9A;
+          background-color: #D89182;
+          color: #D89182;
+          border-bottom: solid 3px #BC7E72;
+          cursor: default;
+        }
+
+        .div_sql_cpu_time {
+          border-top: solid 3px #1EC162;
+          background-color: #19A352;
+          color: #19A352;
+          border-bottom: solid 3px #0E5D2F;
+          cursor: default;
+        }
+
+       .div_UserIO {
+          border-top: solid 3px #49A1FF;
+          background-color: #3C85D2;
+          color: #3C85D2;
+          border-bottom: solid 3px #28588B;
+          cursor: default;
+        }
+
+        .div_application_wait_time {
+          border-top: solid 3px #C8C6FF;
+          background-color: #B5B3E7;
+          color: #B5B3E7;
+          border-bottom: solid 3px #7C7B9E;
+          cursor: default;
+        }
+
+       .div_user_io_wait_time {
+          border-top: solid 3px #FF8C6C;
+          background-color: #E27C60;
+          color: #E27C60;
+          border-bottom: solid 3px #B1614B;
+          cursor: default;
+        }
+
+       .div_SystemIO {
+          border-top: solid 3px #49A1FF;
+          background-color: #3C85D2;
+          color: #3C85D2;
+          border-bottom: solid 3px #28588B;
+          cursor: default;
+        }
+
+        .div_Concurrency {
+          border-top: solid 3px #E81B1F;
+          background-color: #BE1619;
+          color: #BE1619;
+          border-bottom: solid 3px #760E10;
+          cursor: default;
+        }
+
+        .div_concurrency_wait_time {
+          border-top: solid 3px #E81B1F;
+          background-color: #BE1619;
+          color: #BE1619;
+          border-bottom: solid 3px #760E10;
+          cursor: default;
+        }
+
+        .div_cluster_wait_time {
+          border-top: solid 3px #D43B61;
+          background-color: #8B2740;
+          color: #8B2740;
+          border-bottom: solid 3px #5A1929;
+          cursor: default;
+        }
+
+        .div_plsql_exec_time {
+          border-top: solid 3px #EDD957;
+          background-color: #B1A241;
+          color: #B1A241;
+          border-bottom: solid 3px #8B7F33;
+          cursor: default;
+        }
+
+        .div_java_exec_time {
+          border-top: solid 3px #B40FEB;
+          background-color: #8E0CB9;
+          color: #8E0CB9;
+          border-bottom: solid 3px #6A098B;
+          cursor: default;
+        }
+
+        .div_other_wait_time {
+          border-top: solid 3px #4AFDEB;
+          background-color: #41DECD;
+          color: #41DECD;
+          border-bottom: solid 3px #2B9389;
+          cursor: default;
+        }
+
+        .div_disk_reads {
+          border-top: solid 3px #FFC846;
+          background-color: #DDAD3D;
+          color: #DDAD3D;
+          border-bottom: solid 3px #B99133;
+          cursor: default;
+        }
+
+        .div_direct_writes {
+          border-top: solid 3px #F76838;
+          background-color: #BC4F2B;
+          color: #BC4F2B;
+          border-bottom: solid 3px #9C4223;
+          cursor: default;
+        }
+
+        .div_user_fetch_count {
+          border-top: solid 3px #DFFF6C;
+          background-color: #CAE762;
+          color: #CAE762;
+          border-bottom: solid 3px #9EB44C;
+          cursor: default;
+        }
+
+        .div_Other {
+          border-top: solid 3px #4AFDEB;
+          background-color: #41DECD;
+          color: #41DECD;
+          border-bottom: solid 3px #2B9389;
+          cursor: default;
+        }
+
+        .progress_Disp {
+          border-top: solid 3px #F59582;
+          background-color: #E08877;
+          text-align: center;
+          border-bottom: solid 3px #B46D5F;
+          cursor: default;
+          height: 13px;
+          float:left;
+        }
+
+        .progress_Nodisp {
+          border-top: solid 3px #F59582;
+          background-color: #E08877;
+          color: #E08877;
+          border-bottom: solid 3px #B46D5F;
+          cursor: default;
+          font-size: 1% ; color:#F2F2F2
+          height: 13px;
+          float:left;
+        }
+
+        .pxtype_QC {
+          border-top: solid 2px #FAA589;
+          background-color: #E2967C;
+          border-bottom: solid 2px #BC7C67;
+          cursor: default;
+        }
+
+        .pxtype_S1 {
+          border-top: solid 2px #88F3B8;
+          background-color: #79D8A4;
+          border-bottom: solid 2px #60AC82;
+          cursor: default;
+        }
+
+        .pxtype_S2 {
+          border-top: solid 2px #9DF5FB;
+          background-color: #87D2D7;
+          border-bottom: solid 2px #70AEB2;
+          cursor: default;
+        }
+
+        .pxtype_Instance {
+          border: solid 1px #FFFFFF;
+          cursor: default;
+        }
+
+        .active_period {
+          border-top: solid 3px #A2C8E4;
+          background-color: #8CADC5;
+          color: #8CADC5;
+          border-bottom: solid 3px #617888;
+          cursor: default;
+        }
+
+        a.info span {
+          display: none;
+        }
+
+        a.info:hover {
+          position: relative;
+        }
+
+        a.info:hover span {
+          display: block;
+          position: absolute;
+          border: thin solid black;
+          background-color: #FFFF99;
+        }
+
+       </style>
+  </head>
+  <body bgcolor="#FFFFFF">
+    <h1 align="center">SQL Monitoring List</h1>
+    <br/>
+    <br/>
+    <table class="s17" border="1" ora_borderstyle="headeronly" cellspacing="0" cellpadding="0" width="100%">
+      <tr class="s16">
+        <th>
+           Status
+         </th>
+        <th width="120">
+           Duration
+         </th>
+        <th>
+           SQL Id or DBOP Name
+         </th>
+        <th>
+           User
+         </th>
+        <th>
+           Dop
+         </th>
+        <th width="120">
+           DB Time
+         </th>
+        <th width="120">
+           IOs
+         </th>
+        <th>
+           Start
+         </th>
+        <th>
+           End
+         </th>
+        <th width="30%">
+           SQL Text
+         </th>
+      </tr>
+      <tr width="100%">
+        <td>
+          <a>DONE (ALL ROWS)</a>
+        </td>
+        <td>
+          <table cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+              <td style="          width:60%        ">
+                <table class="graph" cellspacing="0" cellpadding="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td class="bar">
+                        <div class="div_duration" style="                     width:100%                   " title="duration - 76s">
+                          <P class="nodisp">.</P>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td align="left">76s</td>
+            </tbody>
+          </table>
+        </td>
+        <td align="center">
+          <a class="info">
+                        6a9h5f4pxdsyp
+                        <span>Exec_id:16777216</span>
+          </a>
+        </td>
+        <td align="center">
+          <a class="info">
+                        SYS
+                        <span>
+                            UId:0
+                            <br/>
+                            Sid:5432:36853
+                            <br/>
+                            Mod/Act:edb360/4b
+                            <br/>
+                            Prg:sqlplus@aupp-hroradb-f9exx1 (TNS V1-V3)
+                            <br/>
+                            Svc:frstprod
+                            <br/>
+            </span>
+          </a>
+        </td>
+        <td align="center">
+          <a class="info"/>
+        </td>
+        <td>
+          <table cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+              <td style="          width:60%        ">
+                <table class="graph" cellspacing="0" cellpadding="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td class="bar">
+                        <div class="div_cpu_time" style="                     width:46%                   " title="Cpu - 36.22s (46%)">
+                          <P class="nodisp">.</P>
+                        </div>
+                        <div class="div_user_io_wait_time" style="                     width:53%                   " title="IO Time - 40.97s (53%)">
+                          <P class="nodisp">.</P>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td align="left">77s</td>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <table cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+              <td style="          width:60%        ">
+                <table class="graph" cellspacing="0" cellpadding="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td class="bar">
+                        <div class="div_read_reqs" style="                     width:50%                   " title="Read Requests: 13590 = 7GB (50%)">
+                          <P class="nodisp">.</P>
+                        </div>
+                        <div class="div_write_reqs" style="                     width:49%                   " title="Write Requests: 13578 = 7GB (49%)">
+                          <P class="nodisp">.</P>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td align="left">27168</td>
+            </tbody>
+          </table>
+        </td>
+        <td align="center">11/06/2020 11:54:24</td>
+        <td align="center">11/06/2020 11:55:40</td>
+        <td>
+          <a class="info">
+                        SELECT TO_CHAR(ROWNUM) row_num, v0.* FROM /* 4b.455 */ (
+WITH
+pgastat_denorm_1 A...
+                        <span>SELECT TO_CHAR(ROWNUM) row_num, v0.* FROM /* 4b.455 */ (
+WITH
+pgastat_denorm_1 AS (
+SELECT /*+  MATERIALIZE NO_MERGE  */ /* 4b.455 */
+       snap_id,
+       dbid,
+       instance_number,
+       SUM(CASE name WHEN &apos;PGA memory freed back to OS&apos;           THEN value ELSE 0 END) pga_mem_freed_to_os,
+       SUM(CASE name WHEN &apos;aggregate PGA auto target&apos;             THEN value ELSE 0 END) aggr_pga_auto_target,
+       SUM(CASE name WHEN &apos;aggregate PGA target parameter&apos;        THEN value ELSE 0 END) aggr_pga_target_param,
+       SUM(CASE name WHEN &apos;bytes processed&apos;                       THEN value ELSE 0 END) bytes_processed,
+       SUM(CASE name WHEN &apos;extra bytes read/written&apos;              THEN value ELSE 0 END) extra_bytes_rw,
+       SUM(CASE name WHEN &apos;global memory bound&apos;                   THEN value ELSE 0 END) global_memory_bound,
+       SUM(CASE name WHEN &apos;maximum PGA allocated&apos;                 THEN value ELSE 0 END) max_pga_allocated,
+       SUM(CASE name WHEN &apos;maximum PGA used for auto workareas&apos;   THEN value ELSE 0 END) max_pga_used_aut_wa,
+       SUM(CASE name WHEN &apos;maximum PGA used for manual workareas&apos; THEN value ELSE 0 END) max_pga_used_man_wa,
+       SUM(CASE name WHEN &apos;total PGA allocated&apos;                   THEN value ELSE 0 END) tot_pga_allocated,
+       SUM(CASE name WHEN &apos;total PGA inuse&apos;                       THEN value ELSE 0 END) tot_pga_inuse,
+       SUM(CASE name WHEN &apos;total PGA used for auto workareas&apos;     THEN value ELSE 0 END) tot_pga_used_aut_wa,
+       SUM(CASE name WHEN &apos;total PGA used for manual workareas&apos;   THEN value ELSE 0 END) tot_pga_used_man_wa,
+       SUM(CASE name WHEN &apos;total freeable PGA memory&apos;             THEN value ELSE 0 END) tot_freeable_pga_mem
+  FROM dba_hist_pgastat
+ WHERE name IN
+(&apos;PGA memory freed back to OS&apos;
+,&apos;aggregate PGA auto target&apos;
+,&apos;aggregate PGA target parameter&apos;
+,&apos;bytes processed&apos;
+,&apos;extra bytes read/written&apos;
+,&apos;global memory bound&apos;
+,&apos;maximum PGA allocated&apos;
+,&apos;maximum PGA used for auto workareas&apos;
+,&apos;maximum PGA used for</span>
+          </a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

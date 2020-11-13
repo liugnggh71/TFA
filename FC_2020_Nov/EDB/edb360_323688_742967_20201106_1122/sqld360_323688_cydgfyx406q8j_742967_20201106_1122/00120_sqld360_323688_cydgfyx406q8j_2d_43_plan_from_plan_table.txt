@@ -1,0 +1,168 @@
+Plan from Plan Table (PLAN_TABLE)
+
+
+INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "THH_C4C"."MV_PATID_CM_COND_PROVIDER" SELECT get_aud_mrgmstr(member_id, valid_from, valid_to) member_id,
+       get_aud_mrgmstr(care_giver, valid_from, valid_to) care_giver,
+       valid_from,
+       valid_to,
+       PRAS_STRTDT,
+       PRAS_END_DT
+  FROM (SELECT a_cm_basebase.cmbs_memb member_id,
+               a_pvdrastn.pras_pvdr care_giver,
+               GREATEST(a_pvdrastn.valid_from, NVL(a_cm_basebase.valid_from, TO_DATE(:"SYS_B_00", :"SYS_B_01"))) valid_from,
+               CASE WHEN a_pvdrastn.valid_to IS NULL AND a_cm_basebase.valid_to IS NULL THEN
+                       TO_DATE(:"SYS_B_02", :"SYS_B_03")
+                   WHEN a_pvdrastn.valid_to IS NOT NULL AND a_cm_basebase.valid_to IS NOT NULL THEN
+                       LEAST(a_pvdrastn.valid_to, a_cm_basebase.valid_to)
+                   WHEN a_pvdrastn.valid_to IS NULL THEN  a_cm_basebase.valid_to
+                   ELSE a_pvdrastn.valid_to
+               END valid_to,
+               a_pvdrastn.PRAS_STRTDT,
+			   a_pvdrastn.PRAS_END_DT
+          FROM a_pvdrastn
+               INNER JOIN a_cm_basebase
+                   ON a_pvdrastn.cpas_cm_base = a_cm_basebase.cmbb_id
+                  AND ((a_pvdrastn.valid_from >= a_cm_basebase.valid_from
+                    AND (a_pvdrastn.valid_from <= a_cm_basebase.valid_to OR a_cm_basebase.valid_to IS NULL))
+                    OR (a_pvdrastn.valid_from <= a_cm_basebase.valid_from
+                    AND (a_pvdrastn.valid_to >= a_cm_basebase.valid_from OR a_pvdrastn.valid_to IS NULL)))
+                  AND a_pvdrastn.pras_obj_stt != :"SYS_B_04"
+                  AND a_cm_basebase.cmbb_obj_stt != :"SYS_B_05"
+                  AND a_pvdrastn.pras_pvdr IS NOT NULL
+                  AND a_cm_basebase.cmbs_memb IS NOT NULL
+        UNION
+        SELECT a_usr.mbur_id member_id,
+               a_pvdrastn.pras_pvdr care_giver,
+               GREATEST(a_pvdrastn.valid_from, NVL(a_usr.valid_from, TO_DATE(:"SYS_B_06", :"SYS_B_07"))) valid_from,
+               CASE WHEN a_pvdrastn.valid_to IS NULL AND a_usr.valid_to IS NULL THEN TO_DATE(:"SYS_B_08", :"SYS_B_09")
+                   WHEN a_pvdrastn.valid_to IS NOT NULL AND a_usr.valid_to IS NOT NULL THEN LEAST(a_pvdrastn.valid_to, a_usr.valid_to)
+                   WHEN a_pvdrastn.valid_to IS NULL THEN a_usr.valid_to
+                   ELSE a_pvdrastn.valid_to
+               END valid_to,
+          	   a_pvdrastn.PRAS_STRTDT,
+			   a_pvdrastn.PRAS_END_DT
+          FROM a_pvdrastn
+               INNER JOIN a_usr
+                   ON a_pvdrastn.mpas_memb = a_usr.mbur_id
+                  AND ((a_pvdrastn.valid_from >= a_usr.valid_from
+                    AND (a_pvdrastn.valid_from <= a_usr.valid_to OR a_usr.valid_to IS NULL))
+                    OR (a_pvdrastn.valid_from <= a_usr.valid_from
+                    AND (a_pvdrastn.valid_to >= a_usr.valid_from OR a_pvdrastn.valid_to IS NULL)))
+                  AND a_pvdrastn.pras_obj_stt != :"SYS_B_10"
+                  AND a_pvdrastn.pras_pvdr IS NOT NULL
+        UNION
+        SELECT a_cm_basebase.cmbs_memb member_id,
+               a_cm_basebase.cmbb_pmrypvdr care_giver,
+               a_cm_basebase.valid_from,
+               a_cm_basebase.valid_to,
+               null as PRAS_STRTDT,
+			   null as PRAS_END_DT
+          FROM a_cm_basebase
+         WHERE a_cm_basebase.cmbb_obj_stt != :"SYS_B_11"
+           AND a_cm_basebase.cmbb_pmrypvdr IS NOT NULL
+           AND a_cm_basebase.cmbs_memb IS NOT NULL
+UNION
+  SELECT a_um_base.umbs_memb member_id,
+               a_pvdrastn.pras_pvdr care_giver,
+               GREATEST(a_pvdrastn.valid_from, NVL(a_um_base.valid_from, TO_DATE(:"SYS_B_12", :"SYS_B_13"))) valid_from,
+               CASE WHEN a_pvdrastn.valid_to IS NULL AND a_um_base.valid_to IS NULL THEN
+                       TO_DATE(:"SYS_B_14", :"SYS_B_15")
+                   WHEN a_pvdrastn.valid_to IS NOT NULL AND a_um_base.valid_to IS NOT NULL THEN
+                       LEAST(a_pvdrastn.valid_to, a_um_base.valid_to)
+                   WHEN a_pvdrastn.valid_to IS NULL THEN  a_um_base.valid_to
+                   ELSE a_pvdrastn.valid_to
+               END valid_to,
+               a_pvdrastn.PRAS_STRTDT,
+			   a_pvdrastn.PRAS_END_DT
+          FROM a_pvdrastn
+               INNER JOIN a_um_base
+                   ON a_pvdrastn.UPAS_PVDRUM_BASE = a_um_base.umbs_id
+                  AND ((a_pvdrastn.valid_from >= a_um_base.valid_from
+                    AND (a_pvdrastn.valid_from <= a_um_base.valid_to OR a_um_base.valid_to IS NULL))
+                    OR (a_pvdrastn.valid_from <= a_um_base.valid_from
+                    AND (a_pvdrastn.valid_to >= a_um_base.valid_from OR a_pvdrastn.valid_to IS NULL)))
+                  AND a_pvdrastn.pras_obj_stt != :"SYS_B_16"
+                  AND a_um_base.umbs_obj_stt != :"SYS_B_17"
+                  AND a_pvdrastn.pras_pvdr IS NOT NULL
+                  AND a_um_base.umbs_memb IS NOT NULL
+        UNION
+        SELECT a_usr.mbur_id member_id,
+               a_pvdrastn.pras_pvdr care_giver,
+               GREATEST(a_pvdrastn.valid_from, NVL(a_usr.valid_from, TO_DATE(:"SYS_B_18", :"SYS_B_19"))) valid_from,
+               CASE WHEN a_pvdrastn.valid_to IS NULL AND a_usr.valid_to IS NULL THEN TO_DATE(:"SYS_B_20", :"SYS_B_21")
+                   WHEN a_pvdrastn.valid_to IS NOT NULL AND a_usr.valid_to IS NOT NULL THEN LEAST(a_pvdrastn.valid_to, a_usr.valid_to)
+                   WHEN a_pvdrastn.valid_to IS NULL THEN a_usr.valid_to
+                   ELSE a_pvdrastn.valid_to
+               END valid_to,
+               a_pvdrastn.PRAS_STRTDT,
+		       a_pvdrastn.PRAS_END_DT
+          FROM a_pvdrastn
+               INNER JOIN a_usr
+                   ON a_pvdrastn.mpas_memb = a_usr.mbur_id
+                  AND ((a_pvdrastn.valid_from >= a_usr.valid_from
+                    AND (a_pvdrastn.valid_from <= a_usr.valid_to OR a_usr.valid_to IS NULL))
+                    OR (a_pvdrastn.valid_from <= a_usr.valid_from
+                    AND (a_pvdrastn.valid_to >= a_usr.valid_from OR a_pvdrastn.valid_to IS NULL)))
+                  AND a_pvdrastn.pras_obj_stt != :"SYS_B_22"
+                  AND a_pvdrastn.pras_pvdr IS NOT NULL
+        UNION
+        SELECT a_um_base.umbs_memb member_id,
+               a_um_base.umbs_pmrypvdr care_giver, -- PrimaryProvider CP-287
+               a_um_base.valid_from,
+               a_um_base.valid_to,
+               null as PRAS_STRTDT,
+			   null as PRAS_END_DT
+          FROM a_um_base
+         WHERE a_um_base.umbs_obj_stt != :"SYS_B_23"
+           AND a_um_base.umbs_pfngpvdr IS NOT NULL
+           AND a_um_base.umbs_memb IS NOT NULL)
+--
+--
+	UNION
+		SELECT
+		  a_membdgisbase.mdss_memb member_id,
+		  a_pvdrastn.pras_pvdr care_giver,
+		  GREATEST(a_pvdrastn.valid_from, NVL(a_apbl.valid_from, TO_DATE(:"SYS_B_24", :"SYS_B_25"))) valid_from,
+		  CASE
+		    WHEN a_pvdrastn.valid_to IS NULL AND a_apbl.valid_to IS NULL THEN TO_DATE(:"SYS_B_26", :"SYS_B_27")
+		    WHEN a_pvdrastn.valid_to IS NOT NULL AND a_apbl.valid_to IS NOT NULL THEN LEAST(a_pvdrastn.valid_to, a_apbl.valid_to)
+		    WHEN a_pvdrastn.valid_to IS NULL THEN  a_apbl.valid_to
+		    ELSE a_pvdrastn.valid_to
+		  END valid_to,
+		  a_pvdrastn.PRAS_STRTDT,
+		  a_pvdrastn.PRAS_END_DT
+		  FROM a_pvdrastn
+		    INNER JOIN a_apbl
+		      ON a_pvdrastn.mspa_id = a_apbl.msrv_pvdrastn
+		        AND ((a_pvdrastn.valid_from >= a_apbl.valid_from
+		          AND (a_pvdrastn.valid_from <= a_apbl.valid_to OR a_apbl.valid_to IS NULL))
+		          OR (a_pvdrastn.valid_from <= a_apbl.valid_from
+		          AND (a_pvdrastn.valid_to >= a_apbl.valid_from OR a_pvdrastn.valid_to IS NULL)))
+		        AND a_pvdrastn.pras_obj_stt != :"SYS_B_28"
+		        AND a_apbl.apbl_obj_stt != :"SYS_B_29"
+		        AND a_pvdrastn.pras_pvdr IS NOT NULL
+		    INNER JOIN a_membdgisbase
+		      ON a_pvdrastn.upas_pvdrum_base = a_membdgisbase.umds_dgisum_evnt
+            AND ( (a_pvdrastn.valid_from >= a_membdgisbase.valid_from
+		          AND (a_pvdrastn.valid_from <= a_membdgisbase.valid_to OR a_membdgisbase.valid_to IS NULL) )
+		          OR (a_pvdrastn.valid_from <= a_membdgisbase.valid_from
+		          AND (a_pvdrastn.valid_to >= a_membdgisbase.valid_from OR a_pvdrastn.valid_to IS NULL)) )
+		        AND a_apbl.msrv_srvcdgis = a_membdgisbase.mdss_id
+SP2-0341: 
+line overflow during variable substitution (>3000 characters at line 1)
+Plan hash value: 1942007213
+
+----------------------------------------------------------------------------------------------------------
+| Id  | Operation                            | Name              | Rows  | Bytes | Cost (%CPU)| Time     |
+----------------------------------------------------------------------------------------------------------
+|   0 | DELETE STATEMENT                     |                   |     4 |   128 |     5   (0)| 00:00:01 |
+|   1 |  DELETE                              | T_OTHER_INSURANCE |       |       |            |          |
+|*  2 |   TABLE ACCESS BY INDEX ROWID BATCHED| T_OTHER_INSURANCE |     4 |   128 |     5   (0)| 00:00:01 |
+|*  3 |    INDEX RANGE SCAN                  | IX_FK_INS_MEMBER  |     5 |       |     3   (0)| 00:00:01 |
+----------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - filter("CLASSTYPE"=:B2)
+   3 - access("INS_MEMBER"=TO_NUMBER(:B1))

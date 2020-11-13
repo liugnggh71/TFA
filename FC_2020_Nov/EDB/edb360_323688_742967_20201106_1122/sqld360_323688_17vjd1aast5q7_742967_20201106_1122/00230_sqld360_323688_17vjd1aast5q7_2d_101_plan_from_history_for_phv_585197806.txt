@@ -1,0 +1,91 @@
+Plan from History for PHV 585197806 (DBA_HIST_SQL_PLAN)
+
+
+SQL_ID 17vjd1aast5q7
+--------------------
+SELECT DISTINCT PF.PERF_USR FROM T_WKFWTSK WF , T_WKFWTSK_STT_CNGE CNG
+, T_PRMR PF, T_USR U WHERE WF.WTSK_OBJ_STT IN (SELECT COLUMN_VALUE FROM
+TABLE(CAST (:B1 AS NUMBER_TT))) AND WF.WTSK_TNFR IS NULL AND
+WF.WTSK_CURRSTT = CNG.WTSC_ID AND CNG.WTSC_ID = PF.PERF_STT AND
+U.USR_ID = PF.PERF_USR AND U.USR_ID = U.PAYR_ID
+
+Plan hash value: 585197806
+
+---------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                               | Name                      | Rows  | Bytes | Cost (%CPU)| Time     |
+---------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                        |                           |       |       |  6660 (100)|          |
+|   1 |  HASH UNIQUE                            |                           |   480 | 18720 |  6660   (1)| 00:00:01 |
+|   2 |   NESTED LOOPS                          |                           |   113K|  4306K|  6656   (1)| 00:00:01 |
+|   3 |    NESTED LOOPS                         |                           |   500 | 13500 |  6655   (1)| 00:00:01 |
+|   4 |     NESTED LOOPS                        |                           |   500 | 10500 |  6654   (1)| 00:00:01 |
+|   5 |      MERGE JOIN CARTESIAN               |                           |     1 |    10 |  6562   (1)| 00:00:01 |
+|   6 |       VIEW                              | index$_join$_004          |     1 |     8 |  6526   (1)| 00:00:01 |
+|   7 |        HASH JOIN                        |                           |       |       |            |          |
+|   8 |         INDEX STORAGE FAST FULL SCAN    | UK_PAYR                   |     1 |     8 |     1   (0)| 00:00:01 |
+|   9 |         INDEX STORAGE FAST FULL SCAN    | IX_USR_IDNODELMSTR        |     1 |     8 |   103   (0)| 00:00:01 |
+|  10 |       BUFFER SORT                       |                           |     4 |     8 |    36   (0)| 00:00:01 |
+|  11 |        COLLECTION ITERATOR PICKLER FETCH|                           |     4 |     8 |    36   (0)| 00:00:01 |
+|  12 |      TABLE ACCESS BY INDEX ROWID BATCHED| T_WKFWTSK                 |   376K|  4039K|    92   (0)| 00:00:01 |
+|  13 |       INDEX RANGE SCAN                  | T_WKFWTSK_IX_WTSK_OBJ_STT |   379K|       |     1   (0)| 00:00:01 |
+|  14 |     INDEX UNIQUE SCAN                   | PK_T_WKFWTSK_STT_CNGE     |     1 |     6 |     1   (0)| 00:00:01 |
+|  15 |    INDEX RANGE SCAN                     | IX_PRMR_PERF_STT_PERF_USR |  1472K|    16M|     1   (0)| 00:00:01 |
+---------------------------------------------------------------------------------------------------------------------
+
+Query Block Name / Object Alias (identified by operation id):
+-------------------------------------------------------------
+
+   1 - SEL$09D7319C
+   6 - SEL$5932CA9F / U@SEL$1
+   7 - SEL$5932CA9F
+   8 - SEL$5932CA9F / indexjoin$_alias$_001@SEL$5932CA9F
+   9 - SEL$5932CA9F / indexjoin$_alias$_002@SEL$5932CA9F
+  11 - SEL$09D7319C / KOKBF$0@SEL$3
+  12 - SEL$09D7319C / WF@SEL$1
+  13 - SEL$09D7319C / WF@SEL$1
+  14 - SEL$09D7319C / CNG@SEL$1
+  15 - SEL$09D7319C / PF@SEL$1
+
+Outline Data
+-------------
+
+  /*+
+      BEGIN_OUTLINE_DATA
+      IGNORE_OPTIM_EMBEDDED_HINTS
+      OPTIMIZER_FEATURES_ENABLE('12.1.0.2')
+      DB_VERSION('12.1.0.2')
+      OPT_PARAM('optimizer_index_cost_adj' 1)
+      OPT_PARAM('optimizer_index_caching' 90)
+      ALL_ROWS
+      OUTLINE_LEAF(@"SEL$5932CA9F")
+      OUTLINE_LEAF(@"SEL$09D7319C")
+      UNNEST(@"SEL$335DD26A")
+      OUTLINE(@"SEL$1")
+      OUTLINE(@"SEL$335DD26A")
+      MERGE(@"SEL$3")
+      OUTLINE(@"SEL$2")
+      OUTLINE(@"SEL$3")
+      INDEX_JOIN(@"SEL$09D7319C" "U"@"SEL$1" ("T_USR"."PAYR_ID") "IX_USR_IDNODELMSTR")
+      FULL(@"SEL$09D7319C" "KOKBF$0"@"SEL$3")
+      INDEX_RS_ASC(@"SEL$09D7319C" "WF"@"SEL$1" ("T_WKFWTSK"."WTSK_OBJ_STT"))
+      BATCH_TABLE_ACCESS_BY_ROWID(@"SEL$09D7319C" "WF"@"SEL$1")
+      INDEX(@"SEL$09D7319C" "CNG"@"SEL$1" ("T_WKFWTSK_STT_CNGE"."WTSC_ID"))
+      INDEX(@"SEL$09D7319C" "PF"@"SEL$1" ("T_PRMR"."PERF_STT" "T_PRMR"."PERF_USR"))
+      LEADING(@"SEL$09D7319C" "U"@"SEL$1" "KOKBF$0"@"SEL$3" "WF"@"SEL$1" "CNG"@"SEL$1" "PF"@"SEL$1")
+      USE_MERGE_CARTESIAN(@"SEL$09D7319C" "KOKBF$0"@"SEL$3")
+      USE_NL(@"SEL$09D7319C" "WF"@"SEL$1")
+      USE_NL(@"SEL$09D7319C" "CNG"@"SEL$1")
+      USE_NL(@"SEL$09D7319C" "PF"@"SEL$1")
+      USE_HASH_AGGREGATION(@"SEL$09D7319C")
+      END_OUTLINE_DATA
+  */
+
+Peeked Binds (identified by position):
+--------------------------------------
+
+   1 - :B1 (NESTED TABLE): [Not Printable]
+
+Note
+-----
+   - statistics feedback used for this statement
+

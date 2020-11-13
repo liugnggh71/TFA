@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00978_sqld360_323688_3hwq5m5h3gkaq_3a_68_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Hybrid histogram on Column T_OUTCOME.OUTCOME_LAS_ACT_TIM</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 01520_sqld360_323688_3hwq5m5h3gkaq_3a_338_hybrid_histogram_on_column_toutcomeoutcomelasacttim_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,[' 2013/09/06 09:58:09', 6, '.000178', 'ApproxValue:  2013/09/06 09:58:09 NumRows: 6 Sel: .000178']
+,[' 2013/10/16 12:05:07', 6, '.000178', 'ApproxValue:  2013/10/16 12:05:07 NumRows: 6 Sel: .000178']
+,[' 2013/11/11 10:50:41', 11, '.000357', 'ApproxValue:  2013/11/11 10:50:41 NumRows: 11 Sel: .000357']
+,[' 2013/11/26 07:53:53', 6, '.000178', 'ApproxValue:  2013/11/26 07:53:53 NumRows: 6 Sel: .000178']
+,[' 2013/12/11 18:20:34', 6, '.000178', 'ApproxValue:  2013/12/11 18:20:34 NumRows: 6 Sel: .000178']
+,[' 2014/01/31 10:00:46', 6, '.000178', 'ApproxValue:  2014/01/31 10:00:46 NumRows: 6 Sel: .000178']
+,[' 2014/02/18 12:25:10', 6, '.000178', 'ApproxValue:  2014/02/18 12:25:10 NumRows: 6 Sel: .000178']
+,[' 2014/03/13 12:49:45', 6, '.000178', 'ApproxValue:  2014/03/13 12:49:45 NumRows: 6 Sel: .000178']
+,[' 2014/03/27 11:20:16', 6, '.000178', 'ApproxValue:  2014/03/27 11:20:16 NumRows: 6 Sel: .000178']
+,[' 2014/04/23 12:42:45', 11, '.000357', 'ApproxValue:  2014/04/23 12:42:45 NumRows: 11 Sel: .000357']
+,[' 2014/06/10 09:05:56', 6, '.000178', 'ApproxValue:  2014/06/10 09:05:56 NumRows: 6 Sel: .000178']
+,[' 2014/07/10 09:00:19', 11, '.000357', 'ApproxValue:  2014/07/10 09:00:19 NumRows: 11 Sel: .000357']
+,[' 2014/08/12 14:42:58', 6, '.000178', 'ApproxValue:  2014/08/12 14:42:58 NumRows: 6 Sel: .000178']
+,[' 2014/08/29 12:37:58', 6, '.000178', 'ApproxValue:  2014/08/29 12:37:58 NumRows: 6 Sel: .000178']
+,[' 2014/09/10 11:18:40', 6, '.000178', 'ApproxValue:  2014/09/10 11:18:40 NumRows: 6 Sel: .000178']
+,[' 2014/09/19 07:22:36', 6, '.000178', 'ApproxValue:  2014/09/19 07:22:36 NumRows: 6 Sel: .000178']
+,[' 2014/09/26 09:34:21', 6, '.000178', 'ApproxValue:  2014/09/26 09:34:21 NumRows: 6 Sel: .000178']
+,[' 2014/10/03 08:03:51', 6, '.000178', 'ApproxValue:  2014/10/03 08:03:51 NumRows: 6 Sel: .000178']
+,[' 2014/10/19 15:09:28', 11, '.000357', 'ApproxValue:  2014/10/19 15:09:28 NumRows: 11 Sel: .000357']
+,[' 2014/11/06 10:26:53', 6, '.000178', 'ApproxValue:  2014/11/06 10:26:53 NumRows: 6 Sel: .000178']
+,[' 2014/11/25 10:24:55', 6, '.000178', 'ApproxValue:  2014/11/25 10:24:55 NumRows: 6 Sel: .000178']
+,[' 2014/12/03 12:25:08', 6, '.000178', 'ApproxValue:  2014/12/03 12:25:08 NumRows: 6 Sel: .000178']
+,[' 2014/12/12 08:09:37', 6, '.000178', 'ApproxValue:  2014/12/12 08:09:37 NumRows: 6 Sel: .000178']
+,[' 2014/12/23 09:20:36', 6, '.000178', 'ApproxValue:  2014/12/23 09:20:36 NumRows: 6 Sel: .000178']
+,[' 2015/01/06 13:45:46', 6, '.000178', 'ApproxValue:  2015/01/06 13:45:46 NumRows: 6 Sel: .000178']
+,[' 2015/01/12 15:42:49', 6, '.000178', 'ApproxValue:  2015/01/12 15:42:49 NumRows: 6 Sel: .000178']
+,[' 2015/01/16 15:34:27', 6, '.000178', 'ApproxValue:  2015/01/16 15:34:27 NumRows: 6 Sel: .000178']
+,[' 2015/01/29 07:25:48', 6, '.000178', 'ApproxValue:  2015/01/29 07:25:48 NumRows: 6 Sel: .000178']
+,[' 2015/02/05 08:47:53', 6, '.000178', 'ApproxValue:  2015/02/05 08:47:53 NumRows: 6 Sel: .000178']
+,[' 2015/02/10 16:16:50', 6, '.000178', 'ApproxValue:  2015/02/10 16:16:50 NumRows: 6 Sel: .000178']
+,[' 2015/02/17 13:51:32', 11, '.000357', 'ApproxValue:  2015/02/17 13:51:32 NumRows: 11 Sel: .000357']
+,[' 2015/02/24 09:57:29', 6, '.000178', 'ApproxValue:  2015/02/24 09:57:29 NumRows: 6 Sel: .000178']
+,[' 2015/03/03 13:56:30', 6, '.000178', 'ApproxValue:  2015/03/03 13:56:30 NumRows: 6 Sel: .000178']
+,[' 2015/03/20 08:58:38', 6, '.000178', 'ApproxValue:  2015/03/20 08:58:38 NumRows: 6 Sel: .000178']
+,[' 2015/04/03 14:12:29', 6, '.000178', 'ApproxValue:  2015/04/03 14:12:29 NumRows: 6 Sel: .000178']
+,[' 2015/04/17 15:44:52', 6, '.000178', 'ApproxValue:  2015/04/17 15:44:52 NumRows: 6 Sel: .000178']
+,[' 2015/05/01 14:57:25', 6, '.000178', 'ApproxValue:  2015/05/01 14:57:25 NumRows: 6 Sel: .000178']
+,[' 2015/05/13 11:22:39', 6, '.000178', 'ApproxValue:  2015/05/13 11:22:39 NumRows: 6 Sel: .000178']
+,[' 2015/06/01 15:21:08', 6, '.000178', 'ApproxValue:  2015/06/01 15:21:08 NumRows: 6 Sel: .000178']
+,[' 2015/06/11 14:14:29', 6, '.000178', 'ApproxValue:  2015/06/11 14:14:29 NumRows: 6 Sel: .000178']
+,[' 2015/06/15 14:09:21', 6, '.000178', 'ApproxValue:  2015/06/15 14:09:21 NumRows: 6 Sel: .000178']
+,[' 2015/06/26 11:27:06', 6, '.000178', 'ApproxValue:  2015/06/26 11:27:06 NumRows: 6 Sel: .000178']
+,[' 2015/07/02 16:24:52', 6, '.000178', 'ApproxValue:  2015/07/02 16:24:52 NumRows: 6 Sel: .000178']
+,[' 2015/07/13 16:29:28', 6, '.000178', 'ApproxValue:  2015/07/13 16:29:28 NumRows: 6 Sel: .000178']
+,[' 2015/07/21 11:43:32', 6, '.000178', 'ApproxValue:  2015/07/21 11:43:32 NumRows: 6 Sel: .000178']
+,[' 2015/07/30 11:36:09', 6, '.000178', 'ApproxValue:  2015/07/30 11:36:09 NumRows: 6 Sel: .000178']
+,[' 2015/08/06 11:42:32', 6, '.000178', 'ApproxValue:  2015/08/06 11:42:32 NumRows: 6 Sel: .000178']
+,[' 2015/08/13 12:19:57', 6, '.000178', 'ApproxValue:  2015/08/13 12:19:57 NumRows: 6 Sel: .000178']
+,[' 2015/08/25 13:01:33', 6, '.000178', 'ApproxValue:  2015/08/25 13:01:33 NumRows: 6 Sel: .000178']
+,[' 2015/09/04 16:27:25', 6, '.000178', 'ApproxValue:  2015/09/04 16:27:25 NumRows: 6 Sel: .000178']
+,[' 2015/09/14 11:34:03', 6, '.000178', 'ApproxValue:  2015/09/14 11:34:03 NumRows: 6 Sel: .000178']
+,[' 2015/09/21 14:38:32', 6, '.000178', 'ApproxValue:  2015/09/21 14:38:32 NumRows: 6 Sel: .000178']
+,[' 2015/09/28 14:30:56', 6, '.000178', 'ApproxValue:  2015/09/28 14:30:56 NumRows: 6 Sel: .000178']
+,[' 2015/10/05 12:03:55', 6, '.000178', 'ApproxValue:  2015/10/05 12:03:55 NumRows: 6 Sel: .000178']
+,[' 2015/10/19 12:03:53', 6, '.000178', 'ApproxValue:  2015/10/19 12:03:53 NumRows: 6 Sel: .000178']
+,[' 2015/10/26 09:27:04', 6, '.000178', 'ApproxValue:  2015/10/26 09:27:04 NumRows: 6 Sel: .000178']
+,[' 2015/11/02 13:40:31', 6, '.000178', 'ApproxValue:  2015/11/02 13:40:31 NumRows: 6 Sel: .000178']
+,[' 2015/11/18 11:15:02', 6, '.000178', 'ApproxValue:  2015/11/18 11:15:02 NumRows: 6 Sel: .000178']
+,[' 2015/12/01 08:30:37', 6, '.000178', 'ApproxValue:  2015/12/01 08:30:37 NumRows: 6 Sel: .000178']
+,[' 2015/12/11 15:40:39', 6, '.000178', 'ApproxValue:  2015/12/11 15:40:39 NumRows: 6 Sel: .000178']
+,[' 2015/12/21 09:49:33', 6, '.000178', 'ApproxValue:  2015/12/21 09:49:33 NumRows: 6 Sel: .000178']
+,[' 2015/12/30 10:48:44', 6, '.000178', 'ApproxValue:  2015/12/30 10:48:44 NumRows: 6 Sel: .000178']
+,[' 2016/01/11 12:39:58', 6, '.000178', 'ApproxValue:  2016/01/11 12:39:58 NumRows: 6 Sel: .000178']
+,[' 2016/01/14 15:55:58', 6, '.000178', 'ApproxValue:  2016/01/14 15:55:58 NumRows: 6 Sel: .000178']
+,[' 2016/01/22 13:06:21', 6, '.000178', 'ApproxValue:  2016/01/22 13:06:21 NumRows: 6 Sel: .000178']
+,[' 2016/02/01 12:29:04', 6, '.000178', 'ApproxValue:  2016/02/01 12:29:04 NumRows: 6 Sel: .000178']
+,[' 2016/02/09 14:14:26', 6, '.000178', 'ApproxValue:  2016/02/09 14:14:26 NumRows: 6 Sel: .000178']
+,[' 2016/02/14 20:33:08', 6, '.000178', 'ApproxValue:  2016/02/14 20:33:08 NumRows: 6 Sel: .000178']
+,[' 2016/02/18 10:10:59', 6, '.000178', 'ApproxValue:  2016/02/18 10:10:59 NumRows: 6 Sel: .000178']
+,[' 2016/02/25 09:09:11', 6, '.000178', 'ApproxValue:  2016/02/25 09:09:11 NumRows: 6 Sel: .000178']
+,[' 2016/03/03 14:59:39', 6, '.000178', 'ApproxValue:  2016/03/03 14:59:39 NumRows: 6 Sel: .000178']
+,[' 2016/03/09 11:24:32', 6, '.000178', 'ApproxValue:  2016/03/09 11:24:32 NumRows: 6 Sel: .000178']
+,[' 2016/03/18 11:25:15', 6, '.000178', 'ApproxValue:  2016/03/18 11:25:15 NumRows: 6 Sel: .000178']
+,[' 2016/03/30 07:48:06', 6, '.000178', 'ApproxValue:  2016/03/30 07:48:06 NumRows: 6 Sel: .000178']
+,[' 2016/04/04 13:40:25', 6, '.000178', 'ApproxValue:  2016/04/04 13:40:25 NumRows: 6 Sel: .000178']
+,[' 2016/04/07 08:03:26', 6, '.000178', 'ApproxValue:  2016/04/07 08:03:26 NumRows: 6 Sel: .000178']
+,[' 2016/04/13 13:01:23', 6, '.000178', 'ApproxValue:  2016/04/13 13:01:23 NumRows: 6 Sel: .000178']
+,[' 2016/04/21 14:03:33', 6, '.000178', 'ApproxValue:  2016/04/21 14:03:33 NumRows: 6 Sel: .000178']
+,[' 2016/04/27 08:58:23', 6, '.000178', 'ApproxValue:  2016/04/27 08:58:23 NumRows: 6 Sel: .000178']
+,[' 2016/05/03 13:26:36', 6, '.000178', 'ApproxValue:  2016/05/03 13:26:36 NumRows: 6 Sel: .000178']
+,[' 2016/05/09 13:04:36', 6, '.000178', 'ApproxValue:  2016/05/09 13:04:36 NumRows: 6 Sel: .000178']
+,[' 2016/05/19 18:00:59', 6, '.000178', 'ApproxValue:  2016/05/19 18:00:59 NumRows: 6 Sel: .000178']
+,[' 2016/05/31 13:32:17', 6, '.000178', 'ApproxValue:  2016/05/31 13:32:17 NumRows: 6 Sel: .000178']
+,[' 2016/06/07 17:47:08', 6, '.000178', 'ApproxValue:  2016/06/07 17:47:08 NumRows: 6 Sel: .000178']
+,[' 2016/06/16 07:49:00', 6, '.000178', 'ApproxValue:  2016/06/16 07:49:00 NumRows: 6 Sel: .000178']
+,[' 2016/06/24 18:44:34', 6, '.000178', 'ApproxValue:  2016/06/24 18:44:34 NumRows: 6 Sel: .000178']
+,[' 2016/07/01 17:03:45', 6, '.000178', 'ApproxValue:  2016/07/01 17:03:45 NumRows: 6 Sel: .000178']
+,[' 2016/07/11 12:10:24', 6, '.000178', 'ApproxValue:  2016/07/11 12:10:24 NumRows: 6 Sel: .000178']
+,[' 2016/07/18 07:47:42', 6, '.000178', 'ApproxValue:  2016/07/18 07:47:42 NumRows: 6 Sel: .000178']
+,[' 2016/07/22 07:18:20', 6, '.000178', 'ApproxValue:  2016/07/22 07:18:20 NumRows: 6 Sel: .000178']
+,[' 2016/08/01 14:38:28', 6, '.000178', 'ApproxValue:  2016/08/01 14:38:28 NumRows: 6 Sel: .000178']
+,[' 2016/08/10 07:25:17', 6, '.000178', 'ApproxValue:  2016/08/10 07:25:17 NumRows: 6 Sel: .000178']
+,[' 2016/08/15 12:33:46', 6, '.000178', 'ApproxValue:  2016/08/15 12:33:46 NumRows: 6 Sel: .000178']
+,[' 2016/08/22 07:58:34', 6, '.000178', 'ApproxValue:  2016/08/22 07:58:34 NumRows: 6 Sel: .000178']
+,[' 2016/08/26 10:10:41', 6, '.000178', 'ApproxValue:  2016/08/26 10:10:41 NumRows: 6 Sel: .000178']
+,[' 2016/08/30 17:16:55', 6, '.000178', 'ApproxValue:  2016/08/30 17:16:55 NumRows: 6 Sel: .000178']
+,[' 2016/09/06 15:12:15', 6, '.000178', 'ApproxValue:  2016/09/06 15:12:15 NumRows: 6 Sel: .000178']
+,[' 2016/09/09 09:56:13', 6, '.000178', 'ApproxValue:  2016/09/09 09:56:13 NumRows: 6 Sel: .000178']
+,[' 2016/09/16 08:20:51', 17, '.000536', 'ApproxValue:  2016/09/16 08:20:51 NumRows: 17 Sel: .000536']
+,[' 2016/09/23 09:02:39', 6, '.000178', 'ApproxValue:  2016/09/23 09:02:39 NumRows: 6 Sel: .000178']
+,[' 2016/10/03 15:23:47', 11, '.000357', 'ApproxValue:  2016/10/03 15:23:47 NumRows: 11 Sel: .000357']
+,[' 2016/10/11 21:51:03', 6, '.000178', 'ApproxValue:  2016/10/11 21:51:03 NumRows: 6 Sel: .000178']
+,[' 2016/10/20 11:54:53', 6, '.000178', 'ApproxValue:  2016/10/20 11:54:53 NumRows: 6 Sel: .000178']
+,[' 2016/10/28 18:22:54', 6, '.000178', 'ApproxValue:  2016/10/28 18:22:54 NumRows: 6 Sel: .000178']
+,[' 2016/11/04 17:57:27', 6, '.000178', 'ApproxValue:  2016/11/04 17:57:27 NumRows: 6 Sel: .000178']
+,[' 2016/11/10 10:06:17', 6, '.000178', 'ApproxValue:  2016/11/10 10:06:17 NumRows: 6 Sel: .000178']
+,[' 2016/11/17 12:43:41', 6, '.000178', 'ApproxValue:  2016/11/17 12:43:41 NumRows: 6 Sel: .000178']
+,[' 2016/11/23 16:14:03', 6, '.000178', 'ApproxValue:  2016/11/23 16:14:03 NumRows: 6 Sel: .000178']
+,[' 2016/12/05 17:00:05', 6, '.000178', 'ApproxValue:  2016/12/05 17:00:05 NumRows: 6 Sel: .000178']
+,[' 2016/12/20 08:06:05', 6, '.000178', 'ApproxValue:  2016/12/20 08:06:05 NumRows: 6 Sel: .000178']
+,[' 2016/12/30 18:13:44', 6, '.000178', 'ApproxValue:  2016/12/30 18:13:44 NumRows: 6 Sel: .000178']
+,[' 2017/01/23 13:54:03', 6, '.000178', 'ApproxValue:  2017/01/23 13:54:03 NumRows: 6 Sel: .000178']
+,[' 2017/02/20 11:03:21', 6, '.000178', 'ApproxValue:  2017/02/20 11:03:21 NumRows: 6 Sel: .000178']
+,[' 2017/03/06 11:22:58', 6, '.000178', 'ApproxValue:  2017/03/06 11:22:58 NumRows: 6 Sel: .000178']
+,[' 2017/04/03 10:27:51', 6, '.000178', 'ApproxValue:  2017/04/03 10:27:51 NumRows: 6 Sel: .000178']
+,[' 2017/04/19 10:04:53', 6, '.000178', 'ApproxValue:  2017/04/19 10:04:53 NumRows: 6 Sel: .000178']
+,[' 2017/05/04 14:29:48', 11, '.000357', 'ApproxValue:  2017/05/04 14:29:48 NumRows: 11 Sel: .000357']
+,[' 2017/05/31 11:21:41', 6, '.000178', 'ApproxValue:  2017/05/31 11:21:41 NumRows: 6 Sel: .000178']
+,[' 2017/06/07 14:06:24', 6, '.000178', 'ApproxValue:  2017/06/07 14:06:24 NumRows: 6 Sel: .000178']
+,[' 2017/06/27 18:06:41', 6, '.000178', 'ApproxValue:  2017/06/27 18:06:41 NumRows: 6 Sel: .000178']
+,[' 2017/07/26 10:32:56', 6, '.000178', 'ApproxValue:  2017/07/26 10:32:56 NumRows: 6 Sel: .000178']
+,[' 2017/08/17 14:26:56', 6, '.000178', 'ApproxValue:  2017/08/17 14:26:56 NumRows: 6 Sel: .000178']
+,[' 2017/08/28 18:01:17', 6, '.000178', 'ApproxValue:  2017/08/28 18:01:17 NumRows: 6 Sel: .000178']
+,[' 2017/09/06 11:04:20', 6, '.000178', 'ApproxValue:  2017/09/06 11:04:20 NumRows: 6 Sel: .000178']
+,[' 2017/09/20 09:08:41', 6, '.000178', 'ApproxValue:  2017/09/20 09:08:41 NumRows: 6 Sel: .000178']
+,[' 2017/10/02 09:49:58', 6, '.000178', 'ApproxValue:  2017/10/02 09:49:58 NumRows: 6 Sel: .000178']
+,[' 2017/10/13 08:48:03', 6, '.000178', 'ApproxValue:  2017/10/13 08:48:03 NumRows: 6 Sel: .000178']
+,[' 2017/10/30 17:08:21', 6, '.000178', 'ApproxValue:  2017/10/30 17:08:21 NumRows: 6 Sel: .000178']
+,[' 2017/11/14 12:23:15', 6, '.000178', 'ApproxValue:  2017/11/14 12:23:15 NumRows: 6 Sel: .000178']
+,[' 2017/12/01 14:51:41', 6, '.000178', 'ApproxValue:  2017/12/01 14:51:41 NumRows: 6 Sel: .000178']
+,[' 2017/12/13 15:56:55', 6, '.000178', 'ApproxValue:  2017/12/13 15:56:55 NumRows: 6 Sel: .000178']
+,[' 2017/12/27 15:24:16', 6, '.000178', 'ApproxValue:  2017/12/27 15:24:16 NumRows: 6 Sel: .000178']
+,[' 2018/01/04 10:16:28', 11, '.000357', 'ApproxValue:  2018/01/04 10:16:28 NumRows: 11 Sel: .000357']
+,[' 2018/01/12 08:22:30', 6, '.000178', 'ApproxValue:  2018/01/12 08:22:30 NumRows: 6 Sel: .000178']
+,[' 2018/01/22 13:16:29', 6, '.000178', 'ApproxValue:  2018/01/22 13:16:29 NumRows: 6 Sel: .000178']
+,[' 2018/02/16 17:33:45', 6, '.000178', 'ApproxValue:  2018/02/16 17:33:45 NumRows: 6 Sel: .000178']
+,[' 2018/03/21 12:26:06', 6, '.000178', 'ApproxValue:  2018/03/21 12:26:06 NumRows: 6 Sel: .000178']
+,[' 2018/04/05 20:01:22', 6, '.000178', 'ApproxValue:  2018/04/05 20:01:22 NumRows: 6 Sel: .000178']
+,[' 2018/05/03 11:29:04', 6, '.000178', 'ApproxValue:  2018/05/03 11:29:04 NumRows: 6 Sel: .000178']
+,[' 2018/05/22 09:44:26', 6, '.000178', 'ApproxValue:  2018/05/22 09:44:26 NumRows: 6 Sel: .000178']
+,[' 2018/06/12 16:05:41', 6, '.000178', 'ApproxValue:  2018/06/12 16:05:41 NumRows: 6 Sel: .000178']
+,[' 2018/07/02 17:04:16', 11, '.000357', 'ApproxValue:  2018/07/02 17:04:16 NumRows: 11 Sel: .000357']
+,[' 2018/08/06 09:22:29', 6, '.000178', 'ApproxValue:  2018/08/06 09:22:29 NumRows: 6 Sel: .000178']
+,[' 2018/09/05 11:37:16', 11, '.000357', 'ApproxValue:  2018/09/05 11:37:16 NumRows: 11 Sel: .000357']
+,[' 2018/09/17 15:05:55', 6, '.000178', 'ApproxValue:  2018/09/17 15:05:55 NumRows: 6 Sel: .000178']
+,[' 2018/10/01 08:27:27', 6, '.000178', 'ApproxValue:  2018/10/01 08:27:27 NumRows: 6 Sel: .000178']
+,[' 2018/10/30 19:21:12', 6, '.000178', 'ApproxValue:  2018/10/30 19:21:12 NumRows: 6 Sel: .000178']
+,[' 2018/11/08 15:45:41', 6, '.000178', 'ApproxValue:  2018/11/08 15:45:41 NumRows: 6 Sel: .000178']
+,[' 2018/12/04 18:40:13', 6, '.000178', 'ApproxValue:  2018/12/04 18:40:13 NumRows: 6 Sel: .000178']
+,[' 2018/12/26 11:23:38', 6, '.000178', 'ApproxValue:  2018/12/26 11:23:38 NumRows: 6 Sel: .000178']
+,[' 2019/01/11 18:05:34', 6, '.000178', 'ApproxValue:  2019/01/11 18:05:34 NumRows: 6 Sel: .000178']
+,[' 2019/01/24 09:30:35', 11, '.000357', 'ApproxValue:  2019/01/24 09:30:35 NumRows: 11 Sel: .000357']
+,[' 2019/02/13 18:18:07', 6, '.000178', 'ApproxValue:  2019/02/13 18:18:07 NumRows: 6 Sel: .000178']
+,[' 2019/03/05 17:28:44', 6, '.000178', 'ApproxValue:  2019/03/05 17:28:44 NumRows: 6 Sel: .000178']
+,[' 2019/03/22 11:26:51', 6, '.000178', 'ApproxValue:  2019/03/22 11:26:51 NumRows: 6 Sel: .000178']
+,[' 2019/04/10 11:27:15', 6, '.000178', 'ApproxValue:  2019/04/10 11:27:15 NumRows: 6 Sel: .000178']
+,[' 2019/04/23 11:28:51', 6, '.000178', 'ApproxValue:  2019/04/23 11:28:51 NumRows: 6 Sel: .000178']
+,[' 2019/04/29 09:57:31', 6, '.000178', 'ApproxValue:  2019/04/29 09:57:31 NumRows: 6 Sel: .000178']
+,[' 2019/05/23 09:41:47', 11, '.000357', 'ApproxValue:  2019/05/23 09:41:47 NumRows: 11 Sel: .000357']
+,[' 2019/06/07 12:39:53', 6, '.000178', 'ApproxValue:  2019/06/07 12:39:53 NumRows: 6 Sel: .000178']
+,[' 2019/06/21 12:08:17', 6, '.000178', 'ApproxValue:  2019/06/21 12:08:17 NumRows: 6 Sel: .000178']
+,[' 2019/07/15 16:07:37', 6, '.000178', 'ApproxValue:  2019/07/15 16:07:37 NumRows: 6 Sel: .000178']
+,[' 2019/07/31 10:47:07', 6, '.000178', 'ApproxValue:  2019/07/31 10:47:07 NumRows: 6 Sel: .000178']
+,[' 2019/08/12 13:03:40', 6, '.000178', 'ApproxValue:  2019/08/12 13:03:40 NumRows: 6 Sel: .000178']
+,[' 2019/08/28 17:05:39', 6, '.000178', 'ApproxValue:  2019/08/28 17:05:39 NumRows: 6 Sel: .000178']
+,[' 2019/09/19 15:59:38', 6, '.000178', 'ApproxValue:  2019/09/19 15:59:38 NumRows: 6 Sel: .000178']
+,[' 2019/10/03 13:38:22', 6, '.000178', 'ApproxValue:  2019/10/03 13:38:22 NumRows: 6 Sel: .000178']
+,[' 2019/10/31 11:13:26', 6, '.000178', 'ApproxValue:  2019/10/31 11:13:26 NumRows: 6 Sel: .000178']
+,[' 2019/11/14 09:53:40', 6, '.000178', 'ApproxValue:  2019/11/14 09:53:40 NumRows: 6 Sel: .000178']
+,[' 2019/12/06 12:57:36', 6, '.000178', 'ApproxValue:  2019/12/06 12:57:36 NumRows: 6 Sel: .000178']
+,[' 2019/12/27 01:53:39', 6, '.000178', 'ApproxValue:  2019/12/27 01:53:39 NumRows: 6 Sel: .000178']
+,[' 2020/01/10 10:41:54', 6, '.000178', 'ApproxValue:  2020/01/10 10:41:54 NumRows: 6 Sel: .000178']
+,[' 2020/01/24 12:19:18', 6, '.000178', 'ApproxValue:  2020/01/24 12:19:18 NumRows: 6 Sel: .000178']
+,[' 2020/02/11 08:27:13', 11, '.000357', 'ApproxValue:  2020/02/11 08:27:13 NumRows: 11 Sel: .000357']
+,[' 2020/02/24 20:58:07', 6, '.000178', 'ApproxValue:  2020/02/24 20:58:07 NumRows: 6 Sel: .000178']
+,[' 2020/03/11 08:32:36', 11, '.000357', 'ApproxValue:  2020/03/11 08:32:36 NumRows: 11 Sel: .000357']
+,[' 2020/03/13 10:20:45', 11, '.000357', 'ApproxValue:  2020/03/13 10:20:45 NumRows: 11 Sel: .000357']
+,[' 2020/03/19 11:08:45', 6, '.000178', 'ApproxValue:  2020/03/19 11:08:45 NumRows: 6 Sel: .000178']
+,[' 2020/04/01 09:42:29', 6, '.000178', 'ApproxValue:  2020/04/01 09:42:29 NumRows: 6 Sel: .000178']
+,[' 2020/04/02 16:25:08', 6, '.000178', 'ApproxValue:  2020/04/02 16:25:08 NumRows: 6 Sel: .000178']
+,[' 2020/04/08 14:43:16', 6, '.000178', 'ApproxValue:  2020/04/08 14:43:16 NumRows: 6 Sel: .000178']
+,[' 2020/04/13 16:24:59', 6, '.000178', 'ApproxValue:  2020/04/13 16:24:59 NumRows: 6 Sel: .000178']
+,[' 2020/04/21 14:07:54', 6, '.000178', 'ApproxValue:  2020/04/21 14:07:54 NumRows: 6 Sel: .000178']
+,[' 2020/04/28 14:08:53', 6, '.000178', 'ApproxValue:  2020/04/28 14:08:53 NumRows: 6 Sel: .000178']
+,[' 2020/04/30 15:54:07', 6, '.000178', 'ApproxValue:  2020/04/30 15:54:07 NumRows: 6 Sel: .000178']
+,[' 2020/05/04 14:28:39', 6, '.000178', 'ApproxValue:  2020/05/04 14:28:39 NumRows: 6 Sel: .000178']
+,[' 2020/05/06 14:54:07', 6, '.000178', 'ApproxValue:  2020/05/06 14:54:07 NumRows: 6 Sel: .000178']
+,[' 2020/05/13 10:25:34', 11, '.000357', 'ApproxValue:  2020/05/13 10:25:34 NumRows: 11 Sel: .000357']
+,[' 2020/05/14 11:42:15', 6, '.000178', 'ApproxValue:  2020/05/14 11:42:15 NumRows: 6 Sel: .000178']
+,[' 2020/05/18 11:36:00', 6, '.000178', 'ApproxValue:  2020/05/18 11:36:00 NumRows: 6 Sel: .000178']
+,[' 2020/05/26 12:19:11', 17, '.000536', 'ApproxValue:  2020/05/26 12:19:11 NumRows: 17 Sel: .000536']
+,[' 2020/05/27 09:33:30', 6, '.000178', 'ApproxValue:  2020/05/27 09:33:30 NumRows: 6 Sel: .000178']
+,[' 2020/05/29 11:38:00', 6, '.000178', 'ApproxValue:  2020/05/29 11:38:00 NumRows: 6 Sel: .000178']
+,[' 2020/06/05 09:25:38', 6, '.000178', 'ApproxValue:  2020/06/05 09:25:38 NumRows: 6 Sel: .000178']
+,[' 2020/06/08 14:13:30', 6, '.000178', 'ApproxValue:  2020/06/08 14:13:30 NumRows: 6 Sel: .000178']
+,[' 2020/06/10 09:17:55', 6, '.000178', 'ApproxValue:  2020/06/10 09:17:55 NumRows: 6 Sel: .000178']
+,[' 2020/06/11 10:03:04', 11, '.000357', 'ApproxValue:  2020/06/11 10:03:04 NumRows: 11 Sel: .000357']
+,[' 2020/06/16 14:06:35', 17, '.000536', 'ApproxValue:  2020/06/16 14:06:35 NumRows: 17 Sel: .000536']
+,[' 2020/06/18 15:21:30', 6, '.000178', 'ApproxValue:  2020/06/18 15:21:30 NumRows: 6 Sel: .000178']
+,[' 2020/06/22 08:07:40', 6, '.000178', 'ApproxValue:  2020/06/22 08:07:40 NumRows: 6 Sel: .000178']
+,[' 2020/06/24 13:57:26', 6, '.000178', 'ApproxValue:  2020/06/24 13:57:26 NumRows: 6 Sel: .000178']
+,[' 2020/06/26 13:59:02', 6, '.000178', 'ApproxValue:  2020/06/26 13:59:02 NumRows: 6 Sel: .000178']
+,[' 2020/07/01 14:25:44', 6, '.000178', 'ApproxValue:  2020/07/01 14:25:44 NumRows: 6 Sel: .000178']
+,[' 2020/07/06 15:36:38', 6, '.000178', 'ApproxValue:  2020/07/06 15:36:38 NumRows: 6 Sel: .000178']
+,[' 2020/07/08 09:05:52', 6, '.000178', 'ApproxValue:  2020/07/08 09:05:52 NumRows: 6 Sel: .000178']
+,[' 2020/07/09 15:54:24', 6, '.000178', 'ApproxValue:  2020/07/09 15:54:24 NumRows: 6 Sel: .000178']
+,[' 2020/07/13 08:38:37', 6, '.000178', 'ApproxValue:  2020/07/13 08:38:37 NumRows: 6 Sel: .000178']
+,[' 2020/07/16 11:01:37', 6, '.000178', 'ApproxValue:  2020/07/16 11:01:37 NumRows: 6 Sel: .000178']
+,[' 2020/07/20 12:48:25', 6, '.000178', 'ApproxValue:  2020/07/20 12:48:25 NumRows: 6 Sel: .000178']
+,[' 2020/07/21 16:10:32', 6, '.000178', 'ApproxValue:  2020/07/21 16:10:32 NumRows: 6 Sel: .000178']
+,[' 2020/07/23 16:33:33', 6, '.000178', 'ApproxValue:  2020/07/23 16:33:33 NumRows: 6 Sel: .000178']
+,[' 2020/07/28 13:54:09', 11, '.000357', 'ApproxValue:  2020/07/28 13:54:09 NumRows: 11 Sel: .000357']
+,[' 2020/07/30 15:12:43', 6, '.000178', 'ApproxValue:  2020/07/30 15:12:43 NumRows: 6 Sel: .000178']
+,[' 2020/08/03 14:20:21', 6, '.000178', 'ApproxValue:  2020/08/03 14:20:21 NumRows: 6 Sel: .000178']
+,[' 2020/08/05 08:26:04', 11, '.000357', 'ApproxValue:  2020/08/05 08:26:04 NumRows: 11 Sel: .000357']
+,[' 2020/08/06 09:04:45', 6, '.000178', 'ApproxValue:  2020/08/06 09:04:45 NumRows: 6 Sel: .000178']
+,[' 2020/08/07 14:57:08', 6, '.000178', 'ApproxValue:  2020/08/07 14:57:08 NumRows: 6 Sel: .000178']
+,[' 2020/08/10 14:12:46', 6, '.000178', 'ApproxValue:  2020/08/10 14:12:46 NumRows: 6 Sel: .000178']
+,[' 2020/08/12 13:39:25', 6, '.000178', 'ApproxValue:  2020/08/12 13:39:25 NumRows: 6 Sel: .000178']
+,[' 2020/08/17 09:07:45', 6, '.000178', 'ApproxValue:  2020/08/17 09:07:45 NumRows: 6 Sel: .000178']
+,[' 2020/08/18 17:03:29', 11, '.000357', 'ApproxValue:  2020/08/18 17:03:29 NumRows: 11 Sel: .000357']
+,[' 2020/08/20 13:25:39', 6, '.000178', 'ApproxValue:  2020/08/20 13:25:39 NumRows: 6 Sel: .000178']
+,[' 2020/08/24 08:50:49', 6, '.000178', 'ApproxValue:  2020/08/24 08:50:49 NumRows: 6 Sel: .000178']
+,[' 2020/08/25 08:13:10', 6, '.000178', 'ApproxValue:  2020/08/25 08:13:10 NumRows: 6 Sel: .000178']
+,[' 2020/08/27 08:38:32', 6, '.000178', 'ApproxValue:  2020/08/27 08:38:32 NumRows: 6 Sel: .000178']
+,[' 2020/08/31 09:05:33', 6, '.000178', 'ApproxValue:  2020/08/31 09:05:33 NumRows: 6 Sel: .000178']
+,[' 2020/09/01 10:15:38', 11, '.000357', 'ApproxValue:  2020/09/01 10:15:38 NumRows: 11 Sel: .000357']
+,[' 2020/09/02 14:06:47', 11, '.000357', 'ApproxValue:  2020/09/02 14:06:47 NumRows: 11 Sel: .000357']
+,[' 2020/09/08 09:08:37', 6, '.000178', 'ApproxValue:  2020/09/08 09:08:37 NumRows: 6 Sel: .000178']
+,[' 2020/09/09 15:06:07', 6, '.000178', 'ApproxValue:  2020/09/09 15:06:07 NumRows: 6 Sel: .000178']
+,[' 2020/09/11 14:43:51', 6, '.000178', 'ApproxValue:  2020/09/11 14:43:51 NumRows: 6 Sel: .000178']
+,[' 2020/09/15 11:33:11', 6, '.000178', 'ApproxValue:  2020/09/15 11:33:11 NumRows: 6 Sel: .000178']
+,[' 2020/09/17 09:17:25', 6, '.000178', 'ApproxValue:  2020/09/17 09:17:25 NumRows: 6 Sel: .000178']
+,[' 2020/09/21 12:49:46', 6, '.000178', 'ApproxValue:  2020/09/21 12:49:46 NumRows: 6 Sel: .000178']
+,[' 2020/09/22 15:15:17', 6, '.000178', 'ApproxValue:  2020/09/22 15:15:17 NumRows: 6 Sel: .000178']
+,[' 2020/09/24 16:50:08', 6, '.000178', 'ApproxValue:  2020/09/24 16:50:08 NumRows: 6 Sel: .000178']
+,[' 2020/09/28 13:00:37', 6, '.000178', 'ApproxValue:  2020/09/28 13:00:37 NumRows: 6 Sel: .000178']
+,[' 2020/09/30 08:39:34', 6, '.000178', 'ApproxValue:  2020/09/30 08:39:34 NumRows: 6 Sel: .000178']
+,[' 2020/10/02 10:06:39', 6, '.000178', 'ApproxValue:  2020/10/02 10:06:39 NumRows: 6 Sel: .000178']
+,[' 2020/10/05 08:44:27', 17, '.000536', 'ApproxValue:  2020/10/05 08:44:27 NumRows: 17 Sel: .000536']
+,[' 2020/10/06 13:52:51', 6, '.000178', 'ApproxValue:  2020/10/06 13:52:51 NumRows: 6 Sel: .000178']
+,[' 2020/10/08 11:20:15', 6, '.000178', 'ApproxValue:  2020/10/08 11:20:15 NumRows: 6 Sel: .000178']
+,[' 2020/10/12 08:09:27', 6, '.000178', 'ApproxValue:  2020/10/12 08:09:27 NumRows: 6 Sel: .000178']
+,[' 2020/10/13 10:13:43', 6, '.000178', 'ApproxValue:  2020/10/13 10:13:43 NumRows: 6 Sel: .000178']
+,[' 2020/10/15 10:14:00', 6, '.000178', 'ApproxValue:  2020/10/15 10:14:00 NumRows: 6 Sel: .000178']
+,[' 2020/10/16 15:51:48', 6, '.000178', 'ApproxValue:  2020/10/16 15:51:48 NumRows: 6 Sel: .000178']
+,[' 2020/10/20 08:53:52', 11, '.000357', 'ApproxValue:  2020/10/20 08:53:52 NumRows: 11 Sel: .000357']
+,[' 2020/10/21 11:44:14', 6, '.000178', 'ApproxValue:  2020/10/21 11:44:14 NumRows: 6 Sel: .000178']
+,[' 2020/10/23 12:35:42', 6, '.000178', 'ApproxValue:  2020/10/23 12:35:42 NumRows: 6 Sel: .000178']
+,[' 2020/10/26 18:12:01', 6, '.000178', 'ApproxValue:  2020/10/26 18:12:01 NumRows: 6 Sel: .000178']
+,[' 2020/10/28 17:28:00', 6, '.000178', 'ApproxValue:  2020/10/28 17:28:00 NumRows: 6 Sel: .000178']
+,[' 2020/10/30 11:52:30', 6, '.000178', 'ApproxValue:  2020/10/30 11:52:30 NumRows: 6 Sel: .000178']
+,[' 2020/11/02 16:56:51', 6, '.000178', 'ApproxValue:  2020/11/02 16:56:51 NumRows: 6 Sel: .000178']
+,[' 2020/11/03 15:59:38', 6, '.000178', 'ApproxValue:  2020/11/03 15:59:38 NumRows: 6 Sel: .000178']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.338. Hybrid histogram on Column T_OUTCOME.OUTCOME_LAS_ACT_TIM',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.338. Hybrid histogram on Column T_OUTCOME.OUTCOME_LAS_ACT_TIM <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'DATE' = 'DATE' or 'DATE' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'DATE' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round(endpoint_repeat_count / 5589 * 32037) rows_per_bucket,
+trunc(endpoint_repeat_count / 5589,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'DATE' = 'DATE' or 'DATE' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'DATE' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round(endpoint_repeat_count / 5589 * 32037)||' Sel: '||trunc(endpoint_repeat_count / 5589,6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_OUTCOME'
+AND a.column_name = 'OUTCOME_LAS_ACT_TIM'
+ORDER BY a.endpoint_number;
+
+254 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-04/09:46:11 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>

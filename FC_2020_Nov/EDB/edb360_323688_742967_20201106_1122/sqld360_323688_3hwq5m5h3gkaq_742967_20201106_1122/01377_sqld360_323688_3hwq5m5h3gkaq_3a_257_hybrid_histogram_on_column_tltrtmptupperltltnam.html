@@ -1,0 +1,4435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00996_sqld360_323688_3hwq5m5h3gkaq_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Hybrid histogram on Column T_LTR_TMPT.(UPPER("LTLT_NAM"))</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 01377_sqld360_323688_3hwq5m5h3gkaq_3a_257_hybrid_histogram_on_column_tltrtmptupperltltnam.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.257. Hybrid histogram on Column T_LTR_TMPT.(UPPER("LTLT_NAM")) <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+APPROXIMATE_VALUE
+</th>
+<th scope="col">
+ROWS_PER_BUCKET
+</th>
+<th scope="col">
+SELECTIVITY
+</th>
+<th scope="col">
+CHART_TEXT
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+2 STAR ADULT CM MONITOR LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: 2 STAR ADULT CM MONITOR LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+ADDITIONAL INFORMATION FROM  PROVIDER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: ADDITIONAL INFORMATION FROM  PROVIDER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+ADDITIONAL INFORMATION FROM PROVIDER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: ADDITIONAL INFORMATION FROM PROVIDER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+ADDITIONAL INFORMATION V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: ADDITIONAL INFORMATION V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+AMBULANCE SERVICE
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: AMBULANCE SERVICE NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+AMBULANCE SERVICE V1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: AMBULANCE SERVICE V1 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+APPROVAL PAYMENT EVALUATION V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: APPROVAL PAYMENT EVALUATION V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+AUTH APPROVED
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: AUTH APPROVED  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+AUTH APPROVED DELIVERY
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: AUTH APPROVED DELIVERY  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+AUTH APPROVED V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: AUTH APPROVED V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+AUTH NOT REQUIRED V1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: AUTH NOT REQUIRED V1 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+AUTH ON FILE DENIED
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: AUTH ON FILE DENIED NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+AUTH PENDED
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: AUTH PENDED  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+AUTH PENDED V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: AUTH PENDED V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+BEHAVIORAL HEALTH
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: BEHAVIORAL HEALTH NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+BEHAVIORAL HEALTH V1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: BEHAVIORAL HEALTH V1 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+BH CM FIRSTCARE SECOND FOLLOW UP (ENGLISH-SPANISH)
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: BH CM FIRSTCARE SECOND FOLLOW UP (ENGLISH-SPANISH) NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+BTL CONSENT  FORM
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: BTL CONSENT  FORM   NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+BTL CONSENT FROM V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: BTL CONSENT FROM V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+CARE PLAN COVER - MEMBER LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CARE PLAN COVER - MEMBER LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+CARE PLAN COVER- PROVIDER FAX V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CARE PLAN COVER- PROVIDER FAX V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+CASE MANAGEMENT INTRODUCTION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CASE MANAGEMENT INTRODUCTION NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td>
+CDM REFERRAL FORM
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CDM REFERRAL FORM NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+CDM REFERRAL FORM V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CDM REFERRAL FORM V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td>
+CHILD LETTER TRANSPLANT EVALUATION V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHILD LETTER TRANSPLANT EVALUATION V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td>
+CHIP - ADULT - RESOURCES - V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - ADULT - RESOURCES - V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td>
+CHIP - MEMBER - LETTER - ADULT - RELEASE OF INFORMATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - MEMBER - LETTER - ADULT - RELEASE OF INFORMATION  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td>
+CHIP - MEMBER - LETTER - ADULT - UNABLE TO REACH
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - MEMBER - LETTER - ADULT - UNABLE TO REACH NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td>
+CHIP - MEMBER - LETTER - CHILD - CONFIRM OPT - OUT
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - MEMBER - LETTER - CHILD - CONFIRM OPT - OUT NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td>
+CHIP - MEMBER - LETTER - CHILD - ICT INVITATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - MEMBER - LETTER - CHILD - ICT INVITATION NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td>
+CHIP - MEMBER - LETTER - CHILD - OUTREACH 1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - MEMBER - LETTER - CHILD - OUTREACH 1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+CHIP - MEMBER - LETTER - CHILD - OUTREACH 2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - MEMBER - LETTER - CHILD - OUTREACH 2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td>
+CHIP - MEMBER - LETTER - CHILD - UNABLE TO REACH
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - MEMBER - LETTER - CHILD - UNABLE TO REACH NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td>
+CHIP - MEMBER -LETTER - ADULT - OUTREACH 1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - MEMBER -LETTER - ADULT - OUTREACH 1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td>
+CHIP - PROVIDER - LETTER - CAREPLAN COVER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP - PROVIDER - LETTER - CAREPLAN COVER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+CHIP -MEMBER - LETTER -ADULT - LOST CONTACT
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP -MEMBER - LETTER -ADULT - LOST CONTACT NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+CHIP ADULT CM PHONE FOLLOW UP - CMC V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP ADULT CM PHONE FOLLOW UP - CMC V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+CHIP ADULT MONITOR LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP ADULT MONITOR LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+CHIP ADULT MONITOR LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP ADULT MONITOR LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+CHIP ADULT PHONE FOLLOW UP LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP ADULT PHONE FOLLOW UP LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+CHIP ADULT PHONE FOLLOW UP LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP ADULT PHONE FOLLOW UP LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+CHIP CHILD CM MONITOR LETTER - CMC V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP CHILD CM MONITOR LETTER - CMC V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td>
+CHIP CHILD CM PHONE FOLLOW UP LETTER - CMC V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP CHILD CM PHONE FOLLOW UP LETTER - CMC V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td>
+CHIP CHILD MONITOR LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP CHILD MONITOR LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td>
+CHIP CHILD MONITOR LETTER V3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP CHILD MONITOR LETTER V3 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td>
+CHIP CHILD PHONE FOLLOW UP LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP CHILD PHONE FOLLOW UP LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td>
+CHIP CM FOLLOW UP LETTER - CMC V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP CM FOLLOW UP LETTER - CMC V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td>
+CHIP COMPLAINT APPEAL PROCESS
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP COMPLAINT APPEAL PROCESS  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td>
+CHIP FOLLOW UP LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP FOLLOW UP LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td>
+CHIP FOLLOW UP LETTER V3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP FOLLOW UP LETTER V3 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td>
+CHIP TECHNICAL DENIAL LETTER TO MEMBER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP TECHNICAL DENIAL LETTER TO MEMBER  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td>
+CHIP TECHNICAL DENIAL LETTER TO MEMBER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP TECHNICAL DENIAL LETTER TO MEMBER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td>
+CHIP TECHNICAL DENIAL LETTERS TO PROVIDER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP TECHNICAL DENIAL LETTERS TO PROVIDER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td>
+CHIP- MEMBER - LETTER - CHILD - RESOURCES
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP- MEMBER - LETTER - CHILD - RESOURCES NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td>
+CHIP- MEMBER- LETTER- ADULT - CARE PLAN COVER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIP- MEMBER- LETTER- ADULT - CARE PLAN COVER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td>
+CHIROPRACTIC CARE
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CHIROPRACTIC CARE  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td>
+CHIROPRACTIC CARE V1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: CHIROPRACTIC CARE V1 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td>
+CM FIRSTCARE FINAL LETTER  (ENGLISH-SPANISH)_V7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM FIRSTCARE FINAL LETTER  (ENGLISH-SPANISH)_V7 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td>
+CM FIRSTCARE MEDICAID WELCOME LETTER (ENGLISH-SPANISH)
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM FIRSTCARE MEDICAID WELCOME LETTER (ENGLISH-SPANISH) NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td>
+CM FIRSTCARE PROGRAM LETTER  (ENGLISH-SPANISH)
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM FIRSTCARE PROGRAM LETTER  (ENGLISH-SPANISH) NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td>
+CM FIRSTCARE RESOURCE LETTER (ENGLISH)
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM FIRSTCARE RESOURCE LETTER (ENGLISH) NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td>
+CM RIGHTCARE CASE MANAGER TRANSITION LETTER CM (ENGLISH-SPANISH)
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM RIGHTCARE CASE MANAGER TRANSITION LETTER CM (ENGLISH-SPANISH) NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td>
+CM RIGHTCARE FINAL LETTER (ENGLISH-SPANISH) RCCM108 10143
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM RIGHTCARE FINAL LETTER (ENGLISH-SPANISH) RCCM108 10143 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td>
+CM RIGHTCARE MOMS UTR LETTER 2161 11.26.19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM RIGHTCARE MOMS UTR LETTER 2161 11.26.19 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td>
+CM RIGHTCARE PEDIATRIC LETTER FINAL 71718 11.26.19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM RIGHTCARE PEDIATRIC LETTER FINAL 71718 11.26.19 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td>
+CM RIGHTCARE PROGRAM LETTER (ENGLISH-SPANISH) RCCM105 10142
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM RIGHTCARE PROGRAM LETTER (ENGLISH-SPANISH) RCCM105 10142 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td>
+CM RIGHTCARE RESOURCE 71715 11.15.19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM RIGHTCARE RESOURCE 71715 11.15.19 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td>
+CM RIGHTCARE RESOURCE LETTER (ENGLISH-SPANISH) RCSWHP 71715 V6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM RIGHTCARE RESOURCE LETTER (ENGLISH-SPANISH) RCSWHP 71715 V6 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td>
+CM RIGHTCARE TRANSITION 7191 11.15.19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM RIGHTCARE TRANSITION 7191 11.15.19 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td>
+CM RIGHTCARE WELCOME LETTER (ENGLISH-SPANISH) RCCM109 7179
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CM RIGHTCARE WELCOME LETTER (ENGLISH-SPANISH) RCCM109 7179 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td>
+COMMERCIAL  - CHILD - OUTREACH 1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL  - CHILD - OUTREACH 1  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td>
+COMMERCIAL - ADULT - CARE PLAN COVER
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - CARE PLAN COVER  NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td>
+COMMERCIAL - ADULT - CONFIRM OPT OUT
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - CONFIRM OPT OUT NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td>
+COMMERCIAL - ADULT - CONFIRM OPT OUT
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - CONFIRM OPT OUT  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td>
+COMMERCIAL - ADULT - ICT INVITATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - ICT INVITATION  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td>
+COMMERCIAL - ADULT - LIFE PLANNING
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - LIFE PLANNING  NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td>
+COMMERCIAL - ADULT - LOST CONTACT
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - LOST CONTACT NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td>
+COMMERCIAL - ADULT - OUTREACH 1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - OUTREACH 1  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td>
+COMMERCIAL - ADULT - OUTREACH 2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - OUTREACH 2  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td>
+COMMERCIAL - ADULT - RELEASE OF INFORMATION
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - RELEASE OF INFORMATION  NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td>
+COMMERCIAL - ADULT - RESOURCES
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - RESOURCES  NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td>
+COMMERCIAL - ADULT - UNABLE TO REACH
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT - UNABLE TO REACH   NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td>
+COMMERCIAL - ADULT OUTREACH 2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT OUTREACH 2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td>
+COMMERCIAL - ADULT- CASE MANAGEMENT INTRODUCTION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - ADULT- CASE MANAGEMENT INTRODUCTION  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td>
+COMMERCIAL - CHILD - CARE PLAN COVER
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+             .007425
+</td>
+<td>
+ApproxValue: COMMERCIAL - CHILD - CARE PLAN COVER NumRows: 3 Sel: .007425
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td>
+COMMERCIAL - CHILD - CONFIRM OPT OUT
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: COMMERCIAL - CHILD - CONFIRM OPT OUT NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td>
+COMMERCIAL - CHILD - ICT INVITATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - CHILD - ICT INVITATION  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td>
+COMMERCIAL - CHILD - LOST CONTACT
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: COMMERCIAL - CHILD - LOST CONTACT NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td>
+COMMERCIAL - CHILD - OUTREACH 2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - CHILD - OUTREACH 2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td>
+COMMERCIAL - CHILD - OUTREACH 2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL - CHILD - OUTREACH 2  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td>
+COMMERCIAL - CHILD - RESOURCES
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: COMMERCIAL - CHILD - RESOURCES NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td>
+COMMERCIAL - CHILD - UNABLE TO REACH
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: COMMERCIAL - CHILD - UNABLE TO REACH NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td>
+COMMERCIAL CASE CLOSURE
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL CASE CLOSURE NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td>
+COMMERCIAL CM ATTEMPT TO CONTACT V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL CM ATTEMPT TO CONTACT V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td>
+COMMERCIAL CM ATTEMPT TO CONTACT V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL CM ATTEMPT TO CONTACT V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td>
+COMMERCIAL CM UNABLE TO CONTACT LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL CM UNABLE TO CONTACT LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td>
+COMMERCIAL CM UNABLE TO CONTACT LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL CM UNABLE TO CONTACT LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td>
+COMMERCIAL CM WELCOME LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL CM WELCOME LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td>
+COMMERCIAL FINAL LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMERCIAL FINAL LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td>
+COMMUNITY RESOURCE
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMUNITY RESOURCE NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td>
+COMMUNITY RESOURCE LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: COMMUNITY RESOURCE LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td>
+CONFIRM OPT-OUT LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: CONFIRM OPT-OUT LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td>
+COVENANT SYNERGY V1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: COVENANT SYNERGY V1 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td>
+DENTAL CARIES
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: DENTAL CARIES  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td>
+DRUG TO DRUG INTERACTION_PAR
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: DRUG TO DRUG INTERACTION_PAR NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td>
+ECI SERVICES
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: ECI SERVICES NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td>
+ECI SERVICES V1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: ECI SERVICES V1 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td>
+ESI INJECTIONS
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: ESI INJECTIONS  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td>
+ESI INJECTIONS V1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: ESI INJECTIONS V1 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td>
+FINAL CM ADULT LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM ADULT LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td>
+FINAL CM ADULT LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM ADULT LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td>
+FINAL CM ADULT LETTER V4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM ADULT LETTER V4 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td>
+FINAL CM ADULT LETTER V5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM ADULT LETTER V5 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td>
+FINAL CM ADUT LETTER V4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM ADUT LETTER V4 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td>
+FINAL CM CHILD LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM CHILD LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td>
+FINAL CM CHILD LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM CHILD LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td>
+FINAL CM CHILD LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM CHILD LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td>
+FINAL CM CHILD LETTER V4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM CHILD LETTER V4 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td>
+FINAL CM CHILD LETTER V5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: FINAL CM CHILD LETTER V5 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td>
+ICT INVITATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: ICT INVITATION  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td>
+ICT INVITATION LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: ICT INVITATION LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td>
+INITIAL CM ADULT LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM ADULT LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td>
+INITIAL CM ADULT LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM ADULT LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td>
+INITIAL CM ADULT LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM ADULT LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td>
+INITIAL CM ADULT LETTER V4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM ADULT LETTER V4 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td>
+INITIAL CM ADULT LETTER V5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM ADULT LETTER V5 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td>
+INITIAL CM CHILD LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM CHILD LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td>
+INITIAL CM CHILD LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM CHILD LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td>
+INITIAL CM CHILD LETTER V3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM CHILD LETTER V3 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td>
+INITIAL CM CHILD LETTER V4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM CHILD LETTER V4 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td>
+INITIAL CM CHILD LETTER V6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INITIAL CM CHILD LETTER V6 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td>
+INPATIENT AB REGION V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INPATIENT AB REGION V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td>
+INPATIENT AM REGION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INPATIENT AM REGION  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td>
+INPATIENT LUB REGION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INPATIENT LUB REGION  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td>
+INPATIENT LUB REGION V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INPATIENT LUB REGION V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td>
+INPATIENT VHP REGION V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INPATIENT VHP REGION V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td>
+INPATIENT WA REGION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: INPATIENT WA REGION  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td>
+LIFE PLANNING
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: LIFE PLANNING NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td>
+LIFE PLANNING INFORMATION LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: LIFE PLANNING INFORMATION LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td>
+MAGELLAN HEALTH SERVICES REFERRAL FORM V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MAGELLAN HEALTH SERVICES REFERRAL FORM V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td>
+MATERNITY CM FIRSTCARE MEDICAID HIGH RISK OPT IN LETTER (ENGLISH
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MATERNITY CM FIRSTCARE MEDICAID HIGH RISK OPT IN LETTER (ENGLISH NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td>
+MATERNITY CM FIRSTCARE MEDICAID LOW RISK LETTER (ENGLISH-SPANISH
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MATERNITY CM FIRSTCARE MEDICAID LOW RISK LETTER (ENGLISH-SPANISH NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td>
+MATERNITY CM RIGHTCARE  HIGH RISK OPT IN LETTER (ENGLISH-SPANISH
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MATERNITY CM RIGHTCARE  HIGH RISK OPT IN LETTER (ENGLISH-SPANISH NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td>
+MATERNITY CM RIGHTCARE LOW RISK LETTER- (ENGLISH-SPANISH)
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MATERNITY CM RIGHTCARE LOW RISK LETTER- (ENGLISH-SPANISH) NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td>
+MEDICAID - ADULT -  UNABLE TO REACH
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - ADULT -  UNABLE TO REACH  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td>
+MEDICAID - ADULT - CARE PLAN COVER LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - ADULT - CARE PLAN COVER LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td>
+MEDICAID - ADULT - ICT INVITATION- LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - ADULT - ICT INVITATION- LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td>
+MEDICAID - ADULT - LOST CONTACT
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - ADULT - LOST CONTACT   NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td>
+MEDICAID - ADULT - OUTREACH 2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - ADULT - OUTREACH 2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td>
+MEDICAID - ADULT LIFE PLANNING LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - ADULT LIFE PLANNING LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td>
+MEDICAID - ADULT- RELEASE OF INFORMATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - ADULT- RELEASE OF INFORMATION NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td>
+MEDICAID - CHILD - CONFIRM OPT - OUT
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - CHILD - CONFIRM OPT - OUT NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td>
+MEDICAID - CHILD - ICT INVITATION - LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - CHILD - ICT INVITATION - LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td>
+MEDICAID - CHILD - OUTREACH 2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - CHILD - OUTREACH 2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td>
+MEDICAID - CHILD - RELEASE OF INFORMATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - CHILD - RELEASE OF INFORMATION NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td>
+MEDICAID - CHILD - UNABLE TO REACH
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - CHILD - UNABLE TO REACH NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td>
+MEDICAID - CHILD- OUTREACH 1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAID - CHILD- OUTREACH 1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td>
+MEDICAL NECESSITY (ALBERTO N) - AAM V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICAL NECESSITY (ALBERTO N) - AAM V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td>
+MEDICARE CM LETTER CASE MANAGER WELCOME 2014 V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER CASE MANAGER WELCOME 2014 V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td>
+MEDICARE CM LETTER CONTINUING CM INCLUDING MAILING HRA
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER CONTINUING CM INCLUDING MAILING HRA NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td>
+MEDICARE CM LETTER HRA OUTREACH CONTINUING CM 2014 V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER HRA OUTREACH CONTINUING CM 2014 V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td>
+MEDICARE CM LETTER MBR REQUEST FOR RESOURCES 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER MBR REQUEST FOR RESOURCES 2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td>
+MEDICARE CM LETTER MEMBER REQUEST FOR RESOURCES
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER MEMBER REQUEST FOR RESOURCES NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td>
+MEDICARE CM LETTER MOVING OUT OF AREA 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER MOVING OUT OF AREA 2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td>
+MEDICARE CM LETTER NO NEEDS IDENTIFIED
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER NO NEEDS IDENTIFIED NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td>
+MEDICARE CM LETTER NO RESPONSE FINAL
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER NO RESPONSE FINAL NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td>
+MEDICARE CM LETTER NO RESPONSE FINAL 2014 V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER NO RESPONSE FINAL 2014 V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td>
+MEDICARE CM LETTER OPT OUT 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER OPT OUT 2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td>
+MEDICARE CM LETTER OPT OUT 2014 V1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER OPT OUT 2014 V1 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td>
+MEDICARE CM LETTER PF107 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER PF107 2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td>
+MEDICARE CM LETTER PF107 2014 V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER PF107 2014 V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td>
+MEDICARE CM LETTER PF107_2014 V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER PF107_2014 V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td>
+MEDICARE CM LETTER PROVIDER COVER LETTER FINAL
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER PROVIDER COVER LETTER FINAL NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td>
+MEDICARE CM LETTER TRANSITION OR CHANGING PLAN
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER TRANSITION OR CHANGING PLAN NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td>
+MEDICARE CM LETTER UNABLE TO CONTACT 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER UNABLE TO CONTACT 2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td>
+MEDICARE CM LETTER WELCOME CHANGING CASE MANAGERS
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER WELCOME CHANGING CASE MANAGERS NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+177
+</td>
+<td>
+MEDICARE CM LETTER WELCOME FORMAL
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER WELCOME FORMAL NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+178
+</td>
+<td>
+MEDICARE CM LETTER WELCOME PERSONAL AFTER RECEIVED HRA
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM LETTER WELCOME PERSONAL AFTER RECEIVED HRA NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+179
+</td>
+<td>
+MEDICARE CM REFERRAL 2014 V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM REFERRAL 2014 V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+180
+</td>
+<td>
+MEDICARE CM REFERRAL INTRO
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM REFERRAL INTRO NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+181
+</td>
+<td>
+MEDICARE CM REFERRAL_2014 V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE CM REFERRAL_2014 V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+182
+</td>
+<td>
+MEDICARE EMERGENCY ROOM CARE LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE EMERGENCY ROOM CARE LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+183
+</td>
+<td>
+MEDICARE ER LETTER #1 INCLUDING WHAT IF I HAVE AN EMERGENCY BROC
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: MEDICARE ER LETTER #1 INCLUDING WHAT IF I HAVE AN EMERGENCY BROC NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+184
+</td>
+<td>
+MEDICARE ER LETTER #2 FREQUENT VISITS 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE ER LETTER #2 FREQUENT VISITS 2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+185
+</td>
+<td>
+MEDICARE ICT INVITATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE ICT INVITATION NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+186
+</td>
+<td>
+MEDICARE ICT INVITATION 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE ICT INVITATION 2014   NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+187
+</td>
+<td>
+MEDICARE ICT INVITATION V3 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE ICT INVITATION V3 2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+188
+</td>
+<td>
+MEDICARE LETTER SNP ENROLLMENT WELCOME NEW FCA CM FINAL
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE LETTER SNP ENROLLMENT WELCOME NEW FCA CM FINAL NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+189
+</td>
+<td>
+MEDICARE LIFE PLANNING 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE LIFE PLANNING 2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+190
+</td>
+<td>
+MEDICARE LIFE PLANNING_2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE LIFE PLANNING_2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+191
+</td>
+<td>
+MEDICARE LIFE PLANNING_2014 V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE LIFE PLANNING_2014 V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+192
+</td>
+<td>
+MEDICARE UNABLE TO CONTACT V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICARE UNABLE TO CONTACT V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+193
+</td>
+<td>
+MEDICATE ICT INVITATION V2 2014
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEDICATE ICT INVITATION V2 2014 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+194
+</td>
+<td>
+MEMBER LETTER TRANSPLANT EVALUATION V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEMBER LETTER TRANSPLANT EVALUATION V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+195
+</td>
+<td>
+MEMBER LETTER TRANSPLANT EVALUATION V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEMBER LETTER TRANSPLANT EVALUATION V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+196
+</td>
+<td>
+MEMBER NOT ELIGIBLE V1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: MEMBER NOT ELIGIBLE V1 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+197
+</td>
+<td>
+MEMBER NOT IN SYSTEM
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEMBER NOT IN SYSTEM  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+198
+</td>
+<td>
+MEMBER NOT IN SYSTEM V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: MEMBER NOT IN SYSTEM V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+199
+</td>
+<td>
+NO AUTHORIZATION LETTER - AAM V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: NO AUTHORIZATION LETTER - AAM V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+200
+</td>
+<td>
+NOT COVERED (ALBERTO N) - AAM V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: NOT COVERED (ALBERTO N) - AAM V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+201
+</td>
+<td>
+OB  DELIVERY
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: OB  DELIVERY NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+202
+</td>
+<td>
+OB  OBSERVATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: OB  OBSERVATION NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+203
+</td>
+<td>
+OB CM CONTACT LETTER V2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              .00495
+</td>
+<td>
+ApproxValue: OB CM CONTACT LETTER V2 NumRows: 2 Sel: .00495
+</td>
+</tr>
+<tr>
+<td>
+204
+</td>
+<td>
+OB CM HIGH RISK INITIAL LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: OB CM HIGH RISK INITIAL LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+205
+</td>
+<td>
+OB CM HIGH RISK INITIAL LETTER V3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: OB CM HIGH RISK INITIAL LETTER V3 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+206
+</td>
+<td>
+OB CM HIGH RISK SPANISH LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: OB CM HIGH RISK SPANISH LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+207
+</td>
+<td>
+OB DELIVERY
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: OB DELIVERY NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+208
+</td>
+<td>
+OB OBSERVATION
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: OB OBSERVATION NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+209
+</td>
+<td>
+OB OBSERVATION V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: OB OBSERVATION V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+210
+</td>
+<td>
+OON REFERRAL REQUEST V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: OON REFERRAL REQUEST V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+211
+</td>
+<td>
+PF 107
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: PF 107 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+212
+</td>
+<td>
+PROPOSED FREQUENT ER USER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: PROPOSED FREQUENT ER USER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+213
+</td>
+<td>
+PROVIDER LETTER TRANSPLANT EVALUATION V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: PROVIDER LETTER TRANSPLANT EVALUATION V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+214
+</td>
+<td>
+PROVIDER LETTER TRANSPLANT EVALUATION V3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: PROVIDER LETTER TRANSPLANT EVALUATION V3 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+215
+</td>
+<td>
+RELEASE OF INFORMATION LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: RELEASE OF INFORMATION LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+216
+</td>
+<td>
+SCREENING COVER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: SCREENING COVER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+217
+</td>
+<td>
+SCREENING COVER SPANISH V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: SCREENING COVER SPANISH V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+218
+</td>
+<td>
+SCREENING COVER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: SCREENING COVER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+219
+</td>
+<td>
+STAR ADULT CM MONITOR LETTER - CMM V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR ADULT CM MONITOR LETTER - CMM V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+220
+</td>
+<td>
+STAR ADULT CM PHONE FOLLOW UP LETTER - CMM V1A
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR ADULT CM PHONE FOLLOW UP LETTER - CMM V1A NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+221
+</td>
+<td>
+STAR ADULT MONITOR LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR ADULT MONITOR LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+222
+</td>
+<td>
+STAR ADULT MONITOR LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR ADULT MONITOR LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+223
+</td>
+<td>
+STAR ADULT PHONE FOLLOW UP LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR ADULT PHONE FOLLOW UP LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+224
+</td>
+<td>
+STAR ADULT PHONE FOLLOW UP LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR ADULT PHONE FOLLOW UP LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+225
+</td>
+<td>
+STAR ADULT PHONE FOLLOW UP LETTER V3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR ADULT PHONE FOLLOW UP LETTER V3 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+226
+</td>
+<td>
+STAR CHILD CM MONITOR LETTER - CMM V1A
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD CM MONITOR LETTER - CMM V1A NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+227
+</td>
+<td>
+STAR CHILD CM PHONE FOLLOW UP LETTER - CMM V1A
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD CM PHONE FOLLOW UP LETTER - CMM V1A NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+228
+</td>
+<td>
+STAR CHILD MONITOR LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD MONITOR LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+229
+</td>
+<td>
+STAR CHILD MONITOR LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD MONITOR LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+230
+</td>
+<td>
+STAR CHILD PHONE F/U V3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD PHONE F/U V3 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+231
+</td>
+<td>
+STAR CHILD PHONE FOLLOW UP LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD PHONE FOLLOW UP LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+232
+</td>
+<td>
+STAR CHILD PHONE FOLLOW UP LETTER V3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD PHONE FOLLOW UP LETTER V3 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+233
+</td>
+<td>
+STAR CHILD PHONE FOLLOW UP LETTER V4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD PHONE FOLLOW UP LETTER V4 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+234
+</td>
+<td>
+STAR CHILD PHONE FOLLOW UP LETTER V6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD PHONE FOLLOW UP LETTER V6 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+235
+</td>
+<td>
+STAR CHILD PHONE FOLLOW UP V3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CHILD PHONE FOLLOW UP V3 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+236
+</td>
+<td>
+STAR CM FOLLOW UP LETTER - CMM V1A
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR CM FOLLOW UP LETTER - CMM V1A NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+237
+</td>
+<td>
+STAR COMPLAINT PROCESS
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR COMPLAINT PROCESS NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+238
+</td>
+<td>
+STAR FAIR HEARING
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR FAIR HEARING  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+239
+</td>
+<td>
+STAR FOLLOW UP LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR FOLLOW UP LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+240
+</td>
+<td>
+STAR FOLLOW UP LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR FOLLOW UP LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+241
+</td>
+<td>
+STAR FOLLOW UP LETTER V4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR FOLLOW UP LETTER V4 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+242
+</td>
+<td>
+STAR INCOMPLETE DOCUMENTATION LETTER - CMM V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR INCOMPLETE DOCUMENTATION LETTER - CMM V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+243
+</td>
+<td>
+STAR PLEASE CALL LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR PLEASE CALL LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+244
+</td>
+<td>
+STAR PLEASE CALL LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR PLEASE CALL LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+245
+</td>
+<td>
+STAR RESOLUTION LETTER TO PROVIDER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR RESOLUTION LETTER TO PROVIDER  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+246
+</td>
+<td>
+STAR TECHNICAL DENIAL LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR TECHNICAL DENIAL LETTER  NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+247
+</td>
+<td>
+STAR TECHNICAL DENIAL LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: STAR TECHNICAL DENIAL LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+248
+</td>
+<td>
+TEST LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: TEST LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+249
+</td>
+<td>
+TEST SIEMA
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: TEST SIEMA NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+250
+</td>
+<td>
+TRANSITION CARE PLAN LETTER
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: TRANSITION CARE PLAN LETTER NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+251
+</td>
+<td>
+TRANSITION CARE PLAN LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: TRANSITION CARE PLAN LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+252
+</td>
+<td>
+TRANSITION CARE PLAN LETTER V2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: TRANSITION CARE PLAN LETTER V2 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+253
+</td>
+<td>
+TRANSITION CARE PLAN LETTER V4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: TRANSITION CARE PLAN LETTER V4 NumRows: 1 Sel: .002475
+</td>
+</tr>
+<tr>
+<td>
+254
+</td>
+<td>
+UNABLE TO REACH - LETTER V1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             .002475
+</td>
+<td>
+ApproxValue: UNABLE TO REACH - LETTER V1 NumRows: 1 Sel: .002475
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round(endpoint_repeat_count / 404 * 404) rows_per_bucket,
+trunc(endpoint_repeat_count / 404,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round(endpoint_repeat_count / 404 * 404)||' Sel: '||trunc(endpoint_repeat_count / 404,6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_LTR_TMPT'
+AND a.column_name = 'SYS_NC00072$'
+ORDER BY a.endpoint_number;
+
+254 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:05:49 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>

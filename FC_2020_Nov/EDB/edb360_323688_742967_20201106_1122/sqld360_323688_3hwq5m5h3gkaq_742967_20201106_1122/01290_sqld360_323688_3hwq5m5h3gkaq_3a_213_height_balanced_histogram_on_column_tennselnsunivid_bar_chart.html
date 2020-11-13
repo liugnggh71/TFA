@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00996_sqld360_323688_3hwq5m5h3gkaq_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_ENNS.ELNS_UNIVID</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 01290_sqld360_323688_3hwq5m5h3gkaq_3a_213_height_balanced_histogram_on_column_tennselnsunivid_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,['0001_COEXIST_10340257_0', 0, '0', 'ApproxValue: 0001_COEXIST_10340257_0 NumRows: 0 Sel: 0']
+,['0610_COEXIST_10354073_0', 57819, '.003937', 'ApproxValue: 0610_COEXIST_10354073_0 NumRows: 57819 Sel: .003937']
+,['0610_COEXIST~^~10450463~^~20120101', 57819, '.003937', 'ApproxValue: 0610_COEXIST~^~10450463~^~20120101 NumRows: 57819 Sel: .003937']
+,['0610_CXV2011H_SFL100_10502128', 57819, '.003937', 'ApproxValue: 0610_CXV2011H_SFL100_10502128 NumRows: 57819 Sel: .003937']
+,['0610_Covenant HMO (Self Funded)~^~10385539~^~20080601', 57819, '.003937', 'ApproxValue: 0610_Covenant HMO (Self Funded)~^~10385539~^~20080601 NumRows: 57819 Sel: .003937']
+,['0800_FC HMO~^~10354550~^~20080601', 57819, '.003937', 'ApproxValue: 0800_FC HMO~^~10354550~^~20080601 NumRows: 57819 Sel: .003937']
+,['1022_HEN12E01_10524029_1', 57819, '.003937', 'ApproxValue: 1022_HEN12E01_10524029_1 NumRows: 57819 Sel: .003937']
+,['1371_FC HMO~^~10263474~^~20080601', 57819, '.003937', 'ApproxValue: 1371_FC HMO~^~10263474~^~20080601 NumRows: 57819 Sel: .003937']
+,['1944_COEXIST~^~10258631~^~20110901', 57819, '.003937', 'ApproxValue: 1944_COEXIST~^~10258631~^~20110901 NumRows: 57819 Sel: .003937']
+,['1944_COEXIST~^~10519225~^~20110901', 57819, '.003937', 'ApproxValue: 1944_COEXIST~^~10519225~^~20110901 NumRows: 57819 Sel: .003937']
+,['1944_FC HMO~^~10261109~^~20090901', 57819, '.003937', 'ApproxValue: 1944_FC HMO~^~10261109~^~20090901 NumRows: 57819 Sel: .003937']
+,['1944_FC HMO~^~10516036~^~20080601', 57819, '.003937', 'ApproxValue: 1944_FC HMO~^~10516036~^~20080601 NumRows: 57819 Sel: .003937']
+,['1944_TRS2013F~^~10495530~^~20120901', 57819, '.003937', 'ApproxValue: 1944_TRS2013F~^~10495530~^~20120901 NumRows: 57819 Sel: .003937']
+,['1944_TRSRX12F~^~10490496~^~20110901', 57819, '.003937', 'ApproxValue: 1944_TRSRX12F~^~10490496~^~20110901 NumRows: 57819 Sel: .003937']
+,['1944_TRSRX13F_10535923_0', 57819, '.003937', 'ApproxValue: 1944_TRSRX13F_10535923_0 NumRows: 57819 Sel: .003937']
+,['1944_TRSRX13F~^~10498242~^~20120901', 57819, '.003937', 'ApproxValue: 1944_TRSRX13F~^~10498242~^~20120901 NumRows: 57819 Sel: .003937']
+,['2041_FC HMO~^~10405119~^~20090303', 57819, '.003937', 'ApproxValue: 2041_FC HMO~^~10405119~^~20090303 NumRows: 57819 Sel: .003937']
+,['321A_COEXIST~^~10299320~^~20110901', 57819, '.003937', 'ApproxValue: 321A_COEXIST~^~10299320~^~20110901 NumRows: 57819 Sel: .003937']
+,['3760_LWCCA929~^~10530529~^~20120901', 57819, '.003937', 'ApproxValue: 3760_LWCCA929~^~10530529~^~20120901 NumRows: 57819 Sel: .003937']
+,['4305_LHW2X9YG~^~10275834~^~20110901', 57819, '.003937', 'ApproxValue: 4305_LHW2X9YG~^~10275834~^~20110901 NumRows: 57819 Sel: .003937']
+,['4896_LCCSB927_10378993_0', 57819, '.003937', 'ApproxValue: 4896_LCCSB927_10378993_0 NumRows: 57819 Sel: .003937']
+,['5578_FC PPO~^~10529635~^~20081001', 57819, '.003937', 'ApproxValue: 5578_FC PPO~^~10529635~^~20081001 NumRows: 57819 Sel: .003937']
+,['8845_FC PPO~^~10530201~^~20100301', 57819, '.003937', 'ApproxValue: 8845_FC PPO~^~10530201~^~20100301 NumRows: 57819 Sel: .003937']
+,['BHG18U13_A433~^~11225465~^~20180101', 57819, '.003937', 'ApproxValue: BHG18U13_A433~^~11225465~^~20180101 NumRows: 57819 Sel: .003937']
+,['BHI17D06_HIM~^~11075657~^~20170101', 57819, '.003937', 'ApproxValue: BHI17D06_HIM~^~11075657~^~20170101 NumRows: 57819 Sel: .003937']
+,['BHI17M06_HIM~^~11230376~^~20170101', 57819, '.003937', 'ApproxValue: BHI17M06_HIM~^~11230376~^~20170101 NumRows: 57819 Sel: .003937']
+,['BHI18D06_HIM~^~11264380~^~20180101', 57819, '.003937', 'ApproxValue: BHI18D06_HIM~^~11264380~^~20180101 NumRows: 57819 Sel: .003937']
+,['BHI18M06_HIM~^~11234795~^~20180101', 57819, '.003937', 'ApproxValue: BHI18M06_HIM~^~11234795~^~20180101 NumRows: 57819 Sel: .003937']
+,['BHI18M29_HIM~^~11223879~^~20180101', 57819, '.003937', 'ApproxValue: BHI18M29_HIM~^~11223879~^~20180101 NumRows: 57819 Sel: .003937']
+,['BHI18M29_HIM~^~11314429~^~20180201', 57819, '.003937', 'ApproxValue: BHI18M29_HIM~^~11314429~^~20180201 NumRows: 57819 Sel: .003937']
+,['BHI19M06_HIM~^~11258587~^~20190101', 57819, '.003937', 'ApproxValue: BHI19M06_HIM~^~11258587~^~20190101 NumRows: 57819 Sel: .003937']
+,['BHI19M29_HIM~^~11362411~^~20190101', 57819, '.003937', 'ApproxValue: BHI19M29_HIM~^~11362411~^~20190101 NumRows: 57819 Sel: .003937']
+,['CHIP Above 151% up to and including 186% of FPL~^~10591395~^~201', 57819, '.003937', 'ApproxValue: CHIP Above 151% up to and including 186% of FPL~^~10591395~^~201 NumRows: 57819 Sel: .003937']
+,['CHIP Above 186% up to and including 201% of FPL~^~11299875~^~201', 57819, '.003937', 'ApproxValue: CHIP Above 186% up to and including 201% of FPL~^~11299875~^~201 NumRows: 57819 Sel: .003937']
+,['CHIP At or below 151% of FPL~^~11211289~^~20180501', 57819, '.003937', 'ApproxValue: CHIP At or below 151% of FPL~^~11211289~^~20180501 NumRows: 57819 Sel: .003937']
+,['CHIP Less Than 100 - 150 FPLA~^~10156473~^~20171101', 57819, '.003937', 'ApproxValue: CHIP Less Than 100 - 150 FPLA~^~10156473~^~20171101 NumRows: 57819 Sel: .003937']
+,['CHIP Less Than 100 - 150 FPLA~^~10631394~^~20131001', 57819, '.003937', 'ApproxValue: CHIP Less Than 100 - 150 FPLA~^~10631394~^~20131001 NumRows: 57819 Sel: .003937']
+,['CHIP Less Than 100 - 150 FPL_CHIP_10240258', 57819, '.003937', 'ApproxValue: CHIP Less Than 100 - 150 FPL_CHIP_10240258 NumRows: 57819 Sel: .003937']
+,['CHIP Less Than 100 - 150 FPL~^~11276550~^~20180301', 57819, '.003937', 'ApproxValue: CHIP Less Than 100 - 150 FPL~^~11276550~^~20180301 NumRows: 57819 Sel: .003937']
+,['CHIP Less Than 150 - 185 FPLA~^~10186938~^~20150801', 57819, '.003937', 'ApproxValue: CHIP Less Than 150 - 185 FPLA~^~10186938~^~20150801 NumRows: 57819 Sel: .003937']
+,['CHIP Less Than 150 - 185 FPLA~^~11029546~^~20170701', 57819, '.003937', 'ApproxValue: CHIP Less Than 150 - 185 FPLA~^~11029546~^~20170701 NumRows: 57819 Sel: .003937']
+,['CHIP Less Than 150 - 185 FPL~^~10256948~^~20180201', 57819, '.003937', 'ApproxValue: CHIP Less Than 150 - 185 FPL~^~10256948~^~20180201 NumRows: 57819 Sel: .003937']
+,['CHIP Less Than 185 - 200 FPLA~^~10687961~^~20140801', 57819, '.003937', 'ApproxValue: CHIP Less Than 185 - 200 FPLA~^~10687961~^~20140801 NumRows: 57819 Sel: .003937']
+,['COV14NPE_0610~^~10296284~^~20140701', 57819, '.003937', 'ApproxValue: COV14NPE_0610~^~10296284~^~20140701 NumRows: 57819 Sel: .003937']
+,['COV14NPV_0610~^~10512979~^~20140701', 57819, '.003937', 'ApproxValue: COV14NPV_0610~^~10512979~^~20140701 NumRows: 57819 Sel: .003937']
+,['COV15NPV_A_0610~^~10329061~^~20150701', 57819, '.003937', 'ApproxValue: COV15NPV_A_0610~^~10329061~^~20150701 NumRows: 57819 Sel: .003937']
+,['COV15NPV_A_0610~^~11090851~^~20151101', 57819, '.003937', 'ApproxValue: COV15NPV_A_0610~^~11090851~^~20151101 NumRows: 57819 Sel: .003937']
+,['COV16NHM_0610~^~10542395~^~20160701', 57819, '.003937', 'ApproxValue: COV16NHM_0610~^~10542395~^~20160701 NumRows: 57819 Sel: .003937']
+,['COV17NHM_ A_0610~^~10361902~^~20180101', 57819, '.003937', 'ApproxValue: COV17NHM_ A_0610~^~10361902~^~20180101 NumRows: 57819 Sel: .003937']
+,['COV17NHM_ A_0610~^~11246833~^~20180101', 57819, '.003937', 'ApproxValue: COV17NHM_ A_0610~^~11246833~^~20180101 NumRows: 57819 Sel: .003937']
+,['COV17NHM_0610~^~10424859~^~20170701', 57819, '.003937', 'ApproxValue: COV17NHM_0610~^~10424859~^~20170701 NumRows: 57819 Sel: .003937']
+,['COV17NHM_0610~^~11269534~^~20170701', 57819, '.003937', 'ApproxValue: COV17NHM_0610~^~11269534~^~20170701 NumRows: 57819 Sel: .003937']
+,['COV2013V_0610~^~10303250~^~20130701', 57819, '.003937', 'ApproxValue: COV2013V_0610~^~10303250~^~20130701 NumRows: 57819 Sel: .003937']
+,['CP18HMO2_A615~^~11288334~^~20181001', 57819, '.003937', 'ApproxValue: CP18HMO2_A615~^~11288334~^~20181001 NumRows: 57819 Sel: .003937']
+,['DELETED_0610_COEXIST_SFL100_10376315_DELETED', 57819, '.003937', 'ApproxValue: DELETED_0610_COEXIST_SFL100_10376315_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_0610_Covenant HMO (Self Funded)~^~10299136~^~20081007_DE', 57819, '.003937', 'ApproxValue: DELETED_0610_Covenant HMO (Self Funded)~^~10299136~^~20081007_DE NumRows: 57819 Sel: .003937']
+,['DELETED_0754_FC HMO_M647907L00_10302780_DELETED', 57819, '.003937', 'ApproxValue: DELETED_0754_FC HMO_M647907L00_10302780_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_1022_HEN12E01_10319893_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_1022_HEN12E01_10319893_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_1944_COEXIST_10628280_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_1944_COEXIST_10628280_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_1944_TRS2012F_10267901_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_1944_TRS2012F_10267901_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_2991_FC HMO~^~10348475~^~20100401_DELETED', 57819, '.003937', 'ApproxValue: DELETED_2991_FC HMO~^~10348475~^~20100401_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_3864_FC HMO_LCC23200FP_10385761_DELETED', 57819, '.003937', 'ApproxValue: DELETED_3864_FC HMO_LCC23200FP_10385761_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_4796_LCH2GH2G_10574646_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_4796_LCH2GH2G_10574646_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_5928_LW1CC526_10510520_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_5928_LW1CC526_10510520_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_BHG20U10_A576~^~11308317~^~20200701_DELETED', 57819, '.003937', 'ApproxValue: DELETED_BHG20U10_A576~^~11308317~^~20200701_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_CHIP Copay Level 2 Lubbock~^~10226521~^~20200401_DELETED', 57819, '.003937', 'ApproxValue: DELETED_CHIP Copay Level 2 Lubbock~^~10226521~^~20200401_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_CHIP Less Than 100 - 150 FPL_CHIP_10092810_DELETED', 57819, '.003937', 'ApproxValue: DELETED_CHIP Less Than 100 - 150 FPL_CHIP_10092810_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_CHIP Less Than 185 - 200 FPLA~^~10154382~^~20080601_DELE', 57819, '.003937', 'ApproxValue: DELETED_CHIP Less Than 185 - 200 FPLA~^~10154382~^~20080601_DELE NumRows: 57819 Sel: .003937']
+,['DELETED_COV19NHM_0610~^~11364375~^~20190101_DELETED', 57819, '.003937', 'ApproxValue: DELETED_COV19NHM_0610~^~11364375~^~20190101_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_FirstCare STAR Lubbock~^~11344048~^~20191001_DELETED', 57819, '.003937', 'ApproxValue: DELETED_FirstCare STAR Lubbock~^~11344048~^~20191001_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_FirstCare STAR MRSA West~^~11506200~^~20191001_DELETED', 57819, '.003937', 'ApproxValue: DELETED_FirstCare STAR MRSA West~^~11506200~^~20191001_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_H133_VBHP HMO_10405020_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_H133_VBHP HMO_10405020_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_H137_VBHP HMO_10562458_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_H137_VBHP HMO_10562458_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_HEN15EPO_1022~^~10693706~^~20150101_DELETED', 57819, '.003937', 'ApproxValue: DELETED_HEN15EPO_1022~^~10693706~^~20150101_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_LC8PH3F2_A770~^~11340475~^~20180801_DELETED', 57819, '.003937', 'ApproxValue: DELETED_LC8PH3F2_A770~^~11340475~^~20180801_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_MA01_BASEMA12_10557460_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_MA01_BASEMA12_10557460_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid Lubbock NON SSI 1 to 5 Child~^~11202835~^~20181', 57819, '.003937', 'ApproxValue: DELETED_Medicaid Lubbock NON SSI 1 to 5 Child~^~11202835~^~20181 NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid Lubbock NON SSI 6 to 14 Child~^~10196175~^~2018', 57819, '.003937', 'ApproxValue: DELETED_Medicaid Lubbock NON SSI 6 to 14 Child~^~10196175~^~2018 NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid Lubbock NON SSI Expansion Child Greater Than 12', 115638, '.007874', 'ApproxValue: DELETED_Medicaid Lubbock NON SSI Expansion Child Greater Than 12 NumRows: 115638 Sel: .007874']
+,['DELETED_Medicaid Lubbock NON SSI Fed Mandated Child_10222675_3_D', 57819, '.003937', 'ApproxValue: DELETED_Medicaid Lubbock NON SSI Fed Mandated Child_10222675_3_D NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid Lubbock NON SSI Fed Mandated Child~^~10149842~^', 57819, '.003937', 'ApproxValue: DELETED_Medicaid Lubbock NON SSI Fed Mandated Child~^~10149842~^ NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid Lubbock NON SSI Newborn Less Than 12 Months_102', 57819, '.003937', 'ApproxValue: DELETED_Medicaid Lubbock NON SSI Newborn Less Than 12 Months_102 NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid Lubbock NON SSI Pregnant Women~^~10167782~^~200', 57819, '.003937', 'ApproxValue: DELETED_Medicaid Lubbock NON SSI Pregnant Women~^~10167782~^~200 NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid Lubbock NON SSI TANF Child Greater than 12 Mont', 57819, '.003937', 'ApproxValue: DELETED_Medicaid Lubbock NON SSI TANF Child Greater than 12 Mont NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid Lubbock SSI_10210824_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_Medicaid Lubbock SSI_10210824_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid MRSA NON SSI 1 to 5 Child~^~11253842~^~20180501', 57819, '.003937', 'ApproxValue: DELETED_Medicaid MRSA NON SSI 1 to 5 Child~^~11253842~^~20180501 NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid MRSA NON SSI 6 to 14 Child~^~10161269~^~2016090', 57819, '.003937', 'ApproxValue: DELETED_Medicaid MRSA NON SSI 6 to 14 Child~^~10161269~^~2016090 NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid MRSA NON SSI Expansion Child Greater Than 12 Mo', 57819, '.003937', 'ApproxValue: DELETED_Medicaid MRSA NON SSI Expansion Child Greater Than 12 Mo NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid MRSA NON SSI Newborn Less Than 12 Months~^~1010', 57819, '.003937', 'ApproxValue: DELETED_Medicaid MRSA NON SSI Newborn Less Than 12 Months~^~1010 NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid MRSA NON SSI TANF Adult~^~10598689~^~20150901_D', 57819, '.003937', 'ApproxValue: DELETED_Medicaid MRSA NON SSI TANF Adult~^~10598689~^~20150901_D NumRows: 57819 Sel: .003937']
+,['DELETED_Medicaid MRSA NON SSI Under Age 1 Child~^~11442871~^~201', 57819, '.003937', 'ApproxValue: DELETED_Medicaid MRSA NON SSI Under Age 1 Child~^~11442871~^~201 NumRows: 57819 Sel: .003937']
+,['DELETED_PW20_COEXIST_SFPW02_10482507_DELETED', 57819, '.003937', 'ApproxValue: DELETED_PW20_COEXIST_SFPW02_10482507_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_RightCare STAR MRSA Central~^~11582996~^~20190501_DELETE', 57819, '.003937', 'ApproxValue: DELETED_RightCare STAR MRSA Central~^~11582996~^~20190501_DELETE NumRows: 57819 Sel: .003937']
+,['DELETED_SCH2GH2G_17_6282~^~10492241~^~20170101_DELETED', 57819, '.003937', 'ApproxValue: DELETED_SCH2GH2G_17_6282~^~10492241~^~20170101_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_SHI18M16_HIM~^~11312489~^~20180101_DELETED', 57819, '.003937', 'ApproxValue: DELETED_SHI18M16_HIM~^~11312489~^~20180101_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_SN10_FC HMO_10344000_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_SN10_FC HMO_10344000_0_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_TRS2014T_A_1944~^~10529379~^~20140901_DELETED', 57819, '.003937', 'ApproxValue: DELETED_TRS2014T_A_1944~^~10529379~^~20140901_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_TRS2016T_1944~^~11041966~^~20160901_DELETED', 57819, '.003937', 'ApproxValue: DELETED_TRS2016T_1944~^~11041966~^~20160901_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_TRS2018T_18_1944~^~11346362~^~20180901_DELETED', 57819, '.003937', 'ApproxValue: DELETED_TRS2018T_18_1944~^~11346362~^~20180901_DELETED NumRows: 57819 Sel: .003937']
+,['DELETED_Z006_COEXIST_10465199_0_DELETED', 57819, '.003937', 'ApproxValue: DELETED_Z006_COEXIST_10465199_0_DELETED NumRows: 57819 Sel: .003937']
+,['FirstCare STAR Lubbock~^~10183831~^~20191001', 57819, '.003937', 'ApproxValue: FirstCare STAR Lubbock~^~10183831~^~20191001 NumRows: 57819 Sel: .003937']
+,['FirstCare STAR MRSA West~^~10645090~^~20200501', 57819, '.003937', 'ApproxValue: FirstCare STAR MRSA West~^~10645090~^~20200501 NumRows: 57819 Sel: .003937']
+,['GHG18U02_0723~^~10393143~^~20180101', 57819, '.003937', 'ApproxValue: GHG18U02_0723~^~10393143~^~20180101 NumRows: 57819 Sel: .003937']
+,['GHI18M01_HIM~^~11083004~^~20180101', 57819, '.003937', 'ApproxValue: GHI18M01_HIM~^~11083004~^~20180101 NumRows: 57819 Sel: .003937']
+,['H031_COEXIST_HPT067_10499299', 57819, '.003937', 'ApproxValue: H031_COEXIST_HPT067_10499299 NumRows: 57819 Sel: .003937']
+,['H136_COEXIST_HPTP97_10261416', 57819, '.003937', 'ApproxValue: H136_COEXIST_HPTP97_10261416 NumRows: 57819 Sel: .003937']
+,['H231_VBHP PPO~^~10459630~^~20080814', 57819, '.003937', 'ApproxValue: H231_VBHP PPO~^~10459630~^~20080814 NumRows: 57819 Sel: .003937']
+,['HEN13EPO_1022~^~10473804~^~20130101', 57819, '.003937', 'ApproxValue: HEN13EPO_1022~^~10473804~^~20130101 NumRows: 57819 Sel: .003937']
+,['HEN16EPO_1022~^~10519925~^~20160101', 57819, '.003937', 'ApproxValue: HEN16EPO_1022~^~10519925~^~20160101 NumRows: 57819 Sel: .003937']
+,['L002_FC PPO~^~10355844~^~20080601', 57819, '.003937', 'ApproxValue: L002_FC PPO~^~10355844~^~20080601 NumRows: 57819 Sel: .003937']
+,['LC16H3G2_A281~^~10714570~^~20160101', 57819, '.003937', 'ApproxValue: LC16H3G2_A281~^~10714570~^~20160101 NumRows: 57819 Sel: .003937']
+,['LC9PH2L1_A785~^~11364817~^~20190101', 57819, '.003937', 'ApproxValue: LC9PH2L1_A785~^~11364817~^~20190101 NumRows: 57819 Sel: .003937']
+,['LCH2GH2G_5313_10641768_0', 57819, '.003937', 'ApproxValue: LCH2GH2G_5313_10641768_0 NumRows: 57819 Sel: .003937']
+,['LCH9GH9G_30GB_10704937_0', 57819, '.003937', 'ApproxValue: LCH9GH9G_30GB_10704937_0 NumRows: 57819 Sel: .003937']
+,['LPP3GP3G_0309_P76L00_10334794', 57819, '.003937', 'ApproxValue: LPP3GP3G_0309_P76L00_10334794 NumRows: 57819 Sel: .003937']
+,['MA01_COEXIST~^~10542962~^~20110901', 57819, '.003937', 'ApproxValue: MA01_COEXIST~^~10542962~^~20110901 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 1 to 5 Child_MDLubbock_11089742', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 1 to 5 Child_MDLubbock_11089742 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 1 to 5 Child~^~10158828~^~20160201', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 1 to 5 Child~^~10158828~^~20160201 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 1 to 5 Child~^~10222612~^~20140801', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 1 to 5 Child~^~10222612~^~20140801 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 1 to 5 Child~^~10592271~^~20140401', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 1 to 5 Child~^~10592271~^~20140401 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 1 to 5 Child~^~10683560~^~20171101', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 1 to 5 Child~^~10683560~^~20171101 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 1 to 5 Child~^~11034389~^~20161001', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 1 to 5 Child~^~11034389~^~20161001 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 1 to 5 Child~^~11218282~^~20161201', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 1 to 5 Child~^~11218282~^~20161201 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 15 to 18 Child_MDLubbock_10108838', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 15 to 18 Child_MDLubbock_10108838 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 15 to 18 Child~^~10176342~^~20180401', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 15 to 18 Child~^~10176342~^~20180401 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 15 to 18 Child~^~11048959~^~20170401', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 15 to 18 Child~^~11048959~^~20170401 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child_MDLubbock_10118852', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child_MDLubbock_10118852 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child~^~10095642~^~20150201', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child~^~10095642~^~20150201 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child~^~10122676~^~20130901', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child~^~10122676~^~20130901 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child~^~10150473~^~20140601', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child~^~10150473~^~20140601 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child~^~10178435~^~20161101', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child~^~10178435~^~20161101 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child~^~10206963~^~20140901', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child~^~10206963~^~20140901 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child~^~10240758~^~20180901', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child~^~10240758~^~20180901 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child~^~10574914~^~20181201', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child~^~10574914~^~20181201 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child~^~10847962~^~20150401', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child~^~10847962~^~20150401 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI 6 to 14 Child~^~11329973~^~20180501', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI 6 to 14 Child~^~11329973~^~20180501 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Expansion Child Greater Than 12 Months_', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Expansion Child Greater Than 12 Months_ NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Expansion Child Greater Than 12 Months~', 346914, '.023622', 'ApproxValue: Medicaid Lubbock NON SSI Expansion Child Greater Than 12 Months~ NumRows: 346914 Sel: .023622']
+,['Medicaid Lubbock NON SSI Fed Mandated Child_10127172_0', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Fed Mandated Child_10127172_0 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Fed Mandated Child~^~10080185~^~2011030', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Fed Mandated Child~^~10080185~^~2011030 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Fed Mandated Child~^~10113743~^~2012060', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Fed Mandated Child~^~10113743~^~2012060 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Fed Mandated Child~^~10150258~^~2011060', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Fed Mandated Child~^~10150258~^~2011060 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Fed Mandated Child~^~10187857~^~2010040', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Fed Mandated Child~^~10187857~^~2010040 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Fed Mandated Child~^~10226741~^~2013030', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Fed Mandated Child~^~10226741~^~2013030 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Fed Mandated Child~^~10608757~^~2013070', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Fed Mandated Child~^~10608757~^~2013070 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Newborn Less Than 12 Months~^~10159623~', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Newborn Less Than 12 Months~^~10159623~ NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Newborn Less Than 12 Months~^~10582482~', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Newborn Less Than 12 Months~^~10582482~ NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Pregnant Women~^~10146625~^~20161101', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Pregnant Women~^~10146625~^~20161101 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Pregnant Women~^~10722912~^~20150201', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Pregnant Women~^~10722912~^~20150201 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI TANF Adult~^~10146407~^~20110201', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI TANF Adult~^~10146407~^~20110201 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI TANF Child Greater than 12 Months_10151', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI TANF Child Greater than 12 Months_10151 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI TANF Child Greater than 12 Months~^~101', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI TANF Child Greater than 12 Months~^~101 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI TANF Child Greater than 12 Months~^~102', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI TANF Child Greater than 12 Months~^~102 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Under Age 1 Child_10575457_0', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Under Age 1 Child_10575457_0 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Under Age 1 Child~^~10687410~^~20140703', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Under Age 1 Child~^~10687410~^~20140703 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Under Age 1 Child~^~11193348~^~20160726', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Under Age 1 Child~^~11193348~^~20160726 NumRows: 57819 Sel: .003937']
+,['Medicaid Lubbock NON SSI Under Age 1 Child~^~11338699~^~20180626', 57819, '.003937', 'ApproxValue: Medicaid Lubbock NON SSI Under Age 1 Child~^~11338699~^~20180626 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 1 to 5 Child_MDMRSA_10216432', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 1 to 5 Child_MDMRSA_10216432 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 1 to 5 Child~^~10154619~^~20130901', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 1 to 5 Child~^~10154619~^~20130901 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 1 to 5 Child~^~10241180~^~20130901', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 1 to 5 Child~^~10241180~^~20130901 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 1 to 5 Child~^~10592199~^~20160301', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 1 to 5 Child~^~10592199~^~20160301 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 1 to 5 Child~^~10664280~^~20140401', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 1 to 5 Child~^~10664280~^~20140401 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 1 to 5 Child~^~10880887~^~20160401', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 1 to 5 Child~^~10880887~^~20160401 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 1 to 5 Child~^~11169446~^~20160501', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 1 to 5 Child~^~11169446~^~20160501 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 1 to 5 Child~^~11287246~^~20171001', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 1 to 5 Child~^~11287246~^~20171001 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 15 to 18 Child~^~10101116~^~20130901', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 15 to 18 Child~^~10101116~^~20130901 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 15 to 18 Child~^~10572056~^~20181201', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 15 to 18 Child~^~10572056~^~20181201 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 15 to 18 Child~^~11356653~^~20181201', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 15 to 18 Child~^~11356653~^~20181201 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 6 to 14 Child_MDMRSA_10226228', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 6 to 14 Child_MDMRSA_10226228 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 6 to 14 Child~^~10107521~^~20180901', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 6 to 14 Child~^~10107521~^~20180901 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 6 to 14 Child~^~10152957~^~20150801', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 6 to 14 Child~^~10152957~^~20150801 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 6 to 14 Child~^~10200442~^~20131101', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 6 to 14 Child~^~10200442~^~20131101 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 6 to 14 Child~^~10240093~^~20170101', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 6 to 14 Child~^~10240093~^~20170101 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 6 to 14 Child~^~10570810~^~20170901', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 6 to 14 Child~^~10570810~^~20170901 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 6 to 14 Child~^~10663662~^~20160301', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 6 to 14 Child~^~10663662~^~20160301 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 6 to 14 Child~^~11108794~^~20160401', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 6 to 14 Child~^~11108794~^~20160401 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI 6 to 14 Child~^~11349033~^~20181001', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI 6 to 14 Child~^~11349033~^~20181001 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Expansion Child Greater Than 12 Months_MDM', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Expansion Child Greater Than 12 Months_MDM NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Expansion Child Greater Than 12 Months~^~1', 115638, '.007874', 'ApproxValue: Medicaid MRSA NON SSI Expansion Child Greater Than 12 Months~^~1 NumRows: 115638 Sel: .007874']
+,['Medicaid MRSA NON SSI Fed Mandated Child_MDMRSA_10163581', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Fed Mandated Child_MDMRSA_10163581 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Fed Mandated Child~^~10141224~^~20120901', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Fed Mandated Child~^~10141224~^~20120901 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Fed Mandated Child~^~10243774~^~20120401', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Fed Mandated Child~^~10243774~^~20120401 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Newborn Less Than 12 Months~^~10127525~^~2', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Newborn Less Than 12 Months~^~10127525~^~2 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Pregnant Women_10612901_0', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Pregnant Women_10612901_0 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Pregnant Women~^~10242122~^~20160201', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Pregnant Women~^~10242122~^~20160201 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Pregnant Women~^~11024009~^~20160501', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Pregnant Women~^~11024009~^~20160501 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI TANF Adult_MDMRSA_10091606', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI TANF Adult_MDMRSA_10091606 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI TANF Adult~^~10707915~^~20151101', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI TANF Adult~^~10707915~^~20151101 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI TANF Child Greater Than 12 Months_MDMRSA_1', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI TANF Child Greater Than 12 Months_MDMRSA_1 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI TANF Child Greater Than 12 Months~^~105660', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI TANF Child Greater Than 12 Months~^~105660 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Under Age 1 Child~^~10572851~^~20130901', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Under Age 1 Child~^~10572851~^~20130901 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Under Age 1 Child~^~10719055~^~20141217', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Under Age 1 Child~^~10719055~^~20141217 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Under Age 1 Child~^~11203641~^~20160910', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Under Age 1 Child~^~11203641~^~20160910 NumRows: 57819 Sel: .003937']
+,['Medicaid MRSA NON SSI Under Age 1 Child~^~11331687~^~20180427', 57819, '.003937', 'ApproxValue: Medicaid MRSA NON SSI Under Age 1 Child~^~11331687~^~20180427 NumRows: 57819 Sel: .003937']
+,['P001_FC PPO~^~10530526~^~20080916', 57819, '.003937', 'ApproxValue: P001_FC PPO~^~10530526~^~20080916 NumRows: 57819 Sel: .003937']
+,['PP16GPYC_16_L003~^~10292781~^~20161101', 57819, '.003937', 'ApproxValue: PP16GPYC_16_L003~^~10292781~^~20161101 NumRows: 57819 Sel: .003937']
+,['PW20_PP12LPHN_10348886_1', 57819, '.003937', 'ApproxValue: PW20_PP12LPHN_10348886_1 NumRows: 57819 Sel: .003937']
+,['RightCare STAR MRSA Central~^~11595991~^~20190501', 57819, '.003937', 'ApproxValue: RightCare STAR MRSA Central~^~11595991~^~20190501 NumRows: 57819 Sel: .003937']
+,['S16HLCA1_5484_LCC484_10942073', 57819, '.003937', 'ApproxValue: S16HLCA1_5484_LCC484_10942073 NumRows: 57819 Sel: .003937']
+,['S18HLCE1_L705~^~11102930~^~20180101', 57819, '.003937', 'ApproxValue: S18HLCE1_L705~^~11102930~^~20180101 NumRows: 57819 Sel: .003937']
+,['SCH3GH3G_13_6243_231445_10603355', 57819, '.003937', 'ApproxValue: SCH3GH3G_13_6243_231445_10603355 NumRows: 57819 Sel: .003937']
+,['SHG18S03_3812~^~10363907~^~20180701', 57819, '.003937', 'ApproxValue: SHG18S03_3812~^~10363907~^~20180701 NumRows: 57819 Sel: .003937']
+,['SHI16D03_HIM~^~11215080~^~20161101', 57819, '.003937', 'ApproxValue: SHI16D03_HIM~^~11215080~^~20161101 NumRows: 57819 Sel: .003937']
+,['SHI16M15_HIM~^~10842619~^~20160101', 57819, '.003937', 'ApproxValue: SHI16M15_HIM~^~10842619~^~20160101 NumRows: 57819 Sel: .003937']
+,['SHI16M16_HIM~^~11097101~^~20160301', 57819, '.003937', 'ApproxValue: SHI16M16_HIM~^~11097101~^~20160301 NumRows: 57819 Sel: .003937']
+,['SHI17M03_HIM~^~11082031~^~20170101', 57819, '.003937', 'ApproxValue: SHI17M03_HIM~^~11082031~^~20170101 NumRows: 57819 Sel: .003937']
+,['SHI17M15_HIM~^~11072429~^~20170101', 57819, '.003937', 'ApproxValue: SHI17M15_HIM~^~11072429~^~20170101 NumRows: 57819 Sel: .003937']
+,['SHI17M16_HIM~^~11164886~^~20170701', 57819, '.003937', 'ApproxValue: SHI17M16_HIM~^~11164886~^~20170701 NumRows: 57819 Sel: .003937']
+,['SHI18D23_HIM~^~11233174~^~20180101', 57819, '.003937', 'ApproxValue: SHI18D23_HIM~^~11233174~^~20180101 NumRows: 57819 Sel: .003937']
+,['SHI18M14_HIM~^~11311790~^~20180101', 57819, '.003937', 'ApproxValue: SHI18M14_HIM~^~11311790~^~20180101 NumRows: 57819 Sel: .003937']
+,['SHI18M16_HIM~^~11217048~^~20180101', 57819, '.003937', 'ApproxValue: SHI18M16_HIM~^~11217048~^~20180101 NumRows: 57819 Sel: .003937']
+,['SHI18M26_HIM~^~11335851~^~20180701', 57819, '.003937', 'ApproxValue: SHI18M26_HIM~^~11335851~^~20180701 NumRows: 57819 Sel: .003937']
+,['SHI18M28_HIM~^~11301665~^~20180101', 57819, '.003937', 'ApproxValue: SHI18M28_HIM~^~11301665~^~20180101 NumRows: 57819 Sel: .003937']
+,['SHI19M15_HIM~^~11173581~^~20190101', 57819, '.003937', 'ApproxValue: SHI19M15_HIM~^~11173581~^~20190101 NumRows: 57819 Sel: .003937']
+,['SHI19M28_HIM~^~11305924~^~20190101', 57819, '.003937', 'ApproxValue: SHI19M28_HIM~^~11305924~^~20190101 NumRows: 57819 Sel: .003937']
+,['SIL15IV1_HIM~^~10846388~^~20150101', 57819, '.003937', 'ApproxValue: SIL15IV1_HIM~^~10846388~^~20150101 NumRows: 57819 Sel: .003937']
+,['SIL17EPO_1022~^~10836506~^~20170101', 57819, '.003937', 'ApproxValue: SIL17EPO_1022~^~10836506~^~20170101 NumRows: 57819 Sel: .003937']
+,['SIL5LCV2_A255~^~10675704~^~20151201', 57819, '.003937', 'ApproxValue: SIL5LCV2_A255~^~10675704~^~20151201 NumRows: 57819 Sel: .003937']
+,['T001_COEXIST~^~10442053~^~20110901', 57819, '.003937', 'ApproxValue: T001_COEXIST~^~10442053~^~20110901 NumRows: 57819 Sel: .003937']
+,['TRS2013F_1944~^~10263761~^~20130901', 57819, '.003937', 'ApproxValue: TRS2013F_1944~^~10263761~^~20130901 NumRows: 57819 Sel: .003937']
+,['TRS2013F_1944~^~10529473~^~20130901', 57819, '.003937', 'ApproxValue: TRS2013F_1944~^~10529473~^~20130901 NumRows: 57819 Sel: .003937']
+,['TRS2013F_1944~^~10624950~^~20130901', 57819, '.003937', 'ApproxValue: TRS2013F_1944~^~10624950~^~20130901 NumRows: 57819 Sel: .003937']
+,['TRS2014T_A_1944_82C0001000_10514571', 57819, '.003937', 'ApproxValue: TRS2014T_A_1944_82C0001000_10514571 NumRows: 57819 Sel: .003937']
+,['TRS2014T_A_1944~^~10407262~^~20140901', 57819, '.003937', 'ApproxValue: TRS2014T_A_1944~^~10407262~^~20140901 NumRows: 57819 Sel: .003937']
+,['TRS2014T_A_1944~^~10596156~^~20140901', 57819, '.003937', 'ApproxValue: TRS2014T_A_1944~^~10596156~^~20140901 NumRows: 57819 Sel: .003937']
+,['TRS2014T_A_1944~^~10698651~^~20140901', 57819, '.003937', 'ApproxValue: TRS2014T_A_1944~^~10698651~^~20140901 NumRows: 57819 Sel: .003937']
+,['TRS2015T_1944_82C0001000_10497722', 57819, '.003937', 'ApproxValue: TRS2015T_1944_82C0001000_10497722 NumRows: 57819 Sel: .003937']
+,['TRS2015T_1944~^~10386836~^~20150901', 57819, '.003937', 'ApproxValue: TRS2015T_1944~^~10386836~^~20150901 NumRows: 57819 Sel: .003937']
+,['TRS2015T_1944~^~10558692~^~20150901', 57819, '.003937', 'ApproxValue: TRS2015T_1944~^~10558692~^~20150901 NumRows: 57819 Sel: .003937']
+,['TRS2015T_1944~^~10699550~^~20150901', 57819, '.003937', 'ApproxValue: TRS2015T_1944~^~10699550~^~20150901 NumRows: 57819 Sel: .003937']
+,['TRS2015T_1944~^~11043914~^~20150901', 57819, '.003937', 'ApproxValue: TRS2015T_1944~^~11043914~^~20150901 NumRows: 57819 Sel: .003937']
+,['TRS2016T_1944~^~10302259~^~20160901', 57819, '.003937', 'ApproxValue: TRS2016T_1944~^~10302259~^~20160901 NumRows: 57819 Sel: .003937']
+,['TRS2016T_1944~^~10534000~^~20160901', 57819, '.003937', 'ApproxValue: TRS2016T_1944~^~10534000~^~20160901 NumRows: 57819 Sel: .003937']
+,['TRS2016T_1944~^~10628379~^~20160901', 57819, '.003937', 'ApproxValue: TRS2016T_1944~^~10628379~^~20160901 NumRows: 57819 Sel: .003937']
+,['TRS2016T_1944~^~10924718~^~20160901', 57819, '.003937', 'ApproxValue: TRS2016T_1944~^~10924718~^~20160901 NumRows: 57819 Sel: .003937']
+,['TRS2016T_1944~^~11196147~^~20160901', 57819, '.003937', 'ApproxValue: TRS2016T_1944~^~11196147~^~20160901 NumRows: 57819 Sel: .003937']
+,['TRS2017T_1944~^~10265569~^~20170901', 57819, '.003937', 'ApproxValue: TRS2017T_1944~^~10265569~^~20170901 NumRows: 57819 Sel: .003937']
+,['TRS2017T_1944~^~10523777~^~20170901', 57819, '.003937', 'ApproxValue: TRS2017T_1944~^~10523777~^~20170901 NumRows: 57819 Sel: .003937']
+,['TRS2017T_1944~^~10625460~^~20170901', 57819, '.003937', 'ApproxValue: TRS2017T_1944~^~10625460~^~20170901 NumRows: 57819 Sel: .003937']
+,['TRS2017T_1944~^~10923719~^~20170901', 57819, '.003937', 'ApproxValue: TRS2017T_1944~^~10923719~^~20170901 NumRows: 57819 Sel: .003937']
+,['TRS2017T_1944~^~11195503~^~20170901', 57819, '.003937', 'ApproxValue: TRS2017T_1944~^~11195503~^~20170901 NumRows: 57819 Sel: .003937']
+,['TRS2017T_1944~^~11281903~^~20170901', 57819, '.003937', 'ApproxValue: TRS2017T_1944~^~11281903~^~20170901 NumRows: 57819 Sel: .003937']
+,['TRS2018T_18_1944~^~10529809~^~20180901', 57819, '.003937', 'ApproxValue: TRS2018T_18_1944~^~10529809~^~20180901 NumRows: 57819 Sel: .003937']
+,['TRS2018T_18_1944~^~11045673~^~20180901', 57819, '.003937', 'ApproxValue: TRS2018T_18_1944~^~11045673~^~20180901 NumRows: 57819 Sel: .003937']
+,['TRS2018T_18_1944~^~11352347~^~20180905', 57819, '.003937', 'ApproxValue: TRS2018T_18_1944~^~11352347~^~20180905 NumRows: 57819 Sel: .003937']
+,['TRS2018T_1944~^~11054588~^~20180901', 57819, '.003937', 'ApproxValue: TRS2018T_1944~^~11054588~^~20180901 NumRows: 57819 Sel: .003937']
+,['TRS20HCT_00009DNU~^~11722942~^~20200901', 57819, '.003937', 'ApproxValue: TRS20HCT_00009DNU~^~11722942~^~20200901 NumRows: 57819 Sel: .003937']
+,['ZHIN_VBHP PPO~^~10538038~^~20080601', 57819, '.003937', 'ApproxValue: ZHIN_VBHP PPO~^~10538038~^~20080601 NumRows: 57819 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.213. Height Balanced histogram on Column T_ENNS.ELNS_UNIVID',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.213. Height Balanced histogram on Column T_ENNS.ELNS_UNIVID <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 14686026) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 14686026)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_ENNS'
+AND a.column_name = 'ELNS_UNIVID'
+ORDER BY a.endpoint_number;
+
+248 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:05:40 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>

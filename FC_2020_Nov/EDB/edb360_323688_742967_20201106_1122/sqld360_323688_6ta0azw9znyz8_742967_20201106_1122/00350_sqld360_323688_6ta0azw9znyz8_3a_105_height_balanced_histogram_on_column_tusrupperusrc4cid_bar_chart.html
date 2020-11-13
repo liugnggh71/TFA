@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00272_sqld360_323688_6ta0azw9znyz8_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_USR.(UPPER("USR_C4C_ID"))</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 00350_sqld360_323688_6ta0azw9znyz8_3a_105_height_balanced_histogram_on_column_tusrupperusrc4cid_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,['00-10073345', 0, '0', 'ApproxValue: 00-10073345 NumRows: 0 Sel: 0']
+,['00-10736482', 7808, '.003937', 'ApproxValue: 00-10736482 NumRows: 7808 Sel: .003937']
+,['00-10744657', 7808, '.003937', 'ApproxValue: 00-10744657 NumRows: 7808 Sel: .003937']
+,['00-10752787', 7808, '.003937', 'ApproxValue: 00-10752787 NumRows: 7808 Sel: .003937']
+,['00-10760925', 7808, '.003937', 'ApproxValue: 00-10760925 NumRows: 7808 Sel: .003937']
+,['00-10769123', 7808, '.003937', 'ApproxValue: 00-10769123 NumRows: 7808 Sel: .003937']
+,['00-10777872', 7808, '.003937', 'ApproxValue: 00-10777872 NumRows: 7808 Sel: .003937']
+,['00-10786636', 7808, '.003937', 'ApproxValue: 00-10786636 NumRows: 7808 Sel: .003937']
+,['00-10795722', 7808, '.003937', 'ApproxValue: 00-10795722 NumRows: 7808 Sel: .003937']
+,['00-10802940', 7808, '.003937', 'ApproxValue: 00-10802940 NumRows: 7808 Sel: .003937']
+,['00-10809593', 7808, '.003937', 'ApproxValue: 00-10809593 NumRows: 7808 Sel: .003937']
+,['00-10818573', 7808, '.003937', 'ApproxValue: 00-10818573 NumRows: 7808 Sel: .003937']
+,['00-10828643', 7808, '.003937', 'ApproxValue: 00-10828643 NumRows: 7808 Sel: .003937']
+,['00-10846702', 7808, '.003937', 'ApproxValue: 00-10846702 NumRows: 7808 Sel: .003937']
+,['00-10866111', 7808, '.003937', 'ApproxValue: 00-10866111 NumRows: 7808 Sel: .003937']
+,['00-10884302', 7808, '.003937', 'ApproxValue: 00-10884302 NumRows: 7808 Sel: .003937']
+,['00-10905661', 7808, '.003937', 'ApproxValue: 00-10905661 NumRows: 7808 Sel: .003937']
+,['00-10930316', 7808, '.003937', 'ApproxValue: 00-10930316 NumRows: 7808 Sel: .003937']
+,['00-10939082', 7808, '.003937', 'ApproxValue: 00-10939082 NumRows: 7808 Sel: .003937']
+,['00-10949539', 7808, '.003937', 'ApproxValue: 00-10949539 NumRows: 7808 Sel: .003937']
+,['00-10959691', 7808, '.003937', 'ApproxValue: 00-10959691 NumRows: 7808 Sel: .003937']
+,['00-10970554', 7808, '.003937', 'ApproxValue: 00-10970554 NumRows: 7808 Sel: .003937']
+,['00-10983568', 7808, '.003937', 'ApproxValue: 00-10983568 NumRows: 7808 Sel: .003937']
+,['00-10993922', 7808, '.003937', 'ApproxValue: 00-10993922 NumRows: 7808 Sel: .003937']
+,['00-11007423', 7808, '.003937', 'ApproxValue: 00-11007423 NumRows: 7808 Sel: .003937']
+,['00-11025794', 7808, '.003937', 'ApproxValue: 00-11025794 NumRows: 7808 Sel: .003937']
+,['00-11066473', 7808, '.003937', 'ApproxValue: 00-11066473 NumRows: 7808 Sel: .003937']
+,['00-11169025', 7808, '.003937', 'ApproxValue: 00-11169025 NumRows: 7808 Sel: .003937']
+,['00-11625856', 7808, '.003937', 'ApproxValue: 00-11625856 NumRows: 7808 Sel: .003937']
+,['00-12925108', 7808, '.003937', 'ApproxValue: 00-12925108 NumRows: 7808 Sel: .003937']
+,['00-13110472', 7808, '.003937', 'ApproxValue: 00-13110472 NumRows: 7808 Sel: .003937']
+,['00-13627958', 7808, '.003937', 'ApproxValue: 00-13627958 NumRows: 7808 Sel: .003937']
+,['00-13866660', 7808, '.003937', 'ApproxValue: 00-13866660 NumRows: 7808 Sel: .003937']
+,['00-13902890', 7808, '.003937', 'ApproxValue: 00-13902890 NumRows: 7808 Sel: .003937']
+,['00-13932115', 7808, '.003937', 'ApproxValue: 00-13932115 NumRows: 7808 Sel: .003937']
+,['00-13977574', 7808, '.003937', 'ApproxValue: 00-13977574 NumRows: 7808 Sel: .003937']
+,['00-14024697', 7808, '.003937', 'ApproxValue: 00-14024697 NumRows: 7808 Sel: .003937']
+,['00-14048146', 7808, '.003937', 'ApproxValue: 00-14048146 NumRows: 7808 Sel: .003937']
+,['00-14090485', 7808, '.003937', 'ApproxValue: 00-14090485 NumRows: 7808 Sel: .003937']
+,['00-14127818', 7808, '.003937', 'ApproxValue: 00-14127818 NumRows: 7808 Sel: .003937']
+,['00-14159075', 7808, '.003937', 'ApproxValue: 00-14159075 NumRows: 7808 Sel: .003937']
+,['00-14197869', 7808, '.003937', 'ApproxValue: 00-14197869 NumRows: 7808 Sel: .003937']
+,['00-14216246', 7808, '.003937', 'ApproxValue: 00-14216246 NumRows: 7808 Sel: .003937']
+,['00-14233649', 7808, '.003937', 'ApproxValue: 00-14233649 NumRows: 7808 Sel: .003937']
+,['00-18482151', 7808, '.003937', 'ApproxValue: 00-18482151 NumRows: 7808 Sel: .003937']
+,['00-18490064', 7808, '.003937', 'ApproxValue: 00-18490064 NumRows: 7808 Sel: .003937']
+,['00-18498165', 7808, '.003937', 'ApproxValue: 00-18498165 NumRows: 7808 Sel: .003937']
+,['00-18506205', 7808, '.003937', 'ApproxValue: 00-18506205 NumRows: 7808 Sel: .003937']
+,['00-18514414', 7808, '.003937', 'ApproxValue: 00-18514414 NumRows: 7808 Sel: .003937']
+,['00-18522441', 7808, '.003937', 'ApproxValue: 00-18522441 NumRows: 7808 Sel: .003937']
+,['00-18533926', 7808, '.003937', 'ApproxValue: 00-18533926 NumRows: 7808 Sel: .003937']
+,['00-18544183', 7808, '.003937', 'ApproxValue: 00-18544183 NumRows: 7808 Sel: .003937']
+,['00-18555032', 7808, '.003937', 'ApproxValue: 00-18555032 NumRows: 7808 Sel: .003937']
+,['00-18566836', 7808, '.003937', 'ApproxValue: 00-18566836 NumRows: 7808 Sel: .003937']
+,['00-18578226', 7808, '.003937', 'ApproxValue: 00-18578226 NumRows: 7808 Sel: .003937']
+,['00-18591603', 7808, '.003937', 'ApproxValue: 00-18591603 NumRows: 7808 Sel: .003937']
+,['00-18599556', 7808, '.003937', 'ApproxValue: 00-18599556 NumRows: 7808 Sel: .003937']
+,['00-18607814', 7808, '.003937', 'ApproxValue: 00-18607814 NumRows: 7808 Sel: .003937']
+,['00-18617864', 7808, '.003937', 'ApproxValue: 00-18617864 NumRows: 7808 Sel: .003937']
+,['00-18633756', 7808, '.003937', 'ApproxValue: 00-18633756 NumRows: 7808 Sel: .003937']
+,['00-18649371', 7808, '.003937', 'ApproxValue: 00-18649371 NumRows: 7808 Sel: .003937']
+,['00-18664928', 7808, '.003937', 'ApproxValue: 00-18664928 NumRows: 7808 Sel: .003937']
+,['00-18696280', 7808, '.003937', 'ApproxValue: 00-18696280 NumRows: 7808 Sel: .003937']
+,['00-18711873', 7808, '.003937', 'ApproxValue: 00-18711873 NumRows: 7808 Sel: .003937']
+,['00-18729480', 7808, '.003937', 'ApproxValue: 00-18729480 NumRows: 7808 Sel: .003937']
+,['00-18745451', 7808, '.003937', 'ApproxValue: 00-18745451 NumRows: 7808 Sel: .003937']
+,['00-18763856', 7808, '.003937', 'ApproxValue: 00-18763856 NumRows: 7808 Sel: .003937']
+,['00-18784300', 7808, '.003937', 'ApproxValue: 00-18784300 NumRows: 7808 Sel: .003937']
+,['00-18805106', 7808, '.003937', 'ApproxValue: 00-18805106 NumRows: 7808 Sel: .003937']
+,['00-18829406', 7808, '.003937', 'ApproxValue: 00-18829406 NumRows: 7808 Sel: .003937']
+,['00-18872854', 7808, '.003937', 'ApproxValue: 00-18872854 NumRows: 7808 Sel: .003937']
+,['00-18880662', 7808, '.003937', 'ApproxValue: 00-18880662 NumRows: 7808 Sel: .003937']
+,['00-18888470', 7808, '.003937', 'ApproxValue: 00-18888470 NumRows: 7808 Sel: .003937']
+,['00-18896278', 7808, '.003937', 'ApproxValue: 00-18896278 NumRows: 7808 Sel: .003937']
+,['00-18904087', 7808, '.003937', 'ApproxValue: 00-18904087 NumRows: 7808 Sel: .003937']
+,['00-18911942', 7808, '.003937', 'ApproxValue: 00-18911942 NumRows: 7808 Sel: .003937']
+,['00-18919767', 7808, '.003937', 'ApproxValue: 00-18919767 NumRows: 7808 Sel: .003937']
+,['00-18927621', 7808, '.003937', 'ApproxValue: 00-18927621 NumRows: 7808 Sel: .003937']
+,['00-18935494', 7808, '.003937', 'ApproxValue: 00-18935494 NumRows: 7808 Sel: .003937']
+,['00-18943302', 7808, '.003937', 'ApproxValue: 00-18943302 NumRows: 7808 Sel: .003937']
+,['00-18951225', 7808, '.003937', 'ApproxValue: 00-18951225 NumRows: 7808 Sel: .003937']
+,['00-18959175', 7808, '.003937', 'ApproxValue: 00-18959175 NumRows: 7808 Sel: .003937']
+,['00-18967005', 7808, '.003937', 'ApproxValue: 00-18967005 NumRows: 7808 Sel: .003937']
+,['00-18974825', 7808, '.003937', 'ApproxValue: 00-18974825 NumRows: 7808 Sel: .003937']
+,['00-18982634', 7808, '.003937', 'ApproxValue: 00-18982634 NumRows: 7808 Sel: .003937']
+,['00-18990446', 7808, '.003937', 'ApproxValue: 00-18990446 NumRows: 7808 Sel: .003937']
+,['00-18998377', 7808, '.003937', 'ApproxValue: 00-18998377 NumRows: 7808 Sel: .003937']
+,['00-19006245', 7808, '.003937', 'ApproxValue: 00-19006245 NumRows: 7808 Sel: .003937']
+,['00-19014087', 7808, '.003937', 'ApproxValue: 00-19014087 NumRows: 7808 Sel: .003937']
+,['00-19021908', 7808, '.003937', 'ApproxValue: 00-19021908 NumRows: 7808 Sel: .003937']
+,['00-19029987', 7808, '.003937', 'ApproxValue: 00-19029987 NumRows: 7808 Sel: .003937']
+,['00-19037801', 7808, '.003937', 'ApproxValue: 00-19037801 NumRows: 7808 Sel: .003937']
+,['00-19045980', 7808, '.003937', 'ApproxValue: 00-19045980 NumRows: 7808 Sel: .003937']
+,['00-19053788', 7808, '.003937', 'ApproxValue: 00-19053788 NumRows: 7808 Sel: .003937']
+,['00-19061613', 7808, '.003937', 'ApproxValue: 00-19061613 NumRows: 7808 Sel: .003937']
+,['00-19069423', 7808, '.003937', 'ApproxValue: 00-19069423 NumRows: 7808 Sel: .003937']
+,['00-19077234', 7808, '.003937', 'ApproxValue: 00-19077234 NumRows: 7808 Sel: .003937']
+,['00-19085060', 7808, '.003937', 'ApproxValue: 00-19085060 NumRows: 7808 Sel: .003937']
+,['00-19092869', 7808, '.003937', 'ApproxValue: 00-19092869 NumRows: 7808 Sel: .003937']
+,['00-19100684', 7808, '.003937', 'ApproxValue: 00-19100684 NumRows: 7808 Sel: .003937']
+,['00-19108499', 7808, '.003937', 'ApproxValue: 00-19108499 NumRows: 7808 Sel: .003937']
+,['056-10649251', 7808, '.003937', 'ApproxValue: 056-10649251 NumRows: 7808 Sel: .003937']
+,['056-17553080', 7808, '.003937', 'ApproxValue: 056-17553080 NumRows: 7808 Sel: .003937']
+,['056-17560911', 7808, '.003937', 'ApproxValue: 056-17560911 NumRows: 7808 Sel: .003937']
+,['056-17568734', 7808, '.003937', 'ApproxValue: 056-17568734 NumRows: 7808 Sel: .003937']
+,['056-17576565', 7808, '.003937', 'ApproxValue: 056-17576565 NumRows: 7808 Sel: .003937']
+,['056-17584399', 7808, '.003937', 'ApproxValue: 056-17584399 NumRows: 7808 Sel: .003937']
+,['056-17592254', 7808, '.003937', 'ApproxValue: 056-17592254 NumRows: 7808 Sel: .003937']
+,['056-17600104', 7808, '.003937', 'ApproxValue: 056-17600104 NumRows: 7808 Sel: .003937']
+,['056-17607936', 7808, '.003937', 'ApproxValue: 056-17607936 NumRows: 7808 Sel: .003937']
+,['056-17615792', 7808, '.003937', 'ApproxValue: 056-17615792 NumRows: 7808 Sel: .003937']
+,['056-17623652', 7808, '.003937', 'ApproxValue: 056-17623652 NumRows: 7808 Sel: .003937']
+,['056-17631517', 7808, '.003937', 'ApproxValue: 056-17631517 NumRows: 7808 Sel: .003937']
+,['056-17639426', 7808, '.003937', 'ApproxValue: 056-17639426 NumRows: 7808 Sel: .003937']
+,['056-17647278', 7808, '.003937', 'ApproxValue: 056-17647278 NumRows: 7808 Sel: .003937']
+,['056-17655086', 7808, '.003937', 'ApproxValue: 056-17655086 NumRows: 7808 Sel: .003937']
+,['056-17662894', 7808, '.003937', 'ApproxValue: 056-17662894 NumRows: 7808 Sel: .003937']
+,['056-17670702', 7808, '.003937', 'ApproxValue: 056-17670702 NumRows: 7808 Sel: .003937']
+,['056-17678510', 7808, '.003937', 'ApproxValue: 056-17678510 NumRows: 7808 Sel: .003937']
+,['056-17686323', 7808, '.003937', 'ApproxValue: 056-17686323 NumRows: 7808 Sel: .003937']
+,['056-17694132', 7808, '.003937', 'ApproxValue: 056-17694132 NumRows: 7808 Sel: .003937']
+,['056-17701941', 7808, '.003937', 'ApproxValue: 056-17701941 NumRows: 7808 Sel: .003937']
+,['056-17709749', 7808, '.003937', 'ApproxValue: 056-17709749 NumRows: 7808 Sel: .003937']
+,['056-17717557', 7808, '.003937', 'ApproxValue: 056-17717557 NumRows: 7808 Sel: .003937']
+,['056-17725365', 7808, '.003937', 'ApproxValue: 056-17725365 NumRows: 7808 Sel: .003937']
+,['056-17733173', 7808, '.003937', 'ApproxValue: 056-17733173 NumRows: 7808 Sel: .003937']
+,['056-17740983', 7808, '.003937', 'ApproxValue: 056-17740983 NumRows: 7808 Sel: .003937']
+,['056-17748791', 7808, '.003937', 'ApproxValue: 056-17748791 NumRows: 7808 Sel: .003937']
+,['056-17756600', 7808, '.003937', 'ApproxValue: 056-17756600 NumRows: 7808 Sel: .003937']
+,['056-17764412', 7808, '.003937', 'ApproxValue: 056-17764412 NumRows: 7808 Sel: .003937']
+,['056-17772261', 7808, '.003937', 'ApproxValue: 056-17772261 NumRows: 7808 Sel: .003937']
+,['056-17780075', 7808, '.003937', 'ApproxValue: 056-17780075 NumRows: 7808 Sel: .003937']
+,['056-17787890', 7808, '.003937', 'ApproxValue: 056-17787890 NumRows: 7808 Sel: .003937']
+,['056-17795707', 7808, '.003937', 'ApproxValue: 056-17795707 NumRows: 7808 Sel: .003937']
+,['056-17803517', 7808, '.003937', 'ApproxValue: 056-17803517 NumRows: 7808 Sel: .003937']
+,['056-17811330', 7808, '.003937', 'ApproxValue: 056-17811330 NumRows: 7808 Sel: .003937']
+,['056-17819145', 7808, '.003937', 'ApproxValue: 056-17819145 NumRows: 7808 Sel: .003937']
+,['056-17826963', 7808, '.003937', 'ApproxValue: 056-17826963 NumRows: 7808 Sel: .003937']
+,['056-17834772', 7808, '.003937', 'ApproxValue: 056-17834772 NumRows: 7808 Sel: .003937']
+,['056-17842585', 7808, '.003937', 'ApproxValue: 056-17842585 NumRows: 7808 Sel: .003937']
+,['056-17850396', 7808, '.003937', 'ApproxValue: 056-17850396 NumRows: 7808 Sel: .003937']
+,['056-17858220', 7808, '.003937', 'ApproxValue: 056-17858220 NumRows: 7808 Sel: .003937']
+,['056-17866119', 7808, '.003937', 'ApproxValue: 056-17866119 NumRows: 7808 Sel: .003937']
+,['056-17873978', 7808, '.003937', 'ApproxValue: 056-17873978 NumRows: 7808 Sel: .003937']
+,['056-17881914', 7808, '.003937', 'ApproxValue: 056-17881914 NumRows: 7808 Sel: .003937']
+,['056-17889856', 7808, '.003937', 'ApproxValue: 056-17889856 NumRows: 7808 Sel: .003937']
+,['056-17897753', 7808, '.003937', 'ApproxValue: 056-17897753 NumRows: 7808 Sel: .003937']
+,['056-17905734', 7808, '.003937', 'ApproxValue: 056-17905734 NumRows: 7808 Sel: .003937']
+,['056-17913567', 7808, '.003937', 'ApproxValue: 056-17913567 NumRows: 7808 Sel: .003937']
+,['056-17921401', 7808, '.003937', 'ApproxValue: 056-17921401 NumRows: 7808 Sel: .003937']
+,['056-17929283', 7808, '.003937', 'ApproxValue: 056-17929283 NumRows: 7808 Sel: .003937']
+,['056-17937160', 7808, '.003937', 'ApproxValue: 056-17937160 NumRows: 7808 Sel: .003937']
+,['056-17945107', 7808, '.003937', 'ApproxValue: 056-17945107 NumRows: 7808 Sel: .003937']
+,['056-17953059', 7808, '.003937', 'ApproxValue: 056-17953059 NumRows: 7808 Sel: .003937']
+,['056-17961056', 7808, '.003937', 'ApproxValue: 056-17961056 NumRows: 7808 Sel: .003937']
+,['056-17969000', 7808, '.003937', 'ApproxValue: 056-17969000 NumRows: 7808 Sel: .003937']
+,['056-17976846', 7808, '.003937', 'ApproxValue: 056-17976846 NumRows: 7808 Sel: .003937']
+,['056-17984708', 7808, '.003937', 'ApproxValue: 056-17984708 NumRows: 7808 Sel: .003937']
+,['056-17992574', 7808, '.003937', 'ApproxValue: 056-17992574 NumRows: 7808 Sel: .003937']
+,['056-18000463', 7808, '.003937', 'ApproxValue: 056-18000463 NumRows: 7808 Sel: .003937']
+,['056-18008370', 7808, '.003937', 'ApproxValue: 056-18008370 NumRows: 7808 Sel: .003937']
+,['056-18016332', 7808, '.003937', 'ApproxValue: 056-18016332 NumRows: 7808 Sel: .003937']
+,['056-18024304', 7808, '.003937', 'ApproxValue: 056-18024304 NumRows: 7808 Sel: .003937']
+,['056-18032155', 7808, '.003937', 'ApproxValue: 056-18032155 NumRows: 7808 Sel: .003937']
+,['056-18040017', 7808, '.003937', 'ApproxValue: 056-18040017 NumRows: 7808 Sel: .003937']
+,['056-18047905', 7808, '.003937', 'ApproxValue: 056-18047905 NumRows: 7808 Sel: .003937']
+,['056-18055812', 7808, '.003937', 'ApproxValue: 056-18055812 NumRows: 7808 Sel: .003937']
+,['056-18063713', 7808, '.003937', 'ApproxValue: 056-18063713 NumRows: 7808 Sel: .003937']
+,['056-18071601', 7808, '.003937', 'ApproxValue: 056-18071601 NumRows: 7808 Sel: .003937']
+,['056-18079489', 7808, '.003937', 'ApproxValue: 056-18079489 NumRows: 7808 Sel: .003937']
+,['056-18087449', 7808, '.003937', 'ApproxValue: 056-18087449 NumRows: 7808 Sel: .003937']
+,['056-18095345', 7808, '.003937', 'ApproxValue: 056-18095345 NumRows: 7808 Sel: .003937']
+,['056-18103216', 7808, '.003937', 'ApproxValue: 056-18103216 NumRows: 7808 Sel: .003937']
+,['056-18111122', 7808, '.003937', 'ApproxValue: 056-18111122 NumRows: 7808 Sel: .003937']
+,['056-18119203', 7808, '.003937', 'ApproxValue: 056-18119203 NumRows: 7808 Sel: .003937']
+,['056-18127070', 7808, '.003937', 'ApproxValue: 056-18127070 NumRows: 7808 Sel: .003937']
+,['056-18134972', 7808, '.003937', 'ApproxValue: 056-18134972 NumRows: 7808 Sel: .003937']
+,['056-18142959', 7808, '.003937', 'ApproxValue: 056-18142959 NumRows: 7808 Sel: .003937']
+,['056-18150838', 7808, '.003937', 'ApproxValue: 056-18150838 NumRows: 7808 Sel: .003937']
+,['056-18158729', 7808, '.003937', 'ApproxValue: 056-18158729 NumRows: 7808 Sel: .003937']
+,['056-18166706', 7808, '.003937', 'ApproxValue: 056-18166706 NumRows: 7808 Sel: .003937']
+,['056-18174623', 7808, '.003937', 'ApproxValue: 056-18174623 NumRows: 7808 Sel: .003937']
+,['056-18182534', 7808, '.003937', 'ApproxValue: 056-18182534 NumRows: 7808 Sel: .003937']
+,['056-18190524', 7808, '.003937', 'ApproxValue: 056-18190524 NumRows: 7808 Sel: .003937']
+,['056-18198493', 7808, '.003937', 'ApproxValue: 056-18198493 NumRows: 7808 Sel: .003937']
+,['056-18206437', 7808, '.003937', 'ApproxValue: 056-18206437 NumRows: 7808 Sel: .003937']
+,['056-18214404', 7808, '.003937', 'ApproxValue: 056-18214404 NumRows: 7808 Sel: .003937']
+,['056-18222446', 7808, '.003937', 'ApproxValue: 056-18222446 NumRows: 7808 Sel: .003937']
+,['056-18230437', 7808, '.003937', 'ApproxValue: 056-18230437 NumRows: 7808 Sel: .003937']
+,['056-18238519', 7808, '.003937', 'ApproxValue: 056-18238519 NumRows: 7808 Sel: .003937']
+,['056-18246545', 7808, '.003937', 'ApproxValue: 056-18246545 NumRows: 7808 Sel: .003937']
+,['056-18254565', 7808, '.003937', 'ApproxValue: 056-18254565 NumRows: 7808 Sel: .003937']
+,['056-18262743', 7808, '.003937', 'ApproxValue: 056-18262743 NumRows: 7808 Sel: .003937']
+,['056-18271048', 7808, '.003937', 'ApproxValue: 056-18271048 NumRows: 7808 Sel: .003937']
+,['056-18279448', 7808, '.003937', 'ApproxValue: 056-18279448 NumRows: 7808 Sel: .003937']
+,['056-18288486', 7808, '.003937', 'ApproxValue: 056-18288486 NumRows: 7808 Sel: .003937']
+,['056-18297488', 7808, '.003937', 'ApproxValue: 056-18297488 NumRows: 7808 Sel: .003937']
+,['056-18307361', 7808, '.003937', 'ApproxValue: 056-18307361 NumRows: 7808 Sel: .003937']
+,['056-18316430', 7808, '.003937', 'ApproxValue: 056-18316430 NumRows: 7808 Sel: .003937']
+,['056-18325413', 7808, '.003937', 'ApproxValue: 056-18325413 NumRows: 7808 Sel: .003937']
+,['056-18334399', 7808, '.003937', 'ApproxValue: 056-18334399 NumRows: 7808 Sel: .003937']
+,['056-18344359', 7808, '.003937', 'ApproxValue: 056-18344359 NumRows: 7808 Sel: .003937']
+,['056-18372412', 7808, '.003937', 'ApproxValue: 056-18372412 NumRows: 7808 Sel: .003937']
+,['056-18399238', 7808, '.003937', 'ApproxValue: 056-18399238 NumRows: 7808 Sel: .003937']
+,['056-18411376', 7808, '.003937', 'ApproxValue: 056-18411376 NumRows: 7808 Sel: .003937']
+,['056-18419750', 7808, '.003937', 'ApproxValue: 056-18419750 NumRows: 7808 Sel: .003937']
+,['056-18428299', 7808, '.003937', 'ApproxValue: 056-18428299 NumRows: 7808 Sel: .003937']
+,['056-18436360', 7808, '.003937', 'ApproxValue: 056-18436360 NumRows: 7808 Sel: .003937']
+,['056-18448350', 7808, '.003937', 'ApproxValue: 056-18448350 NumRows: 7808 Sel: .003937']
+,['056-18463444', 7808, '.003937', 'ApproxValue: 056-18463444 NumRows: 7808 Sel: .003937']
+,['056-18529507', 7808, '.003937', 'ApproxValue: 056-18529507 NumRows: 7808 Sel: .003937']
+,['056-18578406', 7808, '.003937', 'ApproxValue: 056-18578406 NumRows: 7808 Sel: .003937']
+,['056-18623239', 7808, '.003937', 'ApproxValue: 056-18623239 NumRows: 7808 Sel: .003937']
+,['056-18638908', 7808, '.003937', 'ApproxValue: 056-18638908 NumRows: 7808 Sel: .003937']
+,['056-18654634', 7808, '.003937', 'ApproxValue: 056-18654634 NumRows: 7808 Sel: .003937']
+,['056-18672054', 7808, '.003937', 'ApproxValue: 056-18672054 NumRows: 7808 Sel: .003937']
+,['056-18701746', 7808, '.003937', 'ApproxValue: 056-18701746 NumRows: 7808 Sel: .003937']
+,['056-18719364', 7808, '.003937', 'ApproxValue: 056-18719364 NumRows: 7808 Sel: .003937']
+,['056-18735443', 7808, '.003937', 'ApproxValue: 056-18735443 NumRows: 7808 Sel: .003937']
+,['056-18754915', 7808, '.003937', 'ApproxValue: 056-18754915 NumRows: 7808 Sel: .003937']
+,['056-18773010', 7808, '.003937', 'ApproxValue: 056-18773010 NumRows: 7808 Sel: .003937']
+,['056-18795856', 7808, '.003937', 'ApproxValue: 056-18795856 NumRows: 7808 Sel: .003937']
+,['056-18824613', 7808, '.003937', 'ApproxValue: 056-18824613 NumRows: 7808 Sel: .003937']
+,['056-18845874', 7808, '.003937', 'ApproxValue: 056-18845874 NumRows: 7808 Sel: .003937']
+,['056-18853717', 7808, '.003937', 'ApproxValue: 056-18853717 NumRows: 7808 Sel: .003937']
+,['056-18862481', 7808, '.003937', 'ApproxValue: 056-18862481 NumRows: 7808 Sel: .003937']
+,['056-19112760', 7808, '.003937', 'ApproxValue: 056-19112760 NumRows: 7808 Sel: .003937']
+,['056-19131370', 7808, '.003937', 'ApproxValue: 056-19131370 NumRows: 7808 Sel: .003937']
+,['058-17376116', 7808, '.003937', 'ApproxValue: 058-17376116 NumRows: 7808 Sel: .003937']
+,['058-17383923', 7808, '.003937', 'ApproxValue: 058-17383923 NumRows: 7808 Sel: .003937']
+,['058-17391736', 7808, '.003937', 'ApproxValue: 058-17391736 NumRows: 7808 Sel: .003937']
+,['058-17399557', 7808, '.003937', 'ApproxValue: 058-17399557 NumRows: 7808 Sel: .003937']
+,['058-17407386', 7808, '.003937', 'ApproxValue: 058-17407386 NumRows: 7808 Sel: .003937']
+,['058-17415276', 7808, '.003937', 'ApproxValue: 058-17415276 NumRows: 7808 Sel: .003937']
+,['058-17423083', 7808, '.003937', 'ApproxValue: 058-17423083 NumRows: 7808 Sel: .003937']
+,['058-17430890', 7808, '.003937', 'ApproxValue: 058-17430890 NumRows: 7808 Sel: .003937']
+,['058-17438698', 7808, '.003937', 'ApproxValue: 058-17438698 NumRows: 7808 Sel: .003937']
+,['058-17446505', 7808, '.003937', 'ApproxValue: 058-17446505 NumRows: 7808 Sel: .003937']
+,['058-17454314', 7808, '.003937', 'ApproxValue: 058-17454314 NumRows: 7808 Sel: .003937']
+,['058-17462123', 7808, '.003937', 'ApproxValue: 058-17462123 NumRows: 7808 Sel: .003937']
+,['058-17469933', 7808, '.003937', 'ApproxValue: 058-17469933 NumRows: 7808 Sel: .003937']
+,['058-17477744', 7808, '.003937', 'ApproxValue: 058-17477744 NumRows: 7808 Sel: .003937']
+,['058-17485554', 7808, '.003937', 'ApproxValue: 058-17485554 NumRows: 7808 Sel: .003937']
+,['058-17493365', 7808, '.003937', 'ApproxValue: 058-17493365 NumRows: 7808 Sel: .003937']
+,['058-17501173', 7808, '.003937', 'ApproxValue: 058-17501173 NumRows: 7808 Sel: .003937']
+,['058-17508986', 7808, '.003937', 'ApproxValue: 058-17508986 NumRows: 7808 Sel: .003937']
+,['058-17516800', 7808, '.003937', 'ApproxValue: 058-17516800 NumRows: 7808 Sel: .003937']
+,['058-17524614', 7808, '.003937', 'ApproxValue: 058-17524614 NumRows: 7808 Sel: .003937']
+,['058-17532428', 7808, '.003937', 'ApproxValue: 058-17532428 NumRows: 7808 Sel: .003937']
+,['058-17540247', 7808, '.003937', 'ApproxValue: 058-17540247 NumRows: 7808 Sel: .003937']
+,['058-17548072', 7808, '.003937', 'ApproxValue: 058-17548072 NumRows: 7808 Sel: .003937']
+,['058-18671819', 7808, '.003937', 'ApproxValue: 058-18671819 NumRows: 7808 Sel: .003937']
+,['058-18683671', 7808, '.003937', 'ApproxValue: 058-18683671 NumRows: 7808 Sel: .003937']
+,['058-18715620', 7808, '.003937', 'ApproxValue: 058-18715620 NumRows: 7808 Sel: .003937']
+,['SYSTEM', 7808, '.003937', 'ApproxValue: SYSTEM NumRows: 7808 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.105. Height Balanced histogram on Column T_USR.(UPPER("USR_C4C_ID"))',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.105. Height Balanced histogram on Column T_USR.(UPPER("USR_C4C_ID")) <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 1983161) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 1983161)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_USR'
+AND a.column_name = 'SYS_NC00139$'
+ORDER BY a.endpoint_number;
+
+255 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:27:01 for SQL ID 6ta0azw9znyz8 (delete from T_OTHER_INSURANCE where INS_MEMBER= :1 and CLASSTYPE=:2) </font>
+</body>
+</html>

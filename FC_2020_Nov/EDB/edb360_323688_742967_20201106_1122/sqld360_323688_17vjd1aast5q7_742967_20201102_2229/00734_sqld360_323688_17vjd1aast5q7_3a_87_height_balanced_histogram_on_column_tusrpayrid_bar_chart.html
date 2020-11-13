@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00694_sqld360_323688_17vjd1aast5q7_3a_68_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_USR.PAYR_ID</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 00734_sqld360_323688_17vjd1aast5q7_3a_87_height_balanced_histogram_on_column_tusrpayrid_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,['1', 0, '0', 'ApproxValue: 1 NumRows: 0 Sel: 0']
+,['4', 3, '.003937', 'ApproxValue: 4 NumRows: 3 Sel: .003937']
+,['10000000', 3, '.003937', 'ApproxValue: 10000000 NumRows: 3 Sel: .003937']
+,['10000020', 3, '.003937', 'ApproxValue: 10000020 NumRows: 3 Sel: .003937']
+,['10000042', 3, '.003937', 'ApproxValue: 10000042 NumRows: 3 Sel: .003937']
+,['10000045', 3, '.003937', 'ApproxValue: 10000045 NumRows: 3 Sel: .003937']
+,['10000048', 3, '.003937', 'ApproxValue: 10000048 NumRows: 3 Sel: .003937']
+,['10000051', 3, '.003937', 'ApproxValue: 10000051 NumRows: 3 Sel: .003937']
+,['10000054', 3, '.003937', 'ApproxValue: 10000054 NumRows: 3 Sel: .003937']
+,['10000057', 3, '.003937', 'ApproxValue: 10000057 NumRows: 3 Sel: .003937']
+,['10000060', 3, '.003937', 'ApproxValue: 10000060 NumRows: 3 Sel: .003937']
+,['10000063', 3, '.003937', 'ApproxValue: 10000063 NumRows: 3 Sel: .003937']
+,['10000066', 3, '.003937', 'ApproxValue: 10000066 NumRows: 3 Sel: .003937']
+,['10000069', 3, '.003937', 'ApproxValue: 10000069 NumRows: 3 Sel: .003937']
+,['10000072', 3, '.003937', 'ApproxValue: 10000072 NumRows: 3 Sel: .003937']
+,['10000075', 3, '.003937', 'ApproxValue: 10000075 NumRows: 3 Sel: .003937']
+,['10000082', 3, '.003937', 'ApproxValue: 10000082 NumRows: 3 Sel: .003937']
+,['10000101', 3, '.003937', 'ApproxValue: 10000101 NumRows: 3 Sel: .003937']
+,['10543610', 3, '.003937', 'ApproxValue: 10543610 NumRows: 3 Sel: .003937']
+,['10543613', 3, '.003937', 'ApproxValue: 10543613 NumRows: 3 Sel: .003937']
+,['10543616', 3, '.003937', 'ApproxValue: 10543616 NumRows: 3 Sel: .003937']
+,['10543619', 3, '.003937', 'ApproxValue: 10543619 NumRows: 3 Sel: .003937']
+,['10543626', 3, '.003937', 'ApproxValue: 10543626 NumRows: 3 Sel: .003937']
+,['10550663', 3, '.003937', 'ApproxValue: 10550663 NumRows: 3 Sel: .003937']
+,['10550666', 3, '.003937', 'ApproxValue: 10550666 NumRows: 3 Sel: .003937']
+,['10550670', 3, '.003937', 'ApproxValue: 10550670 NumRows: 3 Sel: .003937']
+,['10550673', 3, '.003937', 'ApproxValue: 10550673 NumRows: 3 Sel: .003937']
+,['10550676', 3, '.003937', 'ApproxValue: 10550676 NumRows: 3 Sel: .003937']
+,['10552936', 3, '.003937', 'ApproxValue: 10552936 NumRows: 3 Sel: .003937']
+,['10564335', 3, '.003937', 'ApproxValue: 10564335 NumRows: 3 Sel: .003937']
+,['10568473', 3, '.003937', 'ApproxValue: 10568473 NumRows: 3 Sel: .003937']
+,['10568476', 3, '.003937', 'ApproxValue: 10568476 NumRows: 3 Sel: .003937']
+,['10568567', 3, '.003937', 'ApproxValue: 10568567 NumRows: 3 Sel: .003937']
+,['10573826', 3, '.003937', 'ApproxValue: 10573826 NumRows: 3 Sel: .003937']
+,['10573830', 3, '.003937', 'ApproxValue: 10573830 NumRows: 3 Sel: .003937']
+,['10573844', 3, '.003937', 'ApproxValue: 10573844 NumRows: 3 Sel: .003937']
+,['10573850', 3, '.003937', 'ApproxValue: 10573850 NumRows: 3 Sel: .003937']
+,['10573855', 3, '.003937', 'ApproxValue: 10573855 NumRows: 3 Sel: .003937']
+,['10573858', 3, '.003937', 'ApproxValue: 10573858 NumRows: 3 Sel: .003937']
+,['10573864', 3, '.003937', 'ApproxValue: 10573864 NumRows: 3 Sel: .003937']
+,['10573871', 3, '.003937', 'ApproxValue: 10573871 NumRows: 3 Sel: .003937']
+,['10573876', 3, '.003937', 'ApproxValue: 10573876 NumRows: 3 Sel: .003937']
+,['10573887', 3, '.003937', 'ApproxValue: 10573887 NumRows: 3 Sel: .003937']
+,['10574905', 3, '.003937', 'ApproxValue: 10574905 NumRows: 3 Sel: .003937']
+,['10574946', 3, '.003937', 'ApproxValue: 10574946 NumRows: 3 Sel: .003937']
+,['10575112', 3, '.003937', 'ApproxValue: 10575112 NumRows: 3 Sel: .003937']
+,['10575125', 3, '.003937', 'ApproxValue: 10575125 NumRows: 3 Sel: .003937']
+,['10575129', 3, '.003937', 'ApproxValue: 10575129 NumRows: 3 Sel: .003937']
+,['10575132', 3, '.003937', 'ApproxValue: 10575132 NumRows: 3 Sel: .003937']
+,['10575248', 3, '.003937', 'ApproxValue: 10575248 NumRows: 3 Sel: .003937']
+,['10582567', 3, '.003937', 'ApproxValue: 10582567 NumRows: 3 Sel: .003937']
+,['10587252', 3, '.003937', 'ApproxValue: 10587252 NumRows: 3 Sel: .003937']
+,['10590187', 3, '.003937', 'ApproxValue: 10590187 NumRows: 3 Sel: .003937']
+,['10592250', 3, '.003937', 'ApproxValue: 10592250 NumRows: 3 Sel: .003937']
+,['10592689', 3, '.003937', 'ApproxValue: 10592689 NumRows: 3 Sel: .003937']
+,['10595625', 3, '.003937', 'ApproxValue: 10595625 NumRows: 3 Sel: .003937']
+,['10597810', 3, '.003937', 'ApproxValue: 10597810 NumRows: 3 Sel: .003937']
+,['10597976', 3, '.003937', 'ApproxValue: 10597976 NumRows: 3 Sel: .003937']
+,['10597979', 3, '.003937', 'ApproxValue: 10597979 NumRows: 3 Sel: .003937']
+,['10605897', 3, '.003937', 'ApproxValue: 10605897 NumRows: 3 Sel: .003937']
+,['10605900', 3, '.003937', 'ApproxValue: 10605900 NumRows: 3 Sel: .003937']
+,['10607388', 3, '.003937', 'ApproxValue: 10607388 NumRows: 3 Sel: .003937']
+,['10611501', 3, '.003937', 'ApproxValue: 10611501 NumRows: 3 Sel: .003937']
+,['10611511', 3, '.003937', 'ApproxValue: 10611511 NumRows: 3 Sel: .003937']
+,['10611531', 3, '.003937', 'ApproxValue: 10611531 NumRows: 3 Sel: .003937']
+,['10614470', 3, '.003937', 'ApproxValue: 10614470 NumRows: 3 Sel: .003937']
+,['10614473', 3, '.003937', 'ApproxValue: 10614473 NumRows: 3 Sel: .003937']
+,['10618601', 3, '.003937', 'ApproxValue: 10618601 NumRows: 3 Sel: .003937']
+,['10618604', 3, '.003937', 'ApproxValue: 10618604 NumRows: 3 Sel: .003937']
+,['10619573', 3, '.003937', 'ApproxValue: 10619573 NumRows: 3 Sel: .003937']
+,['10621934', 3, '.003937', 'ApproxValue: 10621934 NumRows: 3 Sel: .003937']
+,['10621940', 3, '.003937', 'ApproxValue: 10621940 NumRows: 3 Sel: .003937']
+,['10621943', 3, '.003937', 'ApproxValue: 10621943 NumRows: 3 Sel: .003937']
+,['10636254', 3, '.003937', 'ApproxValue: 10636254 NumRows: 3 Sel: .003937']
+,['10644647', 3, '.003937', 'ApproxValue: 10644647 NumRows: 3 Sel: .003937']
+,['10648712', 3, '.003937', 'ApproxValue: 10648712 NumRows: 3 Sel: .003937']
+,['10660787', 3, '.003937', 'ApproxValue: 10660787 NumRows: 3 Sel: .003937']
+,['10661757', 3, '.003937', 'ApproxValue: 10661757 NumRows: 3 Sel: .003937']
+,['10666335', 3, '.003937', 'ApproxValue: 10666335 NumRows: 3 Sel: .003937']
+,['10668225', 3, '.003937', 'ApproxValue: 10668225 NumRows: 3 Sel: .003937']
+,['10672217', 3, '.003937', 'ApproxValue: 10672217 NumRows: 3 Sel: .003937']
+,['10676367', 3, '.003937', 'ApproxValue: 10676367 NumRows: 3 Sel: .003937']
+,['10676656', 3, '.003937', 'ApproxValue: 10676656 NumRows: 3 Sel: .003937']
+,['10684424', 3, '.003937', 'ApproxValue: 10684424 NumRows: 3 Sel: .003937']
+,['10686959', 3, '.003937', 'ApproxValue: 10686959 NumRows: 3 Sel: .003937']
+,['10687469', 3, '.003937', 'ApproxValue: 10687469 NumRows: 3 Sel: .003937']
+,['10687734', 3, '.003937', 'ApproxValue: 10687734 NumRows: 3 Sel: .003937']
+,['10692275', 3, '.003937', 'ApproxValue: 10692275 NumRows: 3 Sel: .003937']
+,['10696771', 3, '.003937', 'ApproxValue: 10696771 NumRows: 3 Sel: .003937']
+,['10701430', 3, '.003937', 'ApproxValue: 10701430 NumRows: 3 Sel: .003937']
+,['10705182', 3, '.003937', 'ApproxValue: 10705182 NumRows: 3 Sel: .003937']
+,['10712761', 3, '.003937', 'ApproxValue: 10712761 NumRows: 3 Sel: .003937']
+,['10722063', 3, '.003937', 'ApproxValue: 10722063 NumRows: 3 Sel: .003937']
+,['10730600', 3, '.003937', 'ApproxValue: 10730600 NumRows: 3 Sel: .003937']
+,['10927938', 3, '.003937', 'ApproxValue: 10927938 NumRows: 3 Sel: .003937']
+,['11036513', 3, '.003937', 'ApproxValue: 11036513 NumRows: 3 Sel: .003937']
+,['11061259', 3, '.003937', 'ApproxValue: 11061259 NumRows: 3 Sel: .003937']
+,['11085043', 3, '.003937', 'ApproxValue: 11085043 NumRows: 3 Sel: .003937']
+,['11104146', 3, '.003937', 'ApproxValue: 11104146 NumRows: 3 Sel: .003937']
+,['11170520', 3, '.003937', 'ApproxValue: 11170520 NumRows: 3 Sel: .003937']
+,['11179284', 3, '.003937', 'ApproxValue: 11179284 NumRows: 3 Sel: .003937']
+,['11188386', 3, '.003937', 'ApproxValue: 11188386 NumRows: 3 Sel: .003937']
+,['11190843', 3, '.003937', 'ApproxValue: 11190843 NumRows: 3 Sel: .003937']
+,['11215976', 3, '.003937', 'ApproxValue: 11215976 NumRows: 3 Sel: .003937']
+,['11247828', 3, '.003937', 'ApproxValue: 11247828 NumRows: 3 Sel: .003937']
+,['11257967', 3, '.003937', 'ApproxValue: 11257967 NumRows: 3 Sel: .003937']
+,['11258443', 3, '.003937', 'ApproxValue: 11258443 NumRows: 3 Sel: .003937']
+,['11258945', 3, '.003937', 'ApproxValue: 11258945 NumRows: 3 Sel: .003937']
+,['11263831', 3, '.003937', 'ApproxValue: 11263831 NumRows: 3 Sel: .003937']
+,['11275696', 3, '.003937', 'ApproxValue: 11275696 NumRows: 3 Sel: .003937']
+,['11280885', 3, '.003937', 'ApproxValue: 11280885 NumRows: 3 Sel: .003937']
+,['11281003', 3, '.003937', 'ApproxValue: 11281003 NumRows: 3 Sel: .003937']
+,['11281006', 3, '.003937', 'ApproxValue: 11281006 NumRows: 3 Sel: .003937']
+,['11282540', 3, '.003937', 'ApproxValue: 11282540 NumRows: 3 Sel: .003937']
+,['11283052', 3, '.003937', 'ApproxValue: 11283052 NumRows: 3 Sel: .003937']
+,['11283056', 3, '.003937', 'ApproxValue: 11283056 NumRows: 3 Sel: .003937']
+,['11301915', 3, '.003937', 'ApproxValue: 11301915 NumRows: 3 Sel: .003937']
+,['11301968', 3, '.003937', 'ApproxValue: 11301968 NumRows: 3 Sel: .003937']
+,['11306262', 3, '.003937', 'ApproxValue: 11306262 NumRows: 3 Sel: .003937']
+,['11315317', 3, '.003937', 'ApproxValue: 11315317 NumRows: 3 Sel: .003937']
+,['11321578', 3, '.003937', 'ApproxValue: 11321578 NumRows: 3 Sel: .003937']
+,['11329381', 3, '.003937', 'ApproxValue: 11329381 NumRows: 3 Sel: .003937']
+,['11335467', 3, '.003937', 'ApproxValue: 11335467 NumRows: 3 Sel: .003937']
+,['11337505', 3, '.003937', 'ApproxValue: 11337505 NumRows: 3 Sel: .003937']
+,['11338377', 3, '.003937', 'ApproxValue: 11338377 NumRows: 3 Sel: .003937']
+,['11342027', 3, '.003937', 'ApproxValue: 11342027 NumRows: 3 Sel: .003937']
+,['11347672', 3, '.003937', 'ApproxValue: 11347672 NumRows: 3 Sel: .003937']
+,['11348117', 3, '.003937', 'ApproxValue: 11348117 NumRows: 3 Sel: .003937']
+,['11354143', 3, '.003937', 'ApproxValue: 11354143 NumRows: 3 Sel: .003937']
+,['11354971', 3, '.003937', 'ApproxValue: 11354971 NumRows: 3 Sel: .003937']
+,['11358127', 3, '.003937', 'ApproxValue: 11358127 NumRows: 3 Sel: .003937']
+,['11369731', 3, '.003937', 'ApproxValue: 11369731 NumRows: 3 Sel: .003937']
+,['11372491', 3, '.003937', 'ApproxValue: 11372491 NumRows: 3 Sel: .003937']
+,['11425133', 3, '.003937', 'ApproxValue: 11425133 NumRows: 3 Sel: .003937']
+,['11447536', 3, '.003937', 'ApproxValue: 11447536 NumRows: 3 Sel: .003937']
+,['11447540', 3, '.003937', 'ApproxValue: 11447540 NumRows: 3 Sel: .003937']
+,['11449786', 3, '.003937', 'ApproxValue: 11449786 NumRows: 3 Sel: .003937']
+,['11450368', 3, '.003937', 'ApproxValue: 11450368 NumRows: 3 Sel: .003937']
+,['11480788', 3, '.003937', 'ApproxValue: 11480788 NumRows: 3 Sel: .003937']
+,['11506506', 3, '.003937', 'ApproxValue: 11506506 NumRows: 3 Sel: .003937']
+,['11506811', 3, '.003937', 'ApproxValue: 11506811 NumRows: 3 Sel: .003937']
+,['11506814', 3, '.003937', 'ApproxValue: 11506814 NumRows: 3 Sel: .003937']
+,['11506819', 3, '.003937', 'ApproxValue: 11506819 NumRows: 3 Sel: .003937']
+,['11506822', 3, '.003937', 'ApproxValue: 11506822 NumRows: 3 Sel: .003937']
+,['11507494', 3, '.003937', 'ApproxValue: 11507494 NumRows: 3 Sel: .003937']
+,['11619671', 3, '.003937', 'ApproxValue: 11619671 NumRows: 3 Sel: .003937']
+,['11619674', 3, '.003937', 'ApproxValue: 11619674 NumRows: 3 Sel: .003937']
+,['11619679', 3, '.003937', 'ApproxValue: 11619679 NumRows: 3 Sel: .003937']
+,['11619686', 3, '.003937', 'ApproxValue: 11619686 NumRows: 3 Sel: .003937']
+,['11619689', 3, '.003937', 'ApproxValue: 11619689 NumRows: 3 Sel: .003937']
+,['11619692', 3, '.003937', 'ApproxValue: 11619692 NumRows: 3 Sel: .003937']
+,['11619695', 3, '.003937', 'ApproxValue: 11619695 NumRows: 3 Sel: .003937']
+,['11619698', 3, '.003937', 'ApproxValue: 11619698 NumRows: 3 Sel: .003937']
+,['11624627', 3, '.003937', 'ApproxValue: 11624627 NumRows: 3 Sel: .003937']
+,['11624630', 3, '.003937', 'ApproxValue: 11624630 NumRows: 3 Sel: .003937']
+,['11625950', 3, '.003937', 'ApproxValue: 11625950 NumRows: 3 Sel: .003937']
+,['11631871', 3, '.003937', 'ApproxValue: 11631871 NumRows: 3 Sel: .003937']
+,['11631874', 3, '.003937', 'ApproxValue: 11631874 NumRows: 3 Sel: .003937']
+,['11631877', 3, '.003937', 'ApproxValue: 11631877 NumRows: 3 Sel: .003937']
+,['11631880', 3, '.003937', 'ApproxValue: 11631880 NumRows: 3 Sel: .003937']
+,['11631883', 3, '.003937', 'ApproxValue: 11631883 NumRows: 3 Sel: .003937']
+,['11632026', 3, '.003937', 'ApproxValue: 11632026 NumRows: 3 Sel: .003937']
+,['11632050', 3, '.003937', 'ApproxValue: 11632050 NumRows: 3 Sel: .003937']
+,['11632126', 3, '.003937', 'ApproxValue: 11632126 NumRows: 3 Sel: .003937']
+,['11632177', 3, '.003937', 'ApproxValue: 11632177 NumRows: 3 Sel: .003937']
+,['11632380', 3, '.003937', 'ApproxValue: 11632380 NumRows: 3 Sel: .003937']
+,['11636406', 3, '.003937', 'ApproxValue: 11636406 NumRows: 3 Sel: .003937']
+,['11640382', 3, '.003937', 'ApproxValue: 11640382 NumRows: 3 Sel: .003937']
+,['11641474', 3, '.003937', 'ApproxValue: 11641474 NumRows: 3 Sel: .003937']
+,['11641599', 3, '.003937', 'ApproxValue: 11641599 NumRows: 3 Sel: .003937']
+,['11641602', 3, '.003937', 'ApproxValue: 11641602 NumRows: 3 Sel: .003937']
+,['11641608', 3, '.003937', 'ApproxValue: 11641608 NumRows: 3 Sel: .003937']
+,['11641612', 3, '.003937', 'ApproxValue: 11641612 NumRows: 3 Sel: .003937']
+,['11641615', 3, '.003937', 'ApproxValue: 11641615 NumRows: 3 Sel: .003937']
+,['11641618', 3, '.003937', 'ApproxValue: 11641618 NumRows: 3 Sel: .003937']
+,['11641621', 3, '.003937', 'ApproxValue: 11641621 NumRows: 3 Sel: .003937']
+,['11641634', 3, '.003937', 'ApproxValue: 11641634 NumRows: 3 Sel: .003937']
+,['11647780', 3, '.003937', 'ApproxValue: 11647780 NumRows: 3 Sel: .003937']
+,['11648583', 3, '.003937', 'ApproxValue: 11648583 NumRows: 3 Sel: .003937']
+,['11648833', 3, '.003937', 'ApproxValue: 11648833 NumRows: 3 Sel: .003937']
+,['11654591', 3, '.003937', 'ApproxValue: 11654591 NumRows: 3 Sel: .003937']
+,['11655897', 3, '.003937', 'ApproxValue: 11655897 NumRows: 3 Sel: .003937']
+,['11656311', 3, '.003937', 'ApproxValue: 11656311 NumRows: 3 Sel: .003937']
+,['11656463', 3, '.003937', 'ApproxValue: 11656463 NumRows: 3 Sel: .003937']
+,['11657212', 3, '.003937', 'ApproxValue: 11657212 NumRows: 3 Sel: .003937']
+,['11657540', 3, '.003937', 'ApproxValue: 11657540 NumRows: 3 Sel: .003937']
+,['11661973', 3, '.003937', 'ApproxValue: 11661973 NumRows: 3 Sel: .003937']
+,['11663174', 3, '.003937', 'ApproxValue: 11663174 NumRows: 3 Sel: .003937']
+,['11663177', 3, '.003937', 'ApproxValue: 11663177 NumRows: 3 Sel: .003937']
+,['11663180', 3, '.003937', 'ApproxValue: 11663180 NumRows: 3 Sel: .003937']
+,['11663183', 3, '.003937', 'ApproxValue: 11663183 NumRows: 3 Sel: .003937']
+,['11663186', 3, '.003937', 'ApproxValue: 11663186 NumRows: 3 Sel: .003937']
+,['11669679', 3, '.003937', 'ApproxValue: 11669679 NumRows: 3 Sel: .003937']
+,['11669687', 3, '.003937', 'ApproxValue: 11669687 NumRows: 3 Sel: .003937']
+,['11669955', 3, '.003937', 'ApproxValue: 11669955 NumRows: 3 Sel: .003937']
+,['11669959', 3, '.003937', 'ApproxValue: 11669959 NumRows: 3 Sel: .003937']
+,['11669964', 3, '.003937', 'ApproxValue: 11669964 NumRows: 3 Sel: .003937']
+,['11670432', 3, '.003937', 'ApproxValue: 11670432 NumRows: 3 Sel: .003937']
+,['11670588', 3, '.003937', 'ApproxValue: 11670588 NumRows: 3 Sel: .003937']
+,['11670895', 3, '.003937', 'ApproxValue: 11670895 NumRows: 3 Sel: .003937']
+,['11670915', 3, '.003937', 'ApproxValue: 11670915 NumRows: 3 Sel: .003937']
+,['11670919', 3, '.003937', 'ApproxValue: 11670919 NumRows: 3 Sel: .003937']
+,['11670926', 3, '.003937', 'ApproxValue: 11670926 NumRows: 3 Sel: .003937']
+,['11670931', 3, '.003937', 'ApproxValue: 11670931 NumRows: 3 Sel: .003937']
+,['11671382', 3, '.003937', 'ApproxValue: 11671382 NumRows: 3 Sel: .003937']
+,['11677016', 3, '.003937', 'ApproxValue: 11677016 NumRows: 3 Sel: .003937']
+,['11678187', 3, '.003937', 'ApproxValue: 11678187 NumRows: 3 Sel: .003937']
+,['11680442', 3, '.003937', 'ApproxValue: 11680442 NumRows: 3 Sel: .003937']
+,['11680472', 3, '.003937', 'ApproxValue: 11680472 NumRows: 3 Sel: .003937']
+,['11684682', 3, '.003937', 'ApproxValue: 11684682 NumRows: 3 Sel: .003937']
+,['11685085', 3, '.003937', 'ApproxValue: 11685085 NumRows: 3 Sel: .003937']
+,['11686373', 3, '.003937', 'ApproxValue: 11686373 NumRows: 3 Sel: .003937']
+,['11692276', 3, '.003937', 'ApproxValue: 11692276 NumRows: 3 Sel: .003937']
+,['11705771', 3, '.003937', 'ApproxValue: 11705771 NumRows: 3 Sel: .003937']
+,['11706237', 3, '.003937', 'ApproxValue: 11706237 NumRows: 3 Sel: .003937']
+,['11726867', 3, '.003937', 'ApproxValue: 11726867 NumRows: 3 Sel: .003937']
+,['11890097', 3, '.003937', 'ApproxValue: 11890097 NumRows: 3 Sel: .003937']
+,['11974565', 3, '.003937', 'ApproxValue: 11974565 NumRows: 3 Sel: .003937']
+,['11978329', 3, '.003937', 'ApproxValue: 11978329 NumRows: 3 Sel: .003937']
+,['11978424', 3, '.003937', 'ApproxValue: 11978424 NumRows: 3 Sel: .003937']
+,['11978427', 3, '.003937', 'ApproxValue: 11978427 NumRows: 3 Sel: .003937']
+,['11978628', 3, '.003937', 'ApproxValue: 11978628 NumRows: 3 Sel: .003937']
+,['11978865', 3, '.003937', 'ApproxValue: 11978865 NumRows: 3 Sel: .003937']
+,['11979551', 3, '.003937', 'ApproxValue: 11979551 NumRows: 3 Sel: .003937']
+,['11979842', 3, '.003937', 'ApproxValue: 11979842 NumRows: 3 Sel: .003937']
+,['11979846', 3, '.003937', 'ApproxValue: 11979846 NumRows: 3 Sel: .003937']
+,['11979849', 3, '.003937', 'ApproxValue: 11979849 NumRows: 3 Sel: .003937']
+,['11979853', 3, '.003937', 'ApproxValue: 11979853 NumRows: 3 Sel: .003937']
+,['11979856', 3, '.003937', 'ApproxValue: 11979856 NumRows: 3 Sel: .003937']
+,['11979867', 3, '.003937', 'ApproxValue: 11979867 NumRows: 3 Sel: .003937']
+,['11979870', 3, '.003937', 'ApproxValue: 11979870 NumRows: 3 Sel: .003937']
+,['11979892', 3, '.003937', 'ApproxValue: 11979892 NumRows: 3 Sel: .003937']
+,['11979896', 3, '.003937', 'ApproxValue: 11979896 NumRows: 3 Sel: .003937']
+,['11979910', 3, '.003937', 'ApproxValue: 11979910 NumRows: 3 Sel: .003937']
+,['11981016', 3, '.003937', 'ApproxValue: 11981016 NumRows: 3 Sel: .003937']
+,['11981170', 3, '.003937', 'ApproxValue: 11981170 NumRows: 3 Sel: .003937']
+,['11981174', 3, '.003937', 'ApproxValue: 11981174 NumRows: 3 Sel: .003937']
+,['11981179', 3, '.003937', 'ApproxValue: 11981179 NumRows: 3 Sel: .003937']
+,['11981182', 3, '.003937', 'ApproxValue: 11981182 NumRows: 3 Sel: .003937']
+,['11981223', 3, '.003937', 'ApproxValue: 11981223 NumRows: 3 Sel: .003937']
+,['11981317', 3, '.003937', 'ApproxValue: 11981317 NumRows: 3 Sel: .003937']
+,['11981366', 3, '.003937', 'ApproxValue: 11981366 NumRows: 3 Sel: .003937']
+,['11981385', 3, '.003937', 'ApproxValue: 11981385 NumRows: 3 Sel: .003937']
+,['11981424', 3, '.003937', 'ApproxValue: 11981424 NumRows: 3 Sel: .003937']
+,['11981869', 3, '.003937', 'ApproxValue: 11981869 NumRows: 3 Sel: .003937']
+,['11981875', 3, '.003937', 'ApproxValue: 11981875 NumRows: 3 Sel: .003937']
+,['11981878', 3, '.003937', 'ApproxValue: 11981878 NumRows: 3 Sel: .003937']
+,['11981891', 3, '.003937', 'ApproxValue: 11981891 NumRows: 3 Sel: .003937']
+,['11981894', 3, '.003937', 'ApproxValue: 11981894 NumRows: 3 Sel: .003937']
+,['11981898', 3, '.003937', 'ApproxValue: 11981898 NumRows: 3 Sel: .003937']
+,['11981901', 3, '.003937', 'ApproxValue: 11981901 NumRows: 3 Sel: .003937']
+,['11981905', 3, '.003937', 'ApproxValue: 11981905 NumRows: 3 Sel: .003937']
+,['11985179', 3, '.003937', 'ApproxValue: 11985179 NumRows: 3 Sel: .003937']
+,['11986560', 3, '.003937', 'ApproxValue: 11986560 NumRows: 3 Sel: .003937']
+,['11987534', 3, '.003937', 'ApproxValue: 11987534 NumRows: 3 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.87. Height Balanced histogram on Column T_USR.PAYR_ID',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.87. Height Balanced histogram on Column T_USR.PAYR_ID <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'NUMBER' = 'DATE' or 'NUMBER' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'NUMBER' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 784) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'NUMBER' = 'DATE' or 'NUMBER' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'NUMBER' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 784)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_USR'
+AND a.column_name = 'PAYR_ID'
+ORDER BY a.endpoint_number;
+
+255 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-02/22:32:10 for SQL ID 17vjd1aast5q7 (SELECT DISTINCT PF.PERF_USR FROM T_WKFWTSK WF , T_WKFWTSK_STT_CNGE CNG , T_PRMR ) </font>
+</body>
+</html>

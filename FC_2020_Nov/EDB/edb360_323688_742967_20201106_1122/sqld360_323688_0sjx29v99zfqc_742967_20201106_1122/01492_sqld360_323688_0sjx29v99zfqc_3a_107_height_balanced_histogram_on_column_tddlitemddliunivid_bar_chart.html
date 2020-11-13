@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 01410_sqld360_323688_0sjx29v99zfqc_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_DDL_ITEM.DDLI_UNIVID</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 01492_sqld360_323688_0sjx29v99zfqc_3a_107_height_balanced_histogram_on_column_tddlitemddliunivid_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,['0004448c-8736-44f0-b0b7-037d96f0e967', 0, '0', 'ApproxValue: 0004448c-8736-44f0-b0b7-037d96f0e967 NumRows: 0 Sel: 0']
+,['02d4e99d-69f3-4181-8b3d-e0387677bf0a', 41, '.003937', 'ApproxValue: 02d4e99d-69f3-4181-8b3d-e0387677bf0a NumRows: 41 Sel: .003937']
+,['0591882d-df57-4181-b497-003b973d0131', 41, '.003937', 'ApproxValue: 0591882d-df57-4181-b497-003b973d0131 NumRows: 41 Sel: .003937']
+,['08863190-5603-45b8-aaf1-90bfa5d6ae0c', 41, '.003937', 'ApproxValue: 08863190-5603-45b8-aaf1-90bfa5d6ae0c NumRows: 41 Sel: .003937']
+,['0afe376f-ed02-4553-a235-2b6affd1ba56', 41, '.003937', 'ApproxValue: 0afe376f-ed02-4553-a235-2b6affd1ba56 NumRows: 41 Sel: .003937']
+,['0e9b71df-e067-49b7-8280-5587fa1d3101', 41, '.003937', 'ApproxValue: 0e9b71df-e067-49b7-8280-5587fa1d3101 NumRows: 41 Sel: .003937']
+,['10000040_SG', 41, '.003937', 'ApproxValue: 10000040_SG NumRows: 41 Sel: .003937']
+,['10011', 41, '.003937', 'ApproxValue: 10011 NumRows: 41 Sel: .003937']
+,['1004', 41, '.003937', 'ApproxValue: 1004 NumRows: 41 Sel: .003937']
+,['1006_ProviderMailContactPrefOther10', 41, '.003937', 'ApproxValue: 1006_ProviderMailContactPrefOther10 NumRows: 41 Sel: .003937']
+,['10085', 41, '.003937', 'ApproxValue: 10085 NumRows: 41 Sel: .003937']
+,['10112', 41, '.003937', 'ApproxValue: 10112 NumRows: 41 Sel: .003937']
+,['1013_MemberContactMethodMail', 41, '.003937', 'ApproxValue: 1013_MemberContactMethodMail NumRows: 41 Sel: .003937']
+,['10166', 41, '.003937', 'ApproxValue: 10166 NumRows: 41 Sel: .003937']
+,['1021_PasswordStrengthMedium', 41, '.003937', 'ApproxValue: 1021_PasswordStrengthMedium NumRows: 41 Sel: .003937']
+,['1027_Basa', 41, '.003937', 'ApproxValue: 1027_Basa NumRows: 41 Sel: .003937']
+,['1027_Filipino', 41, '.003937', 'ApproxValue: 1027_Filipino NumRows: 41 Sel: .003937']
+,['1027_MK', 41, '.003937', 'ApproxValue: 1027_MK NumRows: 41 Sel: .003937']
+,['1027_SR', 41, '.003937', 'ApproxValue: 1027_SR NumRows: 41 Sel: .003937']
+,['1028_Data from Disease Management', 41, '.003937', 'ApproxValue: 1028_Data from Disease Management NumRows: 41 Sel: .003937']
+,['1029_ContactMailContactPrefOther1', 41, '.003937', 'ApproxValue: 1029_ContactMailContactPrefOther1 NumRows: 41 Sel: .003937']
+,['1041', 41, '.003937', 'ApproxValue: 1041 NumRows: 41 Sel: .003937']
+,['11', 41, '.003937', 'ApproxValue: 11 NumRows: 41 Sel: .003937']
+,['121cfe8d-66f5-4c69-ac41-98b624afcc46', 41, '.003937', 'ApproxValue: 121cfe8d-66f5-4c69-ac41-98b624afcc46 NumRows: 41 Sel: .003937']
+,['14f36a63-8a5d-4535-ba6b-9d30f07d4eeb', 41, '.003937', 'ApproxValue: 14f36a63-8a5d-4535-ba6b-9d30f07d4eeb NumRows: 41 Sel: .003937']
+,['1738306e-4398-49ea-aaa4-7b3a15580a1b', 41, '.003937', 'ApproxValue: 1738306e-4398-49ea-aaa4-7b3a15580a1b NumRows: 41 Sel: .003937']
+,['19bb54e5-fa70-4f65-8363-41ec992f816c', 41, '.003937', 'ApproxValue: 19bb54e5-fa70-4f65-8363-41ec992f816c NumRows: 41 Sel: .003937']
+,['1cb80c2d-2ef2-4300-a261-b23a9eb04488', 41, '.003937', 'ApproxValue: 1cb80c2d-2ef2-4300-a261-b23a9eb04488 NumRows: 41 Sel: .003937']
+,['1f52e590-75e6-4faa-966f-44fff06c60ab', 41, '.003937', 'ApproxValue: 1f52e590-75e6-4faa-966f-44fff06c60ab NumRows: 41 Sel: .003937']
+,['2001_Case Manager/Care Coordinator', 41, '.003937', 'ApproxValue: 2001_Case Manager/Care Coordinator NumRows: 41 Sel: .003937']
+,['2001_Clinic/Center, Mental Health (Including Community Mental He', 41, '.003937', 'ApproxValue: 2001_Clinic/Center, Mental Health (Including Community Mental He NumRows: 41 Sel: .003937']
+,['2001_Clinical Nurse Specialist, Neuroscience', 41, '.003937', 'ApproxValue: 2001_Clinical Nurse Specialist, Neuroscience NumRows: 41 Sel: .003937']
+,['2001_Dermatology, Pediatric Dermatology', 41, '.003937', 'ApproxValue: 2001_Dermatology, Pediatric Dermatology NumRows: 41 Sel: .003937']
+,['2001_General Acute Care Hospital', 41, '.003937', 'ApproxValue: 2001_General Acute Care Hospital NumRows: 41 Sel: .003937']
+,['2001_Internal Medicine, Nephrology', 41, '.003937', 'ApproxValue: 2001_Internal Medicine, Nephrology NumRows: 41 Sel: .003937']
+,['2001_Nurse Practitioner, Acute Care', 41, '.003937', 'ApproxValue: 2001_Nurse Practitioner, Acute Care NumRows: 41 Sel: .003937']
+,['2001_Optometrist, Low Vision Rehabilitation', 41, '.003937', 'ApproxValue: 2001_Optometrist, Low Vision Rehabilitation NumRows: 41 Sel: .003937']
+,['2001_Pathology, Neuropathology', 41, '.003937', 'ApproxValue: 2001_Pathology, Neuropathology NumRows: 41 Sel: .003937']
+,['2001_Physical Medicine & Rehabilitation, Pain Medicine', 41, '.003937', 'ApproxValue: 2001_Physical Medicine & Rehabilitation, Pain Medicine NumRows: 41 Sel: .003937']
+,['2001_Psychiatric Hospital', 41, '.003937', 'ApproxValue: 2001_Psychiatric Hospital NumRows: 41 Sel: .003937']
+,['2001_Psychologist, Psychoanalysis', 41, '.003937', 'ApproxValue: 2001_Psychologist, Psychoanalysis NumRows: 41 Sel: .003937']
+,['2001_Registered Nurse, Pediatrics', 41, '.003937', 'ApproxValue: 2001_Registered Nurse, Pediatrics NumRows: 41 Sel: .003937']
+,['2001_Speech, Language and Hearing Specialist/Technologist', 41, '.003937', 'ApproxValue: 2001_Speech, Language and Hearing Specialist/Technologist NumRows: 41 Sel: .003937']
+,['2003_Jr.', 41, '.003937', 'ApproxValue: 2003_Jr. NumRows: 41 Sel: .003937']
+,['2003_dr', 41, '.003937', 'ApproxValue: 2003_dr NumRows: 41 Sel: .003937']
+,['2004_I I I', 41, '.003937', 'ApproxValue: 2004_I I I NumRows: 41 Sel: .003937']
+,['2004_MSW', 41, '.003937', 'ApproxValue: 2004_MSW NumRows: 41 Sel: .003937']
+,['2009_Practitioner', 41, '.003937', 'ApproxValue: 2009_Practitioner NumRows: 41 Sel: .003937']
+,['2011_East Indian', 41, '.003937', 'ApproxValue: 2011_East Indian NumRows: 41 Sel: .003937']
+,['2011_Yemen', 41, '.003937', 'ApproxValue: 2011_Yemen NumRows: 41 Sel: .003937']
+,['2015_Asthma', 41, '.003937', 'ApproxValue: 2015_Asthma NumRows: 41 Sel: .003937']
+,['2015_High Cost  ', 41, '.003937', 'ApproxValue: 2015_High Cost   NumRows: 41 Sel: .003937']
+,['2015_Other', 41, '.003937', 'ApproxValue: 2015_Other NumRows: 41 Sel: .003937']
+,['2016_Complex Case Management', 41, '.003937', 'ApproxValue: 2016_Complex Case Management NumRows: 41 Sel: .003937']
+,['2027_Late Notification', 41, '.003937', 'ApproxValue: 2027_Late Notification NumRows: 41 Sel: .003937']
+,['2033_Re-enrolled in health plan', 41, '.003937', 'ApproxValue: 2033_Re-enrolled in health plan NumRows: 41 Sel: .003937']
+,['2200_SupplierTypeSupplierAdministrator', 41, '.003937', 'ApproxValue: 2200_SupplierTypeSupplierAdministrator NumRows: 41 Sel: .003937']
+,['246fc81e-1336-4432-a6ed-272e3de0922f', 41, '.003937', 'ApproxValue: 246fc81e-1336-4432-a6ed-272e3de0922f NumRows: 41 Sel: .003937']
+,['2780cd25-73a5-4642-a128-f3726058c0e4', 41, '.003937', 'ApproxValue: 2780cd25-73a5-4642-a128-f3726058c0e4 NumRows: 41 Sel: .003937']
+,['2ac81334-c5fa-45e9-a066-2f2abc0dfeea', 41, '.003937', 'ApproxValue: 2ac81334-c5fa-45e9-a066-2f2abc0dfeea NumRows: 41 Sel: .003937']
+,['2d10159f-4d0e-4ae2-8ab0-ca842447f7ae', 41, '.003937', 'ApproxValue: 2d10159f-4d0e-4ae2-8ab0-ca842447f7ae NumRows: 41 Sel: .003937']
+,['2fd096e5-8093-4029-9924-cd38ee202611', 41, '.003937', 'ApproxValue: 2fd096e5-8093-4029-9924-cd38ee202611 NumRows: 41 Sel: .003937']
+,['30034', 41, '.003937', 'ApproxValue: 30034 NumRows: 41 Sel: .003937']
+,['3005_INDIANA', 41, '.003937', 'ApproxValue: 3005_INDIANA NumRows: 41 Sel: .003937']
+,['30061', 41, '.003937', 'ApproxValue: 30061 NumRows: 41 Sel: .003937']
+,['30099', 41, '.003937', 'ApproxValue: 30099 NumRows: 41 Sel: .003937']
+,['30134', 41, '.003937', 'ApproxValue: 30134 NumRows: 41 Sel: .003937']
+,['30171', 41, '.003937', 'ApproxValue: 30171 NumRows: 41 Sel: .003937']
+,['30208', 41, '.003937', 'ApproxValue: 30208 NumRows: 41 Sel: .003937']
+,['30245', 41, '.003937', 'ApproxValue: 30245 NumRows: 41 Sel: .003937']
+,['30282', 41, '.003937', 'ApproxValue: 30282 NumRows: 41 Sel: .003937']
+,['30319', 41, '.003937', 'ApproxValue: 30319 NumRows: 41 Sel: .003937']
+,['30355', 41, '.003937', 'ApproxValue: 30355 NumRows: 41 Sel: .003937']
+,['30392', 41, '.003937', 'ApproxValue: 30392 NumRows: 41 Sel: .003937']
+,['30428', 41, '.003937', 'ApproxValue: 30428 NumRows: 41 Sel: .003937']
+,['30465', 41, '.003937', 'ApproxValue: 30465 NumRows: 41 Sel: .003937']
+,['305', 41, '.003937', 'ApproxValue: 305 NumRows: 41 Sel: .003937']
+,['30535', 41, '.003937', 'ApproxValue: 30535 NumRows: 41 Sel: .003937']
+,['30572', 41, '.003937', 'ApproxValue: 30572 NumRows: 41 Sel: .003937']
+,['30609', 41, '.003937', 'ApproxValue: 30609 NumRows: 41 Sel: .003937']
+,['30645', 41, '.003937', 'ApproxValue: 30645 NumRows: 41 Sel: .003937']
+,['30682', 41, '.003937', 'ApproxValue: 30682 NumRows: 41 Sel: .003937']
+,['30719', 41, '.003937', 'ApproxValue: 30719 NumRows: 41 Sel: .003937']
+,['30756', 41, '.003937', 'ApproxValue: 30756 NumRows: 41 Sel: .003937']
+,['30792', 41, '.003937', 'ApproxValue: 30792 NumRows: 41 Sel: .003937']
+,['30829', 41, '.003937', 'ApproxValue: 30829 NumRows: 41 Sel: .003937']
+,['30866', 41, '.003937', 'ApproxValue: 30866 NumRows: 41 Sel: .003937']
+,['30901', 41, '.003937', 'ApproxValue: 30901 NumRows: 41 Sel: .003937']
+,['30939', 41, '.003937', 'ApproxValue: 30939 NumRows: 41 Sel: .003937']
+,['3110', 41, '.003937', 'ApproxValue: 3110 NumRows: 41 Sel: .003937']
+,['31d8b801-ded6-4a39-a9ae-912fde0cff6e', 41, '.003937', 'ApproxValue: 31d8b801-ded6-4a39-a9ae-912fde0cff6e NumRows: 41 Sel: .003937']
+,['334f2087-6329-46b6-9eb4-d1b24b653dd0', 41, '.003937', 'ApproxValue: 334f2087-6329-46b6-9eb4-d1b24b653dd0 NumRows: 41 Sel: .003937']
+,['35f0e111-e6bf-4dce-b665-794cedc5a3b8', 41, '.003937', 'ApproxValue: 35f0e111-e6bf-4dce-b665-794cedc5a3b8 NumRows: 41 Sel: .003937']
+,['39726b72-af68-42d0-9026-1ed7f88216c8', 41, '.003937', 'ApproxValue: 39726b72-af68-42d0-9026-1ed7f88216c8 NumRows: 41 Sel: .003937']
+,['3b8b45f0-f72d-4c73-b99e-157e67cfd5f5', 41, '.003937', 'ApproxValue: 3b8b45f0-f72d-4c73-b99e-157e67cfd5f5 NumRows: 41 Sel: .003937']
+,['3e1ad942-4e63-4570-9212-fe44192c8fd4', 41, '.003937', 'ApproxValue: 3e1ad942-4e63-4570-9212-fe44192c8fd4 NumRows: 41 Sel: .003937']
+,['4070_Activate Care Bean (payer)', 41, '.003937', 'ApproxValue: 4070_Activate Care Bean (payer) NumRows: 41 Sel: .003937']
+,['4070_Contact Mental Health (payer)', 41, '.003937', 'ApproxValue: 4070_Contact Mental Health (payer) NumRows: 41 Sel: .003937']
+,['4070_Educate Patient (provider)', 41, '.003937', 'ApproxValue: 4070_Educate Patient (provider) NumRows: 41 Sel: .003937']
+,['4070_Prepare for Inpatient Stay (member)', 41, '.003937', 'ApproxValue: 4070_Prepare for Inpatient Stay (member) NumRows: 41 Sel: .003937']
+,['4070_Review Medication Regimen (payer)', 41, '.003937', 'ApproxValue: 4070_Review Medication Regimen (payer) NumRows: 41 Sel: .003937']
+,['4070_Visit Mental Health (member)', 41, '.003937', 'ApproxValue: 4070_Visit Mental Health (member) NumRows: 41 Sel: .003937']
+,['4080_HRA', 41, '.003937', 'ApproxValue: 4080_HRA NumRows: 41 Sel: .003937']
+,['4092_Diagnostic Testing ', 41, '.003937', 'ApproxValue: 4092_Diagnostic Testing  NumRows: 41 Sel: .003937']
+,['4130_Scheduled Case Review', 41, '.003937', 'ApproxValue: 4130_Scheduled Case Review NumRows: 41 Sel: .003937']
+,['4131_Follow Up on Benefits', 41, '.003937', 'ApproxValue: 4131_Follow Up on Benefits NumRows: 41 Sel: .003937']
+,['4131_Second Attempt-Unsuccessful', 41, '.003937', 'ApproxValue: 4131_Second Attempt-Unsuccessful NumRows: 41 Sel: .003937']
+,['4132_Pediatric - Comprehensive General', 41, '.003937', 'ApproxValue: 4132_Pediatric - Comprehensive General NumRows: 41 Sel: .003937']
+,['4150_Pre-Auth Intake ', 41, '.003937', 'ApproxValue: 4150_Pre-Auth Intake  NumRows: 41 Sel: .003937']
+,['4161_Complete Transitional Utilization Assessment', 41, '.003937', 'ApproxValue: 4161_Complete Transitional Utilization Assessment NumRows: 41 Sel: .003937']
+,['4161_Referral to ACO CHPa', 41, '.003937', 'ApproxValue: 4161_Referral to ACO CHPa NumRows: 41 Sel: .003937']
+,['4184_CareplanNoteType', 41, '.003937', 'ApproxValue: 4184_CareplanNoteType NumRows: 41 Sel: .003937']
+,['43454', 41, '.003937', 'ApproxValue: 43454 NumRows: 41 Sel: .003937']
+,['442602fa-4391-4863-8955-ba13e99ba748', 41, '.003937', 'ApproxValue: 442602fa-4391-4863-8955-ba13e99ba748 NumRows: 41 Sel: .003937']
+,['48a51e96-874b-40ed-a782-5e6db98fc97b', 41, '.003937', 'ApproxValue: 48a51e96-874b-40ed-a782-5e6db98fc97b NumRows: 41 Sel: .003937']
+,['4b2e2961-420f-4b37-8ee8-5d756c322c2c', 41, '.003937', 'ApproxValue: 4b2e2961-420f-4b37-8ee8-5d756c322c2c NumRows: 41 Sel: .003937']
+,['4e677e64-412c-4731-9435-3d3f13d5aae5', 41, '.003937', 'ApproxValue: 4e677e64-412c-4731-9435-3d3f13d5aae5 NumRows: 41 Sel: .003937']
+,['500_MedicationUnitBAG', 41, '.003937', 'ApproxValue: 500_MedicationUnitBAG NumRows: 41 Sel: .003937']
+,['500_MedicationUnitML', 41, '.003937', 'ApproxValue: 500_MedicationUnitML NumRows: 41 Sel: .003937']
+,['500_MedicationUnitYDS', 41, '.003937', 'ApproxValue: 500_MedicationUnitYDS NumRows: 41 Sel: .003937']
+,['5122ce4e-c50f-4a20-aee2-223908ba5405', 41, '.003937', 'ApproxValue: 5122ce4e-c50f-4a20-aee2-223908ba5405 NumRows: 41 Sel: .003937']
+,['5300_AllergyReactionTypeBlisters', 41, '.003937', 'ApproxValue: 5300_AllergyReactionTypeBlisters NumRows: 41 Sel: .003937']
+,['5400_AllergyTreatmentTypeAvoidance', 41, '.003937', 'ApproxValue: 5400_AllergyTreatmentTypeAvoidance NumRows: 41 Sel: .003937']
+,['550_CaseReopeningNotification', 41, '.003937', 'ApproxValue: 550_CaseReopeningNotification NumRows: 41 Sel: .003937']
+,['550_UMEventDiagnosisCreationNotification', 41, '.003937', 'ApproxValue: 550_UMEventDiagnosisCreationNotification NumRows: 41 Sel: .003937']
+,['57124294-41b2-4346-ba81-b58194831f9c', 41, '.003937', 'ApproxValue: 57124294-41b2-4346-ba81-b58194831f9c NumRows: 41 Sel: .003937']
+,['5a5f3f5a-d049-4373-b066-4decf8da1d14', 41, '.003937', 'ApproxValue: 5a5f3f5a-d049-4373-b066-4decf8da1d14 NumRows: 41 Sel: .003937']
+,['5d81f2f6-eb56-4422-a425-b0ea82f2d8b1', 41, '.003937', 'ApproxValue: 5d81f2f6-eb56-4422-a425-b0ea82f2d8b1 NumRows: 41 Sel: .003937']
+,['601de62d-6759-45fc-a7e5-3fc875b3b463', 41, '.003937', 'ApproxValue: 601de62d-6759-45fc-a7e5-3fc875b3b463 NumRows: 41 Sel: .003937']
+,['6105_MeasuresDiseaseGroupPregnancyCare', 41, '.003937', 'ApproxValue: 6105_MeasuresDiseaseGroupPregnancyCare NumRows: 41 Sel: .003937']
+,['6113_MDCFemaleReproductive', 41, '.003937', 'ApproxValue: 6113_MDCFemaleReproductive NumRows: 41 Sel: .003937']
+,['6200_ClinicalDataFormatValuePrecisionOne', 41, '.003937', 'ApproxValue: 6200_ClinicalDataFormatValuePrecisionOne NumRows: 41 Sel: .003937']
+,['63153b15-366a-49e9-a7d7-eb6878dd76c6', 41, '.003937', 'ApproxValue: 63153b15-366a-49e9-a7d7-eb6878dd76c6 NumRows: 41 Sel: .003937']
+,['65b57335-ef6b-4b18-a3e0-e9f8439bc932', 41, '.003937', 'ApproxValue: 65b57335-ef6b-4b18-a3e0-e9f8439bc932 NumRows: 41 Sel: .003937']
+,['688a7ba4-bf5d-4858-b59c-ee97b0865ac0', 41, '.003937', 'ApproxValue: 688a7ba4-bf5d-4858-b59c-ee97b0865ac0 NumRows: 41 Sel: .003937']
+,['6b93e2ff-bc85-4d31-883e-1558fab976fd', 41, '.003937', 'ApproxValue: 6b93e2ff-bc85-4d31-883e-1558fab976fd NumRows: 41 Sel: .003937']
+,['6f3a2462-6da7-4662-a5af-9ba40cd31458', 41, '.003937', 'ApproxValue: 6f3a2462-6da7-4662-a5af-9ba40cd31458 NumRows: 41 Sel: .003937']
+,['7010_TodoTypeAction', 41, '.003937', 'ApproxValue: 7010_TodoTypeAction NumRows: 41 Sel: .003937']
+,['71b794f5-eb77-4289-be0a-64482f37f914', 41, '.003937', 'ApproxValue: 71b794f5-eb77-4289-be0a-64482f37f914 NumRows: 41 Sel: .003937']
+,['73fc3bda-a2ab-4a56-9776-a3f12478544c', 41, '.003937', 'ApproxValue: 73fc3bda-a2ab-4a56-9776-a3f12478544c NumRows: 41 Sel: .003937']
+,['770afcfd-b3d7-4b47-bc96-10111df7ceca', 41, '.003937', 'ApproxValue: 770afcfd-b3d7-4b47-bc96-10111df7ceca NumRows: 41 Sel: .003937']
+,['7a14259c-36f2-480e-9b59-76a88b93ee32', 41, '.003937', 'ApproxValue: 7a14259c-36f2-480e-9b59-76a88b93ee32 NumRows: 41 Sel: .003937']
+,['7d19585f-94cf-46c4-8b9a-270162bb865c', 41, '.003937', 'ApproxValue: 7d19585f-94cf-46c4-8b9a-270162bb865c NumRows: 41 Sel: .003937']
+,['7f976583-eb27-47a4-be15-6a31da0d62f1', 41, '.003937', 'ApproxValue: 7f976583-eb27-47a4-be15-6a31da0d62f1 NumRows: 41 Sel: .003937']
+,['81f70448-e581-4c30-abc0-7ed77eba5262', 41, '.003937', 'ApproxValue: 81f70448-e581-4c30-abc0-7ed77eba5262 NumRows: 41 Sel: .003937']
+,['84c86160-cb4b-45f9-bc60-238c65a4870c', 41, '.003937', 'ApproxValue: 84c86160-cb4b-45f9-bc60-238c65a4870c NumRows: 41 Sel: .003937']
+,['875bab36-6428-4e70-b12c-61570c8754b2', 41, '.003937', 'ApproxValue: 875bab36-6428-4e70-b12c-61570c8754b2 NumRows: 41 Sel: .003937']
+,['898af4c8-540f-46fa-958c-aca1d68f3086', 41, '.003937', 'ApproxValue: 898af4c8-540f-46fa-958c-aca1d68f3086 NumRows: 41 Sel: .003937']
+,['8c5705fd-1f0e-483c-a522-26327305508f', 41, '.003937', 'ApproxValue: 8c5705fd-1f0e-483c-a522-26327305508f NumRows: 41 Sel: .003937']
+,['8f039e26-880d-4e65-945c-13c55ffee9db', 41, '.003937', 'ApproxValue: 8f039e26-880d-4e65-945c-13c55ffee9db NumRows: 41 Sel: .003937']
+,['92998eb7-1893-4833-bfb9-e73572e05089', 41, '.003937', 'ApproxValue: 92998eb7-1893-4833-bfb9-e73572e05089 NumRows: 41 Sel: .003937']
+,['93180_Custodial Parent', 41, '.003937', 'ApproxValue: 93180_Custodial Parent NumRows: 41 Sel: .003937']
+,['93250_Opt in-Assessment pending', 41, '.003937', 'ApproxValue: 93250_Opt in-Assessment pending NumRows: 41 Sel: .003937']
+,['9632d5d4-c03a-4c39-92d4-df2e4b1c09aa', 41, '.003937', 'ApproxValue: 9632d5d4-c03a-4c39-92d4-df2e4b1c09aa NumRows: 41 Sel: .003937']
+,['9a0a7392-eeab-494e-aa19-595387184f4b', 41, '.003937', 'ApproxValue: 9a0a7392-eeab-494e-aa19-595387184f4b NumRows: 41 Sel: .003937']
+,['9d6af587-d38a-475e-8206-fa9b350b2a2f', 41, '.003937', 'ApproxValue: 9d6af587-d38a-475e-8206-fa9b350b2a2f NumRows: 41 Sel: .003937']
+,['CAREMGR-13883 Generated - Phone', 41, '.003937', 'ApproxValue: CAREMGR-13883 Generated - Phone NumRows: 41 Sel: .003937']
+,['CmParticipation_Outreach_Underway', 41, '.003937', 'ApproxValue: CmParticipation_Outreach_Underway NumRows: 41 Sel: .003937']
+,['_', 2613, '.251968', 'ApproxValue: _ NumRows: 2613 Sel: .251968']
+,['a0c7c740-11cd-4bb7-9000-6ef8fdf5dd40', 41, '.003937', 'ApproxValue: a0c7c740-11cd-4bb7-9000-6ef8fdf5dd40 NumRows: 41 Sel: .003937']
+,['a38cfb00-8d51-4986-954e-f135b9099cbb', 41, '.003937', 'ApproxValue: a38cfb00-8d51-4986-954e-f135b9099cbb NumRows: 41 Sel: .003937']
+,['a6823b66-4319-4b2d-9335-6df935ddcdea', 41, '.003937', 'ApproxValue: a6823b66-4319-4b2d-9335-6df935ddcdea NumRows: 41 Sel: .003937']
+,['a9a542d8-2653-475f-9367-b2402b7a0a0c', 41, '.003937', 'ApproxValue: a9a542d8-2653-475f-9367-b2402b7a0a0c NumRows: 41 Sel: .003937']
+,['ac91d321-5c98-41de-a18c-b484dd43e75f', 41, '.003937', 'ApproxValue: ac91d321-5c98-41de-a18c-b484dd43e75f NumRows: 41 Sel: .003937']
+,['afa7876e-4430-421a-81f1-30c49a38bfc5', 41, '.003937', 'ApproxValue: afa7876e-4430-421a-81f1-30c49a38bfc5 NumRows: 41 Sel: .003937']
+,['b20ab061-566c-4231-aef5-a30d439bf9a8', 41, '.003937', 'ApproxValue: b20ab061-566c-4231-aef5-a30d439bf9a8 NumRows: 41 Sel: .003937']
+,['b49e3dba-f231-4a33-9373-c457398ac810', 41, '.003937', 'ApproxValue: b49e3dba-f231-4a33-9373-c457398ac810 NumRows: 41 Sel: .003937']
+,['b75f8ab4-2248-4781-a5d0-da3f9101918e', 41, '.003937', 'ApproxValue: b75f8ab4-2248-4781-a5d0-da3f9101918e NumRows: 41 Sel: .003937']
+,['ba90a6f7-57f6-493a-b8a7-d0ab7896646c', 41, '.003937', 'ApproxValue: ba90a6f7-57f6-493a-b8a7-d0ab7896646c NumRows: 41 Sel: .003937']
+,['bdcd58ed-c7bd-409b-b305-4dd859f7ce9d', 41, '.003937', 'ApproxValue: bdcd58ed-c7bd-409b-b305-4dd859f7ce9d NumRows: 41 Sel: .003937']
+,['c0f4953c-8f47-4ed2-850f-91610a785e5c', 41, '.003937', 'ApproxValue: c0f4953c-8f47-4ed2-850f-91610a785e5c NumRows: 41 Sel: .003937']
+,['c553e28d-4a20-4588-8adf-10f6d43299b2', 41, '.003937', 'ApproxValue: c553e28d-4a20-4588-8adf-10f6d43299b2 NumRows: 41 Sel: .003937']
+,['c82adfeb-91ee-43a6-86d7-5cf8419bd343', 41, '.003937', 'ApproxValue: c82adfeb-91ee-43a6-86d7-5cf8419bd343 NumRows: 41 Sel: .003937']
+,['caeb27e2-0ee0-427c-b9d6-e03b2ce8af51', 41, '.003937', 'ApproxValue: caeb27e2-0ee0-427c-b9d6-e03b2ce8af51 NumRows: 41 Sel: .003937']
+,['ced0b011-1b5a-492d-ab54-e689a1e8a9a8', 41, '.003937', 'ApproxValue: ced0b011-1b5a-492d-ab54-e689a1e8a9a8 NumRows: 41 Sel: .003937']
+,['d1c68976-15a9-4a7e-a257-b2200973694b', 41, '.003937', 'ApproxValue: d1c68976-15a9-4a7e-a257-b2200973694b NumRows: 41 Sel: .003937']
+,['d44459ea-42bf-4a0a-bf0e-bfa65c014d4b', 41, '.003937', 'ApproxValue: d44459ea-42bf-4a0a-bf0e-bfa65c014d4b NumRows: 41 Sel: .003937']
+,['d7e6fa87-6386-41ec-b0d7-b66075bd6f39', 41, '.003937', 'ApproxValue: d7e6fa87-6386-41ec-b0d7-b66075bd6f39 NumRows: 41 Sel: .003937']
+,['db1319a7-6d4b-4c1a-8394-be0a7befd40f', 41, '.003937', 'ApproxValue: db1319a7-6d4b-4c1a-8394-be0a7befd40f NumRows: 41 Sel: .003937']
+,['de6c4fc5-67b1-44bc-9c50-487d4c75db9d', 41, '.003937', 'ApproxValue: de6c4fc5-67b1-44bc-9c50-487d4c75db9d NumRows: 41 Sel: .003937']
+,['e1785d03-d5ec-447b-ac79-76d54f249799', 41, '.003937', 'ApproxValue: e1785d03-d5ec-447b-ac79-76d54f249799 NumRows: 41 Sel: .003937']
+,['e3ce9bb1-bb46-4a3e-9a3c-0a82d8a066c5', 41, '.003937', 'ApproxValue: e3ce9bb1-bb46-4a3e-9a3c-0a82d8a066c5 NumRows: 41 Sel: .003937']
+,['e6c95d6d-c1d4-4309-a674-8083c75c63c8', 41, '.003937', 'ApproxValue: e6c95d6d-c1d4-4309-a674-8083c75c63c8 NumRows: 41 Sel: .003937']
+,['e974ba3c-b581-47eb-8472-d9b59758a8bd', 41, '.003937', 'ApproxValue: e974ba3c-b581-47eb-8472-d9b59758a8bd NumRows: 41 Sel: .003937']
+,['ec21b652-e151-4179-acd8-9c76e4f00aef', 41, '.003937', 'ApproxValue: ec21b652-e151-4179-acd8-9c76e4f00aef NumRows: 41 Sel: .003937']
+,['ef1537e1-b384-4a7e-9661-98f5d254b17d', 41, '.003937', 'ApproxValue: ef1537e1-b384-4a7e-9661-98f5d254b17d NumRows: 41 Sel: .003937']
+,['f25d885a-f2e1-4556-8ead-806237537596', 41, '.003937', 'ApproxValue: f25d885a-f2e1-4556-8ead-806237537596 NumRows: 41 Sel: .003937']
+,['f4ddadd3-2480-4eb4-8592-a5b4725492db', 41, '.003937', 'ApproxValue: f4ddadd3-2480-4eb4-8592-a5b4725492db NumRows: 41 Sel: .003937']
+,['f739d450-0bd6-4b43-85d6-8cf618f9ac0d', 41, '.003937', 'ApproxValue: f739d450-0bd6-4b43-85d6-8cf618f9ac0d NumRows: 41 Sel: .003937']
+,['f9a6ce9d-941a-4b00-93a4-624604a6df05', 41, '.003937', 'ApproxValue: f9a6ce9d-941a-4b00-93a4-624604a6df05 NumRows: 41 Sel: .003937']
+,['fcb63702-1d17-4d79-81a0-2dae8fb0d07c', 41, '.003937', 'ApproxValue: fcb63702-1d17-4d79-81a0-2dae8fb0d07c NumRows: 41 Sel: .003937']
+,['ffffe254-4091-4fc8-a8e7-671e392af0fe', 41, '.003937', 'ApproxValue: ffffe254-4091-4fc8-a8e7-671e392af0fe NumRows: 41 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.107. Height Balanced histogram on Column T_DDL_ITEM.DDLI_UNIVID',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.107. Height Balanced histogram on Column T_DDL_ITEM.DDLI_UNIVID <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 10372) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 10372)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_DDL_ITEM'
+AND a.column_name = 'DDLI_UNIVID'
+ORDER BY a.endpoint_number;
+
+192 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:20:21 for SQL ID 0sjx29v99zfqc (SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be) </font>
+</body>
+</html>

@@ -1,0 +1,12356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_3hwq5m5h3gkaq_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Elapsed Time per historical executions for Cluster</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 02086_sqld360_323688_3hwq5m5h3gkaq_4b_137_elapsed_time_per_historical_executions_for_cluster.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 4b.137. Elapsed Time per historical executions for Cluster <em>(DBA_HIST_ACTIVE_SESS_HISTORY)</em>  </h1>
+
+<br>
+Elapsed Time per historical execution, in seconds, rounded to the 10 seconds
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INSTANCE_ID
+</th>
+<th scope="col">
+SESSION_ID
+</th>
+<th scope="col">
+SESSION_SERIAL#
+</th>
+<th scope="col">
+USER_ID
+</th>
+<th scope="col">
+SQL_EXEC_ID
+</th>
+<th scope="col">
+SQL_EXEC_START
+</th>
+<th scope="col">
+START_TIME
+</th>
+<th scope="col">
+END_TIME
+</th>
+<th scope="col">
+PLAN_HASH_VALUE
+</th>
+<th scope="col">
+ELAPSED_TIME
+</th>
+<th scope="col">
+CPU_TIME
+</th>
+<th scope="col">
+DB_TIME
+</th>
+<th scope="col">
+NUM_PROCESSES_ASH
+</th>
+<th scope="col">
+MAX_PX_DEGREE_ASH
+</th>
+<th scope="col">
+PX_SERVERS_REQUESTED_SQLMON
+</th>
+<th scope="col">
+PX_SERVERS_ALLOCATED_SQLMON
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 796
+</td>
+<td align="right">
+               42119
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20 10:43:06
+</td>
+<td>
+2020-09-23 09:56:59
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              256443
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 220
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1569
+</td>
+<td align="right">
+                1236
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20 10:43:06
+</td>
+<td>
+2020-09-25 16:55:20
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              454344
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+               11150
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3112
+</td>
+<td align="right">
+               33016
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20 17:06:47
+</td>
+<td>
+2020-09-30 03:29:09
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              814952
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+               18550
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 408
+</td>
+<td align="right">
+               56481
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20 18:24:49
+</td>
+<td>
+2020-09-23 09:54:39
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              228600
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 190
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4251
+</td>
+<td align="right">
+               42494
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20 18:24:54
+</td>
+<td>
+2020-09-23 02:09:29
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              200685
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4656
+</td>
+<td align="right">
+               15119
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20 18:24:54
+</td>
+<td>
+2020-09-25 14:10:16
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              416732
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                4350
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1570
+</td>
+<td align="right">
+                6818
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20 18:24:59
+</td>
+<td>
+2020-09-29 16:37:27
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              771158
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+               12400
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1167
+</td>
+<td align="right">
+               44795
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20 18:25:09
+</td>
+<td>
+2020-09-20 18:25:09
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3112
+</td>
+<td align="right">
+               33016
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16778044
+</td>
+<td>
+2020-09-21 09:17:23
+</td>
+<td>
+2020-09-21 09:17:23
+</td>
+<td>
+2020-09-21 09:17:23
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2731
+</td>
+<td align="right">
+               27255
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-22 15:15:53
+</td>
+<td>
+2020-09-30 03:29:44
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              648841
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                6860
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+               50185
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-22 15:16:12
+</td>
+<td>
+2020-09-23 13:39:40
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               80618
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1080
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5812
+</td>
+<td align="right">
+               17080
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-22 15:16:12
+</td>
+<td>
+2020-09-28 02:07:11
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              471069
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+               15380
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1183
+</td>
+<td align="right">
+                3706
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-22 15:16:32
+</td>
+<td>
+2020-09-28 16:38:07
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              523305
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13070
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2340
+</td>
+<td align="right">
+                4053
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-22 15:46:41
+</td>
+<td>
+2020-09-23 10:27:17
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               67246
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1600
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1950
+</td>
+<td align="right">
+                7647
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-22 15:46:41
+</td>
+<td>
+2020-09-23 10:23:16
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               67005
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1310
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5429
+</td>
+<td align="right">
+                5434
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 02:08:18
+</td>
+<td>
+2020-09-25 16:55:10
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              226022
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+               12380
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1575
+</td>
+<td align="right">
+               26329
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 02:08:18
+</td>
+<td>
+2020-09-28 02:08:31
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              432023
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3850
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4269
+</td>
+<td align="right">
+                8843
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 02:08:18
+</td>
+<td>
+2020-09-30 03:27:19
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              609551
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13960
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 797
+</td>
+<td align="right">
+               44674
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 02:08:18
+</td>
+<td>
+2020-09-30 03:28:59
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              609651
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 590
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5038
+</td>
+<td align="right">
+                6151
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 02:08:18
+</td>
+<td>
+2020-09-28 09:38:17
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              459009
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                7420
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4273
+</td>
+<td align="right">
+               29825
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 02:08:39
+</td>
+<td>
+2020-09-26 16:34:30
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              311161
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                8350
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 401
+</td>
+<td align="right">
+               27614
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 10:12:13
+</td>
+<td>
+2020-09-26 09:03:58
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              255115
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                7920
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5419
+</td>
+<td align="right">
+               15561
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 10:19:58
+</td>
+<td>
+2020-09-28 16:38:18
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              454710
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4390
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+               51289
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 10:27:10
+</td>
+<td>
+2020-09-25 16:55:18
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              196098
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                3160
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2330
+</td>
+<td align="right">
+                1272
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 10:27:27
+</td>
+<td>
+2020-09-25 16:55:40
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              196103
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               16250
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3882
+</td>
+<td align="right">
+               24397
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-23 10:57:16
+</td>
+<td>
+2020-09-25 16:55:20
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              194294
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+               13030
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4656
+</td>
+<td align="right">
+               15119
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33558136
+</td>
+<td>
+2020-09-23 13:29:05
+</td>
+<td>
+2020-09-23 13:29:05
+</td>
+<td>
+2020-09-23 13:29:05
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2731
+</td>
+<td align="right">
+               27255
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33559300
+</td>
+<td>
+2020-09-23 13:39:18
+</td>
+<td>
+2020-09-23 13:39:18
+</td>
+<td>
+2020-09-23 13:39:18
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4269
+</td>
+<td align="right">
+                8843
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16792007
+</td>
+<td>
+2020-09-23 13:46:42
+</td>
+<td>
+2020-09-23 13:46:42
+</td>
+<td>
+2020-09-23 13:46:42
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4273
+</td>
+<td align="right">
+               29825
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33563834
+</td>
+<td>
+2020-09-23 14:23:41
+</td>
+<td>
+2020-09-23 14:23:41
+</td>
+<td>
+2020-09-23 14:23:41
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5419
+</td>
+<td align="right">
+               15561
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33566556
+</td>
+<td>
+2020-09-23 14:49:37
+</td>
+<td>
+2020-09-23 14:49:38
+</td>
+<td>
+2020-09-23 14:49:38
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1575
+</td>
+<td align="right">
+               26329
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16800774
+</td>
+<td>
+2020-09-23 14:58:44
+</td>
+<td>
+2020-09-23 14:58:45
+</td>
+<td>
+2020-09-23 14:58:45
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5037
+</td>
+<td align="right">
+               20009
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-24 11:20:20
+</td>
+<td>
+2020-09-28 12:00:07
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              347997
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1750
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1183
+</td>
+<td align="right">
+                3706
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16835997
+</td>
+<td>
+2020-09-24 11:35:17
+</td>
+<td>
+2020-09-24 11:35:17
+</td>
+<td>
+2020-09-24 11:35:17
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1183
+</td>
+<td align="right">
+                3706
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16838588
+</td>
+<td>
+2020-09-24 17:30:22
+</td>
+<td>
+2020-09-24 17:30:22
+</td>
+<td>
+2020-09-24 17:30:22
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1183
+</td>
+<td align="right">
+                3706
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16844257
+</td>
+<td>
+2020-09-24 18:17:05
+</td>
+<td>
+2020-09-24 18:17:06
+</td>
+<td>
+2020-09-24 18:17:06
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2731
+</td>
+<td align="right">
+               27255
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33579275
+</td>
+<td>
+2020-09-24 18:44:09
+</td>
+<td>
+2020-09-24 18:44:10
+</td>
+<td>
+2020-09-24 18:44:10
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2731
+</td>
+<td align="right">
+               27255
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33581447
+</td>
+<td>
+2020-09-24 19:00:31
+</td>
+<td>
+2020-09-24 19:00:34
+</td>
+<td>
+2020-09-24 19:00:34
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4273
+</td>
+<td align="right">
+               29825
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33586235
+</td>
+<td>
+2020-09-24 19:48:26
+</td>
+<td>
+2020-09-24 19:48:27
+</td>
+<td>
+2020-09-24 19:48:27
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2330
+</td>
+<td align="right">
+                1272
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16856071
+</td>
+<td>
+2020-09-25 10:07:57
+</td>
+<td>
+2020-09-25 10:07:58
+</td>
+<td>
+2020-09-25 10:07:58
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2330
+</td>
+<td align="right">
+                1272
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16857604
+</td>
+<td>
+2020-09-25 12:16:02
+</td>
+<td>
+2020-09-25 12:16:02
+</td>
+<td>
+2020-09-25 12:16:02
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3882
+</td>
+<td align="right">
+               24397
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16858343
+</td>
+<td>
+2020-09-25 13:10:36
+</td>
+<td>
+2020-09-25 13:10:37
+</td>
+<td>
+2020-09-25 13:10:37
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4656
+</td>
+<td align="right">
+               15119
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33588406
+</td>
+<td>
+2020-09-25 13:17:52
+</td>
+<td>
+2020-09-25 13:17:52
+</td>
+<td>
+2020-09-25 13:17:52
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1569
+</td>
+<td align="right">
+                1236
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16864287
+</td>
+<td>
+2020-09-25 13:44:46
+</td>
+<td>
+2020-09-25 13:44:47
+</td>
+<td>
+2020-09-25 13:44:47
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2345
+</td>
+<td align="right">
+               39009
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-25 14:17:28
+</td>
+<td>
+2020-09-30 03:23:02
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              392744
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 580
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2345
+</td>
+<td align="right">
+               39009
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33592720
+</td>
+<td>
+2020-09-25 14:18:38
+</td>
+<td>
+2020-09-25 14:18:39
+</td>
+<td>
+2020-09-25 14:18:39
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5419
+</td>
+<td align="right">
+               15561
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33594736
+</td>
+<td>
+2020-09-25 16:24:30
+</td>
+<td>
+2020-09-25 16:24:31
+</td>
+<td>
+2020-09-25 16:24:31
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5808
+</td>
+<td align="right">
+               47343
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-26 16:37:16
+</td>
+<td>
+2020-09-29 02:07:03
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              206997
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1760
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4249
+</td>
+<td align="right">
+               40992
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-28 02:07:24
+</td>
+<td>
+2020-09-28 02:07:54
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  40
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4251
+</td>
+<td align="right">
+               44821
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-28 02:07:24
+</td>
+<td>
+2020-09-28 09:07:43
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               25229
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 670
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5049
+</td>
+<td align="right">
+               44760
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-28 02:07:44
+</td>
+<td>
+2020-09-28 11:52:55
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               35121
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 930
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1570
+</td>
+<td align="right">
+                6818
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16874273
+</td>
+<td>
+2020-09-28 02:09:21
+</td>
+<td>
+2020-09-28 02:09:22
+</td>
+<td>
+2020-09-28 02:09:22
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4259
+</td>
+<td align="right">
+               31211
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-28 09:21:27
+</td>
+<td>
+2020-09-28 09:22:47
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  90
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3897
+</td>
+<td align="right">
+               12511
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-28 09:24:43
+</td>
+<td>
+2020-09-29 02:06:53
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               60140
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 720
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5440
+</td>
+<td align="right">
+               31744
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-28 11:11:03
+</td>
+<td>
+2020-09-30 15:37:30
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              188797
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1300
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3897
+</td>
+<td align="right">
+               12511
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16878704
+</td>
+<td>
+2020-09-28 11:34:40
+</td>
+<td>
+2020-09-28 11:34:41
+</td>
+<td>
+2020-09-28 11:34:41
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5441
+</td>
+<td align="right">
+               47962
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-28 11:53:16
+</td>
+<td>
+2020-09-30 16:35:27
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              189741
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1210
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3876
+</td>
+<td align="right">
+               25793
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-28 14:46:50
+</td>
+<td>
+2020-09-30 16:35:57
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              179357
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 620
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5051
+</td>
+<td align="right">
+               21245
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-29 10:39:39
+</td>
+<td>
+2020-09-30 10:41:56
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               86547
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 330
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4281
+</td>
+<td align="right">
+                2050
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-29 10:41:00
+</td>
+<td>
+2020-09-30 13:26:58
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               96368
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 280
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 410
+</td>
+<td align="right">
+                2992
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-30 03:12:40
+</td>
+<td>
+2020-09-30 03:20:42
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 492
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5051
+</td>
+<td align="right">
+               21245
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33608142
+</td>
+<td>
+2020-09-30 03:14:40
+</td>
+<td>
+2020-09-30 03:14:41
+</td>
+<td>
+2020-09-30 03:14:41
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2716
+</td>
+<td align="right">
+               52562
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-30 10:40:25
+</td>
+<td>
+2020-09-30 16:35:07
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               21292
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 560
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3487
+</td>
+<td align="right">
+                9946
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-30 13:27:53
+</td>
+<td>
+2020-09-30 16:35:47
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               11284
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 420
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4277
+</td>
+<td align="right">
+               44867
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-30 14:55:31
+</td>
+<td>
+2020-09-30 15:07:04
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 703
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1165
+</td>
+<td align="right">
+               13974
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-30 18:21:36
+</td>
+<td>
+2020-10-10 16:46:28
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              858302
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                8370
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 798
+</td>
+<td align="right">
+               22862
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-30 18:21:36
+</td>
+<td>
+2020-10-02 02:08:15
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              114409
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                1920
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5817
+</td>
+<td align="right">
+               27282
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-30 18:21:36
+</td>
+<td>
+2020-10-10 16:42:07
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              858041
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                5020
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2332
+</td>
+<td align="right">
+               35970
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-30 18:21:44
+</td>
+<td>
+2020-10-01 17:06:59
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               81925
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                1260
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4249
+</td>
+<td align="right">
+               46127
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-30 18:22:04
+</td>
+<td>
+2020-10-01 17:07:30
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               81936
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1120
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5817
+</td>
+<td align="right">
+               27282
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16896266
+</td>
+<td>
+2020-09-30 18:49:54
+</td>
+<td>
+2020-09-30 18:49:55
+</td>
+<td>
+2020-09-30 18:49:55
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 796
+</td>
+<td align="right">
+               14042
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 03:04:26
+</td>
+<td>
+2020-10-10 16:42:38
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              826702
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                2840
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5819
+</td>
+<td align="right">
+               41961
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 03:05:24
+</td>
+<td>
+2020-10-01 04:15:34
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                4220
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                 110
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1963
+</td>
+<td align="right">
+               41171
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 03:07:17
+</td>
+<td>
+2020-10-01 03:07:17
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 410
+</td>
+<td align="right">
+               33750
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 03:09:38
+</td>
+<td>
+2020-10-10 16:42:18
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              826370
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                3120
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1165
+</td>
+<td align="right">
+               13974
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16896919
+</td>
+<td>
+2020-10-01 03:09:44
+</td>
+<td>
+2020-10-01 03:09:45
+</td>
+<td>
+2020-10-01 03:09:45
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3500
+</td>
+<td align="right">
+               14879
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 03:44:37
+</td>
+<td>
+2020-10-09 11:50:47
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              720380
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                1760
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1165
+</td>
+<td align="right">
+               13974
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16902773
+</td>
+<td>
+2020-10-01 04:12:02
+</td>
+<td>
+2020-10-01 04:12:03
+</td>
+<td>
+2020-10-01 04:12:03
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5806
+</td>
+<td align="right">
+               51335
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 04:23:37
+</td>
+<td>
+2020-10-09 11:50:57
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              718050
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                1420
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3108
+</td>
+<td align="right">
+                4195
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 04:28:37
+</td>
+<td>
+2020-10-10 16:46:28
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              821881
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                4490
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 410
+</td>
+<td align="right">
+               33750
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33623729
+</td>
+<td>
+2020-10-01 04:31:49
+</td>
+<td>
+2020-10-01 04:31:50
+</td>
+<td>
+2020-10-01 04:31:50
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 796
+</td>
+<td align="right">
+               14042
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33631317
+</td>
+<td>
+2020-10-01 05:48:29
+</td>
+<td>
+2020-10-01 05:48:30
+</td>
+<td>
+2020-10-01 05:48:30
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4249
+</td>
+<td align="right">
+               46127
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33636434
+</td>
+<td>
+2020-10-01 07:00:50
+</td>
+<td>
+2020-10-01 07:00:51
+</td>
+<td>
+2020-10-01 07:00:51
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1165
+</td>
+<td align="right">
+               13974
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16910089
+</td>
+<td>
+2020-10-01 07:13:57
+</td>
+<td>
+2020-10-01 07:13:57
+</td>
+<td>
+2020-10-01 07:13:57
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5036
+</td>
+<td align="right">
+               31727
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 07:23:00
+</td>
+<td>
+2020-10-06 12:30:51
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              450481
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                4640
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4666
+</td>
+<td align="right">
+               48308
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 07:23:00
+</td>
+<td>
+2020-10-10 16:42:57
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              811207
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4890
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1195
+</td>
+<td align="right">
+               34703
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 07:40:01
+</td>
+<td>
+2020-10-01 17:08:10
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               34099
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 100
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3503
+</td>
+<td align="right">
+               64980
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 17:07:52
+</td>
+<td>
+2020-10-08 16:36:12
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              602910
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                5170
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1177
+</td>
+<td align="right">
+               64874
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 17:18:02
+</td>
+<td>
+2020-10-10 16:46:29
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              775717
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                1220
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3503
+</td>
+<td align="right">
+               64980
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16916808
+</td>
+<td>
+2020-10-01 17:18:04
+</td>
+<td>
+2020-10-01 17:18:05
+</td>
+<td>
+2020-10-01 17:18:05
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+               43721
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-01 17:19:23
+</td>
+<td>
+2020-10-08 12:35:37
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              587784
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2050
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5036
+</td>
+<td align="right">
+               31727
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16916907
+</td>
+<td>
+2020-10-01 17:19:25
+</td>
+<td>
+2020-10-01 17:19:25
+</td>
+<td>
+2020-10-01 17:19:25
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5040
+</td>
+<td align="right">
+               16052
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-02 02:08:15
+</td>
+<td>
+2020-10-10 16:45:28
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              743843
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                5210
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5036
+</td>
+<td align="right">
+               31727
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16924997
+</td>
+<td>
+2020-10-02 03:43:52
+</td>
+<td>
+2020-10-02 03:43:52
+</td>
+<td>
+2020-10-02 03:43:52
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5817
+</td>
+<td align="right">
+               27282
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16926396
+</td>
+<td>
+2020-10-02 03:50:33
+</td>
+<td>
+2020-10-02 03:50:34
+</td>
+<td>
+2020-10-02 03:50:34
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 796
+</td>
+<td align="right">
+               14042
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33647720
+</td>
+<td>
+2020-10-02 03:59:37
+</td>
+<td>
+2020-10-02 03:59:38
+</td>
+<td>
+2020-10-02 03:59:38
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 795
+</td>
+<td align="right">
+               48680
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-02 05:12:26
+</td>
+<td>
+2020-10-09 11:52:13
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              628797
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                5850
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 805
+</td>
+<td align="right">
+               26532
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-02 11:17:40
+</td>
+<td>
+2020-10-05 11:12:39
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              258909
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1100
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 805
+</td>
+<td align="right">
+               26532
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33653721
+</td>
+<td>
+2020-10-02 11:17:49
+</td>
+<td>
+2020-10-02 11:17:50
+</td>
+<td>
+2020-10-02 11:17:50
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5426
+</td>
+<td align="right">
+               43917
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-02 11:23:41
+</td>
+<td>
+2020-10-10 16:42:08
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              710317
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1020
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4261
+</td>
+<td align="right">
+               55629
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-02 17:34:43
+</td>
+<td>
+2020-10-10 16:41:08
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              687995
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1910
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5426
+</td>
+<td align="right">
+               43917
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33656932
+</td>
+<td>
+2020-10-02 17:39:04
+</td>
+<td>
+2020-10-02 17:39:04
+</td>
+<td>
+2020-10-02 17:39:04
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4251
+</td>
+<td align="right">
+               15968
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-05 11:09:38
+</td>
+<td>
+2020-10-08 09:07:44
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              251896
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1020
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5815
+</td>
+<td align="right">
+               40256
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-05 11:54:49
+</td>
+<td>
+2020-10-10 03:03:38
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              400139
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                 470
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1186
+</td>
+<td align="right">
+               56594
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-05 12:02:31
+</td>
+<td>
+2020-10-10 16:46:29
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              449048
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1200
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 796
+</td>
+<td align="right">
+               14042
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33662942
+</td>
+<td>
+2020-10-06 09:59:03
+</td>
+<td>
+2020-10-06 09:59:04
+</td>
+<td>
+2020-10-06 09:59:04
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4666
+</td>
+<td align="right">
+               48308
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16966520
+</td>
+<td>
+2020-10-08 12:20:43
+</td>
+<td>
+2020-10-08 12:20:44
+</td>
+<td>
+2020-10-08 12:20:44
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3503
+</td>
+<td align="right">
+               64980
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16966830
+</td>
+<td>
+2020-10-08 13:24:50
+</td>
+<td>
+2020-10-08 13:24:51
+</td>
+<td>
+2020-10-08 13:24:51
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3503
+</td>
+<td align="right">
+               64980
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16967069
+</td>
+<td>
+2020-10-08 16:05:43
+</td>
+<td>
+2020-10-08 16:05:44
+</td>
+<td>
+2020-10-08 16:05:44
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5040
+</td>
+<td align="right">
+               16052
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16969459
+</td>
+<td>
+2020-10-09 11:52:23
+</td>
+<td>
+2020-10-09 11:52:23
+</td>
+<td>
+2020-10-09 11:52:23
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5040
+</td>
+<td align="right">
+               16052
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16971158
+</td>
+<td>
+2020-10-10 16:48:08
+</td>
+<td>
+2020-10-10 16:48:09
+</td>
+<td>
+2020-10-10 16:48:09
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4636
+</td>
+<td align="right">
+               47338
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16777719
+</td>
+<td>
+2020-10-15 13:41:08
+</td>
+<td>
+2020-10-15 13:41:08
+</td>
+<td>
+2020-10-15 13:41:08
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2352
+</td>
+<td align="right">
+               44967
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-15 19:49:30
+</td>
+<td>
+2020-10-15 21:23:37
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                5657
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                3220
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2723
+</td>
+<td align="right">
+               27357
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-15 19:49:49
+</td>
+<td>
+2020-10-16 14:34:39
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               67500
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                3270
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3503
+</td>
+<td align="right">
+               17223
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-15 19:49:50
+</td>
+<td>
+2020-10-16 14:39:39
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               67799
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3650
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2348
+</td>
+<td align="right">
+               57914
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-15 19:49:59
+</td>
+<td>
+2020-10-16 16:46:52
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               75423
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3610
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 796
+</td>
+<td align="right">
+                8035
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-15 19:50:09
+</td>
+<td>
+2020-10-16 16:37:19
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               74840
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3600
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3503
+</td>
+<td align="right">
+               17223
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16782944
+</td>
+<td>
+2020-10-15 20:10:36
+</td>
+<td>
+2020-10-15 20:10:36
+</td>
+<td>
+2020-10-15 20:10:36
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3503
+</td>
+<td align="right">
+               17223
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16784223
+</td>
+<td>
+2020-10-15 20:26:00
+</td>
+<td>
+2020-10-15 20:26:01
+</td>
+<td>
+2020-10-15 20:26:01
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3503
+</td>
+<td align="right">
+               17223
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16784736
+</td>
+<td>
+2020-10-15 20:31:52
+</td>
+<td>
+2020-10-15 20:31:53
+</td>
+<td>
+2020-10-15 20:31:53
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5410
+</td>
+<td align="right">
+               18919
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-16 02:07:58
+</td>
+<td>
+2020-10-16 14:52:04
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               45856
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 430
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5415
+</td>
+<td align="right">
+               59680
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33690236
+</td>
+<td>
+2020-10-16 06:19:53
+</td>
+<td>
+2020-10-16 06:19:54
+</td>
+<td>
+2020-10-16 06:19:54
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3121
+</td>
+<td align="right">
+               22548
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-16 09:10:57
+</td>
+<td>
+2020-10-16 16:44:11
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               27204
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 500
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 408
+</td>
+<td align="right">
+               52916
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-16 14:40:00
+</td>
+<td>
+2020-10-16 16:46:12
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                7582
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 210
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 784
+</td>
+<td align="right">
+               39339
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 07:45:03
+</td>
+<td>
+2020-11-01 05:25:05
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              510012
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+               19030
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 394
+</td>
+<td align="right">
+               32613
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 07:45:03
+</td>
+<td>
+2020-11-03 02:08:47
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              671034
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+               20770
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5415
+</td>
+<td align="right">
+               35142
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 07:45:10
+</td>
+<td>
+2020-11-03 12:15:49
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              707449
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                9460
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5029
+</td>
+<td align="right">
+                7709
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 07:45:20
+</td>
+<td>
+2020-11-01 04:28:23
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              506593
+</td>
+<td align="right">
+                  60
+</td>
+<td align="right">
+               12820
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2711
+</td>
+<td align="right">
+                5120
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 07:45:20
+</td>
+<td>
+2020-11-03 12:15:49
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              707439
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+               15350
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 786
+</td>
+<td align="right">
+                7019
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 10:03:01
+</td>
+<td>
+2020-10-26 23:38:29
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               48938
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                9560
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 785
+</td>
+<td align="right">
+               10736
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 10:03:01
+</td>
+<td>
+2020-10-27 17:49:15
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              114384
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+               26290
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1558
+</td>
+<td align="right">
+               28529
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 10:03:01
+</td>
+<td>
+2020-10-26 10:04:01
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  70
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 397
+</td>
+<td align="right">
+               54202
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 10:03:04
+</td>
+<td>
+2020-10-27 15:57:17
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              107663
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+               19110
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3095
+</td>
+<td align="right">
+               30630
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 10:03:04
+</td>
+<td>
+2020-10-27 12:13:29
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               94235
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                6750
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4260
+</td>
+<td align="right">
+               50257
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 15:36:40
+</td>
+<td>
+2020-10-26 23:00:09
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               26619
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                6800
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3095
+</td>
+<td align="right">
+               30630
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33555927
+</td>
+<td>
+2020-10-26 16:14:56
+</td>
+<td>
+2020-10-26 16:14:57
+</td>
+<td>
+2020-10-26 16:14:57
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1550
+</td>
+<td align="right">
+               47346
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 16:23:39
+</td>
+<td>
+2020-11-03 16:42:46
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              692357
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+               14110
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5029
+</td>
+<td align="right">
+                7709
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33558233
+</td>
+<td>
+2020-10-26 19:07:21
+</td>
+<td>
+2020-10-26 19:07:21
+</td>
+<td>
+2020-10-26 19:07:21
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5029
+</td>
+<td align="right">
+                7709
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33558981
+</td>
+<td>
+2020-10-26 19:11:41
+</td>
+<td>
+2020-10-26 19:11:43
+</td>
+<td>
+2020-10-26 19:11:43
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 786
+</td>
+<td align="right">
+                7019
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16784338
+</td>
+<td>
+2020-10-26 20:03:46
+</td>
+<td>
+2020-10-26 20:03:46
+</td>
+<td>
+2020-10-26 20:03:46
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 785
+</td>
+<td align="right">
+               10736
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16786990
+</td>
+<td>
+2020-10-26 20:30:23
+</td>
+<td>
+2020-10-26 20:30:24
+</td>
+<td>
+2020-10-26 20:30:24
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4641
+</td>
+<td align="right">
+               44006
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 21:02:54
+</td>
+<td>
+2020-10-27 17:47:04
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               74660
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               17830
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4260
+</td>
+<td align="right">
+               50257
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16796166
+</td>
+<td>
+2020-10-26 21:36:44
+</td>
+<td>
+2020-10-26 21:36:44
+</td>
+<td>
+2020-10-26 21:36:44
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1554
+</td>
+<td align="right">
+               55731
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 22:04:59
+</td>
+<td>
+2020-10-27 00:39:31
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                9282
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4220
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1946
+</td>
+<td align="right">
+               65454
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 22:38:18
+</td>
+<td>
+2020-10-27 12:29:53
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               49905
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2340
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 397
+</td>
+<td align="right">
+               10795
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 22:48:05
+</td>
+<td>
+2020-10-26 23:39:00
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                3065
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1850
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 786
+</td>
+<td align="right">
+                7019
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16809646
+</td>
+<td>
+2020-10-26 23:31:27
+</td>
+<td>
+2020-10-26 23:31:27
+</td>
+<td>
+2020-10-26 23:31:27
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 780
+</td>
+<td align="right">
+               45945
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 23:40:30
+</td>
+<td>
+2020-10-27 17:39:02
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               64722
+</td>
+<td align="right">
+                  40
+</td>
+<td align="right">
+               15650
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2347
+</td>
+<td align="right">
+                7656
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-26 23:40:45
+</td>
+<td>
+2020-10-27 17:56:18
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+               65743
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                9550
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 397
+</td>
+<td align="right">
+               54202
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33585599
+</td>
+<td>
+2020-10-26 23:49:36
+</td>
+<td>
+2020-10-26 23:49:37
+</td>
+<td>
+2020-10-26 23:49:37
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 780
+</td>
+<td align="right">
+               45945
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16812465
+</td>
+<td>
+2020-10-26 23:57:34
+</td>
+<td>
+2020-10-26 23:57:34
+</td>
+<td>
+2020-10-26 23:57:34
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 780
+</td>
+<td align="right">
+               45945
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16819164
+</td>
+<td>
+2020-10-27 01:00:31
+</td>
+<td>
+2020-10-27 01:00:32
+</td>
+<td>
+2020-10-27 01:00:32
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2325
+</td>
+<td align="right">
+               46707
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-27 03:27:06
+</td>
+<td>
+2020-11-03 10:12:48
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              629152
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+               18940
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1550
+</td>
+<td align="right">
+               47346
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33625546
+</td>
+<td>
+2020-10-27 04:42:46
+</td>
+<td>
+2020-10-27 04:42:47
+</td>
+<td>
+2020-10-27 04:42:47
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2325
+</td>
+<td align="right">
+               46707
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33631488
+</td>
+<td>
+2020-10-27 05:02:01
+</td>
+<td>
+2020-10-27 05:02:02
+</td>
+<td>
+2020-10-27 05:02:02
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3872
+</td>
+<td align="right">
+               33575
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-27 07:02:20
+</td>
+<td>
+2020-11-04 06:43:23
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              690073
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+               21810
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2325
+</td>
+<td align="right">
+               46707
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33670254
+</td>
+<td>
+2020-10-27 07:52:59
+</td>
+<td>
+2020-10-27 07:53:00
+</td>
+<td>
+2020-10-27 07:53:00
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2325
+</td>
+<td align="right">
+               46707
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33671989
+</td>
+<td>
+2020-10-27 08:02:52
+</td>
+<td>
+2020-10-27 08:02:52
+</td>
+<td>
+2020-10-27 08:02:52
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2325
+</td>
+<td align="right">
+               46707
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33676513
+</td>
+<td>
+2020-10-27 10:30:39
+</td>
+<td>
+2020-10-27 10:30:40
+</td>
+<td>
+2020-10-27 10:30:40
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1550
+</td>
+<td align="right">
+               47346
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33681051
+</td>
+<td>
+2020-10-27 10:55:26
+</td>
+<td>
+2020-10-27 10:55:27
+</td>
+<td>
+2020-10-27 10:55:27
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 780
+</td>
+<td align="right">
+               45945
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16841529
+</td>
+<td>
+2020-10-27 11:03:55
+</td>
+<td>
+2020-10-27 11:03:56
+</td>
+<td>
+2020-10-27 11:03:56
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1550
+</td>
+<td align="right">
+               47346
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33688317
+</td>
+<td>
+2020-10-27 11:32:17
+</td>
+<td>
+2020-10-27 11:32:17
+</td>
+<td>
+2020-10-27 11:32:17
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2323
+</td>
+<td align="right">
+               19528
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-27 12:02:16
+</td>
+<td>
+2020-11-03 03:05:48
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              572622
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                4290
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 397
+</td>
+<td align="right">
+               54202
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33711142
+</td>
+<td>
+2020-10-27 13:29:09
+</td>
+<td>
+2020-10-27 13:29:09
+</td>
+<td>
+2020-10-27 13:29:09
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 780
+</td>
+<td align="right">
+               45945
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16852979
+</td>
+<td>
+2020-10-27 13:40:38
+</td>
+<td>
+2020-10-27 13:40:39
+</td>
+<td>
+2020-10-27 13:40:39
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2347
+</td>
+<td align="right">
+                7656
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33713537
+</td>
+<td>
+2020-10-27 13:47:33
+</td>
+<td>
+2020-10-27 13:47:33
+</td>
+<td>
+2020-10-27 13:47:33
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3872
+</td>
+<td align="right">
+               33575
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16871382
+</td>
+<td>
+2020-10-28 16:35:35
+</td>
+<td>
+2020-10-28 16:35:36
+</td>
+<td>
+2020-10-28 16:35:36
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5034
+</td>
+<td align="right">
+               13084
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:04
+</td>
+<td>
+2020-10-28 17:49:36
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 342
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                 220
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 785
+</td>
+<td align="right">
+                4285
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:04
+</td>
+<td>
+2020-11-04 08:32:43
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              571729
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                6090
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4665
+</td>
+<td align="right">
+               30935
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:04
+</td>
+<td>
+2020-11-03 12:16:53
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              498779
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                4950
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 781
+</td>
+<td align="right">
+               29581
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:04
+</td>
+<td>
+2020-10-28 17:49:35
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 341
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 100
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1963
+</td>
+<td align="right">
+                4284
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:04
+</td>
+<td>
+2020-11-04 08:50:28
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              572794
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                6140
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3125
+</td>
+<td align="right">
+                9001
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:14
+</td>
+<td>
+2020-11-04 08:50:28
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              572784
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                6110
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1955
+</td>
+<td align="right">
+               59553
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:14
+</td>
+<td>
+2020-10-30 14:49:18
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              162314
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 440
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2733
+</td>
+<td align="right">
+               24193
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:14
+</td>
+<td>
+2020-11-03 16:41:14
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              514630
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4930
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1171
+</td>
+<td align="right">
+               41127
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:14
+</td>
+<td>
+2020-11-03 12:15:49
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              498705
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 790
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+177
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3892
+</td>
+<td align="right">
+               21778
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:24
+</td>
+<td>
+2020-11-02 10:32:36
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              406102
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                2410
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+178
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 807
+</td>
+<td align="right">
+               44451
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:24
+</td>
+<td>
+2020-10-28 17:49:56
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 342
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 190
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+179
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3093
+</td>
+<td align="right">
+                5280
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:24
+</td>
+<td>
+2020-10-28 17:44:54
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  40
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+180
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2736
+</td>
+<td align="right">
+               42546
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:34
+</td>
+<td>
+2020-10-28 17:50:16
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 352
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 180
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+181
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2726
+</td>
+<td align="right">
+                 942
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:34
+</td>
+<td>
+2020-10-28 17:49:06
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 282
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 130
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+182
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1170
+</td>
+<td align="right">
+               13173
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:34
+</td>
+<td>
+2020-10-28 17:49:16
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 292
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 130
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+183
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4663
+</td>
+<td align="right">
+               37778
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:34
+</td>
+<td>
+2020-10-28 17:49:45
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 321
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 110
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+184
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2329
+</td>
+<td align="right">
+               33883
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:44
+</td>
+<td>
+2020-10-28 17:44:44
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+185
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1965
+</td>
+<td align="right">
+               60747
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:44
+</td>
+<td>
+2020-10-28 17:50:06
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 332
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  90
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+186
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2715
+</td>
+<td align="right">
+               53989
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:44:54
+</td>
+<td>
+2020-10-28 17:44:54
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+187
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4276
+</td>
+<td align="right">
+               48993
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:45:34
+</td>
+<td>
+2020-10-28 17:50:16
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 292
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+188
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+               49850
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:45:34
+</td>
+<td>
+2020-10-28 17:49:06
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 222
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 130
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+189
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1554
+</td>
+<td align="right">
+                4549
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:48:45
+</td>
+<td>
+2020-10-28 17:50:06
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  91
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+190
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+               30120
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-28 17:49:15
+</td>
+<td>
+2020-10-28 17:49:15
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+191
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 402
+</td>
+<td align="right">
+               58080
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-29 02:01:55
+</td>
+<td>
+2020-11-03 12:14:39
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              468774
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2860
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+192
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1963
+</td>
+<td align="right">
+                4284
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16874091
+</td>
+<td>
+2020-10-29 14:00:08
+</td>
+<td>
+2020-10-29 14:00:08
+</td>
+<td>
+2020-10-29 14:00:08
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+193
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+               28414
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-30 06:26:38
+</td>
+<td>
+2020-11-03 15:15:31
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              377343
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                6470
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+194
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 785
+</td>
+<td align="right">
+                4285
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16886266
+</td>
+<td>
+2020-10-31 03:16:19
+</td>
+<td>
+2020-10-31 03:16:20
+</td>
+<td>
+2020-10-31 03:16:20
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+195
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3892
+</td>
+<td align="right">
+               21778
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33740618
+</td>
+<td>
+2020-11-01 03:08:51
+</td>
+<td>
+2020-11-01 03:08:51
+</td>
+<td>
+2020-11-01 03:08:51
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+196
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2733
+</td>
+<td align="right">
+               24193
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16891868
+</td>
+<td>
+2020-11-01 03:14:27
+</td>
+<td>
+2020-11-01 03:14:27
+</td>
+<td>
+2020-11-01 03:14:27
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+197
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 785
+</td>
+<td align="right">
+                4285
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16896435
+</td>
+<td>
+2020-11-01 03:54:39
+</td>
+<td>
+2020-11-01 03:54:39
+</td>
+<td>
+2020-11-01 03:54:39
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+198
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 394
+</td>
+<td align="right">
+               32613
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16898558
+</td>
+<td>
+2020-11-01 04:10:03
+</td>
+<td>
+2020-11-01 04:10:04
+</td>
+<td>
+2020-11-01 04:10:04
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+199
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4271
+</td>
+<td align="right">
+               27700
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-01 04:34:41
+</td>
+<td>
+2020-11-04 06:43:13
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              266922
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                2110
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+200
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4271
+</td>
+<td align="right">
+               27700
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16909813
+</td>
+<td>
+2020-11-01 05:18:43
+</td>
+<td>
+2020-11-01 05:18:43
+</td>
+<td>
+2020-11-01 05:18:43
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+201
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4253
+</td>
+<td align="right">
+               12219
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-01 05:27:36
+</td>
+<td>
+2020-11-03 16:42:45
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+              213319
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                3550
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+202
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1550
+</td>
+<td align="right">
+               47346
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33747401
+</td>
+<td>
+2020-11-01 06:00:17
+</td>
+<td>
+2020-11-01 06:00:17
+</td>
+<td>
+2020-11-01 06:00:17
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+203
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1550
+</td>
+<td align="right">
+               47346
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-01 06:00:48
+</td>
+<td>
+2020-11-01 06:12:01
+</td>
+<td align="right">
+          2031791219
+</td>
+<td align="right">
+                 683
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 160
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+204
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3892
+</td>
+<td align="right">
+               21778
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-01 06:00:58
+</td>
+<td>
+2020-11-01 06:12:01
+</td>
+<td align="right">
+          2031791219
+</td>
+<td align="right">
+                 673
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 280
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+205
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2325
+</td>
+<td align="right">
+               46707
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-01 06:02:18
+</td>
+<td>
+2020-11-01 06:10:30
+</td>
+<td align="right">
+          2031791219
+</td>
+<td align="right">
+                 502
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 240
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+206
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3125
+</td>
+<td align="right">
+                9001
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16915338
+</td>
+<td>
+2020-11-01 06:05:31
+</td>
+<td>
+2020-11-01 06:06:18
+</td>
+<td>
+2020-11-01 06:06:28
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+207
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3125
+</td>
+<td align="right">
+                9001
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16915345
+</td>
+<td>
+2020-11-01 06:06:32
+</td>
+<td>
+2020-11-01 06:06:48
+</td>
+<td>
+2020-11-01 06:09:19
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                 161
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 160
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+208
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1550
+</td>
+<td align="right">
+               47346
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33747549
+</td>
+<td>
+2020-11-01 06:06:47
+</td>
+<td>
+2020-11-01 06:07:19
+</td>
+<td>
+2020-11-01 06:08:30
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  81
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  80
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+209
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2733
+</td>
+<td align="right">
+               24193
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16915346
+</td>
+<td>
+2020-11-01 06:08:18
+</td>
+<td>
+2020-11-01 06:08:38
+</td>
+<td>
+2020-11-01 06:09:49
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  81
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  80
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+210
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1550
+</td>
+<td align="right">
+               47346
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33747549
+</td>
+<td>
+2020-11-01 06:06:47
+</td>
+<td>
+2020-11-01 06:08:40
+</td>
+<td>
+2020-11-01 06:09:30
+</td>
+<td align="right">
+          2031791219
+</td>
+<td align="right">
+                  60
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  60
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+211
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3892
+</td>
+<td align="right">
+               21778
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33747551
+</td>
+<td>
+2020-11-01 06:08:33
+</td>
+<td>
+2020-11-01 06:09:30
+</td>
+<td>
+2020-11-01 06:09:30
+</td>
+<td align="right">
+          2031791219
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+212
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1550
+</td>
+<td align="right">
+               47346
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33747552
+</td>
+<td>
+2020-11-01 06:09:34
+</td>
+<td>
+2020-11-01 06:09:40
+</td>
+<td>
+2020-11-01 06:09:40
+</td>
+<td align="right">
+          2031791219
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+213
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1963
+</td>
+<td align="right">
+                4284
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16915354
+</td>
+<td>
+2020-11-01 06:10:04
+</td>
+<td>
+2020-11-01 06:10:09
+</td>
+<td>
+2020-11-01 06:10:29
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+214
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4253
+</td>
+<td align="right">
+               12219
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16915355
+</td>
+<td>
+2020-11-01 06:10:05
+</td>
+<td>
+2020-11-01 06:10:39
+</td>
+<td>
+2020-11-01 06:11:29
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  60
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  60
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+215
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+               28414
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16915358
+</td>
+<td>
+2020-11-01 06:11:19
+</td>
+<td>
+2020-11-01 06:11:39
+</td>
+<td>
+2020-11-01 06:12:00
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+216
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2325
+</td>
+<td align="right">
+               46707
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33747568
+</td>
+<td>
+2020-11-01 06:11:48
+</td>
+<td>
+2020-11-01 06:11:51
+</td>
+<td>
+2020-11-01 06:12:01
+</td>
+<td align="right">
+          2031791219
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+217
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2325
+</td>
+<td align="right">
+               46707
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33747569
+</td>
+<td>
+2020-11-01 06:12:02
+</td>
+<td>
+2020-11-01 06:12:11
+</td>
+<td>
+2020-11-01 06:12:11
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+218
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2325
+</td>
+<td align="right">
+               46707
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33747605
+</td>
+<td>
+2020-11-01 06:12:30
+</td>
+<td>
+2020-11-01 06:12:31
+</td>
+<td>
+2020-11-01 06:12:31
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+219
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3872
+</td>
+<td align="right">
+               33575
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16923791
+</td>
+<td>
+2020-11-02 03:04:57
+</td>
+<td>
+2020-11-02 03:04:58
+</td>
+<td>
+2020-11-02 03:04:58
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+220
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3892
+</td>
+<td align="right">
+               21778
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33751077
+</td>
+<td>
+2020-11-02 03:32:05
+</td>
+<td>
+2020-11-02 03:32:06
+</td>
+<td>
+2020-11-02 03:32:06
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+221
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3872
+</td>
+<td align="right">
+               33575
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16929424
+</td>
+<td>
+2020-11-02 03:32:25
+</td>
+<td>
+2020-11-02 03:32:26
+</td>
+<td>
+2020-11-02 03:32:26
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+222
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2733
+</td>
+<td align="right">
+               24193
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16945662
+</td>
+<td>
+2020-11-02 04:45:17
+</td>
+<td>
+2020-11-02 04:45:17
+</td>
+<td>
+2020-11-02 04:45:17
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+223
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1171
+</td>
+<td align="right">
+               41127
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33759803
+</td>
+<td>
+2020-11-03 07:02:20
+</td>
+<td>
+2020-11-03 07:02:20
+</td>
+<td>
+2020-11-03 07:02:20
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+224
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2730
+</td>
+<td align="right">
+                9501
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-04 06:42:43
+</td>
+<td>
+2020-11-04 06:43:23
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+225
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5413
+</td>
+<td align="right">
+               36281
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-04 06:42:43
+</td>
+<td>
+2020-11-04 06:43:23
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+226
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4250
+</td>
+<td align="right">
+               19597
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-04 06:42:53
+</td>
+<td>
+2020-11-04 06:43:23
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  40
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+227
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5436
+</td>
+<td align="right">
+                9328
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-04 06:42:53
+</td>
+<td>
+2020-11-04 06:43:03
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+228
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1571
+</td>
+<td align="right">
+               41240
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-11-04 06:43:03
+</td>
+<td>
+2020-11-04 06:43:03
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+<p>
+Data rounded to the 10 seconds
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ SAMPLE_ID                                 NOT NULL NUMBER
+ SAMPLE_TIME                               NOT NULL TIMESTAMP(3)
+ SESSION_ID                                NOT NULL NUMBER
+ SESSION_SERIAL#                                    NUMBER
+ SESSION_TYPE                                       VARCHAR2(10)
+ FLAGS                                              NUMBER
+ USER_ID                                            NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ IS_SQLID_CURRENT                                   VARCHAR2(1)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_OPCODE                                         NUMBER
+ SQL_OPNAME                                         VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ TOP_LEVEL_SQL_ID                                   VARCHAR2(13)
+ TOP_LEVEL_SQL_OPCODE                               NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_FULL_PLAN_HASH_VALUE                           NUMBER
+ SQL_ADAPTIVE_PLAN_RESOLVED                         NUMBER
+ SQL_PLAN_LINE_ID                                   NUMBER
+ SQL_PLAN_OPERATION                                 VARCHAR2(64)
+ SQL_PLAN_OPTIONS                                   VARCHAR2(64)
+ SQL_EXEC_ID                                        NUMBER
+ SQL_EXEC_START                                     DATE
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ QC_INSTANCE_ID                                     NUMBER
+ QC_SESSION_ID                                      NUMBER
+ QC_SESSION_SERIAL#                                 NUMBER
+ PX_FLAGS                                           NUMBER
+ EVENT                                              VARCHAR2(64)
+ EVENT_ID                                           NUMBER
+ SEQ#                                               NUMBER
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_TIME                                          NUMBER
+ SESSION_STATE                                      VARCHAR2(7)
+ TIME_WAITED                                        NUMBER
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_SESSION                                   NUMBER
+ BLOCKING_SESSION_SERIAL#                           NUMBER
+ BLOCKING_INST_ID                                   NUMBER
+ BLOCKING_HANGCHAIN_INFO                            VARCHAR2(1)
+ CURRENT_OBJ#                                       NUMBER
+ CURRENT_FILE#                                      NUMBER
+ CURRENT_BLOCK#                                     NUMBER
+ CURRENT_ROW#                                       NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ TOP_LEVEL_CALL_NAME                                VARCHAR2(64)
+ CONSUMER_GROUP_ID                                  NUMBER
+ XID                                                RAW(8)
+ REMOTE_INSTANCE#                                   NUMBER
+ TIME_MODEL                                         NUMBER
+ IN_CONNECTION_MGMT                                 VARCHAR2(1)
+ IN_PARSE                                           VARCHAR2(1)
+ IN_HARD_PARSE                                      VARCHAR2(1)
+ IN_SQL_EXECUTION                                   VARCHAR2(1)
+ IN_PLSQL_EXECUTION                                 VARCHAR2(1)
+ IN_PLSQL_RPC                                       VARCHAR2(1)
+ IN_PLSQL_COMPILATION                               VARCHAR2(1)
+ IN_JAVA_EXECUTION                                  VARCHAR2(1)
+ IN_BIND                                            VARCHAR2(1)
+ IN_CURSOR_CLOSE                                    VARCHAR2(1)
+ IN_SEQUENCE_LOAD                                   VARCHAR2(1)
+ IN_INMEMORY_QUERY                                  VARCHAR2(1)
+ IN_INMEMORY_POPULATE                               VARCHAR2(1)
+ IN_INMEMORY_PREPOPULATE                            VARCHAR2(1)
+ IN_INMEMORY_REPOPULATE                             VARCHAR2(1)
+ IN_INMEMORY_TREPOPULATE                            VARCHAR2(1)
+ CAPTURE_OVERHEAD                                   VARCHAR2(1)
+ REPLAY_OVERHEAD                                    VARCHAR2(1)
+ IS_CAPTURED                                        VARCHAR2(1)
+ IS_REPLAYED                                        VARCHAR2(1)
+ SERVICE_HASH                                       NUMBER
+ PROGRAM                                            VARCHAR2(64)
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ CLIENT_ID                                          VARCHAR2(64)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ ECID                                               VARCHAR2(64)
+ DBREPLAY_FILE_ID                                   NUMBER
+ DBREPLAY_CALL_COUNTER                              NUMBER
+ TM_DELTA_TIME                                      NUMBER
+ TM_DELTA_CPU_TIME                                  NUMBER
+ TM_DELTA_DB_TIME                                   NUMBER
+ DELTA_TIME                                         NUMBER
+ DELTA_READ_IO_REQUESTS                             NUMBER
+ DELTA_WRITE_IO_REQUESTS                            NUMBER
+ DELTA_READ_IO_BYTES                                NUMBER
+ DELTA_WRITE_IO_BYTES                               NUMBER
+ DELTA_INTERCONNECT_IO_BYTES                        NUMBER
+ PGA_ALLOCATED                                      NUMBER
+ TEMP_SPACE_ALLOCATED                               NUMBER
+ DBOP_NAME                                          VARCHAR2(64)
+ DBOP_EXEC_ID                                       NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+SELECT NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position) instance_id,
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost) session_id,
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost) session_serial#,
+       TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,13)+1)) user_id,
+       partition_id sql_exec_id,
+       TO_CHAR(TO_DATE(distribution, 'YYYYMMDDHH24MISS'), 'YYYY-MM-DD HH24:MI:SS') sql_exec_start,
+       TO_CHAR(MIN(timestamp), 'YYYY-MM-DD HH24:MI:SS')  start_time,
+       TO_CHAR(MAX(timestamp), 'YYYY-MM-DD HH24:MI:SS')  end_time,
+       bytes plan_hash_value,
+       --LEAST(10+86400*(MAX(timestamp)-MIN(timestamp)),SUM(10)) elapsed_time,
+                         10+86400*(MAX(timestamp)-MIN(timestamp)) elapsed_time,
+       SUM(CASE WHEN object_node = 'ON CPU' THEN                   10 ELSE 0 END) cpu_time,
+       SUM(                  10) db_time,
+       COUNT(DISTINCT position||'-'||cpu_cost||'-'||io_cost) num_processes_ash,
+       MAX(TRUNC(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,10)+1,INSTR(partition_stop,',',1,11)-INSTR(partition_stop,',',1,10)-1)) / 2097152)) max_px_degree_ash,
+       MAX(px_servers_requested) px_servers_requested_sqlmon,
+       MAX(px_servers_allocated) px_servers_allocated_sqlmon
+  FROM plan_table a,
+       (SELECT inst_id,
+               sid,
+               session_serial#,
+               sql_exec_id,
+               sql_exec_start,
+               px_servers_requested,
+               px_servers_allocated
+          FROM gv$sql_monitor
+         WHERE sql_id = '3hwq5m5h3gkaq'
+           AND 'Y' = 'Y'
+           AND px_qcsid IS NULL) b
+ WHERE statement_id = 'SQLD360_ASH_DATA_HIST'
+   AND position =  position
+   AND remarks = '3hwq5m5h3gkaq'
+   AND 'Y' = 'Y'
+   AND b.sql_exec_id(+) = a.partition_id
+   AND b.inst_id(+) = NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position)
+   AND b.sid(+) = NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost)
+   AND b.session_serial#(+) = NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost)
+   AND b.sql_exec_start(+) = TO_DATE(distribution, 'YYYYMMDDHH24MISS')
+ GROUP BY partition_id,
+       bytes,
+       TO_CHAR(TO_DATE(distribution, 'YYYYMMDDHH24MISS'), 'YYYY-MM-DD HH24:MI:SS'),
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position),
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost),
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost),
+       TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,13)+1))
+ ORDER BY
+       TO_CHAR(MIN(timestamp), 'YYYY-MM-DD HH24:MI:SS'),
+       partition_id;
+
+228 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-04/09:49:35 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>

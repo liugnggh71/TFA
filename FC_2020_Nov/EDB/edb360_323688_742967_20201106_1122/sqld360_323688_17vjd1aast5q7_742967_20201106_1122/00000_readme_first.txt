@@ -1,0 +1,2 @@
+1. Unzip sqld360_323688_17vjd1aast5q7_742967_20201106_1711.zip into a directory
+2. Review 00001_sqld360_323688_17vjd1aast5q7_index.html

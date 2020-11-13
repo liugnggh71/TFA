@@ -1,0 +1,5688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_0sjx29v99zfqc_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Binds Summary from Memory</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 01305_sqld360_323688_0sjx29v99zfqc_2g_50_binds_summary_from_memory.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2g.50. Binds Summary from Memory <em>(GV$SQL_BIND_CAPTURE)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INST_ID
+</th>
+<th scope="col">
+CHILD_NUMBER
+</th>
+<th scope="col">
+NAME
+</th>
+<th scope="col">
+POSITION
+</th>
+<th scope="col">
+DATATYPE_STRING
+</th>
+<th scope="col">
+MIN_VALUE
+</th>
+<th scope="col">
+MAX_VALUE
+</th>
+<th scope="col">
+DISTINCT_COMBINATIONS
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657139
+</td>
+<td>
+11657139
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657139
+</td>
+<td>
+11657139
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2020.11.06
+</td>
+<td>
+2020.11.06
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657619
+</td>
+<td>
+11657619
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657619
+</td>
+<td>
+11657619
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2020.11.06
+</td>
+<td>
+2020.11.06
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11649744
+</td>
+<td>
+11649744
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11649744
+</td>
+<td>
+11649744
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2021.01.04
+</td>
+<td>
+2021.01.04
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657619
+</td>
+<td>
+11657619
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657619
+</td>
+<td>
+11657619
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2020.11.06
+</td>
+<td>
+2020.11.06
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11371997
+</td>
+<td>
+11371997
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11371997
+</td>
+<td>
+11371997
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2020.11.06
+</td>
+<td>
+2020.11.06
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11371997
+</td>
+<td>
+11371997
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11371997
+</td>
+<td>
+11371997
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2020.11.12
+</td>
+<td>
+2020.11.12
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+10550665
+</td>
+<td>
+10550665
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+10550665
+</td>
+<td>
+10550665
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2021.01.03
+</td>
+<td>
+2021.01.03
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657502
+</td>
+<td>
+11657502
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657502
+</td>
+<td>
+11657502
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2021.01.04
+</td>
+<td>
+2021.01.04
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11371997
+</td>
+<td>
+11371997
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11371997
+</td>
+<td>
+11371997
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2020.11.05
+</td>
+<td>
+2020.11.05
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+10550675
+</td>
+<td>
+10550675
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+10550675
+</td>
+<td>
+10550675
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2021.11.04
+</td>
+<td>
+2021.11.04
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11371997
+</td>
+<td>
+11371997
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11371997
+</td>
+<td>
+11371997
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2020.11.06
+</td>
+<td>
+2020.11.06
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+177
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657619
+</td>
+<td>
+11657619
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+178
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:10
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+NUMBER
+</td>
+<td>
+913
+</td>
+<td>
+913
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+179
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:11
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+NUMBER
+</td>
+<td>
+11657619
+</td>
+<td>
+11657619
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+180
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+181
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NUMBER
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+182
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NUMBER
+</td>
+<td>
+905
+</td>
+<td>
+905
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+183
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+NUMBER
+</td>
+<td>
+906
+</td>
+<td>
+906
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+184
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NUMBER
+</td>
+<td>
+907
+</td>
+<td>
+907
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+185
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NUMBER
+</td>
+<td>
+908
+</td>
+<td>
+908
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+186
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NUMBER
+</td>
+<td>
+911
+</td>
+<td>
+911
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+187
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:9
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+NUMBER
+</td>
+<td>
+912
+</td>
+<td>
+912
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+188
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:SYS_B_0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NUMBER
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+189
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:SYS_B_1
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+NUMBER
+</td>
+<td>
+500
+</td>
+<td>
+500
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+190
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:SYS_B_2
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+2020.11.11
+</td>
+<td>
+2020.11.11
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+191
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:SYS_B_3
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+VARCHAR2(32)
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td>
+yyyy.MM.dd
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+192
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+:SYS_B_4
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+NUMBER
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ ADDRESS                                            RAW(8)
+ HASH_VALUE                                         NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ CHILD_ADDRESS                                      RAW(8)
+ CHILD_NUMBER                                       NUMBER
+ NAME                                               VARCHAR2(30)
+ POSITION                                           NUMBER
+ DUP_POSITION                                       NUMBER
+ DATATYPE                                           NUMBER
+ DATATYPE_STRING                                    VARCHAR2(15)
+ CHARACTER_SID                                      NUMBER
+ PRECISION                                          NUMBER
+ SCALE                                              NUMBER
+ MAX_LENGTH                                         NUMBER
+ WAS_CAPTURED                                       VARCHAR2(3)
+ LAST_CAPTURED                                      DATE
+ VALUE_STRING                                       VARCHAR2(4000)
+ VALUE_ANYDATA                                      ANYDATA
+ CON_ID                                             NUMBER
+
+SELECT /*+ NO_MERGE */
+       inst_id, child_number, name, position, datatype_string, MIN(value_string) min_value, MAX(value_string) max_value, COUNT(DISTINCT value_string) distinct_combinations
+  FROM gv$sql_bind_capture
+ WHERE sql_id = '0sjx29v99zfqc'
+ GROUP BY inst_id, child_number, name, position, datatype_string
+ ORDER BY inst_id, child_number, name, position, datatype_string;
+
+192 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:19:47 for SQL ID 0sjx29v99zfqc (SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be) </font>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00609_sqld360_323688_17vjd1aast5q7_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_USR.(UPPER("USR_LAS_NAM"))</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 00681_sqld360_323688_17vjd1aast5q7_3a_102_height_balanced_histogram_on_column_tusrupperusrlasnam_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,[' AUWAE', 0, '0', 'ApproxValue:  AUWAE NumRows: 0 Sel: 0']
+,['1213 E TRINITY MILLS RD STE 100', 7810, '.003937', 'ApproxValue: 1213 E TRINITY MILLS RD STE 100 NumRows: 7810 Sel: .003937']
+,['1635 NORTH LOOP W', 7810, '.003937', 'ApproxValue: 1635 NORTH LOOP W NumRows: 7810 Sel: .003937']
+,['216 S KINGSHIGHWAY BLVD', 7810, '.003937', 'ApproxValue: 216 S KINGSHIGHWAY BLVD NumRows: 7810 Sel: .003937']
+,['3095 KINGSWOOD BOULEVARD SUITE 250', 7810, '.003937', 'ApproxValue: 3095 KINGSWOOD BOULEVARD SUITE 250 NumRows: 7810 Sel: .003937']
+,['4107 S CAPITAL OF TEXAS HWY STE 100A', 7810, '.003937', 'ApproxValue: 4107 S CAPITAL OF TEXAS HWY STE 100A NumRows: 7810 Sel: .003937']
+,['555 W 15TH ST', 7810, '.003937', 'ApproxValue: 555 W 15TH ST NumRows: 7810 Sel: .003937']
+,['725 W CAMERON AVE', 7810, '.003937', 'ApproxValue: 725 W CAMERON AVE NumRows: 7810 Sel: .003937']
+,['9695 S YOSEMITE ST STE 150', 7810, '.003937', 'ApproxValue: 9695 S YOSEMITE ST STE 150 NumRows: 7810 Sel: .003937']
+,['ADAME', 7810, '.003937', 'ApproxValue: ADAME NumRows: 7810 Sel: .003937']
+,['AGUILAR', 7810, '.003937', 'ApproxValue: AGUILAR NumRows: 7810 Sel: .003937']
+,['ALANIZ', 7810, '.003937', 'ApproxValue: ALANIZ NumRows: 7810 Sel: .003937']
+,['ALFARO', 7810, '.003937', 'ApproxValue: ALFARO NumRows: 7810 Sel: .003937']
+,['ALONZO', 7810, '.003937', 'ApproxValue: ALONZO NumRows: 7810 Sel: .003937']
+,['ALVISO', 7810, '.003937', 'ApproxValue: ALVISO NumRows: 7810 Sel: .003937']
+,['ANDERSON', 7810, '.003937', 'ApproxValue: ANDERSON NumRows: 7810 Sel: .003937']
+,['APPLE', 7810, '.003937', 'ApproxValue: APPLE NumRows: 7810 Sel: .003937']
+,['ARJON', 7810, '.003937', 'ApproxValue: ARJON NumRows: 7810 Sel: .003937']
+,['ARTEAGA', 7810, '.003937', 'ApproxValue: ARTEAGA NumRows: 7810 Sel: .003937']
+,['AVERETT', 7810, '.003937', 'ApproxValue: AVERETT NumRows: 7810 Sel: .003937']
+,['BAHENA', 7810, '.003937', 'ApproxValue: BAHENA NumRows: 7810 Sel: .003937']
+,['BALLARD', 7810, '.003937', 'ApproxValue: BALLARD NumRows: 7810 Sel: .003937']
+,['BARKLEYI', 7810, '.003937', 'ApproxValue: BARKLEYI NumRows: 7810 Sel: .003937']
+,['BARRON', 7810, '.003937', 'ApproxValue: BARRON NumRows: 7810 Sel: .003937']
+,['BAYONA', 7810, '.003937', 'ApproxValue: BAYONA NumRows: 7810 Sel: .003937']
+,['BELL', 7810, '.003937', 'ApproxValue: BELL NumRows: 7810 Sel: .003937']
+,['BENSON', 7810, '.003937', 'ApproxValue: BENSON NumRows: 7810 Sel: .003937']
+,['BHUJEL', 7810, '.003937', 'ApproxValue: BHUJEL NumRows: 7810 Sel: .003937']
+,['BLAIR', 7810, '.003937', 'ApproxValue: BLAIR NumRows: 7810 Sel: .003937']
+,['BOLEN', 7810, '.003937', 'ApproxValue: BOLEN NumRows: 7810 Sel: .003937']
+,['BOWEN', 7810, '.003937', 'ApproxValue: BOWEN NumRows: 7810 Sel: .003937']
+,['BRANDON', 7810, '.003937', 'ApproxValue: BRANDON NumRows: 7810 Sel: .003937']
+,['BRIONES', 7810, '.003937', 'ApproxValue: BRIONES NumRows: 7810 Sel: .003937']
+,['BROWN', 7810, '.003937', 'ApproxValue: BROWN NumRows: 7810 Sel: .003937']
+,['BRYAN', 7810, '.003937', 'ApproxValue: BRYAN NumRows: 7810 Sel: .003937']
+,['BURGOS', 7810, '.003937', 'ApproxValue: BURGOS NumRows: 7810 Sel: .003937']
+,['BUTAUD', 7810, '.003937', 'ApproxValue: BUTAUD NumRows: 7810 Sel: .003937']
+,['CALAIS', 7810, '.003937', 'ApproxValue: CALAIS NumRows: 7810 Sel: .003937']
+,['CAMPBELL', 7810, '.003937', 'ApproxValue: CAMPBELL NumRows: 7810 Sel: .003937']
+,['CANTU', 7810, '.003937', 'ApproxValue: CANTU NumRows: 7810 Sel: .003937']
+,['CARNERO', 7810, '.003937', 'ApproxValue: CARNERO NumRows: 7810 Sel: .003937']
+,['CARRIZALES', 7810, '.003937', 'ApproxValue: CARRIZALES NumRows: 7810 Sel: .003937']
+,['CASIAS', 7810, '.003937', 'ApproxValue: CASIAS NumRows: 7810 Sel: .003937']
+,['CASTILLO', 7810, '.003937', 'ApproxValue: CASTILLO NumRows: 7810 Sel: .003937']
+,['CAVAZOS', 7810, '.003937', 'ApproxValue: CAVAZOS NumRows: 7810 Sel: .003937']
+,['CHACON', 7810, '.003937', 'ApproxValue: CHACON NumRows: 7810 Sel: .003937']
+,['CHAVANA', 7810, '.003937', 'ApproxValue: CHAVANA NumRows: 7810 Sel: .003937']
+,['CHESSON', 7810, '.003937', 'ApproxValue: CHESSON NumRows: 7810 Sel: .003937']
+,['CISNEROS DE MARQUEZ', 7810, '.003937', 'ApproxValue: CISNEROS DE MARQUEZ NumRows: 7810 Sel: .003937']
+,['CLOUGH', 7810, '.003937', 'ApproxValue: CLOUGH NumRows: 7810 Sel: .003937']
+,['COLLINS', 7810, '.003937', 'ApproxValue: COLLINS NumRows: 7810 Sel: .003937']
+,['CONTRERAS', 7810, '.003937', 'ApproxValue: CONTRERAS NumRows: 7810 Sel: .003937']
+,['CORBITT', 7810, '.003937', 'ApproxValue: CORBITT NumRows: 7810 Sel: .003937']
+,['CORTEZ', 7810, '.003937', 'ApproxValue: CORTEZ NumRows: 7810 Sel: .003937']
+,['CRAIG', 7810, '.003937', 'ApproxValue: CRAIG NumRows: 7810 Sel: .003937']
+,['CRUMP', 7810, '.003937', 'ApproxValue: CRUMP NumRows: 7810 Sel: .003937']
+,['CUMMINGS', 7810, '.003937', 'ApproxValue: CUMMINGS NumRows: 7810 Sel: .003937']
+,['DANIEL J HINCKLEY', 7810, '.003937', 'ApproxValue: DANIEL J HINCKLEY NumRows: 7810 Sel: .003937']
+,['DAVIS', 7810, '.003937', 'ApproxValue: DAVIS NumRows: 7810 Sel: .003937']
+,['DE LA CERDA', 7810, '.003937', 'ApproxValue: DE LA CERDA NumRows: 7810 Sel: .003937']
+,['DEL MUNDO', 7810, '.003937', 'ApproxValue: DEL MUNDO NumRows: 7810 Sel: .003937']
+,['DELGADO', 7810, '.003937', 'ApproxValue: DELGADO NumRows: 7810 Sel: .003937']
+,['DEYNE', 7810, '.003937', 'ApproxValue: DEYNE NumRows: 7810 Sel: .003937']
+,['DILLARD', 7810, '.003937', 'ApproxValue: DILLARD NumRows: 7810 Sel: .003937']
+,['DOMINGUEZ', 7810, '.003937', 'ApproxValue: DOMINGUEZ NumRows: 7810 Sel: .003937']
+,['DRERUP', 7810, '.003937', 'ApproxValue: DRERUP NumRows: 7810 Sel: .003937']
+,['DURAN', 7810, '.003937', 'ApproxValue: DURAN NumRows: 7810 Sel: .003937']
+,['EDDINGTON', 7810, '.003937', 'ApproxValue: EDDINGTON NumRows: 7810 Sel: .003937']
+,['ELLIOTT', 7810, '.003937', 'ApproxValue: ELLIOTT NumRows: 7810 Sel: .003937']
+,['EPPLER', 7810, '.003937', 'ApproxValue: EPPLER NumRows: 7810 Sel: .003937']
+,['ESPINOLA', 7810, '.003937', 'ApproxValue: ESPINOLA NumRows: 7810 Sel: .003937']
+,['ESTRADA', 7810, '.003937', 'ApproxValue: ESTRADA NumRows: 7810 Sel: .003937']
+,['FARAH', 7810, '.003937', 'ApproxValue: FARAH NumRows: 7810 Sel: .003937']
+,['FERNANDEZ', 7810, '.003937', 'ApproxValue: FERNANDEZ NumRows: 7810 Sel: .003937']
+,['FISHER COUNTY HOSPITAL DISTRICT (NPI: 1699898726)', 7810, '.003937', 'ApproxValue: FISHER COUNTY HOSPITAL DISTRICT (NPI: 1699898726) NumRows: 7810 Sel: .003937']
+,['FLORES', 7810, '.003937', 'ApproxValue: FLORES NumRows: 7810 Sel: .003937']
+,['FLORESIII', 7810, '.003937', 'ApproxValue: FLORESIII NumRows: 7810 Sel: .003937']
+,['FOUST', 7810, '.003937', 'ApproxValue: FOUST NumRows: 7810 Sel: .003937']
+,['FREEDMAN', 7810, '.003937', 'ApproxValue: FREEDMAN NumRows: 7810 Sel: .003937']
+,['FULLER', 7810, '.003937', 'ApproxValue: FULLER NumRows: 7810 Sel: .003937']
+,['GALLEGOS', 7810, '.003937', 'ApproxValue: GALLEGOS NumRows: 7810 Sel: .003937']
+,['GARCIA', 31239, '.015748', 'ApproxValue: GARCIA NumRows: 31239 Sel: .015748']
+,['GARST', 7810, '.003937', 'ApproxValue: GARST NumRows: 7810 Sel: .003937']
+,['GARZA', 7810, '.003937', 'ApproxValue: GARZA NumRows: 7810 Sel: .003937']
+,['GERSBACH', 7810, '.003937', 'ApproxValue: GERSBACH NumRows: 7810 Sel: .003937']
+,['GIRSH', 7810, '.003937', 'ApproxValue: GIRSH NumRows: 7810 Sel: .003937']
+,['GOMEZ', 7810, '.003937', 'ApproxValue: GOMEZ NumRows: 7810 Sel: .003937']
+,['GONZALES', 7810, '.003937', 'ApproxValue: GONZALES NumRows: 7810 Sel: .003937']
+,['GONZALES-HERRERA', 7810, '.003937', 'ApproxValue: GONZALES-HERRERA NumRows: 7810 Sel: .003937']
+,['GONZALEZ', 7810, '.003937', 'ApproxValue: GONZALEZ NumRows: 7810 Sel: .003937']
+,['GOULD', 7810, '.003937', 'ApproxValue: GOULD NumRows: 7810 Sel: .003937']
+,['GRAY', 7810, '.003937', 'ApproxValue: GRAY NumRows: 7810 Sel: .003937']
+,['GRIFFIS', 7810, '.003937', 'ApproxValue: GRIFFIS NumRows: 7810 Sel: .003937']
+,['GUERRA', 7810, '.003937', 'ApproxValue: GUERRA NumRows: 7810 Sel: .003937']
+,['GUTIERREZ', 7810, '.003937', 'ApproxValue: GUTIERREZ NumRows: 7810 Sel: .003937']
+,['GUZMAN', 7810, '.003937', 'ApproxValue: GUZMAN NumRows: 7810 Sel: .003937']
+,['HALLER', 7810, '.003937', 'ApproxValue: HALLER NumRows: 7810 Sel: .003937']
+,['HARDEN', 7810, '.003937', 'ApproxValue: HARDEN NumRows: 7810 Sel: .003937']
+,['HARRIS', 7810, '.003937', 'ApproxValue: HARRIS NumRows: 7810 Sel: .003937']
+,['HAWLEY', 7810, '.003937', 'ApproxValue: HAWLEY NumRows: 7810 Sel: .003937']
+,['HELPERT', 7810, '.003937', 'ApproxValue: HELPERT NumRows: 7810 Sel: .003937']
+,['HERNANDEZ', 23429, '.011811', 'ApproxValue: HERNANDEZ NumRows: 23429 Sel: .011811']
+,['HERRERA', 7810, '.003937', 'ApproxValue: HERRERA NumRows: 7810 Sel: .003937']
+,['HILBURN', 7810, '.003937', 'ApproxValue: HILBURN NumRows: 7810 Sel: .003937']
+,['HITZELBERGER', 7810, '.003937', 'ApproxValue: HITZELBERGER NumRows: 7810 Sel: .003937']
+,['HOLLINGSWORTH', 7810, '.003937', 'ApproxValue: HOLLINGSWORTH NumRows: 7810 Sel: .003937']
+,['HORTON', 7810, '.003937', 'ApproxValue: HORTON NumRows: 7810 Sel: .003937']
+,['HUDSON', 7810, '.003937', 'ApproxValue: HUDSON NumRows: 7810 Sel: .003937']
+,['HURLEY', 7810, '.003937', 'ApproxValue: HURLEY NumRows: 7810 Sel: .003937']
+,['INGRAM', 7810, '.003937', 'ApproxValue: INGRAM NumRows: 7810 Sel: .003937']
+,['JACKSON', 7810, '.003937', 'ApproxValue: JACKSON NumRows: 7810 Sel: .003937']
+,['JARAMILLO', 7810, '.003937', 'ApproxValue: JARAMILLO NumRows: 7810 Sel: .003937']
+,['JETT', 7810, '.003937', 'ApproxValue: JETT NumRows: 7810 Sel: .003937']
+,['JOHNSON', 15620, '.007874', 'ApproxValue: JOHNSON NumRows: 15620 Sel: .007874']
+,['JONES', 7810, '.003937', 'ApproxValue: JONES NumRows: 7810 Sel: .003937']
+,['JUAREZ', 7810, '.003937', 'ApproxValue: JUAREZ NumRows: 7810 Sel: .003937']
+,['KEARNS', 7810, '.003937', 'ApproxValue: KEARNS NumRows: 7810 Sel: .003937']
+,['KERR', 7810, '.003937', 'ApproxValue: KERR NumRows: 7810 Sel: .003937']
+,['KING', 7810, '.003937', 'ApproxValue: KING NumRows: 7810 Sel: .003937']
+,['KNIGHT', 7810, '.003937', 'ApproxValue: KNIGHT NumRows: 7810 Sel: .003937']
+,['KURMANALIEVA', 7810, '.003937', 'ApproxValue: KURMANALIEVA NumRows: 7810 Sel: .003937']
+,['LANDRUM', 7810, '.003937', 'ApproxValue: LANDRUM NumRows: 7810 Sel: .003937']
+,['LASHAUNDA', 7810, '.003937', 'ApproxValue: LASHAUNDA NumRows: 7810 Sel: .003937']
+,['LEAVITT', 7810, '.003937', 'ApproxValue: LEAVITT NumRows: 7810 Sel: .003937']
+,['LEON', 7810, '.003937', 'ApproxValue: LEON NumRows: 7810 Sel: .003937']
+,['LEYVA', 7810, '.003937', 'ApproxValue: LEYVA NumRows: 7810 Sel: .003937']
+,['LITTLE', 7810, '.003937', 'ApproxValue: LITTLE NumRows: 7810 Sel: .003937']
+,['LONGO', 7810, '.003937', 'ApproxValue: LONGO NumRows: 7810 Sel: .003937']
+,['LOPEZ', 7810, '.003937', 'ApproxValue: LOPEZ NumRows: 7810 Sel: .003937']
+,['LOPEZ-GUZMAN', 7810, '.003937', 'ApproxValue: LOPEZ-GUZMAN NumRows: 7810 Sel: .003937']
+,['LOZANO', 7810, '.003937', 'ApproxValue: LOZANO NumRows: 7810 Sel: .003937']
+,['LUNA', 7810, '.003937', 'ApproxValue: LUNA NumRows: 7810 Sel: .003937']
+,['MACIAS', 7810, '.003937', 'ApproxValue: MACIAS NumRows: 7810 Sel: .003937']
+,['MALDONADO', 7810, '.003937', 'ApproxValue: MALDONADO NumRows: 7810 Sel: .003937']
+,['MANZAY', 7810, '.003937', 'ApproxValue: MANZAY NumRows: 7810 Sel: .003937']
+,['MARQUEZ', 7810, '.003937', 'ApproxValue: MARQUEZ NumRows: 7810 Sel: .003937']
+,['MARTIN', 7810, '.003937', 'ApproxValue: MARTIN NumRows: 7810 Sel: .003937']
+,['MARTINEZ', 23429, '.011811', 'ApproxValue: MARTINEZ NumRows: 23429 Sel: .011811']
+,['MATHEWS', 7810, '.003937', 'ApproxValue: MATHEWS NumRows: 7810 Sel: .003937']
+,['MCANALLY', 7810, '.003937', 'ApproxValue: MCANALLY NumRows: 7810 Sel: .003937']
+,['MCCULLOUGH', 7810, '.003937', 'ApproxValue: MCCULLOUGH NumRows: 7810 Sel: .003937']
+,['MCINTURF', 7810, '.003937', 'ApproxValue: MCINTURF NumRows: 7810 Sel: .003937']
+,['MCVEAN', 7810, '.003937', 'ApproxValue: MCVEAN NumRows: 7810 Sel: .003937']
+,['MEHTA', 7810, '.003937', 'ApproxValue: MEHTA NumRows: 7810 Sel: .003937']
+,['MENDEZ', 7810, '.003937', 'ApproxValue: MENDEZ NumRows: 7810 Sel: .003937']
+,['MERCADO LARA', 7810, '.003937', 'ApproxValue: MERCADO LARA NumRows: 7810 Sel: .003937']
+,['MILES', 7810, '.003937', 'ApproxValue: MILES NumRows: 7810 Sel: .003937']
+,['MINJAREZ', 7810, '.003937', 'ApproxValue: MINJAREZ NumRows: 7810 Sel: .003937']
+,['MOFFITT', 7810, '.003937', 'ApproxValue: MOFFITT NumRows: 7810 Sel: .003937']
+,['MONTELONGO', 7810, '.003937', 'ApproxValue: MONTELONGO NumRows: 7810 Sel: .003937']
+,['MOORE', 7810, '.003937', 'ApproxValue: MOORE NumRows: 7810 Sel: .003937']
+,['MORALES', 7810, '.003937', 'ApproxValue: MORALES NumRows: 7810 Sel: .003937']
+,['MORGAN', 7810, '.003937', 'ApproxValue: MORGAN NumRows: 7810 Sel: .003937']
+,['MOSS', 7810, '.003937', 'ApproxValue: MOSS NumRows: 7810 Sel: .003937']
+,['MUNOZ', 7810, '.003937', 'ApproxValue: MUNOZ NumRows: 7810 Sel: .003937']
+,['MYERS', 7810, '.003937', 'ApproxValue: MYERS NumRows: 7810 Sel: .003937']
+,['NAVARRO', 7810, '.003937', 'ApproxValue: NAVARRO NumRows: 7810 Sel: .003937']
+,['NEVAREZ', 7810, '.003937', 'ApproxValue: NEVAREZ NumRows: 7810 Sel: .003937']
+,['NIETO', 7810, '.003937', 'ApproxValue: NIETO NumRows: 7810 Sel: .003937']
+,['NOWAK', 7810, '.003937', 'ApproxValue: NOWAK NumRows: 7810 Sel: .003937']
+,['OCHOA', 7810, '.003937', 'ApproxValue: OCHOA NumRows: 7810 Sel: .003937']
+,['OLIVER', 7810, '.003937', 'ApproxValue: OLIVER NumRows: 7810 Sel: .003937']
+,['OROZCO', 7810, '.003937', 'ApproxValue: OROZCO NumRows: 7810 Sel: .003937']
+,['ORTIZ', 7810, '.003937', 'ApproxValue: ORTIZ NumRows: 7810 Sel: .003937']
+,['PACKARD', 7810, '.003937', 'ApproxValue: PACKARD NumRows: 7810 Sel: .003937']
+,['PANTOJA', 7810, '.003937', 'ApproxValue: PANTOJA NumRows: 7810 Sel: .003937']
+,['PATEL', 7810, '.003937', 'ApproxValue: PATEL NumRows: 7810 Sel: .003937']
+,['PEACE', 7810, '.003937', 'ApproxValue: PEACE NumRows: 7810 Sel: .003937']
+,['PENICK', 7810, '.003937', 'ApproxValue: PENICK NumRows: 7810 Sel: .003937']
+,['PEREZ', 7810, '.003937', 'ApproxValue: PEREZ NumRows: 7810 Sel: .003937']
+,['PEREZI', 7810, '.003937', 'ApproxValue: PEREZI NumRows: 7810 Sel: .003937']
+,['PHI AIR MEDICAL', 7810, '.003937', 'ApproxValue: PHI AIR MEDICAL NumRows: 7810 Sel: .003937']
+,['PINEDO', 7810, '.003937', 'ApproxValue: PINEDO NumRows: 7810 Sel: .003937']
+,['POLLARD', 7810, '.003937', 'ApproxValue: POLLARD NumRows: 7810 Sel: .003937']
+,['POWELL', 7810, '.003937', 'ApproxValue: POWELL NumRows: 7810 Sel: .003937']
+,['PRINCE', 7810, '.003937', 'ApproxValue: PRINCE NumRows: 7810 Sel: .003937']
+,['QUEZADA', 7810, '.003937', 'ApproxValue: QUEZADA NumRows: 7810 Sel: .003937']
+,['RAJA', 7810, '.003937', 'ApproxValue: RAJA NumRows: 7810 Sel: .003937']
+,['RAMIREZ', 7810, '.003937', 'ApproxValue: RAMIREZ NumRows: 7810 Sel: .003937']
+,['RAMOS', 7810, '.003937', 'ApproxValue: RAMOS NumRows: 7810 Sel: .003937']
+,['RANKIN', 7810, '.003937', 'ApproxValue: RANKIN NumRows: 7810 Sel: .003937']
+,['REED', 7810, '.003937', 'ApproxValue: REED NumRows: 7810 Sel: .003937']
+,['RENNER', 7810, '.003937', 'ApproxValue: RENNER NumRows: 7810 Sel: .003937']
+,['REYES', 7810, '.003937', 'ApproxValue: REYES NumRows: 7810 Sel: .003937']
+,['RICHARDS', 7810, '.003937', 'ApproxValue: RICHARDS NumRows: 7810 Sel: .003937']
+,['RIOS', 7810, '.003937', 'ApproxValue: RIOS NumRows: 7810 Sel: .003937']
+,['RIVERA', 7810, '.003937', 'ApproxValue: RIVERA NumRows: 7810 Sel: .003937']
+,['ROBERTSON', 7810, '.003937', 'ApproxValue: ROBERTSON NumRows: 7810 Sel: .003937']
+,['ROCKHOLD', 7810, '.003937', 'ApproxValue: ROCKHOLD NumRows: 7810 Sel: .003937']
+,['RODRIGUEZ', 23429, '.011811', 'ApproxValue: RODRIGUEZ NumRows: 23429 Sel: .011811']
+,['ROGERS', 7810, '.003937', 'ApproxValue: ROGERS NumRows: 7810 Sel: .003937']
+,['ROSA', 7810, '.003937', 'ApproxValue: ROSA NumRows: 7810 Sel: .003937']
+,['ROWLAND', 7810, '.003937', 'ApproxValue: ROWLAND NumRows: 7810 Sel: .003937']
+,['RUIZ', 7810, '.003937', 'ApproxValue: RUIZ NumRows: 7810 Sel: .003937']
+,['SAFFRON', 7810, '.003937', 'ApproxValue: SAFFRON NumRows: 7810 Sel: .003937']
+,['SALAZAR', 7810, '.003937', 'ApproxValue: SALAZAR NumRows: 7810 Sel: .003937']
+,['SAMANIEGO', 7810, '.003937', 'ApproxValue: SAMANIEGO NumRows: 7810 Sel: .003937']
+,['SANCHEZ', 7810, '.003937', 'ApproxValue: SANCHEZ NumRows: 7810 Sel: .003937']
+,['SANDERS', 7810, '.003937', 'ApproxValue: SANDERS NumRows: 7810 Sel: .003937']
+,['SAPIEN', 7810, '.003937', 'ApproxValue: SAPIEN NumRows: 7810 Sel: .003937']
+,['SCHENK', 7810, '.003937', 'ApproxValue: SCHENK NumRows: 7810 Sel: .003937']
+,['SCOTT AND WHITE HOSPITAL LLANO (NPI: 1326349986)', 7810, '.003937', 'ApproxValue: SCOTT AND WHITE HOSPITAL LLANO (NPI: 1326349986) NumRows: 7810 Sel: .003937']
+,['SERNA', 7810, '.003937', 'ApproxValue: SERNA NumRows: 7810 Sel: .003937']
+,['SHECKLER', 7810, '.003937', 'ApproxValue: SHECKLER NumRows: 7810 Sel: .003937']
+,['SHULTS', 7810, '.003937', 'ApproxValue: SHULTS NumRows: 7810 Sel: .003937']
+,['SIMMONS', 7810, '.003937', 'ApproxValue: SIMMONS NumRows: 7810 Sel: .003937']
+,['SLEEPER', 7810, '.003937', 'ApproxValue: SLEEPER NumRows: 7810 Sel: .003937']
+,['SMITH', 7810, '.003937', 'ApproxValue: SMITH NumRows: 7810 Sel: .003937']
+,['SNOW', 7810, '.003937', 'ApproxValue: SNOW NumRows: 7810 Sel: .003937']
+,['SOSA', 7810, '.003937', 'ApproxValue: SOSA NumRows: 7810 Sel: .003937']
+,['SPENCER', 7810, '.003937', 'ApproxValue: SPENCER NumRows: 7810 Sel: .003937']
+,['STATEN', 7810, '.003937', 'ApproxValue: STATEN NumRows: 7810 Sel: .003937']
+,['STEWART', 7810, '.003937', 'ApproxValue: STEWART NumRows: 7810 Sel: .003937']
+,['STRONG', 7810, '.003937', 'ApproxValue: STRONG NumRows: 7810 Sel: .003937']
+,['SVANGSTU', 7810, '.003937', 'ApproxValue: SVANGSTU NumRows: 7810 Sel: .003937']
+,['TANNER', 7810, '.003937', 'ApproxValue: TANNER NumRows: 7810 Sel: .003937']
+,['TAYLOR', 7810, '.003937', 'ApproxValue: TAYLOR NumRows: 7810 Sel: .003937']
+,['THANG', 7810, '.003937', 'ApproxValue: THANG NumRows: 7810 Sel: .003937']
+,['THOMPSON', 7810, '.003937', 'ApproxValue: THOMPSON NumRows: 7810 Sel: .003937']
+,['TINA', 7810, '.003937', 'ApproxValue: TINA NumRows: 7810 Sel: .003937']
+,['TORRES', 7810, '.003937', 'ApproxValue: TORRES NumRows: 7810 Sel: .003937']
+,['TOWNSEND', 7810, '.003937', 'ApproxValue: TOWNSEND NumRows: 7810 Sel: .003937']
+,['TREVINO', 7810, '.003937', 'ApproxValue: TREVINO NumRows: 7810 Sel: .003937']
+,['TURNER', 7810, '.003937', 'ApproxValue: TURNER NumRows: 7810 Sel: .003937']
+,['URIBE', 7810, '.003937', 'ApproxValue: URIBE NumRows: 7810 Sel: .003937']
+,['VALENEZUELA', 7810, '.003937', 'ApproxValue: VALENEZUELA NumRows: 7810 Sel: .003937']
+,['VARELA', 7810, '.003937', 'ApproxValue: VARELA NumRows: 7810 Sel: .003937']
+,['VASQUEZ', 7810, '.003937', 'ApproxValue: VASQUEZ NumRows: 7810 Sel: .003937']
+,['VELASQUEZ', 7810, '.003937', 'ApproxValue: VELASQUEZ NumRows: 7810 Sel: .003937']
+,['VIDAURE', 7810, '.003937', 'ApproxValue: VIDAURE NumRows: 7810 Sel: .003937']
+,['VILLARREAL', 7810, '.003937', 'ApproxValue: VILLARREAL NumRows: 7810 Sel: .003937']
+,['WADE', 7810, '.003937', 'ApproxValue: WADE NumRows: 7810 Sel: .003937']
+,['WALLACE', 7810, '.003937', 'ApproxValue: WALLACE NumRows: 7810 Sel: .003937']
+,['WASHINGTON', 7810, '.003937', 'ApproxValue: WASHINGTON NumRows: 7810 Sel: .003937']
+,['WEDGEWORTH', 7810, '.003937', 'ApproxValue: WEDGEWORTH NumRows: 7810 Sel: .003937']
+,['WHATLEY', 7810, '.003937', 'ApproxValue: WHATLEY NumRows: 7810 Sel: .003937']
+,['WHITING', 7810, '.003937', 'ApproxValue: WHITING NumRows: 7810 Sel: .003937']
+,['WILLIAMS', 15620, '.007874', 'ApproxValue: WILLIAMS NumRows: 15620 Sel: .007874']
+,['WILSON', 7810, '.003937', 'ApproxValue: WILSON NumRows: 7810 Sel: .003937']
+,['WOOD', 7810, '.003937', 'ApproxValue: WOOD NumRows: 7810 Sel: .003937']
+,['WRIGHT', 7810, '.003937', 'ApproxValue: WRIGHT NumRows: 7810 Sel: .003937']
+,['YONEYAMA', 7810, '.003937', 'ApproxValue: YONEYAMA NumRows: 7810 Sel: .003937']
+,['ZAPATA', 7810, '.003937', 'ApproxValue: ZAPATA NumRows: 7810 Sel: .003937']
+,['ZYSKO', 7810, '.003937', 'ApproxValue: ZYSKO NumRows: 7810 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.102. Height Balanced histogram on Column T_USR.(UPPER("USR_LAS_NAM"))',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.102. Height Balanced histogram on Column T_USR.(UPPER("USR_LAS_NAM")) <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 1983678) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 1983678)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_USR'
+AND a.column_name = 'SYS_NC00132$'
+ORDER BY a.endpoint_number;
+
+244 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:13:56 for SQL ID 17vjd1aast5q7 (SELECT DISTINCT PF.PERF_USR FROM T_WKFWTSK WF , T_WKFWTSK_STT_CNGE CNG , T_PRMR ) </font>
+</body>
+</html>

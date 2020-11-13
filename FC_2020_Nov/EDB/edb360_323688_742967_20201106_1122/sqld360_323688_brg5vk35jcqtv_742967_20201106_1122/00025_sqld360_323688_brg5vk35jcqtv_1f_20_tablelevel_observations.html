@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_brg5vk35jcqtv_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Table-level observations</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00025_sqld360_323688_brg5vk35jcqtv_1f_20_tablelevel_observations.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 1f.20. Table-level observations <em>(DBA_TABLES)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+SCOPE
+</th>
+<th scope="col">
+OWNER
+</th>
+<th scope="col">
+TABLE_NAME
+</th>
+<th scope="col">
+MESSAGE
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_APBL
+</td>
+<td>
+Index IX_UMXT_PRNTEVNT (UMXT_PRNTEVNT) is redundant because of T_APBL_UX_PRNTEVNT_ID (UMXT_PRNTEVNT:UMXT_ID)
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ TABLE_NAME                                NOT NULL VARCHAR2(128)
+ TABLESPACE_NAME                                    VARCHAR2(30)
+ CLUSTER_NAME                                       VARCHAR2(128)
+ IOT_NAME                                           VARCHAR2(128)
+ STATUS                                             VARCHAR2(8)
+ PCT_FREE                                           NUMBER
+ PCT_USED                                           NUMBER
+ INI_TRANS                                          NUMBER
+ MAX_TRANS                                          NUMBER
+ INITIAL_EXTENT                                     NUMBER
+ NEXT_EXTENT                                        NUMBER
+ MIN_EXTENTS                                        NUMBER
+ MAX_EXTENTS                                        NUMBER
+ PCT_INCREASE                                       NUMBER
+ FREELISTS                                          NUMBER
+ FREELIST_GROUPS                                    NUMBER
+ LOGGING                                            VARCHAR2(3)
+ BACKED_UP                                          VARCHAR2(1)
+ NUM_ROWS                                           NUMBER
+ BLOCKS                                             NUMBER
+ EMPTY_BLOCKS                                       NUMBER
+ AVG_SPACE                                          NUMBER
+ CHAIN_CNT                                          NUMBER
+ AVG_ROW_LEN                                        NUMBER
+ AVG_SPACE_FREELIST_BLOCKS                          NUMBER
+ NUM_FREELIST_BLOCKS                                NUMBER
+ DEGREE                                             VARCHAR2(10)
+ INSTANCES                                          VARCHAR2(10)
+ CACHE                                              VARCHAR2(5)
+ TABLE_LOCK                                         VARCHAR2(8)
+ SAMPLE_SIZE                                        NUMBER
+ LAST_ANALYZED                                      DATE
+ PARTITIONED                                        VARCHAR2(3)
+ IOT_TYPE                                           VARCHAR2(12)
+ TEMPORARY                                          VARCHAR2(1)
+ SECONDARY                                          VARCHAR2(1)
+ NESTED                                             VARCHAR2(3)
+ BUFFER_POOL                                        VARCHAR2(7)
+ FLASH_CACHE                                        VARCHAR2(7)
+ CELL_FLASH_CACHE                                   VARCHAR2(7)
+ ROW_MOVEMENT                                       VARCHAR2(8)
+ GLOBAL_STATS                                       VARCHAR2(3)
+ USER_STATS                                         VARCHAR2(3)
+ DURATION                                           VARCHAR2(15)
+ SKIP_CORRUPT                                       VARCHAR2(8)
+ MONITORING                                         VARCHAR2(3)
+ CLUSTER_OWNER                                      VARCHAR2(128)
+ DEPENDENCIES                                       VARCHAR2(8)
+ COMPRESSION                                        VARCHAR2(8)
+ COMPRESS_FOR                                       VARCHAR2(30)
+ DROPPED                                            VARCHAR2(3)
+ READ_ONLY                                          VARCHAR2(3)
+ SEGMENT_CREATED                                    VARCHAR2(3)
+ RESULT_CACHE                                       VARCHAR2(7)
+ CLUSTERING                                         VARCHAR2(3)
+ ACTIVITY_TRACKING                                  VARCHAR2(23)
+ DML_TIMESTAMP                                      VARCHAR2(25)
+ HAS_IDENTITY                                       VARCHAR2(3)
+ CONTAINER_DATA                                     VARCHAR2(3)
+ INMEMORY                                           VARCHAR2(8)
+ INMEMORY_PRIORITY                                  VARCHAR2(8)
+ INMEMORY_DISTRIBUTE                                VARCHAR2(15)
+ INMEMORY_COMPRESSION                               VARCHAR2(17)
+ INMEMORY_DUPLICATE                                 VARCHAR2(13)
+
+WITH tablespaces AS (SELECT /*+ MATERIALIZE */ tablespace_name, block_size
+                       FROM dba_tablespaces),
+     tables    AS (SELECT /*+ MATERIALIZE */ owner, table_name, tablespace_name, num_rows, blocks, last_analyzed, degree
+                     FROM dba_tables
+                    WHERE (owner, table_name) IN (SELECT object_owner, object_name
+                                                    FROM plan_table
+                                                   WHERE statement_id = 'LIST_OF_TABLES'
+                                                     AND remarks = 'brg5vk35jcqtv')),
+     partitions AS (SELECT /*+ MATERIALIZE */ table_owner, table_name, partition_name, num_rows, blocks, last_analyzed
+                      FROM dba_tab_partitions
+                     WHERE (table_owner, table_name) IN (SELECT object_owner, object_name
+                                                           FROM plan_table
+                                                          WHERE statement_id = 'LIST_OF_TABLES'
+                                                            AND remarks = 'brg5vk35jcqtv')),
+     table_and_part_stats AS (SELECT /*+ MATERIALIZE */ owner, table_name, partition_name, stale_stats, stattype_locked
+                                FROM dba_tab_statistics
+                               WHERE (owner, table_name) IN (SELECT object_owner, object_name
+                                                               FROM plan_table
+                                                              WHERE statement_id = 'LIST_OF_TABLES'
+                                                                AND remarks = 'brg5vk35jcqtv')
+                                 AND subpartition_name IS NULL),
+     indexes    AS (SELECT /*+ MATERIALIZE */ table_owner, table_name, index_name, degree
+                      FROM dba_indexes
+                     WHERE (table_owner, table_name) IN (SELECT object_owner, object_name
+                                                           FROM plan_table
+                                                          WHERE statement_id = 'LIST_OF_TABLES'
+                                                            AND remarks = 'brg5vk35jcqtv')),
+     ind_cols AS (SELECT col.index_owner, col.index_name, col.table_owner, col.table_name, idx.index_type, idx.uniqueness,
+                         MAX(CASE col.column_position WHEN 01 THEN      col.column_name END)||
+                         MAX(CASE col.column_position WHEN 02 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 03 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 04 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 05 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 06 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 07 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 08 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 09 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 10 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 11 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 12 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 13 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 14 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 15 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 16 THEN ':'||col.column_name END) indexed_columns
+                    FROM dba_ind_columns col,
+                         dba_indexes idx
+                   WHERE (idx.table_owner, idx.table_name) IN (SELECT object_owner, object_name
+                                                                 FROM plan_table
+                                                                WHERE statement_id = 'LIST_OF_TABLES'
+                                                                  AND remarks = 'brg5vk35jcqtv')
+                     AND idx.owner = col.index_owner
+                     AND idx.index_name = col.index_name
+                   GROUP BY col.index_owner,col.index_name,col.table_owner,col.table_name,idx.index_type,idx.uniqueness)
+     , tab_stats_history AS (SELECT o.owner, o.object_name, h.analyzetime, h.rowcnt
+                               FROM sys.wri$_optstat_tab_history h,
+                                    dba_objects o
+                              WHERE (o.owner, o.object_name) IN (SELECT object_owner, object_name
+                                                                   FROM plan_table
+                                                                  WHERE statement_id = 'LIST_OF_TABLES'
+                                                                    AND remarks = 'brg5vk35jcqtv')
+                                AND o.object_type = 'TABLE'
+                                AND o.object_id = h.obj#
+                                AND 'Y' = 'Y'
+                              UNION ALL
+                             SELECT owner, table_name, last_analyzed, num_rows
+                               FROM tables
+                            )
+SELECT scope, owner, table_name, message
+  FROM (SELECT 'TABLE_STATS' scope, owner, table_name,  'Table '||table_name||' has statistics more than a month old ('||TRUNC(SYSDATE-last_analyzed)||' days old)' message
+          FROM tables
+         WHERE last_analyzed < ADD_MONTHS(TRUNC(SYSDATE),-1)
+         UNION ALL
+        SELECT 'TABLE_STALE_STATS', owner, table_name,  'Table '||table_name||' has stale stats'
+          FROM table_and_part_stats
+         WHERE stale_stats = 'YES'
+           AND partition_name IS NULL
+         UNION ALL
+        SELECT 'TABLE_LOCKED_STATS', owner, table_name,  'Table '||table_name||' has locked stats'
+          FROM table_and_part_stats
+         WHERE stattype_locked IN ('ALL','DATA')
+           AND partition_name IS NULL
+         UNION ALL
+        SELECT 'TABLE_MISSING_STATS', owner, table_name,  'Table '||table_name||' has no stats'
+          FROM tables
+         WHERE num_rows IS NULL
+         UNION ALL
+        SELECT 'PARTITION_STATS', table_owner, table_name,  'Table '||table_name||' has '||num_old_parts||' partition(s) with statistics more than a month old'
+          FROM (SELECT COUNT(*) num_old_parts, table_owner, table_name
+                  FROM partitions
+                 WHERE last_analyzed < ADD_MONTHS(TRUNC(SYSDATE),-1)
+                 GROUP BY table_owner, table_name)
+         WHERE num_old_parts > 0
+         UNION ALL
+        SELECT 'PARTITION_STALE_STATS', owner, table_name,  'Table partition '||table_name||'.'||partition_name||' has stale stats'
+          FROM table_and_part_stats
+         WHERE stale_stats = 'YES'
+           AND partition_name IS NOT NULL
+         UNION ALL
+        SELECT 'PARTITION_LOCKED_STATS', owner, table_name,  'Table partition '||table_name||'.'||partition_name||' has locked stats'
+          FROM table_and_part_stats
+         WHERE stattype_locked IN ('ALL','DATA')
+           AND partition_name IS NOT NULL
+         UNION ALL
+        SELECT 'PARTITION_MISSING_STATS', table_owner, table_name,  'Table partition '||table_name||'.'||partition_name||' has no stats'
+          FROM partitions
+         WHERE num_rows IS NULL
+         UNION ALL
+        SELECT 'TABLE_STATS', owner, table_name,  'Table '||table_name||' stores 0 rows but accounts for more than 0 blocks'
+          FROM tables
+         WHERE num_rows = 0 and blocks > 0
+         UNION ALL
+        SELECT 'PARTITION_STATS', table_owner, table_name||'.'||partition_name,  'Table partition '||table_name||'.'||partition_name||' stores 0 rows but accounts for more than 0 blocks'
+          FROM partitions
+         WHERE num_rows = 0 and blocks > 0
+         UNION ALL
+        SELECT 'TABLE_STATS', owner, table_name,  'Table '||table_name||' seems empty (0 rows and 0 blocks)'
+          FROM tables
+         WHERE num_rows = 0 and blocks = 0
+         UNION ALL
+        SELECT 'PARTITION_STATS', table_owner, table_name||'.'||partition_name,  'Table partition '||table_name||'.'||partition_name||' seems empty (0 rows and 0 blocks)'
+          FROM partitions
+         WHERE num_rows = 0 and blocks = 0
+         UNION ALL
+        SELECT 'TABLE_DEGREE', owner, table_name,  'Table '||table_name||' has a non-default DEGREE ('||TRIM(degree)||')'
+          FROM tables
+         WHERE TRIM(degree) <> '1'
+         UNION ALL
+        SELECT 'TABLE_DEGREE', owner, table_name,  'Table '||table_name||' is smaller than 1G in size ('||TRUNC((tbs.block_size * t.blocks)/POWER(10,9),3)||'G) but has DEGREE different than 1 ('||TRIM(degree)||')'
+          FROM tables t, tablespaces tbs
+         WHERE t.tablespace_name = tbs.tablespace_name
+           AND TRIM(degree) <> '1'
+           AND (tbs.block_size * t.blocks)/POWER(10,9) <= 1
+         UNION ALL
+        SELECT 'INDEX_DEGREE', tables.owner, tables.table_name, 'Table '||tables.table_name||' has '||COUNT(*)||' indexes with DEGREE different than the table itself'
+          FROM tables,
+               indexes
+         WHERE tables.owner = indexes.table_owner
+           AND tables.table_name = indexes.table_name
+           AND TRIM(tables.degree) <> TRIM(indexes.degree)
+         GROUP BY tables.owner, tables.table_name
+         HAVING COUNT(*) > 0
+         UNION ALL
+        SELECT 'REDUNDANT_INDEX', r.table_owner, r.table_name, 'Index '||r.index_name||' ('||r.indexed_columns||') is redundant because of '||i.index_name||' ('||i.indexed_columns||')'
+          FROM ind_cols r,
+               ind_cols i
+         WHERE i.table_owner = r.table_owner
+           AND i.table_name = r.table_name
+           AND i.index_type = r.index_type
+           AND i.index_name != r.index_name
+           AND i.indexed_columns LIKE r.indexed_columns||':%'
+           AND r.uniqueness = 'NONUNIQUE'
+         UNION ALL
+         SELECT 'TABLE_STATS_HISTORY', owner, table_name, 'Stats were 0 at some point, starting '||init_zero||' up until stats gathering on '||end_zero
+           FROM (SELECT owner, object_name table_name, to_char(init_zero,'YYYY-MM-DD/HH24:MI:SS') init_zero, to_char(end_zero,'YYYY-MM-DD/HH24:MI:SS') end_zero
+                   FROM tab_stats_history
+                   MATCH_RECOGNIZE (
+                     PARTITION BY owner, object_name ORDER BY analyzetime
+                     MEASURES FIRST(iszero.analyzetime) init_zero,
+                              FIRST(a_nonzero.analyzetime) end_zero
+                     --ALL ROWS PER MATCH
+                     AFTER MATCH SKIP TO FIRST a_nonzero
+                     PATTERN (b_nonzero+ iszero+ a_nonzero+)
+                     DEFINE b_nonzero AS rowcnt <> 0,
+                            iszero  AS rowcnt = 0,
+                            a_nonzero AS rowcnt <> 0
+                   )
+                )
+        )
+ ORDER BY owner, table_name, scope DESC;
+
+1 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:23:15 for SQL ID brg5vk35jcqtv (SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+) </font>
+</body>
+</html>

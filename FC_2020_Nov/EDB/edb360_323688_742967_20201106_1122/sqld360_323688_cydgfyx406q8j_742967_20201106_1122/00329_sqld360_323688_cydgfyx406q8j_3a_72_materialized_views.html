@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_cydgfyx406q8j_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Materialized Views</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00329_sqld360_323688_cydgfyx406q8j_3a_72_materialized_views.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.72. Materialized Views <em>(DBA_MVIEWS)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+OWNER
+</th>
+<th scope="col">
+MVIEW_NAME
+</th>
+<th scope="col">
+CONTAINER_NAME
+</th>
+<th scope="col">
+QUERY
+</th>
+<th scope="col">
+QUERY_LEN
+</th>
+<th scope="col">
+U
+</th>
+<th scope="col">
+UPDATE_LOG
+</th>
+<th scope="col">
+MASTER_ROLLBACK_SEG
+</th>
+<th scope="col">
+MASTER_LINK
+</th>
+<th scope="col">
+R
+</th>
+<th scope="col">
+REWRITE_C
+</th>
+<th scope="col">
+REFRES
+</th>
+<th scope="col">
+REFRESH_
+</th>
+<th scope="col">
+BUILD_MOD
+</th>
+<th scope="col">
+FAST_REFRESHABLE
+</th>
+<th scope="col">
+LAST_REF
+</th>
+<th scope="col">
+LAST_REFRESH_DATE
+</th>
+<th scope="col">
+LAST_REFRESH_END_TI
+</th>
+<th scope="col">
+STALENESS
+</th>
+<th scope="col">
+AFTER_FAST_REFRESH
+</th>
+<th scope="col">
+U
+</th>
+<th scope="col">
+U
+</th>
+<th scope="col">
+U
+</th>
+<th scope="col">
+U
+</th>
+<th scope="col">
+U
+</th>
+<th scope="col">
+U
+</th>
+<th scope="col">
+COMPILE_STATE
+</th>
+<th scope="col">
+U
+</th>
+<th scope="col">
+STALE_SINCE
+</th>
+<th scope="col">
+NUM_PCT_TABLES
+</th>
+<th scope="col">
+NUM_FRESH_PCT_REGIONS
+</th>
+<th scope="col">
+NUM_STALE_PCT_REGIONS
+</th>
+<th scope="col">
+SEG
+</th>
+<th scope="col">
+EVALUATION_EDITION
+</th>
+<th scope="col">
+UNUSABLE_BEFORE
+</th>
+<th scope="col">
+UNUSABLE_BEGINNING
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+MV_PATID_CM_COND_PROVIDER
+</td>
+<td>
+MV_PATID_CM_COND_PROVIDER
+</td>
+<td>
+SELECT get_aud_mrgmstr(member_id, valid_from, valid_to) member_id,
+       get_aud_mrgmstr(care_giver, valid_from, valid_to) care_giver,
+       valid_from,
+       valid_to,
+       PRAS_STRTDT,
+       PRAS_END_DT
+  FROM (SELECT a_cm_basebase.cmbs_memb member_id,
+               a_pvdrastn.pras_pvdr care_giver,
+               GREATEST(a_pvdrastn.valid_from, NVL(a_cm_basebase.valid_from, TO_DATE('1800-01-01', 'YYYY-MM-DD'))) valid_from,
+               CASE WHEN a_pvdrastn.valid_to IS NULL AND a_cm_basebase.valid_to IS NULL THEN
+                       TO_DATE('2999-01-01', 'YYYY-MM-DD')
+                   WHEN a_pvdrastn.valid_to IS NOT NULL AND a_cm_basebase.valid_to IS NOT NULL THEN
+                       LEAST(a_pvdrastn.valid_to, a_cm_basebase.valid_to)
+                   WHEN a_pvdrastn.valid_to IS NULL THEN  a_cm_basebase.valid_to
+                   ELSE a_pvdrastn.valid_to
+               END valid_to,
+               a_pvdrastn.PRAS_STRTDT,
+			   a_pvdrastn.PRAS_END_DT
+          FROM a_pvdrastn
+               INNER JOIN a_cm_basebase
+                   ON a_pvdrastn.cpas_cm_base = a_cm_basebase.cmbb_id
+                  AND ((a_pvdrastn.valid_from &gt;= a_cm_basebase.valid_from
+                    AND (a_pvdrastn.valid_from &lt;= a_cm_basebase.valid_to OR a_cm_basebase.valid_to IS NULL))
+                    OR (a_pvdrastn.valid_from &lt;= a_cm_basebase.valid_from
+                    AND (a_pvdrastn.valid_to &gt;= a_cm_basebase.valid_from OR a_pvdrastn.valid_to IS NULL)))
+                  AND a_pvdrastn.pras_obj_stt != 2
+                  AND a_cm_basebase.cmbb_obj_stt != 2
+                  AND a_pvdrastn.pras_pvdr IS NOT NULL
+                  AND a_cm_basebase.cmbs_memb IS NOT NULL
+        UNION
+        SELECT a_usr.mbur_id member_id,
+               a_pvdrastn.pras_pvdr care_giver,
+               GREATEST(a_pvdrastn.valid_from, NVL(a_usr.valid_from, TO_DATE('1800-01-01', 'YYYY-MM-DD'))) valid_from,
+               CASE WHEN a_pvdrastn.valid_to IS NULL AND a_usr.valid_to IS NU
+LL THEN TO_DATE('2999-01-01', 'YYYY-MM-DD')
+                   WHEN a_pvdrastn.valid_to IS NOT NULL AND a_usr.valid_to IS NOT NULL THEN LEAST(a_pvdrastn.valid_to, a_usr.valid_to)
+                   WHEN a_pvdrastn.valid_to IS NULL THEN a_usr.valid_to
+                   ELSE a_pvdrastn.valid_to
+               END valid_to,
+          	   a_pvdrastn.PRAS_STRTDT,
+			   a_pvdrastn.PRAS_END_DT
+          FROM a_pvdrastn
+               INNER JOIN a_usr
+                   ON a_pvdrastn.mpas_memb = a_usr.mbur_id
+                  AND ((a_pvdrastn.valid_from &gt;= a_usr.valid_from
+                    AND (a_pvdrastn.valid_from &lt;= a_usr.valid_to OR a_usr.valid_to IS NULL))
+                    OR (a_pvdrastn.valid_from &lt;= a_usr.valid_from
+                    AND (a_pvdrastn.valid_to &gt;= a_usr.valid_from OR a_pvdrastn.valid_to IS NULL)))
+                  AND a_pvdrastn.pras_obj_stt != 2
+                  AND a_pvdrastn.pras_pvdr IS NOT NULL
+        UNION
+        SELECT a_cm_basebase.cmbs_memb member_id,
+               a_cm_basebase.cmbb_pmrypvdr care_giver,
+               a_cm_basebase.valid_from,
+               a_cm_basebase.valid_to,
+               null as PRAS_STRTDT,
+			   null as PRAS_END_DT
+          FROM a_cm_basebase
+         WHERE a_cm_basebase.cmbb_obj_stt != 2
+           AND a_cm_basebase.cmbb_pmrypvdr IS NOT NULL
+           AND a_cm_basebase.cmbs_memb IS NOT NULL
+UNION
+  SELECT a_um_base.umbs_memb member_id,
+               a_pvdrastn.pras_pvdr care_giver,
+               GREATEST(a_pvdrastn.valid_from, NVL(a_um_base.valid_from, TO_DATE('1800-01-01', 'YYYY-MM-DD'))) valid_from,
+               CASE WHEN a_pvdrastn.valid_to IS NULL AND a_um_base.valid_to IS NULL THEN
+                       TO_DATE('2999-01-01', 'YYYY-MM-DD')
+                   WHEN a_pvdrastn.valid_to IS NOT NULL AND a_um_base.valid_to IS NOT NULL THEN
+                       LEAST(a_pvdrastn.valid_to, a_um_base.valid_to)
+                   WHEN a_pvdrastn.valid_to IS NULL THEN  a_um_base.valid_to
+
+        ELSE a_pvdrastn.valid_to
+               END valid_to,
+               a_pvdrastn.PRAS_STRTDT,
+			   a_pvdrastn.PRAS_END_DT
+          FROM a_pvdrastn
+               INNER JOIN a_um_base
+                   ON a_pvdrastn.UPAS_PVDRUM_BASE = a_um_base.umbs_id
+                  AND ((a_pvdrastn.valid_from &gt;= a_um_base.valid_from
+                    AND (a_pvdrastn.valid_from &lt;= a_um_base.valid_to OR a_um_base.valid_to IS NULL))
+                    OR (a_pvdrastn.valid_from &lt;= a_um_base.valid_from
+                    AND (a_pvdrastn.valid_to &gt;= a_um_base.valid_from OR a_pvdrastn.valid_to IS NULL)))
+                  AND a_pvdrastn.pras_obj_stt != 2
+                  AND a_um_base.umbs_obj_stt != 2
+                  AND a_pvdrastn.pras_pvdr IS NOT NULL
+                  AND a_um_base.umbs_memb IS NOT NULL
+        UNION
+        SELECT a_usr.mbur_id member_id,
+               a_pvdrastn.pras_pvdr care_giver,
+               GREATEST(a_pvdrastn.valid_from, NVL(a_usr.valid_from, TO_DATE('1800-01-01', 'YYYY-MM-DD'))) valid_from,
+               CASE WHEN a_pvdrastn.valid_to IS NULL AND a_usr.valid_to IS NULL THEN TO_DATE('2999-01-01', 'YYYY-MM-DD')
+                   WHEN a_pvdrastn.valid_to IS NOT NULL AND a_usr.valid_to IS NOT NULL THEN LEAST(a_pvdrastn.valid_to, a_usr.valid_to)
+                   WHEN a_pvdrastn.valid_to IS NULL THEN a_usr.valid_to
+                   ELSE a_pvdrastn.valid_to
+               END valid_to,
+               a_pvdrastn.PRAS_STRTDT,
+		       a_pvdrastn.PRAS_END_DT
+          FROM a_pvdrastn
+               INNER JOIN a_usr
+                   ON a_pvdrastn.mpas_memb = a_usr.mbur_id
+                  AND ((a_pvdrastn.valid_from &gt;= a_usr.valid_from
+                    AND (a_pvdrastn.valid_from &lt;= a_usr.valid_to OR a_usr.valid_to IS NULL))
+                    OR (a_pvdrastn.valid_from &lt;= a_usr.valid_from
+                    AND (a_pvdrastn.valid_to &gt;= a_usr.valid_from OR a_pvdrastn.valid_to IS NULL)))
+                  AND a_pvdrastn.pras_obj_stt != 2
+
+                  AND a_pvdrastn.pras_pvdr IS NOT NULL
+        UNION
+        SELECT a_um_base.umbs_memb member_id,
+               a_um_base.umbs_pmrypvdr care_giver, -- PrimaryProvider CP-287
+               a_um_base.valid_from,
+               a_um_base.valid_to,
+               null as PRAS_STRTDT,
+			   null as PRAS_END_DT
+          FROM a_um_base
+         WHERE a_um_base.umbs_obj_stt != 2
+           AND a_um_base.umbs_pfngpvdr IS NOT NULL
+           AND a_um_base.umbs_memb IS NOT NULL)
+--
+--
+	UNION
+		SELECT
+		  a_membdgisbase.mdss_memb member_id,
+		  a_pvdrastn.pras_pvdr care_giver,
+		  GREATEST(a_pvdrastn.valid_from, NVL(a_apbl.valid_from, TO_DATE('1800-01-01', 'YYYY-MM-DD'))) valid_from,
+		  CASE
+		    WHEN a_pvdrastn.valid_to IS NULL AND a_apbl.valid_to IS NULL THEN TO_DATE('2999-01-01', 'YYYY-MM-DD')
+		    WHEN a_pvdrastn.valid_to IS NOT NULL AND a_apbl.valid_to IS NOT NULL THEN LEAST(a_pvdrastn.valid_to, a_apbl.valid_to)
+		    WHEN a_pvdrastn.valid_to IS NULL THEN  a_apbl.valid_to
+		    ELSE a_pvdrastn.valid_to
+		  END valid_to,
+		  a_pvdrastn.PRAS_STRTDT,
+		  a_pvdrastn.PRAS_END_DT
+		  FROM a_pvdrastn
+		    INNER JOIN a_apbl
+		      ON a_pvdrastn.mspa_id = a_apbl.msrv_pvdrastn
+		        AND ((a_pvdrastn.valid_from &gt;= a_apbl.valid_from
+		          AND (a_pvdrastn.valid_from &lt;= a_apbl.valid_to OR a_apbl.valid_to IS NULL))
+		          OR (a_pvdrastn.valid_from &lt;= a_apbl.valid_from
+		          AND (a_pvdrastn.valid_to &gt;= a_apbl.valid_from OR a_pvdrastn.valid_to IS NULL)))
+		        AND a_pvdrastn.pras_obj_stt != 2
+		        AND a_apbl.apbl_obj_stt != 2
+		        AND a_pvdrastn.pras_pvdr IS NOT NULL
+		    INNER JOIN a_membdgisbase
+		      ON a_pvdrastn.upas_pvdrum_base = a_membdgisbase.umds_dgisum_evnt
+            AND ( (a_pvdrastn.valid_from &gt;= a_membdgisbase.valid_from
+		          AND (a_pvdrastn.valid_from &lt;= a_membdgisbase.valid_to OR a_membdgisbase.valid_to IS NULL) )
+		          OR (a_pvdrastn.valid_from &lt;= a_membdgisbase.valid_from
+		          AND (a_pvdr
+astn.valid_to &gt;= a_membdgisbase.valid_from OR a_pvdrastn.valid_to IS NULL)) )
+		        AND a_apbl.msrv_srvcdgis = a_membdgisbase.mdss_id
+</td>
+<td align="right">
+                8137
+</td>
+<td>
+N
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+N
+</td>
+<td>
+NONE
+</td>
+<td>
+DEMAND
+</td>
+<td>
+FORCE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+NO
+</td>
+<td>
+COMPLETE
+</td>
+<td>
+2020-11-06/02:51:17
+</td>
+<td>
+2020-11-06/03:29:37
+</td>
+<td>
+NEEDS_COMPILE
+</td>
+<td>
+NEEDS_COMPILE
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+NEEDS_COMPILE
+</td>
+<td>
+N
+</td>
+<td>
+2020-11-06/09:06:18
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+YES
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ MVIEW_NAME                                NOT NULL VARCHAR2(128)
+ CONTAINER_NAME                            NOT NULL VARCHAR2(128)
+ QUERY                                              LONG
+ QUERY_LEN                                          NUMBER(38)
+ UPDATABLE                                          VARCHAR2(1)
+ UPDATE_LOG                                         VARCHAR2(128)
+ MASTER_ROLLBACK_SEG                                VARCHAR2(128)
+ MASTER_LINK                                        VARCHAR2(128)
+ REWRITE_ENABLED                                    VARCHAR2(1)
+ REWRITE_CAPABILITY                                 VARCHAR2(9)
+ REFRESH_MODE                                       VARCHAR2(6)
+ REFRESH_METHOD                                     VARCHAR2(8)
+ BUILD_MODE                                         VARCHAR2(9)
+ FAST_REFRESHABLE                                   VARCHAR2(18)
+ LAST_REFRESH_TYPE                                  VARCHAR2(8)
+ LAST_REFRESH_DATE                                  DATE
+ LAST_REFRESH_END_TIME                              DATE
+ STALENESS                                          VARCHAR2(19)
+ AFTER_FAST_REFRESH                                 VARCHAR2(19)
+ UNKNOWN_PREBUILT                                   VARCHAR2(1)
+ UNKNOWN_PLSQL_FUNC                                 VARCHAR2(1)
+ UNKNOWN_EXTERNAL_TABLE                             VARCHAR2(1)
+ UNKNOWN_CONSIDER_FRESH                             VARCHAR2(1)
+ UNKNOWN_IMPORT                                     VARCHAR2(1)
+ UNKNOWN_TRUSTED_FD                                 VARCHAR2(1)
+ COMPILE_STATE                                      VARCHAR2(19)
+ USE_NO_INDEX                                       VARCHAR2(1)
+ STALE_SINCE                                        DATE
+ NUM_PCT_TABLES                                     NUMBER
+ NUM_FRESH_PCT_REGIONS                              NUMBER
+ NUM_STALE_PCT_REGIONS                              NUMBER
+ SEGMENT_CREATED                                    VARCHAR2(3)
+ EVALUATION_EDITION                                 VARCHAR2(128)
+ UNUSABLE_BEFORE                                    VARCHAR2(128)
+ UNUSABLE_BEGINNING                                 VARCHAR2(128)
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM dba_mviews
+ WHERE (owner, mview_name) IN (SELECT /*+ UNNEST */ object_owner, object_name FROM plan_table WHERE statement_id = 'LIST_OF_TABLES' AND remarks = 'cydgfyx406q8j')
+ ORDER BY owner, mview_name;
+
+1 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:29:24 for SQL ID cydgfyx406q8j (INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "THH_C4C"."MV_PATID_CM_COND_PROVIDER" ) </font>
+</body>
+</html>

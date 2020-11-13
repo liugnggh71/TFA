@@ -1,0 +1,4990 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_cydgfyx406q8j_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>SQL Plan Statistics from History</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00037_sqld360_323688_cydgfyx406q8j_2b_33_sql_plan_statistics_from_history.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2b.33. SQL Plan Statistics from History <em>(DBA_HIST_SQL_PLAN)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+DBID
+</th>
+<th scope="col">
+SQL_ID
+</th>
+<th scope="col">
+PLAN_HASH_VALUE
+</th>
+<th scope="col">
+ID
+</th>
+<th scope="col">
+OPERATION
+</th>
+<th scope="col">
+OPTIONS
+</th>
+<th scope="col">
+OBJECT_NODE
+</th>
+<th scope="col">
+OBJECT#
+</th>
+<th scope="col">
+OBJECT_OWNER
+</th>
+<th scope="col">
+OBJECT_NAME
+</th>
+<th scope="col">
+OBJECT_ALIAS
+</th>
+<th scope="col">
+OBJECT_TYPE
+</th>
+<th scope="col">
+OPTIMIZER
+</th>
+<th scope="col">
+PARENT_ID
+</th>
+<th scope="col">
+DEPTH
+</th>
+<th scope="col">
+POSITION
+</th>
+<th scope="col">
+SEARCH_COLUMNS
+</th>
+<th scope="col">
+COST
+</th>
+<th scope="col">
+CARDINALITY
+</th>
+<th scope="col">
+BYTES
+</th>
+<th scope="col">
+OTHER_TAG
+</th>
+<th scope="col">
+PARTITION_START
+</th>
+<th scope="col">
+PARTITION_STOP
+</th>
+<th scope="col">
+PARTITION_ID
+</th>
+<th scope="col">
+OTHER
+</th>
+<th scope="col">
+DISTRIBUTION
+</th>
+<th scope="col">
+CPU_COST
+</th>
+<th scope="col">
+IO_COST
+</th>
+<th scope="col">
+TEMP_SPACE
+</th>
+<th scope="col">
+ACCESS_PREDICATES
+</th>
+<th scope="col">
+FILTER_PREDICATES
+</th>
+<th scope="col">
+PROJECTION
+</th>
+<th scope="col">
+TIME
+</th>
+<th scope="col">
+QBLOCK_NAME
+</th>
+<th scope="col">
+REMARKS
+</th>
+<th scope="col">
+TIMESTAMP
+</th>
+<th scope="col">
+OTHER_XML
+</th>
+<th scope="col">
+CON_DBID
+</th>
+<th scope="col">
+CON_ID
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+INSERT STATEMENT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              184731
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              184731
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+LOAD TABLE CONVENTIONAL
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+MV_PATID_CM_COND_PROVIDER
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+SET$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&lt;other_xml&gt;&lt;info type=&quot;db_version&quot;&gt;12.1.0.2&lt;/info&gt;&lt;info type=&quot;parse_schema&quot;&gt;&lt;![CDATA[&quot;THH_C4C&quot;]]&gt;&lt;/info&gt;&lt;info type=&quot;dynamic_sampling&quot; note=&quot;y&quot;&gt;2&lt;/info&gt;&lt;info type=&quot;plan_hash_full&quot;&gt;3370401124&lt;/info&gt;&lt;info type=&quot;plan_hash&quot;&gt;49360718&lt;/info&gt;&lt;info type=&quot;plan_hash_2&quot;&gt;3724085532&lt;/info&gt;&lt;spd&gt;&lt;cv&gt;1&lt;/cv&gt;&lt;cu&gt;1&lt;/cu&gt;&lt;/spd&gt;&lt;outline_data&gt;&lt;hint&gt;&lt;![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPTIMIZER_FEATURES_ENABLE('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[DB_VERSION('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('_optim_peek_user_binds' 'false')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_cost_adj' 1)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_caching' 90)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[ALL_ROWS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$83632299&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$8C13D988&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$5&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$10&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$4188C1FF&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$014556B1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$13&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SET$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$20DAB4D6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$58A6D7F6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SET$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;INS$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$8&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$9&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$5&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$11&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$12&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$14&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$58A6D7F6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[O
+UTLINE(@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[FULL(@&quot;INS$1&quot; &quot;MV_PATID_CM_COND_PROVIDER&quot;@&quot;INS$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[FULL(@&quot;SEL$20DAB4D6&quot; &quot;A_MEMBDGISBASE&quot;@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;SEL$20DAB4D6&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$1&quot; (&quot;A_PVDRASTN&quot;.&quot;UPAS_PVDRUM_BASE&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[BATCH_TABLE_ACCESS_BY_ROWID(@&quot;SEL$20DAB4D6&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$20DAB4D6&quot; &quot;A_APBL&quot;@&quot;SEL$1&quot; (&quot;A_APBL&quot;.&quot;MSRV_PVDRASTN&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$20DAB4D6&quot; &quot;A_MEMBDGISBASE&quot;@&quot;SEL$2&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$1&quot; &quot;A_APBL&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$20DAB4D6&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$20DAB4D6&quot; &quot;A_APBL&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NLJ_BATCHING(@&quot;SEL$20DAB4D6&quot; &quot;A_APBL&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NO_ACCESS(@&quot;SEL$3&quot; &quot;from$_subquery$_002&quot;@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[FULL(@&quot;SEL$13&quot; &quot;A_UM_BASE&quot;@&quot;SEL$13&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[FULL(@&quot;SEL$014556B1&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$014556B1&quot; &quot;A_USR&quot;@&quot;SEL$7&quot; (&quot;A_USR&quot;.&quot;MBUR_ID&quot; &quot;A_USR&quot;.&quot;CLASSTYPE&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$014556B1&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$7&quot; &quot;A_USR&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$014556B1&quot; &quot;A_USR&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NLJ_BATCHING(@&quot;SEL$014556B1&quot; &quot;A_USR&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[FULL(@&quot;SEL$4188C1FF&quot; &quot;A_UM_BASE&quot;@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$4188C1FF&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$6&quot; (&quot;A_PVDRASTN&quot;.&quot;UPAS_PVDRUM_BASE&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$4188C1FF&quot; &quot;A_UM_BASE&quot;@&quot;SEL$6&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$4188C1FF&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NLJ_BATCHING(@&quot;SEL$4188C1FF&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$10&quot; &quot;A_CM_BASEBASE&quot;@&quot;SEL$10&quot; (&quot;A_CM_BASEBASE&quot;.&quot;CMBB_PMRYPVDR&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[BATCH_TABLE_ACCESS_BY_ROWID(@&quot;SEL$10&quot; &quot;A_CM_BASEBASE&quot;@&quot;SEL$10&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[FULL(@&quot;SEL$8C13D988&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$5&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$8C13D988&quot; &quot;A
+_USR&quot;@&quot;SEL$5&quot; (&quot;A_USR&quot;.&quot;MBUR_ID&quot; &quot;A_USR&quot;.&quot;CLASSTYPE&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$8C13D988&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$5&quot; &quot;A_USR&quot;@&quot;SEL$5&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$8C13D988&quot; &quot;A_USR&quot;@&quot;SEL$5&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NLJ_BATCHING(@&quot;SEL$8C13D988&quot; &quot;A_USR&quot;@&quot;SEL$5&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$83632299&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$4&quot; (&quot;A_PVDRASTN&quot;.&quot;CPAS_CM_BASE&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[BATCH_TABLE_ACCESS_BY_ROWID(@&quot;SEL$83632299&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$83632299&quot; &quot;A_CM_BASEBASE&quot;@&quot;SEL$4&quot; (&quot;A_CM_BASEBASE&quot;.&quot;CMBB_ID&quot; &quot;A_CM_BASEBASE&quot;.&quot;VALID_FROM&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$83632299&quot; &quot;A_PVDRASTN&quot;@&quot;SEL$4&quot; &quot;A_CM_BASEBASE&quot;@&quot;SEL$4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$83632299&quot; &quot;A_CM_BASEBASE&quot;@&quot;SEL$4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NLJ_BATCHING(@&quot;SEL$83632299&quot; &quot;A_CM_BASEBASE&quot;@&quot;SEL$4&quot;)]]&gt;&lt;/hint&gt;&lt;/outline_data&gt;&lt;/other_xml&gt;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+SORT
+</td>
+<td>
+UNIQUE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              184731
+</td>
+<td align="right">
+              498475
+</td>
+<td align="right">
+            30905486
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+         23659628828
+</td>
+<td align="right">
+              184213
+</td>
+<td align="right">
+            40043000
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+UNION-ALL
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+from$_subquery$_002@SEL$3
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              163373
+</td>
+<td align="right">
+              498474
+</td>
+<td align="right">
+            30905388
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+         21464458807
+</td>
+<td align="right">
+              162903
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+SET$2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+SORT
+</td>
+<td>
+UNIQUE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              163373
+</td>
+<td align="right">
+              498474
+</td>
+<td align="right">
+            20936070
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+         21464458807
+</td>
+<td align="right">
+              162903
+</td>
+<td align="right">
+            30041000
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+SET$2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+UNION-ALL
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  69
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                4348
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$83632299
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                  69
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                4348
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115744
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_PVDRASTN
+</td>
+<td>
+A_PVDRASTN@SEL$4
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  37
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                3237
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$83632299
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+INDEX
+</td>
+<td>
+FULL SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              123090
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+AX_CPAS_CM_BASE
+</td>
+<td>
+A_PVDRASTN@SEL$4
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  43
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 157
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$83632299
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              121602
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_A_CMBB_IDVALIDFROM
+</td>
+<td>
+A_CM_BASEBASE@SEL$4
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  91
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$83632299
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115619
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_CM_BASEBASE
+</td>
+<td>
+A_CM_BASEBASE@SEL$4
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                 160
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                1111
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$83632299
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               69991
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                 183
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          8795064818
+</td>
+<td align="right">
+               69798
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+SEL$8C13D988
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               69991
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                 183
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          8795064818
+</td>
+<td align="right">
+               69798
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+STORAGE FULL
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115744
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_PVDRASTN
+</td>
+<td>
+A_PVDRASTN@SEL$5
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               69990
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  41
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          8795064276
+</td>
+<td align="right">
+               69797
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+SEL$8C13D988
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124330
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_USR_IX_MBUR_ID_CLASSTYPE
+</td>
+<td>
+A_USR@SEL$5
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  91
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$8C13D988
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  17
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115842
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_USR
+</td>
+<td>
+A_USR@SEL$5
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                  60
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 542
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$8C13D988
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  18
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115619
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_CM_BASEBASE
+</td>
+<td>
+A_CM_BASEBASE@SEL$10
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  39
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$10
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  19
+</td>
+<td>
+INDEX
+</td>
+<td>
+FULL SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              121606
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+AX_CMBB_PMRYPVDR
+</td>
+<td>
+A_CM_BASEBASE@SEL$10
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$10
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               11678
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  66
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          1565106410
+</td>
+<td align="right">
+               11644
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$4188C1FF
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               11678
+</td>
+<td align="right">
+              498662
+</td>
+<td align="right">
+                  66
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          1565106410
+</td>
+<td align="right">
+               11644
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+STORAGE FULL
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115824
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_UM_BASE
+</td>
+<td>
+A_UM_BASE@SEL$6
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                6690
+</td>
+<td align="right">
+              498662
+</td>
+<td align="right">
+            14461198
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          1514754344
+</td>
+<td align="right">
+                6657
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$4188C1FF
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              123094
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+AX_UPAS_PVDRUM_BASE
+</td>
+<td>
+A_PVDRASTN@SEL$6
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$4188C1FF
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115744
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_PVDRASTN
+</td>
+<td>
+A_PVDRASTN@SEL$6
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  37
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 101
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$4188C1FF
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  25
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               69991
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                 183
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          8795064818
+</td>
+<td align="right">
+               69798
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+SEL$014556B1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               69991
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                 183
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          8795064818
+</td>
+<td align="right">
+               69798
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  27
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+STORAGE FULL
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115744
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_PVDRASTN
+</td>
+<td>
+A_PVDRASTN@SEL$7
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               69990
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  41
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          8795064276
+</td>
+<td align="right">
+               69797
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+SEL$014556B1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  28
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              124330
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_USR_IX_MBUR_ID_CLASSTYPE
+</td>
+<td>
+A_USR@SEL$7
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  91
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$014556B1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115842
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_USR
+</td>
+<td>
+A_USR@SEL$7
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  25
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                  60
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 542
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$014556B1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  30
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+STORAGE FULL
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115824
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_UM_BASE
+</td>
+<td>
+A_UM_BASE@SEL$13
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                6690
+</td>
+<td align="right">
+              498465
+</td>
+<td align="right">
+            20935530
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          1524703952
+</td>
+<td align="right">
+                6657
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$13
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  31
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               14410
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  98
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          1560181418
+</td>
+<td align="right">
+               14376
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$20DAB4D6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               14410
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  98
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          1560181418
+</td>
+<td align="right">
+               14376
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  33
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               14409
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  70
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          1560181227
+</td>
+<td align="right">
+               14375
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  34
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+STORAGE FULL
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115715
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_MEMBDGISBASE
+</td>
+<td>
+A_MEMBDGISBASE@SEL$2
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  33
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                8203
+</td>
+<td align="right">
+              620525
+</td>
+<td align="right">
+            19236275
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          1497531082
+</td>
+<td align="right">
+                8170
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$20DAB4D6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  35
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115744
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_PVDRASTN
+</td>
+<td>
+A_PVDRASTN@SEL$1
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  33
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  39
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 101
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$20DAB4D6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  36
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              123094
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+AX_UPAS_PVDRUM_BASE
+</td>
+<td>
+A_PVDRASTN@SEL$1
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  35
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$20DAB4D6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  37
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              121107
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+AX_MSRV_PVDRASTN
+</td>
+<td>
+A_APBL@SEL$1
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$20DAB4D6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+cydgfyx406q8j
+</td>
+<td align="right">
+            49360718
+</td>
+<td align="right">
+                  38
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115581
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+A_APBL
+</td>
+<td>
+A_APBL@SEL$1
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  28
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 191
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$20DAB4D6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/02:54:14
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DBID                                      NOT NULL NUMBER
+ SQL_ID                                    NOT NULL VARCHAR2(13)
+ PLAN_HASH_VALUE                           NOT NULL NUMBER
+ ID                                        NOT NULL NUMBER
+ OPERATION                                          VARCHAR2(30)
+ OPTIONS                                            VARCHAR2(30)
+ OBJECT_NODE                                        VARCHAR2(128)
+ OBJECT#                                            NUMBER
+ OBJECT_OWNER                                       VARCHAR2(128)
+ OBJECT_NAME                                        VARCHAR2(128)
+ OBJECT_ALIAS                                       VARCHAR2(261)
+ OBJECT_TYPE                                        VARCHAR2(20)
+ OPTIMIZER                                          VARCHAR2(20)
+ PARENT_ID                                          NUMBER
+ DEPTH                                              NUMBER
+ POSITION                                           NUMBER
+ SEARCH_COLUMNS                                     NUMBER
+ COST                                               NUMBER
+ CARDINALITY                                        NUMBER
+ BYTES                                              NUMBER
+ OTHER_TAG                                          VARCHAR2(35)
+ PARTITION_START                                    VARCHAR2(64)
+ PARTITION_STOP                                     VARCHAR2(64)
+ PARTITION_ID                                       NUMBER
+ OTHER                                              VARCHAR2(4000)
+ DISTRIBUTION                                       VARCHAR2(20)
+ CPU_COST                                           NUMBER
+ IO_COST                                            NUMBER
+ TEMP_SPACE                                         NUMBER
+ ACCESS_PREDICATES                                  VARCHAR2(4000)
+ FILTER_PREDICATES                                  VARCHAR2(4000)
+ PROJECTION                                         VARCHAR2(4000)
+ TIME                                               NUMBER
+ QBLOCK_NAME                                        VARCHAR2(128)
+ REMARKS                                            VARCHAR2(4000)
+ TIMESTAMP                                          DATE
+ OTHER_XML                                          CLOB
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM dba_hist_sql_plan
+ WHERE sql_id = 'cydgfyx406q8j'
+   AND 'Y' = 'Y'
+ ORDER BY plan_hash_value, id;
+
+39 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:28:22 for SQL ID cydgfyx406q8j (INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "THH_C4C"."MV_PATID_CM_COND_PROVIDER" ) </font>
+</body>
+</html>

@@ -1,0 +1,134 @@
+Plan from Plan Table (PLAN_TABLE)
+
+
+SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    benefit.BENP_LWSTLVL_PRODCAT productCategoryId,
+    affMember.USR_FRSTNAM affiliatedMemberFirstName,
+    affMember.USR_LAS_NAM affiliatedMemberLastName
+FROM (
+  SELECT INFO.*,
+    CASE
+    WHEN INFO.memberAffiliationId IS NOT NULL THEN (INFO.memberAffiliationId)
+    WHEN INFO.authAffiliationId IS NOT NULL THEN (SELECT UMBS_MEMB FROM T_UM_BASE WHERE UMBS_ID=INFO.authAffiliationId)
+    WHEN INFO.careManagementAffiliationId IS NOT NULL THEN (SELECT CMBS_MEMB FROM T_CM_BASEBASE WHERE CMBB_ID=INFO.careManagementAffiliationId)
+    WHEN INFO.providerAffiliationId IS NOT NULL THEN (INFO.providerAffiliationId)
+    ELSE (NULL)
+    END         affiliatedMemberId
+  FROM (
+  SELECT * FROM (
+    SELECT
+        T.SETK_ID AS id,
+        T.SETK_C4C_ID AS c4cId,
+        T.SETK_UNIVID AS universalId,
+        taskType.TSKT_RCPTTYP AS categoryId,
+        T.SETK_TSK_TYP AS taskTypeId,
+        taskType.DDLI_LBL AS taskTypeLabel,
+        T.SETK_TSK_NAM AS taskName,
+        T.SETK_SUBJ AS subject,
+        T.SETK_CRTD AS createDate,
+        T.SETK_SENT AS sentDate,
+        T.SETK_SRTD AS startedDate,
+        T.SETK_TSK_TIMG_STRTDT AS startDate,
+        T.SETK_TSK_TIMG_SCLDAT AS startDateSeconds,
+        T.SETK_TSK_TIMG_DDLN_DT AS dueDate,
+        T.SETK_TSK_TIMG_DDLN_TIM_IN_DY AS dueDateSeconds,
+        T.SETK_OWNR AS ownerId,
+        own.USR_FRSTNAM AS ownerFirstName,
+        own.USR_LAS_NAM AS ownerLastName,
+        own.CLASSTYPE AS ownerType,
+        T.SETK_OBJ_STT AS status,
+        T.SETK_AFFN_MEMB AS memberAffiliationId,
+        member.USR_C4C_ID AS memberC4cId,
+        member.USR_FRSTNAM AS memberFirstName,
+        member.USR_LAS_NAM AS memberLastName,
+        T.SETK_AFFN_CM AS careManagementAffiliationId,
+        caseOrCm.CMBB_C4C_ID AS caseOrCmC4cId,
+        T.SETK_AFFN_UM_EVNT AS authAffiliationId,
+        auth.UMBS_C4C_ID AS authAffiliationC4cId,
+        T.SETK_AFFN_PVDR AS providerAffiliationId,
+        provider.USR_C4C_ID AS providerC4cId,
+        T.SETK_TSK_TIMG_SNLTDT AS startNoLaterThanDate,
+        T.SETK_CNCLRESN AS cancelReasonId,
+        T.SETK_ORIGCRTR AS originalCreatorId,
+        origCreator.USR_FRSTNAM AS originalCreatorFirstName,
+        origCreator.USR_LAS_NAM AS originalCreatorLastName,
+        caseOrCm.CLASSTYPE AS caseOrCmClasstype,
+        T.SETK_TSK_DSCN AS description,
+        T.SETK_CMPD AS completedDate,
+        T.SETK_LAS_ACT_TIM AS lastActionDate,
+        mod.USR_FRSTNAM lastModifiedByFirstName,
+        mod.USR_LAS_NAM lastModifiedByLastName,
+        T.SETK_PRVSOWNR AS previousOwnerId,
+        prevOwner.USR_FRSTNAM AS previousOwnerFirstName,
+        prevOwner.USR_LAS_NAM AS previousOwnerLastName,
+        prevOwner.CLASSTYPE AS previousOwnerType,
+        CASE
+            WHEN T.SETK_TSK_TIMG_DDLN_DT IS NOT NULL THEN (T.SETK_TSK_TIMG_DDLN_DT)
+            WHEN T.SETK_TSK_TIMG_STRTDT IS NOT NULL THEN (T.SETK_TSK_TIMG_STRTDT)
+            WHEN T.SETK_TSK_TIMG_SNLTDT IS NOT NULL THEN (T.SETK_TSK_TIMG_SNLTDT)
+            ELSE (NULL)
+        END         filterDate,
+        sender.USR_FRSTNAM fromUserFirstName,
+        sender.USR_LAS_NAM fromUserLastName,
+        T.SETK_RESCHEDULE_REASON AS rescheduleReason,
+        reason.DDLI_LBL AS rescheduleReasonLabel,
+        T.SETK_RESCHEDULE_COMMENT AS rescheduleComment
+      FROM T_SENTTSK T
+      LEFT OUTER JOIN T_USR own ON own.USR_ID=T.SETK_OWNR
+      LEFT OUTER JOIN T_USR prevOwner ON prevOwner.USR_ID=T.SETK_PRVSOWNR
+      LEFT OUTER JOIN T_USR member ON member.USR_ID=T.SETK_AFFN_MEMB
+      LEFT OUTER JOIN T_USR origCreator ON origCreator.USR_ID=T.SETK_ORIGCRTR
+      LEFT OUTER JOIN T_DDL_ITEM taskType ON taskType.DDLI_ID=T.SETK_TSK_TYP
+      LEFT OUTER JOIN T_DDL_ITEM reason ON reason.DDLI_ID=T.SETK_RESCHEDULE_REASON
+      LEFT OUTER JOIN T_CM_BASEBASE caseOrCm ON caseOrCm.CMBB_ID=T.SETK_AFFN_CM
+      LEFT OUTER JOIN T_UM_BASE auth ON auth.UMBS_ID=T.SETK_AFFN_UM_EVNT
+      LEFT OUTER JOIN T_USR provider ON provider.USR_ID=T.SETK_AFFN_PVDR
+      LEFT OUTER JOIN T_USR mod ON mod.USR_ID=T.SETK_LAS_ACT_BY
+      LEFT OUTER JOIN T_USR sender ON sender.USR_ID=T.SETK_PRVSSNDR
+      WHERE T.SETK_OBJ_STT != :"SYS_B_0"
+ AND T.SETK_OWNR = :b1    AND T.SETK_OBJ_STT IN ( :b2 , :b3 , :b4 , :b5 , :b6 , :b7 , :b8 , :b9 , :b10 )
+ ORDER BY filterDate) WHERE rownum <= :"SYS_B_1"
+ AND  (  ( TRUNC(filterDate) <= TO_DATE(:"SYS_B_2", :"SYS_B_3") )  )
+  ) INFO
+) INFO_WITH_MEMBER_ID
+LEFT OUTER JOIN T_USR affMember ON affMember.USR_ID=INFO_WITH_MEMBER_ID.affiliatedMemberId
+LEFT OUTER JOIN V_CURR_ENROLLMENT enrollment ON enrollment.ELNS_MEMB=INFO_WITH_MEMBER_ID.affiliatedMemberId
+LEFT OUTER JOIN T_BENSPKG benefit ON benefit.BENP_ID=enrollment.ELNS_BENSPKG
+WHERE (INFO_WITH_MEMBER_ID.affiliatedMemberId is null OR is_access_allowed_to_member(:b11 ,INFO_WITH_MEMBER_ID.affiliatedMemberId)=:"SYS_B_4")
+SP2-0341: 
+line overflow during variable substitution (>3000 characters at line 1)
+Plan hash value: 969908819
+
+-----------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                                 | Name                      | Rows  | Bytes | Cost (%CPU)| Time     |
+-----------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                          |                           |     1 |    39 | 15342   (1)| 00:00:01 |
+|   1 |  HASH UNIQUE                              |                           |     1 |    39 | 15342   (1)| 00:00:01 |
+|*  2 |   HASH JOIN                               |                           |     1 |    39 | 15341   (1)| 00:00:01 |
+|   3 |    NESTED LOOPS                           |                           |     1 |    37 | 15314   (1)| 00:00:01 |
+|   4 |     NESTED LOOPS                          |                           |     1 |    37 | 15314   (1)| 00:00:01 |
+|   5 |      NESTED LOOPS                         |                           |     1 |    26 | 15311   (1)| 00:00:01 |
+|   6 |       NESTED LOOPS                        |                           |     1 |    20 | 15310   (1)| 00:00:01 |
+|*  7 |        VIEW                               | index$_join$_004          |     1 |     8 | 14846   (1)| 00:00:01 |
+|*  8 |         HASH JOIN                         |                           |       |       |            |          |
+|   9 |          INDEX STORAGE FAST FULL SCAN     | UK_PAYR                   |     1 |     8 |     4   (0)| 00:00:01 |
+|  10 |          INDEX STORAGE FAST FULL SCAN     | IX_USR_IDNODELMSTR        |     1 |     8 | 10447   (1)| 00:00:01 |
+|  11 |        TABLE ACCESS BY INDEX ROWID BATCHED| T_PRMR                    |     2 |    24 |   464   (0)| 00:00:01 |
+|* 12 |         INDEX RANGE SCAN                  | T_PRMR_IX_PERF_USR_STTDBY |  5041 |       |    18   (0)| 00:00:01 |
+|* 13 |       INDEX UNIQUE SCAN                   | PK_T_WKFWTSK_STT_CNGE     |     1 |     6 |     1   (0)| 00:00:01 |
+|* 14 |      INDEX RANGE SCAN                     | IX_WTSK_CURRSTT           |     1 |       |     2   (0)| 00:00:01 |
+|* 15 |     TABLE ACCESS BY INDEX ROWID           | T_WKFWTSK                 |     1 |    11 |     3   (0)| 00:00:01 |
+|  16 |    COLLECTION ITERATOR PICKLER FETCH      |                           |  8168 | 16336 |    27   (0)| 00:00:01 |
+-----------------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - access("WF"."WTSK_OBJ_STT"=VALUE(KOKBF$))
+   7 - filter("U"."USR_ID"="U"."PAYR_ID")
+   8 - access(ROWID=ROWID)
+  12 - access("U"."USR_ID"="PF"."PERF_USR")
+  13 - access("CNG"."WTSC_ID"="PF"."PERF_STT")
+  14 - access("WF"."WTSK_CURRSTT"="CNG"."WTSC_ID")
+  15 - filter("WF"."WTSK_TNFR" IS NULL)

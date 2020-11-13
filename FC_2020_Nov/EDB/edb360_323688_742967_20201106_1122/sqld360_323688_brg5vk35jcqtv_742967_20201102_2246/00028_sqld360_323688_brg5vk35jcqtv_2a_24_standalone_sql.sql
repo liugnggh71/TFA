@@ -1,0 +1,7022 @@
+-- Standalone script to run the SQL, just copy and paste in SQL*Plus
+-- or copy file 00028_sqld360_323688_brg5vk35jcqtv_2a_24_standalone_sql.sql from sqld360_323688_brg5vk35jcqtv_742967_20201102_2246.zip
+VAR SYS_B_0 NUMBER
+VAR SYS_B_1 NUMBER
+VAR SYS_B_2 NUMBER
+VAR SYS_B_3 NUMBER
+VAR b1 NUMBER
+VAR b2 NUMBER
+VAR b3 NUMBER
+VAR b4 NUMBER
+
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b1 := 11620492;
+EXEC :b2 := 11620492;
+EXEC :b3 := 11620492;
+EXEC :b4 := 11620492;
+
+SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+     INNER JOIN T_MEMBDGISBASE diag ON diag.UMDS_DGISUM_EVNT = T.UMBS_ID
+     INNER JOIN T_APBL msrv ON msrv.MSRV_SRVCDGIS = diag.MBDB_ID AND msrv.APBL_IS_ERR = :"SYS_B_0"
+   WHERE T.UMBS_OBJ_STT = :"SYS_B_1" AND (T.UMBS_MEMB = :b1  OR T.UMBS_MEMB in (select MBUR_ID from T_USR where USR_MRGEMSTR=:b2 ))),
+  (SELECT count(DISTINCT T.UMBS_ID) AS closed
+   FROM T_UM_BASE T
+     INNER JOIN T_MEMBDGISBASE diag ON diag.UMDS_DGISUM_EVNT = T.UMBS_ID
+     INNER JOIN T_APBL msrv ON msrv.MSRV_SRVCDGIS = diag.MBDB_ID AND msrv.APBL_IS_ERR = :"SYS_B_2"
+   WHERE T.UMBS_OBJ_STT = :"SYS_B_3" AND (T.UMBS_MEMB = :b3  OR T.UMBS_MEMB in (select MBUR_ID from T_USR where USR_MRGEMSTR=:b4 )))
+
+/
+
+-- List of binds from history
+/*
+--SNAP_ID: 2667 Elapsed Time: 2.366841 Executions: 2 Avg Elapsed Time: 1.183421
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 2668 Elapsed Time: .862829 Executions: 1 Avg Elapsed Time: .862829
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 2700 Elapsed Time: 32.592452 Executions: 29 Avg Elapsed Time: 1.123878
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 2701 Elapsed Time: 37.693171 Executions: 35 Avg Elapsed Time: 1.076948
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 2702 Elapsed Time: 109.676708 Executions: 102 Avg Elapsed Time: 1.075262
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 2703 Elapsed Time: 190.642402 Executions: 176 Avg Elapsed Time: 1.083195
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11643421;
+EXEC :b2 := 11643421;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11643421;
+EXEC :b4 := 11643421;
+--SNAP_ID: 2704 Elapsed Time: 223.074506 Executions: 205 Avg Elapsed Time: 1.088168
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974252;
+EXEC :b2 := 11974252;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974252;
+EXEC :b4 := 11974252;
+--SNAP_ID: 2705 Elapsed Time: 225.634578 Executions: 208 Avg Elapsed Time: 1.084782
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11258044;
+EXEC :b2 := 11258044;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11258044;
+EXEC :b4 := 11258044;
+--SNAP_ID: 2706 Elapsed Time: 191.444612 Executions: 179 Avg Elapsed Time: 1.069523
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974252;
+EXEC :b2 := 11974252;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974252;
+EXEC :b4 := 11974252;
+--SNAP_ID: 2707 Elapsed Time: 82.124407 Executions: 77 Avg Elapsed Time: 1.066551
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11331515;
+EXEC :b2 := 11331515;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11331515;
+EXEC :b4 := 11331515;
+--SNAP_ID: 2708 Elapsed Time: 32.351736 Executions: 30 Avg Elapsed Time: 1.078391
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11331515;
+EXEC :b2 := 11331515;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11331515;
+EXEC :b4 := 11331515;
+--SNAP_ID: 2709 Elapsed Time: 31.92743 Executions: 30 Avg Elapsed Time: 1.064248
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11331515;
+EXEC :b2 := 11331515;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11331515;
+EXEC :b4 := 11331515;
+--SNAP_ID: 2710 Elapsed Time: 32.740569 Executions: 30 Avg Elapsed Time: 1.091352
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11331515;
+EXEC :b2 := 11331515;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11331515;
+EXEC :b4 := 11331515;
+--SNAP_ID: 2711 Elapsed Time: 32.033389 Executions: 30 Avg Elapsed Time: 1.06778
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11331515;
+EXEC :b2 := 11331515;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11331515;
+EXEC :b4 := 11331515;
+--SNAP_ID: 2712 Elapsed Time: 22.816459 Executions: 21 Avg Elapsed Time: 1.086498
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11331515;
+EXEC :b2 := 11331515;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11331515;
+EXEC :b4 := 11331515;
+--SNAP_ID: 2727 Elapsed Time: 17.220272 Executions: 19 Avg Elapsed Time: .90633
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 2728 Elapsed Time: 8.610383 Executions: 10 Avg Elapsed Time: .861038
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 2744 Elapsed Time: 11.468795 Executions: 12 Avg Elapsed Time: .955733
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11725081;
+EXEC :b2 := 11725081;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11725081;
+EXEC :b4 := 11725081;
+--SNAP_ID: 2745 Elapsed Time: 10.175312 Executions: 12 Avg Elapsed Time: .847943
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11695972;
+EXEC :b2 := 11695972;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11695972;
+EXEC :b4 := 11695972;
+--SNAP_ID: 2746 Elapsed Time: 78.677252 Executions: 92 Avg Elapsed Time: .855188
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11262934;
+EXEC :b2 := 11262934;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11262934;
+EXEC :b4 := 11262934;
+--SNAP_ID: 2747 Elapsed Time: 132.206101 Executions: 153 Avg Elapsed Time: .864092
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11480306;
+EXEC :b2 := 11480306;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11480306;
+EXEC :b4 := 11480306;
+--SNAP_ID: 2748 Elapsed Time: 131.494637 Executions: 150 Avg Elapsed Time: .876631
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11365863;
+EXEC :b2 := 11365863;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11365863;
+EXEC :b4 := 11365863;
+--SNAP_ID: 2749 Elapsed Time: 207.905914 Executions: 242 Avg Elapsed Time: .859115
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974063;
+EXEC :b2 := 11974063;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974063;
+EXEC :b4 := 11974063;
+--SNAP_ID: 2750 Elapsed Time: 201.81083 Executions: 236 Avg Elapsed Time: .855131
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11708425;
+EXEC :b2 := 11708425;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11708425;
+EXEC :b4 := 11708425;
+--SNAP_ID: 2751 Elapsed Time: 165.408457 Executions: 192 Avg Elapsed Time: .861502
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11597420;
+EXEC :b2 := 11597420;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11597420;
+EXEC :b4 := 11597420;
+--SNAP_ID: 2752 Elapsed Time: 179.348402 Executions: 207 Avg Elapsed Time: .866417
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11671641;
+EXEC :b2 := 11671641;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11671641;
+EXEC :b4 := 11671641;
+--SNAP_ID: 2753 Elapsed Time: 171.715357 Executions: 200 Avg Elapsed Time: .858577
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11089756;
+EXEC :b2 := 11089756;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11089756;
+EXEC :b4 := 11089756;
+--SNAP_ID: 2754 Elapsed Time: 173.702227 Executions: 201 Avg Elapsed Time: .86419
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11570358;
+EXEC :b2 := 11570358;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11570358;
+EXEC :b4 := 11570358;
+--SNAP_ID: 2755 Elapsed Time: 127.980311 Executions: 148 Avg Elapsed Time: .864732
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11570358;
+EXEC :b2 := 11570358;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11570358;
+EXEC :b4 := 11570358;
+--SNAP_ID: 2756 Elapsed Time: 132.354197 Executions: 151 Avg Elapsed Time: .876518
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11716796;
+EXEC :b2 := 11716796;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11716796;
+EXEC :b4 := 11716796;
+--SNAP_ID: 2757 Elapsed Time: 141.522076 Executions: 162 Avg Elapsed Time: .873593
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11716796;
+EXEC :b2 := 11716796;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11716796;
+EXEC :b4 := 11716796;
+--SNAP_ID: 2758 Elapsed Time: 176.35367 Executions: 206 Avg Elapsed Time: .856086
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10242109;
+EXEC :b2 := 10242109;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10242109;
+EXEC :b4 := 10242109;
+--SNAP_ID: 2759 Elapsed Time: 200.561596 Executions: 232 Avg Elapsed Time: .86449
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10242109;
+EXEC :b2 := 10242109;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10242109;
+EXEC :b4 := 10242109;
+--SNAP_ID: 2760 Elapsed Time: 96.494858 Executions: 111 Avg Elapsed Time: .869323
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11664869;
+EXEC :b2 := 11664869;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11664869;
+EXEC :b4 := 11664869;
+--SNAP_ID: 2761 Elapsed Time: 78.622192 Executions: 92 Avg Elapsed Time: .854589
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10147850;
+EXEC :b2 := 10147850;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10147850;
+EXEC :b4 := 10147850;
+--SNAP_ID: 2762 Elapsed Time: 63.318792 Executions: 74 Avg Elapsed Time: .855659
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11531711;
+EXEC :b2 := 11531711;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11531711;
+EXEC :b4 := 11531711;
+--SNAP_ID: 2763 Elapsed Time: 100.237429 Executions: 118 Avg Elapsed Time: .84947
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 2764 Elapsed Time: 27.52798 Executions: 31 Avg Elapsed Time: .887999
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11531711;
+EXEC :b2 := 11531711;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11531711;
+EXEC :b4 := 11531711;
+--SNAP_ID: 2765 Elapsed Time: 15.431014 Executions: 18 Avg Elapsed Time: .857279
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10103135;
+EXEC :b2 := 10103135;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10103135;
+EXEC :b4 := 10103135;
+--SNAP_ID: 2794 Elapsed Time: 84.853791 Executions: 91 Avg Elapsed Time: .932459
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11693323;
+EXEC :b2 := 11693323;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11693323;
+EXEC :b4 := 11693323;
+--SNAP_ID: 2795 Elapsed Time: 115.844139 Executions: 128 Avg Elapsed Time: .905032
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11627027;
+EXEC :b2 := 11627027;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11627027;
+EXEC :b4 := 11627027;
+--SNAP_ID: 2796 Elapsed Time: 161.691758 Executions: 179 Avg Elapsed Time: .903306
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10119206;
+EXEC :b2 := 10119206;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10119206;
+EXEC :b4 := 10119206;
+--SNAP_ID: 2797 Elapsed Time: 203.581946 Executions: 226 Avg Elapsed Time: .900805
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10553965;
+EXEC :b2 := 10553965;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10553965;
+EXEC :b4 := 10553965;
+--SNAP_ID: 2798 Elapsed Time: 236.434447 Executions: 262 Avg Elapsed Time: .902422
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11684281;
+EXEC :b2 := 11684281;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11684281;
+EXEC :b4 := 11684281;
+--SNAP_ID: 2799 Elapsed Time: 223.999228 Executions: 252 Avg Elapsed Time: .888886
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11601089;
+EXEC :b2 := 11601089;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11601089;
+EXEC :b4 := 11601089;
+--SNAP_ID: 2800 Elapsed Time: 318.324286 Executions: 360 Avg Elapsed Time: .884234
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673644;
+EXEC :b2 := 11673644;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673644;
+EXEC :b4 := 11673644;
+--SNAP_ID: 2801 Elapsed Time: 227.767716 Executions: 258 Avg Elapsed Time: .882821
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11616050;
+EXEC :b2 := 11616050;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11616050;
+EXEC :b4 := 11616050;
+--SNAP_ID: 2802 Elapsed Time: 174.570215 Executions: 201 Avg Elapsed Time: .868509
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11678772;
+EXEC :b2 := 11678772;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11678772;
+EXEC :b4 := 11678772;
+--SNAP_ID: 2803 Elapsed Time: 177.273121 Executions: 199 Avg Elapsed Time: .89082
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679960;
+EXEC :b2 := 11679960;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679960;
+EXEC :b4 := 11679960;
+--SNAP_ID: 2804 Elapsed Time: 215.995266 Executions: 236 Avg Elapsed Time: .915234
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10158067;
+EXEC :b2 := 10158067;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10158067;
+EXEC :b4 := 10158067;
+--SNAP_ID: 2805 Elapsed Time: 141.071666 Executions: 159 Avg Elapsed Time: .887243
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673644;
+EXEC :b2 := 11673644;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673644;
+EXEC :b4 := 11673644;
+--SNAP_ID: 2806 Elapsed Time: 190.118467 Executions: 215 Avg Elapsed Time: .884272
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11364300;
+EXEC :b2 := 11364300;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11364300;
+EXEC :b4 := 11364300;
+--SNAP_ID: 2807 Elapsed Time: 194.29993 Executions: 209 Avg Elapsed Time: .929665
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11435583;
+EXEC :b2 := 11435583;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11435583;
+EXEC :b4 := 11435583;
+--SNAP_ID: 2808 Elapsed Time: 261.374716 Executions: 270 Avg Elapsed Time: .968055
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11676553;
+EXEC :b2 := 11676553;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11676553;
+EXEC :b4 := 11676553;
+--SNAP_ID: 2809 Elapsed Time: 221.799401 Executions: 243 Avg Elapsed Time: .912755
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11725334;
+EXEC :b2 := 11725334;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11725334;
+EXEC :b4 := 11725334;
+--SNAP_ID: 2810 Elapsed Time: 213.936532 Executions: 238 Avg Elapsed Time: .898893
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11732626;
+EXEC :b2 := 11732626;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11732626;
+EXEC :b4 := 11732626;
+--SNAP_ID: 2811 Elapsed Time: 183.057915 Executions: 209 Avg Elapsed Time: .875875
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673644;
+EXEC :b2 := 11673644;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673644;
+EXEC :b4 := 11673644;
+--SNAP_ID: 2812 Elapsed Time: 59.492278 Executions: 68 Avg Elapsed Time: .874886
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11973178;
+EXEC :b2 := 11973178;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11973178;
+EXEC :b4 := 11973178;
+--SNAP_ID: 2813 Elapsed Time: 25.55993 Executions: 29 Avg Elapsed Time: .881377
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679250;
+EXEC :b2 := 11679250;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679250;
+EXEC :b4 := 11679250;
+--SNAP_ID: 2814 Elapsed Time: 27.086415 Executions: 30 Avg Elapsed Time: .902881
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679250;
+EXEC :b2 := 11679250;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679250;
+EXEC :b4 := 11679250;
+--SNAP_ID: 2815 Elapsed Time: 33.968013 Executions: 35 Avg Elapsed Time: .970515
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679250;
+EXEC :b2 := 11679250;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679250;
+EXEC :b4 := 11679250;
+--SNAP_ID: 2816 Elapsed Time: 24.790735 Executions: 21 Avg Elapsed Time: 1.180511
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679250;
+EXEC :b2 := 11679250;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679250;
+EXEC :b4 := 11679250;
+--SNAP_ID: 2817 Elapsed Time: 28.937709 Executions: 29 Avg Elapsed Time: .997852
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679250;
+EXEC :b2 := 11679250;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679250;
+EXEC :b4 := 11679250;
+--SNAP_ID: 2818 Elapsed Time: 32.142477 Executions: 30 Avg Elapsed Time: 1.071416
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679250;
+EXEC :b2 := 11679250;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679250;
+EXEC :b4 := 11679250;
+--SNAP_ID: 2819 Elapsed Time: 22.9786 Executions: 24 Avg Elapsed Time: .957442
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679250;
+EXEC :b2 := 11679250;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679250;
+EXEC :b4 := 11679250;
+--SNAP_ID: 2829 Elapsed Time: 14.131 Executions: 16 Avg Elapsed Time: .883188
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 2841 Elapsed Time: 12.681226 Executions: 14 Avg Elapsed Time: .905802
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10166619;
+EXEC :b2 := 10166619;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10166619;
+EXEC :b4 := 10166619;
+--SNAP_ID: 2842 Elapsed Time: 64.297849 Executions: 73 Avg Elapsed Time: .880792
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11570358;
+EXEC :b2 := 11570358;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11570358;
+EXEC :b4 := 11570358;
+--SNAP_ID: 2843 Elapsed Time: 144.200828 Executions: 164 Avg Elapsed Time: .879273
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10257145;
+EXEC :b2 := 10257145;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10257145;
+EXEC :b4 := 10257145;
+--SNAP_ID: 2844 Elapsed Time: 136.374299 Executions: 152 Avg Elapsed Time: .897199
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679054;
+EXEC :b2 := 11679054;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679054;
+EXEC :b4 := 11679054;
+--SNAP_ID: 2845 Elapsed Time: 171.489299 Executions: 189 Avg Elapsed Time: .907351
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11081602;
+EXEC :b2 := 11081602;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11081602;
+EXEC :b4 := 11081602;
+--SNAP_ID: 2846 Elapsed Time: 201.046966 Executions: 217 Avg Elapsed Time: .926484
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11081602;
+EXEC :b2 := 11081602;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11081602;
+EXEC :b4 := 11081602;
+--SNAP_ID: 2847 Elapsed Time: 213.813669 Executions: 231 Avg Elapsed Time: .9256
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11693839;
+EXEC :b2 := 11693839;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11693839;
+EXEC :b4 := 11693839;
+--SNAP_ID: 2848 Elapsed Time: 134.055165 Executions: 147 Avg Elapsed Time: .91194
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657065;
+EXEC :b2 := 11657065;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657065;
+EXEC :b4 := 11657065;
+--SNAP_ID: 2849 Elapsed Time: 135.962985 Executions: 149 Avg Elapsed Time: .912503
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11973237;
+EXEC :b2 := 11973237;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11973237;
+EXEC :b4 := 11973237;
+--SNAP_ID: 2850 Elapsed Time: 129.619207 Executions: 141 Avg Elapsed Time: .919285
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11671175;
+EXEC :b2 := 11671175;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11671175;
+EXEC :b4 := 11671175;
+--SNAP_ID: 2851 Elapsed Time: 132.177438 Executions: 150 Avg Elapsed Time: .881183
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11691108;
+EXEC :b2 := 11691108;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11691108;
+EXEC :b4 := 11691108;
+--SNAP_ID: 2852 Elapsed Time: 127.977925 Executions: 141 Avg Elapsed Time: .907645
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10193890;
+EXEC :b2 := 10193890;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10193890;
+EXEC :b4 := 10193890;
+--SNAP_ID: 2853 Elapsed Time: 210.951194 Executions: 201 Avg Elapsed Time: 1.049508
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10653316;
+EXEC :b2 := 10653316;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10653316;
+EXEC :b4 := 10653316;
+--SNAP_ID: 2854 Elapsed Time: 307.280129 Executions: 304 Avg Elapsed Time: 1.01079
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10653230;
+EXEC :b2 := 10653230;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10653230;
+EXEC :b4 := 10653230;
+--SNAP_ID: 2855 Elapsed Time: 233.321266 Executions: 233 Avg Elapsed Time: 1.001379
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11690213;
+EXEC :b2 := 11690213;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11690213;
+EXEC :b4 := 11690213;
+--SNAP_ID: 2856 Elapsed Time: 188.133773 Executions: 198 Avg Elapsed Time: .950171
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11730655;
+EXEC :b2 := 11730655;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11730655;
+EXEC :b4 := 11730655;
+--SNAP_ID: 2857 Elapsed Time: 212.104384 Executions: 228 Avg Elapsed Time: .930282
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11730655;
+EXEC :b2 := 11730655;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11730655;
+EXEC :b4 := 11730655;
+--SNAP_ID: 2858 Elapsed Time: 229.090418 Executions: 257 Avg Elapsed Time: .891402
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11643430;
+EXEC :b2 := 11643430;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11643430;
+EXEC :b4 := 11643430;
+--SNAP_ID: 2859 Elapsed Time: 187.972087 Executions: 210 Avg Elapsed Time: .895105
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11694035;
+EXEC :b2 := 11694035;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11694035;
+EXEC :b4 := 11694035;
+--SNAP_ID: 2860 Elapsed Time: 39.290001 Executions: 44 Avg Elapsed Time: .892955
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11890308;
+EXEC :b2 := 11890308;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11890308;
+EXEC :b4 := 11890308;
+--SNAP_ID: 2861 Elapsed Time: 1.825345 Executions: 2 Avg Elapsed Time: .912673
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11890308;
+EXEC :b2 := 11890308;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11890308;
+EXEC :b4 := 11890308;
+--SNAP_ID: 2862 Elapsed Time: 16.025322 Executions: 18 Avg Elapsed Time: .890296
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976954;
+EXEC :b2 := 11976954;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976954;
+EXEC :b4 := 11976954;
+--SNAP_ID: 2863 Elapsed Time: 28.934678 Executions: 31 Avg Elapsed Time: .933377
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976954;
+EXEC :b2 := 11976954;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976954;
+EXEC :b4 := 11976954;
+--SNAP_ID: 2864 Elapsed Time: 35.02271 Executions: 28 Avg Elapsed Time: 1.250811
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976954;
+EXEC :b2 := 11976954;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976954;
+EXEC :b4 := 11976954;
+--SNAP_ID: 2865 Elapsed Time: 27.492301 Executions: 31 Avg Elapsed Time: .886848
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976954;
+EXEC :b2 := 11976954;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976954;
+EXEC :b4 := 11976954;
+--SNAP_ID: 2866 Elapsed Time: 26.004716 Executions: 29 Avg Elapsed Time: .896714
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976954;
+EXEC :b2 := 11976954;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976954;
+EXEC :b4 := 11976954;
+--SNAP_ID: 2867 Elapsed Time: 30.467561 Executions: 31 Avg Elapsed Time: .982825
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976954;
+EXEC :b2 := 11976954;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976954;
+EXEC :b4 := 11976954;
+--SNAP_ID: 2888 Elapsed Time: 15.899433 Executions: 11 Avg Elapsed Time: 1.445403
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11707371;
+EXEC :b2 := 11707371;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11707371;
+EXEC :b4 := 11707371;
+--SNAP_ID: 2889 Elapsed Time: 7.421806 Executions: 8 Avg Elapsed Time: .927726
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10573530;
+EXEC :b2 := 10573530;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10573530;
+EXEC :b4 := 10573530;
+--SNAP_ID: 2890 Elapsed Time: 77.315694 Executions: 87 Avg Elapsed Time: .888686
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11693839;
+EXEC :b2 := 11693839;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11693839;
+EXEC :b4 := 11693839;
+--SNAP_ID: 2891 Elapsed Time: 102.362505 Executions: 115 Avg Elapsed Time: .890109
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592397;
+EXEC :b2 := 11592397;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592397;
+EXEC :b4 := 11592397;
+--SNAP_ID: 2892 Elapsed Time: 100.666148 Executions: 111 Avg Elapsed Time: .906902
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592397;
+EXEC :b2 := 11592397;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592397;
+EXEC :b4 := 11592397;
+--SNAP_ID: 2893 Elapsed Time: 85.552215 Executions: 96 Avg Elapsed Time: .891169
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11692148;
+EXEC :b2 := 11692148;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11692148;
+EXEC :b4 := 11692148;
+--SNAP_ID: 2894 Elapsed Time: 82.041267 Executions: 92 Avg Elapsed Time: .891753
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11890013;
+EXEC :b2 := 11890013;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11890013;
+EXEC :b4 := 11890013;
+--SNAP_ID: 2895 Elapsed Time: 131.474651 Executions: 148 Avg Elapsed Time: .888342
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11674242;
+EXEC :b2 := 11674242;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11674242;
+EXEC :b4 := 11674242;
+--SNAP_ID: 2896 Elapsed Time: 118.783416 Executions: 122 Avg Elapsed Time: .973635
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11363415;
+EXEC :b2 := 11363415;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11363415;
+EXEC :b4 := 11363415;
+--SNAP_ID: 2897 Elapsed Time: 85.031011 Executions: 96 Avg Elapsed Time: .88574
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668876;
+EXEC :b2 := 11668876;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668876;
+EXEC :b4 := 11668876;
+--SNAP_ID: 2898 Elapsed Time: 120.784564 Executions: 136 Avg Elapsed Time: .888122
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10179020;
+EXEC :b2 := 10179020;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10179020;
+EXEC :b4 := 10179020;
+--SNAP_ID: 2899 Elapsed Time: 166.045942 Executions: 187 Avg Elapsed Time: .887946
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11363415;
+EXEC :b2 := 11363415;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11363415;
+EXEC :b4 := 11363415;
+--SNAP_ID: 2900 Elapsed Time: 145.609641 Executions: 165 Avg Elapsed Time: .882483
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11225755;
+EXEC :b2 := 11225755;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11225755;
+EXEC :b4 := 11225755;
+--SNAP_ID: 2901 Elapsed Time: 177.04029 Executions: 199 Avg Elapsed Time: .88965
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11678053;
+EXEC :b2 := 11678053;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11678053;
+EXEC :b4 := 11678053;
+--SNAP_ID: 2902 Elapsed Time: 140.810093 Executions: 158 Avg Elapsed Time: .891203
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10573234;
+EXEC :b2 := 10573234;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10573234;
+EXEC :b4 := 10573234;
+--SNAP_ID: 2903 Elapsed Time: 140.104638 Executions: 160 Avg Elapsed Time: .875654
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11248772;
+EXEC :b2 := 11248772;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11248772;
+EXEC :b4 := 11248772;
+--SNAP_ID: 2904 Elapsed Time: 172.715316 Executions: 196 Avg Elapsed Time: .881201
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11363415;
+EXEC :b2 := 11363415;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11363415;
+EXEC :b4 := 11363415;
+--SNAP_ID: 2905 Elapsed Time: 140.650243 Executions: 161 Avg Elapsed Time: .873604
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11363415;
+EXEC :b2 := 11363415;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11363415;
+EXEC :b4 := 11363415;
+--SNAP_ID: 2906 Elapsed Time: 159.899327 Executions: 183 Avg Elapsed Time: .873767
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11726832;
+EXEC :b2 := 11726832;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11726832;
+EXEC :b4 := 11726832;
+--SNAP_ID: 2907 Elapsed Time: 148.530989 Executions: 168 Avg Elapsed Time: .884113
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11514318;
+EXEC :b2 := 11514318;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11514318;
+EXEC :b4 := 11514318;
+--SNAP_ID: 2908 Elapsed Time: 73.849828 Executions: 84 Avg Elapsed Time: .879165
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11514318;
+EXEC :b2 := 11514318;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11514318;
+EXEC :b4 := 11514318;
+--SNAP_ID: 2909 Elapsed Time: 57.190161 Executions: 61 Avg Elapsed Time: .937544
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11627027;
+EXEC :b2 := 11627027;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11627027;
+EXEC :b4 := 11627027;
+--SNAP_ID: 2910 Elapsed Time: 53.854789 Executions: 60 Avg Elapsed Time: .89758
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11627027;
+EXEC :b2 := 11627027;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11627027;
+EXEC :b4 := 11627027;
+--SNAP_ID: 2914 Elapsed Time: 24.937018 Executions: 26 Avg Elapsed Time: .959116
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11627027;
+EXEC :b2 := 11627027;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11627027;
+EXEC :b4 := 11627027;
+--SNAP_ID: 2935 Elapsed Time: 10.189416 Executions: 9 Avg Elapsed Time: 1.132157
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11669797;
+EXEC :b2 := 11669797;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11669797;
+EXEC :b4 := 11669797;
+--SNAP_ID: 2936 Elapsed Time: .971724 Executions: 1 Avg Elapsed Time: .971724
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11702312;
+EXEC :b2 := 11702312;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11702312;
+EXEC :b4 := 11702312;
+--SNAP_ID: 2937 Elapsed Time: 3.902428 Executions: 4 Avg Elapsed Time: .975607
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11664360;
+EXEC :b2 := 11664360;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11664360;
+EXEC :b4 := 11664360;
+--SNAP_ID: 2938 Elapsed Time: 71.047525 Executions: 80 Avg Elapsed Time: .888094
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10674020;
+EXEC :b2 := 10674020;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10674020;
+EXEC :b4 := 10674020;
+--SNAP_ID: 2939 Elapsed Time: 135.301491 Executions: 153 Avg Elapsed Time: .884323
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10639580;
+EXEC :b2 := 10639580;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10639580;
+EXEC :b4 := 10639580;
+--SNAP_ID: 2940 Elapsed Time: 178.080773 Executions: 192 Avg Elapsed Time: .927504
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10142872;
+EXEC :b2 := 10142872;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10142872;
+EXEC :b4 := 10142872;
+--SNAP_ID: 2941 Elapsed Time: 223.953862 Executions: 227 Avg Elapsed Time: .986581
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724775;
+EXEC :b2 := 11724775;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724775;
+EXEC :b4 := 11724775;
+--SNAP_ID: 2942 Elapsed Time: 76.349654 Executions: 86 Avg Elapsed Time: .887787
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11309817;
+EXEC :b2 := 11309817;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11309817;
+EXEC :b4 := 11309817;
+--SNAP_ID: 2943 Elapsed Time: 104.900248 Executions: 118 Avg Elapsed Time: .888985
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10895522;
+EXEC :b2 := 10895522;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10895522;
+EXEC :b4 := 10895522;
+--SNAP_ID: 2944 Elapsed Time: 104.285898 Executions: 118 Avg Elapsed Time: .883779
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11457771;
+EXEC :b2 := 11457771;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11457771;
+EXEC :b4 := 11457771;
+--SNAP_ID: 2945 Elapsed Time: 96.267198 Executions: 109 Avg Elapsed Time: .883185
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11635375;
+EXEC :b2 := 11635375;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11635375;
+EXEC :b4 := 11635375;
+--SNAP_ID: 2946 Elapsed Time: 128.663947 Executions: 141 Avg Elapsed Time: .91251
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11653842;
+EXEC :b2 := 11653842;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11653842;
+EXEC :b4 := 11653842;
+--SNAP_ID: 2947 Elapsed Time: 145.187583 Executions: 163 Avg Elapsed Time: .890721
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11653842;
+EXEC :b2 := 11653842;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11653842;
+EXEC :b4 := 11653842;
+--SNAP_ID: 2948 Elapsed Time: 244.275303 Executions: 245 Avg Elapsed Time: .997042
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10246899;
+EXEC :b2 := 10246899;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10246899;
+EXEC :b4 := 10246899;
+--SNAP_ID: 2949 Elapsed Time: 238.570052 Executions: 246 Avg Elapsed Time: .969797
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10216329;
+EXEC :b2 := 10216329;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10216329;
+EXEC :b4 := 10216329;
+--SNAP_ID: 2950 Elapsed Time: 277.42075 Executions: 289 Avg Elapsed Time: .959933
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11662198;
+EXEC :b2 := 11662198;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11662198;
+EXEC :b4 := 11662198;
+--SNAP_ID: 2951 Elapsed Time: 207.959913 Executions: 210 Avg Elapsed Time: .990285
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11658964;
+EXEC :b2 := 11658964;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11658964;
+EXEC :b4 := 11658964;
+--SNAP_ID: 2952 Elapsed Time: 217.324881 Executions: 225 Avg Elapsed Time: .965888
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11449223;
+EXEC :b2 := 11449223;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11449223;
+EXEC :b4 := 11449223;
+--SNAP_ID: 2953 Elapsed Time: 209.953998 Executions: 213 Avg Elapsed Time: .9857
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11068963;
+EXEC :b2 := 11068963;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11068963;
+EXEC :b4 := 11068963;
+--SNAP_ID: 2954 Elapsed Time: 166.860075 Executions: 172 Avg Elapsed Time: .970117
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11715581;
+EXEC :b2 := 11715581;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11715581;
+EXEC :b4 := 11715581;
+--SNAP_ID: 2955 Elapsed Time: 68.31842 Executions: 75 Avg Elapsed Time: .910912
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974477;
+EXEC :b2 := 11974477;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974477;
+EXEC :b4 := 11974477;
+--SNAP_ID: 2956 Elapsed Time: 45.315405 Executions: 49 Avg Elapsed Time: .924804
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974477;
+EXEC :b2 := 11974477;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974477;
+EXEC :b4 := 11974477;
+--SNAP_ID: 3081 Elapsed Time: 21.97921 Executions: 21 Avg Elapsed Time: 1.046629
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11627027;
+EXEC :b2 := 11627027;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11627027;
+EXEC :b4 := 11627027;
+--SNAP_ID: 3082 Elapsed Time: 39.169227 Executions: 41 Avg Elapsed Time: .955347
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11662538;
+EXEC :b2 := 11662538;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11662538;
+EXEC :b4 := 11662538;
+--SNAP_ID: 3083 Elapsed Time: 177.185783 Executions: 188 Avg Elapsed Time: .942478
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11341891;
+EXEC :b2 := 11341891;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11341891;
+EXEC :b4 := 11341891;
+--SNAP_ID: 3084 Elapsed Time: 97.435076 Executions: 100 Avg Elapsed Time: .974351
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11632006;
+EXEC :b2 := 11632006;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11632006;
+EXEC :b4 := 11632006;
+--SNAP_ID: 3085 Elapsed Time: 141.695937 Executions: 148 Avg Elapsed Time: .957405
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11206304;
+EXEC :b2 := 11206304;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11206304;
+EXEC :b4 := 11206304;
+--SNAP_ID: 3086 Elapsed Time: 146.245408 Executions: 156 Avg Elapsed Time: .937471
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10189338;
+EXEC :b2 := 10189338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10189338;
+EXEC :b4 := 10189338;
+--SNAP_ID: 3087 Elapsed Time: 220.009764 Executions: 226 Avg Elapsed Time: .973495
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10189338;
+EXEC :b2 := 10189338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10189338;
+EXEC :b4 := 10189338;
+--SNAP_ID: 3088 Elapsed Time: 339.875929 Executions: 356 Avg Elapsed Time: .954708
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10216329;
+EXEC :b2 := 10216329;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10216329;
+EXEC :b4 := 10216329;
+--SNAP_ID: 3089 Elapsed Time: 187.202139 Executions: 201 Avg Elapsed Time: .931354
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11194802;
+EXEC :b2 := 11194802;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11194802;
+EXEC :b4 := 11194802;
+--SNAP_ID: 3090 Elapsed Time: 269.249387 Executions: 283 Avg Elapsed Time: .951411
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11717177;
+EXEC :b2 := 11717177;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11717177;
+EXEC :b4 := 11717177;
+--SNAP_ID: 3091 Elapsed Time: 311.817593 Executions: 324 Avg Elapsed Time: .9624
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11693551;
+EXEC :b2 := 11693551;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11693551;
+EXEC :b4 := 11693551;
+--SNAP_ID: 3092 Elapsed Time: 271.037576 Executions: 302 Avg Elapsed Time: .897475
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11531711;
+EXEC :b2 := 11531711;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11531711;
+EXEC :b4 := 11531711;
+--SNAP_ID: 3093 Elapsed Time: 239.270252 Executions: 263 Avg Elapsed Time: .909773
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10717062;
+EXEC :b2 := 10717062;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10717062;
+EXEC :b4 := 10717062;
+--SNAP_ID: 3094 Elapsed Time: 314.951031 Executions: 343 Avg Elapsed Time: .918225
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10147689;
+EXEC :b2 := 10147689;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10147689;
+EXEC :b4 := 10147689;
+--SNAP_ID: 3095 Elapsed Time: 269.655049 Executions: 288 Avg Elapsed Time: .936302
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11973271;
+EXEC :b2 := 11973271;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11973271;
+EXEC :b4 := 11973271;
+--SNAP_ID: 3096 Elapsed Time: 250.70199 Executions: 271 Avg Elapsed Time: .9251
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11040342;
+EXEC :b2 := 11040342;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11040342;
+EXEC :b4 := 11040342;
+--SNAP_ID: 3097 Elapsed Time: 244.71064 Executions: 270 Avg Elapsed Time: .906336
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11068963;
+EXEC :b2 := 11068963;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11068963;
+EXEC :b4 := 11068963;
+--SNAP_ID: 3098 Elapsed Time: 280.475532 Executions: 296 Avg Elapsed Time: .947552
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10222871;
+EXEC :b2 := 10222871;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10222871;
+EXEC :b4 := 10222871;
+--SNAP_ID: 3099 Elapsed Time: 162.879476 Executions: 169 Avg Elapsed Time: .963784
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11311003;
+EXEC :b2 := 11311003;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11311003;
+EXEC :b4 := 11311003;
+--SNAP_ID: 3100 Elapsed Time: 29.866141 Executions: 29 Avg Elapsed Time: 1.029867
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11725153;
+EXEC :b2 := 11725153;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11725153;
+EXEC :b4 := 11725153;
+--SNAP_ID: 3127 Elapsed Time: 17.596361 Executions: 7 Avg Elapsed Time: 2.513766
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3128 Elapsed Time: 15.337381 Executions: 13 Avg Elapsed Time: 1.179799
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3129 Elapsed Time: 20.688891 Executions: 23 Avg Elapsed Time: .899517
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11980036;
+EXEC :b2 := 11980036;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11980036;
+EXEC :b4 := 11980036;
+--SNAP_ID: 3130 Elapsed Time: 61.967079 Executions: 66 Avg Elapsed Time: .938895
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3131 Elapsed Time: 137.37784 Executions: 146 Avg Elapsed Time: .940944
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3132 Elapsed Time: 190.925948 Executions: 204 Avg Elapsed Time: .935912
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3133 Elapsed Time: 224.367198 Executions: 235 Avg Elapsed Time: .954754
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3134 Elapsed Time: 139.459379 Executions: 147 Avg Elapsed Time: .948703
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3135 Elapsed Time: 272.429321 Executions: 287 Avg Elapsed Time: .949231
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3136 Elapsed Time: 326.818115 Executions: 324 Avg Elapsed Time: 1.008698
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3137 Elapsed Time: 325.822935 Executions: 340 Avg Elapsed Time: .958303
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3138 Elapsed Time: 207.811373 Executions: 221 Avg Elapsed Time: .940323
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3139 Elapsed Time: 215.076871 Executions: 228 Avg Elapsed Time: .94332
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3140 Elapsed Time: 158.267501 Executions: 167 Avg Elapsed Time: .94771
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3141 Elapsed Time: 129.250995 Executions: 139 Avg Elapsed Time: .929863
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3142 Elapsed Time: 185.068802 Executions: 194 Avg Elapsed Time: .953963
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3143 Elapsed Time: 169.118741 Executions: 178 Avg Elapsed Time: .950105
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3144 Elapsed Time: 147.574253 Executions: 155 Avg Elapsed Time: .952092
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3145 Elapsed Time: 179.162238 Executions: 184 Avg Elapsed Time: .973708
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3146 Elapsed Time: 152.056326 Executions: 162 Avg Elapsed Time: .938619
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3147 Elapsed Time: 163.999281 Executions: 174 Avg Elapsed Time: .942525
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3148 Elapsed Time: 107.476891 Executions: 110 Avg Elapsed Time: .977063
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3150 Elapsed Time: 15.171098 Executions: 16 Avg Elapsed Time: .948194
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11284211;
+EXEC :b2 := 11284211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11284211;
+EXEC :b4 := 11284211;
+--SNAP_ID: 3177 Elapsed Time: 5.441188 Executions: 6 Avg Elapsed Time: .906865
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673644;
+EXEC :b2 := 11673644;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673644;
+EXEC :b4 := 11673644;
+--SNAP_ID: 3178 Elapsed Time: 118.772049 Executions: 132 Avg Elapsed Time: .899788
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11513218;
+EXEC :b2 := 11513218;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11513218;
+EXEC :b4 := 11513218;
+--SNAP_ID: 3179 Elapsed Time: 221.817756 Executions: 246 Avg Elapsed Time: .901698
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11700560;
+EXEC :b2 := 11700560;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11700560;
+EXEC :b4 := 11700560;
+--SNAP_ID: 3180 Elapsed Time: 225.828053 Executions: 246 Avg Elapsed Time: .918
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10230424;
+EXEC :b2 := 10230424;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10230424;
+EXEC :b4 := 10230424;
+--SNAP_ID: 3181 Elapsed Time: 211.52382 Executions: 232 Avg Elapsed Time: .911741
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10230424;
+EXEC :b2 := 10230424;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10230424;
+EXEC :b4 := 10230424;
+--SNAP_ID: 3182 Elapsed Time: 270.604184 Executions: 297 Avg Elapsed Time: .911125
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11518725;
+EXEC :b2 := 11518725;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11518725;
+EXEC :b4 := 11518725;
+--SNAP_ID: 3183 Elapsed Time: 274.522931 Executions: 293 Avg Elapsed Time: .936938
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11709158;
+EXEC :b2 := 11709158;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11709158;
+EXEC :b4 := 11709158;
+--SNAP_ID: 3184 Elapsed Time: 193.768821 Executions: 205 Avg Elapsed Time: .945214
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11709158;
+EXEC :b2 := 11709158;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11709158;
+EXEC :b4 := 11709158;
+--SNAP_ID: 3185 Elapsed Time: 112.408332 Executions: 125 Avg Elapsed Time: .899267
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10472523;
+EXEC :b2 := 10472523;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10472523;
+EXEC :b4 := 10472523;
+--SNAP_ID: 3186 Elapsed Time: 110.516542 Executions: 123 Avg Elapsed Time: .898508
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10230424;
+EXEC :b2 := 10230424;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10230424;
+EXEC :b4 := 10230424;
+--SNAP_ID: 3187 Elapsed Time: 169.924293 Executions: 188 Avg Elapsed Time: .903853
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10260822;
+EXEC :b2 := 10260822;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10260822;
+EXEC :b4 := 10260822;
+--SNAP_ID: 3188 Elapsed Time: 165.463094 Executions: 182 Avg Elapsed Time: .909138
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11505433;
+EXEC :b2 := 11505433;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11505433;
+EXEC :b4 := 11505433;
+--SNAP_ID: 3189 Elapsed Time: 208.5892 Executions: 225 Avg Elapsed Time: .927063
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10161361;
+EXEC :b2 := 10161361;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10161361;
+EXEC :b4 := 10161361;
+--SNAP_ID: 3190 Elapsed Time: 190.282038 Executions: 201 Avg Elapsed Time: .946677
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11663393;
+EXEC :b2 := 11663393;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11663393;
+EXEC :b4 := 11663393;
+--SNAP_ID: 3191 Elapsed Time: 176.70769 Executions: 189 Avg Elapsed Time: .934961
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11626059;
+EXEC :b2 := 11626059;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11626059;
+EXEC :b4 := 11626059;
+--SNAP_ID: 3192 Elapsed Time: 205.640295 Executions: 219 Avg Elapsed Time: .938997
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10114050;
+EXEC :b2 := 10114050;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10114050;
+EXEC :b4 := 10114050;
+--SNAP_ID: 3193 Elapsed Time: 276.434832 Executions: 303 Avg Elapsed Time: .912326
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11681091;
+EXEC :b2 := 11681091;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11681091;
+EXEC :b4 := 11681091;
+--SNAP_ID: 3194 Elapsed Time: 189.165627 Executions: 212 Avg Elapsed Time: .892291
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11289796;
+EXEC :b2 := 11289796;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11289796;
+EXEC :b4 := 11289796;
+--SNAP_ID: 3195 Elapsed Time: 176.45831 Executions: 198 Avg Elapsed Time: .891204
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10114050;
+EXEC :b2 := 10114050;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10114050;
+EXEC :b4 := 10114050;
+--SNAP_ID: 3196 Elapsed Time: 124.257593 Executions: 136 Avg Elapsed Time: .913659
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11626059;
+EXEC :b2 := 11626059;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11626059;
+EXEC :b4 := 11626059;
+--SNAP_ID: 3197 Elapsed Time: 71.897641 Executions: 79 Avg Elapsed Time: .910097
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11665495;
+EXEC :b2 := 11665495;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11665495;
+EXEC :b4 := 11665495;
+--SNAP_ID: 3200 Elapsed Time: 12.366302 Executions: 12 Avg Elapsed Time: 1.030525
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10230424;
+EXEC :b2 := 10230424;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10230424;
+EXEC :b4 := 10230424;
+--SNAP_ID: 3224 Elapsed Time: 28.510953 Executions: 23 Avg Elapsed Time: 1.239607
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3225 Elapsed Time: 28.802813 Executions: 32 Avg Elapsed Time: .900088
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974847;
+EXEC :b2 := 11974847;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974847;
+EXEC :b4 := 11974847;
+--SNAP_ID: 3226 Elapsed Time: 57.259994 Executions: 64 Avg Elapsed Time: .894687
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11595331;
+EXEC :b2 := 11595331;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11595331;
+EXEC :b4 := 11595331;
+--SNAP_ID: 3227 Elapsed Time: 199.426586 Executions: 216 Avg Elapsed Time: .923271
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11625916;
+EXEC :b2 := 11625916;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11625916;
+EXEC :b4 := 11625916;
+--SNAP_ID: 3228 Elapsed Time: 166.097892 Executions: 185 Avg Elapsed Time: .897826
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10233788;
+EXEC :b2 := 10233788;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10233788;
+EXEC :b4 := 10233788;
+--SNAP_ID: 3229 Elapsed Time: 212.87658 Executions: 237 Avg Elapsed Time: .898213
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11704983;
+EXEC :b2 := 11704983;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11704983;
+EXEC :b4 := 11704983;
+--SNAP_ID: 3230 Elapsed Time: 255.02317 Executions: 283 Avg Elapsed Time: .901142
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521563;
+EXEC :b2 := 11521563;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521563;
+EXEC :b4 := 11521563;
+--SNAP_ID: 3231 Elapsed Time: 265.172292 Executions: 232 Avg Elapsed Time: 1.142984
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11460072;
+EXEC :b2 := 11460072;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11460072;
+EXEC :b4 := 11460072;
+--SNAP_ID: 3232 Elapsed Time: 215.71331 Executions: 187 Avg Elapsed Time: 1.153547
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521563;
+EXEC :b2 := 11521563;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521563;
+EXEC :b4 := 11521563;
+--SNAP_ID: 3233 Elapsed Time: 223.429679 Executions: 185 Avg Elapsed Time: 1.207728
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3234 Elapsed Time: 245.974902 Executions: 205 Avg Elapsed Time: 1.199878
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11980037;
+EXEC :b2 := 11980037;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11980037;
+EXEC :b4 := 11980037;
+--SNAP_ID: 3235 Elapsed Time: 223.594333 Executions: 191 Avg Elapsed Time: 1.170651
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11980138;
+EXEC :b2 := 11980138;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11980138;
+EXEC :b4 := 11980138;
+--SNAP_ID: 3236 Elapsed Time: 172.544582 Executions: 176 Avg Elapsed Time: .980367
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679939;
+EXEC :b2 := 11679939;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679939;
+EXEC :b4 := 11679939;
+--SNAP_ID: 3237 Elapsed Time: 160.293205 Executions: 177 Avg Elapsed Time: .905611
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679939;
+EXEC :b2 := 11679939;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679939;
+EXEC :b4 := 11679939;
+--SNAP_ID: 3238 Elapsed Time: 158.994995 Executions: 177 Avg Elapsed Time: .898277
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10080942;
+EXEC :b2 := 10080942;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10080942;
+EXEC :b4 := 10080942;
+--SNAP_ID: 3239 Elapsed Time: 155.04642 Executions: 171 Avg Elapsed Time: .906704
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11625916;
+EXEC :b2 := 11625916;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11625916;
+EXEC :b4 := 11625916;
+--SNAP_ID: 3240 Elapsed Time: 166.547381 Executions: 185 Avg Elapsed Time: .900256
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974601;
+EXEC :b2 := 11974601;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974601;
+EXEC :b4 := 11974601;
+--SNAP_ID: 3241 Elapsed Time: 164.154695 Executions: 183 Avg Elapsed Time: .89702
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10179682;
+EXEC :b2 := 10179682;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10179682;
+EXEC :b4 := 10179682;
+--SNAP_ID: 3242 Elapsed Time: 145.119512 Executions: 163 Avg Elapsed Time: .890304
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10179682;
+EXEC :b2 := 10179682;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10179682;
+EXEC :b4 := 10179682;
+--SNAP_ID: 3243 Elapsed Time: 122.07519 Executions: 135 Avg Elapsed Time: .904261
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3244 Elapsed Time: 44.995983 Executions: 49 Avg Elapsed Time: .918285
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3245 Elapsed Time: 51.251265 Executions: 55 Avg Elapsed Time: .931841
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3246 Elapsed Time: 28.791358 Executions: 32 Avg Elapsed Time: .89973
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3248 Elapsed Time: 26.294117 Executions: 25 Avg Elapsed Time: 1.051765
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3249 Elapsed Time: 26.861924 Executions: 30 Avg Elapsed Time: .895397
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3250 Elapsed Time: 29.419931 Executions: 26 Avg Elapsed Time: 1.131536
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3251 Elapsed Time: 22.287397 Executions: 23 Avg Elapsed Time: .969017
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3271 Elapsed Time: 10.338586 Executions: 9 Avg Elapsed Time: 1.148732
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 3274 Elapsed Time: 5.979111 Executions: 6 Avg Elapsed Time: .996519
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11099934;
+EXEC :b2 := 11099934;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11099934;
+EXEC :b4 := 11099934;
+--SNAP_ID: 3275 Elapsed Time: 43.203451 Executions: 44 Avg Elapsed Time: .981897
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673644;
+EXEC :b2 := 11673644;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673644;
+EXEC :b4 := 11673644;
+--SNAP_ID: 3276 Elapsed Time: 67.094041 Executions: 67 Avg Elapsed Time: 1.001404
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11040342;
+EXEC :b2 := 11040342;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11040342;
+EXEC :b4 := 11040342;
+--SNAP_ID: 3277 Elapsed Time: 112.107135 Executions: 113 Avg Elapsed Time: .992099
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11625916;
+EXEC :b2 := 11625916;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11625916;
+EXEC :b4 := 11625916;
+--SNAP_ID: 3278 Elapsed Time: 113.100334 Executions: 116 Avg Elapsed Time: .975003
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10689571;
+EXEC :b2 := 10689571;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10689571;
+EXEC :b4 := 10689571;
+--SNAP_ID: 3279 Elapsed Time: 106.499562 Executions: 117 Avg Elapsed Time: .910253
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11040342;
+EXEC :b2 := 11040342;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11040342;
+EXEC :b4 := 11040342;
+--SNAP_ID: 3280 Elapsed Time: 54.657194 Executions: 58 Avg Elapsed Time: .942365
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11040342;
+EXEC :b2 := 11040342;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11040342;
+EXEC :b4 := 11040342;
+--SNAP_ID: 3281 Elapsed Time: 56.746028 Executions: 62 Avg Elapsed Time: .915259
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10213338;
+EXEC :b2 := 10213338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10213338;
+EXEC :b4 := 10213338;
+--SNAP_ID: 3282 Elapsed Time: 68.321444 Executions: 74 Avg Elapsed Time: .923263
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11378347;
+EXEC :b2 := 11378347;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11378347;
+EXEC :b4 := 11378347;
+--SNAP_ID: 3283 Elapsed Time: 88.190722 Executions: 96 Avg Elapsed Time: .918653
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11040342;
+EXEC :b2 := 11040342;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11040342;
+EXEC :b4 := 11040342;
+--SNAP_ID: 3284 Elapsed Time: 105.696252 Executions: 117 Avg Elapsed Time: .903387
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11686304;
+EXEC :b2 := 11686304;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11686304;
+EXEC :b4 := 11686304;
+--SNAP_ID: 3285 Elapsed Time: 119.599869 Executions: 128 Avg Elapsed Time: .934374
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668876;
+EXEC :b2 := 11668876;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668876;
+EXEC :b4 := 11668876;
+--SNAP_ID: 3286 Elapsed Time: 190.365295 Executions: 199 Avg Elapsed Time: .95661
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521990;
+EXEC :b2 := 11521990;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521990;
+EXEC :b4 := 11521990;
+--SNAP_ID: 3287 Elapsed Time: 177.606523 Executions: 188 Avg Elapsed Time: .944716
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11040342;
+EXEC :b2 := 11040342;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11040342;
+EXEC :b4 := 11040342;
+--SNAP_ID: 3288 Elapsed Time: 192.282515 Executions: 205 Avg Elapsed Time: .937963
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11040342;
+EXEC :b2 := 11040342;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11040342;
+EXEC :b4 := 11040342;
+--SNAP_ID: 3289 Elapsed Time: 156.606414 Executions: 167 Avg Elapsed Time: .937763
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10171445;
+EXEC :b2 := 10171445;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10171445;
+EXEC :b4 := 10171445;
+--SNAP_ID: 3290 Elapsed Time: 134.987427 Executions: 145 Avg Elapsed Time: .930948
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10621429;
+EXEC :b2 := 10621429;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10621429;
+EXEC :b4 := 10621429;
+--SNAP_ID: 3291 Elapsed Time: 127.166282 Executions: 137 Avg Elapsed Time: .928221
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11040342;
+EXEC :b2 := 11040342;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11040342;
+EXEC :b4 := 11040342;
+--SNAP_ID: 3292 Elapsed Time: 117.323224 Executions: 129 Avg Elapsed Time: .909482
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10621429;
+EXEC :b2 := 10621429;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10621429;
+EXEC :b4 := 10621429;
+--SNAP_ID: 3293 Elapsed Time: 87.734383 Executions: 90 Avg Elapsed Time: .974826
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11040342;
+EXEC :b2 := 11040342;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11040342;
+EXEC :b4 := 11040342;
+--SNAP_ID: 3294 Elapsed Time: 54.33562 Executions: 60 Avg Elapsed Time: .905594
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11610368;
+EXEC :b2 := 11610368;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11610368;
+EXEC :b4 := 11610368;
+--SNAP_ID: 3296 Elapsed Time: 38.318311 Executions: 33 Avg Elapsed Time: 1.161161
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11529578;
+EXEC :b2 := 11529578;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11529578;
+EXEC :b4 := 11529578;
+--SNAP_ID: 3297 Elapsed Time: 59.873992 Executions: 44 Avg Elapsed Time: 1.360773
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11529578;
+EXEC :b2 := 11529578;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11529578;
+EXEC :b4 := 11529578;
+--SNAP_ID: 3417 Elapsed Time: 11.573995 Executions: 13 Avg Elapsed Time: .890307
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11669326;
+EXEC :b2 := 11669326;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11669326;
+EXEC :b4 := 11669326;
+--SNAP_ID: 3418 Elapsed Time: 110.109993 Executions: 119 Avg Elapsed Time: .925294
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974744;
+EXEC :b2 := 11974744;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974744;
+EXEC :b4 := 11974744;
+--SNAP_ID: 3419 Elapsed Time: 175.140739 Executions: 195 Avg Elapsed Time: .898158
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11060286;
+EXEC :b2 := 11060286;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11060286;
+EXEC :b4 := 11060286;
+--SNAP_ID: 3420 Elapsed Time: 210.689084 Executions: 232 Avg Elapsed Time: .908143
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11511018;
+EXEC :b2 := 11511018;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11511018;
+EXEC :b4 := 11511018;
+--SNAP_ID: 3421 Elapsed Time: 208.252967 Executions: 229 Avg Elapsed Time: .909402
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11704983;
+EXEC :b2 := 11704983;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11704983;
+EXEC :b4 := 11704983;
+--SNAP_ID: 3422 Elapsed Time: 216.831534 Executions: 244 Avg Elapsed Time: .888654
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10729689;
+EXEC :b2 := 10729689;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10729689;
+EXEC :b4 := 10729689;
+--SNAP_ID: 3423 Elapsed Time: 221.750044 Executions: 246 Avg Elapsed Time: .901423
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11681599;
+EXEC :b2 := 11681599;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11681599;
+EXEC :b4 := 11681599;
+--SNAP_ID: 3424 Elapsed Time: 233.934398 Executions: 253 Avg Elapsed Time: .924642
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11612456;
+EXEC :b2 := 11612456;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11612456;
+EXEC :b4 := 11612456;
+--SNAP_ID: 3425 Elapsed Time: 209.629734 Executions: 228 Avg Elapsed Time: .919429
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11338446;
+EXEC :b2 := 11338446;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11338446;
+EXEC :b4 := 11338446;
+--SNAP_ID: 3426 Elapsed Time: 246.524245 Executions: 273 Avg Elapsed Time: .903019
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11681599;
+EXEC :b2 := 11681599;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11681599;
+EXEC :b4 := 11681599;
+--SNAP_ID: 3427 Elapsed Time: 246.047759 Executions: 272 Avg Elapsed Time: .904587
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11643208;
+EXEC :b2 := 11643208;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11643208;
+EXEC :b4 := 11643208;
+--SNAP_ID: 3428 Elapsed Time: 231.72708 Executions: 259 Avg Elapsed Time: .894699
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11980586;
+EXEC :b2 := 11980586;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11980586;
+EXEC :b4 := 11980586;
+--SNAP_ID: 3429 Elapsed Time: 189.290986 Executions: 212 Avg Elapsed Time: .892882
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10729689;
+EXEC :b2 := 10729689;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10729689;
+EXEC :b4 := 10729689;
+--SNAP_ID: 3430 Elapsed Time: 233.8878 Executions: 262 Avg Elapsed Time: .892702
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11317973;
+EXEC :b2 := 11317973;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11317973;
+EXEC :b4 := 11317973;
+--SNAP_ID: 3431 Elapsed Time: 305.327834 Executions: 339 Avg Elapsed Time: .900672
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11599117;
+EXEC :b2 := 11599117;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11599117;
+EXEC :b4 := 11599117;
+--SNAP_ID: 3432 Elapsed Time: 314.600651 Executions: 348 Avg Elapsed Time: .904025
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10147689;
+EXEC :b2 := 10147689;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10147689;
+EXEC :b4 := 10147689;
+--SNAP_ID: 3433 Elapsed Time: 304.16665 Executions: 338 Avg Elapsed Time: .899901
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10147689;
+EXEC :b2 := 10147689;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10147689;
+EXEC :b4 := 10147689;
+--SNAP_ID: 3434 Elapsed Time: 316.217372 Executions: 353 Avg Elapsed Time: .8958
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11671670;
+EXEC :b2 := 11671670;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11671670;
+EXEC :b4 := 11671670;
+--SNAP_ID: 3435 Elapsed Time: 296.412785 Executions: 330 Avg Elapsed Time: .898221
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11642906;
+EXEC :b2 := 11642906;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11642906;
+EXEC :b4 := 11642906;
+--SNAP_ID: 3436 Elapsed Time: 115.815707 Executions: 127 Avg Elapsed Time: .911935
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11543260;
+EXEC :b2 := 11543260;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11543260;
+EXEC :b4 := 11543260;
+--SNAP_ID: 3437 Elapsed Time: 44.063357 Executions: 49 Avg Elapsed Time: .899252
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11543260;
+EXEC :b2 := 11543260;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11543260;
+EXEC :b4 := 11543260;
+--SNAP_ID: 3438 Elapsed Time: 31.778539 Executions: 35 Avg Elapsed Time: .907958
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11543260;
+EXEC :b2 := 11543260;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11543260;
+EXEC :b4 := 11543260;
+--SNAP_ID: 3439 Elapsed Time: 33.49141 Executions: 34 Avg Elapsed Time: .985041
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11543260;
+EXEC :b2 := 11543260;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11543260;
+EXEC :b4 := 11543260;
+--SNAP_ID: 3441 Elapsed Time: 22.223978 Executions: 23 Avg Elapsed Time: .96626
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11543260;
+EXEC :b2 := 11543260;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11543260;
+EXEC :b4 := 11543260;
+--SNAP_ID: 3464 Elapsed Time: 8.771545 Executions: 6 Avg Elapsed Time: 1.461924
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11629832;
+EXEC :b2 := 11629832;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11629832;
+EXEC :b4 := 11629832;
+--SNAP_ID: 3465 Elapsed Time: 14.837738 Executions: 16 Avg Elapsed Time: .927359
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11555630;
+EXEC :b2 := 11555630;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11555630;
+EXEC :b4 := 11555630;
+--SNAP_ID: 3466 Elapsed Time: 93.901673 Executions: 103 Avg Elapsed Time: .911667
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11642906;
+EXEC :b2 := 11642906;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11642906;
+EXEC :b4 := 11642906;
+--SNAP_ID: 3467 Elapsed Time: 121.121735 Executions: 135 Avg Elapsed Time: .897198
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11642906;
+EXEC :b2 := 11642906;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11642906;
+EXEC :b4 := 11642906;
+--SNAP_ID: 3468 Elapsed Time: 143.780173 Executions: 158 Avg Elapsed Time: .910001
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11216609;
+EXEC :b2 := 11216609;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11216609;
+EXEC :b4 := 11216609;
+--SNAP_ID: 3469 Elapsed Time: 145.293939 Executions: 161 Avg Elapsed Time: .902447
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11643208;
+EXEC :b2 := 11643208;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11643208;
+EXEC :b4 := 11643208;
+--SNAP_ID: 3470 Elapsed Time: 161.756149 Executions: 176 Avg Elapsed Time: .919069
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11642906;
+EXEC :b2 := 11642906;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11642906;
+EXEC :b4 := 11642906;
+--SNAP_ID: 3471 Elapsed Time: 171.21791 Executions: 181 Avg Elapsed Time: .945955
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673428;
+EXEC :b2 := 11673428;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673428;
+EXEC :b4 := 11673428;
+--SNAP_ID: 3472 Elapsed Time: 159.572884 Executions: 175 Avg Elapsed Time: .911845
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11677122;
+EXEC :b2 := 11677122;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11677122;
+EXEC :b4 := 11677122;
+--SNAP_ID: 3473 Elapsed Time: 124.850036 Executions: 138 Avg Elapsed Time: .90471
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10594506;
+EXEC :b2 := 10594506;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10594506;
+EXEC :b4 := 10594506;
+--SNAP_ID: 3474 Elapsed Time: 118.682673 Executions: 128 Avg Elapsed Time: .927208
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11677122;
+EXEC :b2 := 11677122;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11677122;
+EXEC :b4 := 11677122;
+--SNAP_ID: 3475 Elapsed Time: 125.522155 Executions: 138 Avg Elapsed Time: .909581
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10080942;
+EXEC :b2 := 10080942;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10080942;
+EXEC :b4 := 10080942;
+--SNAP_ID: 3476 Elapsed Time: 138.097879 Executions: 151 Avg Elapsed Time: .914555
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11322919;
+EXEC :b2 := 11322919;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11322919;
+EXEC :b4 := 11322919;
+--SNAP_ID: 3477 Elapsed Time: 146.081963 Executions: 161 Avg Elapsed Time: .907341
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11686324;
+EXEC :b2 := 11686324;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11686324;
+EXEC :b4 := 11686324;
+--SNAP_ID: 3478 Elapsed Time: 150.048877 Executions: 166 Avg Elapsed Time: .903909
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11686745;
+EXEC :b2 := 11686745;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11686745;
+EXEC :b4 := 11686745;
+--SNAP_ID: 3479 Elapsed Time: 96.199517 Executions: 107 Avg Elapsed Time: .899061
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11727980;
+EXEC :b2 := 11727980;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11727980;
+EXEC :b4 := 11727980;
+--SNAP_ID: 3480 Elapsed Time: 123.446713 Executions: 137 Avg Elapsed Time: .901071
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11581042;
+EXEC :b2 := 11581042;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11581042;
+EXEC :b4 := 11581042;
+--SNAP_ID: 3481 Elapsed Time: 126.312812 Executions: 141 Avg Elapsed Time: .895836
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11727980;
+EXEC :b2 := 11727980;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11727980;
+EXEC :b4 := 11727980;
+--SNAP_ID: 3482 Elapsed Time: 222.008769 Executions: 245 Avg Elapsed Time: .906158
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11277175;
+EXEC :b2 := 11277175;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11277175;
+EXEC :b4 := 11277175;
+--SNAP_ID: 3483 Elapsed Time: 174.956921 Executions: 192 Avg Elapsed Time: .911234
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11336681;
+EXEC :b2 := 11336681;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11336681;
+EXEC :b4 := 11336681;
+--SNAP_ID: 3484 Elapsed Time: 106.727517 Executions: 118 Avg Elapsed Time: .90447
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11336681;
+EXEC :b2 := 11336681;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11336681;
+EXEC :b4 := 11336681;
+--SNAP_ID: 3485 Elapsed Time: 80.935633 Executions: 90 Avg Elapsed Time: .899285
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11336681;
+EXEC :b2 := 11336681;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11336681;
+EXEC :b4 := 11336681;
+--SNAP_ID: 3486 Elapsed Time: 68.777876 Executions: 74 Avg Elapsed Time: .929431
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11336681;
+EXEC :b2 := 11336681;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11336681;
+EXEC :b4 := 11336681;
+--SNAP_ID: 3487 Elapsed Time: 50.460789 Executions: 53 Avg Elapsed Time: .95209
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11272109;
+EXEC :b2 := 11272109;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11272109;
+EXEC :b4 := 11272109;
+--SNAP_ID: 3488 Elapsed Time: 30.604818 Executions: 29 Avg Elapsed Time: 1.055339
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11272109;
+EXEC :b2 := 11272109;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11272109;
+EXEC :b4 := 11272109;
+--SNAP_ID: 3489 Elapsed Time: 26.371552 Executions: 26 Avg Elapsed Time: 1.01429
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11542934;
+EXEC :b2 := 11542934;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11542934;
+EXEC :b4 := 11542934;
+--SNAP_ID: 3490 Elapsed Time: 24.754977 Executions: 24 Avg Elapsed Time: 1.031457
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11542934;
+EXEC :b2 := 11542934;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11542934;
+EXEC :b4 := 11542934;
+--SNAP_ID: 3496 Elapsed Time: 2.631918 Executions: 3 Avg Elapsed Time: .877306
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11229164;
+EXEC :b2 := 11229164;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11229164;
+EXEC :b4 := 11229164;
+--SNAP_ID: 3512 Elapsed Time: 18.539746 Executions: 16 Avg Elapsed Time: 1.158734
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11715927;
+EXEC :b2 := 11715927;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11715927;
+EXEC :b4 := 11715927;
+--SNAP_ID: 3513 Elapsed Time: 13.18231 Executions: 14 Avg Elapsed Time: .941594
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11715927;
+EXEC :b2 := 11715927;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11715927;
+EXEC :b4 := 11715927;
+--SNAP_ID: 3514 Elapsed Time: 70.168076 Executions: 78 Avg Elapsed Time: .899591
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10919531;
+EXEC :b2 := 10919531;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10919531;
+EXEC :b4 := 10919531;
+--SNAP_ID: 3515 Elapsed Time: 79.449659 Executions: 88 Avg Elapsed Time: .902837
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11306716;
+EXEC :b2 := 11306716;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11306716;
+EXEC :b4 := 11306716;
+--SNAP_ID: 3516 Elapsed Time: 59.776176 Executions: 66 Avg Elapsed Time: .9057
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11730443;
+EXEC :b2 := 11730443;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11730443;
+EXEC :b4 := 11730443;
+--SNAP_ID: 3517 Elapsed Time: 101.543475 Executions: 111 Avg Elapsed Time: .914806
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11730443;
+EXEC :b2 := 11730443;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11730443;
+EXEC :b4 := 11730443;
+--SNAP_ID: 3518 Elapsed Time: 136.783548 Executions: 152 Avg Elapsed Time: .899892
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11516146;
+EXEC :b2 := 11516146;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11516146;
+EXEC :b4 := 11516146;
+--SNAP_ID: 3519 Elapsed Time: 144.676872 Executions: 157 Avg Elapsed Time: .921509
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11890308;
+EXEC :b2 := 11890308;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11890308;
+EXEC :b4 := 11890308;
+--SNAP_ID: 3520 Elapsed Time: 126.978722 Executions: 139 Avg Elapsed Time: .913516
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11516146;
+EXEC :b2 := 11516146;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11516146;
+EXEC :b4 := 11516146;
+--SNAP_ID: 3521 Elapsed Time: 165.656569 Executions: 186 Avg Elapsed Time: .890627
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11730443;
+EXEC :b2 := 11730443;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11730443;
+EXEC :b4 := 11730443;
+--SNAP_ID: 3522 Elapsed Time: 118.719604 Executions: 131 Avg Elapsed Time: .906257
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11677122;
+EXEC :b2 := 11677122;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11677122;
+EXEC :b4 := 11677122;
+--SNAP_ID: 3523 Elapsed Time: 147.293788 Executions: 165 Avg Elapsed Time: .89269
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11507047;
+EXEC :b2 := 11507047;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11507047;
+EXEC :b4 := 11507047;
+--SNAP_ID: 3524 Elapsed Time: 133.703886 Executions: 147 Avg Elapsed Time: .90955
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11507047;
+EXEC :b2 := 11507047;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11507047;
+EXEC :b4 := 11507047;
+--SNAP_ID: 3525 Elapsed Time: 186.720641 Executions: 208 Avg Elapsed Time: .897695
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10171668;
+EXEC :b2 := 10171668;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10171668;
+EXEC :b4 := 10171668;
+--SNAP_ID: 3526 Elapsed Time: 137.636139 Executions: 154 Avg Elapsed Time: .893741
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11980924;
+EXEC :b2 := 11980924;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11980924;
+EXEC :b4 := 11980924;
+--SNAP_ID: 3527 Elapsed Time: 161.446417 Executions: 180 Avg Elapsed Time: .896925
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11276850;
+EXEC :b2 := 11276850;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11276850;
+EXEC :b4 := 11276850;
+--SNAP_ID: 3528 Elapsed Time: 215.28377 Executions: 241 Avg Elapsed Time: .893294
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10150395;
+EXEC :b2 := 10150395;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10150395;
+EXEC :b4 := 10150395;
+--SNAP_ID: 3529 Elapsed Time: 266.224602 Executions: 300 Avg Elapsed Time: .887415
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10150395;
+EXEC :b2 := 10150395;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10150395;
+EXEC :b4 := 10150395;
+--SNAP_ID: 3530 Elapsed Time: 263.700414 Executions: 295 Avg Elapsed Time: .8939
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10150395;
+EXEC :b2 := 10150395;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10150395;
+EXEC :b4 := 10150395;
+--SNAP_ID: 3531 Elapsed Time: 257.004562 Executions: 287 Avg Elapsed Time: .895486
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10329704;
+EXEC :b2 := 10329704;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10329704;
+EXEC :b4 := 10329704;
+--SNAP_ID: 3532 Elapsed Time: 235.573003 Executions: 261 Avg Elapsed Time: .902579
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10642527;
+EXEC :b2 := 10642527;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10642527;
+EXEC :b4 := 10642527;
+--SNAP_ID: 3560 Elapsed Time: 15.702587 Executions: 9 Avg Elapsed Time: 1.744732
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11670055;
+EXEC :b2 := 11670055;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11670055;
+EXEC :b4 := 11670055;
+--SNAP_ID: 3561 Elapsed Time: 20.118691 Executions: 23 Avg Elapsed Time: .874726
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11641400;
+EXEC :b2 := 11641400;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11641400;
+EXEC :b4 := 11641400;
+--SNAP_ID: 3562 Elapsed Time: 61.687777 Executions: 67 Avg Elapsed Time: .920713
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673428;
+EXEC :b2 := 11673428;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673428;
+EXEC :b4 := 11673428;
+--SNAP_ID: 3563 Elapsed Time: 113.134908 Executions: 123 Avg Elapsed Time: .919796
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11670055;
+EXEC :b2 := 11670055;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11670055;
+EXEC :b4 := 11670055;
+--SNAP_ID: 3564 Elapsed Time: 139.376723 Executions: 146 Avg Elapsed Time: .954635
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11680037;
+EXEC :b2 := 11680037;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11680037;
+EXEC :b4 := 11680037;
+--SNAP_ID: 3565 Elapsed Time: 143.602036 Executions: 156 Avg Elapsed Time: .920526
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10163272;
+EXEC :b2 := 10163272;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10163272;
+EXEC :b4 := 10163272;
+--SNAP_ID: 3566 Elapsed Time: 191.609005 Executions: 212 Avg Elapsed Time: .903816
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974082;
+EXEC :b2 := 11974082;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974082;
+EXEC :b4 := 11974082;
+--SNAP_ID: 3567 Elapsed Time: 107.374253 Executions: 118 Avg Elapsed Time: .909951
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11473725;
+EXEC :b2 := 11473725;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11473725;
+EXEC :b4 := 11473725;
+--SNAP_ID: 3568 Elapsed Time: 104.784491 Executions: 113 Avg Elapsed Time: .927296
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11473725;
+EXEC :b2 := 11473725;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11473725;
+EXEC :b4 := 11473725;
+--SNAP_ID: 3569 Elapsed Time: 119.432765 Executions: 132 Avg Elapsed Time: .904794
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11642940;
+EXEC :b2 := 11642940;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11642940;
+EXEC :b4 := 11642940;
+--SNAP_ID: 3570 Elapsed Time: 95.586035 Executions: 105 Avg Elapsed Time: .910343
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11686324;
+EXEC :b2 := 11686324;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11686324;
+EXEC :b4 := 11686324;
+--SNAP_ID: 3571 Elapsed Time: 123.46707 Executions: 136 Avg Elapsed Time: .907846
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11642940;
+EXEC :b2 := 11642940;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11642940;
+EXEC :b4 := 11642940;
+--SNAP_ID: 3572 Elapsed Time: 128.106539 Executions: 142 Avg Elapsed Time: .902159
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10243343;
+EXEC :b2 := 10243343;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10243343;
+EXEC :b4 := 10243343;
+--SNAP_ID: 3573 Elapsed Time: 85.557855 Executions: 94 Avg Elapsed Time: .91019
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11473725;
+EXEC :b2 := 11473725;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11473725;
+EXEC :b4 := 11473725;
+--SNAP_ID: 3574 Elapsed Time: 59.863498 Executions: 66 Avg Elapsed Time: .907023
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11220189;
+EXEC :b2 := 11220189;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11220189;
+EXEC :b4 := 11220189;
+--SNAP_ID: 3575 Elapsed Time: 72.349079 Executions: 80 Avg Elapsed Time: .904363
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11677162;
+EXEC :b2 := 11677162;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11677162;
+EXEC :b4 := 11677162;
+--SNAP_ID: 3576 Elapsed Time: 117.457733 Executions: 127 Avg Elapsed Time: .924864
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10194386;
+EXEC :b2 := 10194386;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10194386;
+EXEC :b4 := 10194386;
+--SNAP_ID: 3577 Elapsed Time: 137.951808 Executions: 149 Avg Elapsed Time: .925851
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975302;
+EXEC :b2 := 11975302;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975302;
+EXEC :b4 := 11975302;
+--SNAP_ID: 3578 Elapsed Time: 96.635086 Executions: 106 Avg Elapsed Time: .911652
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657306;
+EXEC :b2 := 11657306;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657306;
+EXEC :b4 := 11657306;
+--SNAP_ID: 3579 Elapsed Time: 103.699125 Executions: 114 Avg Elapsed Time: .909641
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11529578;
+EXEC :b2 := 11529578;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11529578;
+EXEC :b4 := 11529578;
+--SNAP_ID: 3580 Elapsed Time: 32.235919 Executions: 35 Avg Elapsed Time: .921026
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975302;
+EXEC :b2 := 11975302;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975302;
+EXEC :b4 := 11975302;
+--SNAP_ID: 3581 Elapsed Time: 18.557164 Executions: 21 Avg Elapsed Time: .883674
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11670055;
+EXEC :b2 := 11670055;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11670055;
+EXEC :b4 := 11670055;
+--SNAP_ID: 3585 Elapsed Time: 8.904432 Executions: 10 Avg Elapsed Time: .890443
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11978401;
+EXEC :b2 := 11978401;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11978401;
+EXEC :b4 := 11978401;
+--SNAP_ID: 3609 Elapsed Time: 19.949782 Executions: 22 Avg Elapsed Time: .906808
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11704812;
+EXEC :b2 := 11704812;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11704812;
+EXEC :b4 := 11704812;
+--SNAP_ID: 3610 Elapsed Time: 49.775076 Executions: 54 Avg Elapsed Time: .921761
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11693596;
+EXEC :b2 := 11693596;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11693596;
+EXEC :b4 := 11693596;
+--SNAP_ID: 3611 Elapsed Time: 54.70594 Executions: 60 Avg Elapsed Time: .911766
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11732586;
+EXEC :b2 := 11732586;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11732586;
+EXEC :b4 := 11732586;
+--SNAP_ID: 3612 Elapsed Time: 74.685529 Executions: 81 Avg Elapsed Time: .922044
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11707943;
+EXEC :b2 := 11707943;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11707943;
+EXEC :b4 := 11707943;
+--SNAP_ID: 3613 Elapsed Time: 52.581965 Executions: 58 Avg Elapsed Time: .906586
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11621542;
+EXEC :b2 := 11621542;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11621542;
+EXEC :b4 := 11621542;
+--SNAP_ID: 3614 Elapsed Time: 95.276217 Executions: 106 Avg Elapsed Time: .898832
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11649290;
+EXEC :b2 := 11649290;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11649290;
+EXEC :b4 := 11649290;
+--SNAP_ID: 3615 Elapsed Time: 118.520084 Executions: 132 Avg Elapsed Time: .897879
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11972650;
+EXEC :b2 := 11972650;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11972650;
+EXEC :b4 := 11972650;
+--SNAP_ID: 3616 Elapsed Time: 159.638314 Executions: 173 Avg Elapsed Time: .922765
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11709993;
+EXEC :b2 := 11709993;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11709993;
+EXEC :b4 := 11709993;
+--SNAP_ID: 3617 Elapsed Time: 163.724683 Executions: 176 Avg Elapsed Time: .930254
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11474917;
+EXEC :b2 := 11474917;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11474917;
+EXEC :b4 := 11474917;
+--SNAP_ID: 3618 Elapsed Time: 143.930891 Executions: 158 Avg Elapsed Time: .910955
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11296414;
+EXEC :b2 := 11296414;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11296414;
+EXEC :b4 := 11296414;
+--SNAP_ID: 3619 Elapsed Time: 135.086824 Executions: 151 Avg Elapsed Time: .894615
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11296414;
+EXEC :b2 := 11296414;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11296414;
+EXEC :b4 := 11296414;
+--SNAP_ID: 3620 Elapsed Time: 114.217103 Executions: 126 Avg Elapsed Time: .906485
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11296414;
+EXEC :b2 := 11296414;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11296414;
+EXEC :b4 := 11296414;
+--SNAP_ID: 3621 Elapsed Time: 126.395525 Executions: 138 Avg Elapsed Time: .91591
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11720533;
+EXEC :b2 := 11720533;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11720533;
+EXEC :b4 := 11720533;
+--SNAP_ID: 3622 Elapsed Time: 156.95783 Executions: 172 Avg Elapsed Time: .912546
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11474917;
+EXEC :b2 := 11474917;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11474917;
+EXEC :b4 := 11474917;
+--SNAP_ID: 3623 Elapsed Time: 176.964567 Executions: 193 Avg Elapsed Time: .916915
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11474917;
+EXEC :b2 := 11474917;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11474917;
+EXEC :b4 := 11474917;
+--SNAP_ID: 3624 Elapsed Time: 216.382775 Executions: 236 Avg Elapsed Time: .916876
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 3625 Elapsed Time: 188.455213 Executions: 207 Avg Elapsed Time: .910412
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11709993;
+EXEC :b2 := 11709993;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11709993;
+EXEC :b4 := 11709993;
+--SNAP_ID: 3626 Elapsed Time: 171.319813 Executions: 189 Avg Elapsed Time: .906454
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 3627 Elapsed Time: 197.576797 Executions: 218 Avg Elapsed Time: .906316
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10189338;
+EXEC :b2 := 10189338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10189338;
+EXEC :b4 := 10189338;
+--SNAP_ID: 3628 Elapsed Time: 119.461413 Executions: 128 Avg Elapsed Time: .933292
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11709993;
+EXEC :b2 := 11709993;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11709993;
+EXEC :b4 := 11709993;
+--SNAP_ID: 3629 Elapsed Time: 86.99664 Executions: 95 Avg Elapsed Time: .915754
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 3630 Elapsed Time: 69.516963 Executions: 75 Avg Elapsed Time: .926893
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 3631 Elapsed Time: 77.753937 Executions: 76 Avg Elapsed Time: 1.023078
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11601152;
+EXEC :b2 := 11601152;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11601152;
+EXEC :b4 := 11601152;
+--SNAP_ID: 3632 Elapsed Time: 55.902296 Executions: 60 Avg Elapsed Time: .931705
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 3633 Elapsed Time: 86.250441 Executions: 74 Avg Elapsed Time: 1.165547
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 3634 Elapsed Time: 74.200232 Executions: 60 Avg Elapsed Time: 1.236671
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 3635 Elapsed Time: 77.195518 Executions: 60 Avg Elapsed Time: 1.286592
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 3753 Elapsed Time: 4.354679 Executions: 4 Avg Elapsed Time: 1.08867
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11659741;
+EXEC :b2 := 11659741;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11659741;
+EXEC :b4 := 11659741;
+--SNAP_ID: 3754 Elapsed Time: 48.406399 Executions: 54 Avg Elapsed Time: .896415
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11322919;
+EXEC :b2 := 11322919;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11322919;
+EXEC :b4 := 11322919;
+--SNAP_ID: 3755 Elapsed Time: 99.014681 Executions: 106 Avg Elapsed Time: .934101
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11322919;
+EXEC :b2 := 11322919;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11322919;
+EXEC :b4 := 11322919;
+--SNAP_ID: 3756 Elapsed Time: 114.149306 Executions: 124 Avg Elapsed Time: .920559
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592798;
+EXEC :b2 := 11592798;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592798;
+EXEC :b4 := 11592798;
+--SNAP_ID: 3757 Elapsed Time: 146.845027 Executions: 156 Avg Elapsed Time: .941314
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11316433;
+EXEC :b2 := 11316433;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11316433;
+EXEC :b4 := 11316433;
+--SNAP_ID: 3758 Elapsed Time: 149.544049 Executions: 163 Avg Elapsed Time: .917448
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11649989;
+EXEC :b2 := 11649989;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11649989;
+EXEC :b4 := 11649989;
+--SNAP_ID: 3759 Elapsed Time: 137.473964 Executions: 151 Avg Elapsed Time: .910424
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11625784;
+EXEC :b2 := 11625784;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11625784;
+EXEC :b4 := 11625784;
+--SNAP_ID: 3760 Elapsed Time: 185.904456 Executions: 194 Avg Elapsed Time: .95827
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10440565;
+EXEC :b2 := 10440565;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10440565;
+EXEC :b4 := 10440565;
+--SNAP_ID: 3761 Elapsed Time: 258.795284 Executions: 277 Avg Elapsed Time: .934279
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11206304;
+EXEC :b2 := 11206304;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11206304;
+EXEC :b4 := 11206304;
+--SNAP_ID: 3762 Elapsed Time: 325.73743 Executions: 353 Avg Elapsed Time: .922769
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11322919;
+EXEC :b2 := 11322919;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11322919;
+EXEC :b4 := 11322919;
+--SNAP_ID: 3763 Elapsed Time: 348.554581 Executions: 384 Avg Elapsed Time: .907694
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11533907;
+EXEC :b2 := 11533907;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11533907;
+EXEC :b4 := 11533907;
+--SNAP_ID: 3764 Elapsed Time: 353.141268 Executions: 391 Avg Elapsed Time: .903175
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11625784;
+EXEC :b2 := 11625784;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11625784;
+EXEC :b4 := 11625784;
+--SNAP_ID: 3765 Elapsed Time: 309.384665 Executions: 343 Avg Elapsed Time: .901996
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11692867;
+EXEC :b2 := 11692867;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11692867;
+EXEC :b4 := 11692867;
+--SNAP_ID: 3766 Elapsed Time: 259.284673 Executions: 283 Avg Elapsed Time: .9162
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11629621;
+EXEC :b2 := 11629621;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11629621;
+EXEC :b4 := 11629621;
+--SNAP_ID: 3767 Elapsed Time: 240.050771 Executions: 263 Avg Elapsed Time: .912741
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11726866;
+EXEC :b2 := 11726866;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11726866;
+EXEC :b4 := 11726866;
+--SNAP_ID: 3768 Elapsed Time: 203.769188 Executions: 223 Avg Elapsed Time: .913763
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981183;
+EXEC :b2 := 11981183;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981183;
+EXEC :b4 := 11981183;
+--SNAP_ID: 3769 Elapsed Time: 218.004282 Executions: 239 Avg Elapsed Time: .912152
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11616428;
+EXEC :b2 := 11616428;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11616428;
+EXEC :b4 := 11616428;
+--SNAP_ID: 3770 Elapsed Time: 266.335291 Executions: 292 Avg Elapsed Time: .912107
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10254548;
+EXEC :b2 := 10254548;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10254548;
+EXEC :b4 := 10254548;
+--SNAP_ID: 3771 Elapsed Time: 159.638234 Executions: 174 Avg Elapsed Time: .917461
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521563;
+EXEC :b2 := 11521563;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521563;
+EXEC :b4 := 11521563;
+--SNAP_ID: 3772 Elapsed Time: 108.314983 Executions: 118 Avg Elapsed Time: .917924
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10435317;
+EXEC :b2 := 10435317;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10435317;
+EXEC :b4 := 10435317;
+--SNAP_ID: 3773 Elapsed Time: 88.013836 Executions: 94 Avg Elapsed Time: .936317
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521563;
+EXEC :b2 := 11521563;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521563;
+EXEC :b4 := 11521563;
+--SNAP_ID: 3774 Elapsed Time: 61.589357 Executions: 63 Avg Elapsed Time: .977609
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11601712;
+EXEC :b2 := 11601712;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11601712;
+EXEC :b4 := 11601712;
+--SNAP_ID: 3775 Elapsed Time: 163.31542 Executions: 89 Avg Elapsed Time: 1.835005
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11601712;
+EXEC :b2 := 11601712;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11601712;
+EXEC :b4 := 11601712;
+--SNAP_ID: 3776 Elapsed Time: 43.907936 Executions: 22 Avg Elapsed Time: 1.995815
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11601712;
+EXEC :b2 := 11601712;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11601712;
+EXEC :b4 := 11601712;
+--SNAP_ID: 3777 Elapsed Time: 123.461317 Executions: 91 Avg Elapsed Time: 1.356718
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11601712;
+EXEC :b2 := 11601712;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11601712;
+EXEC :b4 := 11601712;
+--SNAP_ID: 3778 Elapsed Time: 36.040286 Executions: 39 Avg Elapsed Time: .92411
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11691978;
+EXEC :b2 := 11691978;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11691978;
+EXEC :b4 := 11691978;
+--SNAP_ID: 3779 Elapsed Time: 30.577365 Executions: 30 Avg Elapsed Time: 1.019246
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11601712;
+EXEC :b2 := 11601712;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11601712;
+EXEC :b4 := 11601712;
+--SNAP_ID: 3801 Elapsed Time: 35.535227 Executions: 38 Avg Elapsed Time: .935138
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592841;
+EXEC :b2 := 11592841;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592841;
+EXEC :b4 := 11592841;
+--SNAP_ID: 3802 Elapsed Time: 110.482501 Executions: 119 Avg Elapsed Time: .928424
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11307248;
+EXEC :b2 := 11307248;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11307248;
+EXEC :b4 := 11307248;
+--SNAP_ID: 3803 Elapsed Time: 185.919932 Executions: 202 Avg Elapsed Time: .920396
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974847;
+EXEC :b2 := 11974847;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974847;
+EXEC :b4 := 11974847;
+--SNAP_ID: 3804 Elapsed Time: 251.809931 Executions: 272 Avg Elapsed Time: .925772
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11714827;
+EXEC :b2 := 11714827;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11714827;
+EXEC :b4 := 11714827;
+--SNAP_ID: 3805 Elapsed Time: 279.770609 Executions: 303 Avg Elapsed Time: .923335
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11684140;
+EXEC :b2 := 11684140;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11684140;
+EXEC :b4 := 11684140;
+--SNAP_ID: 3806 Elapsed Time: 360.704889 Executions: 390 Avg Elapsed Time: .924884
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11977199;
+EXEC :b2 := 11977199;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11977199;
+EXEC :b4 := 11977199;
+--SNAP_ID: 3807 Elapsed Time: 272.188256 Executions: 292 Avg Elapsed Time: .932152
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11029434;
+EXEC :b2 := 11029434;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11029434;
+EXEC :b4 := 11029434;
+--SNAP_ID: 3808 Elapsed Time: 312.067378 Executions: 328 Avg Elapsed Time: .951425
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976032;
+EXEC :b2 := 11976032;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976032;
+EXEC :b4 := 11976032;
+--SNAP_ID: 3809 Elapsed Time: 303.571842 Executions: 325 Avg Elapsed Time: .934067
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10510064;
+EXEC :b2 := 10510064;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10510064;
+EXEC :b4 := 10510064;
+--SNAP_ID: 3810 Elapsed Time: 283.909328 Executions: 305 Avg Elapsed Time: .93085
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10510064;
+EXEC :b2 := 10510064;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10510064;
+EXEC :b4 := 10510064;
+--SNAP_ID: 3811 Elapsed Time: 161.456877 Executions: 175 Avg Elapsed Time: .922611
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11648331;
+EXEC :b2 := 11648331;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11648331;
+EXEC :b4 := 11648331;
+--SNAP_ID: 3812 Elapsed Time: 116.965813 Executions: 128 Avg Elapsed Time: .913795
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10510064;
+EXEC :b2 := 10510064;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10510064;
+EXEC :b4 := 10510064;
+--SNAP_ID: 3813 Elapsed Time: 120.229557 Executions: 129 Avg Elapsed Time: .932012
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11029130;
+EXEC :b2 := 11029130;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11029130;
+EXEC :b4 := 11029130;
+--SNAP_ID: 3814 Elapsed Time: 122.23694 Executions: 133 Avg Elapsed Time: .919075
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11480306;
+EXEC :b2 := 11480306;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11480306;
+EXEC :b4 := 11480306;
+--SNAP_ID: 3815 Elapsed Time: 159.339935 Executions: 167 Avg Elapsed Time: .954131
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11480306;
+EXEC :b2 := 11480306;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11480306;
+EXEC :b4 := 11480306;
+--SNAP_ID: 3816 Elapsed Time: 129.204978 Executions: 142 Avg Elapsed Time: .909894
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975284;
+EXEC :b2 := 11975284;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975284;
+EXEC :b4 := 11975284;
+--SNAP_ID: 3817 Elapsed Time: 165.852752 Executions: 181 Avg Elapsed Time: .916314
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657191;
+EXEC :b2 := 11657191;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657191;
+EXEC :b4 := 11657191;
+--SNAP_ID: 3818 Elapsed Time: 139.21527 Executions: 152 Avg Elapsed Time: .91589
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10895013;
+EXEC :b2 := 10895013;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10895013;
+EXEC :b4 := 10895013;
+--SNAP_ID: 3819 Elapsed Time: 72.177207 Executions: 78 Avg Elapsed Time: .925349
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975098;
+EXEC :b2 := 11975098;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975098;
+EXEC :b4 := 11975098;
+--SNAP_ID: 3820 Elapsed Time: 21.633674 Executions: 22 Avg Elapsed Time: .983349
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11978386;
+EXEC :b2 := 11978386;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11978386;
+EXEC :b4 := 11978386;
+--SNAP_ID: 3848 Elapsed Time: 17.91557 Executions: 10 Avg Elapsed Time: 1.791557
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11678307;
+EXEC :b2 := 11678307;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11678307;
+EXEC :b4 := 11678307;
+--SNAP_ID: 3849 Elapsed Time: 9.093993 Executions: 10 Avg Elapsed Time: .909399
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11671632;
+EXEC :b2 := 11671632;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11671632;
+EXEC :b4 := 11671632;
+--SNAP_ID: 3850 Elapsed Time: 75.589164 Executions: 85 Avg Elapsed Time: .889284
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975682;
+EXEC :b2 := 11975682;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975682;
+EXEC :b4 := 11975682;
+--SNAP_ID: 3851 Elapsed Time: 191.514003 Executions: 214 Avg Elapsed Time: .894925
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11650298;
+EXEC :b2 := 11650298;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11650298;
+EXEC :b4 := 11650298;
+--SNAP_ID: 3852 Elapsed Time: 236.173652 Executions: 260 Avg Elapsed Time: .90836
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981370;
+EXEC :b2 := 11981370;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981370;
+EXEC :b4 := 11981370;
+--SNAP_ID: 3853 Elapsed Time: 237.600913 Executions: 255 Avg Elapsed Time: .931768
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10721730;
+EXEC :b2 := 10721730;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10721730;
+EXEC :b4 := 10721730;
+--SNAP_ID: 3854 Elapsed Time: 254.231421 Executions: 279 Avg Elapsed Time: .911224
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11322919;
+EXEC :b2 := 11322919;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11322919;
+EXEC :b4 := 11322919;
+--SNAP_ID: 3855 Elapsed Time: 200.102481 Executions: 217 Avg Elapsed Time: .922131
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11980118;
+EXEC :b2 := 11980118;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11980118;
+EXEC :b4 := 11980118;
+--SNAP_ID: 3856 Elapsed Time: 171.97881 Executions: 189 Avg Elapsed Time: .909941
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11513218;
+EXEC :b2 := 11513218;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11513218;
+EXEC :b4 := 11513218;
+--SNAP_ID: 3857 Elapsed Time: 167.909479 Executions: 185 Avg Elapsed Time: .907619
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11322919;
+EXEC :b2 := 11322919;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11322919;
+EXEC :b4 := 11322919;
+--SNAP_ID: 3858 Elapsed Time: 42.972381 Executions: 47 Avg Elapsed Time: .914306
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10167223;
+EXEC :b2 := 10167223;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10167223;
+EXEC :b4 := 10167223;
+--SNAP_ID: 3859 Elapsed Time: 84.157387 Executions: 94 Avg Elapsed Time: .895291
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11625916;
+EXEC :b2 := 11625916;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11625916;
+EXEC :b4 := 11625916;
+--SNAP_ID: 3860 Elapsed Time: 129.411031 Executions: 140 Avg Elapsed Time: .924365
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10167223;
+EXEC :b2 := 10167223;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10167223;
+EXEC :b4 := 10167223;
+--SNAP_ID: 3861 Elapsed Time: 130.941157 Executions: 144 Avg Elapsed Time: .909314
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11625916;
+EXEC :b2 := 11625916;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11625916;
+EXEC :b4 := 11625916;
+--SNAP_ID: 3862 Elapsed Time: 92.806901 Executions: 104 Avg Elapsed Time: .892374
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11276850;
+EXEC :b2 := 11276850;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11276850;
+EXEC :b4 := 11276850;
+--SNAP_ID: 3863 Elapsed Time: 165.245422 Executions: 184 Avg Elapsed Time: .898073
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11276850;
+EXEC :b2 := 11276850;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11276850;
+EXEC :b4 := 11276850;
+--SNAP_ID: 3864 Elapsed Time: 140.719274 Executions: 157 Avg Elapsed Time: .896301
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11030114;
+EXEC :b2 := 11030114;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11030114;
+EXEC :b4 := 11030114;
+--SNAP_ID: 3865 Elapsed Time: 114.496149 Executions: 128 Avg Elapsed Time: .894501
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981263;
+EXEC :b2 := 11981263;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981263;
+EXEC :b4 := 11981263;
+--SNAP_ID: 3866 Elapsed Time: 157.799346 Executions: 176 Avg Elapsed Time: .896587
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11298781;
+EXEC :b2 := 11298781;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11298781;
+EXEC :b4 := 11298781;
+--SNAP_ID: 3867 Elapsed Time: 105.302397 Executions: 118 Avg Elapsed Time: .892393
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11605728;
+EXEC :b2 := 11605728;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11605728;
+EXEC :b4 := 11605728;
+--SNAP_ID: 3868 Elapsed Time: 35.494956 Executions: 38 Avg Elapsed Time: .934078
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11298781;
+EXEC :b2 := 11298781;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11298781;
+EXEC :b4 := 11298781;
+--SNAP_ID: 3869 Elapsed Time: 35.047254 Executions: 38 Avg Elapsed Time: .922296
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11298781;
+EXEC :b2 := 11298781;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11298781;
+EXEC :b4 := 11298781;
+--SNAP_ID: 3870 Elapsed Time: 43.001565 Executions: 47 Avg Elapsed Time: .914927
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11298781;
+EXEC :b2 := 11298781;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11298781;
+EXEC :b4 := 11298781;
+--SNAP_ID: 3871 Elapsed Time: 54.948197 Executions: 32 Avg Elapsed Time: 1.717131
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11298781;
+EXEC :b2 := 11298781;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11298781;
+EXEC :b4 := 11298781;
+--SNAP_ID: 3872 Elapsed Time: 6.899463 Executions: 7 Avg Elapsed Time: .985638
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11298781;
+EXEC :b2 := 11298781;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11298781;
+EXEC :b4 := 11298781;
+--SNAP_ID: 3873 Elapsed Time: 24.378573 Executions: 27 Avg Elapsed Time: .90291
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11298781;
+EXEC :b2 := 11298781;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11298781;
+EXEC :b4 := 11298781;
+--SNAP_ID: 3874 Elapsed Time: 27.073536 Executions: 30 Avg Elapsed Time: .902451
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11298781;
+EXEC :b2 := 11298781;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11298781;
+EXEC :b4 := 11298781;
+--SNAP_ID: 3875 Elapsed Time: 23.205649 Executions: 25 Avg Elapsed Time: .928226
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11298781;
+EXEC :b2 := 11298781;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11298781;
+EXEC :b4 := 11298781;
+--SNAP_ID: 3895 Elapsed Time: 7.521842 Executions: 2 Avg Elapsed Time: 3.760921
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981111;
+EXEC :b2 := 11981111;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981111;
+EXEC :b4 := 11981111;
+--SNAP_ID: 3896 Elapsed Time: 18.463872 Executions: 18 Avg Elapsed Time: 1.025771
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10234440;
+EXEC :b2 := 10234440;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10234440;
+EXEC :b4 := 10234440;
+--SNAP_ID: 3897 Elapsed Time: 92.361471 Executions: 96 Avg Elapsed Time: .962099
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724775;
+EXEC :b2 := 11724775;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724775;
+EXEC :b4 := 11724775;
+--SNAP_ID: 3898 Elapsed Time: 146.673836 Executions: 153 Avg Elapsed Time: .958653
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724775;
+EXEC :b2 := 11724775;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724775;
+EXEC :b4 := 11724775;
+--SNAP_ID: 3899 Elapsed Time: 213.341707 Executions: 223 Avg Elapsed Time: .956689
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724775;
+EXEC :b2 := 11724775;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724775;
+EXEC :b4 := 11724775;
+--SNAP_ID: 3900 Elapsed Time: 203.745766 Executions: 217 Avg Elapsed Time: .938921
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981183;
+EXEC :b2 := 11981183;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981183;
+EXEC :b4 := 11981183;
+--SNAP_ID: 3901 Elapsed Time: 166.753327 Executions: 176 Avg Elapsed Time: .947462
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724775;
+EXEC :b2 := 11724775;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724775;
+EXEC :b4 := 11724775;
+--SNAP_ID: 3902 Elapsed Time: 153.392909 Executions: 160 Avg Elapsed Time: .958706
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724775;
+EXEC :b2 := 11724775;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724775;
+EXEC :b4 := 11724775;
+--SNAP_ID: 3903 Elapsed Time: 143.933827 Executions: 156 Avg Elapsed Time: .922653
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11711678;
+EXEC :b2 := 11711678;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11711678;
+EXEC :b4 := 11711678;
+--SNAP_ID: 3904 Elapsed Time: 78.82664 Executions: 86 Avg Elapsed Time: .916589
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10850464;
+EXEC :b2 := 10850464;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10850464;
+EXEC :b4 := 10850464;
+--SNAP_ID: 3905 Elapsed Time: 89.569804 Executions: 100 Avg Elapsed Time: .895698
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11711678;
+EXEC :b2 := 11711678;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11711678;
+EXEC :b4 := 11711678;
+--SNAP_ID: 3906 Elapsed Time: 142.683486 Executions: 160 Avg Elapsed Time: .891772
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11711678;
+EXEC :b2 := 11711678;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11711678;
+EXEC :b4 := 11711678;
+--SNAP_ID: 3907 Elapsed Time: 135.809775 Executions: 151 Avg Elapsed Time: .899402
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11710258;
+EXEC :b2 := 11710258;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11710258;
+EXEC :b4 := 11710258;
+--SNAP_ID: 3908 Elapsed Time: 80.088523 Executions: 90 Avg Elapsed Time: .889872
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11980851;
+EXEC :b2 := 11980851;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11980851;
+EXEC :b4 := 11980851;
+--SNAP_ID: 3909 Elapsed Time: 127.07104 Executions: 140 Avg Elapsed Time: .90765
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11689413;
+EXEC :b2 := 11689413;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11689413;
+EXEC :b4 := 11689413;
+--SNAP_ID: 3910 Elapsed Time: 156.284064 Executions: 175 Avg Elapsed Time: .893052
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11689413;
+EXEC :b2 := 11689413;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11689413;
+EXEC :b4 := 11689413;
+--SNAP_ID: 3911 Elapsed Time: 205.14861 Executions: 231 Avg Elapsed Time: .888089
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10140937;
+EXEC :b2 := 10140937;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10140937;
+EXEC :b4 := 10140937;
+--SNAP_ID: 3912 Elapsed Time: 229.00053 Executions: 256 Avg Elapsed Time: .894533
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11710258;
+EXEC :b2 := 11710258;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11710258;
+EXEC :b4 := 11710258;
+--SNAP_ID: 3913 Elapsed Time: 175.344603 Executions: 196 Avg Elapsed Time: .894615
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11216465;
+EXEC :b2 := 11216465;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11216465;
+EXEC :b4 := 11216465;
+--SNAP_ID: 3914 Elapsed Time: 138.009616 Executions: 155 Avg Elapsed Time: .890385
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11978221;
+EXEC :b2 := 11978221;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11978221;
+EXEC :b4 := 11978221;
+--SNAP_ID: 3915 Elapsed Time: 64.868081 Executions: 72 Avg Elapsed Time: .900946
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11633908;
+EXEC :b2 := 11633908;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11633908;
+EXEC :b4 := 11633908;
+--SNAP_ID: 3942 Elapsed Time: 19.733874 Executions: 10 Avg Elapsed Time: 1.973387
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10171923;
+EXEC :b2 := 10171923;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10171923;
+EXEC :b4 := 10171923;
+--SNAP_ID: 3943 Elapsed Time: 22.679873 Executions: 24 Avg Elapsed Time: .944995
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11685469;
+EXEC :b2 := 11685469;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11685469;
+EXEC :b4 := 11685469;
+--SNAP_ID: 3944 Elapsed Time: 26.594414 Executions: 26 Avg Elapsed Time: 1.022862
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981752;
+EXEC :b2 := 11981752;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981752;
+EXEC :b4 := 11981752;
+--SNAP_ID: 3945 Elapsed Time: 38.775487 Executions: 44 Avg Elapsed Time: .881261
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981752;
+EXEC :b2 := 11981752;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981752;
+EXEC :b4 := 11981752;
+--SNAP_ID: 3946 Elapsed Time: 117.532622 Executions: 132 Avg Elapsed Time: .890399
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11977906;
+EXEC :b2 := 11977906;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11977906;
+EXEC :b4 := 11977906;
+--SNAP_ID: 3947 Elapsed Time: 146.279152 Executions: 160 Avg Elapsed Time: .914245
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11264043;
+EXEC :b2 := 11264043;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11264043;
+EXEC :b4 := 11264043;
+--SNAP_ID: 3948 Elapsed Time: 215.553213 Executions: 225 Avg Elapsed Time: .958014
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11322919;
+EXEC :b2 := 11322919;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11322919;
+EXEC :b4 := 11322919;
+--SNAP_ID: 3949 Elapsed Time: 197.979078 Executions: 213 Avg Elapsed Time: .929479
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11977283;
+EXEC :b2 := 11977283;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11977283;
+EXEC :b4 := 11977283;
+--SNAP_ID: 3950 Elapsed Time: 243.356411 Executions: 269 Avg Elapsed Time: .904671
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11977283;
+EXEC :b2 := 11977283;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11977283;
+EXEC :b4 := 11977283;
+--SNAP_ID: 3951 Elapsed Time: 211.584556 Executions: 231 Avg Elapsed Time: .91595
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11456575;
+EXEC :b2 := 11456575;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11456575;
+EXEC :b4 := 11456575;
+--SNAP_ID: 3952 Elapsed Time: 186.005211 Executions: 208 Avg Elapsed Time: .894256
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724698;
+EXEC :b2 := 11724698;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724698;
+EXEC :b4 := 11724698;
+--SNAP_ID: 3953 Elapsed Time: 195.269522 Executions: 220 Avg Elapsed Time: .887589
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11703681;
+EXEC :b2 := 11703681;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11703681;
+EXEC :b4 := 11703681;
+--SNAP_ID: 3954 Elapsed Time: 186.690792 Executions: 205 Avg Elapsed Time: .910687
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724698;
+EXEC :b2 := 11724698;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724698;
+EXEC :b4 := 11724698;
+--SNAP_ID: 3955 Elapsed Time: 203.296315 Executions: 225 Avg Elapsed Time: .903539
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11701167;
+EXEC :b2 := 11701167;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11701167;
+EXEC :b4 := 11701167;
+--SNAP_ID: 3956 Elapsed Time: 202.24837 Executions: 226 Avg Elapsed Time: .894904
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11451374;
+EXEC :b2 := 11451374;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11451374;
+EXEC :b4 := 11451374;
+--SNAP_ID: 3957 Elapsed Time: 214.635489 Executions: 239 Avg Elapsed Time: .898056
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10566666;
+EXEC :b2 := 10566666;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10566666;
+EXEC :b4 := 10566666;
+--SNAP_ID: 3958 Elapsed Time: 133.382078 Executions: 149 Avg Elapsed Time: .895182
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11451374;
+EXEC :b2 := 11451374;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11451374;
+EXEC :b4 := 11451374;
+--SNAP_ID: 3959 Elapsed Time: 133.732383 Executions: 146 Avg Elapsed Time: .915975
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11519188;
+EXEC :b2 := 11519188;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11519188;
+EXEC :b4 := 11519188;
+--SNAP_ID: 3960 Elapsed Time: 181.2347 Executions: 202 Avg Elapsed Time: .897201
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11702012;
+EXEC :b2 := 11702012;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11702012;
+EXEC :b4 := 11702012;
+--SNAP_ID: 3961 Elapsed Time: 150.899543 Executions: 170 Avg Elapsed Time: .887644
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10601143;
+EXEC :b2 := 10601143;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10601143;
+EXEC :b4 := 10601143;
+--SNAP_ID: 3962 Elapsed Time: 200.102652 Executions: 222 Avg Elapsed Time: .901363
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10233082;
+EXEC :b2 := 10233082;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10233082;
+EXEC :b4 := 10233082;
+--SNAP_ID: 3963 Elapsed Time: 223.266932 Executions: 245 Avg Elapsed Time: .911294
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11685469;
+EXEC :b2 := 11685469;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11685469;
+EXEC :b4 := 11685469;
+--SNAP_ID: 3964 Elapsed Time: 75.033292 Executions: 83 Avg Elapsed Time: .904016
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11685469;
+EXEC :b2 := 11685469;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11685469;
+EXEC :b4 := 11685469;
+--SNAP_ID: 3965 Elapsed Time: 43.211754 Executions: 48 Avg Elapsed Time: .900245
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11264471;
+EXEC :b2 := 11264471;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11264471;
+EXEC :b4 := 11264471;
+--SNAP_ID: 3966 Elapsed Time: 42.606002 Executions: 46 Avg Elapsed Time: .926217
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11650638;
+EXEC :b2 := 11650638;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11650638;
+EXEC :b4 := 11650638;
+--SNAP_ID: 3967 Elapsed Time: 50.377061 Executions: 48 Avg Elapsed Time: 1.049522
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11691108;
+EXEC :b2 := 11691108;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11691108;
+EXEC :b4 := 11691108;
+--SNAP_ID: 3968 Elapsed Time: 23.581863 Executions: 21 Avg Elapsed Time: 1.122946
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11691108;
+EXEC :b2 := 11691108;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11691108;
+EXEC :b4 := 11691108;
+--SNAP_ID: 3969 Elapsed Time: 22.423293 Executions: 25 Avg Elapsed Time: .896932
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11691108;
+EXEC :b2 := 11691108;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11691108;
+EXEC :b4 := 11691108;
+--SNAP_ID: 3970 Elapsed Time: 43.367559 Executions: 45 Avg Elapsed Time: .963724
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11691108;
+EXEC :b2 := 11691108;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11691108;
+EXEC :b4 := 11691108;
+--SNAP_ID: 3971 Elapsed Time: 13.986676 Executions: 15 Avg Elapsed Time: .932445
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11691108;
+EXEC :b2 := 11691108;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11691108;
+EXEC :b4 := 11691108;
+--SNAP_ID: 4019 Elapsed Time: 4.520452 Executions: 5 Avg Elapsed Time: .90409
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10477338;
+EXEC :b2 := 10477338;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10477338;
+EXEC :b4 := 10477338;
+--SNAP_ID: 4090 Elapsed Time: 51.286509 Executions: 53 Avg Elapsed Time: .96767
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11515013;
+EXEC :b2 := 11515013;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11515013;
+EXEC :b4 := 11515013;
+--SNAP_ID: 4091 Elapsed Time: 121.487394 Executions: 136 Avg Elapsed Time: .89329
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10110170;
+EXEC :b2 := 10110170;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10110170;
+EXEC :b4 := 10110170;
+--SNAP_ID: 4092 Elapsed Time: 115.168614 Executions: 129 Avg Elapsed Time: .89278
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11275568;
+EXEC :b2 := 11275568;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11275568;
+EXEC :b4 := 11275568;
+--SNAP_ID: 4093 Elapsed Time: 89.053377 Executions: 100 Avg Elapsed Time: .890534
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10659330;
+EXEC :b2 := 10659330;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10659330;
+EXEC :b4 := 10659330;
+--SNAP_ID: 4094 Elapsed Time: 118.349654 Executions: 133 Avg Elapsed Time: .889847
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10114890;
+EXEC :b2 := 10114890;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10114890;
+EXEC :b4 := 10114890;
+--SNAP_ID: 4095 Elapsed Time: 167.955797 Executions: 187 Avg Elapsed Time: .898159
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11684163;
+EXEC :b2 := 11684163;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11684163;
+EXEC :b4 := 11684163;
+--SNAP_ID: 4096 Elapsed Time: 201.320195 Executions: 228 Avg Elapsed Time: .882983
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11531711;
+EXEC :b2 := 11531711;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11531711;
+EXEC :b4 := 11531711;
+--SNAP_ID: 4097 Elapsed Time: 236.936061 Executions: 267 Avg Elapsed Time: .887401
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11531711;
+EXEC :b2 := 11531711;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11531711;
+EXEC :b4 := 11531711;
+--SNAP_ID: 4098 Elapsed Time: 229.163696 Executions: 256 Avg Elapsed Time: .895171
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668694;
+EXEC :b2 := 11668694;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668694;
+EXEC :b4 := 11668694;
+--SNAP_ID: 4099 Elapsed Time: 159.57645 Executions: 180 Avg Elapsed Time: .886536
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668694;
+EXEC :b2 := 11668694;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668694;
+EXEC :b4 := 11668694;
+--SNAP_ID: 4100 Elapsed Time: 188.054308 Executions: 214 Avg Elapsed Time: .878758
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673428;
+EXEC :b2 := 11673428;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673428;
+EXEC :b4 := 11673428;
+--SNAP_ID: 4101 Elapsed Time: 337.115643 Executions: 380 Avg Elapsed Time: .887146
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11349035;
+EXEC :b2 := 11349035;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11349035;
+EXEC :b4 := 11349035;
+--SNAP_ID: 4102 Elapsed Time: 388.745338 Executions: 433 Avg Elapsed Time: .897795
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11515452;
+EXEC :b2 := 11515452;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11515452;
+EXEC :b4 := 11515452;
+--SNAP_ID: 4103 Elapsed Time: 491.255736 Executions: 548 Avg Elapsed Time: .896452
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11515452;
+EXEC :b2 := 11515452;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11515452;
+EXEC :b4 := 11515452;
+--SNAP_ID: 4104 Elapsed Time: 449.613222 Executions: 508 Avg Elapsed Time: .885065
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679358;
+EXEC :b2 := 11679358;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679358;
+EXEC :b4 := 11679358;
+--SNAP_ID: 4105 Elapsed Time: 409.254511 Executions: 462 Avg Elapsed Time: .885832
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975721;
+EXEC :b2 := 11975721;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975721;
+EXEC :b4 := 11975721;
+--SNAP_ID: 4106 Elapsed Time: 619.818774 Executions: 708 Avg Elapsed Time: .87545
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11349035;
+EXEC :b2 := 11349035;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11349035;
+EXEC :b4 := 11349035;
+--SNAP_ID: 4107 Elapsed Time: 436.833031 Executions: 492 Avg Elapsed Time: .887872
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11688002;
+EXEC :b2 := 11688002;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11688002;
+EXEC :b4 := 11688002;
+--SNAP_ID: 4108 Elapsed Time: 192.156269 Executions: 213 Avg Elapsed Time: .902142
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11561059;
+EXEC :b2 := 11561059;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11561059;
+EXEC :b4 := 11561059;
+--SNAP_ID: 4109 Elapsed Time: 160.02619 Executions: 179 Avg Elapsed Time: .894001
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11561059;
+EXEC :b2 := 11561059;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11561059;
+EXEC :b4 := 11561059;
+--SNAP_ID: 4110 Elapsed Time: 132.335454 Executions: 151 Avg Elapsed Time: .876394
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11561059;
+EXEC :b2 := 11561059;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11561059;
+EXEC :b4 := 11561059;
+--SNAP_ID: 4111 Elapsed Time: 137.692425 Executions: 149 Avg Elapsed Time: .92411
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11561059;
+EXEC :b2 := 11561059;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11561059;
+EXEC :b4 := 11561059;
+--SNAP_ID: 4112 Elapsed Time: 125.338067 Executions: 79 Avg Elapsed Time: 1.586558
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11369226;
+EXEC :b2 := 11369226;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11369226;
+EXEC :b4 := 11369226;
+--SNAP_ID: 4113 Elapsed Time: 170.051077 Executions: 121 Avg Elapsed Time: 1.405381
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11369226;
+EXEC :b2 := 11369226;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11369226;
+EXEC :b4 := 11369226;
+--SNAP_ID: 4114 Elapsed Time: 89.039259 Executions: 76 Avg Elapsed Time: 1.171569
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11194932;
+EXEC :b2 := 11194932;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11194932;
+EXEC :b4 := 11194932;
+--SNAP_ID: 4137 Elapsed Time: 8.681482 Executions: 7 Avg Elapsed Time: 1.240212
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11697357;
+EXEC :b2 := 11697357;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11697357;
+EXEC :b4 := 11697357;
+--SNAP_ID: 4138 Elapsed Time: 61.488035 Executions: 51 Avg Elapsed Time: 1.205648
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11693596;
+EXEC :b2 := 11693596;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11693596;
+EXEC :b4 := 11693596;
+--SNAP_ID: 4139 Elapsed Time: 140.226389 Executions: 122 Avg Elapsed Time: 1.149397
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11354562;
+EXEC :b2 := 11354562;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11354562;
+EXEC :b4 := 11354562;
+--SNAP_ID: 4140 Elapsed Time: 280.630892 Executions: 242 Avg Elapsed Time: 1.159632
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981834;
+EXEC :b2 := 11981834;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981834;
+EXEC :b4 := 11981834;
+--SNAP_ID: 4141 Elapsed Time: 261.548765 Executions: 226 Avg Elapsed Time: 1.157295
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981828;
+EXEC :b2 := 11981828;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981828;
+EXEC :b4 := 11981828;
+--SNAP_ID: 4142 Elapsed Time: 287.791671 Executions: 249 Avg Elapsed Time: 1.15579
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981828;
+EXEC :b2 := 11981828;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981828;
+EXEC :b4 := 11981828;
+--SNAP_ID: 4143 Elapsed Time: 257.645225 Executions: 223 Avg Elapsed Time: 1.15536
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981828;
+EXEC :b2 := 11981828;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981828;
+EXEC :b4 := 11981828;
+--SNAP_ID: 4144 Elapsed Time: 296.550109 Executions: 235 Avg Elapsed Time: 1.261915
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981828;
+EXEC :b2 := 11981828;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981828;
+EXEC :b4 := 11981828;
+--SNAP_ID: 4145 Elapsed Time: 320.45466 Executions: 255 Avg Elapsed Time: 1.256685
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11672043;
+EXEC :b2 := 11672043;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11672043;
+EXEC :b4 := 11672043;
+--SNAP_ID: 4146 Elapsed Time: 296.84688 Executions: 259 Avg Elapsed Time: 1.146127
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981828;
+EXEC :b2 := 11981828;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981828;
+EXEC :b4 := 11981828;
+--SNAP_ID: 4147 Elapsed Time: 280.06652 Executions: 243 Avg Elapsed Time: 1.152537
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11980665;
+EXEC :b2 := 11980665;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11980665;
+EXEC :b4 := 11980665;
+--SNAP_ID: 4148 Elapsed Time: 266.174439 Executions: 229 Avg Elapsed Time: 1.162334
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981828;
+EXEC :b2 := 11981828;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981828;
+EXEC :b4 := 11981828;
+--SNAP_ID: 4149 Elapsed Time: 269.870644 Executions: 223 Avg Elapsed Time: 1.210182
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981834;
+EXEC :b2 := 11981834;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981834;
+EXEC :b4 := 11981834;
+--SNAP_ID: 4150 Elapsed Time: 185.700888 Executions: 151 Avg Elapsed Time: 1.229807
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981834;
+EXEC :b2 := 11981834;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981834;
+EXEC :b4 := 11981834;
+--SNAP_ID: 4151 Elapsed Time: 266.098971 Executions: 213 Avg Elapsed Time: 1.249291
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668694;
+EXEC :b2 := 11668694;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668694;
+EXEC :b4 := 11668694;
+--SNAP_ID: 4152 Elapsed Time: 362.08411 Executions: 295 Avg Elapsed Time: 1.227404
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668694;
+EXEC :b2 := 11668694;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668694;
+EXEC :b4 := 11668694;
+--SNAP_ID: 4153 Elapsed Time: 291.919499 Executions: 233 Avg Elapsed Time: 1.252873
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657306;
+EXEC :b2 := 11657306;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657306;
+EXEC :b4 := 11657306;
+--SNAP_ID: 4154 Elapsed Time: 220.845056 Executions: 187 Avg Elapsed Time: 1.18099
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981864;
+EXEC :b2 := 11981864;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981864;
+EXEC :b4 := 11981864;
+--SNAP_ID: 4155 Elapsed Time: 185.266403 Executions: 157 Avg Elapsed Time: 1.180041
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11972650;
+EXEC :b2 := 11972650;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11972650;
+EXEC :b4 := 11972650;
+--SNAP_ID: 4156 Elapsed Time: 121.365145 Executions: 103 Avg Elapsed Time: 1.178302
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668694;
+EXEC :b2 := 11668694;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668694;
+EXEC :b4 := 11668694;
+--SNAP_ID: 4157 Elapsed Time: 96.008372 Executions: 86 Avg Elapsed Time: 1.116376
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11324113;
+EXEC :b2 := 11324113;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11324113;
+EXEC :b4 := 11324113;
+--SNAP_ID: 4158 Elapsed Time: 19.086317 Executions: 17 Avg Elapsed Time: 1.122725
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981834;
+EXEC :b2 := 11981834;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981834;
+EXEC :b4 := 11981834;
+--SNAP_ID: 4161 Elapsed Time: 11.085916 Executions: 10 Avg Elapsed Time: 1.108592
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11543897;
+EXEC :b2 := 11543897;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11543897;
+EXEC :b4 := 11543897;
+--SNAP_ID: 4186 Elapsed Time: 82.916323 Executions: 86 Avg Elapsed Time: .964143
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10091402;
+EXEC :b2 := 10091402;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10091402;
+EXEC :b4 := 10091402;
+--SNAP_ID: 4187 Elapsed Time: 112.399141 Executions: 124 Avg Elapsed Time: .906445
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733124;
+EXEC :b2 := 11733124;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733124;
+EXEC :b4 := 11733124;
+--SNAP_ID: 4188 Elapsed Time: 116.611774 Executions: 128 Avg Elapsed Time: .911029
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10091402;
+EXEC :b2 := 10091402;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10091402;
+EXEC :b4 := 10091402;
+--SNAP_ID: 4189 Elapsed Time: 232.309559 Executions: 254 Avg Elapsed Time: .914605
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11364749;
+EXEC :b2 := 11364749;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11364749;
+EXEC :b4 := 11364749;
+--SNAP_ID: 4190 Elapsed Time: 251.234316 Executions: 276 Avg Elapsed Time: .910269
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11591430;
+EXEC :b2 := 11591430;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11591430;
+EXEC :b4 := 11591430;
+--SNAP_ID: 4191 Elapsed Time: 170.915649 Executions: 189 Avg Elapsed Time: .904316
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976644;
+EXEC :b2 := 11976644;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976644;
+EXEC :b4 := 11976644;
+--SNAP_ID: 4192 Elapsed Time: 163.000712 Executions: 176 Avg Elapsed Time: .92614
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733124;
+EXEC :b2 := 11733124;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733124;
+EXEC :b4 := 11733124;
+--SNAP_ID: 4193 Elapsed Time: 152.101772 Executions: 162 Avg Elapsed Time: .9389
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11670196;
+EXEC :b2 := 11670196;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11670196;
+EXEC :b4 := 11670196;
+--SNAP_ID: 4194 Elapsed Time: 157.911884 Executions: 173 Avg Elapsed Time: .912785
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10658315;
+EXEC :b2 := 10658315;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10658315;
+EXEC :b4 := 10658315;
+--SNAP_ID: 4195 Elapsed Time: 127.346566 Executions: 138 Avg Elapsed Time: .922801
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11084367;
+EXEC :b2 := 11084367;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11084367;
+EXEC :b4 := 11084367;
+--SNAP_ID: 4196 Elapsed Time: 121.829852 Executions: 134 Avg Elapsed Time: .909178
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11084367;
+EXEC :b2 := 11084367;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11084367;
+EXEC :b4 := 11084367;
+--SNAP_ID: 4197 Elapsed Time: 141.418613 Executions: 156 Avg Elapsed Time: .90653
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11534753;
+EXEC :b2 := 11534753;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11534753;
+EXEC :b4 := 11534753;
+--SNAP_ID: 4198 Elapsed Time: 157.603088 Executions: 169 Avg Elapsed Time: .932563
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975205;
+EXEC :b2 := 11975205;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975205;
+EXEC :b4 := 11975205;
+--SNAP_ID: 4199 Elapsed Time: 171.736879 Executions: 189 Avg Elapsed Time: .908661
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10113374;
+EXEC :b2 := 10113374;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10113374;
+EXEC :b4 := 10113374;
+--SNAP_ID: 4200 Elapsed Time: 201.050127 Executions: 222 Avg Elapsed Time: .905631
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10113374;
+EXEC :b2 := 10113374;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10113374;
+EXEC :b4 := 10113374;
+--SNAP_ID: 4201 Elapsed Time: 173.407167 Executions: 191 Avg Elapsed Time: .907891
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10113374;
+EXEC :b2 := 10113374;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10113374;
+EXEC :b4 := 10113374;
+--SNAP_ID: 4202 Elapsed Time: 130.226146 Executions: 143 Avg Elapsed Time: .910672
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10091402;
+EXEC :b2 := 10091402;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10091402;
+EXEC :b4 := 10091402;
+--SNAP_ID: 4203 Elapsed Time: 135.433292 Executions: 149 Avg Elapsed Time: .908948
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11978268;
+EXEC :b2 := 11978268;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11978268;
+EXEC :b4 := 11978268;
+--SNAP_ID: 4204 Elapsed Time: 44.952161 Executions: 48 Avg Elapsed Time: .936503
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11352579;
+EXEC :b2 := 11352579;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11352579;
+EXEC :b4 := 11352579;
+--SNAP_ID: 4205 Elapsed Time: 24.02056 Executions: 26 Avg Elapsed Time: .923868
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11679346;
+EXEC :b2 := 11679346;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11679346;
+EXEC :b4 := 11679346;
+--SNAP_ID: 4206 Elapsed Time: 2.696861 Executions: 3 Avg Elapsed Time: .898954
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11692259;
+EXEC :b2 := 11692259;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11692259;
+EXEC :b4 := 11692259;
+--SNAP_ID: 4207 Elapsed Time: 21.041483 Executions: 23 Avg Elapsed Time: .914847
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11685325;
+EXEC :b2 := 11685325;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11685325;
+EXEC :b4 := 11685325;
+--SNAP_ID: 4208 Elapsed Time: 25.029481 Executions: 16 Avg Elapsed Time: 1.564343
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11685325;
+EXEC :b2 := 11685325;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11685325;
+EXEC :b4 := 11685325;
+--SNAP_ID: 4209 Elapsed Time: 13.610847 Executions: 15 Avg Elapsed Time: .90739
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11588081;
+EXEC :b2 := 11588081;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11588081;
+EXEC :b4 := 11588081;
+--SNAP_ID: 4210 Elapsed Time: 26.793132 Executions: 30 Avg Elapsed Time: .893104
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11532706;
+EXEC :b2 := 11532706;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11532706;
+EXEC :b4 := 11532706;
+--SNAP_ID: 4211 Elapsed Time: 18.491124 Executions: 21 Avg Elapsed Time: .88053
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11532706;
+EXEC :b2 := 11532706;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11532706;
+EXEC :b4 := 11532706;
+--SNAP_ID: 4231 Elapsed Time: 8.1423 Executions: 3 Avg Elapsed Time: 2.7141
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11692259;
+EXEC :b2 := 11692259;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11692259;
+EXEC :b4 := 11692259;
+--SNAP_ID: 4232 Elapsed Time: 14.393375 Executions: 15 Avg Elapsed Time: .959558
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10667514;
+EXEC :b2 := 10667514;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10667514;
+EXEC :b4 := 10667514;
+--SNAP_ID: 4233 Elapsed Time: 16.707238 Executions: 19 Avg Elapsed Time: .879328
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11671904;
+EXEC :b2 := 11671904;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11671904;
+EXEC :b4 := 11671904;
+--SNAP_ID: 4234 Elapsed Time: 43.274454 Executions: 48 Avg Elapsed Time: .901551
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668827;
+EXEC :b2 := 11668827;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668827;
+EXEC :b4 := 11668827;
+--SNAP_ID: 4235 Elapsed Time: 89.347597 Executions: 99 Avg Elapsed Time: .902501
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657191;
+EXEC :b2 := 11657191;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657191;
+EXEC :b4 := 11657191;
+--SNAP_ID: 4236 Elapsed Time: 146.948632 Executions: 160 Avg Elapsed Time: .918429
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11714921;
+EXEC :b2 := 11714921;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11714921;
+EXEC :b4 := 11714921;
+--SNAP_ID: 4237 Elapsed Time: 140.539473 Executions: 155 Avg Elapsed Time: .906706
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657191;
+EXEC :b2 := 11657191;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657191;
+EXEC :b4 := 11657191;
+--SNAP_ID: 4238 Elapsed Time: 141.073022 Executions: 154 Avg Elapsed Time: .916059
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10248201;
+EXEC :b2 := 10248201;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10248201;
+EXEC :b4 := 10248201;
+--SNAP_ID: 4239 Elapsed Time: 154.137861 Executions: 163 Avg Elapsed Time: .945631
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668680;
+EXEC :b2 := 11668680;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668680;
+EXEC :b4 := 11668680;
+--SNAP_ID: 4240 Elapsed Time: 144.939297 Executions: 157 Avg Elapsed Time: .92318
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11662528;
+EXEC :b2 := 11662528;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11662528;
+EXEC :b4 := 11662528;
+--SNAP_ID: 4241 Elapsed Time: 164.128155 Executions: 177 Avg Elapsed Time: .927278
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11662528;
+EXEC :b2 := 11662528;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11662528;
+EXEC :b4 := 11662528;
+--SNAP_ID: 4242 Elapsed Time: 145.665628 Executions: 160 Avg Elapsed Time: .91041
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668680;
+EXEC :b2 := 11668680;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668680;
+EXEC :b4 := 11668680;
+--SNAP_ID: 4243 Elapsed Time: 122.750905 Executions: 134 Avg Elapsed Time: .916052
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11701436;
+EXEC :b2 := 11701436;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11701436;
+EXEC :b4 := 11701436;
+--SNAP_ID: 4244 Elapsed Time: 124.042162 Executions: 136 Avg Elapsed Time: .912075
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657191;
+EXEC :b2 := 11657191;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657191;
+EXEC :b4 := 11657191;
+--SNAP_ID: 4245 Elapsed Time: 159.788486 Executions: 173 Avg Elapsed Time: .923633
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592858;
+EXEC :b2 := 11592858;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592858;
+EXEC :b4 := 11592858;
+--SNAP_ID: 4246 Elapsed Time: 130.389418 Executions: 139 Avg Elapsed Time: .938053
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11684163;
+EXEC :b2 := 11684163;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11684163;
+EXEC :b4 := 11684163;
+--SNAP_ID: 4247 Elapsed Time: 119.56041 Executions: 125 Avg Elapsed Time: .956483
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592858;
+EXEC :b2 := 11592858;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592858;
+EXEC :b4 := 11592858;
+--SNAP_ID: 4248 Elapsed Time: 138.703773 Executions: 143 Avg Elapsed Time: .969956
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668680;
+EXEC :b2 := 11668680;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668680;
+EXEC :b4 := 11668680;
+--SNAP_ID: 4249 Elapsed Time: 103.664217 Executions: 110 Avg Elapsed Time: .942402
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10167653;
+EXEC :b2 := 10167653;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10167653;
+EXEC :b4 := 10167653;
+--SNAP_ID: 4250 Elapsed Time: 133.193415 Executions: 146 Avg Elapsed Time: .912284
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10631030;
+EXEC :b2 := 10631030;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10631030;
+EXEC :b4 := 10631030;
+--SNAP_ID: 4251 Elapsed Time: 92.707431 Executions: 100 Avg Elapsed Time: .927074
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657191;
+EXEC :b2 := 11657191;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657191;
+EXEC :b4 := 11657191;
+--SNAP_ID: 4252 Elapsed Time: 66.606109 Executions: 72 Avg Elapsed Time: .925085
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657191;
+EXEC :b2 := 11657191;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657191;
+EXEC :b4 := 11657191;
+--SNAP_ID: 4253 Elapsed Time: 56.871697 Executions: 61 Avg Elapsed Time: .932323
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668680;
+EXEC :b2 := 11668680;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668680;
+EXEC :b4 := 11668680;
+--SNAP_ID: 4254 Elapsed Time: 58.651102 Executions: 61 Avg Elapsed Time: .961493
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11668680;
+EXEC :b2 := 11668680;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11668680;
+EXEC :b4 := 11668680;
+--SNAP_ID: 4255 Elapsed Time: 19.300133 Executions: 20 Avg Elapsed Time: .965007
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11657191;
+EXEC :b2 := 11657191;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11657191;
+EXEC :b4 := 11657191;
+--SNAP_ID: 4261 Elapsed Time: 15.815242 Executions: 17 Avg Elapsed Time: .930308
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975286;
+EXEC :b2 := 11975286;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975286;
+EXEC :b4 := 11975286;
+--SNAP_ID: 4280 Elapsed Time: 36.976287 Executions: 39 Avg Elapsed Time: .94811
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11514318;
+EXEC :b2 := 11514318;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11514318;
+EXEC :b4 := 11514318;
+--SNAP_ID: 4281 Elapsed Time: 54.808259 Executions: 60 Avg Elapsed Time: .913471
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981916;
+EXEC :b2 := 11981916;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981916;
+EXEC :b4 := 11981916;
+--SNAP_ID: 4282 Elapsed Time: 85.731586 Executions: 93 Avg Elapsed Time: .921845
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11514318;
+EXEC :b2 := 11514318;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11514318;
+EXEC :b4 := 11514318;
+--SNAP_ID: 4283 Elapsed Time: 150.503966 Executions: 161 Avg Elapsed Time: .934807
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11514318;
+EXEC :b2 := 11514318;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11514318;
+EXEC :b4 := 11514318;
+--SNAP_ID: 4284 Elapsed Time: 210.798381 Executions: 225 Avg Elapsed Time: .936882
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11514318;
+EXEC :b2 := 11514318;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11514318;
+EXEC :b4 := 11514318;
+--SNAP_ID: 4285 Elapsed Time: 147.053599 Executions: 157 Avg Elapsed Time: .936647
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11514318;
+EXEC :b2 := 11514318;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11514318;
+EXEC :b4 := 11514318;
+--SNAP_ID: 4286 Elapsed Time: 199.300289 Executions: 209 Avg Elapsed Time: .95359
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11514318;
+EXEC :b2 := 11514318;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11514318;
+EXEC :b4 := 11514318;
+--SNAP_ID: 4287 Elapsed Time: 178.837368 Executions: 192 Avg Elapsed Time: .931445
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11623419;
+EXEC :b2 := 11623419;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11623419;
+EXEC :b4 := 11623419;
+--SNAP_ID: 4288 Elapsed Time: 126.391666 Executions: 140 Avg Elapsed Time: .902798
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11692665;
+EXEC :b2 := 11692665;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11692665;
+EXEC :b4 := 11692665;
+--SNAP_ID: 4289 Elapsed Time: 132.564443 Executions: 147 Avg Elapsed Time: .901799
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10101365;
+EXEC :b2 := 10101365;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10101365;
+EXEC :b4 := 10101365;
+--SNAP_ID: 4290 Elapsed Time: 141.267124 Executions: 155 Avg Elapsed Time: .911401
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11677934;
+EXEC :b2 := 11677934;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11677934;
+EXEC :b4 := 11677934;
+--SNAP_ID: 4291 Elapsed Time: 161.992982 Executions: 171 Avg Elapsed Time: .947327
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11627184;
+EXEC :b2 := 11627184;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11627184;
+EXEC :b4 := 11627184;
+--SNAP_ID: 4292 Elapsed Time: 147.690055 Executions: 157 Avg Elapsed Time: .940701
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11621542;
+EXEC :b2 := 11621542;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11621542;
+EXEC :b4 := 11621542;
+--SNAP_ID: 4293 Elapsed Time: 125.804612 Executions: 138 Avg Elapsed Time: .911628
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974082;
+EXEC :b2 := 11974082;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974082;
+EXEC :b4 := 11974082;
+--SNAP_ID: 4294 Elapsed Time: 274.61936 Executions: 304 Avg Elapsed Time: .903353
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11710472;
+EXEC :b2 := 11710472;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11710472;
+EXEC :b4 := 11710472;
+--SNAP_ID: 4295 Elapsed Time: 239.295745 Executions: 261 Avg Elapsed Time: .916842
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11681783;
+EXEC :b2 := 11681783;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11681783;
+EXEC :b4 := 11681783;
+--SNAP_ID: 4296 Elapsed Time: 131.569107 Executions: 145 Avg Elapsed Time: .907373
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976231;
+EXEC :b2 := 11976231;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976231;
+EXEC :b4 := 11976231;
+--SNAP_ID: 4297 Elapsed Time: 91.360206 Executions: 100 Avg Elapsed Time: .913602
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976231;
+EXEC :b2 := 11976231;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976231;
+EXEC :b4 := 11976231;
+--SNAP_ID: 4298 Elapsed Time: 62.66575 Executions: 69 Avg Elapsed Time: .908199
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976231;
+EXEC :b2 := 11976231;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976231;
+EXEC :b4 := 11976231;
+--SNAP_ID: 4299 Elapsed Time: 43.876804 Executions: 49 Avg Elapsed Time: .895445
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976231;
+EXEC :b2 := 11976231;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976231;
+EXEC :b4 := 11976231;
+--SNAP_ID: 4300 Elapsed Time: 9.445242 Executions: 10 Avg Elapsed Time: .944524
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11976231;
+EXEC :b2 := 11976231;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11976231;
+EXEC :b4 := 11976231;
+--SNAP_ID: 4307 Elapsed Time: 14.33353 Executions: 9 Avg Elapsed Time: 1.592614
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11980277;
+EXEC :b2 := 11980277;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11980277;
+EXEC :b4 := 11980277;
+--SNAP_ID: 4331 Elapsed Time: 10.474161 Executions: 6 Avg Elapsed Time: 1.745694
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11621856;
+EXEC :b2 := 11621856;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11621856;
+EXEC :b4 := 11621856;
+--SNAP_ID: 4332 Elapsed Time: 28.500892 Executions: 31 Avg Elapsed Time: .919384
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592508;
+EXEC :b2 := 11592508;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592508;
+EXEC :b4 := 11592508;
+--SNAP_ID: 4333 Elapsed Time: 26.95429 Executions: 30 Avg Elapsed Time: .898476
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592508;
+EXEC :b2 := 11592508;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592508;
+EXEC :b4 := 11592508;
+--SNAP_ID: 4334 Elapsed Time: 27.50138 Executions: 30 Avg Elapsed Time: .916713
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592508;
+EXEC :b2 := 11592508;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592508;
+EXEC :b4 := 11592508;
+--SNAP_ID: 4335 Elapsed Time: 18.245252 Executions: 20 Avg Elapsed Time: .912263
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11600462;
+EXEC :b2 := 11600462;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11600462;
+EXEC :b4 := 11600462;
+--SNAP_ID: 4423 Elapsed Time: 12.514982 Executions: 5 Avg Elapsed Time: 2.502996
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981961;
+EXEC :b2 := 11981961;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981961;
+EXEC :b4 := 11981961;
+--SNAP_ID: 4426 Elapsed Time: 14.749537 Executions: 16 Avg Elapsed Time: .921846
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10214303;
+EXEC :b2 := 10214303;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10214303;
+EXEC :b4 := 10214303;
+--SNAP_ID: 4427 Elapsed Time: 47.207646 Executions: 52 Avg Elapsed Time: .907839
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11702012;
+EXEC :b2 := 11702012;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11702012;
+EXEC :b4 := 11702012;
+--SNAP_ID: 4428 Elapsed Time: 101.908619 Executions: 112 Avg Elapsed Time: .909898
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11243759;
+EXEC :b2 := 11243759;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11243759;
+EXEC :b4 := 11243759;
+--SNAP_ID: 4429 Elapsed Time: 120.343212 Executions: 131 Avg Elapsed Time: .91865
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11702012;
+EXEC :b2 := 11702012;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11702012;
+EXEC :b4 := 11702012;
+--SNAP_ID: 4430 Elapsed Time: 132.243334 Executions: 145 Avg Elapsed Time: .912023
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11544304;
+EXEC :b2 := 11544304;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11544304;
+EXEC :b4 := 11544304;
+--SNAP_ID: 4431 Elapsed Time: 183.039874 Executions: 203 Avg Elapsed Time: .901674
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11544304;
+EXEC :b2 := 11544304;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11544304;
+EXEC :b4 := 11544304;
+--SNAP_ID: 4432 Elapsed Time: 159.369059 Executions: 173 Avg Elapsed Time: .921208
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11647009;
+EXEC :b2 := 11647009;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11647009;
+EXEC :b4 := 11647009;
+--SNAP_ID: 4433 Elapsed Time: 166.640687 Executions: 181 Avg Elapsed Time: .920667
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11702012;
+EXEC :b2 := 11702012;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11702012;
+EXEC :b4 := 11702012;
+--SNAP_ID: 4434 Elapsed Time: 90.653831 Executions: 100 Avg Elapsed Time: .906538
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11220189;
+EXEC :b2 := 11220189;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11220189;
+EXEC :b4 := 11220189;
+--SNAP_ID: 4435 Elapsed Time: 103.380801 Executions: 112 Avg Elapsed Time: .923043
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11220189;
+EXEC :b2 := 11220189;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11220189;
+EXEC :b4 := 11220189;
+--SNAP_ID: 4436 Elapsed Time: 132.780655 Executions: 140 Avg Elapsed Time: .948433
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11700332;
+EXEC :b2 := 11700332;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11700332;
+EXEC :b4 := 11700332;
+--SNAP_ID: 4437 Elapsed Time: 161.715306 Executions: 172 Avg Elapsed Time: .940205
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11536976;
+EXEC :b2 := 11536976;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11536976;
+EXEC :b4 := 11536976;
+--SNAP_ID: 4438 Elapsed Time: 149.21864 Executions: 161 Avg Elapsed Time: .926824
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11533907;
+EXEC :b2 := 11533907;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11533907;
+EXEC :b4 := 11533907;
+--SNAP_ID: 4439 Elapsed Time: 136.759916 Executions: 149 Avg Elapsed Time: .917852
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975302;
+EXEC :b2 := 11975302;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975302;
+EXEC :b4 := 11975302;
+--SNAP_ID: 4440 Elapsed Time: 97.787695 Executions: 108 Avg Elapsed Time: .905442
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11198211;
+EXEC :b2 := 11198211;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11198211;
+EXEC :b4 := 11198211;
+--SNAP_ID: 4441 Elapsed Time: 106.305712 Executions: 117 Avg Elapsed Time: .908596
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11349035;
+EXEC :b2 := 11349035;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11349035;
+EXEC :b4 := 11349035;
+--SNAP_ID: 4442 Elapsed Time: 107.833058 Executions: 119 Avg Elapsed Time: .90616
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975108;
+EXEC :b2 := 11975108;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975108;
+EXEC :b4 := 11975108;
+--SNAP_ID: 4443 Elapsed Time: 178.700323 Executions: 195 Avg Elapsed Time: .916412
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11030809;
+EXEC :b2 := 11030809;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11030809;
+EXEC :b4 := 11030809;
+--SNAP_ID: 4444 Elapsed Time: 171.938051 Executions: 189 Avg Elapsed Time: .909725
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11078862;
+EXEC :b2 := 11078862;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11078862;
+EXEC :b4 := 11078862;
+--SNAP_ID: 4445 Elapsed Time: 149.386266 Executions: 167 Avg Elapsed Time: .894529
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11691740;
+EXEC :b2 := 11691740;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11691740;
+EXEC :b4 := 11691740;
+--SNAP_ID: 4446 Elapsed Time: 14.300448 Executions: 16 Avg Elapsed Time: .893778
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10647893;
+EXEC :b2 := 10647893;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10647893;
+EXEC :b4 := 10647893;
+--SNAP_ID: 4474 Elapsed Time: 62.206751 Executions: 62 Avg Elapsed Time: 1.003335
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974747;
+EXEC :b2 := 11974747;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974747;
+EXEC :b4 := 11974747;
+--SNAP_ID: 4475 Elapsed Time: 141.191284 Executions: 152 Avg Elapsed Time: .92889
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11533907;
+EXEC :b2 := 11533907;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11533907;
+EXEC :b4 := 11533907;
+--SNAP_ID: 4476 Elapsed Time: 118.630363 Executions: 129 Avg Elapsed Time: .919615
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11671993;
+EXEC :b2 := 11671993;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11671993;
+EXEC :b4 := 11671993;
+--SNAP_ID: 4477 Elapsed Time: 187.91552 Executions: 206 Avg Elapsed Time: .912211
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10202333;
+EXEC :b2 := 10202333;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10202333;
+EXEC :b4 := 10202333;
+--SNAP_ID: 4478 Elapsed Time: 170.13884 Executions: 176 Avg Elapsed Time: .966698
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11985770;
+EXEC :b2 := 11985770;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11985770;
+EXEC :b4 := 11985770;
+--SNAP_ID: 4479 Elapsed Time: 214.996419 Executions: 210 Avg Elapsed Time: 1.023792
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10346929;
+EXEC :b2 := 10346929;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10346929;
+EXEC :b4 := 10346929;
+--SNAP_ID: 4480 Elapsed Time: 145.369729 Executions: 141 Avg Elapsed Time: 1.030991
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10497297;
+EXEC :b2 := 10497297;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10497297;
+EXEC :b4 := 10497297;
+--SNAP_ID: 4481 Elapsed Time: 173.258024 Executions: 166 Avg Elapsed Time: 1.043723
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11592746;
+EXEC :b2 := 11592746;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11592746;
+EXEC :b4 := 11592746;
+--SNAP_ID: 4482 Elapsed Time: 124.064345 Executions: 125 Avg Elapsed Time: .992515
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11730703;
+EXEC :b2 := 11730703;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11730703;
+EXEC :b4 := 11730703;
+--SNAP_ID: 4483 Elapsed Time: 109.727157 Executions: 114 Avg Elapsed Time: .962519
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11225755;
+EXEC :b2 := 11225755;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11225755;
+EXEC :b4 := 11225755;
+--SNAP_ID: 4484 Elapsed Time: 115.71342 Executions: 119 Avg Elapsed Time: .972382
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10281597;
+EXEC :b2 := 10281597;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10281597;
+EXEC :b4 := 10281597;
+--SNAP_ID: 4485 Elapsed Time: 155.266931 Executions: 164 Avg Elapsed Time: .94675
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975350;
+EXEC :b2 := 11975350;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975350;
+EXEC :b4 := 11975350;
+--SNAP_ID: 4486 Elapsed Time: 137.865475 Executions: 148 Avg Elapsed Time: .931523
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11704822;
+EXEC :b2 := 11704822;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11704822;
+EXEC :b4 := 11704822;
+--SNAP_ID: 4487 Elapsed Time: 120.505155 Executions: 131 Avg Elapsed Time: .919887
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11646841;
+EXEC :b2 := 11646841;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11646841;
+EXEC :b4 := 11646841;
+--SNAP_ID: 4488 Elapsed Time: 85.097927 Executions: 92 Avg Elapsed Time: .924977
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11671909;
+EXEC :b2 := 11671909;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11671909;
+EXEC :b4 := 11671909;
+--SNAP_ID: 4489 Elapsed Time: 106.048492 Executions: 112 Avg Elapsed Time: .946862
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11692664;
+EXEC :b2 := 11692664;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11692664;
+EXEC :b4 := 11692664;
+--SNAP_ID: 4490 Elapsed Time: 85.130421 Executions: 92 Avg Elapsed Time: .925331
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11669634;
+EXEC :b2 := 11669634;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11669634;
+EXEC :b4 := 11669634;
+--SNAP_ID: 4491 Elapsed Time: 50.375916 Executions: 53 Avg Elapsed Time: .950489
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11205282;
+EXEC :b2 := 11205282;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11205282;
+EXEC :b4 := 11205282;
+--SNAP_ID: 4494 Elapsed Time: 21.631805 Executions: 22 Avg Elapsed Time: .983264
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11722893;
+EXEC :b2 := 11722893;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11722893;
+EXEC :b4 := 11722893;
+--SNAP_ID: 4522 Elapsed Time: 60.769151 Executions: 62 Avg Elapsed Time: .980148
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11262913;
+EXEC :b2 := 11262913;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11262913;
+EXEC :b4 := 11262913;
+--SNAP_ID: 4523 Elapsed Time: 128.271355 Executions: 139 Avg Elapsed Time: .922816
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11704817;
+EXEC :b2 := 11704817;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11704817;
+EXEC :b4 := 11704817;
+--SNAP_ID: 4524 Elapsed Time: 221.059726 Executions: 237 Avg Elapsed Time: .932741
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11704817;
+EXEC :b2 := 11704817;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11704817;
+EXEC :b4 := 11704817;
+--SNAP_ID: 4525 Elapsed Time: 243.25476 Executions: 260 Avg Elapsed Time: .935595
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10636208;
+EXEC :b2 := 10636208;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10636208;
+EXEC :b4 := 10636208;
+--SNAP_ID: 4526 Elapsed Time: 210.396862 Executions: 222 Avg Elapsed Time: .947734
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10216592;
+EXEC :b2 := 10216592;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10216592;
+EXEC :b4 := 10216592;
+--SNAP_ID: 4527 Elapsed Time: 237.67317 Executions: 256 Avg Elapsed Time: .928411
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11678053;
+EXEC :b2 := 11678053;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11678053;
+EXEC :b4 := 11678053;
+--SNAP_ID: 4528 Elapsed Time: 224.904281 Executions: 244 Avg Elapsed Time: .921739
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10215352;
+EXEC :b2 := 10215352;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10215352;
+EXEC :b4 := 10215352;
+--SNAP_ID: 4529 Elapsed Time: 205.088407 Executions: 218 Avg Elapsed Time: .940773
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733263;
+EXEC :b2 := 11733263;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733263;
+EXEC :b4 := 11733263;
+--SNAP_ID: 4530 Elapsed Time: 179.512683 Executions: 198 Avg Elapsed Time: .90663
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724621;
+EXEC :b2 := 11724621;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724621;
+EXEC :b4 := 11724621;
+--SNAP_ID: 4531 Elapsed Time: 174.308216 Executions: 190 Avg Elapsed Time: .917412
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724621;
+EXEC :b2 := 11724621;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724621;
+EXEC :b4 := 11724621;
+--SNAP_ID: 4532 Elapsed Time: 213.537686 Executions: 230 Avg Elapsed Time: .928425
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11724621;
+EXEC :b2 := 11724621;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11724621;
+EXEC :b4 := 11724621;
+--SNAP_ID: 4533 Elapsed Time: 219.831209 Executions: 226 Avg Elapsed Time: .972704
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11678053;
+EXEC :b2 := 11678053;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11678053;
+EXEC :b4 := 11678053;
+--SNAP_ID: 4534 Elapsed Time: 168.187777 Executions: 181 Avg Elapsed Time: .929214
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733263;
+EXEC :b2 := 11733263;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733263;
+EXEC :b4 := 11733263;
+--SNAP_ID: 4535 Elapsed Time: 26.759166 Executions: 21 Avg Elapsed Time: 1.274246
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10182484;
+EXEC :b2 := 10182484;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10182484;
+EXEC :b4 := 10182484;
+--SNAP_ID: 4536 Elapsed Time: 158.275959 Executions: 173 Avg Elapsed Time: .91489
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733263;
+EXEC :b2 := 11733263;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733263;
+EXEC :b4 := 11733263;
+--SNAP_ID: 4537 Elapsed Time: 124.643567 Executions: 136 Avg Elapsed Time: .916497
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11054508;
+EXEC :b2 := 11054508;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11054508;
+EXEC :b4 := 11054508;
+--SNAP_ID: 4538 Elapsed Time: 125.918641 Executions: 137 Avg Elapsed Time: .919114
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11979899;
+EXEC :b2 := 11979899;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11979899;
+EXEC :b4 := 11979899;
+--SNAP_ID: 4539 Elapsed Time: 79.884686 Executions: 87 Avg Elapsed Time: .918215
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733263;
+EXEC :b2 := 11733263;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733263;
+EXEC :b4 := 11733263;
+--SNAP_ID: 4540 Elapsed Time: 161.718884 Executions: 176 Avg Elapsed Time: .918857
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733263;
+EXEC :b2 := 11733263;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733263;
+EXEC :b4 := 11733263;
+--SNAP_ID: 4541 Elapsed Time: 62.591269 Executions: 67 Avg Elapsed Time: .934198
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733263;
+EXEC :b2 := 11733263;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733263;
+EXEC :b4 := 11733263;
+--SNAP_ID: 4542 Elapsed Time: 96.481075 Executions: 93 Avg Elapsed Time: 1.037431
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733263;
+EXEC :b2 := 11733263;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733263;
+EXEC :b4 := 11733263;
+--SNAP_ID: 4546 Elapsed Time: 38.920524 Executions: 30 Avg Elapsed Time: 1.297351
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975709;
+EXEC :b2 := 11975709;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975709;
+EXEC :b4 := 11975709;
+--SNAP_ID: 4547 Elapsed Time: 32.951224 Executions: 30 Avg Elapsed Time: 1.098374
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975709;
+EXEC :b2 := 11975709;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975709;
+EXEC :b4 := 11975709;
+--SNAP_ID: 4549 Elapsed Time: 13.035619 Executions: 14 Avg Elapsed Time: .931116
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975709;
+EXEC :b2 := 11975709;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975709;
+EXEC :b4 := 11975709;
+--SNAP_ID: 4569 Elapsed Time: 19.204564 Executions: 19 Avg Elapsed Time: 1.010767
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981860;
+EXEC :b2 := 11981860;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981860;
+EXEC :b4 := 11981860;
+--SNAP_ID: 4570 Elapsed Time: 35.641859 Executions: 38 Avg Elapsed Time: .937944
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11987109;
+EXEC :b2 := 11987109;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11987109;
+EXEC :b4 := 11987109;
+--SNAP_ID: 4571 Elapsed Time: 95.474098 Executions: 102 Avg Elapsed Time: .936021
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981860;
+EXEC :b2 := 11981860;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981860;
+EXEC :b4 := 11981860;
+--SNAP_ID: 4572 Elapsed Time: 108.539537 Executions: 118 Avg Elapsed Time: .919827
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11987129;
+EXEC :b2 := 11987129;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11987129;
+EXEC :b4 := 11987129;
+--SNAP_ID: 4573 Elapsed Time: 115.385273 Executions: 124 Avg Elapsed Time: .930526
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11728021;
+EXEC :b2 := 11728021;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11728021;
+EXEC :b4 := 11728021;
+--SNAP_ID: 4574 Elapsed Time: 126.281038 Executions: 137 Avg Elapsed Time: .921759
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981860;
+EXEC :b2 := 11981860;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981860;
+EXEC :b4 := 11981860;
+--SNAP_ID: 4575 Elapsed Time: 150.503018 Executions: 164 Avg Elapsed Time: .917701
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4576 Elapsed Time: 175.466033 Executions: 187 Avg Elapsed Time: .938321
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10621751;
+EXEC :b2 := 10621751;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10621751;
+EXEC :b4 := 10621751;
+--SNAP_ID: 4577 Elapsed Time: 167.891019 Executions: 184 Avg Elapsed Time: .912451
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11543897;
+EXEC :b2 := 11543897;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11543897;
+EXEC :b4 := 11543897;
+--SNAP_ID: 4578 Elapsed Time: 180.734818 Executions: 197 Avg Elapsed Time: .917436
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11981860;
+EXEC :b2 := 11981860;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11981860;
+EXEC :b4 := 11981860;
+--SNAP_ID: 4579 Elapsed Time: 144.948211 Executions: 158 Avg Elapsed Time: .917394
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4580 Elapsed Time: 178.252379 Executions: 193 Avg Elapsed Time: .923587
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4581 Elapsed Time: 143.760142 Executions: 154 Avg Elapsed Time: .933507
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11625916;
+EXEC :b2 := 11625916;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11625916;
+EXEC :b4 := 11625916;
+--SNAP_ID: 4582 Elapsed Time: 101.545357 Executions: 104 Avg Elapsed Time: .976398
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10080942;
+EXEC :b2 := 10080942;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10080942;
+EXEC :b4 := 10080942;
+--SNAP_ID: 4583 Elapsed Time: 75.009254 Executions: 81 Avg Elapsed Time: .92604
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4584 Elapsed Time: 65.861205 Executions: 72 Avg Elapsed Time: .914739
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11276850;
+EXEC :b2 := 11276850;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11276850;
+EXEC :b4 := 11276850;
+--SNAP_ID: 4585 Elapsed Time: 85.053947 Executions: 91 Avg Elapsed Time: .934659
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4586 Elapsed Time: 94.033585 Executions: 104 Avg Elapsed Time: .904169
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4587 Elapsed Time: 167.866773 Executions: 183 Avg Elapsed Time: .917305
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11684163;
+EXEC :b2 := 11684163;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11684163;
+EXEC :b4 := 11684163;
+--SNAP_ID: 4588 Elapsed Time: 163.688123 Executions: 176 Avg Elapsed Time: .930046
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11276850;
+EXEC :b2 := 11276850;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11276850;
+EXEC :b4 := 11276850;
+--SNAP_ID: 4589 Elapsed Time: 111.031708 Executions: 117 Avg Elapsed Time: .948989
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11987129;
+EXEC :b2 := 11987129;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11987129;
+EXEC :b4 := 11987129;
+--SNAP_ID: 4590 Elapsed Time: 47.874299 Executions: 52 Avg Elapsed Time: .92066
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4591 Elapsed Time: 57.566405 Executions: 60 Avg Elapsed Time: .95944
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11732355;
+EXEC :b2 := 11732355;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11732355;
+EXEC :b4 := 11732355;
+--SNAP_ID: 4592 Elapsed Time: 87.566388 Executions: 72 Avg Elapsed Time: 1.2162
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975286;
+EXEC :b2 := 11975286;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975286;
+EXEC :b4 := 11975286;
+--SNAP_ID: 4593 Elapsed Time: 86.628369 Executions: 78 Avg Elapsed Time: 1.11062
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11732355;
+EXEC :b2 := 11732355;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11732355;
+EXEC :b4 := 11732355;
+--SNAP_ID: 4594 Elapsed Time: 139.278991 Executions: 90 Avg Elapsed Time: 1.547544
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4595 Elapsed Time: 98.539308 Executions: 90 Avg Elapsed Time: 1.094881
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4596 Elapsed Time: 88.98239 Executions: 90 Avg Elapsed Time: .988693
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10175833;
+EXEC :b2 := 10175833;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10175833;
+EXEC :b4 := 10175833;
+--SNAP_ID: 4597 Elapsed Time: 42.951437 Executions: 42 Avg Elapsed Time: 1.022653
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975286;
+EXEC :b2 := 11975286;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975286;
+EXEC :b4 := 11975286;
+--SNAP_ID: 4598 Elapsed Time: 29.057869 Executions: 30 Avg Elapsed Time: .968596
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11975286;
+EXEC :b2 := 11975286;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11975286;
+EXEC :b4 := 11975286;
+--SNAP_ID: 4617 Elapsed Time: 7.242349 Executions: 4 Avg Elapsed Time: 1.810587
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11705764;
+EXEC :b2 := 11705764;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11705764;
+EXEC :b4 := 11705764;
+--SNAP_ID: 4618 Elapsed Time: 11.446986 Executions: 11 Avg Elapsed Time: 1.040635
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673008;
+EXEC :b2 := 11673008;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673008;
+EXEC :b4 := 11673008;
+--SNAP_ID: 4619 Elapsed Time: 67.268607 Executions: 73 Avg Elapsed Time: .921488
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11725363;
+EXEC :b2 := 11725363;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11725363;
+EXEC :b4 := 11725363;
+--SNAP_ID: 4620 Elapsed Time: 204.274291 Executions: 219 Avg Elapsed Time: .932759
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11904292;
+EXEC :b2 := 11904292;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11904292;
+EXEC :b4 := 11904292;
+--SNAP_ID: 4621 Elapsed Time: 275.449576 Executions: 296 Avg Elapsed Time: .930573
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11511695;
+EXEC :b2 := 11511695;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11511695;
+EXEC :b4 := 11511695;
+--SNAP_ID: 4622 Elapsed Time: 276.611766 Executions: 294 Avg Elapsed Time: .940856
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11511695;
+EXEC :b2 := 11511695;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11511695;
+EXEC :b4 := 11511695;
+--SNAP_ID: 4623 Elapsed Time: 219.253318 Executions: 234 Avg Elapsed Time: .93698
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11511695;
+EXEC :b2 := 11511695;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11511695;
+EXEC :b4 := 11511695;
+--SNAP_ID: 4624 Elapsed Time: 162.927282 Executions: 171 Avg Elapsed Time: .952791
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11511695;
+EXEC :b2 := 11511695;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11511695;
+EXEC :b4 := 11511695;
+--SNAP_ID: 4625 Elapsed Time: 226.446789 Executions: 242 Avg Elapsed Time: .935731
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673377;
+EXEC :b2 := 11673377;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673377;
+EXEC :b4 := 11673377;
+--SNAP_ID: 4626 Elapsed Time: 234.234412 Executions: 251 Avg Elapsed Time: .933205
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11511695;
+EXEC :b2 := 11511695;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11511695;
+EXEC :b4 := 11511695;
+--SNAP_ID: 4627 Elapsed Time: 229.440577 Executions: 244 Avg Elapsed Time: .94033
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673377;
+EXEC :b2 := 11673377;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673377;
+EXEC :b4 := 11673377;
+--SNAP_ID: 4628 Elapsed Time: 270.692773 Executions: 290 Avg Elapsed Time: .933423
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673377;
+EXEC :b2 := 11673377;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673377;
+EXEC :b4 := 11673377;
+--SNAP_ID: 4629 Elapsed Time: 262.904109 Executions: 284 Avg Elapsed Time: .925719
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11454358;
+EXEC :b2 := 11454358;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11454358;
+EXEC :b4 := 11454358;
+--SNAP_ID: 4630 Elapsed Time: 278.420481 Executions: 306 Avg Elapsed Time: .909871
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11673377;
+EXEC :b2 := 11673377;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11673377;
+EXEC :b4 := 11673377;
+--SNAP_ID: 4631 Elapsed Time: 153.629465 Executions: 168 Avg Elapsed Time: .914461
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11707168;
+EXEC :b2 := 11707168;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11707168;
+EXEC :b4 := 11707168;
+--SNAP_ID: 4632 Elapsed Time: 142.828765 Executions: 149 Avg Elapsed Time: .958582
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521384;
+EXEC :b2 := 11521384;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521384;
+EXEC :b4 := 11521384;
+--SNAP_ID: 4633 Elapsed Time: 103.671159 Executions: 109 Avg Elapsed Time: .951112
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521384;
+EXEC :b2 := 11521384;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521384;
+EXEC :b4 := 11521384;
+--SNAP_ID: 4634 Elapsed Time: 99.059139 Executions: 109 Avg Elapsed Time: .908799
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11707168;
+EXEC :b2 := 11707168;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11707168;
+EXEC :b4 := 11707168;
+--SNAP_ID: 4635 Elapsed Time: 72.163146 Executions: 79 Avg Elapsed Time: .913458
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974980;
+EXEC :b2 := 11974980;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974980;
+EXEC :b4 := 11974980;
+--SNAP_ID: 4636 Elapsed Time: 72.039008 Executions: 78 Avg Elapsed Time: .923577
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974980;
+EXEC :b2 := 11974980;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974980;
+EXEC :b4 := 11974980;
+--SNAP_ID: 4637 Elapsed Time: 2.820886 Executions: 3 Avg Elapsed Time: .940295
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11733198;
+EXEC :b2 := 11733198;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11733198;
+EXEC :b4 := 11733198;
+--SNAP_ID: 4638 Elapsed Time: 4.828508 Executions: 5 Avg Elapsed Time: .965702
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11974980;
+EXEC :b2 := 11974980;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11974980;
+EXEC :b4 := 11974980;
+--SNAP_ID: 4642 Elapsed Time: 42.973466 Executions: 30 Avg Elapsed Time: 1.432449
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11572934;
+EXEC :b2 := 11572934;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11572934;
+EXEC :b4 := 11572934;
+--SNAP_ID: 4643 Elapsed Time: 33.75165 Executions: 30 Avg Elapsed Time: 1.125055
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11572934;
+EXEC :b2 := 11572934;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11572934;
+EXEC :b4 := 11572934;
+--SNAP_ID: 4644 Elapsed Time: 1.789749 Executions: 2 Avg Elapsed Time: .894875
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11572934;
+EXEC :b2 := 11572934;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11572934;
+EXEC :b4 := 11572934;
+--SNAP_ID: 4686 Elapsed Time: 1.625955 Executions: 1 Avg Elapsed Time: 1.625955
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11598349;
+EXEC :b2 := 11598349;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11598349;
+EXEC :b4 := 11598349;
+--SNAP_ID: 4763 Elapsed Time: 31.743617 Executions: 28 Avg Elapsed Time: 1.133701
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11514936;
+EXEC :b2 := 11514936;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11514936;
+EXEC :b4 := 11514936;
+--SNAP_ID: 4764 Elapsed Time: 38.487287 Executions: 42 Avg Elapsed Time: .916364
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11614360;
+EXEC :b2 := 11614360;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11614360;
+EXEC :b4 := 11614360;
+--SNAP_ID: 4765 Elapsed Time: 82.153629 Executions: 89 Avg Elapsed Time: .923074
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10456995;
+EXEC :b2 := 10456995;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10456995;
+EXEC :b4 := 10456995;
+--SNAP_ID: 4766 Elapsed Time: 131.230449 Executions: 143 Avg Elapsed Time: .917695
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10456995;
+EXEC :b2 := 10456995;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10456995;
+EXEC :b4 := 10456995;
+--SNAP_ID: 4767 Elapsed Time: 134.929628 Executions: 146 Avg Elapsed Time: .924176
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11625265;
+EXEC :b2 := 11625265;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11625265;
+EXEC :b4 := 11625265;
+--SNAP_ID: 4768 Elapsed Time: 164.372533 Executions: 177 Avg Elapsed Time: .928658
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10140050;
+EXEC :b2 := 10140050;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10140050;
+EXEC :b4 := 10140050;
+--SNAP_ID: 4769 Elapsed Time: 171.240694 Executions: 184 Avg Elapsed Time: .930656
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10456995;
+EXEC :b2 := 10456995;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10456995;
+EXEC :b4 := 10456995;
+--SNAP_ID: 4770 Elapsed Time: 203.525987 Executions: 211 Avg Elapsed Time: .964578
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10360659;
+EXEC :b2 := 10360659;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10360659;
+EXEC :b4 := 10360659;
+--SNAP_ID: 4771 Elapsed Time: 176.973378 Executions: 185 Avg Elapsed Time: .956613
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10360659;
+EXEC :b2 := 10360659;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10360659;
+EXEC :b4 := 10360659;
+--SNAP_ID: 4772 Elapsed Time: 167.65756 Executions: 175 Avg Elapsed Time: .958043
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10714738;
+EXEC :b2 := 10714738;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10714738;
+EXEC :b4 := 10714738;
+--SNAP_ID: 4773 Elapsed Time: 201.388766 Executions: 211 Avg Elapsed Time: .954449
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11971569;
+EXEC :b2 := 11971569;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11971569;
+EXEC :b4 := 11971569;
+--SNAP_ID: 4774 Elapsed Time: 208.85092 Executions: 227 Avg Elapsed Time: .920048
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11711098;
+EXEC :b2 := 11711098;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11711098;
+EXEC :b4 := 11711098;
+--SNAP_ID: 4775 Elapsed Time: 176.709001 Executions: 193 Avg Elapsed Time: .915591
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10729694;
+EXEC :b2 := 10729694;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10729694;
+EXEC :b4 := 10729694;
+--SNAP_ID: 4776 Elapsed Time: 164.310695 Executions: 176 Avg Elapsed Time: .933583
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10882595;
+EXEC :b2 := 10882595;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10882595;
+EXEC :b4 := 10882595;
+--SNAP_ID: 4777 Elapsed Time: 141.365283 Executions: 153 Avg Elapsed Time: .923956
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11168576;
+EXEC :b2 := 11168576;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11168576;
+EXEC :b4 := 11168576;
+--SNAP_ID: 4778 Elapsed Time: 190.175263 Executions: 203 Avg Elapsed Time: .936824
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521384;
+EXEC :b2 := 11521384;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521384;
+EXEC :b4 := 11521384;
+--SNAP_ID: 4779 Elapsed Time: 217.105957 Executions: 232 Avg Elapsed Time: .935802
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521384;
+EXEC :b2 := 11521384;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521384;
+EXEC :b4 := 11521384;
+--SNAP_ID: 4780 Elapsed Time: 191.781745 Executions: 203 Avg Elapsed Time: .944738
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11521384;
+EXEC :b2 := 11521384;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11521384;
+EXEC :b4 := 11521384;
+--SNAP_ID: 4781 Elapsed Time: 248.026655 Executions: 261 Avg Elapsed Time: .950294
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 10661416;
+EXEC :b2 := 10661416;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 10661416;
+EXEC :b4 := 10661416;
+--SNAP_ID: 4782 Elapsed Time: 214.704362 Executions: 230 Avg Elapsed Time: .933497
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11987111;
+EXEC :b2 := 11987111;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11987111;
+EXEC :b4 := 11987111;
+--SNAP_ID: 4783 Elapsed Time: 26.821515 Executions: 28 Avg Elapsed Time: .957911
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11311003;
+EXEC :b2 := 11311003;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11311003;
+EXEC :b4 := 11311003;
+--SNAP_ID: 4784 Elapsed Time: 2.816277 Executions: 3 Avg Elapsed Time: .938759
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11311003;
+EXEC :b2 := 11311003;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11311003;
+EXEC :b4 := 11311003;
+--SNAP_ID: 4789 Elapsed Time: 36.100214 Executions: 24 Avg Elapsed Time: 1.504176
+EXEC :SYS_B_0 := 0;
+EXEC :SYS_B_1 := 1902;
+EXEC :b1 := 11620492;
+EXEC :b2 := 11620492;
+EXEC :SYS_B_2 := 0;
+EXEC :SYS_B_3 := 1903;
+EXEC :b3 := 11620492;
+EXEC :b4 := 11620492;
+*/

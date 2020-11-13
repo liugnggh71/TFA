@@ -1,0 +1,575 @@
+<html>
+<!-- $Header: 00038_sqld360_323688_0sjx29v99zfqc_2d_34_plan_details v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<title>Plan Tree for PHV 3435103059 with subtree</title>
+
+<style type="text/css">
+body                {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1                  {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #cccc99; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2                  {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3                  {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre                 {font:8pt monospace;Monaco,"Courier New",Courier;}
+a                   {color:#663300;}
+table               {font-size:8pt; border_collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #cccc99;}
+li                  {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th                  {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr.main             {color:black; background:#fcfcf0;}
+td                  {vertical-align:top; border:1px solid #cccc99;}
+td.c                {text-align:center;}
+font.n              {font-size:8pt; font-style:italic; color:#336699;}
+font.f              {font-size:8pt; color:#999999; border-top:1px solid #cccc99; margin-top:30pt;}
+.myNodeClass        {background:white;vertical-align:middle}
+.myWhiteNodeClass   {background:white;}
+.myYellowNodeClass  {background:yellow;}
+.myOrangeNodeClass  {background:orange;}
+.myRedNodeClass     {background:red;}
+</style>
+
+<!-- 01212_sqld360_323688_0sjx29v99zfqc_2d_620_plan_tree_for_phv_3435103059_with_subtree_org_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["orgchart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Step', 'Parent Step','Tooltip' ]
+,[{v: '0',f: '0 - SELECT STATEMENT  '}, '', 'Step ID: 0 (ASH Step ID: 0)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '1',f: '1 - TABLE ACCESS BY INDEX ROWID<br>T_UM_BASE'}, '0', 'Step ID: 1 (ASH Step ID: 1)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '2',f: '2 - INDEX UNIQUE SCAN<br>PK_T_UM_BASE'}, '1', 'Step ID: 2 (ASH Step ID: 2)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '3',f: '3 - TABLE ACCESS BY INDEX ROWID<br>T_CM_BASEBASE'}, '0', 'Step ID: 3 (ASH Step ID: 3)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '4',f: '4 - INDEX UNIQUE SCAN<br>PK_T_CM_BASEBASE'}, '3', 'Step ID: 4 (ASH Step ID: 4)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '5',f: '5 - NESTED LOOPS OUTER '}, '0', 'Step ID: 5 (ASH Step ID: 5)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '6',f: '6 - NESTED LOOPS OUTER '}, '5', 'Step ID: 6 (ASH Step ID: 6)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '7',f: '7 - NESTED LOOPS OUTER '}, '6', 'Step ID: 7 (ASH Step ID: 7)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '8',f: '8 - VIEW  '}, '7', 'Step ID: 8 (ASH Step ID: 8)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '9',f: '9 - VIEW  '}, '8', 'Step ID: 9 (ASH Step ID: 9)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '10',f: '10 - COUNT STOPKEY '}, '9', 'Step ID: 10 (ASH Step ID: 10)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '11',f: '11 - VIEW  '}, '10', 'Step ID: 11 (ASH Step ID: 11)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '12',f: '12 - SORT ORDER BY STOPKEY '}, '11', 'Step ID: 12 (ASH Step ID: 12)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '13',f: '13 - NESTED LOOPS OUTER '}, '12', 'Step ID: 13 (ASH Step ID: 13)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '14',f: '14 - NESTED LOOPS OUTER '}, '13', 'Step ID: 14 (ASH Step ID: 14)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '15',f: '15 - NESTED LOOPS OUTER '}, '14', 'Step ID: 15 (ASH Step ID: 15)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '16',f: '16 - NESTED LOOPS OUTER '}, '15', 'Step ID: 16 (ASH Step ID: 16)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '17',f: '17 - NESTED LOOPS OUTER '}, '16', 'Step ID: 17 (ASH Step ID: 17)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '18',f: '18 - NESTED LOOPS OUTER '}, '17', 'Step ID: 18 (ASH Step ID: 18)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '19',f: '19 - MERGE JOIN OUTER '}, '18', 'Step ID: 19 (ASH Step ID: 19)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '20',f: '20 - NESTED LOOPS OUTER '}, '19', 'Step ID: 20 (ASH Step ID: 20)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '21',f: '21 - NESTED LOOPS OUTER '}, '20', 'Step ID: 21 (ASH Step ID: 21)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '22',f: '22 - NESTED LOOPS OUTER '}, '21', 'Step ID: 22 (ASH Step ID: 22)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '23',f: '23 - NESTED LOOPS OUTER '}, '22', 'Step ID: 23 (ASH Step ID: 23)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '24',f: '24 - TABLE ACCESS BY INDEX ROWID<br>T_SENTTSK'}, '23', 'Step ID: 24 (ASH Step ID: 24)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '25',f: '25 - INDEX RANGE SCAN<br>IX_SETK_OWNR'}, '24', 'Step ID: 25 (ASH Step ID: 25)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '26',f: '26 - TABLE ACCESS BY INDEX ROWID<br>T_DDL_ITEM'}, '23', 'Step ID: 26 (ASH Step ID: 26)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '27',f: '27 - INDEX UNIQUE SCAN<br>PK_T_DDL_ITEM'}, '26', 'Step ID: 27 (ASH Step ID: 27)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '28',f: '28 - TABLE ACCESS BY INDEX ROWID<br>T_DDL_ITEM'}, '22', 'Step ID: 28 (ASH Step ID: 28)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '29',f: '29 - INDEX UNIQUE SCAN<br>PK_T_DDL_ITEM'}, '28', 'Step ID: 29 (ASH Step ID: 29)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '30',f: '30 - TABLE ACCESS BY INDEX ROWID<br>T_UM_BASE'}, '21', 'Step ID: 30 (ASH Step ID: 30)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '31',f: '31 - INDEX UNIQUE SCAN<br>PK_T_UM_BASE'}, '30', 'Step ID: 31 (ASH Step ID: 31)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '32',f: '32 - TABLE ACCESS BY INDEX ROWID<br>T_CM_BASEBASE'}, '20', 'Step ID: 32 (ASH Step ID: 32)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '33',f: '33 - INDEX UNIQUE SCAN<br>PK_T_CM_BASEBASE'}, '32', 'Step ID: 33 (ASH Step ID: 33)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '34',f: '34 - BUFFER SORT '}, '19', 'Step ID: 34 (ASH Step ID: 34)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '35',f: '35 - TABLE ACCESS BY INDEX ROWID<br>T_USR'}, '34', 'Step ID: 35 (ASH Step ID: 35)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '36',f: '36 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '35', 'Step ID: 36 (ASH Step ID: 36)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '37',f: '37 - TABLE ACCESS BY INDEX ROWID<br>T_USR'}, '18', 'Step ID: 37 (ASH Step ID: 37)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '38',f: '38 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '37', 'Step ID: 38 (ASH Step ID: 38)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '39',f: '39 - TABLE ACCESS BY INDEX ROWID<br>T_USR'}, '17', 'Step ID: 39 (ASH Step ID: 39)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '40',f: '40 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '39', 'Step ID: 40 (ASH Step ID: 40)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '41',f: '41 - TABLE ACCESS BY INDEX ROWID<br>T_USR'}, '16', 'Step ID: 41 (ASH Step ID: 41)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '42',f: '42 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '41', 'Step ID: 42 (ASH Step ID: 42)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '43',f: '43 - TABLE ACCESS BY INDEX ROWID<br>T_USR'}, '15', 'Step ID: 43 (ASH Step ID: 43)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '44',f: '44 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '43', 'Step ID: 44 (ASH Step ID: 44)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '45',f: '45 - TABLE ACCESS BY INDEX ROWID<br>T_USR'}, '14', 'Step ID: 45 (ASH Step ID: 45)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '46',f: '46 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '45', 'Step ID: 46 (ASH Step ID: 46)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '47',f: '47 - TABLE ACCESS BY INDEX ROWID<br>T_USR'}, '13', 'Step ID: 47 (ASH Step ID: 47)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '48',f: '48 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '47', 'Step ID: 48 (ASH Step ID: 48)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '49',f: '49 - TABLE ACCESS BY INDEX ROWID<br>T_USR'}, '7', 'Step ID: 49 (ASH Step ID: 49)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '50',f: '50 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '49', 'Step ID: 50 (ASH Step ID: 50)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '51',f: '51 - VIEW <br>V_CURR_ENROLLMENT'}, '6', 'Step ID: 51 (ASH Step ID: 51)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '52',f: '52 - SORT UNIQUE '}, '51', 'Step ID: 52 (ASH Step ID: 52)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '53',f: '53 - UNION ALL PUSHED PREDICATE  '}, '52', 'Step ID: 53 (ASH Step ID: 53)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '54',f: '54 - FILTER  '}, '53', 'Step ID: 54 (ASH Step ID: 54)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '55',f: '55 - TABLE ACCESS BY INDEX ROWID BATCHED<br>T_ENNS'}, '54', 'Step ID: 55 (ASH Step ID: 55)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '56',f: '56 - INDEX RANGE SCAN<br>IX_ELNS_MEMBENLTDTDSNTDTID'}, '55', 'Step ID: 56 (ASH Step ID: 56)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '57',f: '57 - SORT GROUP BY NOSORT '}, '56', 'Step ID: 57 (ASH Step ID: 57)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '58',f: '58 - NESTED LOOPS OUTER '}, '57', 'Step ID: 58 (ASH Step ID: 58)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '59',f: '59 - NESTED LOOPS  '}, '58', 'Step ID: 59 (ASH Step ID: 59)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '60',f: '60 - NESTED LOOPS  '}, '59', 'Step ID: 60 (ASH Step ID: 60)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '61',f: '61 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '60', 'Step ID: 61 (ASH Step ID: 61)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '62',f: '62 - INDEX RANGE SCAN<br>IX_NVL_USR_MRGEMSTR_USR_ID'}, '60', 'Step ID: 62 (ASH Step ID: 62)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '63',f: '63 - TABLE ACCESS BY INDEX ROWID<br>T_ENNS'}, '59', 'Step ID: 63 (ASH Step ID: 63)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '64',f: '64 - INDEX RANGE SCAN<br>IX_ELNS_MEMBENLTDTDSNTDTSTTID'}, '63', 'Step ID: 64 (ASH Step ID: 64)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '65',f: '65 - TABLE ACCESS BY INDEX ROWID<br>T_ENNS'}, '58', 'Step ID: 65 (ASH Step ID: 65)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '66',f: '66 - INDEX RANGE SCAN<br>IX_ELNS_MEMBENLTDTDSNTDTSTTID'}, '65', 'Step ID: 66 (ASH Step ID: 66)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '67',f: '67 - FAST DUAL  '}, '54', 'Step ID: 67 (ASH Step ID: 67)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '68',f: '68 - FILTER  '}, '53', 'Step ID: 68 (ASH Step ID: 68)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '69',f: '69 - TABLE ACCESS BY INDEX ROWID BATCHED<br>T_ENNS'}, '68', 'Step ID: 69 (ASH Step ID: 69)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '70',f: '70 - INDEX RANGE SCAN<br>IX_ELNS_MEMBENLTDTDSNTDTID'}, '69', 'Step ID: 70 (ASH Step ID: 70)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '71',f: '71 - SORT GROUP BY NOSORT '}, '70', 'Step ID: 71 (ASH Step ID: 71)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '72',f: '72 - NESTED LOOPS OUTER '}, '71', 'Step ID: 72 (ASH Step ID: 72)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '73',f: '73 - NESTED LOOPS  '}, '72', 'Step ID: 73 (ASH Step ID: 73)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '74',f: '74 - NESTED LOOPS  '}, '73', 'Step ID: 74 (ASH Step ID: 74)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '75',f: '75 - INDEX UNIQUE SCAN<br>PK_T_USR'}, '74', 'Step ID: 75 (ASH Step ID: 75)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '76',f: '76 - INDEX RANGE SCAN<br>IX_NVL_USR_MRGEMSTR_USR_ID'}, '74', 'Step ID: 76 (ASH Step ID: 76)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '77',f: '77 - TABLE ACCESS BY INDEX ROWID<br>T_ENNS'}, '73', 'Step ID: 77 (ASH Step ID: 77)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '78',f: '78 - INDEX RANGE SCAN<br>IX_ELNS_MEMBENLTDTDSNTDTSTTID'}, '77', 'Step ID: 78 (ASH Step ID: 78)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '79',f: '79 - TABLE ACCESS BY INDEX ROWID<br>T_ENNS'}, '72', 'Step ID: 79 (ASH Step ID: 79)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '80',f: '80 - INDEX RANGE SCAN<br>IX_ELNS_MEMBENLTDTDSNTDTSTTID'}, '79', 'Step ID: 80 (ASH Step ID: 80)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '81',f: '81 - FAST DUAL  '}, '68', 'Step ID: 81 (ASH Step ID: 81)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '82',f: '82 - TABLE ACCESS BY INDEX ROWID<br>T_BENSPKG'}, '5', 'Step ID: 82 (ASH Step ID: 82)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '83',f: '83 - INDEX UNIQUE SCAN<br>PK_T_BENSPKG'}, '82', 'Step ID: 83 (ASH Step ID: 83)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+]);
+
+var options = {
+backgroundColor: {fill: '#fcfcf0', stroke: '#336699', strokeWidth: 1},
+title: '2d.620. Plan Tree for PHV 3435103059 with subtree',
+titleTextStyle: {fontSize: 16, bold: false},
+legend: {position: 'none'},
+allowHtml:true,
+allowCollapse:true,
+tooltip: {textStyle: {fontSize: 14}},
+nodeClass: 'myNodeClass'
+}
+
+data.setRowProperty(58, 'style',          'background:#FFFFFF');
+data.setRowProperty(58, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(58, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(59, 'style',          'background:#FFFFFF');
+data.setRowProperty(59, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(59, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(60, 'style',          'background:#FFFFFF');
+data.setRowProperty(60, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(60, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(61, 'style',          'background:#FFFFFF');
+data.setRowProperty(61, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(61, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(62, 'style',          'background:#FFFFFF');
+data.setRowProperty(62, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(62, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(63, 'style',          'background:#FFFFFF');
+data.setRowProperty(63, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(63, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(64, 'style',          'background:#FFFFFF');
+data.setRowProperty(64, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(64, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(65, 'style',          'background:#FFFFFF');
+data.setRowProperty(65, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(65, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(66, 'style',          'background:#FFFFFF');
+data.setRowProperty(66, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(66, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(67, 'style',          'background:#FFFFFF');
+data.setRowProperty(67, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(67, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(68, 'style',          'background:#FFFFFF');
+data.setRowProperty(68, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(68, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(69, 'style',          'background:#FFFFFF');
+data.setRowProperty(69, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(69, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(70, 'style',          'background:#FFFFFF');
+data.setRowProperty(70, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(70, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(71, 'style',          'background:#FFFFFF');
+data.setRowProperty(71, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(71, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(72, 'style',          'background:#FFFFFF');
+data.setRowProperty(72, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(72, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(73, 'style',          'background:#FFFFFF');
+data.setRowProperty(73, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(73, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(74, 'style',          'background:#FFFFFF');
+data.setRowProperty(40, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(40, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(41, 'style',          'background:#FFFFFF');
+data.setRowProperty(41, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(41, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(42, 'style',          'background:#FFFFFF');
+data.setRowProperty(42, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(42, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(43, 'style',          'background:#FFFFFF');
+data.setRowProperty(43, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(43, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(44, 'style',          'background:#FFFFFF');
+data.setRowProperty(44, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(44, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(45, 'style',          'background:#FFFFFF');
+data.setRowProperty(45, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(45, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(46, 'style',          'background:#FFFFFF');
+data.setRowProperty(46, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(46, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(47, 'style',          'background:#FFFFFF');
+data.setRowProperty(47, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(47, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(48, 'style',          'background:#FFFFFF');
+data.setRowProperty(48, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(48, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(49, 'style',          'background:#FFFFFF');
+data.setRowProperty(49, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(49, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(50, 'style',          'background:#FFFFFF');
+data.setRowProperty(50, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(50, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(51, 'style',          'background:#FFFFFF');
+data.setRowProperty(51, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(51, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(52, 'style',          'background:#FFFFFF');
+data.setRowProperty(52, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(52, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(53, 'style',          'background:#FFFFFF');
+data.setRowProperty(53, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(53, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(54, 'style',          'background:#FFFFFF');
+data.setRowProperty(54, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(54, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(55, 'style',          'background:#FFFFFF');
+data.setRowProperty(55, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(55, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(56, 'style',          'background:#FFFFFF');
+data.setRowProperty(56, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(56, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(57, 'style',          'background:#FFFFFF');
+data.setRowProperty(57, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(57, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(21, 'style',          'background:#FFFFFF');
+data.setRowProperty(21, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(21, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(22, 'style',          'background:#FFFFFF');
+data.setRowProperty(22, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(22, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(23, 'style',          'background:#FFFFFF');
+data.setRowProperty(23, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(23, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(24, 'style',          'background:#FFFFFF');
+data.setRowProperty(24, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(24, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(25, 'style',          'background:#FFFFFF');
+data.setRowProperty(25, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(25, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(26, 'style',          'background:#FFFFFF');
+data.setRowProperty(26, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(26, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(27, 'style',          'background:#FFFFFF');
+data.setRowProperty(27, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(27, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(28, 'style',          'background:#FFFFFF');
+data.setRowProperty(28, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(28, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(29, 'style',          'background:#FFFFFF');
+data.setRowProperty(29, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(29, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(30, 'style',          'background:#FFFFFF');
+data.setRowProperty(30, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(30, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(31, 'style',          'background:#FFFFFF');
+data.setRowProperty(31, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(31, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(32, 'style',          'background:#FFFFFF');
+data.setRowProperty(32, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(32, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(33, 'style',          'background:#FFFFFF');
+data.setRowProperty(33, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(33, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(34, 'style',          'background:#FFFFFF');
+data.setRowProperty(34, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(34, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(35, 'style',          'background:#FFFFFF');
+data.setRowProperty(35, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(35, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(36, 'style',          'background:#FFFFFF');
+data.setRowProperty(36, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(36, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(37, 'style',          'background:#FFFFFF');
+data.setRowProperty(37, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(37, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(38, 'style',          'background:#FFFFFF');
+data.setRowProperty(38, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(38, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(39, 'style',          'background:#FFFFFF');
+data.setRowProperty(39, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(39, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(40, 'style',          'background:#FFFFFF');
+data.setRowProperty(0, 'style',          'background:#FFFFFF');
+data.setRowProperty(0, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(0, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(1, 'style',          'background:#FFFFFF');
+data.setRowProperty(1, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(1, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(2, 'style',          'background:#FFFFFF');
+data.setRowProperty(2, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(2, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(3, 'style',          'background:#FFFFFF');
+data.setRowProperty(3, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(3, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(4, 'style',          'background:#FFFFFF');
+data.setRowProperty(4, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(4, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(5, 'style',          'background:#FFFFFF');
+data.setRowProperty(5, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(5, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(6, 'style',          'background:#FFFFFF');
+data.setRowProperty(6, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(6, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(7, 'style',          'background:#FFFFFF');
+data.setRowProperty(7, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(7, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(8, 'style',          'background:#FFFFFF');
+data.setRowProperty(8, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(8, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(9, 'style',          'background:#FFFFFF');
+data.setRowProperty(9, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(9, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(10, 'style',          'background:#FFFFFF');
+data.setRowProperty(10, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(10, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(11, 'style',          'background:#FFFFFF');
+data.setRowProperty(11, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(11, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(12, 'style',          'background:#FFFFFF');
+data.setRowProperty(12, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(12, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(13, 'style',          'background:#FFFFFF');
+data.setRowProperty(13, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(13, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(14, 'style',          'background:#FFFFFF');
+data.setRowProperty(14, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(14, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(15, 'style',          'background:#FFFFFF');
+data.setRowProperty(15, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(15, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(16, 'style',          'background:#FFFFFF');
+data.setRowProperty(16, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(16, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(17, 'style',          'background:#FFFFFF');
+data.setRowProperty(17, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(17, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(18, 'style',          'background:#FFFFFF');
+data.setRowProperty(18, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(18, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(19, 'style',          'background:#FFFFFF');
+data.setRowProperty(19, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(19, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(20, 'style',          'background:#FFFFFF');
+data.setRowProperty(20, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(20, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(74, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(74, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(75, 'style',          'background:#FFFFFF');
+data.setRowProperty(75, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(75, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(76, 'style',          'background:#FFFFFF');
+data.setRowProperty(76, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(76, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(77, 'style',          'background:#FFFFFF');
+data.setRowProperty(77, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(77, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(78, 'style',          'background:#FFFFFF');
+data.setRowProperty(78, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(78, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(79, 'style',          'background:#FFFFFF');
+data.setRowProperty(79, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(79, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(80, 'style',          'background:#FFFFFF');
+data.setRowProperty(80, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(80, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(81, 'style',          'background:#FFFFFF');
+data.setRowProperty(81, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(81, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(82, 'style',          'background:#FFFFFF');
+data.setRowProperty(82, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(82, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(83, 'style',          'background:#FFFFFF');
+data.setRowProperty(83, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(83, 'collapsedStyle', 'background:#FFFFFF');
+
+var chart = new google.visualization.OrgChart(document.getElementById('orgchart'))
+chart.draw(data, options)
+
+function reset_children_color(idx) {
+var subtree_children = chart.getChildrenIndexes(idx)
+var collapsed = chart.getCollapsedNodes()
+for (var j = 0; j < subtree_children.length; j++) {
+if (collapsed.indexOf(subtree_children[j]) == -1) {
+data.setRowProperty(subtree_children[j], 'style', data.getRowProperty(subtree_children[j],'expandedStyle'))
+reset_children_color(subtree_children[j])
+} else {
+data.setRowProperty(subtree_children[j], 'style', data.getRowProperty(subtree_children[j],'collapsedStyle'))
+}
+}
+}
+
+// this is used to stop the recursion, only user initiated ones are allowed
+// no recursion due to code calling itself (chart.collapse)
+var top_level_collapse = true
+google.visualization.events.addListener(chart, 'collapse', function(e) {
+// Get the list of collapsed node
+var collapsed = chart.getCollapsedNodes()
+if (top_level_collapse) {
+if (e.collapsed) {
+// We are collapsing a node, just care about the node itself (kids will disappear)
+data.setRowProperty(e.row, 'style', data.getRowProperty(e.row,'collapsedStyle'))
+} else {
+// We are expanding a node, need to change the color of the node and its kids recursively
+data.setRowProperty(e.row, 'style', data.getRowProperty(e.row,'expandedStyle'))
+var children = chart.getChildrenIndexes(e.row)
+for (i = 0; i < children.length; i++) {
+// Child node can be collapsed too or not
+if (collapsed.indexOf(children[i]) == -1) {
+data.setRowProperty(children[i], 'style', data.getRowProperty(children[i],'expandedStyle'))
+reset_children_color(children[i])
+} else {
+data.setRowProperty(children[i], 'style', data.getRowProperty(children[i],'collapsedStyle'))
+}
+}
+}
+chart.draw(data, options)
+top_level_collapse = false
+chart.collapse(e.row, e.collapsed)
+// need to set the other node to collapsed, otherwise you close one branch and another expands
+for (var i = 0; i < collapsed.length; i++) {
+chart.collapse(collapsed[i], true)
+}
+top_level_collapse = true
+}
+})
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2d.620. Plan Tree for PHV 3435103059 with subtree <em>(DBA_HIST_SQL_PLAN)</em>  </h1>
+
+<br>
+
+
+
+<div id="orgchart"></div>
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DBID                                      NOT NULL NUMBER
+ SQL_ID                                    NOT NULL VARCHAR2(13)
+ PLAN_HASH_VALUE                           NOT NULL NUMBER
+ ID                                        NOT NULL NUMBER
+ OPERATION                                          VARCHAR2(30)
+ OPTIONS                                            VARCHAR2(30)
+ OBJECT_NODE                                        VARCHAR2(128)
+ OBJECT#                                            NUMBER
+ OBJECT_OWNER                                       VARCHAR2(128)
+ OBJECT_NAME                                        VARCHAR2(128)
+ OBJECT_ALIAS                                       VARCHAR2(261)
+ OBJECT_TYPE                                        VARCHAR2(20)
+ OPTIMIZER                                          VARCHAR2(20)
+ PARENT_ID                                          NUMBER
+ DEPTH                                              NUMBER
+ POSITION                                           NUMBER
+ SEARCH_COLUMNS                                     NUMBER
+ COST                                               NUMBER
+ CARDINALITY                                        NUMBER
+ BYTES                                              NUMBER
+ OTHER_TAG                                          VARCHAR2(35)
+ PARTITION_START                                    VARCHAR2(64)
+ PARTITION_STOP                                     VARCHAR2(64)
+ PARTITION_ID                                       NUMBER
+ OTHER                                              VARCHAR2(4000)
+ DISTRIBUTION                                       VARCHAR2(20)
+ CPU_COST                                           NUMBER
+ IO_COST                                            NUMBER
+ TEMP_SPACE                                         NUMBER
+ ACCESS_PREDICATES                                  VARCHAR2(4000)
+ FILTER_PREDICATES                                  VARCHAR2(4000)
+ PROJECTION                                         VARCHAR2(4000)
+ TIME                                               NUMBER
+ QBLOCK_NAME                                        VARCHAR2(128)
+ REMARKS                                            VARCHAR2(4000)
+ TIMESTAMP                                          DATE
+ OTHER_XML                                          CLOB
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+WITH ashdata AS (-- count the number of samples in ASH for each step
+-- goal is to compute RATIO_TO_REPORT
+SELECT NVL(id,0) id,
+COUNT(*) num_samples,
+ROUND(100*NVL(RATIO_TO_REPORT(COUNT(*)) OVER (),0),2) perc_impact
+FROM plan_table
+WHERE statement_id LIKE 'SQLD360_ASH_DATA%'
+AND /*cost*/ bytes =3435103059
+AND remarks = '0sjx29v99zfqc'
+GROUP BY NVL(id,0)),
+orig_plan AS (-- extract the plan steps "as is", just replace to single quote in the filter predicates
+-- precedence is given to plan from memory since it has filters
+-- using RANK since there could be more than one entry but with different predicate ordering
+SELECT sql_id, plan_hash_value, id, parent_id, operation, options, object_name, access_predicates, filter_predicates, other_xml
+FROM (SELECT sql_id, plan_hash_value, id, parent_id, operation, options, object_name,
+REPLACE(SUBSTR(access_predicates,1,1500), CHR(39) , CHR(92)||CHR(39)) access_predicates,
+REPLACE(SUBSTR(filter_predicates,1,1500), CHR(39) , CHR(92)||CHR(39)) filter_predicates,
+other_xml,
+RANK() OVER (ORDER BY inst_id, child_number) rnk
+FROM gv$sql_plan_statistics_all
+WHERE sql_id = '0sjx29v99zfqc'
+AND plan_hash_value =3435103059)
+WHERE rnk = 1
+UNION ALL
+SELECT sql_id, plan_hash_value, id, parent_id, operation, options, object_name,
+REPLACE(access_predicates, CHR(39), CHR(92)||CHR(39)) access_predicates,
+REPLACE(filter_predicates, CHR(39), CHR(92)||CHR(39)) filter_predicates,
+other_xml
+FROM dba_hist_sql_plan
+WHERE sql_id = '0sjx29v99zfqc'
+AND plan_hash_value =3435103059
+AND NOT EXISTS (SELECT 1
+FROM gv$sql_plan_statistics_all
+WHERE plan_hash_value =3435103059
+AND sql_id = '0sjx29v99zfqc'
+AND 'Y' = 'Y')),
+skip_steps AS (-- extract the display_map for the plan, to identify why steps are "skipped" because of adaptive
+SELECT sql_id, plan_hash_value, EXTRACTVALUE(VALUE(b),'/row/@op') stepid, EXTRACTVALUE(VALUE(b),'/row/@skp') skp, EXTRACTVALUE(VALUE(b),'/row/@dep') dep
+FROM orig_plan a,
+TABLE(XMLSEQUENCE(EXTRACT(XMLTYPE(a.other_xml),'/*/display_map/row'))) b
+WHERE sql_id = '0sjx29v99zfqc'
+AND other_xml IS NOT NULL),
+adapt_plan_no_parent AS (-- generate adaptive_id (aka step_id) once the adaptive steps are excluded
+SELECT a.sql_id, a.plan_hash_value, a.id, a.parent_id, b.dep,
+(ROW_NUMBER() OVER (ORDER BY a.id))-1 adapt_id, a.operation, a.options, a.object_name, a.access_predicates, a.filter_predicates, b.skp
+FROM orig_plan a,
+skip_steps b
+WHERE a.id = b.stepid(+)
+AND (b.skp = 0 OR b.skp IS NULL)),
+full_adaptive_plan AS (-- generate the parent adaptive step id
+SELECT id, adapt_id, NVL(adapt_parent_id, parent_id) parent_id, operation, options, object_name, access_predicates, filter_predicates
+FROM (SELECT dep, adapt_id, id, (SELECT MAX(adapt_id) FROM adapt_plan_no_parent b WHERE a.dep-1 = NVL(b.dep,0) AND b.adapt_id < a.adapt_id ) adapt_parent_id,
+parent_id, a.operation operation, a.options, a.object_name, a.access_predicates, a.filter_predicates
+FROM adapt_plan_no_parent a)),
+plan_with_ash AS (SELECT full_adaptive_plan.*, NVL(ashdata.num_samples,0) num_samples, NVL(ashdata.perc_impact,0) perc_impact
+FROM full_adaptive_plan,
+ashdata
+WHERE ashdata.id(+) = full_adaptive_plan.id),
+plan_with_rec_impact AS (-- compute recursive impact (substree impact)
+SELECT a.*, (SELECT sum(b.perc_impact)
+FROM plan_with_ash b
+START WITH b.adapt_id = a.adapt_id
+CONNECT BY prior b.adapt_id = b.parent_id) sum_perc_impact
+FROM plan_with_ash a)
+SELECT '{v: '''||adapt_id||''',f: '''||adapt_id||' - '||operation||' '||options||NVL2(object_name,'<br>',' ')||object_name||'''}' id,
+parent_id,
+SUBSTR('Step ID: '||adapt_id||' (ASH Step ID: '||id||')\nASH Samples: '||num_samples||' ('||perc_impact||'%)'||
+'\nSubstree Impact '||sum_perc_impact||'%'||
+NVL2(access_predicates,'\n\nAccess Predicates: '||access_predicates,'')||NVL2(filter_predicates,'\n\nFilter Predicates: '||filter_predicates,''),1,4000) message,
+adapt_id id3
+FROM plan_with_rec_impact
+ORDER BY id3;
+
+0 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:18:36 for SQL ID 0sjx29v99zfqc (SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be) </font>
+</body>
+</html>

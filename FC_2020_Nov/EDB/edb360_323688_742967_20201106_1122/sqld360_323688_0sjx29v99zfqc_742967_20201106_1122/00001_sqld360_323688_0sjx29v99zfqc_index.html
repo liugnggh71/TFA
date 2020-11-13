@@ -1,0 +1,1017 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_0sjx29v99zfqc_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title></title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+</head>
+<body>
+<h1><em><a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank">SQLd360</a></em> v192: SQL 360-degree view </h1>
+
+<pre>
+sqlid:<a title="SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be">0sjx29v99zfqc</a> dbname:323688 version:12.1.0.2.0 host:742967 license:T days:31 today:2020-11-06/17:15:11
+</pre>
+
+<table><tr class="main">
+<td class="c">1/5</td>
+<td class="c">2/5</td>
+<td class="c">3/5</td>
+<td class="c">4/5</td>
+<td class="c">5/5</td>
+</tr><tr class="main"><td>
+<a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="DFS.gif" alt="SQLd360" height="256" width="256"></a>
+<br>
+
+<h2>1a. Database Configuration</h2>
+<ol start="1">
+<li title="DUAL">System Under Observation
+<a href="00006_sqld360_323688_0sjx29v99zfqc_1a_1_system_under_observation.html">html</a>
+<small><em>(14)</em></small>
+</li>
+<li title="V$DATABASE">Identification
+<a href="00007_sqld360_323688_0sjx29v99zfqc_1a_2_identification.html">html</a>
+<small><em>(2)</em></small>
+</li>
+<li title="V$VERSION">Version
+<a href="00008_sqld360_323688_0sjx29v99zfqc_1a_3_version.html">html</a>
+<small><em>(5)</em></small>
+</li>
+<li title="V$DATABASE">Database
+<a href="00009_sqld360_323688_0sjx29v99zfqc_1a_4_database.html">html</a>
+<small><em>(1)</em></small>
+</li>
+<li title="GV$INSTANCE">Instance
+<a href="00010_sqld360_323688_0sjx29v99zfqc_1a_5_instance.html">html</a>
+<small><em>(2)</em></small>
+</li>
+<li title="GV$SYSTEM_PARAMETER2">Modified Parameters
+<a href="00011_sqld360_323688_0sjx29v99zfqc_1a_6_modified_parameters.html">html</a>
+<small><em>(2)</em></small>
+</li>
+<li title="GV$SYSTEM_PARAMETER2">Non-default Parameters
+<a href="00012_sqld360_323688_0sjx29v99zfqc_1a_7_nondefault_parameters.html">html</a>
+<small><em>(163)</em></small>
+</li>
+<li title="GV$SYSTEM_PARAMETER2">All Parameters
+<a href="00013_sqld360_323688_0sjx29v99zfqc_1a_8_all_parameters.html">html</a>
+<small><em>(791)</em></small>
+</li>
+<li title="V$SPPARAMETER">Parameter File
+<a href="00014_sqld360_323688_0sjx29v99zfqc_1a_9_parameter_file.html">html</a>
+<small><em>(8)</em></small>
+</li>
+<li title="SYS.AUX_STATS$">System Stats
+<a href="00015_sqld360_323688_0sjx29v99zfqc_1a_10_system_stats.html">html</a>
+<small><em>(13)</em></small>
+</li>
+<li title="DBA_RSRC_IO_CALIBRATE">IO Calibration
+<a href="00016_sqld360_323688_0sjx29v99zfqc_1a_11_io_calibration.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_RSRC_IO_CALIBRATE">Non-default Fix Controls
+<a href="00017_sqld360_323688_0sjx29v99zfqc_1a_12_nondefault_fix_controls.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="V$SYSTEM_FIX_CONTROL">All Fix Controls
+<a href="00018_sqld360_323688_0sjx29v99zfqc_1a_13_all_fix_controls.html">html</a>
+<small><em>(1134)</em></small>
+</li>
+<li title="V$OPTIMIZER_PROCESSING_RATE">Optimizer Processing Rate
+<a href="00019_sqld360_323688_0sjx29v99zfqc_1a_14_optimizer_processing_rate.html">html</a>
+<small><em>(28)</em></small>
+</li>
+</ol>
+<h2>1e. NLS Settings</h2>
+<ol start="15">
+<li title="NLS_SESSION_PARAMETERS">Session Parameters
+<a href="00020_sqld360_323688_0sjx29v99zfqc_1e_15_session_parameters.html">html</a>
+<small><em>(17)</em></small>
+</li>
+<li title="NLS_INSTANCE_PARAMETERS">Instance Parameters
+<a href="00021_sqld360_323688_0sjx29v99zfqc_1e_16_instance_parameters.html">html</a>
+<small><em>(17)</em></small>
+</li>
+<li title="NLS_DATABASE_PARAMETERS">Database Parameters
+<a href="00022_sqld360_323688_0sjx29v99zfqc_1e_17_database_parameters.html">html</a>
+<small><em>(20)</em></small>
+</li>
+</ol>
+<h2>1f. Observations</h2>
+<ol start="18">
+<li title="V$PARAMETER2">System-wide observations
+<a href="00023_sqld360_323688_0sjx29v99zfqc_1f_18_systemwide_observations.html">html</a>
+<small><em>(16)</em></small>
+</li>
+<li title="V$SQL_PLAN">Cursors and Plans specific observations
+<a href="00024_sqld360_323688_0sjx29v99zfqc_1f_19_cursors_and_plans_specific_observations.html">html</a>
+<small><em>(13)</em></small>
+</li>
+<li title="DBA_TABLES">Table-level observations
+<a href="00025_sqld360_323688_0sjx29v99zfqc_1f_20_tablelevel_observations.html">html</a>
+<small><em>(8)</em></small>
+</li>
+</ol>
+
+</td><td>
+
+<h2>2a. Identification</h2>
+<ol start="21">
+<li title="V$SQL">Formatted SQL
+<a href="00026_sqld360_323688_0sjx29v99zfqc_2a_21_formatted_sql.html">txt</a>
+</li>
+<li title="V$SQL">Standalone SQL
+<a href="00027_sqld360_323688_0sjx29v99zfqc_2a_23_standalone_sql.sql">sql</a>
+</li>
+<li title="DBMS_UTILITY">Expanded SQL
+<a href="00028_sqld360_323688_0sjx29v99zfqc_2a_25_expanded_sql.txt">txt</a>
+</li>
+<li title="V$SQLTEXT_WITH_NEWLINES">SQL Text
+<a href="00029_sqld360_323688_0sjx29v99zfqc_2a_25_sql_text.html">html</a>
+<small><em>(77)</em></small>
+</li>
+<li title="DBA_HIST_SQLTEXT">SQL Text from AWR
+<a href="00030_sqld360_323688_0sjx29v99zfqc_2a_26_sql_text_from_awr.html">html</a>
+<small><em>(1)</em></small>
+</li>
+</ol>
+<h2>2b. Performance</h2>
+<ol start="27">
+<li title="GV$SQL">SQL Performance Summary
+<a href="00031_sqld360_323688_0sjx29v99zfqc_2b_27_sql_performance_summary.html">html</a>
+<small><em>(19)</em></small>
+</li>
+<li title="GV$SQL">SQL Statistics from Memory
+<a href="00032_sqld360_323688_0sjx29v99zfqc_2b_28_sql_statistics_from_memory.html">html</a>
+<small><em>(12)</em></small>
+</li>
+<li title="GV$SQLSTATS">SQL Statistics from Memory (SQLSTATS)
+<a href="00033_sqld360_323688_0sjx29v99zfqc_2b_29_sql_statistics_from_memory_sqlstats.html">html</a>
+<small><em>(2)</em></small>
+</li>
+<li title="GV$SQL_PLAN_STATISTICS_ALL">SQL Plan Statistics from Memory
+<a href="00034_sqld360_323688_0sjx29v99zfqc_2b_30_sql_plan_statistics_from_memory.html">html</a>
+<small><em>(1020)</em></small>
+</li>
+<li title="GV$SQLSTATS_PLAN_HASH">SQL Plan Statistics from Memory (SQLSTATS)
+<a href="00035_sqld360_323688_0sjx29v99zfqc_2b_31_sql_plan_statistics_from_memory_sqlstats.html">html</a>
+<small><em>(7)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">SQL Statistics from History
+<a href="00036_sqld360_323688_0sjx29v99zfqc_2b_32_sql_statistics_from_history.html">html</a>
+<small><em>(2958)</em></small>
+</li>
+<li title="DBA_HIST_SQL_PLAN">SQL Plan Statistics from History
+<a href="00037_sqld360_323688_0sjx29v99zfqc_2b_33_sql_plan_statistics_from_history.html">html</a>
+<small><em>(2033)</em></small>
+</li>
+</ol>
+<h2>2d. Execution Plans</h2>
+<ol start="34">
+<li>Plans Details
+<a href="00038_sqld360_323688_0sjx29v99zfqc_2d_34_plan_details.html">page</a> <small><em>(20)</em></small>
+</li>
+<li title="GV$SQL_PLAN_STATISTICS_ALL">Plans from Memory
+<a href="01290_sqld360_323688_0sjx29v99zfqc_2d_659_plans_from_memory.txt">text</a>
+</li>
+<li title="DBA_HIST_SQL_PLAN">Plans from History
+<a href="01291_sqld360_323688_0sjx29v99zfqc_2d_659_plans_from_history.txt">text</a>
+</li>
+<li title="PLAN_TABLE">Plan from Plan Table
+<a href="01292_sqld360_323688_0sjx29v99zfqc_2d_659_plan_from_plan_table.txt">text</a>
+</li>
+<li title="DBA_SQL_PLAN_BASELINES">Plans from Baseline
+<a href="01293_sqld360_323688_0sjx29v99zfqc_2d_659_plans_from_baseline.txt">text</a>
+</li>
+<li title="DBA_SQLSET_STATEMENTS">Plans from SQL Tuning Sets
+<a href="01294_sqld360_323688_0sjx29v99zfqc_2d_659_plans_from_sql_tuning_sets.txt">text</a>
+</li>
+</ol>
+<h2>2e. Plan Control</h2>
+<ol start="40">
+<li title="DBA_SQL_PROFILES">SQL Profiles
+<a href="01295_sqld360_323688_0sjx29v99zfqc_2e_40_sql_profiles.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBMSHSXP_SQL_PROFILE_ATTR">SQL Profile Data
+<a href="01296_sqld360_323688_0sjx29v99zfqc_2e_41_sql_profile_data.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_SQL_PLAN_BASELINES">SQL Plan Baselines
+<a href="01297_sqld360_323688_0sjx29v99zfqc_2e_42_sql_plan_baselines.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_SQL_PATCHES">SQL Patches
+<a href="01298_sqld360_323688_0sjx29v99zfqc_2e_43_sql_patches.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_SQL_PLAN_DIRECTIVES">SQL Plan Directives
+<a href="01299_sqld360_323688_0sjx29v99zfqc_2e_44_sql_plan_directives.html">html</a>
+<small><em>(508)</em></small>
+</li>
+<li title="DBA_SQL_PLAN_DIR_OBJECTS">SQL Plan Directives Objects
+<a href="01300_sqld360_323688_0sjx29v99zfqc_2e_45_sql_plan_directives_objects.html">html</a>
+<small><em>(2770)</em></small>
+</li>
+<li title="GV$SQL_REOPTIMIZATION_HINTS">SQL ReOptimization Hints
+<a href="01301_sqld360_323688_0sjx29v99zfqc_2e_46_sql_reoptimization_hints.html">html</a>
+<small><em>(73)</em></small>
+</li>
+<li title="GV$MAPPED_SQL">Mapped SQL
+<a href="01302_sqld360_323688_0sjx29v99zfqc_2e_47_mapped_sql.html">html</a>
+<small><em>(0)</em></small>
+</li>
+</ol>
+<h2>2f. SQL Monitor</h2>
+<ol start="48">
+<li title="GV$SQL_MONITOR">SQL Monitor
+<a href="01303_sqld360_323688_0sjx29v99zfqc_2f_48_sql_monitor.html">html</a>
+<small><em>(80)</em></small>
+</li>
+<li title="GV$SQL_PLAN_MONITOR">SQL Plan Monitor
+<a href="01304_sqld360_323688_0sjx29v99zfqc_2f_49_sql_plan_monitor.html">html</a>
+<small><em>(6800)</em></small>
+</li>
+</ol>
+<h2>2g. Binds</h2>
+<ol start="50">
+<li title="GV$SQL_BIND_CAPTURE">Binds Summary from Memory
+<a href="01305_sqld360_323688_0sjx29v99zfqc_2g_50_binds_summary_from_memory.html">html</a>
+<small><em>(192)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Binds List from Memory
+<a href="01306_sqld360_323688_0sjx29v99zfqc_2g_51_binds_list_from_memory.html">html</a>
+<small><em>(192)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Binds Summary from History
+<a href="01307_sqld360_323688_0sjx29v99zfqc_2g_52_binds_summary_from_history.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_SQLBIND">Binds List from History
+<a href="01308_sqld360_323688_0sjx29v99zfqc_2g_53_binds_list_from_history.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li>Captured Binds Details
+<a href="01309_sqld360_323688_0sjx29v99zfqc_2g_54_captured_binds_details.html">page</a> <small><em>(16)</em></small>
+</li>
+<li title="GV$SQL_BIND_CAPTURE">Binds with unstable datatype
+<a href="01398_sqld360_323688_0sjx29v99zfqc_2g_98_binds_with_unstable_datatype.html">html</a>
+<small><em>(0)</em></small>
+</li>
+</ol>
+<h2>2h. Cursor Sharing</h2>
+<ol start="56">
+<li title="GV$SQL_SHARED_CURSOR">Non-sharing reasons summary
+<a href="01399_sqld360_323688_0sjx29v99zfqc_2h_56_nonsharing_reasons_summary.html">html</a>
+<small><em>(4)</em></small>
+</li>
+<li title="GV$SQL_SHARED_CURSOR">Non-sharing reasons details
+<a href="01400_sqld360_323688_0sjx29v99zfqc_2h_57_nonsharing_reasons_details.html">html</a>
+<small><em>(12)</em></small>
+</li>
+<li title="GV$SQL_CS_HISTOGRAM">ACS Histogram
+<a href="01401_sqld360_323688_0sjx29v99zfqc_2h_58_acs_histogram.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_CS_STATISTICS">ACS Statistics
+<a href="01402_sqld360_323688_0sjx29v99zfqc_2h_59_acs_statistics.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$SQL_CS_SELECTIVITY">ACS Selectivity
+<a href="01403_sqld360_323688_0sjx29v99zfqc_2h_60_acs_selectivity.html">html</a>
+<small><em>(0)</em></small>
+</li>
+</ol>
+
+</td><td>
+
+<h2>3a. Objects</h2>
+<ol start="61">
+<li title="DBA_TABLES">Tables
+<a href="01404_sqld360_323688_0sjx29v99zfqc_3a_61_tables.html">html</a>
+<small><em>(8)</em></small>
+</li>
+<li title="DBA_INDEXES">Indexes
+<a href="01405_sqld360_323688_0sjx29v99zfqc_3a_62_indexes.html">html</a>
+<small><em>(401)</em></small>
+</li>
+<li title="DBA_IND_COLUMNS">Index Columns
+<a href="01406_sqld360_323688_0sjx29v99zfqc_3a_63_index_columns.html">html</a>
+<small><em>(492)</em></small>
+</li>
+<li title="DBA_TAB_COLS">Columns
+<a href="01407_sqld360_323688_0sjx29v99zfqc_3a_64_columns.html">html</a>
+<small><em>(747)</em></small>
+</li>
+<li title="SYS.COL_USAGE$">Columns Usage
+<a href="01408_sqld360_323688_0sjx29v99zfqc_3a_65_columns_usage.html">html</a>
+<small><em>(249)</em></small>
+</li>
+<li title="DBA_STAT_EXTENSIONS">Column Stats Extensions
+<a href="01409_sqld360_323688_0sjx29v99zfqc_3a_66_column_stats_extensions.html">html</a>
+<small><em>(71)</em></small>
+</li>
+<li>Histograms
+<a href="01410_sqld360_323688_0sjx29v99zfqc_3a_67_histograms.html">page</a> <small><em>(7)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Histograms on long strings
+<a href="01725_sqld360_323688_0sjx29v99zfqc_3a_224_histograms_on_long_strings.html">html</a>
+<small><em>(7)</em></small>
+</li>
+<li title="DBA_CONSTRAINTS">Constraints
+<a href="01726_sqld360_323688_0sjx29v99zfqc_3a_69_constraints.html">html</a>
+<small><em>(304)</em></small>
+</li>
+<li title="DBA_VIEWS">Views
+<a href="01727_sqld360_323688_0sjx29v99zfqc_3a_70_views.html">html</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_LOBS">LOBs
+<a href="01728_sqld360_323688_0sjx29v99zfqc_3a_71_lobs.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_MVIEWS">Materialized Views
+<a href="01729_sqld360_323688_0sjx29v99zfqc_3a_72_materialized_views.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_CLUSTERS">Clusters
+<a href="01730_sqld360_323688_0sjx29v99zfqc_3a_73_clusters.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_PART_KEY_COLUMNS">Partition Key Columns
+<a href="01731_sqld360_323688_0sjx29v99zfqc_3a_74_partition_key_columns.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_PART_KEY_COLUMNS">Unindexed Partition Key Columns
+<a href="01732_sqld360_323688_0sjx29v99zfqc_3a_75_unindexed_partition_key_columns.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_PART_TABLES">Table Partition Info
+<a href="01733_sqld360_323688_0sjx29v99zfqc_3a_76_table_partition_info.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_TAB_PARTITIONS">Table Partitions
+<a href="01734_sqld360_323688_0sjx29v99zfqc_3a_77_table_partitions.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_PART_INDEXES">Index Partition Info
+<a href="01735_sqld360_323688_0sjx29v99zfqc_3a_78_index_partition_info.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_IND_PARTITIONS">Index Partitions
+<a href="01736_sqld360_323688_0sjx29v99zfqc_3a_79_index_partitions.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_PART_LOBS">LOB Partition Info
+<a href="01737_sqld360_323688_0sjx29v99zfqc_3a_80_lob_partition_info.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_LOB_PARTITIONS">LOB Partitions
+<a href="01738_sqld360_323688_0sjx29v99zfqc_3a_81_lob_partitions.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li>Partitions Columns
+<a href="01739_sqld360_323688_0sjx29v99zfqc_3a_82_partitions_columns.html">page</a> <small><em>(0)</em></small>
+</li>
+<li title="DBA_TAB_SUBPARTITIONS">Table Subpartitions
+<a href="01740_sqld360_323688_0sjx29v99zfqc_3a_82_table_subpartitions.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_IND_SUBPARTITIONS">Index Subpartitions
+<a href="01741_sqld360_323688_0sjx29v99zfqc_3a_84_index_subpartitions.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_LOB_SUBPARTITIONS">LOB Subpartitions
+<a href="01742_sqld360_323688_0sjx29v99zfqc_3a_85_lob_subpartitions.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_TAB_MODIFICATIONS">Table Modifications
+<a href="01743_sqld360_323688_0sjx29v99zfqc_3a_86_table_modifications.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="SYS.OPTSTAT_USER_PREFS$">Table Stats Preferences
+<a href="01744_sqld360_323688_0sjx29v99zfqc_3a_87_table_stats_preferences.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_TRIGGERS">Triggers
+<a href="01745_sqld360_323688_0sjx29v99zfqc_3a_88_triggers.html">html</a>
+<small><em>(23)</em></small>
+</li>
+<li title="DBA_POLICIES">Policies
+<a href="01746_sqld360_323688_0sjx29v99zfqc_3a_89_policies.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_POLICIES">Audit Policies
+<a href="01747_sqld360_323688_0sjx29v99zfqc_3a_90_audit_policies.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_SEGMENTS">Segments
+<a href="01748_sqld360_323688_0sjx29v99zfqc_3a_91_segments.html">html</a>
+<small><em>(409)</em></small>
+</li>
+<li title="DBA_OBJECTS">Objects
+<a href="01749_sqld360_323688_0sjx29v99zfqc_3a_92_objects.html">html</a>
+<small><em>(410)</em></small>
+</li>
+<li title="DBA_TABLESPACES">Tablespaces
+<a href="01750_sqld360_323688_0sjx29v99zfqc_3a_93_tablespaces.html">html</a>
+<small><em>(3)</em></small>
+</li>
+</ol>
+<h2>3c. Statistics History</h2>
+<ol start="94">
+<li title="WRI$_OPTSTAT_AUX_HISTORY">System Statistics History
+<a href="01751_sqld360_323688_0sjx29v99zfqc_3c_94_system_statistics_history.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="WRI$_OPTSTAT_TAB_HISTORY">Tables Statistics History
+<a href="01752_sqld360_323688_0sjx29v99zfqc_3c_95_tables_statistics_history.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="WRI$_OPTSTAT_IND_HISTORY">Indexes Statistics History
+<a href="01753_sqld360_323688_0sjx29v99zfqc_3c_96_indexes_statistics_history.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="WRI$_OPTSTAT_HISTHEAD_HISTORY">Columns Statistics History
+<a href="01754_sqld360_323688_0sjx29v99zfqc_3c_97_columns_statistics_history.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="WRI$_OPTSTAT_TAB_HISTORY">Partitions Statistics History
+<a href="01755_sqld360_323688_0sjx29v99zfqc_3c_98_partitions_statistics_history.html">html</a>
+<small><em>(0)</em></small>
+</li>
+</ol>
+<h2>3d. In-Memory</h2>
+<ol start="99">
+<li title="GV$INMEMORY_AREA">In-Memory Area
+<a href="01756_sqld360_323688_0sjx29v99zfqc_3d_99_inmemory_area.html">html</a>
+<small><em>(4)</em></small>
+</li>
+<li title="GV$IM_SEGMENTS">In-Memory Segments
+<a href="01757_sqld360_323688_0sjx29v99zfqc_3d_100_inmemory_segments.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$IM_HEADER">In-Memory Header
+<a href="01758_sqld360_323688_0sjx29v99zfqc_3d_101_inmemory_header.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="GV$IM_COLUMN_LEVEL">In-Memory Column Level
+<a href="01759_sqld360_323688_0sjx29v99zfqc_3d_102_inmemory_column_level.html">html</a>
+<small><em>(0)</em></small>
+</li>
+</ol>
+<h2>3e. Big Table Caching</h2>
+<ol start="103">
+<li title="GV$BT_SCAN_CACHE">BT Scan Cache
+<a href="01760_sqld360_323688_0sjx29v99zfqc_3e_103_bt_scan_cache.html">html</a>
+<small><em>(2)</em></small>
+</li>
+<li title="GV$BT_SCAN_OBJ_TEMPS">BT Scan Objects Temps
+<a href="01761_sqld360_323688_0sjx29v99zfqc_3e_104_bt_scan_objects_temps.html">html</a>
+<small><em>(0)</em></small>
+</li>
+</ol>
+<h2>3f. Metadata</h2>
+<ol start="105">
+<li title="DBMS_METADATA">Metadata script
+<a href="01762_sqld360_323688_0sjx29v99zfqc_3f_105_metadata_script.txt">txt</a>
+</li>
+</ol>
+
+</td><td>
+
+<h2>4a. System Impact</h2>
+<ol start="106">
+<li title="DBA_HIST_SQLSTAT">SQL Execute Time for Cluster
+<a href="01763_sqld360_323688_0sjx29v99zfqc_4a_106_sql_execute_time_for_cluster.html">html</a>
+<a href="01764_sqld360_323688_0sjx29v99zfqc_4a_106_sql_execute_time_for_cluster_line_chart.html">line</a>
+<small><em>(1488)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">SQL Execute Time for Instance 1
+<a href="01765_sqld360_323688_0sjx29v99zfqc_4a_107_sql_execute_time_for_instance_1.html">html</a>
+<a href="01766_sqld360_323688_0sjx29v99zfqc_4a_107_sql_execute_time_for_instance_1_line_chart.html">line</a>
+<small><em>(1488)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">SQL Execute Time for Instance 2
+<a href="01767_sqld360_323688_0sjx29v99zfqc_4a_108_sql_execute_time_for_instance_2.html">html</a>
+<a href="01768_sqld360_323688_0sjx29v99zfqc_4a_108_sql_execute_time_for_instance_2_line_chart.html">line</a>
+<small><em>(1488)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Peak Demand for recent executions for Cluster
+<a href="01769_sqld360_323688_0sjx29v99zfqc_4a_109_peak_demand_for_recent_executions_for_cluster.html">html</a>
+<a href="01770_sqld360_323688_0sjx29v99zfqc_4a_109_peak_demand_for_recent_executions_for_cluster_line_chart.html">line</a>
+<small><em>(95)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Peak Demand for recent executions for Instance 1
+<a href="01771_sqld360_323688_0sjx29v99zfqc_4a_110_peak_demand_for_recent_executions_for_instance_1.html">html</a>
+<a href="01772_sqld360_323688_0sjx29v99zfqc_4a_110_peak_demand_for_recent_executions_for_instance_1_line_chart.html">line</a>
+<small><em>(23)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Peak Demand for recent executions for Instance 2
+<a href="01773_sqld360_323688_0sjx29v99zfqc_4a_111_peak_demand_for_recent_executions_for_instance_2.html">html</a>
+<a href="01774_sqld360_323688_0sjx29v99zfqc_4a_111_peak_demand_for_recent_executions_for_instance_2_line_chart.html">line</a>
+<small><em>(80)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Peak Demand for historical executions for Cluster
+<a href="01775_sqld360_323688_0sjx29v99zfqc_4a_112_peak_demand_for_historical_executions_for_cluster.html">html</a>
+<a href="01776_sqld360_323688_0sjx29v99zfqc_4a_112_peak_demand_for_historical_executions_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Peak Demand for historical executions for Instance 1
+<a href="01777_sqld360_323688_0sjx29v99zfqc_4a_113_peak_demand_for_historical_executions_for_instance_1.html">html</a>
+<a href="01778_sqld360_323688_0sjx29v99zfqc_4a_113_peak_demand_for_historical_executions_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Peak Demand for historical executions for Instance 2
+<a href="01779_sqld360_323688_0sjx29v99zfqc_4a_114_peak_demand_for_historical_executions_for_instance_2.html">html</a>
+<a href="01780_sqld360_323688_0sjx29v99zfqc_4a_114_peak_demand_for_historical_executions_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Distinct number of sessions executing for Cluster
+<a href="01781_sqld360_323688_0sjx29v99zfqc_4a_115_distinct_number_of_sessions_executing_for_cluster.html">html</a>
+<a href="01782_sqld360_323688_0sjx29v99zfqc_4a_115_distinct_number_of_sessions_executing_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Distinct number of sessions executing for Instance 1
+<a href="01783_sqld360_323688_0sjx29v99zfqc_4a_116_distinct_number_of_sessions_executing_for_instance_1.html">html</a>
+<a href="01784_sqld360_323688_0sjx29v99zfqc_4a_116_distinct_number_of_sessions_executing_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Distinct number of sessions executing for Instance 2
+<a href="01785_sqld360_323688_0sjx29v99zfqc_4a_117_distinct_number_of_sessions_executing_for_instance_2.html">html</a>
+<a href="01786_sqld360_323688_0sjx29v99zfqc_4a_117_distinct_number_of_sessions_executing_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total Buffer Gets for Cluster
+<a href="01787_sqld360_323688_0sjx29v99zfqc_4a_118_total_buffer_gets_for_cluster.html">html</a>
+<a href="01788_sqld360_323688_0sjx29v99zfqc_4a_118_total_buffer_gets_for_cluster_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total Buffer Gets for Instance 1
+<a href="01789_sqld360_323688_0sjx29v99zfqc_4a_119_total_buffer_gets_for_instance_1.html">html</a>
+<a href="01790_sqld360_323688_0sjx29v99zfqc_4a_119_total_buffer_gets_for_instance_1_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total Buffer Gets for Instance 2
+<a href="01791_sqld360_323688_0sjx29v99zfqc_4a_120_total_buffer_gets_for_instance_2.html">html</a>
+<a href="01792_sqld360_323688_0sjx29v99zfqc_4a_120_total_buffer_gets_for_instance_2_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total Rows Processed per for Cluster
+<a href="01793_sqld360_323688_0sjx29v99zfqc_4a_121_total_rows_processed_per_for_cluster.html">html</a>
+<a href="01794_sqld360_323688_0sjx29v99zfqc_4a_121_total_rows_processed_per_for_cluster_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total Rows Processed per for Instance 1
+<a href="01795_sqld360_323688_0sjx29v99zfqc_4a_122_total_rows_processed_per_for_instance_1.html">html</a>
+<a href="01796_sqld360_323688_0sjx29v99zfqc_4a_122_total_rows_processed_per_for_instance_1_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total Rows Processed per for Instance 2
+<a href="01797_sqld360_323688_0sjx29v99zfqc_4a_123_total_rows_processed_per_for_instance_2.html">html</a>
+<a href="01798_sqld360_323688_0sjx29v99zfqc_4a_123_total_rows_processed_per_for_instance_2_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total number of Executions for Cluster
+<a href="01799_sqld360_323688_0sjx29v99zfqc_4a_124_total_number_of_executions_for_cluster.html">html</a>
+<a href="01800_sqld360_323688_0sjx29v99zfqc_4a_124_total_number_of_executions_for_cluster_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total number of Executions for Instance 1
+<a href="01801_sqld360_323688_0sjx29v99zfqc_4a_125_total_number_of_executions_for_instance_1.html">html</a>
+<a href="01802_sqld360_323688_0sjx29v99zfqc_4a_125_total_number_of_executions_for_instance_1_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total number of Executions for Instance 2
+<a href="01803_sqld360_323688_0sjx29v99zfqc_4a_126_total_number_of_executions_for_instance_2.html">html</a>
+<a href="01804_sqld360_323688_0sjx29v99zfqc_4a_126_total_number_of_executions_for_instance_2_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Version Count and Sharable Memory for Cluster
+<a href="01805_sqld360_323688_0sjx29v99zfqc_4a_127_version_count_and_sharable_memory_for_cluster.html">html</a>
+<a href="01806_sqld360_323688_0sjx29v99zfqc_4a_127_version_count_and_sharable_memory_for_cluster_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Version Count and Sharable Memory for Instance 1
+<a href="01807_sqld360_323688_0sjx29v99zfqc_4a_128_version_count_and_sharable_memory_for_instance_1.html">html</a>
+<a href="01808_sqld360_323688_0sjx29v99zfqc_4a_128_version_count_and_sharable_memory_for_instance_1_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Version Count and Sharable Memory for Instance 2
+<a href="01809_sqld360_323688_0sjx29v99zfqc_4a_129_version_count_and_sharable_memory_for_instance_2.html">html</a>
+<a href="01810_sqld360_323688_0sjx29v99zfqc_4a_129_version_count_and_sharable_memory_for_instance_2_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+</ol>
+<h2>4b. Execution metrics</h2>
+<ol start="130">
+<li title="DBA_HIST_SQLSTAT">SQL Execute Time by Wait Class for Cluster
+<a href="01811_sqld360_323688_0sjx29v99zfqc_4b_130_sql_execute_time_by_wait_class_for_cluster.html">html</a>
+<a href="01812_sqld360_323688_0sjx29v99zfqc_4b_130_sql_execute_time_by_wait_class_for_cluster_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">SQL Execute Time by Wait Class for Instance 1
+<a href="01813_sqld360_323688_0sjx29v99zfqc_4b_131_sql_execute_time_by_wait_class_for_instance_1.html">html</a>
+<a href="01814_sqld360_323688_0sjx29v99zfqc_4b_131_sql_execute_time_by_wait_class_for_instance_1_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">SQL Execute Time by Wait Class for Instance 2
+<a href="01815_sqld360_323688_0sjx29v99zfqc_4b_132_sql_execute_time_by_wait_class_for_instance_2.html">html</a>
+<a href="01816_sqld360_323688_0sjx29v99zfqc_4b_132_sql_execute_time_by_wait_class_for_instance_2_line_chart.html">line</a>
+<small><em>(1489)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Elapsed Time per recent executions for Cluster
+<a href="01817_sqld360_323688_0sjx29v99zfqc_4b_133_elapsed_time_per_recent_executions_for_cluster.html">html</a>
+<small><em>(101)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Elapsed Time per recent executions for Instance 1
+<a href="01818_sqld360_323688_0sjx29v99zfqc_4b_134_elapsed_time_per_recent_executions_for_instance_1.html">html</a>
+<small><em>(21)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Elapsed Time per recent executions for Instance 2
+<a href="01819_sqld360_323688_0sjx29v99zfqc_4b_135_elapsed_time_per_recent_executions_for_instance_2.html">html</a>
+<small><em>(80)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Elapsed Time per historical executions for Cluster
+<a href="01820_sqld360_323688_0sjx29v99zfqc_4b_136_elapsed_time_per_historical_executions_for_cluster.html">html</a>
+<small><em>(4741)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Elapsed Time per historical executions for Instance 1
+<a href="01821_sqld360_323688_0sjx29v99zfqc_4b_137_elapsed_time_per_historical_executions_for_instance_1.html">html</a>
+<small><em>(2046)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Elapsed Time per historical executions for Instance 2
+<a href="01822_sqld360_323688_0sjx29v99zfqc_4b_138_elapsed_time_per_historical_executions_for_instance_2.html">html</a>
+<small><em>(2695)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Buffer Gets/Execution for Cluster
+<a href="01823_sqld360_323688_0sjx29v99zfqc_4b_139_avg_buffer_getsexecution_for_cluster.html">html</a>
+<a href="01824_sqld360_323688_0sjx29v99zfqc_4b_139_avg_buffer_getsexecution_for_cluster_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Buffer Gets/Execution for Instance 1
+<a href="01825_sqld360_323688_0sjx29v99zfqc_4b_140_avg_buffer_getsexecution_for_instance_1.html">html</a>
+<a href="01826_sqld360_323688_0sjx29v99zfqc_4b_140_avg_buffer_getsexecution_for_instance_1_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Buffer Gets/Execution for Instance 2
+<a href="01827_sqld360_323688_0sjx29v99zfqc_4b_141_avg_buffer_getsexecution_for_instance_2.html">html</a>
+<a href="01828_sqld360_323688_0sjx29v99zfqc_4b_141_avg_buffer_getsexecution_for_instance_2_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Rows Processed/Execution for Cluster
+<a href="01829_sqld360_323688_0sjx29v99zfqc_4b_142_avg_rows_processedexecution_for_cluster.html">html</a>
+<a href="01830_sqld360_323688_0sjx29v99zfqc_4b_142_avg_rows_processedexecution_for_cluster_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Rows Processed/Execution for Instance 1
+<a href="01831_sqld360_323688_0sjx29v99zfqc_4b_143_avg_rows_processedexecution_for_instance_1.html">html</a>
+<a href="01832_sqld360_323688_0sjx29v99zfqc_4b_143_avg_rows_processedexecution_for_instance_1_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Rows Processed/Execution for Instance 2
+<a href="01833_sqld360_323688_0sjx29v99zfqc_4b_144_avg_rows_processedexecution_for_instance_2.html">html</a>
+<a href="01834_sqld360_323688_0sjx29v99zfqc_4b_144_avg_rows_processedexecution_for_instance_2_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution (total) for Cluster
+<a href="01835_sqld360_323688_0sjx29v99zfqc_4b_145_avg_elapsed_timeexecution_total_for_cluster.html">html</a>
+<a href="01836_sqld360_323688_0sjx29v99zfqc_4b_145_avg_elapsed_timeexecution_total_for_cluster_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution (total) for Instance 1
+<a href="01837_sqld360_323688_0sjx29v99zfqc_4b_146_avg_elapsed_timeexecution_total_for_instance_1.html">html</a>
+<a href="01838_sqld360_323688_0sjx29v99zfqc_4b_146_avg_elapsed_timeexecution_total_for_instance_1_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution (total) for Instance 2
+<a href="01839_sqld360_323688_0sjx29v99zfqc_4b_147_avg_elapsed_timeexecution_total_for_instance_2.html">html</a>
+<a href="01840_sqld360_323688_0sjx29v99zfqc_4b_147_avg_elapsed_timeexecution_total_for_instance_2_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution (delta) for Cluster
+<a href="01841_sqld360_323688_0sjx29v99zfqc_4b_148_avg_elapsed_timeexecution_delta_for_cluster.html">html</a>
+<a href="01842_sqld360_323688_0sjx29v99zfqc_4b_148_avg_elapsed_timeexecution_delta_for_cluster_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution (delta) for Instance 1
+<a href="01843_sqld360_323688_0sjx29v99zfqc_4b_149_avg_elapsed_timeexecution_delta_for_instance_1.html">html</a>
+<a href="01844_sqld360_323688_0sjx29v99zfqc_4b_149_avg_elapsed_timeexecution_delta_for_instance_1_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution (delta) for Instance 2
+<a href="01845_sqld360_323688_0sjx29v99zfqc_4b_150_avg_elapsed_timeexecution_delta_for_instance_2.html">html</a>
+<a href="01846_sqld360_323688_0sjx29v99zfqc_4b_150_avg_elapsed_timeexecution_delta_for_instance_2_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution (moving 1d) for Cluster
+<a href="01847_sqld360_323688_0sjx29v99zfqc_4b_151_avg_elapsed_timeexecution_moving_1d_for_cluster.html">html</a>
+<a href="01848_sqld360_323688_0sjx29v99zfqc_4b_151_avg_elapsed_timeexecution_moving_1d_for_cluster_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution (moving 1d) for Instance 1
+<a href="01849_sqld360_323688_0sjx29v99zfqc_4b_152_avg_elapsed_timeexecution_moving_1d_for_instance_1.html">html</a>
+<a href="01850_sqld360_323688_0sjx29v99zfqc_4b_152_avg_elapsed_timeexecution_moving_1d_for_instance_1_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution (moving 1d) for Instance 2
+<a href="01851_sqld360_323688_0sjx29v99zfqc_4b_153_avg_elapsed_timeexecution_moving_1d_for_instance_2.html">html</a>
+<a href="01852_sqld360_323688_0sjx29v99zfqc_4b_153_avg_elapsed_timeexecution_moving_1d_for_instance_2_line_chart.html">line</a>
+<small><em>(1490)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Avg and Median Elapsed Time/Execution for recent executions for Cluster
+<a href="01853_sqld360_323688_0sjx29v99zfqc_4b_154_avg_and_median_elapsed_timeexecution_for_recent_executions_for_cluster.html">html</a>
+<a href="01854_sqld360_323688_0sjx29v99zfqc_4b_154_avg_and_median_elapsed_timeexecution_for_recent_executions_for_cluster_line_chart.html">line</a>
+<small><em>(81)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Avg and Median Elapsed Time/Execution for recent executions for Instance 1
+<a href="01855_sqld360_323688_0sjx29v99zfqc_4b_155_avg_and_median_elapsed_timeexecution_for_recent_executions_for_instance_1.html">html</a>
+<a href="01856_sqld360_323688_0sjx29v99zfqc_4b_155_avg_and_median_elapsed_timeexecution_for_recent_executions_for_instance_1_line_chart.html">line</a>
+<small><em>(17)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Avg and Median Elapsed Time/Execution for recent executions for Instance 2
+<a href="01857_sqld360_323688_0sjx29v99zfqc_4b_156_avg_and_median_elapsed_timeexecution_for_recent_executions_for_instance_2.html">html</a>
+<a href="01858_sqld360_323688_0sjx29v99zfqc_4b_156_avg_and_median_elapsed_timeexecution_for_recent_executions_for_instance_2_line_chart.html">line</a>
+<small><em>(70)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Avg and Median Elapsed Time/Execution for historical executions for Cluster
+<a href="01859_sqld360_323688_0sjx29v99zfqc_4b_157_avg_and_median_elapsed_timeexecution_for_historical_executions_for_cluster.html">html</a>
+<a href="01860_sqld360_323688_0sjx29v99zfqc_4b_157_avg_and_median_elapsed_timeexecution_for_historical_executions_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Avg and Median Elapsed Time/Execution for historical executions for Instance 1
+<a href="01861_sqld360_323688_0sjx29v99zfqc_4b_158_avg_and_median_elapsed_timeexecution_for_historical_executions_for_instance_1.html">html</a>
+<a href="01862_sqld360_323688_0sjx29v99zfqc_4b_158_avg_and_median_elapsed_timeexecution_for_historical_executions_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Avg and Median Elapsed Time/Execution for historical executions for Instance 2
+<a href="01863_sqld360_323688_0sjx29v99zfqc_4b_159_avg_and_median_elapsed_timeexecution_for_historical_executions_for_instance_2.html">html</a>
+<a href="01864_sqld360_323688_0sjx29v99zfqc_4b_159_avg_and_median_elapsed_timeexecution_for_historical_executions_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Streak of non-executing SQL for recent executions for Cluster
+<a href="01865_sqld360_323688_0sjx29v99zfqc_4b_160_streak_of_nonexecuting_sql_for_recent_executions_for_cluster.html">html</a>
+<small><em>(4)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Streak of non-executing SQL for recent executions for Instance 1
+<a href="01866_sqld360_323688_0sjx29v99zfqc_4b_161_streak_of_nonexecuting_sql_for_recent_executions_for_instance_1.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Streak of non-executing SQL for recent executions for Instance 2
+<a href="01867_sqld360_323688_0sjx29v99zfqc_4b_162_streak_of_nonexecuting_sql_for_recent_executions_for_instance_2.html">html</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Streak of non-executing SQL for historical executions for Cluster
+<a href="01868_sqld360_323688_0sjx29v99zfqc_4b_163_streak_of_nonexecuting_sql_for_historical_executions_for_cluster.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Streak of non-executing SQL for historical executions for Instance 1
+<a href="01869_sqld360_323688_0sjx29v99zfqc_4b_164_streak_of_nonexecuting_sql_for_historical_executions_for_instance_1.html">html</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Streak of non-executing SQL for historical executions for Instance 2
+<a href="01870_sqld360_323688_0sjx29v99zfqc_4b_165_streak_of_nonexecuting_sql_for_historical_executions_for_instance_2.html">html</a>
+<small><em>(0)</em></small>
+</li>
+</ol>
+<h2>4c. Execution metrics per PHV</h2>
+<ol start="166">
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Total number of Executions per PHV for Cluster
+<a href="01871_sqld360_323688_0sjx29v99zfqc_4c_166_total_number_of_executions_per_phv_for_cluster.html">html</a>
+<a href="01872_sqld360_323688_0sjx29v99zfqc_4c_166_total_number_of_executions_per_phv_for_cluster_bar_chart.html">bar</a>
+<small><em>(19)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Total number of Executions per PHV for Instance 1
+<a href="01873_sqld360_323688_0sjx29v99zfqc_4c_167_total_number_of_executions_per_phv_for_instance_1.html">html</a>
+<a href="01874_sqld360_323688_0sjx29v99zfqc_4c_167_total_number_of_executions_per_phv_for_instance_1_bar_chart.html">bar</a>
+<small><em>(15)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Total number of Executions per PHV for Instance 2
+<a href="01875_sqld360_323688_0sjx29v99zfqc_4c_168_total_number_of_executions_per_phv_for_instance_2.html">html</a>
+<a href="01876_sqld360_323688_0sjx29v99zfqc_4c_168_total_number_of_executions_per_phv_for_instance_2_bar_chart.html">bar</a>
+<small><em>(14)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Number of execution per PHV from AWR for Cluster
+<a href="01877_sqld360_323688_0sjx29v99zfqc_4c_169_number_of_execution_per_phv_from_awr_for_cluster.html">html</a>
+<a href="01878_sqld360_323688_0sjx29v99zfqc_4c_169_number_of_execution_per_phv_from_awr_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Number of execution per PHV from AWR for Instance 1
+<a href="01879_sqld360_323688_0sjx29v99zfqc_4c_170_number_of_execution_per_phv_from_awr_for_instance_1.html">html</a>
+<a href="01880_sqld360_323688_0sjx29v99zfqc_4c_170_number_of_execution_per_phv_from_awr_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Number of execution per PHV from AWR for Instance 2
+<a href="01881_sqld360_323688_0sjx29v99zfqc_4c_171_number_of_execution_per_phv_from_awr_for_instance_2.html">html</a>
+<a href="01882_sqld360_323688_0sjx29v99zfqc_4c_171_number_of_execution_per_phv_from_awr_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Total Elapsed Time for recent executions per PHV for Cluster
+<a href="01883_sqld360_323688_0sjx29v99zfqc_4c_172_total_elapsed_time_for_recent_executions_per_phv_for_cluster.html">html</a>
+<a href="01884_sqld360_323688_0sjx29v99zfqc_4c_172_total_elapsed_time_for_recent_executions_per_phv_for_cluster_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Total Elapsed Time for recent executions per PHV for Instance 1
+<a href="01885_sqld360_323688_0sjx29v99zfqc_4c_173_total_elapsed_time_for_recent_executions_per_phv_for_instance_1.html">html</a>
+<a href="01886_sqld360_323688_0sjx29v99zfqc_4c_173_total_elapsed_time_for_recent_executions_per_phv_for_instance_1_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Total Elapsed Time for recent executions per PHV for Instance 2
+<a href="01887_sqld360_323688_0sjx29v99zfqc_4c_174_total_elapsed_time_for_recent_executions_per_phv_for_instance_2.html">html</a>
+<a href="01888_sqld360_323688_0sjx29v99zfqc_4c_174_total_elapsed_time_for_recent_executions_per_phv_for_instance_2_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Total Elapsed Time for historical executions per PHV for Cluster
+<a href="01889_sqld360_323688_0sjx29v99zfqc_4c_175_total_elapsed_time_for_historical_executions_per_phv_for_cluster.html">html</a>
+<a href="01890_sqld360_323688_0sjx29v99zfqc_4c_175_total_elapsed_time_for_historical_executions_per_phv_for_cluster_bar_chart.html">bar</a>
+<small><em>(19)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Total Elapsed Time for historical executions per PHV for Instance 1
+<a href="01891_sqld360_323688_0sjx29v99zfqc_4c_176_total_elapsed_time_for_historical_executions_per_phv_for_instance_1.html">html</a>
+<a href="01892_sqld360_323688_0sjx29v99zfqc_4c_176_total_elapsed_time_for_historical_executions_per_phv_for_instance_1_bar_chart.html">bar</a>
+<small><em>(15)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Total Elapsed Time for historical executions per PHV for Instance 2
+<a href="01893_sqld360_323688_0sjx29v99zfqc_4c_177_total_elapsed_time_for_historical_executions_per_phv_for_instance_2.html">html</a>
+<a href="01894_sqld360_323688_0sjx29v99zfqc_4c_177_total_elapsed_time_for_historical_executions_per_phv_for_instance_2_bar_chart.html">bar</a>
+<small><em>(14)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total Elapsed Time per PHV from AWR for Cluster
+<a href="01895_sqld360_323688_0sjx29v99zfqc_4c_178_total_elapsed_time_per_phv_from_awr_for_cluster.html">html</a>
+<a href="01896_sqld360_323688_0sjx29v99zfqc_4c_178_total_elapsed_time_per_phv_from_awr_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total Elapsed Time per PHV from AWR for Instance 1
+<a href="01897_sqld360_323688_0sjx29v99zfqc_4c_179_total_elapsed_time_per_phv_from_awr_for_instance_1.html">html</a>
+<a href="01898_sqld360_323688_0sjx29v99zfqc_4c_179_total_elapsed_time_per_phv_from_awr_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Total Elapsed Time per PHV from AWR for Instance 2
+<a href="01899_sqld360_323688_0sjx29v99zfqc_4c_180_total_elapsed_time_per_phv_from_awr_for_instance_2.html">html</a>
+<a href="01900_sqld360_323688_0sjx29v99zfqc_4c_180_total_elapsed_time_per_phv_from_awr_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Avg Elapsed Time/Execution per PHV for recent executions for Cluster
+<a href="01901_sqld360_323688_0sjx29v99zfqc_4c_181_avg_elapsed_timeexecution_per_phv_for_recent_executions_for_cluster.html">html</a>
+<a href="01902_sqld360_323688_0sjx29v99zfqc_4c_181_avg_elapsed_timeexecution_per_phv_for_recent_executions_for_cluster_line_chart.html">line</a>
+<small><em>(81)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Avg Elapsed Time/Execution per PHV for recent executions for Instance 1
+<a href="01903_sqld360_323688_0sjx29v99zfqc_4c_182_avg_elapsed_timeexecution_per_phv_for_recent_executions_for_instance_1.html">html</a>
+<a href="01904_sqld360_323688_0sjx29v99zfqc_4c_182_avg_elapsed_timeexecution_per_phv_for_recent_executions_for_instance_1_line_chart.html">line</a>
+<small><em>(17)</em></small>
+</li>
+<li title="V$ACTIVE_SESSION_HISTORY">Avg Elapsed Time/Execution per PHV for recent executions for Instance 2
+<a href="01905_sqld360_323688_0sjx29v99zfqc_4c_183_avg_elapsed_timeexecution_per_phv_for_recent_executions_for_instance_2.html">html</a>
+<a href="01906_sqld360_323688_0sjx29v99zfqc_4c_183_avg_elapsed_timeexecution_per_phv_for_recent_executions_for_instance_2_line_chart.html">line</a>
+<small><em>(70)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Avg Elapsed Time/Execution per PHV for historical executions for Cluster
+<a href="01907_sqld360_323688_0sjx29v99zfqc_4c_184_avg_elapsed_timeexecution_per_phv_for_historical_executions_for_cluster.html">html</a>
+<a href="01908_sqld360_323688_0sjx29v99zfqc_4c_184_avg_elapsed_timeexecution_per_phv_for_historical_executions_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Avg Elapsed Time/Execution per PHV for historical executions for Instance 1
+<a href="01909_sqld360_323688_0sjx29v99zfqc_4c_185_avg_elapsed_timeexecution_per_phv_for_historical_executions_for_instance_1.html">html</a>
+<a href="01910_sqld360_323688_0sjx29v99zfqc_4c_185_avg_elapsed_timeexecution_per_phv_for_historical_executions_for_instance_1_line_chart.html">line</a>
+<small><em>(2988)</em></small>
+</li>
+<li title="DBA_HIST_ACTIVE_SESS_HISTORY">Avg Elapsed Time/Execution per PHV for historical executions for Instance 2
+<a href="01911_sqld360_323688_0sjx29v99zfqc_4c_186_avg_elapsed_timeexecution_per_phv_for_historical_executions_for_instance_2.html">html</a>
+<a href="01912_sqld360_323688_0sjx29v99zfqc_4c_186_avg_elapsed_timeexecution_per_phv_for_historical_executions_for_instance_2_line_chart.html">line</a>
+<small><em>(2982)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution per PHV (total) from AWR for Cluster
+<a href="01913_sqld360_323688_0sjx29v99zfqc_4c_187_avg_elapsed_timeexecution_per_phv_total_from_awr_for_cluster.html">html</a>
+<a href="01914_sqld360_323688_0sjx29v99zfqc_4c_187_avg_elapsed_timeexecution_per_phv_total_from_awr_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution per PHV (total) from AWR for Instance 1
+<a href="01915_sqld360_323688_0sjx29v99zfqc_4c_188_avg_elapsed_timeexecution_per_phv_total_from_awr_for_instance_1.html">html</a>
+<a href="01916_sqld360_323688_0sjx29v99zfqc_4c_188_avg_elapsed_timeexecution_per_phv_total_from_awr_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution per PHV (total) from AWR for Instance 2
+<a href="01917_sqld360_323688_0sjx29v99zfqc_4c_189_avg_elapsed_timeexecution_per_phv_total_from_awr_for_instance_2.html">html</a>
+<a href="01918_sqld360_323688_0sjx29v99zfqc_4c_189_avg_elapsed_timeexecution_per_phv_total_from_awr_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution per PHV (delta) from AWR for Cluster
+<a href="01919_sqld360_323688_0sjx29v99zfqc_4c_190_avg_elapsed_timeexecution_per_phv_delta_from_awr_for_cluster.html">html</a>
+<a href="01920_sqld360_323688_0sjx29v99zfqc_4c_190_avg_elapsed_timeexecution_per_phv_delta_from_awr_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution per PHV (delta) from AWR for Instance 1
+<a href="01921_sqld360_323688_0sjx29v99zfqc_4c_191_avg_elapsed_timeexecution_per_phv_delta_from_awr_for_instance_1.html">html</a>
+<a href="01922_sqld360_323688_0sjx29v99zfqc_4c_191_avg_elapsed_timeexecution_per_phv_delta_from_awr_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution per PHV (delta) from AWR for Instance 2
+<a href="01923_sqld360_323688_0sjx29v99zfqc_4c_192_avg_elapsed_timeexecution_per_phv_delta_from_awr_for_instance_2.html">html</a>
+<a href="01924_sqld360_323688_0sjx29v99zfqc_4c_192_avg_elapsed_timeexecution_per_phv_delta_from_awr_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution per PHV (moving 1d) from AWR for Cluster
+<a href="01925_sqld360_323688_0sjx29v99zfqc_4c_193_avg_elapsed_timeexecution_per_phv_moving_1d_from_awr_for_cluster.html">html</a>
+<a href="01926_sqld360_323688_0sjx29v99zfqc_4c_193_avg_elapsed_timeexecution_per_phv_moving_1d_from_awr_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution per PHV (moving 1d) from AWR for Instance 1
+<a href="01927_sqld360_323688_0sjx29v99zfqc_4c_194_avg_elapsed_timeexecution_per_phv_moving_1d_from_awr_for_instance_1.html">html</a>
+<a href="01928_sqld360_323688_0sjx29v99zfqc_4c_194_avg_elapsed_timeexecution_per_phv_moving_1d_from_awr_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Elapsed Time/Execution per PHV (moving 1d) from AWR for Instance 2
+<a href="01929_sqld360_323688_0sjx29v99zfqc_4c_195_avg_elapsed_timeexecution_per_phv_moving_1d_from_awr_for_instance_2.html">html</a>
+<a href="01930_sqld360_323688_0sjx29v99zfqc_4c_195_avg_elapsed_timeexecution_per_phv_moving_1d_from_awr_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Buffer Gets/Row/Execution per PHV from AWR for Cluster
+<a href="01931_sqld360_323688_0sjx29v99zfqc_4c_196_avg_buffer_getsrowexecution_per_phv_from_awr_for_cluster.html">html</a>
+<a href="01932_sqld360_323688_0sjx29v99zfqc_4c_196_avg_buffer_getsrowexecution_per_phv_from_awr_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Buffer Gets/Row/Execution per PHV from AWR for Instance 1
+<a href="01933_sqld360_323688_0sjx29v99zfqc_4c_197_avg_buffer_getsrowexecution_per_phv_from_awr_for_instance_1.html">html</a>
+<a href="01934_sqld360_323688_0sjx29v99zfqc_4c_197_avg_buffer_getsrowexecution_per_phv_from_awr_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Avg Buffer Gets/Row/Execution per PHV from AWR for Instance 2
+<a href="01935_sqld360_323688_0sjx29v99zfqc_4c_198_avg_buffer_getsrowexecution_per_phv_from_awr_for_instance_2.html">html</a>
+<a href="01936_sqld360_323688_0sjx29v99zfqc_4c_198_avg_buffer_getsrowexecution_per_phv_from_awr_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Execution Plan Cost per PHV from AWR for Cluster
+<a href="01937_sqld360_323688_0sjx29v99zfqc_4c_199_execution_plan_cost_per_phv_from_awr_for_cluster.html">html</a>
+<a href="01938_sqld360_323688_0sjx29v99zfqc_4c_199_execution_plan_cost_per_phv_from_awr_for_cluster_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Execution Plan Cost per PHV from AWR for Instance 1
+<a href="01939_sqld360_323688_0sjx29v99zfqc_4c_200_execution_plan_cost_per_phv_from_awr_for_instance_1.html">html</a>
+<a href="01940_sqld360_323688_0sjx29v99zfqc_4c_200_execution_plan_cost_per_phv_from_awr_for_instance_1_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+<li title="DBA_HIST_SQLSTAT">Execution Plan Cost per PHV from AWR for Instance 2
+<a href="01941_sqld360_323688_0sjx29v99zfqc_4c_201_execution_plan_cost_per_phv_from_awr_for_instance_2.html">html</a>
+<a href="01942_sqld360_323688_0sjx29v99zfqc_4c_201_execution_plan_cost_per_phv_from_awr_for_instance_2_line_chart.html">line</a>
+<small><em>(2980)</em></small>
+</li>
+</ol>
+
+</td><td>
+
+<h2>5a. 10053 Trace</h2>
+<ol start="202">
+<li title="V$SQL">10053 Trace
+<a href="01943_sqld360_323688_0sjx29v99zfqc_5a_202_10053_trace.trc">txt</a>
+</li>
+</ol>
+<h2>5b. SQL Monitor Reports</h2>
+<ol start="203">
+<li title="GV$SQL_MONITOR">SQL Monitor Reports
+<a href="01944_sqld360_323688_0sjx29v99zfqc_5b_203_sql_monitor_reports_sqlmon.zip">zip</a>
+</li>
+</ol>
+<h2>5h. SQL Tuning Advisor</h2>
+<ol start="204">
+<li title="DBA_ADVISOR_TASK">STA report
+<a href="01947_sqld360_323688_0sjx29v99zfqc_5h_204_sta_report.txt">txt</a>
+</li>
+</ol>
+
+</td></tr></table>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:23:01 for SQL ID 0sjx29v99zfqc (SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be) </font>
+</body>
+</html>

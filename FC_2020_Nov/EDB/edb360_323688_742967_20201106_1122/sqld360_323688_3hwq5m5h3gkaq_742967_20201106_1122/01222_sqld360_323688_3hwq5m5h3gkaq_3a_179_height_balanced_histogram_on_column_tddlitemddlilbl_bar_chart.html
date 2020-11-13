@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00996_sqld360_323688_3hwq5m5h3gkaq_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_DDL_ITEM.DDLI_LBL</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 01222_sqld360_323688_3hwq5m5h3gkaq_3a_179_height_balanced_histogram_on_column_tddlitemddlilbl_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,['  None ', 0, '0', 'ApproxValue:   None  NumRows: 0 Sel: 0']
+,[' Member', 31, '.003937', 'ApproxValue:  Member NumRows: 31 Sel: .003937']
+,[' None', 61, '.007874', 'ApproxValue:  None NumRows: 61 Sel: .007874']
+,[' None ', 31, '.003937', 'ApproxValue:  None  NumRows: 31 Sel: .003937']
+,[' Not at all ', 31, '.003937', 'ApproxValue:  Not at all  NumRows: 31 Sel: .003937']
+,['0-15 min', 31, '.003937', 'ApproxValue: 0-15 min NumRows: 31 Sel: .003937']
+,['01 Aged', 31, '.003937', 'ApproxValue: 01 Aged NumRows: 31 Sel: .003937']
+,['14 Institutional Medicaid', 31, '.003937', 'ApproxValue: 14 Institutional Medicaid NumRows: 31 Sel: .003937']
+,['16-30 min', 31, '.003937', 'ApproxValue: 16-30 min NumRows: 31 Sel: .003937']
+,['2-6 days ', 31, '.003937', 'ApproxValue: 2-6 days  NumRows: 31 Sel: .003937']
+,['31-45 min', 61, '.007874', 'ApproxValue: 31-45 min NumRows: 61 Sel: .007874']
+,['46-60 min', 61, '.007874', 'ApproxValue: 46-60 min NumRows: 61 Sel: .007874']
+,['61-75 min', 31, '.003937', 'ApproxValue: 61-75 min NumRows: 31 Sel: .003937']
+,['90+ min', 31, '.003937', 'ApproxValue: 90+ min NumRows: 31 Sel: .003937']
+,['> 60 min', 31, '.003937', 'ApproxValue: > 60 min NumRows: 31 Sel: .003937']
+,['ADD / ADHD ', 31, '.003937', 'ApproxValue: ADD / ADHD  NumRows: 31 Sel: .003937']
+,['Abnormal / On medication ', 31, '.003937', 'ApproxValue: Abnormal / On medication  NumRows: 31 Sel: .003937']
+,['Additional Information Requested', 31, '.003937', 'ApproxValue: Additional Information Requested NumRows: 31 Sel: .003937']
+,['Admitted as an Inpatient to this Hospital', 31, '.003937', 'ApproxValue: Admitted as an Inpatient to this Hospital NumRows: 31 Sel: .003937']
+,['Adult and Pediatric', 31, '.003937', 'ApproxValue: Adult and Pediatric NumRows: 31 Sel: .003937']
+,['Agree Upon Care Plan', 61, '.007874', 'ApproxValue: Agree Upon Care Plan NumRows: 61 Sel: .007874']
+,['Allergy & Immunology, Clinical & Laboratory Immunology', 31, '.003937', 'ApproxValue: Allergy & Immunology, Clinical & Laboratory Immunology NumRows: 31 Sel: .003937']
+,['AllergyEnvironmentalTypeOther', 31, '.003937', 'ApproxValue: AllergyEnvironmentalTypeOther NumRows: 31 Sel: .003937']
+,['AllergyReactionTypeNasalCongestion', 31, '.003937', 'ApproxValue: AllergyReactionTypeNasalCongestion NumRows: 31 Sel: .003937']
+,['Ambulance ', 31, '.003937', 'ApproxValue: Ambulance  NumRows: 31 Sel: .003937']
+,['Anesthesiology, Addiction Medicine', 31, '.003937', 'ApproxValue: Anesthesiology, Addiction Medicine NumRows: 31 Sel: .003937']
+,['Arabic', 31, '.003937', 'ApproxValue: Arabic NumRows: 31 Sel: .003937']
+,['Assess', 31, '.003937', 'ApproxValue: Assess NumRows: 31 Sel: .003937']
+,['Asthma', 31, '.003937', 'ApproxValue: Asthma NumRows: 31 Sel: .003937']
+,['Audiologist, Assistive Technology Supplier', 31, '.003937', 'ApproxValue: Audiologist, Assistive Technology Supplier NumRows: 31 Sel: .003937']
+,['B Pregnancy', 31, '.003937', 'ApproxValue: B Pregnancy NumRows: 31 Sel: .003937']
+,['Behavioral Risk', 31, '.003937', 'ApproxValue: Behavioral Risk NumRows: 31 Sel: .003937']
+,['Bipolar ', 31, '.003937', 'ApproxValue: Bipolar  NumRows: 31 Sel: .003937']
+,['Brain / Central Nervous System ', 31, '.003937', 'ApproxValue: Brain / Central Nervous System  NumRows: 31 Sel: .003937']
+,['Bruising', 31, '.003937', 'ApproxValue: Bruising NumRows: 31 Sel: .003937']
+,['CC-Transition Ped-to-Adult ', 31, '.003937', 'ApproxValue: CC-Transition Ped-to-Adult  NumRows: 31 Sel: .003937']
+,['CM-Complex BH', 31, '.003937', 'ApproxValue: CM-Complex BH NumRows: 31 Sel: .003937']
+,['CMProjectCreationNotification', 31, '.003937', 'ApproxValue: CMProjectCreationNotification NumRows: 31 Sel: .003937']
+,['CPS Referral/APS Referral', 31, '.003937', 'ApproxValue: CPS Referral/APS Referral NumRows: 31 Sel: .003937']
+,['Care Coordination-AAPCA Level (Bi-Annual)', 31, '.003937', 'ApproxValue: Care Coordination-AAPCA Level (Bi-Annual) NumRows: 31 Sel: .003937']
+,['CareBeanTemplateCreationNotification', 31, '.003937', 'ApproxValue: CareBeanTemplateCreationNotification NumRows: 31 Sel: .003937']
+,['CareplanProviderNoteType', 31, '.003937', 'ApproxValue: CareplanProviderNoteType NumRows: 31 Sel: .003937']
+,['CaseMedicationSystemGeneratedNote', 31, '.003937', 'ApproxValue: CaseMedicationSystemGeneratedNote NumRows: 31 Sel: .003937']
+,['Cesarean Section', 31, '.003937', 'ApproxValue: Cesarean Section NumRows: 31 Sel: .003937']
+,['Chinese', 31, '.003937', 'ApproxValue: Chinese NumRows: 31 Sel: .003937']
+,['Chronic Kidney Disease [v2.0]', 31, '.003937', 'ApproxValue: Chronic Kidney Disease [v2.0] NumRows: 31 Sel: .003937']
+,['Claim Question', 31, '.003937', 'ApproxValue: Claim Question NumRows: 31 Sel: .003937']
+,['Clinic/Center, Health Service', 31, '.003937', 'ApproxValue: Clinic/Center, Health Service NumRows: 31 Sel: .003937']
+,['Clinic/Center, Research', 31, '.003937', 'ApproxValue: Clinic/Center, Research NumRows: 31 Sel: .003937']
+,['Clinical Review', 31, '.003937', 'ApproxValue: Clinical Review NumRows: 31 Sel: .003937']
+,['Cognitive Status', 31, '.003937', 'ApproxValue: Cognitive Status NumRows: 31 Sel: .003937']
+,['Collaborate', 31, '.003937', 'ApproxValue: Collaborate NumRows: 31 Sel: .003937']
+,['Community Health Worker', 31, '.003937', 'ApproxValue: Community Health Worker NumRows: 31 Sel: .003937']
+,['Complete Transitional Utilization Assessment ', 31, '.003937', 'ApproxValue: Complete Transitional Utilization Assessment  NumRows: 31 Sel: .003937']
+,['Comprehensive General, Pediatric [v3.0]', 31, '.003937', 'ApproxValue: Comprehensive General, Pediatric [v3.0] NumRows: 31 Sel: .003937']
+,['Contact Care Manager (family)', 31, '.003937', 'ApproxValue: Contact Care Manager (family) NumRows: 31 Sel: .003937']
+,['Contact PCP (member)', 31, '.003937', 'ApproxValue: Contact PCP (member) NumRows: 31 Sel: .003937']
+,['ContactTypeProviderPortal', 31, '.003937', 'ApproxValue: ContactTypeProviderPortal NumRows: 31 Sel: .003937']
+,['Coordinate', 31, '.003937', 'ApproxValue: Coordinate NumRows: 31 Sel: .003937']
+,['Coronary Artery Disease', 31, '.003937', 'ApproxValue: Coronary Artery Disease NumRows: 31 Sel: .003937']
+,['Cramping ', 31, '.003937', 'ApproxValue: Cramping  NumRows: 31 Sel: .003937']
+,['Cultural or religious beliefs / practices ', 31, '.003937', 'ApproxValue: Cultural or religious beliefs / practices  NumRows: 31 Sel: .003937']
+,['D', 31, '.003937', 'ApproxValue: D NumRows: 31 Sel: .003937']
+,['DM On Hold For Full Eligibility Loss', 31, '.003937', 'ApproxValue: DM On Hold For Full Eligibility Loss NumRows: 31 Sel: .003937']
+,['Data from Utilization Management ', 31, '.003937', 'ApproxValue: Data from Utilization Management  NumRows: 31 Sel: .003937']
+,['Declined CM', 31, '.003937', 'ApproxValue: Declined CM NumRows: 31 Sel: .003937']
+,['Delete Me', 31, '.003937', 'ApproxValue: Delete Me NumRows: 31 Sel: .003937']
+,['Depression', 31, '.003937', 'ApproxValue: Depression NumRows: 31 Sel: .003937']
+,['DeterminationReasonPendingMDReview', 31, '.003937', 'ApproxValue: DeterminationReasonPendingMDReview NumRows: 31 Sel: .003937']
+,['Diabetes, Adult [v3.0]', 31, '.003937', 'ApproxValue: Diabetes, Adult [v3.0] NumRows: 31 Sel: .003937']
+,['Did not finish high school', 31, '.003937', 'ApproxValue: Did not finish high school NumRows: 31 Sel: .003937']
+,['Discharge/Transferred to a Skilled Nursing Facility', 31, '.003937', 'ApproxValue: Discharge/Transferred to a Skilled Nursing Facility NumRows: 31 Sel: .003937']
+,['Discuss Problems/Goals', 61, '.007874', 'ApproxValue: Discuss Problems/Goals NumRows: 61 Sel: .007874']
+,['Does not adhere / declines assistance ', 31, '.003937', 'ApproxValue: Does not adhere / declines assistance  NumRows: 31 Sel: .003937']
+,['Dutch', 31, '.003937', 'ApproxValue: Dutch NumRows: 31 Sel: .003937']
+,['Educate FF (payer)', 31, '.003937', 'ApproxValue: Educate FF (payer) NumRows: 31 Sel: .003937']
+,['Education ', 31, '.003937', 'ApproxValue: Education  NumRows: 31 Sel: .003937']
+,['Emergency Medical Technician, Intermediate', 31, '.003937', 'ApproxValue: Emergency Medical Technician, Intermediate NumRows: 31 Sel: .003937']
+,['Engagement', 31, '.003937', 'ApproxValue: Engagement NumRows: 31 Sel: .003937']
+,['Enrolled', 31, '.003937', 'ApproxValue: Enrolled NumRows: 31 Sel: .003937']
+,['Esperanto', 31, '.003937', 'ApproxValue: Esperanto NumRows: 31 Sel: .003937']
+,['Expired', 31, '.003937', 'ApproxValue: Expired NumRows: 31 Sel: .003937']
+,['Facility to Home ', 31, '.003937', 'ApproxValue: Facility to Home  NumRows: 31 Sel: .003937']
+,['Fast (Dont Eat) (member)', 31, '.003937', 'ApproxValue: Fast (Dont Eat) (member) NumRows: 31 Sel: .003937']
+,['FfMailContactPrefBusiness', 31, '.003937', 'ApproxValue: FfMailContactPrefBusiness NumRows: 31 Sel: .003937']
+,['First Fill', 31, '.003937', 'ApproxValue: First Fill NumRows: 31 Sel: .003937']
+,['Follow Up', 61, '.007874', 'ApproxValue: Follow Up NumRows: 61 Sel: .007874']
+,['Follow Up on Benefits', 31, '.003937', 'ApproxValue: Follow Up on Benefits NumRows: 31 Sel: .003937']
+,['Follow-Up Call', 31, '.003937', 'ApproxValue: Follow-Up Call NumRows: 31 Sel: .003937']
+,['Food', 31, '.003937', 'ApproxValue: Food NumRows: 31 Sel: .003937']
+,['Functional Level', 31, '.003937', 'ApproxValue: Functional Level NumRows: 31 Sel: .003937']
+,['General', 31, '.003937', 'ApproxValue: General NumRows: 31 Sel: .003937']
+,['Genital / Urinary Tract Defect ', 31, '.003937', 'ApproxValue: Genital / Urinary Tract Defect  NumRows: 31 Sel: .003937']
+,['Group Home', 31, '.003937', 'ApproxValue: Group Home NumRows: 31 Sel: .003937']
+,['HIPAAContactWrittenNotification', 31, '.003937', 'ApproxValue: HIPAAContactWrittenNotification NumRows: 31 Sel: .003937']
+,['HRP - Initial', 31, '.003937', 'ApproxValue: HRP - Initial NumRows: 31 Sel: .003937']
+,['Health Educator', 31, '.003937', 'ApproxValue: Health Educator NumRows: 31 Sel: .003937']
+,['Heart Failure', 31, '.003937', 'ApproxValue: Heart Failure NumRows: 31 Sel: .003937']
+,['Hemochromatosis', 31, '.003937', 'ApproxValue: Hemochromatosis NumRows: 31 Sel: .003937']
+,['High', 31, '.003937', 'ApproxValue: High NumRows: 31 Sel: .003937']
+,['Hold until Drug Clarified with MD', 31, '.003937', 'ApproxValue: Hold until Drug Clarified with MD NumRows: 31 Sel: .003937']
+,['Homeless / Shelter ', 31, '.003937', 'ApproxValue: Homeless / Shelter  NumRows: 31 Sel: .003937']
+,['HourDayWeekMonthYearChoiceDay', 31, '.003937', 'ApproxValue: HourDayWeekMonthYearChoiceDay NumRows: 31 Sel: .003937']
+,['Hypertension ', 31, '.003937', 'ApproxValue: Hypertension  NumRows: 31 Sel: .003937']
+,['I do not have housing. (I am staying with others, in a hotel, in', 31, '.003937', 'ApproxValue: I do not have housing. (I am staying with others, in a hotel, in NumRows: 31 Sel: .003937']
+,['Improved nutrition', 31, '.003937', 'ApproxValue: Improved nutrition NumRows: 31 Sel: .003937']
+,['Independent Clinic', 31, '.003937', 'ApproxValue: Independent Clinic NumRows: 31 Sel: .003937']
+,['Initial ', 31, '.003937', 'ApproxValue: Initial  NumRows: 31 Sel: .003937']
+,['Initial Call', 61, '.007874', 'ApproxValue: Initial Call NumRows: 61 Sel: .007874']
+,['Inpatient Detox (RF)', 31, '.003937', 'ApproxValue: Inpatient Detox (RF) NumRows: 31 Sel: .003937']
+,['Insomnia', 31, '.003937', 'ApproxValue: Insomnia NumRows: 31 Sel: .003937']
+,['Internal Medicine, Hepatology', 31, '.003937', 'ApproxValue: Internal Medicine, Hepatology NumRows: 31 Sel: .003937']
+,['Irritability / Anger / Hostility ', 31, '.003937', 'ApproxValue: Irritability / Anger / Hostility  NumRows: 31 Sel: .003937']
+,['Joint Pain ', 31, '.003937', 'ApproxValue: Joint Pain  NumRows: 31 Sel: .003937']
+,['Kidney Disease, Chronic / ESRD ', 31, '.003937', 'ApproxValue: Kidney Disease, Chronic / ESRD  NumRows: 31 Sel: .003937']
+,['LOT', 31, '.003937', 'ApproxValue: LOT NumRows: 31 Sel: .003937']
+,['Late notice', 31, '.003937', 'ApproxValue: Late notice NumRows: 31 Sel: .003937']
+,['Left voicemail', 31, '.003937', 'ApproxValue: Left voicemail NumRows: 31 Sel: .003937']
+,['Leukemia ', 31, '.003937', 'ApproxValue: Leukemia  NumRows: 31 Sel: .003937']
+,['Liver', 31, '.003937', 'ApproxValue: Liver NumRows: 31 Sel: .003937']
+,['Long Term Goal', 31, '.003937', 'ApproxValue: Long Term Goal NumRows: 31 Sel: .003937']
+,['Lymphoma ', 31, '.003937', 'ApproxValue: Lymphoma  NumRows: 31 Sel: .003937']
+,['MDCInfectious', 31, '.003937', 'ApproxValue: MDCInfectious NumRows: 31 Sel: .003937']
+,['MRI - Breast and Cardiac Only (RF)', 31, '.003937', 'ApproxValue: MRI - Breast and Cardiac Only (RF) NumRows: 31 Sel: .003937']
+,['Make Appointment (provider)', 31, '.003937', 'ApproxValue: Make Appointment (provider) NumRows: 31 Sel: .003937']
+,['Mass Immunization center', 31, '.003937', 'ApproxValue: Mass Immunization center NumRows: 31 Sel: .003937']
+,['MeasuresDiseaseGroupDiabetes', 31, '.003937', 'ApproxValue: MeasuresDiseaseGroupDiabetes NumRows: 31 Sel: .003937']
+,['MeasuresStatusActionable', 31, '.003937', 'ApproxValue: MeasuresStatusActionable NumRows: 31 Sel: .003937']
+,['Medical Genetics, Clinical Cytogenetic', 31, '.003937', 'ApproxValue: Medical Genetics, Clinical Cytogenetic NumRows: 31 Sel: .003937']
+,['MedicationUnitBOX', 31, '.003937', 'ApproxValue: MedicationUnitBOX NumRows: 31 Sel: .003937']
+,['MedicationUnitMEQ', 31, '.003937', 'ApproxValue: MedicationUnitMEQ NumRows: 31 Sel: .003937']
+,['MedicationUnitTBL', 31, '.003937', 'ApproxValue: MedicationUnitTBL NumRows: 31 Sel: .003937']
+,['Member', 31, '.003937', 'ApproxValue: Member NumRows: 31 Sel: .003937']
+,['Member/Caregiver decision ', 31, '.003937', 'ApproxValue: Member/Caregiver decision  NumRows: 31 Sel: .003937']
+,['Members with Special Healthcare Needs Lubbock ', 31, '.003937', 'ApproxValue: Members with Special Healthcare Needs Lubbock  NumRows: 31 Sel: .003937']
+,['Metabolic Syndrome ', 31, '.003937', 'ApproxValue: Metabolic Syndrome  NumRows: 31 Sel: .003937']
+,['Minor, still in school', 31, '.003937', 'ApproxValue: Minor, still in school NumRows: 31 Sel: .003937']
+,['Monitor Progress', 31, '.003937', 'ApproxValue: Monitor Progress NumRows: 31 Sel: .003937']
+,['Multiple Sclerosis ', 31, '.003937', 'ApproxValue: Multiple Sclerosis  NumRows: 31 Sel: .003937']
+,['NICU admission ', 31, '.003937', 'ApproxValue: NICU admission  NumRows: 31 Sel: .003937']
+,['Need Community Resource', 31, '.003937', 'ApproxValue: Need Community Resource NumRows: 31 Sel: .003937']
+,['Neuromusculoskeletal Medicine & OMM', 31, '.003937', 'ApproxValue: Neuromusculoskeletal Medicine & OMM NumRows: 31 Sel: .003937']
+,['No', 31, '.003937', 'ApproxValue: No NumRows: 31 Sel: .003937']
+,['Non-Covered DME', 31, '.003937', 'ApproxValue: Non-Covered DME NumRows: 31 Sel: .003937']
+,['Non-working Number', 31, '.003937', 'ApproxValue: Non-working Number NumRows: 31 Sel: .003937']
+,['Not Met', 31, '.003937', 'ApproxValue: Not Met NumRows: 31 Sel: .003937']
+,['Not indicated', 31, '.003937', 'ApproxValue: Not indicated NumRows: 31 Sel: .003937']
+,['Nuclear Medicine', 31, '.003937', 'ApproxValue: Nuclear Medicine NumRows: 31 Sel: .003937']
+,['Nutritional Initial Assessment (RF)', 31, '.003937', 'ApproxValue: Nutritional Initial Assessment (RF) NumRows: 31 Sel: .003937']
+,['Obstetrics & Gynecology, Female Pelvic Medicine and Reconstructi', 31, '.003937', 'ApproxValue: Obstetrics & Gynecology, Female Pelvic Medicine and Reconstructi NumRows: 31 Sel: .003937']
+,['Oncologist ', 31, '.003937', 'ApproxValue: Oncologist  NumRows: 31 Sel: .003937']
+,['Opt Out', 122, '.015748', 'ApproxValue: Opt Out NumRows: 122 Sel: .015748']
+,['Optometrist, Sports Vision', 31, '.003937', 'ApproxValue: Optometrist, Sports Vision NumRows: 31 Sel: .003937']
+,['Osteosarcoma ', 31, '.003937', 'ApproxValue: Osteosarcoma  NumRows: 31 Sel: .003937']
+,['Other', 31, '.003937', 'ApproxValue: Other NumRows: 31 Sel: .003937']
+,['Otolaryngology, Facial Plastic Surgery', 31, '.003937', 'ApproxValue: Otolaryngology, Facial Plastic Surgery NumRows: 31 Sel: .003937']
+,['Ovarian Cancer ', 31, '.003937', 'ApproxValue: Ovarian Cancer  NumRows: 31 Sel: .003937']
+,['Pain management restrictions ', 31, '.003937', 'ApproxValue: Pain management restrictions  NumRows: 31 Sel: .003937']
+,['Parent', 31, '.003937', 'ApproxValue: Parent NumRows: 31 Sel: .003937']
+,['Pathology, Cytopathology', 31, '.003937', 'ApproxValue: Pathology, Cytopathology NumRows: 31 Sel: .003937']
+,['Pediatric', 31, '.003937', 'ApproxValue: Pediatric NumRows: 31 Sel: .003937']
+,['Pend for Case Management', 31, '.003937', 'ApproxValue: Pend for Case Management NumRows: 31 Sel: .003937']
+,['Personal Task (provider)', 31, '.003937', 'ApproxValue: Personal Task (provider) NumRows: 31 Sel: .003937']
+,['Physical Medicine & Rehabilitation, Spinal Cord Injury Medicine', 31, '.003937', 'ApproxValue: Physical Medicine & Rehabilitation, Spinal Cord Injury Medicine NumRows: 31 Sel: .003937']
+,['Pilipino or Filipino', 31, '.003937', 'ApproxValue: Pilipino or Filipino NumRows: 31 Sel: .003937']
+,['Polycystic Kidney Disease ', 31, '.003937', 'ApproxValue: Polycystic Kidney Disease  NumRows: 31 Sel: .003937']
+,['Post-delivery death ', 31, '.003937', 'ApproxValue: Post-delivery death  NumRows: 31 Sel: .003937']
+,['Pregnancy', 31, '.003937', 'ApproxValue: Pregnancy NumRows: 31 Sel: .003937']
+,['Prescribe Lab Work (provider)', 31, '.003937', 'ApproxValue: Prescribe Lab Work (provider) NumRows: 31 Sel: .003937']
+,['Primary Care Service', 31, '.003937', 'ApproxValue: Primary Care Service NumRows: 31 Sel: .003937']
+,['Provide', 31, '.003937', 'ApproxValue: Provide NumRows: 31 Sel: .003937']
+,['Provided education on condition management', 31, '.003937', 'ApproxValue: Provided education on condition management NumRows: 31 Sel: .003937']
+,['ProviderContactMethodEmail', 31, '.003937', 'ApproxValue: ProviderContactMethodEmail NumRows: 31 Sel: .003937']
+,['ProviderPhoneContactPrefPager', 31, '.003937', 'ApproxValue: ProviderPhoneContactPrefPager NumRows: 31 Sel: .003937']
+,['Psychiatry & Neurology, Diagnostic Neuroimaging', 31, '.003937', 'ApproxValue: Psychiatry & Neurology, Diagnostic Neuroimaging NumRows: 31 Sel: .003937']
+,['Psychologist, Health', 31, '.003937', 'ApproxValue: Psychologist, Health NumRows: 31 Sel: .003937']
+,['Q QMB coverage: MEDICARE only', 31, '.003937', 'ApproxValue: Q QMB coverage: MEDICARE only NumRows: 31 Sel: .003937']
+,['Question', 61, '.007874', 'ApproxValue: Question NumRows: 61 Sel: .007874']
+,['Radiologic Technologist, Radiation Therapy', 31, '.003937', 'ApproxValue: Radiologic Technologist, Radiation Therapy NumRows: 31 Sel: .003937']
+,['RecordCreationDenialNotification', 31, '.003937', 'ApproxValue: RecordCreationDenialNotification NumRows: 31 Sel: .003937']
+,['Refer', 31, '.003937', 'ApproxValue: Refer NumRows: 31 Sel: .003937']
+,['Referral to CPW Program', 31, '.003937', 'ApproxValue: Referral to CPW Program NumRows: 31 Sel: .003937']
+,['Registered Nurse, Lactation Consultant', 31, '.003937', 'ApproxValue: Registered Nurse, Lactation Consultant NumRows: 31 Sel: .003937']
+,['Rehabilitation facility', 31, '.003937', 'ApproxValue: Rehabilitation facility NumRows: 31 Sel: .003937']
+,['Representative', 31, '.003937', 'ApproxValue: Representative NumRows: 31 Sel: .003937']
+,['Request', 61, '.007874', 'ApproxValue: Request NumRows: 61 Sel: .007874']
+,['Requires Medical Review', 31, '.003937', 'ApproxValue: Requires Medical Review NumRows: 31 Sel: .003937']
+,['Rett Syndrome ', 31, '.003937', 'ApproxValue: Rett Syndrome  NumRows: 31 Sel: .003937']
+,['ReviewCompletionNotification', 31, '.003937', 'ApproxValue: ReviewCompletionNotification NumRows: 31 Sel: .003937']
+,['Rx Care Coordination', 31, '.003937', 'ApproxValue: Rx Care Coordination NumRows: 31 Sel: .003937']
+,['Safety', 31, '.003937', 'ApproxValue: Safety NumRows: 31 Sel: .003937']
+,['Sciatica ', 31, '.003937', 'ApproxValue: Sciatica  NumRows: 31 Sel: .003937']
+,['Second Attempt - Unsuccessful', 31, '.003937', 'ApproxValue: Second Attempt - Unsuccessful NumRows: 31 Sel: .003937']
+,['Setting a Tobacco Quit Date ', 31, '.003937', 'ApproxValue: Setting a Tobacco Quit Date  NumRows: 31 Sel: .003937']
+,['Sickle Cell Anemia ', 31, '.003937', 'ApproxValue: Sickle Cell Anemia  NumRows: 31 Sel: .003937']
+,['Sleep Apnea ', 31, '.003937', 'ApproxValue: Sleep Apnea  NumRows: 31 Sel: .003937']
+,['Spec/Tech, Cardiovascular', 31, '.003937', 'ApproxValue: Spec/Tech, Cardiovascular NumRows: 31 Sel: .003937']
+,['Spinal Muscular Atrophy', 31, '.003937', 'ApproxValue: Spinal Muscular Atrophy NumRows: 31 Sel: .003937']
+,['Stage III ', 31, '.003937', 'ApproxValue: Stage III  NumRows: 31 Sel: .003937']
+,['Still a Patient', 31, '.003937', 'ApproxValue: Still a Patient NumRows: 31 Sel: .003937']
+,['Substitute Care', 31, '.003937', 'ApproxValue: Substitute Care NumRows: 31 Sel: .003937']
+,['Surgery, non pregnancy related', 31, '.003937', 'ApproxValue: Surgery, non pregnancy related NumRows: 31 Sel: .003937']
+,['T_CNCT', 31, '.003937', 'ApproxValue: T_CNCT NumRows: 31 Sel: .003937']
+,['Technician/Technologist, Optician', 31, '.003937', 'ApproxValue: Technician/Technologist, Optician NumRows: 31 Sel: .003937']
+,['Third Attempt - Unsuccessful', 31, '.003937', 'ApproxValue: Third Attempt - Unsuccessful NumRows: 31 Sel: .003937']
+,['Tobacco Cessation Slips ', 31, '.003937', 'ApproxValue: Tobacco Cessation Slips  NumRows: 31 Sel: .003937']
+,['Toisanese (China)', 31, '.003937', 'ApproxValue: Toisanese (China) NumRows: 31 Sel: .003937']
+,['Transitional support-facility discharge', 31, '.003937', 'ApproxValue: Transitional support-facility discharge NumRows: 31 Sel: .003937']
+,['Traumatic Brain Injury', 31, '.003937', 'ApproxValue: Traumatic Brain Injury NumRows: 31 Sel: .003937']
+,['UM Replies', 31, '.003937', 'ApproxValue: UM Replies NumRows: 31 Sel: .003937']
+,['UTR Letter Sent', 31, '.003937', 'ApproxValue: UTR Letter Sent NumRows: 31 Sel: .003937']
+,['Unaware of recommendations ', 31, '.003937', 'ApproxValue: Unaware of recommendations  NumRows: 31 Sel: .003937']
+,['Unknown', 31, '.003937', 'ApproxValue: Unknown NumRows: 31 Sel: .003937']
+,['Unsuccessful Attempt 1', 122, '.015748', 'ApproxValue: Unsuccessful Attempt 1 NumRows: 122 Sel: .015748']
+,['Unsuccessful Attempt 2', 122, '.015748', 'ApproxValue: Unsuccessful Attempt 2 NumRows: 122 Sel: .015748']
+,['Unsuccessful Attempt 3', 153, '.019685', 'ApproxValue: Unsuccessful Attempt 3 NumRows: 153 Sel: .019685']
+,['Updated ', 31, '.003937', 'ApproxValue: Updated  NumRows: 31 Sel: .003937']
+,['Utilization Management', 31, '.003937', 'ApproxValue: Utilization Management NumRows: 31 Sel: .003937']
+,['VIRGINIA', 31, '.003937', 'ApproxValue: VIRGINIA NumRows: 31 Sel: .003937']
+,['Vis - Non Prosthetic Contact Lenses (RF)', 31, '.003937', 'ApproxValue: Vis - Non Prosthetic Contact Lenses (RF) NumRows: 31 Sel: .003937']
+,['Waiting list ', 31, '.003937', 'ApproxValue: Waiting list  NumRows: 31 Sel: .003937']
+,['Weight control ', 31, '.003937', 'ApproxValue: Weight control  NumRows: 31 Sel: .003937']
+,['Yemen', 31, '.003937', 'ApproxValue: Yemen NumRows: 31 Sel: .003937']
+,['_Never exercise ', 31, '.003937', 'ApproxValue: _Never exercise  NumRows: 31 Sel: .003937']
+,['_Other', 122, '.015748', 'ApproxValue: _Other NumRows: 122 Sel: .015748']
+,['_Other ', 31, '.003937', 'ApproxValue: _Other  NumRows: 31 Sel: .003937']
+,['b. Annually ', 31, '.003937', 'ApproxValue: b. Annually  NumRows: 31 Sel: .003937']
+,['denied as services are available at a lower level of care', 31, '.003937', 'ApproxValue: denied as services are available at a lower level of care NumRows: 31 Sel: .003937']
+,['h. Weekly ', 31, '.003937', 'ApproxValue: h. Weekly  NumRows: 31 Sel: .003937']
+,['v', 31, '.003937', 'ApproxValue: v NumRows: 31 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.179. Height Balanced histogram on Column T_DDL_ITEM.DDLI_LBL',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.179. Height Balanced histogram on Column T_DDL_ITEM.DDLI_LBL <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 7763) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 7763)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_DDL_ITEM'
+AND a.column_name = 'DDLI_LBL'
+ORDER BY a.endpoint_number;
+
+230 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:05:33 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>

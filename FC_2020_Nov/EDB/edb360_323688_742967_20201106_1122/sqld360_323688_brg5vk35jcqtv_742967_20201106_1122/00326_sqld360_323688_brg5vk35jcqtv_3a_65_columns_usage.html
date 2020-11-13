@@ -1,0 +1,7383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_brg5vk35jcqtv_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Columns Usage</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00326_sqld360_323688_brg5vk35jcqtv_3a_65_columns_usage.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.65. Columns Usage <em>(SYS.COL_USAGE$)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+OBJECT_NAME
+</th>
+<th scope="col">
+COLUMN_NAME
+</th>
+<th scope="col">
+OBJ#
+</th>
+<th scope="col">
+INTCOL#
+</th>
+<th scope="col">
+EQUALITY_PREDS
+</th>
+<th scope="col">
+EQUIJOIN_PREDS
+</th>
+<th scope="col">
+NONEQUIJOIN_PREDS
+</th>
+<th scope="col">
+RANGE_PREDS
+</th>
+<th scope="col">
+LIKE_PREDS
+</th>
+<th scope="col">
+NULL_PREDS
+</th>
+<th scope="col">
+TIMESTAMP
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+T_APBL
+</td>
+<td>
+CLASSTYPE
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6338
+</td>
+<td align="right">
+                1309
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_C4C_ID
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-09-12/19:06:40
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_LAS_ACT_TIM
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 890
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_OBJ_STT
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                1151
+</td>
+<td align="right">
+                1298
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_LAS_ACT_BY
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/18:00:02
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_UNIVID
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+                  67
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-10-19/22:00:15
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_RQTDDT_FROM
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+2020-09-12/19:06:40
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_CMMT
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2208
+</td>
+<td>
+2020-11-06/04:00:03
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_DTMN
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1298
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_IS_ERR
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  29
+</td>
+<td align="right">
+                4932
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3302
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_ID
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                1604
+</td>
+<td align="right">
+               14370
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+T_APBL
+</td>
+<td>
+UMXT_ID
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  37
+</td>
+<td align="right">
+                3992
+</td>
+<td align="right">
+               10058
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9435
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_ID
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  46
+</td>
+<td align="right">
+                4191
+</td>
+<td align="right">
+                7541
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_CSTMFLDS
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  67
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3748
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_MDCLSRVCTYP
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  68
+</td>
+<td align="right">
+                1331
+</td>
+<td align="right">
+                1298
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_PLCEOF_SRVCTYP
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  69
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1298
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_BED_TYP
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  70
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1298
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+T_APBL
+</td>
+<td>
+UMXT_PRNTEVNT
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  71
+</td>
+<td align="right">
+                 305
+</td>
+<td align="right">
+                9085
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                8588
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_DENLRESN
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  72
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1300
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+T_APBL
+</td>
+<td>
+UMXT_DCLYXTDD
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  73
+</td>
+<td align="right">
+                  95
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_ACTLUNTS
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  74
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1578
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_APRDUNTS
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  75
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1578
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_RQTDUNTS
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  76
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                1578
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+T_APBL
+</td>
+<td>
+UMXT_XTDD
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                 132
+</td>
+<td align="right">
+                5474
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                5474
+</td>
+<td>
+2020-11-05/18:00:02
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_SRVCDGIS
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  78
+</td>
+<td align="right">
+                 457
+</td>
+<td align="right">
+               15812
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_PVDRASTN
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  80
+</td>
+<td align="right">
+                 908
+</td>
+<td align="right">
+                1932
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_SUBSTITUTION
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  87
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-01-18/20:42:41
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td>
+T_APBL
+</td>
+<td>
+UMXT_RSN
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  88
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-01-18/20:42:41
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_DTMN_DUE
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  89
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+2020-09-12/19:06:40
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_DEC_PRTY
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  90
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_SRV_CDE_MOD
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  91
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_REF_CAT
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  92
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_REF_CAT_MOD
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  93
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_DET_RSN
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  94
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_PAY_AT_MAX
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                  96
+</td>
+<td align="right">
+                  42
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-10-23/19:00:03
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_RMBRSMNT_AMOUNT
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 101
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_PCT_BILLED
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 103
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_LEVEL_OF_SERV
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                1160
+</td>
+<td align="right">
+                1179
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 465
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_EXP_REQUESTOR
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 106
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_PROCESS_AS
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 107
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_HEALTH_PLAN_RCVD
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 108
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_DEPT_RCVD
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 109
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+2020-09-12/19:06:40
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td>
+T_APBL
+</td>
+<td>
+DSCE_ACTUAL_ADMIT
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 110
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+2020-09-12/19:06:40
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV_SRVC_LMAN_TERMS
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 113
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td>
+T_APBL
+</td>
+<td>
+DENIAL_SERVICE_CATEGORY
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 114
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-01-18/20:42:41
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td>
+T_APBL
+</td>
+<td>
+DENIAL_SERVICE_REASON
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 115
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  63
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td>
+T_APBL
+</td>
+<td>
+ACTION_TYPE
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 116
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  63
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td>
+T_APBL
+</td>
+<td>
+APBL_DENIED_QTY
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 117
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  63
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td>
+T_APBL
+</td>
+<td>
+CLINICALDATAENTRY_ID
+</td>
+<td align="right">
+              115402
+</td>
+<td align="right">
+                 121
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  63
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:00:03
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+CLASSTYPE
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               14997
+</td>
+<td align="right">
+                1654
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_C4C_ID
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-09-12/19:06:40
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_CRTD
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-05-31/14:32:57
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_LAS_ACT_TIM
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1061
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_OBJ_STT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                6906
+</td>
+<td align="right">
+                1654
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_VSBT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-06-17/16:56:41
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_ORIGCRTR
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2456
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_UNIVID
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+                 429
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_RESNOR_CMMT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-04-23/16:10:47
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_ID
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  17
+</td>
+<td align="right">
+                9864
+</td>
+<td align="right">
+                9727
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_STRTDT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1234
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1786
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_END_DT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1234
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3172
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_RSLVDT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2206
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_RSTNCMMT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-04-23/16:10:47
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_IS_PMRYDGIS
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                1349
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_IS_ERR
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                7865
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                7021
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_SRC_USR_NAM
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-04-23/16:10:47
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_ERR_TXT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-04-23/16:10:47
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_WKFWISTCID
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  29
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-09-12/19:06:40
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_ID
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  34
+</td>
+<td align="right">
+                5434
+</td>
+<td align="right">
+                8940
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1159
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+UMAD_ID
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 546
+</td>
+<td>
+2020-09-12/19:06:40
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+CMDI_ID
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  37
+</td>
+<td align="right">
+                 409
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 544
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+UMDS_ID
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  38
+</td>
+<td align="right">
+                 146
+</td>
+<td align="right">
+               13493
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13801
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_SRC__ASMTCARECALC
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  48
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1563
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_SRC__PAT_ID_QRY
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  49
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1563
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+CMDI_CM_BASE
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                5530
+</td>
+<td align="right">
+               11191
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                8863
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+CFDS_THE_BRNCACT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  52
+</td>
+<td align="right">
+                 356
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_DGIS
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  53
+</td>
+<td align="right">
+                2008
+</td>
+<td align="right">
+               13106
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 704
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+CFDS_SENTASMT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  54
+</td>
+<td align="right">
+                1156
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_CAUDBY
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  55
+</td>
+<td align="right">
+                 665
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_TAKNASMTCC
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  56
+</td>
+<td align="right">
+                1172
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_MEMB
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  57
+</td>
+<td align="right">
+               14465
+</td>
+<td align="right">
+                7936
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                6190
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+CBDG_MDCLCLM
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  58
+</td>
+<td align="right">
+                4294
+</td>
+<td align="right">
+                1357
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1357
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+UMAD_UMBS
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  59
+</td>
+<td align="right">
+                 114
+</td>
+<td align="right">
+                8201
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                7307
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MBDB_CSTMFLDS
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4176
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4167
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+UMDS_DGISUM_EVNT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  62
+</td>
+<td align="right">
+                4865
+</td>
+<td align="right">
+               17290
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               16682
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MDSS_GRP
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  64
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1563
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MPDS_PRBLM_DSCRP
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  65
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-04-23/16:10:47
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MPDS_PRBLM_NAME
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  66
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-04-23/16:10:47
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MPDS_PRBLM_CLSRRSN
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  67
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-01-18/20:42:41
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MPDS_PRBLM_STATUS
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  68
+</td>
+<td align="right">
+                1118
+</td>
+<td align="right">
+                1967
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MPDS_PRBLM_SRC
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  69
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                1967
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:04:45
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+MPDS_PRBLM_COMMENT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  71
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-04-23/16:10:47
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+CFPRBLMDS_THE_BRNCACT
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  73
+</td>
+<td align="right">
+                 673
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+PRBLM_CAUDBY
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  76
+</td>
+<td align="right">
+                1429
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+PRBLM_TAKNASMTCC
+</td>
+<td align="right">
+              115331
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                1160
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+CLASSTYPE
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               11060
+</td>
+<td align="right">
+                1667
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_C4C_ID
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                  44
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-10-23/19:06:30
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_LAS_ACT
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                1570
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_LAS_ACT_TIM
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2200
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_OBJ_STT
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+               16601
+</td>
+<td align="right">
+                3606
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_DLTDDT
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-09-02/13:56:23
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_LAS_ACT_BY
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2428
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_UNIVID
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+                 104
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_DDLNTYP
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1667
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_CMMT
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 411
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_REQTTYP
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+                 212
+</td>
+<td align="right">
+                1667
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_DRVDDTMNSTT
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                 203
+</td>
+<td align="right">
+                1667
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_ID
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  29
+</td>
+<td align="right">
+               14794
+</td>
+<td align="right">
+               29838
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_CLNGCMTS
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  30
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 425
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_REONCMMT
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  35
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 409
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_ID
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  43
+</td>
+<td align="right">
+                3532
+</td>
+<td align="right">
+               14061
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  44
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMER_ID
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  56
+</td>
+<td align="right">
+                2497
+</td>
+<td align="right">
+               10001
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                8847
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_RFNGWKFWTSK
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  59
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1080
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1080
+</td>
+<td>
+2020-03-08/15:25:24
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_OWNR
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  62
+</td>
+<td align="right">
+                2890
+</td>
+<td align="right">
+                6111
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_TNFR
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  66
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2235
+</td>
+<td align="right">
+                 878
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3483
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_LAS_REVW
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  69
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 727
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 727
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMER_RFNGWKFWTSK
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  74
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1744
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1743
+</td>
+<td>
+2020-03-08/15:25:24
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMER_OWNR
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                  94
+</td>
+<td align="right">
+                2870
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  95
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_CSTMFLDS
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  86
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3543
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_UM_EVNTOTCM
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  87
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1664
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_CLSRRESN
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  88
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1667
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_SVTY
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  89
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3407
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_PITY
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  90
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3998
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_SRC
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  91
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1667
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMER_DENLRESN
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  92
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1667
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_REONRESN
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  93
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1667
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMER_RJTNRESN
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  94
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1667
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_LTR
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  95
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2019-12-13/15:24:13
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_TYP
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  96
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2611
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_RQTR
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  98
+</td>
+<td align="right">
+                 107
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02/18:05:37
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMET_REQT
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                  99
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  47
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+2020-11-05/18:06:08
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_PMRYPVDR
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 100
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-09-02/13:56:23
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_PFNGPVDR
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 101
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 248
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+2020-11-05/18:06:08
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_RQNGPVDR
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 102
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 248
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+2020-11-05/18:06:08
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_MEMB
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 103
+</td>
+<td align="right">
+               19744
+</td>
+<td align="right">
+               10556
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_RELEASE_OF_INFO
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 108
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-01-18/20:42:41
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_SRV_AGMT
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 109
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-09-12/19:06:40
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_RBRS_MTHD
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 114
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                1665
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_FEE_TYP
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 116
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                1665
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_SVRTY
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 123
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/18:06:08
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_TRG_DAT_FRM
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 124
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                 428
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_TRG_DAT_TO
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 125
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                 428
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_TRG_DAT_DIS
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 126
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                1019
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+UMBS_DEPT_RCVD
+</td>
+<td align="right">
+              115401
+</td>
+<td align="right">
+                 130
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                 428
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:05:29
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td>
+T_USR
+</td>
+<td>
+CLASSTYPE
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               22049
+</td>
+<td align="right">
+                3077
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1806
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_C4C_ID
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  34
+</td>
+<td align="right">
+                1519
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_LAS_ACT
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-09-16/11:15:41
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_LAS_ACT_TIM
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1627
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_OBJ_STT
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+               17649
+</td>
+<td align="right">
+                3080
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3778
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_LAS_ACT_BY
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                1904
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-09-15/00:27:13
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_UNIVID
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+                6621
+</td>
+<td align="right">
+                  14
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  44
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_FRSTNAM
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                  45
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2020-10-28/22:00:19
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_LAS_NAM
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+                 102
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+2020-10-28/22:00:19
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_DT_OF_BRTH
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2020-09-08/13:10:59
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_GNDRCODE
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3080
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_ID
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  29
+</td>
+<td align="right">
+               37435
+</td>
+<td align="right">
+               49564
+</td>
+<td align="right">
+                 430
+</td>
+<td align="right">
+                 197
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td>
+T_USR
+</td>
+<td>
+PRV_IS_ADM
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  40
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+2020-09-13/17:24:08
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td>
+T_USR
+</td>
+<td>
+PRV_ID
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  42
+</td>
+<td align="right">
+                1311
+</td>
+<td align="right">
+               10188
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9867
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_ELBL
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  44
+</td>
+<td align="right">
+                1284
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1244
+</td>
+<td>
+2020-11-06/04:00:03
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_PMRYINSR
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  48
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 129
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 129
+</td>
+<td>
+2020-10-15/19:05:36
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_INSCID
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  50
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+2020-11-02/18:05:54
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_SCL_SCTYNMBR
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  51
+</td>
+<td align="right">
+                 499
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_CNFTCNCT
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  52
+</td>
+<td align="right">
+                 138
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 138
+</td>
+<td>
+2020-10-29/19:05:40
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_ID
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  54
+</td>
+<td align="right">
+               14909
+</td>
+<td align="right">
+               21184
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               21200
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td>
+T_USR
+</td>
+<td>
+FF_ID
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  55
+</td>
+<td align="right">
+                 152
+</td>
+<td align="right">
+                1680
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1619
+</td>
+<td>
+2020-11-05/18:06:22
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td>
+T_USR
+</td>
+<td>
+PAYR_SCL_SCTYNMBR
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  57
+</td>
+<td align="right">
+                 253
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/04:00:01
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td>
+T_USR
+</td>
+<td>
+PAYR_WKLDLMITBY
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  65
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-09-27/06:00:11
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td>
+T_USR
+</td>
+<td>
+PAYR_ID
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                  86
+</td>
+<td align="right">
+                4517
+</td>
+<td align="right">
+                7059
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 136
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4550
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_LAS_REVW
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 102
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 733
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 733
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_CSTMFLDS
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 103
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6217
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                6209
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td>
+T_USR
+</td>
+<td>
+PRV_PCP_CAT
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 104
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3181
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1518
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td>
+T_USR
+</td>
+<td>
+PRV_PVDRTYP
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                3710
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1518
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_ECTY
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 106
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                4564
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1518
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_NAM_SFIX
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 107
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4558
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1518
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_NAM_PRFX
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 108
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4558
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1518
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_RLSPTO_SBCR
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 109
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                4499
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1518
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+177
+</td>
+<td>
+T_USR
+</td>
+<td>
+PAYR_CSTMWKLDLMIT
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 110
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2289
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1517
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+178
+</td>
+<td>
+T_USR
+</td>
+<td>
+PAYR_ACTLWKLD
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 111
+</td>
+<td align="right">
+                 149
+</td>
+<td align="right">
+                 845
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 845
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+179
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_CNCTINFO
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 112
+</td>
+<td align="right">
+                1994
+</td>
+<td align="right">
+               11920
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1549
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+180
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_MRGEMSTR
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 113
+</td>
+<td align="right">
+               16838
+</td>
+<td align="right">
+                3419
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               11324
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+181
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_SBCR
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 115
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2171
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1518
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+182
+</td>
+<td>
+T_USR
+</td>
+<td>
+PAYR_BCK1
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 117
+</td>
+<td align="right">
+                 428
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+183
+</td>
+<td>
+T_USR
+</td>
+<td>
+PAYR_SVSR
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 118
+</td>
+<td align="right">
+                 607
+</td>
+<td align="right">
+                1161
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+184
+</td>
+<td>
+T_USR
+</td>
+<td>
+PAYR_BCK2
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 119
+</td>
+<td align="right">
+                 428
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+185
+</td>
+<td>
+T_USR
+</td>
+<td>
+PAYR_BCK3
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 120
+</td>
+<td align="right">
+                 428
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+186
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_PMRYLANG
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 124
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5089
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1518
+</td>
+<td>
+2020-11-06/06:05:45
+</td>
+</tr>
+<tr>
+<td>
+187
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_RESTRICTED_RCPNT_PRGRM
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 129
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-07-31/16:01:12
+</td>
+</tr>
+<tr>
+<td>
+188
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_MBI
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 130
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 182
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-03/18:05:41
+</td>
+</tr>
+<tr>
+<td>
+189
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_ENDANGERED
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 131
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 253
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-03/18:05:41
+</td>
+</tr>
+<tr>
+<td>
+190
+</td>
+<td>
+T_USR
+</td>
+<td>
+MBUR_SAFEWORD
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 132
+</td>
+<td align="right">
+                5088
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2996
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+<tr>
+<td>
+191
+</td>
+<td>
+T_USR
+</td>
+<td>
+USR_PRODUCTCATEGORYID
+</td>
+<td align="right">
+              115418
+</td>
+<td align="right">
+                 134
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2539
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1526
+</td>
+<td>
+2020-11-05/22:00:03
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OBJ#                                               NUMBER
+ INTCOL#                                            NUMBER
+ EQUALITY_PREDS                                     NUMBER
+ EQUIJOIN_PREDS                                     NUMBER
+ NONEQUIJOIN_PREDS                                  NUMBER
+ RANGE_PREDS                                        NUMBER
+ LIKE_PREDS                                         NUMBER
+ NULL_PREDS                                         NUMBER
+ TIMESTAMP                                          DATE
+
+SELECT o.object_name, c.column_name, cu.*
+  FROM sys.col_usage$ cu,
+       dba_objects o,
+       dba_tab_cols c
+ WHERE cu.obj# = o.object_id
+   AND o.owner = c.owner
+   AND o.object_name = c.table_name
+   AND cu.intcol# = c.column_id
+   AND o.object_type = 'TABLE'
+   AND (o.owner, o.object_name) IN (SELECT /*+ UNNEST */ object_owner, object_name FROM plan_table WHERE statement_id = 'LIST_OF_TABLES' AND remarks = 'brg5vk35jcqtv')
+ ORDER BY o.object_name, cu.intcol#;
+
+191 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:24:11 for SQL ID brg5vk35jcqtv (SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+) </font>
+</body>
+</html>

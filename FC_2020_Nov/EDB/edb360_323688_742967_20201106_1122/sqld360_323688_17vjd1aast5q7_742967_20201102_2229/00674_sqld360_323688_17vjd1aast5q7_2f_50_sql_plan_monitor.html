@@ -1,0 +1,4687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_17vjd1aast5q7_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>SQL Plan Monitor</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00674_sqld360_323688_17vjd1aast5q7_2f_50_sql_plan_monitor.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2f.50. SQL Plan Monitor <em>(GV$SQL_PLAN_MONITOR)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INST_ID
+</th>
+<th scope="col">
+CON_ID
+</th>
+<th scope="col">
+KEY
+</th>
+<th scope="col">
+STATUS
+</th>
+<th scope="col">
+FIRST_REFRESH_TIME
+</th>
+<th scope="col">
+LAST_REFRESH_TIME
+</th>
+<th scope="col">
+FIRST_CHANGE_TIME
+</th>
+<th scope="col">
+LAST_CHANGE_TIME
+</th>
+<th scope="col">
+REFRESH_COUNT
+</th>
+<th scope="col">
+SID
+</th>
+<th scope="col">
+PROCE
+</th>
+<th scope="col">
+SQL_ID
+</th>
+<th scope="col">
+SQL_EXEC_START
+</th>
+<th scope="col">
+SQL_EXEC_ID
+</th>
+<th scope="col">
+SQL_PLAN_HASH_VALUE
+</th>
+<th scope="col">
+SQL_CHILD_ADDRES
+</th>
+<th scope="col">
+PLAN_PARENT_ID
+</th>
+<th scope="col">
+PLAN_LINE_ID
+</th>
+<th scope="col">
+PLAN_OPERATION
+</th>
+<th scope="col">
+PLAN_OPTIONS
+</th>
+<th scope="col">
+PLAN_OBJECT_OWNER
+</th>
+<th scope="col">
+PLAN_OBJECT_NAME
+</th>
+<th scope="col">
+PLAN_OBJECT_TYPE
+</th>
+<th scope="col">
+PLAN_DEPTH
+</th>
+<th scope="col">
+PLAN_POSITION
+</th>
+<th scope="col">
+PLAN_COST
+</th>
+<th scope="col">
+PLAN_CARDINALITY
+</th>
+<th scope="col">
+PLAN_BYTES
+</th>
+<th scope="col">
+PLAN_TIME
+</th>
+<th scope="col">
+PLAN_PARTITION_START
+</th>
+<th scope="col">
+PLAN_PARTITION_STOP
+</th>
+<th scope="col">
+PLAN_CPU_COST
+</th>
+<th scope="col">
+PLAN_IO_COST
+</th>
+<th scope="col">
+PLAN_TEMP_SPACE
+</th>
+<th scope="col">
+STARTS
+</th>
+<th scope="col">
+OUTPUT_ROWS
+</th>
+<th scope="col">
+IO_INTERCONNECT_BYTES
+</th>
+<th scope="col">
+PHYSICAL_READ_REQUESTS
+</th>
+<th scope="col">
+PHYSICAL_READ_BYTES
+</th>
+<th scope="col">
+PHYSICAL_WRITE_REQUESTS
+</th>
+<th scope="col">
+PHYSICAL_WRITE_BYTES
+</th>
+<th scope="col">
+WORKAREA_MEM
+</th>
+<th scope="col">
+WORKAREA_MAX_MEM
+</th>
+<th scope="col">
+WORKAREA_TEMPSEG
+</th>
+<th scope="col">
+WORKAREA_MAX_TEMPSEG
+</th>
+<th scope="col">
+OTHERSTAT_GROUP_ID
+</th>
+<th scope="col">
+OTHERSTAT_1_ID
+</th>
+<th scope="col">
+OTHERSTAT_1_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_1_VALUE
+</th>
+<th scope="col">
+OTHERSTAT_2_ID
+</th>
+<th scope="col">
+OTHERSTAT_2_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_2_VALUE
+</th>
+<th scope="col">
+OTHERSTAT_3_ID
+</th>
+<th scope="col">
+OTHERSTAT_3_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_3_VALUE
+</th>
+<th scope="col">
+OTHERSTAT_4_ID
+</th>
+<th scope="col">
+OTHERSTAT_4_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_4_VALUE
+</th>
+<th scope="col">
+OTHERSTAT_5_ID
+</th>
+<th scope="col">
+OTHERSTAT_5_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_5_VALUE
+</th>
+<th scope="col">
+OTHERSTAT_6_ID
+</th>
+<th scope="col">
+OTHERSTAT_6_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_6_VALUE
+</th>
+<th scope="col">
+OTHERSTAT_7_ID
+</th>
+<th scope="col">
+OTHERSTAT_7_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_7_VALUE
+</th>
+<th scope="col">
+OTHERSTAT_8_ID
+</th>
+<th scope="col">
+OTHERSTAT_8_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_8_VALUE
+</th>
+<th scope="col">
+OTHERSTAT_9_ID
+</th>
+<th scope="col">
+OTHERSTAT_9_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_9_VALUE
+</th>
+<th scope="col">
+OTHERSTAT_10_ID
+</th>
+<th scope="col">
+OTHERSTAT_10_TYPE
+</th>
+<th scope="col">
+OTHERSTAT_10_VALUE
+</th>
+<th scope="col">
+OTHER_XML
+</th>
+<th scope="col">
+PLAN_OPERATION_INACTIVE
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SELECT STATEMENT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  62
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+HASH
+</td>
+<td>
+UNIQUE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6611
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  39
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           776619171
+</td>
+<td align="right">
+                6579
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  62
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+             4920320
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6610
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  39
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           752563171
+</td>
+<td align="right">
+                6579
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              120778
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6610
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  39
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           752563171
+</td>
+<td align="right">
+                6579
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             4032140
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6609
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  28
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           752563079
+</td>
+<td align="right">
+                6578
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9790672
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6608
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           752563069
+</td>
+<td align="right">
+                6577
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9790672
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+MERGE JOIN
+</td>
+<td>
+CARTESIAN
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6604
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           752493733
+</td>
+<td align="right">
+                6572
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3136
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+index$_join$_004
+</td>
+<td>
+VIEW
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                6568
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           751780989
+</td>
+<td align="right">
+                6536
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 784
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+HASH JOIN
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 784
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+             5387264
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+             4128768
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                 784
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+              516096
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+INDEX
+</td>
+<td>
+STORAGE FAST FULL SCAN
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_PAYR
+</td>
+<td>
+INDEX (UNIQUE)
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                2227
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 784
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+INDEX
+</td>
+<td>
+STORAGE FAST FULL SCAN
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_USR_IDNODELMSTR
+</td>
+<td>
+INDEX
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 104
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+             5705909
+</td>
+<td align="right">
+                 104
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1985613
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+BUFFER
+</td>
+<td>
+SORT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              712744
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                 784
+</td>
+<td align="right">
+                3136
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                2048
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+COLLECTION ITERATOR
+</td>
+<td>
+PICKLER FETCH
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              712744
+</td>
+<td align="right">
+                  36
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PRMR
+</td>
+<td>
+TABLE
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  24
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+               69336
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                3136
+</td>
+<td align="right">
+             9790672
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                  13
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PRMR_IX_PERF_USR_STTDBY
+</td>
+<td>
+INDEX
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5037
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+               10216
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                3136
+</td>
+<td align="right">
+             9790672
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+INDEX
+</td>
+<td>
+UNIQUE SCAN
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+PK_T_WKFWTSK_STT_CNGE
+</td>
+<td>
+INDEX (UNIQUE)
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+             9790675
+</td>
+<td align="right">
+             9790672
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_WTSK_CURRSTT
+</td>
+<td>
+INDEX
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+             9790672
+</td>
+<td align="right">
+             4032140
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+        240519320943
+</td>
+<td>
+DONE (ALL ROWS)
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td>
+2020-11-02/19:25:33
+</td>
+<td>
+2020-11-02/19:25:47
+</td>
+<td align="right">
+                  16
+</td>
+<td align="right">
+                4263
+</td>
+<td>
+ora
+</td>
+<td>
+17vjd1aast5q7
+</td>
+<td>
+2020-11-02/19:25:27
+</td>
+<td align="right">
+            16777253
+</td>
+<td align="right">
+          1631436210
+</td>
+<td>
+0000002E2DF575D0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  17
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_WKFWTSK
+</td>
+<td>
+TABLE
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  92
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+             4032140
+</td>
+<td align="right">
+              120778
+</td>
+<td align="right">
+                8192
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                8192
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ CON_ID                                             NUMBER
+ KEY                                                NUMBER
+ STATUS                                             VARCHAR2(19)
+ FIRST_REFRESH_TIME                                 DATE
+ LAST_REFRESH_TIME                                  DATE
+ FIRST_CHANGE_TIME                                  DATE
+ LAST_CHANGE_TIME                                   DATE
+ REFRESH_COUNT                                      NUMBER
+ SID                                                NUMBER
+ PROCESS_NAME                                       VARCHAR2(5)
+ SQL_ID                                             VARCHAR2(13)
+ SQL_EXEC_START                                     DATE
+ SQL_EXEC_ID                                        NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_CHILD_ADDRESS                                  RAW(8)
+ PLAN_PARENT_ID                                     NUMBER
+ PLAN_LINE_ID                                       NUMBER
+ PLAN_OPERATION                                     VARCHAR2(30)
+ PLAN_OPTIONS                                       VARCHAR2(30)
+ PLAN_OBJECT_OWNER                                  VARCHAR2(30)
+ PLAN_OBJECT_NAME                                   VARCHAR2(30)
+ PLAN_OBJECT_TYPE                                   VARCHAR2(20)
+ PLAN_DEPTH                                         NUMBER
+ PLAN_POSITION                                      NUMBER
+ PLAN_COST                                          NUMBER
+ PLAN_CARDINALITY                                   NUMBER
+ PLAN_BYTES                                         NUMBER
+ PLAN_TIME                                          NUMBER
+ PLAN_PARTITION_START                               VARCHAR2(64)
+ PLAN_PARTITION_STOP                                VARCHAR2(64)
+ PLAN_CPU_COST                                      NUMBER
+ PLAN_IO_COST                                       NUMBER
+ PLAN_TEMP_SPACE                                    NUMBER
+ STARTS                                             NUMBER
+ OUTPUT_ROWS                                        NUMBER
+ IO_INTERCONNECT_BYTES                              NUMBER
+ PHYSICAL_READ_REQUESTS                             NUMBER
+ PHYSICAL_READ_BYTES                                NUMBER
+ PHYSICAL_WRITE_REQUESTS                            NUMBER
+ PHYSICAL_WRITE_BYTES                               NUMBER
+ WORKAREA_MEM                                       NUMBER
+ WORKAREA_MAX_MEM                                   NUMBER
+ WORKAREA_TEMPSEG                                   NUMBER
+ WORKAREA_MAX_TEMPSEG                               NUMBER
+ OTHERSTAT_GROUP_ID                                 NUMBER
+ OTHERSTAT_1_ID                                     NUMBER
+ OTHERSTAT_1_TYPE                                   NUMBER
+ OTHERSTAT_1_VALUE                                  NUMBER
+ OTHERSTAT_2_ID                                     NUMBER
+ OTHERSTAT_2_TYPE                                   NUMBER
+ OTHERSTAT_2_VALUE                                  NUMBER
+ OTHERSTAT_3_ID                                     NUMBER
+ OTHERSTAT_3_TYPE                                   NUMBER
+ OTHERSTAT_3_VALUE                                  NUMBER
+ OTHERSTAT_4_ID                                     NUMBER
+ OTHERSTAT_4_TYPE                                   NUMBER
+ OTHERSTAT_4_VALUE                                  NUMBER
+ OTHERSTAT_5_ID                                     NUMBER
+ OTHERSTAT_5_TYPE                                   NUMBER
+ OTHERSTAT_5_VALUE                                  NUMBER
+ OTHERSTAT_6_ID                                     NUMBER
+ OTHERSTAT_6_TYPE                                   NUMBER
+ OTHERSTAT_6_VALUE                                  NUMBER
+ OTHERSTAT_7_ID                                     NUMBER
+ OTHERSTAT_7_TYPE                                   NUMBER
+ OTHERSTAT_7_VALUE                                  NUMBER
+ OTHERSTAT_8_ID                                     NUMBER
+ OTHERSTAT_8_TYPE                                   NUMBER
+ OTHERSTAT_8_VALUE                                  NUMBER
+ OTHERSTAT_9_ID                                     NUMBER
+ OTHERSTAT_9_TYPE                                   NUMBER
+ OTHERSTAT_9_VALUE                                  NUMBER
+ OTHERSTAT_10_ID                                    NUMBER
+ OTHERSTAT_10_TYPE                                  NUMBER
+ OTHERSTAT_10_VALUE                                 NUMBER
+ OTHER_XML                                          CLOB
+ PLAN_OPERATION_INACTIVE                            NUMBER
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM gv$sql_plan_monitor
+ WHERE sql_id = '17vjd1aast5q7'
+ ORDER BY inst_id, sid, sql_exec_id desc, sql_exec_start desc, plan_line_id;
+
+18 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-02/22:31:56 for SQL ID 17vjd1aast5q7 (SELECT DISTINCT PF.PERF_USR FROM T_WKFWTSK WF , T_WKFWTSK_STT_CNGE CNG , T_PRMR ) </font>
+</body>
+</html>

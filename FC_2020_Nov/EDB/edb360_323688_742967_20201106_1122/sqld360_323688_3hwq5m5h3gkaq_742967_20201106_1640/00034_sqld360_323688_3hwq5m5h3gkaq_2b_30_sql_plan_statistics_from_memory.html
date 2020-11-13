@@ -1,0 +1,3897 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_3hwq5m5h3gkaq_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>SQL Plan Statistics from Memory</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00034_sqld360_323688_3hwq5m5h3gkaq_2b_30_sql_plan_statistics_from_memory.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2b.30. SQL Plan Statistics from Memory <em>(GV$SQL_PLAN_STATISTICS_ALL)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INST_ID
+</th>
+<th scope="col">
+ADDRESS
+</th>
+<th scope="col">
+HASH_VALUE
+</th>
+<th scope="col">
+SQL_ID
+</th>
+<th scope="col">
+PLAN_HASH_VALUE
+</th>
+<th scope="col">
+FULL_PLAN_HASH_VALUE
+</th>
+<th scope="col">
+CHILD_ADDRESS
+</th>
+<th scope="col">
+CHILD_NUMBER
+</th>
+<th scope="col">
+TIMESTAMP
+</th>
+<th scope="col">
+OPERATION
+</th>
+<th scope="col">
+OPTIONS
+</th>
+<th scope="col">
+OBJECT_NODE
+</th>
+<th scope="col">
+OBJECT#
+</th>
+<th scope="col">
+OBJECT_OWNER
+</th>
+<th scope="col">
+OBJECT_NAME
+</th>
+<th scope="col">
+OBJECT_ALIAS
+</th>
+<th scope="col">
+OBJECT_TYPE
+</th>
+<th scope="col">
+OPTIMIZER
+</th>
+<th scope="col">
+ID
+</th>
+<th scope="col">
+PARENT_ID
+</th>
+<th scope="col">
+DEPTH
+</th>
+<th scope="col">
+POSITION
+</th>
+<th scope="col">
+SEARCH_COLUMNS
+</th>
+<th scope="col">
+COST
+</th>
+<th scope="col">
+CARDINALITY
+</th>
+<th scope="col">
+BYTES
+</th>
+<th scope="col">
+OTHER_TAG
+</th>
+<th scope="col">
+PARTITION_START
+</th>
+<th scope="col">
+PARTITION_STOP
+</th>
+<th scope="col">
+PARTITION_ID
+</th>
+<th scope="col">
+OTHER
+</th>
+<th scope="col">
+DISTRIBUTION
+</th>
+<th scope="col">
+CPU_COST
+</th>
+<th scope="col">
+IO_COST
+</th>
+<th scope="col">
+TEMP_SPACE
+</th>
+<th scope="col">
+ACCESS_PREDICATES
+</th>
+<th scope="col">
+FILTER_PREDICATES
+</th>
+<th scope="col">
+PROJECTION
+</th>
+<th scope="col">
+TIME
+</th>
+<th scope="col">
+QBLOCK_NAME
+</th>
+<th scope="col">
+REMARKS
+</th>
+<th scope="col">
+OTHER_XML
+</th>
+<th scope="col">
+EXECUTIONS
+</th>
+<th scope="col">
+LAST_STARTS
+</th>
+<th scope="col">
+STARTS
+</th>
+<th scope="col">
+LAST_OUTPUT_ROWS
+</th>
+<th scope="col">
+OUTPUT_ROWS
+</th>
+<th scope="col">
+LAST_CR_BUFFER_GETS
+</th>
+<th scope="col">
+CR_BUFFER_GETS
+</th>
+<th scope="col">
+LAST_CU_BUFFER_GETS
+</th>
+<th scope="col">
+CU_BUFFER_GETS
+</th>
+<th scope="col">
+LAST_DISK_READS
+</th>
+<th scope="col">
+DISK_READS
+</th>
+<th scope="col">
+LAST_DISK_WRITES
+</th>
+<th scope="col">
+DISK_WRITES
+</th>
+<th scope="col">
+LAST_ELAPSED_TIME
+</th>
+<th scope="col">
+ELAPSED_TIME
+</th>
+<th scope="col">
+POLICY
+</th>
+<th scope="col">
+ESTIMATED_OPTIMAL_SIZE
+</th>
+<th scope="col">
+ESTIMATED_ONEPASS_SIZE
+</th>
+<th scope="col">
+LAST_MEMORY_USED
+</th>
+<th scope="col">
+LAST_EXECU
+</th>
+<th scope="col">
+LAST_DEGREE
+</th>
+<th scope="col">
+TOTAL_EXECUTIONS
+</th>
+<th scope="col">
+OPTIMAL_EXECUTIONS
+</th>
+<th scope="col">
+ONEPASS_EXECUTIONS
+</th>
+<th scope="col">
+MULTIPASSES_EXECUTIONS
+</th>
+<th scope="col">
+ACTIVE_TIME
+</th>
+<th scope="col">
+MAX_TEMPSEG_SIZE
+</th>
+<th scope="col">
+LAST_TEMPSEG_SIZE
+</th>
+<th scope="col">
+CON_ID
+</th>
+<th scope="col">
+CON_DBID
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF1B36550
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/07:03:14
+</td>
+<td>
+UPDATE STATEMENT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 733
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF1B36550
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/07:03:14
+</td>
+<td>
+UPDATE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&lt;other_xml&gt;&lt;info type=&quot;db_version&quot;&gt;12.1.0.2&lt;/info&gt;&lt;info type=&quot;parse_schema&quot;&gt;&lt;![CDATA[&quot;THH_C4C&quot;]]&gt;&lt;/info&gt;&lt;info type=&quot;plan_hash_full&quot;&gt;2031791219&lt;/info&gt;&lt;info type=&quot;plan_hash&quot;&gt;1854145950&lt;/info&gt;&lt;info type=&quot;plan_hash_2&quot;&gt;2031791219&lt;/info&gt;&lt;peeked_binds&gt;&lt;bind pos=&quot;135&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;/&gt;&lt;/peeked_binds&gt;&lt;outline_data&gt;&lt;hint&gt;&lt;![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPTIMIZER_FEATURES_ENABLE('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[DB_VERSION('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_cost_adj' 1)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_caching' 90)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[ALL_ROWS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;UPD$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;UPD$1&quot; &quot;T_USR&quot;@&quot;UPD$1&quot; (&quot;T_USR&quot;.&quot;USR_ID&quot;))]]&gt;&lt;/hint&gt;&lt;/outline_data&gt;&lt;/other_xml&gt;
+</td>
+<td align="right">
+                 733
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF1B36550
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/07:03:14
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115418
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+T_USR@UPD$1
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 363
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 252
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+(upd=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135; cmp=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127; cpy=2,3,4,8,11,16,17,18,19,30,31,32,33,43,51,52,55,56,57,58,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128) &quot;T_USR&quot;.ROWID[ROWID,10], &quot;CLASSTYPE&quot;[VARCHAR2,255], &quot;USR_C4C_ID&quot;[VARCHAR2,4000], &quot;USR_CRTD&quot;[DATE,7], &quot;USR_LAS_ACT&quot;[NUMBER,22], &quot;USR_LAS_ACT_ACTRTYP&quot;[NUMBER,22], &quot;USR_LAS_ACT_TIM&quot;[DATE,7], &quot;USR_OBJ_STT&quot;[NUMBER,22], &quot;USR_VERS&quot;[NUMBER,22], &quot;USR_VSBT&quot;[NUMBER,22], &quot;USR_DLTDDT&quot;[DATE,7], &quot;USR_LAS_ACT_BY&quot;[NUMBER,22], &quot;USR_ORIGCRTR&quot;[NUMBER,22], &quot;USR_ORIGCRTRLOGDIN&quot;[NUMBER,22], &quot;USR_LAS_ACT_BY_LOGDIN&quot;[NUMBER,22], &quot;USR_UNIVID&quot;[VARCHAR2,4000], &quot;USR_FRSTNAM&quot;[VARCHAR2,4000], &quot;USR_MDLENAM&quot;[VARCHAR2,4000], &quot;USR_LAS_NAM&quot;[VARCHAR2,4000], &quot;USR_DT_OF_BRTH&quot;[DATE,7], &quot;USR_GNDRCODE&quot;[NUMBER,22], &quot;USR_FRSTATVD&quot;[DATE,7], &quot;USR_LAS_ATVD&quot;[DATE,7], &quot;USR_LAS_DCTD&quot;[DATE,7], &quot;USR_WKFWISTCID&quot;[VARCHAR2,4000], &quot;USR_CNV_ID&quot;[VARCHAR2,4000], &quot;USR_OWNRCHNDFLAG&quot;[NUMBER,22], &quot;USR_OWNRCHNDCNT&quot;[NUMBER,22], &quot;USR_SBTDAT&quot;[DATE,7], &quot;USR_ID&quot;[NUMBER,22], &quot;PRV_PLN_ID&quot;[VARCHAR2,4000], &quot;PRV_UPN_ID&quot;[VARCHAR2,4000], &quot;PRV_FED_TAX&quot;[VARCHAR2,4000], &quot;PRV_TOTLPNTS&quot;[NUMBER,22], &quot;PRV_TOTLPNTSIN_PCTC&quot;[NUMBER,22], &quot;PRV_TOTLPAYRMEMS&quot;[NUMBER,22], &quot;PRV_TOTLPAYRMEMSIN_PCTC&quot;[NUMBER,22], &quot;PRV_ACNGNEW_PNTS&quot;[NUMBER,22], &quot;PRV_ATHDFOR_AUMTDTMN&quot;[NUMBER,22], &quot;PRV_INSCID&quot;[VARCHAR2,4000], &quot;PRV_IS_ADM&quot;[NUMBER,22], &quot;PRV_PCP_IND&quot;[NUMBER,22], &quot;PRV_ID&quot;[NUMBER,22], &quot;MBUR_DT_OF_DTH&quot;[DATE,7], &quot;MBUR_ELBL&quot;[NUMBER,22], &quot;MBUR_COB&quot;[NUMBER,22], &quot;MBUR_COB_NAM&quot;[VARCHAR2,4000], &quot;MBUR_INSCID_AT_OTHRINSR&quot;[VARCHAR2,4000], &quot;MBUR_PMRYINSR&quot;[NUMBER,22], &quot;MBUR_CRDTIND&quot;[NUMBER,22], &quot;MBUR_INSCID&quot;[VARCHAR2,4000], &quot;MBUR_SCL_SCTYNMBR&quot;[VARCHAR2,4000], &quot;MBUR_CNFTCNCT&quot;[NUMBER,22], &quot;MBUR_DNF_CODE&quot;[VARCHAR2,4000], &quot;MBUR_ID&quot;[NUMBER,22], &quot;FF_ID&quot;[NUMBER,22], &quot;PAYR_EMPEID&quot;[VARCHAR2,4000], &quot;PAYR_SCL_SCTYNMBR&quot;[VARCHAR2,4000], &quot;PAYR_STRTOF_YR&quot;[VARCHAR2,4000], &quot;PAYR_HREDDT&quot;[DATE,7], &quot;PAYR_TMTDDT&quot;[DATE,7], &quot;PAYR_THNKHLTHSTRTDT&quot;[DATE,7], &quot;PAYR_THNKHLTHEND_DT&quot;[DATE,7], &quot;PAYR_WKLDLMITBY_ALL_USR_ROLS&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_PMRYUSR_ROLE&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY&quot;[NUMBER,22], &quot;PAYR_WKLDLMITFNALDCDR&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_ROLEBY_SVTY&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_TOTLWKLD&quot;[NUMBER,22], &quot;PAYR_WKLDLMTDBY_WORKTYP&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_MON&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_TUES&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_WED&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_THRS&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_FRI&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_SAT&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_SUN&quot;[NUMBER,22], &quot;PAYR_SVTYIDX&quot;[NUMBER,22], &quot;PAYR_TOTLWKLD&quot;[NUMBER,22], &quot;PAYR_CASERQTS&quot;[NUMBER,22], &quot;PAYR_CASS&quot;[NUMBER,22], &quot;PAYR_UM_RQTS&quot;[NUMBER,22], &quot;PAYR_UM_EVTS&quot;[NUMBER,22], &quot;PAYR_CM_PRJ_RQTS&quot;[NUMBER,22], &quot;PAYR_CM_PRJS&quot;[NUMBER,22], &quot;PAYR_REVWRQTS&quot;[NUMBER,22], &quot;PAYR_ID&quot;[NUMBER,22], &quot;USR_LAS_DCTDBY&quot;[NUMBER,22], &quot;USR_FRSTATVDBY&quot;[NUMBER,22], &quot;USR_LAS_ATVDBY&quot;[NUMBER,22], &quot;USR_RATNAPVL&quot;[NUMBER,22], &quot;USR_RFNGWKFWTSK&quot;[NUMBER,22], &quot;USR_PRVSRFNGTSK&quot;[NUMBER,22], &quot;USR_PRVSRFNGTSK_PRMN&quot;[NUMBER,22], &quot;USR_OWNR&quot;[NUMBER,22], &quot;USR_PRVSOWNR&quot;[NUMBER,22], &quot;USR_PRVSSNDR&quot;[NUMBER,22], &quot;USR_PRVSOWNRPRMN&quot;[NUMBER,22], &quot;USR_TNFR&quot;[NUMBER,22], &quot;USR_PRVSTNFR&quot;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 733
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF1B36550
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/07:03:14
+</td>
+<td>
+INDEX
+</td>
+<td>
+UNIQUE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119437
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+PK_T_USR
+</td>
+<td>
+T_USR@UPD$1
+</td>
+<td>
+INDEX (UNIQUE)
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 153
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&quot;USR_ID&quot;=:B1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&quot;T_USR&quot;.ROWID[ROWID,10], &quot;USR_ID&quot;[NUMBER,22]
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 733
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+AUTO
+</td>
+<td align="right">
+             1049600
+</td>
+<td align="right">
+             1049600
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+OPTIMAL
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF94EA5E0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/09:45:39
+</td>
+<td>
+UPDATE STATEMENT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF94EA5E0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/09:45:39
+</td>
+<td>
+UPDATE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&lt;other_xml&gt;&lt;info type=&quot;db_version&quot;&gt;12.1.0.2&lt;/info&gt;&lt;info type=&quot;parse_schema&quot;&gt;&lt;![CDATA[&quot;THH_C4C&quot;]]&gt;&lt;/info&gt;&lt;info type=&quot;plan_hash_full&quot;&gt;2031791219&lt;/info&gt;&lt;info type=&quot;plan_hash&quot;&gt;1854145950&lt;/info&gt;&lt;info type=&quot;plan_hash_2&quot;&gt;2031791219&lt;/info&gt;&lt;peeked_binds&gt;&lt;bind pos=&quot;135&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;/&gt;&lt;/peeked_binds&gt;&lt;outline_data&gt;&lt;hint&gt;&lt;![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPTIMIZER_FEATURES_ENABLE('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[DB_VERSION('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_cost_adj' 1)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_caching' 90)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[ALL_ROWS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;UPD$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;UPD$1&quot; &quot;T_USR&quot;@&quot;UPD$1&quot; (&quot;T_USR&quot;.&quot;USR_ID&quot;))]]&gt;&lt;/hint&gt;&lt;/outline_data&gt;&lt;/other_xml&gt;
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF94EA5E0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/09:45:39
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115418
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+T_USR@UPD$1
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 363
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 252
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+(upd=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135; cmp=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127; cpy=2,3,4,8,11,16,17,18,19,30,31,32,33,43,51,52,55,56,57,58,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128) &quot;T_USR&quot;.ROWID[ROWID,10], &quot;CLASSTYPE&quot;[VARCHAR2,255], &quot;USR_C4C_ID&quot;[VARCHAR2,4000], &quot;USR_CRTD&quot;[DATE,7], &quot;USR_LAS_ACT&quot;[NUMBER,22], &quot;USR_LAS_ACT_ACTRTYP&quot;[NUMBER,22], &quot;USR_LAS_ACT_TIM&quot;[DATE,7], &quot;USR_OBJ_STT&quot;[NUMBER,22], &quot;USR_VERS&quot;[NUMBER,22], &quot;USR_VSBT&quot;[NUMBER,22], &quot;USR_DLTDDT&quot;[DATE,7], &quot;USR_LAS_ACT_BY&quot;[NUMBER,22], &quot;USR_ORIGCRTR&quot;[NUMBER,22], &quot;USR_ORIGCRTRLOGDIN&quot;[NUMBER,22], &quot;USR_LAS_ACT_BY_LOGDIN&quot;[NUMBER,22], &quot;USR_UNIVID&quot;[VARCHAR2,4000], &quot;USR_FRSTNAM&quot;[VARCHAR2,4000], &quot;USR_MDLENAM&quot;[VARCHAR2,4000], &quot;USR_LAS_NAM&quot;[VARCHAR2,4000], &quot;USR_DT_OF_BRTH&quot;[DATE,7], &quot;USR_GNDRCODE&quot;[NUMBER,22], &quot;USR_FRSTATVD&quot;[DATE,7], &quot;USR_LAS_ATVD&quot;[DATE,7], &quot;USR_LAS_DCTD&quot;[DATE,7], &quot;USR_WKFWISTCID&quot;[VARCHAR2,4000], &quot;USR_CNV_ID&quot;[VARCHAR2,4000], &quot;USR_OWNRCHNDFLAG&quot;[NUMBER,22], &quot;USR_OWNRCHNDCNT&quot;[NUMBER,22], &quot;USR_SBTDAT&quot;[DATE,7], &quot;USR_ID&quot;[NUMBER,22], &quot;PRV_PLN_ID&quot;[VARCHAR2,4000], &quot;PRV_UPN_ID&quot;[VARCHAR2,4000], &quot;PRV_FED_TAX&quot;[VARCHAR2,4000], &quot;PRV_TOTLPNTS&quot;[NUMBER,22], &quot;PRV_TOTLPNTSIN_PCTC&quot;[NUMBER,22], &quot;PRV_TOTLPAYRMEMS&quot;[NUMBER,22], &quot;PRV_TOTLPAYRMEMSIN_PCTC&quot;[NUMBER,22], &quot;PRV_ACNGNEW_PNTS&quot;[NUMBER,22], &quot;PRV_ATHDFOR_AUMTDTMN&quot;[NUMBER,22], &quot;PRV_INSCID&quot;[VARCHAR2,4000], &quot;PRV_IS_ADM&quot;[NUMBER,22], &quot;PRV_PCP_IND&quot;[NUMBER,22], &quot;PRV_ID&quot;[NUMBER,22], &quot;MBUR_DT_OF_DTH&quot;[DATE,7], &quot;MBUR_ELBL&quot;[NUMBER,22], &quot;MBUR_COB&quot;[NUMBER,22], &quot;MBUR_COB_NAM&quot;[VARCHAR2,4000], &quot;MBUR_INSCID_AT_OTHRINSR&quot;[VARCHAR2,4000], &quot;MBUR_PMRYINSR&quot;[NUMBER,22], &quot;MBUR_CRDTIND&quot;[NUMBER,22], &quot;MBUR_INSCID&quot;[VARCHAR2,4000], &quot;MBUR_SCL_SCTYNMBR&quot;[VARCHAR2,4000], &quot;MBUR_CNFTCNCT&quot;[NUMBER,22], &quot;MBUR_DNF_CODE&quot;[VARCHAR2,4000], &quot;MBUR_ID&quot;[NUMBER,22], &quot;FF_ID&quot;[NUMBER,22], &quot;PAYR_EMPEID&quot;[VARCHAR2,4000], &quot;PAYR_SCL_SCTYNMBR&quot;[VARCHAR2,4000], &quot;PAYR_STRTOF_YR&quot;[VARCHAR2,4000], &quot;PAYR_HREDDT&quot;[DATE,7], &quot;PAYR_TMTDDT&quot;[DATE,7], &quot;PAYR_THNKHLTHSTRTDT&quot;[DATE,7], &quot;PAYR_THNKHLTHEND_DT&quot;[DATE,7], &quot;PAYR_WKLDLMITBY_ALL_USR_ROLS&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_PMRYUSR_ROLE&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY&quot;[NUMBER,22], &quot;PAYR_WKLDLMITFNALDCDR&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_ROLEBY_SVTY&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_TOTLWKLD&quot;[NUMBER,22], &quot;PAYR_WKLDLMTDBY_WORKTYP&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_MON&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_TUES&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_WED&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_THRS&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_FRI&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_SAT&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_SUN&quot;[NUMBER,22], &quot;PAYR_SVTYIDX&quot;[NUMBER,22], &quot;PAYR_TOTLWKLD&quot;[NUMBER,22], &quot;PAYR_CASERQTS&quot;[NUMBER,22], &quot;PAYR_CASS&quot;[NUMBER,22], &quot;PAYR_UM_RQTS&quot;[NUMBER,22], &quot;PAYR_UM_EVTS&quot;[NUMBER,22], &quot;PAYR_CM_PRJ_RQTS&quot;[NUMBER,22], &quot;PAYR_CM_PRJS&quot;[NUMBER,22], &quot;PAYR_REVWRQTS&quot;[NUMBER,22], &quot;PAYR_ID&quot;[NUMBER,22], &quot;USR_LAS_DCTDBY&quot;[NUMBER,22], &quot;USR_FRSTATVDBY&quot;[NUMBER,22], &quot;USR_LAS_ATVDBY&quot;[NUMBER,22], &quot;USR_RATNAPVL&quot;[NUMBER,22], &quot;USR_RFNGWKFWTSK&quot;[NUMBER,22], &quot;USR_PRVSRFNGTSK&quot;[NUMBER,22], &quot;USR_PRVSRFNGTSK_PRMN&quot;[NUMBER,22], &quot;USR_OWNR&quot;[NUMBER,22], &quot;USR_PRVSOWNR&quot;[NUMBER,22], &quot;USR_PRVSSNDR&quot;[NUMBER,22], &quot;USR_PRVSOWNRPRMN&quot;[NUMBER,22], &quot;USR_TNFR&quot;[NUMBER,22], &quot;USR_PRVSTNFR&quot;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF94EA5E0
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+2020-11-06/09:45:39
+</td>
+<td>
+INDEX
+</td>
+<td>
+UNIQUE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119437
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+PK_T_USR
+</td>
+<td>
+T_USR@UPD$1
+</td>
+<td>
+INDEX (UNIQUE)
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 153
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&quot;USR_ID&quot;=:B1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&quot;T_USR&quot;.ROWID[ROWID,10], &quot;USR_ID&quot;[NUMBER,22]
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+AUTO
+</td>
+<td align="right">
+             1049600
+</td>
+<td align="right">
+             1049600
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+OPTIMAL
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF4C999B8
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-11-06/10:35:42
+</td>
+<td>
+UPDATE STATEMENT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+               14751
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF4C999B8
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-11-06/10:35:42
+</td>
+<td>
+UPDATE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&lt;other_xml&gt;&lt;info type=&quot;db_version&quot;&gt;12.1.0.2&lt;/info&gt;&lt;info type=&quot;parse_schema&quot;&gt;&lt;![CDATA[&quot;THH_C4C&quot;]]&gt;&lt;/info&gt;&lt;info type=&quot;plan_hash_full&quot;&gt;2031791219&lt;/info&gt;&lt;info type=&quot;plan_hash&quot;&gt;1854145950&lt;/info&gt;&lt;info type=&quot;plan_hash_2&quot;&gt;2031791219&lt;/info&gt;&lt;peeked_binds&gt;&lt;bind pos=&quot;135&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;/&gt;&lt;/peeked_binds&gt;&lt;outline_data&gt;&lt;hint&gt;&lt;![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPTIMIZER_FEATURES_ENABLE('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[DB_VERSION('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_cost_adj' 1)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_caching' 90)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[ALL_ROWS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;UPD$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;UPD$1&quot; &quot;T_USR&quot;@&quot;UPD$1&quot; (&quot;T_USR&quot;.&quot;USR_ID&quot;))]]&gt;&lt;/hint&gt;&lt;/outline_data&gt;&lt;/other_xml&gt;
+</td>
+<td align="right">
+               14751
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF4C999B8
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-11-06/10:35:42
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115418
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+T_USR@UPD$1
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 363
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 252
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+(upd=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135; cmp=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127; cpy=2,3,4,8,11,16,17,18,19,30,31,32,33,43,51,52,55,56,57,58,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128) &quot;T_USR&quot;.ROWID[ROWID,10], &quot;CLASSTYPE&quot;[VARCHAR2,255], &quot;USR_C4C_ID&quot;[VARCHAR2,4000], &quot;USR_CRTD&quot;[DATE,7], &quot;USR_LAS_ACT&quot;[NUMBER,22], &quot;USR_LAS_ACT_ACTRTYP&quot;[NUMBER,22], &quot;USR_LAS_ACT_TIM&quot;[DATE,7], &quot;USR_OBJ_STT&quot;[NUMBER,22], &quot;USR_VERS&quot;[NUMBER,22], &quot;USR_VSBT&quot;[NUMBER,22], &quot;USR_DLTDDT&quot;[DATE,7], &quot;USR_LAS_ACT_BY&quot;[NUMBER,22], &quot;USR_ORIGCRTR&quot;[NUMBER,22], &quot;USR_ORIGCRTRLOGDIN&quot;[NUMBER,22], &quot;USR_LAS_ACT_BY_LOGDIN&quot;[NUMBER,22], &quot;USR_UNIVID&quot;[VARCHAR2,4000], &quot;USR_FRSTNAM&quot;[VARCHAR2,4000], &quot;USR_MDLENAM&quot;[VARCHAR2,4000], &quot;USR_LAS_NAM&quot;[VARCHAR2,4000], &quot;USR_DT_OF_BRTH&quot;[DATE,7], &quot;USR_GNDRCODE&quot;[NUMBER,22], &quot;USR_FRSTATVD&quot;[DATE,7], &quot;USR_LAS_ATVD&quot;[DATE,7], &quot;USR_LAS_DCTD&quot;[DATE,7], &quot;USR_WKFWISTCID&quot;[VARCHAR2,4000], &quot;USR_CNV_ID&quot;[VARCHAR2,4000], &quot;USR_OWNRCHNDFLAG&quot;[NUMBER,22], &quot;USR_OWNRCHNDCNT&quot;[NUMBER,22], &quot;USR_SBTDAT&quot;[DATE,7], &quot;USR_ID&quot;[NUMBER,22], &quot;PRV_PLN_ID&quot;[VARCHAR2,4000], &quot;PRV_UPN_ID&quot;[VARCHAR2,4000], &quot;PRV_FED_TAX&quot;[VARCHAR2,4000], &quot;PRV_TOTLPNTS&quot;[NUMBER,22], &quot;PRV_TOTLPNTSIN_PCTC&quot;[NUMBER,22], &quot;PRV_TOTLPAYRMEMS&quot;[NUMBER,22], &quot;PRV_TOTLPAYRMEMSIN_PCTC&quot;[NUMBER,22], &quot;PRV_ACNGNEW_PNTS&quot;[NUMBER,22], &quot;PRV_ATHDFOR_AUMTDTMN&quot;[NUMBER,22], &quot;PRV_INSCID&quot;[VARCHAR2,4000], &quot;PRV_IS_ADM&quot;[NUMBER,22], &quot;PRV_PCP_IND&quot;[NUMBER,22], &quot;PRV_ID&quot;[NUMBER,22], &quot;MBUR_DT_OF_DTH&quot;[DATE,7], &quot;MBUR_ELBL&quot;[NUMBER,22], &quot;MBUR_COB&quot;[NUMBER,22], &quot;MBUR_COB_NAM&quot;[VARCHAR2,4000], &quot;MBUR_INSCID_AT_OTHRINSR&quot;[VARCHAR2,4000], &quot;MBUR_PMRYINSR&quot;[NUMBER,22], &quot;MBUR_CRDTIND&quot;[NUMBER,22], &quot;MBUR_INSCID&quot;[VARCHAR2,4000], &quot;MBUR_SCL_SCTYNMBR&quot;[VARCHAR2,4000], &quot;MBUR_CNFTCNCT&quot;[NUMBER,22], &quot;MBUR_DNF_CODE&quot;[VARCHAR2,4000], &quot;MBUR_ID&quot;[NUMBER,22], &quot;FF_ID&quot;[NUMBER,22], &quot;PAYR_EMPEID&quot;[VARCHAR2,4000], &quot;PAYR_SCL_SCTYNMBR&quot;[VARCHAR2,4000], &quot;PAYR_STRTOF_YR&quot;[VARCHAR2,4000], &quot;PAYR_HREDDT&quot;[DATE,7], &quot;PAYR_TMTDDT&quot;[DATE,7], &quot;PAYR_THNKHLTHSTRTDT&quot;[DATE,7], &quot;PAYR_THNKHLTHEND_DT&quot;[DATE,7], &quot;PAYR_WKLDLMITBY_ALL_USR_ROLS&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_PMRYUSR_ROLE&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY&quot;[NUMBER,22], &quot;PAYR_WKLDLMITFNALDCDR&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_ROLEBY_SVTY&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_TOTLWKLD&quot;[NUMBER,22], &quot;PAYR_WKLDLMTDBY_WORKTYP&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_MON&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_TUES&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_WED&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_THRS&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_FRI&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_SAT&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_SUN&quot;[NUMBER,22], &quot;PAYR_SVTYIDX&quot;[NUMBER,22], &quot;PAYR_TOTLWKLD&quot;[NUMBER,22], &quot;PAYR_CASERQTS&quot;[NUMBER,22], &quot;PAYR_CASS&quot;[NUMBER,22], &quot;PAYR_UM_RQTS&quot;[NUMBER,22], &quot;PAYR_UM_EVTS&quot;[NUMBER,22], &quot;PAYR_CM_PRJ_RQTS&quot;[NUMBER,22], &quot;PAYR_CM_PRJS&quot;[NUMBER,22], &quot;PAYR_REVWRQTS&quot;[NUMBER,22], &quot;PAYR_ID&quot;[NUMBER,22], &quot;USR_LAS_DCTDBY&quot;[NUMBER,22], &quot;USR_FRSTATVDBY&quot;[NUMBER,22], &quot;USR_LAS_ATVDBY&quot;[NUMBER,22], &quot;USR_RATNAPVL&quot;[NUMBER,22], &quot;USR_RFNGWKFWTSK&quot;[NUMBER,22], &quot;USR_PRVSRFNGTSK&quot;[NUMBER,22], &quot;USR_PRVSRFNGTSK_PRMN&quot;[NUMBER,22], &quot;USR_OWNR&quot;[NUMBER,22], &quot;USR_PRVSOWNR&quot;[NUMBER,22], &quot;USR_PRVSSNDR&quot;[NUMBER,22], &quot;USR_PRVSOWNRPRMN&quot;[NUMBER,22], &quot;USR_TNFR&quot;[NUMBER,22], &quot;USR_PRVSTNFR&quot;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+               14751
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+0000002EFC824568
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF4C999B8
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+2020-11-06/10:35:42
+</td>
+<td>
+INDEX
+</td>
+<td>
+UNIQUE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119437
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+PK_T_USR
+</td>
+<td>
+T_USR@UPD$1
+</td>
+<td>
+INDEX (UNIQUE)
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 153
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&quot;USR_ID&quot;=:B1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&quot;T_USR&quot;.ROWID[ROWID,10], &quot;USR_ID&quot;[NUMBER,22]
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+               14751
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+AUTO
+</td>
+<td align="right">
+             1049600
+</td>
+<td align="right">
+             1049600
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+OPTIMAL
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+0000002EF68AA898
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF5386108
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/13:19:46
+</td>
+<td>
+UPDATE STATEMENT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                1473
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+0000002EF68AA898
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF5386108
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/13:19:46
+</td>
+<td>
+UPDATE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&lt;other_xml&gt;&lt;info type=&quot;db_version&quot;&gt;12.1.0.2&lt;/info&gt;&lt;info type=&quot;parse_schema&quot;&gt;&lt;![CDATA[&quot;THH_C4C&quot;]]&gt;&lt;/info&gt;&lt;info type=&quot;plan_hash_full&quot;&gt;2031791219&lt;/info&gt;&lt;info type=&quot;plan_hash&quot;&gt;1854145950&lt;/info&gt;&lt;info type=&quot;plan_hash_2&quot;&gt;2031791219&lt;/info&gt;&lt;peeked_binds&gt;&lt;bind pos=&quot;135&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;/&gt;&lt;/peeked_binds&gt;&lt;outline_data&gt;&lt;hint&gt;&lt;![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPTIMIZER_FEATURES_ENABLE('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[DB_VERSION('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_cost_adj' 1)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_caching' 90)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[ALL_ROWS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;UPD$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;UPD$1&quot; &quot;T_USR&quot;@&quot;UPD$1&quot; (&quot;T_USR&quot;.&quot;USR_ID&quot;))]]&gt;&lt;/hint&gt;&lt;/outline_data&gt;&lt;/other_xml&gt;
+</td>
+<td align="right">
+                1473
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+0000002EF68AA898
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF5386108
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/13:19:46
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115418
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+T_USR@UPD$1
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 363
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 252
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+(upd=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135; cmp=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127; cpy=2,3,4,8,11,16,17,18,19,30,31,32,33,43,51,52,55,56,57,58,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128) &quot;T_USR&quot;.ROWID[ROWID,10], &quot;CLASSTYPE&quot;[VARCHAR2,255], &quot;USR_C4C_ID&quot;[VARCHAR2,4000], &quot;USR_CRTD&quot;[DATE,7], &quot;USR_LAS_ACT&quot;[NUMBER,22], &quot;USR_LAS_ACT_ACTRTYP&quot;[NUMBER,22], &quot;USR_LAS_ACT_TIM&quot;[DATE,7], &quot;USR_OBJ_STT&quot;[NUMBER,22], &quot;USR_VERS&quot;[NUMBER,22], &quot;USR_VSBT&quot;[NUMBER,22], &quot;USR_DLTDDT&quot;[DATE,7], &quot;USR_LAS_ACT_BY&quot;[NUMBER,22], &quot;USR_ORIGCRTR&quot;[NUMBER,22], &quot;USR_ORIGCRTRLOGDIN&quot;[NUMBER,22], &quot;USR_LAS_ACT_BY_LOGDIN&quot;[NUMBER,22], &quot;USR_UNIVID&quot;[VARCHAR2,4000], &quot;USR_FRSTNAM&quot;[VARCHAR2,4000], &quot;USR_MDLENAM&quot;[VARCHAR2,4000], &quot;USR_LAS_NAM&quot;[VARCHAR2,4000], &quot;USR_DT_OF_BRTH&quot;[DATE,7], &quot;USR_GNDRCODE&quot;[NUMBER,22], &quot;USR_FRSTATVD&quot;[DATE,7], &quot;USR_LAS_ATVD&quot;[DATE,7], &quot;USR_LAS_DCTD&quot;[DATE,7], &quot;USR_WKFWISTCID&quot;[VARCHAR2,4000], &quot;USR_CNV_ID&quot;[VARCHAR2,4000], &quot;USR_OWNRCHNDFLAG&quot;[NUMBER,22], &quot;USR_OWNRCHNDCNT&quot;[NUMBER,22], &quot;USR_SBTDAT&quot;[DATE,7], &quot;USR_ID&quot;[NUMBER,22], &quot;PRV_PLN_ID&quot;[VARCHAR2,4000], &quot;PRV_UPN_ID&quot;[VARCHAR2,4000], &quot;PRV_FED_TAX&quot;[VARCHAR2,4000], &quot;PRV_TOTLPNTS&quot;[NUMBER,22], &quot;PRV_TOTLPNTSIN_PCTC&quot;[NUMBER,22], &quot;PRV_TOTLPAYRMEMS&quot;[NUMBER,22], &quot;PRV_TOTLPAYRMEMSIN_PCTC&quot;[NUMBER,22], &quot;PRV_ACNGNEW_PNTS&quot;[NUMBER,22], &quot;PRV_ATHDFOR_AUMTDTMN&quot;[NUMBER,22], &quot;PRV_INSCID&quot;[VARCHAR2,4000], &quot;PRV_IS_ADM&quot;[NUMBER,22], &quot;PRV_PCP_IND&quot;[NUMBER,22], &quot;PRV_ID&quot;[NUMBER,22], &quot;MBUR_DT_OF_DTH&quot;[DATE,7], &quot;MBUR_ELBL&quot;[NUMBER,22], &quot;MBUR_COB&quot;[NUMBER,22], &quot;MBUR_COB_NAM&quot;[VARCHAR2,4000], &quot;MBUR_INSCID_AT_OTHRINSR&quot;[VARCHAR2,4000], &quot;MBUR_PMRYINSR&quot;[NUMBER,22], &quot;MBUR_CRDTIND&quot;[NUMBER,22], &quot;MBUR_INSCID&quot;[VARCHAR2,4000], &quot;MBUR_SCL_SCTYNMBR&quot;[VARCHAR2,4000], &quot;MBUR_CNFTCNCT&quot;[NUMBER,22], &quot;MBUR_DNF_CODE&quot;[VARCHAR2,4000], &quot;MBUR_ID&quot;[NUMBER,22], &quot;FF_ID&quot;[NUMBER,22], &quot;PAYR_EMPEID&quot;[VARCHAR2,4000], &quot;PAYR_SCL_SCTYNMBR&quot;[VARCHAR2,4000], &quot;PAYR_STRTOF_YR&quot;[VARCHAR2,4000], &quot;PAYR_HREDDT&quot;[DATE,7], &quot;PAYR_TMTDDT&quot;[DATE,7], &quot;PAYR_THNKHLTHSTRTDT&quot;[DATE,7], &quot;PAYR_THNKHLTHEND_DT&quot;[DATE,7], &quot;PAYR_WKLDLMITBY_ALL_USR_ROLS&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_PMRYUSR_ROLE&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY&quot;[NUMBER,22], &quot;PAYR_WKLDLMITFNALDCDR&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_ROLEBY_SVTY&quot;[NUMBER,22], &quot;PAYR_WKLDLMITBY_TOTLWKLD&quot;[NUMBER,22], &quot;PAYR_WKLDLMTDBY_WORKTYP&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_MON&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_TUES&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_WED&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_THRS&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_FRI&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_SAT&quot;[NUMBER,22], &quot;PAYR_REG_DY_OFF_SUN&quot;[NUMBER,22], &quot;PAYR_SVTYIDX&quot;[NUMBER,22], &quot;PAYR_TOTLWKLD&quot;[NUMBER,22], &quot;PAYR_CASERQTS&quot;[NUMBER,22], &quot;PAYR_CASS&quot;[NUMBER,22], &quot;PAYR_UM_RQTS&quot;[NUMBER,22], &quot;PAYR_UM_EVTS&quot;[NUMBER,22], &quot;PAYR_CM_PRJ_RQTS&quot;[NUMBER,22], &quot;PAYR_CM_PRJS&quot;[NUMBER,22], &quot;PAYR_REVWRQTS&quot;[NUMBER,22], &quot;PAYR_ID&quot;[NUMBER,22], &quot;USR_LAS_DCTDBY&quot;[NUMBER,22], &quot;USR_FRSTATVDBY&quot;[NUMBER,22], &quot;USR_LAS_ATVDBY&quot;[NUMBER,22], &quot;USR_RATNAPVL&quot;[NUMBER,22], &quot;USR_RFNGWKFWTSK&quot;[NUMBER,22], &quot;USR_PRVSRFNGTSK&quot;[NUMBER,22], &quot;USR_PRVSRFNGTSK_PRMN&quot;[NUMBER,22], &quot;USR_OWNR&quot;[NUMBER,22], &quot;USR_PRVSOWNR&quot;[NUMBER,22], &quot;USR_PRVSSNDR&quot;[NUMBER,22], &quot;USR_PRVSOWNRPRMN&quot;[NUMBER,22], &quot;USR_TNFR&quot;[NUMBER,22], &quot;USR_PRVSTNFR&quot;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                1473
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+0000002EF68AA898
+</td>
+<td align="right">
+          1614268758
+</td>
+<td>
+3hwq5m5h3gkaq
+</td>
+<td align="right">
+          1854145950
+</td>
+<td align="right">
+          2031791219
+</td>
+<td>
+0000002EF5386108
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/13:19:46
+</td>
+<td>
+INDEX
+</td>
+<td>
+UNIQUE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119437
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+PK_T_USR
+</td>
+<td>
+T_USR@UPD$1
+</td>
+<td>
+INDEX (UNIQUE)
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 153
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&quot;USR_ID&quot;=:B1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&quot;T_USR&quot;.ROWID[ROWID,10], &quot;USR_ID&quot;[NUMBER,22]
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+UPD$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                1473
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+AUTO
+</td>
+<td align="right">
+             1049600
+</td>
+<td align="right">
+             1049600
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+OPTIMAL
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+          3242645605
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ ADDRESS                                            RAW(8)
+ HASH_VALUE                                         NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ PLAN_HASH_VALUE                                    NUMBER
+ FULL_PLAN_HASH_VALUE                               NUMBER
+ CHILD_ADDRESS                                      RAW(8)
+ CHILD_NUMBER                                       NUMBER
+ TIMESTAMP                                          DATE
+ OPERATION                                          VARCHAR2(30)
+ OPTIONS                                            VARCHAR2(30)
+ OBJECT_NODE                                        VARCHAR2(40)
+ OBJECT#                                            NUMBER
+ OBJECT_OWNER                                       VARCHAR2(30)
+ OBJECT_NAME                                        VARCHAR2(30)
+ OBJECT_ALIAS                                       VARCHAR2(65)
+ OBJECT_TYPE                                        VARCHAR2(20)
+ OPTIMIZER                                          VARCHAR2(20)
+ ID                                                 NUMBER
+ PARENT_ID                                          NUMBER
+ DEPTH                                              NUMBER
+ POSITION                                           NUMBER
+ SEARCH_COLUMNS                                     NUMBER
+ COST                                               NUMBER
+ CARDINALITY                                        NUMBER
+ BYTES                                              NUMBER
+ OTHER_TAG                                          VARCHAR2(35)
+ PARTITION_START                                    VARCHAR2(64)
+ PARTITION_STOP                                     VARCHAR2(64)
+ PARTITION_ID                                       NUMBER
+ OTHER                                              VARCHAR2(4000)
+ DISTRIBUTION                                       VARCHAR2(20)
+ CPU_COST                                           NUMBER
+ IO_COST                                            NUMBER
+ TEMP_SPACE                                         NUMBER
+ ACCESS_PREDICATES                                  VARCHAR2(4000)
+ FILTER_PREDICATES                                  VARCHAR2(4000)
+ PROJECTION                                         VARCHAR2(4000)
+ TIME                                               NUMBER
+ QBLOCK_NAME                                        VARCHAR2(30)
+ REMARKS                                            VARCHAR2(4000)
+ OTHER_XML                                          CLOB
+ EXECUTIONS                                         NUMBER
+ LAST_STARTS                                        NUMBER
+ STARTS                                             NUMBER
+ LAST_OUTPUT_ROWS                                   NUMBER
+ OUTPUT_ROWS                                        NUMBER
+ LAST_CR_BUFFER_GETS                                NUMBER
+ CR_BUFFER_GETS                                     NUMBER
+ LAST_CU_BUFFER_GETS                                NUMBER
+ CU_BUFFER_GETS                                     NUMBER
+ LAST_DISK_READS                                    NUMBER
+ DISK_READS                                         NUMBER
+ LAST_DISK_WRITES                                   NUMBER
+ DISK_WRITES                                        NUMBER
+ LAST_ELAPSED_TIME                                  NUMBER
+ ELAPSED_TIME                                       NUMBER
+ POLICY                                             VARCHAR2(10)
+ ESTIMATED_OPTIMAL_SIZE                             NUMBER
+ ESTIMATED_ONEPASS_SIZE                             NUMBER
+ LAST_MEMORY_USED                                   NUMBER
+ LAST_EXECUTION                                     VARCHAR2(10)
+ LAST_DEGREE                                        NUMBER
+ TOTAL_EXECUTIONS                                   NUMBER
+ OPTIMAL_EXECUTIONS                                 NUMBER
+ ONEPASS_EXECUTIONS                                 NUMBER
+ MULTIPASSES_EXECUTIONS                             NUMBER
+ ACTIVE_TIME                                        NUMBER
+ MAX_TEMPSEG_SIZE                                   NUMBER
+ LAST_TEMPSEG_SIZE                                  NUMBER
+ CON_ID                                             NUMBER
+ CON_DBID                                           NUMBER
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM gv$sql_plan_statistics_all
+ WHERE sql_id = '3hwq5m5h3gkaq'
+ ORDER BY inst_id, plan_hash_value, child_number, id;
+
+16 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/16:40:44 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_LAS_ACT" = :B4 ,"USR_) </font>
+</body>
+</html>
