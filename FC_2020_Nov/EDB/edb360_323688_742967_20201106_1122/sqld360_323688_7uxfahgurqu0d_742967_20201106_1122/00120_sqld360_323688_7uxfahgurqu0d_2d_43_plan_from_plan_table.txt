@@ -1,0 +1,26 @@
+Plan from Plan Table (PLAN_TABLE)
+
+
+begin dbms_mview.REFRESH('MV_DIM_CLAIM','C'); end;
+EXPLAIN PLAN FOR begin dbms_mview.REFRESH('MV_DIM_CLAIM','C'); end;
+                 *
+ERROR at line 1:
+ORA-00905: missing keyword
+
+
+Plan hash value: 1942007213
+
+----------------------------------------------------------------------------------------------------------
+| Id  | Operation                            | Name              | Rows  | Bytes | Cost (%CPU)| Time     |
+----------------------------------------------------------------------------------------------------------
+|   0 | DELETE STATEMENT                     |                   |     4 |   128 |     5   (0)| 00:00:01 |
+|   1 |  DELETE                              | T_OTHER_INSURANCE |       |       |            |          |
+|*  2 |   TABLE ACCESS BY INDEX ROWID BATCHED| T_OTHER_INSURANCE |     4 |   128 |     5   (0)| 00:00:01 |
+|*  3 |    INDEX RANGE SCAN                  | IX_FK_INS_MEMBER  |     5 |       |     3   (0)| 00:00:01 |
+----------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - filter("CLASSTYPE"=:B2)
+   3 - access("INS_MEMBER"=TO_NUMBER(:B1))

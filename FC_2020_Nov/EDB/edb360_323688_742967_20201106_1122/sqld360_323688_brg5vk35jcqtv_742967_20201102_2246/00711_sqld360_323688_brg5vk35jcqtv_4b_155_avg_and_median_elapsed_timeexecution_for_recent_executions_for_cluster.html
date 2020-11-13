@@ -1,0 +1,9024 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_brg5vk35jcqtv_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Avg and Median Elapsed Time/Execution for recent executions for Cluster</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00711_sqld360_323688_brg5vk35jcqtv_4b_155_avg_and_median_elapsed_timeexecution_for_recent_executions_for_cluster.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 4b.155. Avg and Median Elapsed Time/Execution for recent executions for Cluster <em>(V$ACTIVE_SESSION_HISTORY)</em>  </h1>
+
+<br>
+Average and Median Elapsed Time per execution for recent executions, in seconds, from ASH
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+SNAP_ID
+</th>
+<th scope="col">
+BEGIN_TIME
+</th>
+<th scope="col">
+END_TIME
+</th>
+<th scope="col">
+AVG_ET
+</th>
+<th scope="col">
+MED_ET
+</th>
+<th scope="col">
+PERCTH_ET
+</th>
+<th scope="col">
+AVG_CPU_TIME
+</th>
+<th scope="col">
+MED_CPU_TIME
+</th>
+<th scope="col">
+PERCTH_CPU_TIME
+</th>
+<th scope="col">
+AVG_DB_TIME
+</th>
+<th scope="col">
+MED_DB_TIME
+</th>
+<th scope="col">
+PERCTH_DB_TIME
+</th>
+<th scope="col">
+AVG_ET_TREND
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:23
+</td>
+<td>
+2020-11-02 14:23
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:24
+</td>
+<td>
+2020-11-02 14:24
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:25
+</td>
+<td>
+2020-11-02 14:25
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:26
+</td>
+<td>
+2020-11-02 14:26
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:27
+</td>
+<td>
+2020-11-02 14:27
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:28
+</td>
+<td>
+2020-11-02 14:28
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:29
+</td>
+<td>
+2020-11-02 14:29
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:30
+</td>
+<td>
+2020-11-02 14:30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:31
+</td>
+<td>
+2020-11-02 14:31
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:32
+</td>
+<td>
+2020-11-02 14:32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:33
+</td>
+<td>
+2020-11-02 14:33
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:34
+</td>
+<td>
+2020-11-02 14:34
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:35
+</td>
+<td>
+2020-11-02 14:35
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:37
+</td>
+<td>
+2020-11-02 14:37
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:38
+</td>
+<td>
+2020-11-02 14:38
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:39
+</td>
+<td>
+2020-11-02 14:39
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:40
+</td>
+<td>
+2020-11-02 14:40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:41
+</td>
+<td>
+2020-11-02 14:41
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:42
+</td>
+<td>
+2020-11-02 14:42
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:43
+</td>
+<td>
+2020-11-02 14:43
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:44
+</td>
+<td>
+2020-11-02 14:44
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:45
+</td>
+<td>
+2020-11-02 14:45
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:46
+</td>
+<td>
+2020-11-02 14:46
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:47
+</td>
+<td>
+2020-11-02 14:47
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:48
+</td>
+<td>
+2020-11-02 14:48
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:49
+</td>
+<td>
+2020-11-02 14:49
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:50
+</td>
+<td>
+2020-11-02 14:50
+</td>
+<td align="right">
+               1.166
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               1.166
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               1.166
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+1.006148148148148148
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:51
+</td>
+<td>
+2020-11-02 14:51
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005928571428571429
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:52
+</td>
+<td>
+2020-11-02 14:52
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005724137931034483
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:53
+</td>
+<td>
+2020-11-02 14:53
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005533333333333333
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:54
+</td>
+<td>
+2020-11-02 14:54
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005354838709677419
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:55
+</td>
+<td>
+2020-11-02 14:55
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+           1.0051875
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:56
+</td>
+<td>
+2020-11-02 14:56
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+ 1.00503030303030303
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:57
+</td>
+<td>
+2020-11-02 14:57
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.004882352941176471
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:58
+</td>
+<td>
+2020-11-02 14:58
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.004742857142857143
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 14:59
+</td>
+<td>
+2020-11-02 14:59
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.004611111111111111
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:00
+</td>
+<td>
+2020-11-02 15:00
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.004486486486486486
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:01
+</td>
+<td>
+2020-11-02 15:01
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.004368421052631579
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:02
+</td>
+<td>
+2020-11-02 15:02
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.004256410256410256
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:03
+</td>
+<td>
+2020-11-02 15:03
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1.00415
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:04
+</td>
+<td>
+2020-11-02 15:04
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.004048780487804878
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:05
+</td>
+<td>
+2020-11-02 15:05
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003952380952380952
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:06
+</td>
+<td>
+2020-11-02 15:06
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+ 1.00386046511627907
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:07
+</td>
+<td>
+2020-11-02 15:07
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003772727272727273
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:08
+</td>
+<td>
+2020-11-02 15:08
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003688888888888889
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:09
+</td>
+<td>
+2020-11-02 15:09
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003608695652173913
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:10
+</td>
+<td>
+2020-11-02 15:10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003531914893617021
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:11
+</td>
+<td>
+2020-11-02 15:11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003458333333333333
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:12
+</td>
+<td>
+2020-11-02 15:12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003387755102040816
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:13
+</td>
+<td>
+2020-11-02 15:13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1.00332
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:14
+</td>
+<td>
+2020-11-02 15:14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003254901960784314
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:15
+</td>
+<td>
+2020-11-02 15:15
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003192307692307692
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:16
+</td>
+<td>
+2020-11-02 15:16
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003132075471698113
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:17
+</td>
+<td>
+2020-11-02 15:17
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003074074074074074
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:18
+</td>
+<td>
+2020-11-02 15:18
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.003018181818181818
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:19
+</td>
+<td>
+2020-11-02 15:19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.002964285714285714
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:20
+</td>
+<td>
+2020-11-02 15:20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.002912280701754386
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:21
+</td>
+<td>
+2020-11-02 15:21
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.002862068965517241
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:22
+</td>
+<td>
+2020-11-02 15:22
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.002813559322033898
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:23
+</td>
+<td>
+2020-11-02 15:23
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.002766666666666667
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:24
+</td>
+<td>
+2020-11-02 15:24
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.002721311475409836
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:25
+</td>
+<td>
+2020-11-02 15:25
+</td>
+<td align="right">
+               1.166
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               1.166
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               1.166
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+1.005354838709677419
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:26
+</td>
+<td>
+2020-11-02 15:26
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+ 1.00526984126984127
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:27
+</td>
+<td>
+2020-11-02 15:27
+</td>
+<td align="right">
+                1.25
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1.25
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1.25
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+          1.00909375
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:28
+</td>
+<td>
+2020-11-02 15:28
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008953846153846154
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:29
+</td>
+<td>
+2020-11-02 15:29
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008818181818181818
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:30
+</td>
+<td>
+2020-11-02 15:30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008686567164179104
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:31
+</td>
+<td>
+2020-11-02 15:31
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008558823529411765
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:32
+</td>
+<td>
+2020-11-02 15:32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008434782608695652
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:33
+</td>
+<td>
+2020-11-02 15:33
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008314285714285714
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:34
+</td>
+<td>
+2020-11-02 15:34
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008197183098591549
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:35
+</td>
+<td>
+2020-11-02 15:35
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008083333333333333
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:36
+</td>
+<td>
+2020-11-02 15:36
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007972602739726027
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:37
+</td>
+<td>
+2020-11-02 15:37
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007864864864864865
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:38
+</td>
+<td>
+2020-11-02 15:38
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1.00776
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:39
+</td>
+<td>
+2020-11-02 15:39
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007657894736842105
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:40
+</td>
+<td>
+2020-11-02 15:40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007558441558441558
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:42
+</td>
+<td>
+2020-11-02 15:42
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007461538461538462
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:43
+</td>
+<td>
+2020-11-02 15:43
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007367088607594937
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:44
+</td>
+<td>
+2020-11-02 15:44
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+            1.007275
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:45
+</td>
+<td>
+2020-11-02 15:45
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007185185185185185
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:46
+</td>
+<td>
+2020-11-02 15:46
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007097560975609756
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:47
+</td>
+<td>
+2020-11-02 15:47
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007012048192771084
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:48
+</td>
+<td>
+2020-11-02 15:48
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006928571428571429
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:49
+</td>
+<td>
+2020-11-02 15:49
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006847058823529412
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:50
+</td>
+<td>
+2020-11-02 15:50
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006767441860465116
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:51
+</td>
+<td>
+2020-11-02 15:51
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006689655172413793
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:52
+</td>
+<td>
+2020-11-02 15:52
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006613636363636364
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:53
+</td>
+<td>
+2020-11-02 15:53
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006539325842696629
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:54
+</td>
+<td>
+2020-11-02 15:54
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006466666666666667
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:55
+</td>
+<td>
+2020-11-02 15:55
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006395604395604396
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:56
+</td>
+<td>
+2020-11-02 15:56
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006326086956521739
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:57
+</td>
+<td>
+2020-11-02 15:57
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006258064516129032
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:58
+</td>
+<td>
+2020-11-02 15:58
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006191489361702128
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 15:59
+</td>
+<td>
+2020-11-02 15:59
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006126315789473684
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:00
+</td>
+<td>
+2020-11-02 16:00
+</td>
+<td align="right">
+                 1.2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 1.2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 1.2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+1.008145833333333333
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:01
+</td>
+<td>
+2020-11-02 16:01
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008061855670103093
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:02
+</td>
+<td>
+2020-11-02 16:02
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007979591836734694
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:03
+</td>
+<td>
+2020-11-02 16:03
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007898989898989899
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:04
+</td>
+<td>
+2020-11-02 16:04
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1.00782
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:05
+</td>
+<td>
+2020-11-02 16:05
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007742574257425743
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:06
+</td>
+<td>
+2020-11-02 16:06
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007666666666666667
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:07
+</td>
+<td>
+2020-11-02 16:07
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007592233009708738
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:08
+</td>
+<td>
+2020-11-02 16:08
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007519230769230769
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:09
+</td>
+<td>
+2020-11-02 16:09
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007447619047619048
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:10
+</td>
+<td>
+2020-11-02 16:10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007377358490566038
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:11
+</td>
+<td>
+2020-11-02 16:11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007308411214953271
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:12
+</td>
+<td>
+2020-11-02 16:12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007240740740740741
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:13
+</td>
+<td>
+2020-11-02 16:13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007174311926605505
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:14
+</td>
+<td>
+2020-11-02 16:14
+</td>
+<td align="right">
+               1.142
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               1.142
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+               1.142
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+              1.0084
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:15
+</td>
+<td>
+2020-11-02 16:15
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008324324324324324
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:16
+</td>
+<td>
+2020-11-02 16:16
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1.00825
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:17
+</td>
+<td>
+2020-11-02 16:17
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008176991150442478
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:18
+</td>
+<td>
+2020-11-02 16:18
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008105263157894737
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:19
+</td>
+<td>
+2020-11-02 16:19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.008034782608695652
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:20
+</td>
+<td>
+2020-11-02 16:20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+ 1.00796551724137931
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:22
+</td>
+<td>
+2020-11-02 16:22
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007897435897435897
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:23
+</td>
+<td>
+2020-11-02 16:23
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007830508474576271
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:24
+</td>
+<td>
+2020-11-02 16:24
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007764705882352941
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:25
+</td>
+<td>
+2020-11-02 16:25
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              1.0077
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:26
+</td>
+<td>
+2020-11-02 16:26
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007636363636363636
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:27
+</td>
+<td>
+2020-11-02 16:27
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007573770491803279
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:28
+</td>
+<td>
+2020-11-02 16:28
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+ 1.00751219512195122
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:29
+</td>
+<td>
+2020-11-02 16:29
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007451612903225806
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:30
+</td>
+<td>
+2020-11-02 16:30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+            1.007392
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:31
+</td>
+<td>
+2020-11-02 16:31
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007333333333333333
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:32
+</td>
+<td>
+2020-11-02 16:32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007275590551181102
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:33
+</td>
+<td>
+2020-11-02 16:33
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+          1.00721875
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:34
+</td>
+<td>
+2020-11-02 16:34
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007162790697674419
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:35
+</td>
+<td>
+2020-11-02 16:35
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007107692307692308
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:36
+</td>
+<td>
+2020-11-02 16:36
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.007053435114503817
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:37
+</td>
+<td>
+2020-11-02 16:37
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               1.007
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:38
+</td>
+<td>
+2020-11-02 16:38
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006947368421052632
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:39
+</td>
+<td>
+2020-11-02 16:39
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006895522388059701
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:40
+</td>
+<td>
+2020-11-02 16:40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006844444444444444
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:41
+</td>
+<td>
+2020-11-02 16:41
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006794117647058824
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:42
+</td>
+<td>
+2020-11-02 16:42
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006744525547445255
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:43
+</td>
+<td>
+2020-11-02 16:43
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006695652173913043
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:44
+</td>
+<td>
+2020-11-02 16:44
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006647482014388489
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:45
+</td>
+<td>
+2020-11-02 16:45
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              1.0066
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:46
+</td>
+<td>
+2020-11-02 16:46
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006553191489361702
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:47
+</td>
+<td>
+2020-11-02 16:47
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006507042253521127
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:48
+</td>
+<td>
+2020-11-02 16:48
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006461538461538462
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:49
+</td>
+<td>
+2020-11-02 16:49
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006416666666666667
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:54
+</td>
+<td>
+2020-11-02 16:54
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006372413793103448
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:55
+</td>
+<td>
+2020-11-02 16:55
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006328767123287671
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:56
+</td>
+<td>
+2020-11-02 16:56
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006285714285714286
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:57
+</td>
+<td>
+2020-11-02 16:57
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006243243243243243
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 16:59
+</td>
+<td>
+2020-11-02 16:59
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006201342281879195
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:00
+</td>
+<td>
+2020-11-02 17:00
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             1.00616
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:01
+</td>
+<td>
+2020-11-02 17:01
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006119205298013245
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:02
+</td>
+<td>
+2020-11-02 17:02
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.006078947368421053
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:03
+</td>
+<td>
+2020-11-02 17:03
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+ 1.00603921568627451
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:04
+</td>
+<td>
+2020-11-02 17:04
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               1.006
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:05
+</td>
+<td>
+2020-11-02 17:05
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005961290322580645
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:07
+</td>
+<td>
+2020-11-02 17:07
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005923076923076923
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:08
+</td>
+<td>
+2020-11-02 17:08
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005885350318471338
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:09
+</td>
+<td>
+2020-11-02 17:09
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005848101265822785
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:10
+</td>
+<td>
+2020-11-02 17:10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005811320754716981
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:11
+</td>
+<td>
+2020-11-02 17:11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+            1.005775
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:12
+</td>
+<td>
+2020-11-02 17:12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005739130434782609
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:13
+</td>
+<td>
+2020-11-02 17:13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005703703703703704
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:14
+</td>
+<td>
+2020-11-02 17:14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005668711656441718
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:15
+</td>
+<td>
+2020-11-02 17:15
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005634146341463415
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:17
+</td>
+<td>
+2020-11-02 17:17
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              1.0056
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:18
+</td>
+<td>
+2020-11-02 17:18
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005566265060240964
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:19
+</td>
+<td>
+2020-11-02 17:19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005532934131736527
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:20
+</td>
+<td>
+2020-11-02 17:20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              1.0055
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:28
+</td>
+<td>
+2020-11-02 17:28
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005467455621301775
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:29
+</td>
+<td>
+2020-11-02 17:29
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005435294117647059
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:30
+</td>
+<td>
+2020-11-02 17:30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005403508771929825
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:38
+</td>
+<td>
+2020-11-02 17:38
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005372093023255814
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 17:40
+</td>
+<td>
+2020-11-02 17:40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005341040462427746
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 18:07
+</td>
+<td>
+2020-11-02 18:07
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.005310344827586207
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:01
+</td>
+<td>
+2020-11-02 20:01
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+1.028137142857142857
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:02
+</td>
+<td>
+2020-11-02 20:02
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+1.033659090909090909
+</td>
+</tr>
+<tr>
+<td>
+177
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:03
+</td>
+<td>
+2020-11-02 20:03
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.033468926553672316
+</td>
+</tr>
+<tr>
+<td>
+178
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:04
+</td>
+<td>
+2020-11-02 20:04
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+1.038898876404494382
+</td>
+</tr>
+<tr>
+<td>
+179
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:05
+</td>
+<td>
+2020-11-02 20:05
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.038681564245810056
+</td>
+</tr>
+<tr>
+<td>
+180
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:06
+</td>
+<td>
+2020-11-02 20:06
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.038466666666666667
+</td>
+</tr>
+<tr>
+<td>
+181
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:07
+</td>
+<td>
+2020-11-02 20:07
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+ 1.03825414364640884
+</td>
+</tr>
+<tr>
+<td>
+182
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:08
+</td>
+<td>
+2020-11-02 20:08
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.038043956043956044
+</td>
+</tr>
+<tr>
+<td>
+183
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:09
+</td>
+<td>
+2020-11-02 20:09
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.037836065573770492
+</td>
+</tr>
+<tr>
+<td>
+184
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:10
+</td>
+<td>
+2020-11-02 20:10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.037630434782608696
+</td>
+</tr>
+<tr>
+<td>
+185
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:11
+</td>
+<td>
+2020-11-02 20:11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.037427027027027027
+</td>
+</tr>
+<tr>
+<td>
+186
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:12
+</td>
+<td>
+2020-11-02 20:12
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+1.042602150537634409
+</td>
+</tr>
+<tr>
+<td>
+187
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:13
+</td>
+<td>
+2020-11-02 20:13
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.042374331550802139
+</td>
+</tr>
+<tr>
+<td>
+188
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:14
+</td>
+<td>
+2020-11-02 20:14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.042148936170212766
+</td>
+</tr>
+<tr>
+<td>
+189
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:15
+</td>
+<td>
+2020-11-02 20:15
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.041925925925925926
+</td>
+</tr>
+<tr>
+<td>
+190
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:16
+</td>
+<td>
+2020-11-02 20:16
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+1.046968421052631579
+</td>
+</tr>
+<tr>
+<td>
+191
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:17
+</td>
+<td>
+2020-11-02 20:17
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.046722513089005236
+</td>
+</tr>
+<tr>
+<td>
+192
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:18
+</td>
+<td>
+2020-11-02 20:18
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.046479166666666667
+</td>
+</tr>
+<tr>
+<td>
+193
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:19
+</td>
+<td>
+2020-11-02 20:19
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.046238341968911917
+</td>
+</tr>
+<tr>
+<td>
+194
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:20
+</td>
+<td>
+2020-11-02 20:20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+               1.046
+</td>
+</tr>
+<tr>
+<td>
+195
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:21
+</td>
+<td>
+2020-11-02 20:21
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.045764102564102564
+</td>
+</tr>
+<tr>
+<td>
+196
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:22
+</td>
+<td>
+2020-11-02 20:22
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.045530612244897959
+</td>
+</tr>
+<tr>
+<td>
+197
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:23
+</td>
+<td>
+2020-11-02 20:23
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.045299492385786802
+</td>
+</tr>
+<tr>
+<td>
+198
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 20:24
+</td>
+<td>
+2020-11-02 20:24
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+1.045070707070707071
+</td>
+</tr>
+<tr>
+<td>
+199
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-02 21:07
+</td>
+<td>
+2020-11-02 21:07
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+1.049869346733668342
+</td>
+</tr>
+</table>
+<p>
+Data rounded to the 1 second
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SAMPLE_ID                                          NUMBER
+ SAMPLE_TIME                                        TIMESTAMP(3)
+ IS_AWR_SAMPLE                                      VARCHAR2(1)
+ SESSION_ID                                         NUMBER
+ SESSION_SERIAL#                                    NUMBER
+ SESSION_TYPE                                       VARCHAR2(10)
+ FLAGS                                              NUMBER
+ USER_ID                                            NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ IS_SQLID_CURRENT                                   VARCHAR2(1)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_OPCODE                                         NUMBER
+ SQL_OPNAME                                         VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ TOP_LEVEL_SQL_ID                                   VARCHAR2(13)
+ TOP_LEVEL_SQL_OPCODE                               NUMBER
+ SQL_ADAPTIVE_PLAN_RESOLVED                         NUMBER
+ SQL_FULL_PLAN_HASH_VALUE                           NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_PLAN_LINE_ID                                   NUMBER
+ SQL_PLAN_OPERATION                                 VARCHAR2(30)
+ SQL_PLAN_OPTIONS                                   VARCHAR2(30)
+ SQL_EXEC_ID                                        NUMBER
+ SQL_EXEC_START                                     DATE
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ QC_INSTANCE_ID                                     NUMBER
+ QC_SESSION_ID                                      NUMBER
+ QC_SESSION_SERIAL#                                 NUMBER
+ PX_FLAGS                                           NUMBER
+ EVENT                                              VARCHAR2(64)
+ EVENT_ID                                           NUMBER
+ EVENT#                                             NUMBER
+ SEQ#                                               NUMBER
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_TIME                                          NUMBER
+ SESSION_STATE                                      VARCHAR2(7)
+ TIME_WAITED                                        NUMBER
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_SESSION                                   NUMBER
+ BLOCKING_SESSION_SERIAL#                           NUMBER
+ BLOCKING_INST_ID                                   NUMBER
+ BLOCKING_HANGCHAIN_INFO                            VARCHAR2(1)
+ CURRENT_OBJ#                                       NUMBER
+ CURRENT_FILE#                                      NUMBER
+ CURRENT_BLOCK#                                     NUMBER
+ CURRENT_ROW#                                       NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ TOP_LEVEL_CALL_NAME                                VARCHAR2(64)
+ CONSUMER_GROUP_ID                                  NUMBER
+ XID                                                RAW(8)
+ REMOTE_INSTANCE#                                   NUMBER
+ TIME_MODEL                                         NUMBER
+ IN_CONNECTION_MGMT                                 VARCHAR2(1)
+ IN_PARSE                                           VARCHAR2(1)
+ IN_HARD_PARSE                                      VARCHAR2(1)
+ IN_SQL_EXECUTION                                   VARCHAR2(1)
+ IN_PLSQL_EXECUTION                                 VARCHAR2(1)
+ IN_PLSQL_RPC                                       VARCHAR2(1)
+ IN_PLSQL_COMPILATION                               VARCHAR2(1)
+ IN_JAVA_EXECUTION                                  VARCHAR2(1)
+ IN_BIND                                            VARCHAR2(1)
+ IN_CURSOR_CLOSE                                    VARCHAR2(1)
+ IN_SEQUENCE_LOAD                                   VARCHAR2(1)
+ IN_INMEMORY_QUERY                                  VARCHAR2(1)
+ IN_INMEMORY_POPULATE                               VARCHAR2(1)
+ IN_INMEMORY_PREPOPULATE                            VARCHAR2(1)
+ IN_INMEMORY_REPOPULATE                             VARCHAR2(1)
+ IN_INMEMORY_TREPOPULATE                            VARCHAR2(1)
+ CAPTURE_OVERHEAD                                   VARCHAR2(1)
+ REPLAY_OVERHEAD                                    VARCHAR2(1)
+ IS_CAPTURED                                        VARCHAR2(1)
+ IS_REPLAYED                                        VARCHAR2(1)
+ SERVICE_HASH                                       NUMBER
+ PROGRAM                                            VARCHAR2(48)
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ CLIENT_ID                                          VARCHAR2(64)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ ECID                                               VARCHAR2(64)
+ DBREPLAY_FILE_ID                                   NUMBER
+ DBREPLAY_CALL_COUNTER                              NUMBER
+ TM_DELTA_TIME                                      NUMBER
+ TM_DELTA_CPU_TIME                                  NUMBER
+ TM_DELTA_DB_TIME                                   NUMBER
+ DELTA_TIME                                         NUMBER
+ DELTA_READ_IO_REQUESTS                             NUMBER
+ DELTA_WRITE_IO_REQUESTS                            NUMBER
+ DELTA_READ_IO_BYTES                                NUMBER
+ DELTA_WRITE_IO_BYTES                               NUMBER
+ DELTA_INTERCONNECT_IO_BYTES                        NUMBER
+ DELTA_READ_MEM_BYTES                               NUMBER
+ PGA_ALLOCATED                                      NUMBER
+ TEMP_SPACE_ALLOCATED                               NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+ DBOP_NAME                                          VARCHAR2(30)
+ DBOP_EXEC_ID                                       NUMBER
+
+SELECT 0 snap_id,
+       TO_CHAR(start_time, 'YYYY-MM-DD HH24:MI') begin_time,
+       TO_CHAR(start_time, 'YYYY-MM-DD HH24:MI') end_time,
+       avg_et,
+       med_et,
+       percth_et,
+       avg_cpu_time,
+       med_cpu_time,
+       percth_cpu_time,
+       avg_db_time,
+       med_db_time,
+       percth_db_time,
+       NVL(AVG(avg_et) OVER (ORDER BY start_time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW),0) avg_et_trend,
+       0 dummy_11,
+       0 dummy_12,
+       0 dummy_13,
+       0 dummy_14,
+       0 dummy_15
+  FROM (SELECT start_time,
+               TRUNC(AVG(et),3) avg_et,
+               TRUNC(MEDIAN(et),3) med_et,
+               TRUNC(PERCENTILE_DISC(0.90) WITHIN GROUP (ORDER BY et),3) percth_et,
+               TRUNC(AVG(cpu_time),3) avg_cpu_time,
+               TRUNC(MEDIAN(cpu_time),3) med_cpu_time,
+               TRUNC(PERCENTILE_DISC(0.90) WITHIN GROUP (ORDER BY cpu_time),3) percth_cpu_time,
+               TRUNC(AVG(db_time),3) avg_db_time,
+               TRUNC(MEDIAN(db_time),3) med_db_time,
+               TRUNC(PERCENTILE_DISC(0.90) WITHIN GROUP (ORDER BY db_time),3) percth_db_time
+          FROM (SELECT TO_DATE(SUBSTR(distribution,1,12),'YYYYMMDDHH24MI') start_time,
+                       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position)||'-'||
+                        NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost)||'-'||
+                        NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost)||'-'||
+                        NVL(partition_id,0)||'-'||NVL(distribution,'x') uniq_exec,
+                                          1+86400*(MAX(timestamp)-MIN(timestamp)) et,
+                       SUM(CASE WHEN object_node = 'ON CPU' THEN                    1 ELSE 0 END) cpu_time,
+                       SUM(                   1) db_time
+                  FROM plan_table
+                 WHERE statement_id = 'SQLD360_ASH_DATA_MEM'
+                   AND position =  position
+                   AND remarks = 'brg5vk35jcqtv'
+                   AND partition_id IS NOT NULL
+                   AND 'Y' = 'Y'
+                 GROUP BY TO_DATE(SUBSTR(distribution,1,12),'YYYYMMDDHH24MI'),
+                          NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position)||'-'||
+                           NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost)||'-'||
+                           NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost)||'-'||
+                           NVL(partition_id,0)||'-'||NVL(distribution,'x'))
+          GROUP BY start_time)
+ ORDER BY 3;
+
+199 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-02/22:48:37 for SQL ID brg5vk35jcqtv (SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+) </font>
+</body>
+</html>

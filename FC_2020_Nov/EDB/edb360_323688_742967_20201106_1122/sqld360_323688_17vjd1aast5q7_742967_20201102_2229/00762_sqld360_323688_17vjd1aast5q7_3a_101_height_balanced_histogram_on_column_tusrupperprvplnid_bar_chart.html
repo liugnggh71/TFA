@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00694_sqld360_323688_17vjd1aast5q7_3a_68_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_USR.(UPPER("PRV_PLN_ID"))</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 00762_sqld360_323688_17vjd1aast5q7_3a_101_height_balanced_histogram_on_column_tusrupperprvplnid_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,['', 0, '0', 'ApproxValue:  NumRows: 0 Sel: 0']
+,['LOC0000000843', 826, '.003937', 'ApproxValue: LOC0000000843 NumRows: 826 Sel: .003937']
+,['LOC0000001839', 826, '.003937', 'ApproxValue: LOC0000001839 NumRows: 826 Sel: .003937']
+,['LOC0000003803', 826, '.003937', 'ApproxValue: LOC0000003803 NumRows: 826 Sel: .003937']
+,['LOC0000004784', 826, '.003937', 'ApproxValue: LOC0000004784 NumRows: 826 Sel: .003937']
+,['LOC0000006407', 826, '.003937', 'ApproxValue: LOC0000006407 NumRows: 826 Sel: .003937']
+,['LOC0000008320', 826, '.003937', 'ApproxValue: LOC0000008320 NumRows: 826 Sel: .003937']
+,['LOC0000014950', 826, '.003937', 'ApproxValue: LOC0000014950 NumRows: 826 Sel: .003937']
+,['LOC0000015823', 826, '.003937', 'ApproxValue: LOC0000015823 NumRows: 826 Sel: .003937']
+,['LOC0000016757', 826, '.003937', 'ApproxValue: LOC0000016757 NumRows: 826 Sel: .003937']
+,['LOC0000017654', 826, '.003937', 'ApproxValue: LOC0000017654 NumRows: 826 Sel: .003937']
+,['LOC0000018554', 826, '.003937', 'ApproxValue: LOC0000018554 NumRows: 826 Sel: .003937']
+,['LOC0000019436', 826, '.003937', 'ApproxValue: LOC0000019436 NumRows: 826 Sel: .003937']
+,['LOC0000020318', 826, '.003937', 'ApproxValue: LOC0000020318 NumRows: 826 Sel: .003937']
+,['LOC0000021227', 826, '.003937', 'ApproxValue: LOC0000021227 NumRows: 826 Sel: .003937']
+,['LOC0000022087', 826, '.003937', 'ApproxValue: LOC0000022087 NumRows: 826 Sel: .003937']
+,['LOC0000022937', 826, '.003937', 'ApproxValue: LOC0000022937 NumRows: 826 Sel: .003937']
+,['LOC0000023796', 826, '.003937', 'ApproxValue: LOC0000023796 NumRows: 826 Sel: .003937']
+,['LOC0000024669', 826, '.003937', 'ApproxValue: LOC0000024669 NumRows: 826 Sel: .003937']
+,['LOC0000025521', 826, '.003937', 'ApproxValue: LOC0000025521 NumRows: 826 Sel: .003937']
+,['LOC0000026373', 826, '.003937', 'ApproxValue: LOC0000026373 NumRows: 826 Sel: .003937']
+,['LOC0000027217', 826, '.003937', 'ApproxValue: LOC0000027217 NumRows: 826 Sel: .003937']
+,['LOC0000028061', 826, '.003937', 'ApproxValue: LOC0000028061 NumRows: 826 Sel: .003937']
+,['LOC0000028902', 826, '.003937', 'ApproxValue: LOC0000028902 NumRows: 826 Sel: .003937']
+,['LOC0000029740', 826, '.003937', 'ApproxValue: LOC0000029740 NumRows: 826 Sel: .003937']
+,['LOC0000030593', 826, '.003937', 'ApproxValue: LOC0000030593 NumRows: 826 Sel: .003937']
+,['LOC0000031453', 826, '.003937', 'ApproxValue: LOC0000031453 NumRows: 826 Sel: .003937']
+,['LOC0000032300', 826, '.003937', 'ApproxValue: LOC0000032300 NumRows: 826 Sel: .003937']
+,['LOC0000033149', 826, '.003937', 'ApproxValue: LOC0000033149 NumRows: 826 Sel: .003937']
+,['LOC0000033990', 826, '.003937', 'ApproxValue: LOC0000033990 NumRows: 826 Sel: .003937']
+,['LOC0000034845', 826, '.003937', 'ApproxValue: LOC0000034845 NumRows: 826 Sel: .003937']
+,['LOC0000035692', 826, '.003937', 'ApproxValue: LOC0000035692 NumRows: 826 Sel: .003937']
+,['LOC0000036551', 826, '.003937', 'ApproxValue: LOC0000036551 NumRows: 826 Sel: .003937']
+,['LOC0000037448', 826, '.003937', 'ApproxValue: LOC0000037448 NumRows: 826 Sel: .003937']
+,['LOC0000038287', 826, '.003937', 'ApproxValue: LOC0000038287 NumRows: 826 Sel: .003937']
+,['LOC0000039130', 826, '.003937', 'ApproxValue: LOC0000039130 NumRows: 826 Sel: .003937']
+,['LOC0000039968', 826, '.003937', 'ApproxValue: LOC0000039968 NumRows: 826 Sel: .003937']
+,['LOC0000040813', 826, '.003937', 'ApproxValue: LOC0000040813 NumRows: 826 Sel: .003937']
+,['LOC0000041656', 826, '.003937', 'ApproxValue: LOC0000041656 NumRows: 826 Sel: .003937']
+,['LOC0000042506', 826, '.003937', 'ApproxValue: LOC0000042506 NumRows: 826 Sel: .003937']
+,['LOC0000043356', 826, '.003937', 'ApproxValue: LOC0000043356 NumRows: 826 Sel: .003937']
+,['LOC0000044268', 826, '.003937', 'ApproxValue: LOC0000044268 NumRows: 826 Sel: .003937']
+,['LOC0000045129', 826, '.003937', 'ApproxValue: LOC0000045129 NumRows: 826 Sel: .003937']
+,['LOC0000045963', 826, '.003937', 'ApproxValue: LOC0000045963 NumRows: 826 Sel: .003937']
+,['LOC0000046857', 826, '.003937', 'ApproxValue: LOC0000046857 NumRows: 826 Sel: .003937']
+,['LOC0000047781', 826, '.003937', 'ApproxValue: LOC0000047781 NumRows: 826 Sel: .003937']
+,['LOC00000488795', 826, '.003937', 'ApproxValue: LOC00000488795 NumRows: 826 Sel: .003937']
+,['LOC0000058167', 826, '.003937', 'ApproxValue: LOC0000058167 NumRows: 826 Sel: .003937']
+,['LOC0000059004', 826, '.003937', 'ApproxValue: LOC0000059004 NumRows: 826 Sel: .003937']
+,['LOC0000059839', 826, '.003937', 'ApproxValue: LOC0000059839 NumRows: 826 Sel: .003937']
+,['LOC0000060667', 826, '.003937', 'ApproxValue: LOC0000060667 NumRows: 826 Sel: .003937']
+,['LOC0000061512', 826, '.003937', 'ApproxValue: LOC0000061512 NumRows: 826 Sel: .003937']
+,['LOC0000062346', 826, '.003937', 'ApproxValue: LOC0000062346 NumRows: 826 Sel: .003937']
+,['LOC0000063175', 826, '.003937', 'ApproxValue: LOC0000063175 NumRows: 826 Sel: .003937']
+,['LOC0000064009', 826, '.003937', 'ApproxValue: LOC0000064009 NumRows: 826 Sel: .003937']
+,['LOC0000064846', 826, '.003937', 'ApproxValue: LOC0000064846 NumRows: 826 Sel: .003937']
+,['LOC0000065686', 826, '.003937', 'ApproxValue: LOC0000065686 NumRows: 826 Sel: .003937']
+,['LOC0000067169', 826, '.003937', 'ApproxValue: LOC0000067169 NumRows: 826 Sel: .003937']
+,['LOC0000068073', 826, '.003937', 'ApproxValue: LOC0000068073 NumRows: 826 Sel: .003937']
+,['LOC0000070116', 826, '.003937', 'ApproxValue: LOC0000070116 NumRows: 826 Sel: .003937']
+,['LOC0000072273', 826, '.003937', 'ApproxValue: LOC0000072273 NumRows: 826 Sel: .003937']
+,['LOC0000073552', 826, '.003937', 'ApproxValue: LOC0000073552 NumRows: 826 Sel: .003937']
+,['LOC0000075361', 826, '.003937', 'ApproxValue: LOC0000075361 NumRows: 826 Sel: .003937']
+,['LOC0000076190', 826, '.003937', 'ApproxValue: LOC0000076190 NumRows: 826 Sel: .003937']
+,['LOC0000079065', 826, '.003937', 'ApproxValue: LOC0000079065 NumRows: 826 Sel: .003937']
+,['LOC0000080572', 826, '.003937', 'ApproxValue: LOC0000080572 NumRows: 826 Sel: .003937']
+,['LOC0000081409', 826, '.003937', 'ApproxValue: LOC0000081409 NumRows: 826 Sel: .003937']
+,['LOC0000082252', 826, '.003937', 'ApproxValue: LOC0000082252 NumRows: 826 Sel: .003937']
+,['LOC0000085290', 826, '.003937', 'ApproxValue: LOC0000085290 NumRows: 826 Sel: .003937']
+,['LOC0000095946', 826, '.003937', 'ApproxValue: LOC0000095946 NumRows: 826 Sel: .003937']
+,['LOC1000000615', 826, '.003937', 'ApproxValue: LOC1000000615 NumRows: 826 Sel: .003937']
+,['LOC1000001443', 826, '.003937', 'ApproxValue: LOC1000001443 NumRows: 826 Sel: .003937']
+,['LOC1000002271', 826, '.003937', 'ApproxValue: LOC1000002271 NumRows: 826 Sel: .003937']
+,['LOC1000003098', 826, '.003937', 'ApproxValue: LOC1000003098 NumRows: 826 Sel: .003937']
+,['LOC1000078018', 826, '.003937', 'ApproxValue: LOC1000078018 NumRows: 826 Sel: .003937']
+,['LOC1000078901', 826, '.003937', 'ApproxValue: LOC1000078901 NumRows: 826 Sel: .003937']
+,['LOCEV273558721', 826, '.003937', 'ApproxValue: LOCEV273558721 NumRows: 826 Sel: .003937']
+,['LOCEV29242242924404', 826, '.003937', 'ApproxValue: LOCEV29242242924404 NumRows: 826 Sel: .003937']
+,['LOCEV949267731', 826, '.003937', 'ApproxValue: LOCEV949267731 NumRows: 826 Sel: .003937']
+,['PRC0000000808', 826, '.003937', 'ApproxValue: PRC0000000808 NumRows: 826 Sel: .003937']
+,['PRC0000001634', 826, '.003937', 'ApproxValue: PRC0000001634 NumRows: 826 Sel: .003937']
+,['PRC0000002460', 826, '.003937', 'ApproxValue: PRC0000002460 NumRows: 826 Sel: .003937']
+,['PRC0000003287', 826, '.003937', 'ApproxValue: PRC0000003287 NumRows: 826 Sel: .003937']
+,['PRC0000004116', 826, '.003937', 'ApproxValue: PRC0000004116 NumRows: 826 Sel: .003937']
+,['PRC0000004946', 826, '.003937', 'ApproxValue: PRC0000004946 NumRows: 826 Sel: .003937']
+,['PRC0000005773', 826, '.003937', 'ApproxValue: PRC0000005773 NumRows: 826 Sel: .003937']
+,['PRC0000006599', 826, '.003937', 'ApproxValue: PRC0000006599 NumRows: 826 Sel: .003937']
+,['PRC0000007428', 826, '.003937', 'ApproxValue: PRC0000007428 NumRows: 826 Sel: .003937']
+,['PRC0000008255', 826, '.003937', 'ApproxValue: PRC0000008255 NumRows: 826 Sel: .003937']
+,['PRC0000009085', 826, '.003937', 'ApproxValue: PRC0000009085 NumRows: 826 Sel: .003937']
+,['PRC0000009912', 826, '.003937', 'ApproxValue: PRC0000009912 NumRows: 826 Sel: .003937']
+,['PRC0000010740', 826, '.003937', 'ApproxValue: PRC0000010740 NumRows: 826 Sel: .003937']
+,['PRC0000011567', 826, '.003937', 'ApproxValue: PRC0000011567 NumRows: 826 Sel: .003937']
+,['PRC0000012397', 826, '.003937', 'ApproxValue: PRC0000012397 NumRows: 826 Sel: .003937']
+,['PRC0000013228', 826, '.003937', 'ApproxValue: PRC0000013228 NumRows: 826 Sel: .003937']
+,['PRC0000014056', 826, '.003937', 'ApproxValue: PRC0000014056 NumRows: 826 Sel: .003937']
+,['PRC0000014883', 826, '.003937', 'ApproxValue: PRC0000014883 NumRows: 826 Sel: .003937']
+,['PRC0000015710', 826, '.003937', 'ApproxValue: PRC0000015710 NumRows: 826 Sel: .003937']
+,['PRC0000016538', 826, '.003937', 'ApproxValue: PRC0000016538 NumRows: 826 Sel: .003937']
+,['PRC0000017366', 826, '.003937', 'ApproxValue: PRC0000017366 NumRows: 826 Sel: .003937']
+,['PRC0000018193', 826, '.003937', 'ApproxValue: PRC0000018193 NumRows: 826 Sel: .003937']
+,['PRC0000019019', 826, '.003937', 'ApproxValue: PRC0000019019 NumRows: 826 Sel: .003937']
+,['PRC0000019845', 826, '.003937', 'ApproxValue: PRC0000019845 NumRows: 826 Sel: .003937']
+,['PRC0000020673', 826, '.003937', 'ApproxValue: PRC0000020673 NumRows: 826 Sel: .003937']
+,['PRC0000021502', 826, '.003937', 'ApproxValue: PRC0000021502 NumRows: 826 Sel: .003937']
+,['PRC0000022335', 826, '.003937', 'ApproxValue: PRC0000022335 NumRows: 826 Sel: .003937']
+,['PRC0000023162', 826, '.003937', 'ApproxValue: PRC0000023162 NumRows: 826 Sel: .003937']
+,['PRC0000023989', 826, '.003937', 'ApproxValue: PRC0000023989 NumRows: 826 Sel: .003937']
+,['PRC0000024817', 826, '.003937', 'ApproxValue: PRC0000024817 NumRows: 826 Sel: .003937']
+,['PRC0000025645', 826, '.003937', 'ApproxValue: PRC0000025645 NumRows: 826 Sel: .003937']
+,['PRC0000026471', 826, '.003937', 'ApproxValue: PRC0000026471 NumRows: 826 Sel: .003937']
+,['PRC0000027297', 826, '.003937', 'ApproxValue: PRC0000027297 NumRows: 826 Sel: .003937']
+,['PRC0000028124', 826, '.003937', 'ApproxValue: PRC0000028124 NumRows: 826 Sel: .003937']
+,['PRC0000028952', 826, '.003937', 'ApproxValue: PRC0000028952 NumRows: 826 Sel: .003937']
+,['PRC0000029778', 826, '.003937', 'ApproxValue: PRC0000029778 NumRows: 826 Sel: .003937']
+,['PRC0000030604', 826, '.003937', 'ApproxValue: PRC0000030604 NumRows: 826 Sel: .003937']
+,['PRC0000031431', 826, '.003937', 'ApproxValue: PRC0000031431 NumRows: 826 Sel: .003937']
+,['PRC0000032258', 826, '.003937', 'ApproxValue: PRC0000032258 NumRows: 826 Sel: .003937']
+,['PRC0000033091', 826, '.003937', 'ApproxValue: PRC0000033091 NumRows: 826 Sel: .003937']
+,['PRC0000033917', 826, '.003937', 'ApproxValue: PRC0000033917 NumRows: 826 Sel: .003937']
+,['PRC0000034746', 826, '.003937', 'ApproxValue: PRC0000034746 NumRows: 826 Sel: .003937']
+,['PRC0000035572', 826, '.003937', 'ApproxValue: PRC0000035572 NumRows: 826 Sel: .003937']
+,['PRC0000036398', 826, '.003937', 'ApproxValue: PRC0000036398 NumRows: 826 Sel: .003937']
+,['PRC0000037226', 826, '.003937', 'ApproxValue: PRC0000037226 NumRows: 826 Sel: .003937']
+,['PRC0000038052', 826, '.003937', 'ApproxValue: PRC0000038052 NumRows: 826 Sel: .003937']
+,['PRC0000038879', 826, '.003937', 'ApproxValue: PRC0000038879 NumRows: 826 Sel: .003937']
+,['PRC0000039706', 826, '.003937', 'ApproxValue: PRC0000039706 NumRows: 826 Sel: .003937']
+,['PRC0000040532', 826, '.003937', 'ApproxValue: PRC0000040532 NumRows: 826 Sel: .003937']
+,['PRC0000041358', 826, '.003937', 'ApproxValue: PRC0000041358 NumRows: 826 Sel: .003937']
+,['PRC0000042188', 826, '.003937', 'ApproxValue: PRC0000042188 NumRows: 826 Sel: .003937']
+,['PRC0000043017', 826, '.003937', 'ApproxValue: PRC0000043017 NumRows: 826 Sel: .003937']
+,['PRC0000043844', 826, '.003937', 'ApproxValue: PRC0000043844 NumRows: 826 Sel: .003937']
+,['PRC0000044672', 826, '.003937', 'ApproxValue: PRC0000044672 NumRows: 826 Sel: .003937']
+,['PRC0000045498', 826, '.003937', 'ApproxValue: PRC0000045498 NumRows: 826 Sel: .003937']
+,['PRC0000046324', 826, '.003937', 'ApproxValue: PRC0000046324 NumRows: 826 Sel: .003937']
+,['PRC0000047151', 826, '.003937', 'ApproxValue: PRC0000047151 NumRows: 826 Sel: .003937']
+,['PRC0000047978', 826, '.003937', 'ApproxValue: PRC0000047978 NumRows: 826 Sel: .003937']
+,['PRC0000048805', 826, '.003937', 'ApproxValue: PRC0000048805 NumRows: 826 Sel: .003937']
+,['PRC0000049652', 826, '.003937', 'ApproxValue: PRC0000049652 NumRows: 826 Sel: .003937']
+,['PRC0000050507', 826, '.003937', 'ApproxValue: PRC0000050507 NumRows: 826 Sel: .003937']
+,['PRC0000118305', 826, '.003937', 'ApproxValue: PRC0000118305 NumRows: 826 Sel: .003937']
+,['PRC0000140410', 826, '.003937', 'ApproxValue: PRC0000140410 NumRows: 826 Sel: .003937']
+,['PRC0000164352', 826, '.003937', 'ApproxValue: PRC0000164352 NumRows: 826 Sel: .003937']
+,['PRC0000190355', 826, '.003937', 'ApproxValue: PRC0000190355 NumRows: 826 Sel: .003937']
+,['PRC0000212414', 826, '.003937', 'ApproxValue: PRC0000212414 NumRows: 826 Sel: .003937']
+,['PRC0000226849', 826, '.003937', 'ApproxValue: PRC0000226849 NumRows: 826 Sel: .003937']
+,['PRC0000248701', 826, '.003937', 'ApproxValue: PRC0000248701 NumRows: 826 Sel: .003937']
+,['PRC0000268794', 826, '.003937', 'ApproxValue: PRC0000268794 NumRows: 826 Sel: .003937']
+,['PRC0000290847', 826, '.003937', 'ApproxValue: PRC0000290847 NumRows: 826 Sel: .003937']
+,['PRC0000312844', 826, '.003937', 'ApproxValue: PRC0000312844 NumRows: 826 Sel: .003937']
+,['PRC0000334880', 826, '.003937', 'ApproxValue: PRC0000334880 NumRows: 826 Sel: .003937']
+,['PRC0000360843', 826, '.003937', 'ApproxValue: PRC0000360843 NumRows: 826 Sel: .003937']
+,['PRC0000376871', 826, '.003937', 'ApproxValue: PRC0000376871 NumRows: 826 Sel: .003937']
+,['PRC0000391129', 826, '.003937', 'ApproxValue: PRC0000391129 NumRows: 826 Sel: .003937']
+,['PRC0000410966', 826, '.003937', 'ApproxValue: PRC0000410966 NumRows: 826 Sel: .003937']
+,['PRC0000430940', 826, '.003937', 'ApproxValue: PRC0000430940 NumRows: 826 Sel: .003937']
+,['PRC0000450921', 826, '.003937', 'ApproxValue: PRC0000450921 NumRows: 826 Sel: .003937']
+,['PRC0000468946', 826, '.003937', 'ApproxValue: PRC0000468946 NumRows: 826 Sel: .003937']
+,['PRC0000484994', 826, '.003937', 'ApproxValue: PRC0000484994 NumRows: 826 Sel: .003937']
+,['PRC0000506929', 826, '.003937', 'ApproxValue: PRC0000506929 NumRows: 826 Sel: .003937']
+,['PRC0000519829', 826, '.003937', 'ApproxValue: PRC0000519829 NumRows: 826 Sel: .003937']
+,['PRC0000521818', 826, '.003937', 'ApproxValue: PRC0000521818 NumRows: 826 Sel: .003937']
+,['PRC0000523903', 826, '.003937', 'ApproxValue: PRC0000523903 NumRows: 826 Sel: .003937']
+,['PRC0000525346', 826, '.003937', 'ApproxValue: PRC0000525346 NumRows: 826 Sel: .003937']
+,['PRC0000526592', 826, '.003937', 'ApproxValue: PRC0000526592 NumRows: 826 Sel: .003937']
+,['PRC0000529941', 826, '.003937', 'ApproxValue: PRC0000529941 NumRows: 826 Sel: .003937']
+,['PRC0000533349', 826, '.003937', 'ApproxValue: PRC0000533349 NumRows: 826 Sel: .003937']
+,['PRC0000538102', 826, '.003937', 'ApproxValue: PRC0000538102 NumRows: 826 Sel: .003937']
+,['PRC0000542468', 826, '.003937', 'ApproxValue: PRC0000542468 NumRows: 826 Sel: .003937']
+,['PRC0000546756', 826, '.003937', 'ApproxValue: PRC0000546756 NumRows: 826 Sel: .003937']
+,['PRC0000549104', 826, '.003937', 'ApproxValue: PRC0000549104 NumRows: 826 Sel: .003937']
+,['PRC0000552293', 826, '.003937', 'ApproxValue: PRC0000552293 NumRows: 826 Sel: .003937']
+,['PRC0000554669', 826, '.003937', 'ApproxValue: PRC0000554669 NumRows: 826 Sel: .003937']
+,['PRC0000556249', 826, '.003937', 'ApproxValue: PRC0000556249 NumRows: 826 Sel: .003937']
+,['PRC0000559728', 826, '.003937', 'ApproxValue: PRC0000559728 NumRows: 826 Sel: .003937']
+,['PRC0000561414', 826, '.003937', 'ApproxValue: PRC0000561414 NumRows: 826 Sel: .003937']
+,['PRC0000562735', 826, '.003937', 'ApproxValue: PRC0000562735 NumRows: 826 Sel: .003937']
+,['PRC0000566747', 826, '.003937', 'ApproxValue: PRC0000566747 NumRows: 826 Sel: .003937']
+,['PRC0000570744', 826, '.003937', 'ApproxValue: PRC0000570744 NumRows: 826 Sel: .003937']
+,['PRC0000575286', 826, '.003937', 'ApproxValue: PRC0000575286 NumRows: 826 Sel: .003937']
+,['PRC0000577809', 826, '.003937', 'ApproxValue: PRC0000577809 NumRows: 826 Sel: .003937']
+,['PRC0000579663', 826, '.003937', 'ApproxValue: PRC0000579663 NumRows: 826 Sel: .003937']
+,['PRC0000580905', 826, '.003937', 'ApproxValue: PRC0000580905 NumRows: 826 Sel: .003937']
+,['PRC0000584854', 826, '.003937', 'ApproxValue: PRC0000584854 NumRows: 826 Sel: .003937']
+,['PRC0000586920', 826, '.003937', 'ApproxValue: PRC0000586920 NumRows: 826 Sel: .003937']
+,['PRC0000590021', 826, '.003937', 'ApproxValue: PRC0000590021 NumRows: 826 Sel: .003937']
+,['PRC0000591567', 826, '.003937', 'ApproxValue: PRC0000591567 NumRows: 826 Sel: .003937']
+,['PRC0000593605', 826, '.003937', 'ApproxValue: PRC0000593605 NumRows: 826 Sel: .003937']
+,['PRC1000000378', 826, '.003937', 'ApproxValue: PRC1000000378 NumRows: 826 Sel: .003937']
+,['PRC1000001204', 826, '.003937', 'ApproxValue: PRC1000001204 NumRows: 826 Sel: .003937']
+,['PRC1000002030', 826, '.003937', 'ApproxValue: PRC1000002030 NumRows: 826 Sel: .003937']
+,['PRC1000002856', 826, '.003937', 'ApproxValue: PRC1000002856 NumRows: 826 Sel: .003937']
+,['PRC1000003682', 826, '.003937', 'ApproxValue: PRC1000003682 NumRows: 826 Sel: .003937']
+,['PRC1000004508', 826, '.003937', 'ApproxValue: PRC1000004508 NumRows: 826 Sel: .003937']
+,['PRC1000005334', 826, '.003937', 'ApproxValue: PRC1000005334 NumRows: 826 Sel: .003937']
+,['PRC1000006162', 826, '.003937', 'ApproxValue: PRC1000006162 NumRows: 826 Sel: .003937']
+,['PRC1000006988', 826, '.003937', 'ApproxValue: PRC1000006988 NumRows: 826 Sel: .003937']
+,['PRC1000007814', 826, '.003937', 'ApproxValue: PRC1000007814 NumRows: 826 Sel: .003937']
+,['PRC1000008640', 826, '.003937', 'ApproxValue: PRC1000008640 NumRows: 826 Sel: .003937']
+,['PRC1000009466', 826, '.003937', 'ApproxValue: PRC1000009466 NumRows: 826 Sel: .003937']
+,['SUP0000000653', 826, '.003937', 'ApproxValue: SUP0000000653 NumRows: 826 Sel: .003937']
+,['SUP0000002288', 826, '.003937', 'ApproxValue: SUP0000002288 NumRows: 826 Sel: .003937']
+,['SUP0000003132', 826, '.003937', 'ApproxValue: SUP0000003132 NumRows: 826 Sel: .003937']
+,['SUP0000004019', 826, '.003937', 'ApproxValue: SUP0000004019 NumRows: 826 Sel: .003937']
+,['SUP0000004849', 826, '.003937', 'ApproxValue: SUP0000004849 NumRows: 826 Sel: .003937']
+,['SUP0000005676', 826, '.003937', 'ApproxValue: SUP0000005676 NumRows: 826 Sel: .003937']
+,['SUP0000006507', 826, '.003937', 'ApproxValue: SUP0000006507 NumRows: 826 Sel: .003937']
+,['SUP0000007334', 826, '.003937', 'ApproxValue: SUP0000007334 NumRows: 826 Sel: .003937']
+,['SUP0000008182', 826, '.003937', 'ApproxValue: SUP0000008182 NumRows: 826 Sel: .003937']
+,['SUP0000009011', 826, '.003937', 'ApproxValue: SUP0000009011 NumRows: 826 Sel: .003937']
+,['SUP0000009837', 826, '.003937', 'ApproxValue: SUP0000009837 NumRows: 826 Sel: .003937']
+,['SUP0000010664', 826, '.003937', 'ApproxValue: SUP0000010664 NumRows: 826 Sel: .003937']
+,['SUP0000011491', 826, '.003937', 'ApproxValue: SUP0000011491 NumRows: 826 Sel: .003937']
+,['SUP0000012321', 826, '.003937', 'ApproxValue: SUP0000012321 NumRows: 826 Sel: .003937']
+,['SUP0000013150', 826, '.003937', 'ApproxValue: SUP0000013150 NumRows: 826 Sel: .003937']
+,['SUP0000013976', 826, '.003937', 'ApproxValue: SUP0000013976 NumRows: 826 Sel: .003937']
+,['SUP0000014804', 826, '.003937', 'ApproxValue: SUP0000014804 NumRows: 826 Sel: .003937']
+,['SUP0000015636', 826, '.003937', 'ApproxValue: SUP0000015636 NumRows: 826 Sel: .003937']
+,['SUP0000016464', 826, '.003937', 'ApproxValue: SUP0000016464 NumRows: 826 Sel: .003937']
+,['SUP0000017292', 826, '.003937', 'ApproxValue: SUP0000017292 NumRows: 826 Sel: .003937']
+,['SUP0000018118', 826, '.003937', 'ApproxValue: SUP0000018118 NumRows: 826 Sel: .003937']
+,['SUP0000018944', 826, '.003937', 'ApproxValue: SUP0000018944 NumRows: 826 Sel: .003937']
+,['SUP0000019772', 826, '.003937', 'ApproxValue: SUP0000019772 NumRows: 826 Sel: .003937']
+,['SUP0000020601', 826, '.003937', 'ApproxValue: SUP0000020601 NumRows: 826 Sel: .003937']
+,['SUP0000021430', 826, '.003937', 'ApproxValue: SUP0000021430 NumRows: 826 Sel: .003937']
+,['SUP0000022259', 826, '.003937', 'ApproxValue: SUP0000022259 NumRows: 826 Sel: .003937']
+,['SUP0000023087', 826, '.003937', 'ApproxValue: SUP0000023087 NumRows: 826 Sel: .003937']
+,['SUP0000023914', 826, '.003937', 'ApproxValue: SUP0000023914 NumRows: 826 Sel: .003937']
+,['SUP0000024740', 826, '.003937', 'ApproxValue: SUP0000024740 NumRows: 826 Sel: .003937']
+,['SUP0000025567', 826, '.003937', 'ApproxValue: SUP0000025567 NumRows: 826 Sel: .003937']
+,['SUP0000026418', 826, '.003937', 'ApproxValue: SUP0000026418 NumRows: 826 Sel: .003937']
+,['SUP0000027251', 826, '.003937', 'ApproxValue: SUP0000027251 NumRows: 826 Sel: .003937']
+,['SUP0000028084', 826, '.003937', 'ApproxValue: SUP0000028084 NumRows: 826 Sel: .003937']
+,['SUP0000041027', 826, '.003937', 'ApproxValue: SUP0000041027 NumRows: 826 Sel: .003937']
+,['SUP0000087089', 826, '.003937', 'ApproxValue: SUP0000087089 NumRows: 826 Sel: .003937']
+,['SUP0000115023', 826, '.003937', 'ApproxValue: SUP0000115023 NumRows: 826 Sel: .003937']
+,['SUP0000145023', 826, '.003937', 'ApproxValue: SUP0000145023 NumRows: 826 Sel: .003937']
+,['SUP0000173003', 826, '.003937', 'ApproxValue: SUP0000173003 NumRows: 826 Sel: .003937']
+,['SUP0000207008', 826, '.003937', 'ApproxValue: SUP0000207008 NumRows: 826 Sel: .003937']
+,['SUP0000239082', 826, '.003937', 'ApproxValue: SUP0000239082 NumRows: 826 Sel: .003937']
+,['SUP0000277116', 826, '.003937', 'ApproxValue: SUP0000277116 NumRows: 826 Sel: .003937']
+,['SUP0000307046', 826, '.003937', 'ApproxValue: SUP0000307046 NumRows: 826 Sel: .003937']
+,['SUP0000327196', 826, '.003937', 'ApproxValue: SUP0000327196 NumRows: 826 Sel: .003937']
+,['SUP0000350717', 826, '.003937', 'ApproxValue: SUP0000350717 NumRows: 826 Sel: .003937']
+,['SUP0000355021', 826, '.003937', 'ApproxValue: SUP0000355021 NumRows: 826 Sel: .003937']
+,['SUP0000365205', 826, '.003937', 'ApproxValue: SUP0000365205 NumRows: 826 Sel: .003937']
+,['SUP0000376610', 826, '.003937', 'ApproxValue: SUP0000376610 NumRows: 826 Sel: .003937']
+,['SUP0000383414', 826, '.003937', 'ApproxValue: SUP0000383414 NumRows: 826 Sel: .003937']
+,['SUP0000394800', 826, '.003937', 'ApproxValue: SUP0000394800 NumRows: 826 Sel: .003937']
+,['SUP0000406801', 826, '.003937', 'ApproxValue: SUP0000406801 NumRows: 826 Sel: .003937']
+,['SUP0000413015', 826, '.003937', 'ApproxValue: SUP0000413015 NumRows: 826 Sel: .003937']
+,['SUP1000000578', 826, '.003937', 'ApproxValue: SUP1000000578 NumRows: 826 Sel: .003937']
+,['SUP1000001405', 826, '.003937', 'ApproxValue: SUP1000001405 NumRows: 826 Sel: .003937']
+,['SUP1000002232', 826, '.003937', 'ApproxValue: SUP1000002232 NumRows: 826 Sel: .003937']
+,['`', 826, '.003937', 'ApproxValue: ` NumRows: 826 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.101. Height Balanced histogram on Column T_USR.(UPPER("PRV_PLN_ID"))',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.101. Height Balanced histogram on Column T_USR.(UPPER("PRV_PLN_ID")) <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 209878) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 209878)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_USR'
+AND a.column_name = 'SYS_NC00130$'
+ORDER BY a.endpoint_number;
+
+255 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-02/22:32:15 for SQL ID 17vjd1aast5q7 (SELECT DISTINCT PF.PERF_USR FROM T_WKFWTSK WF , T_WKFWTSK_STT_CNGE CNG , T_PRMR ) </font>
+</body>
+</html>

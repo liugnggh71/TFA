@@ -1,0 +1,4029 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 01410_sqld360_323688_0sjx29v99zfqc_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_DDL_ITEM.DDLI_LBL</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 01493_sqld360_323688_0sjx29v99zfqc_3a_108_height_balanced_histogram_on_column_tddlitemddlilbl.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.108. Height Balanced histogram on Column T_DDL_ITEM.DDLI_LBL <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+APPROXIMATE_VALUE
+</th>
+<th scope="col">
+ROWS_PER_BUCKET
+</th>
+<th scope="col">
+SELECTIVITY
+</th>
+<th scope="col">
+CHART_TEXT
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+  None
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+ApproxValue:   None  NumRows: 0 Sel: 0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+ Member
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue:  Member NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+ None
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue:  None NumRows: 61 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+ None
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue:  None  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+ Not at all
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue:  Not at all  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0-15 min
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 0-15 min NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+01 Aged
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 01 Aged NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+14 Institutional Medicaid
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 14 Institutional Medicaid NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+16-30 min
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 16-30 min NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+2-6 days
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 2-6 days  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+31-45 min
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: 31-45 min NumRows: 61 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+46-60 min
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: 46-60 min NumRows: 61 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+61-75 min
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 61-75 min NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+90+ min
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 90+ min NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+&gt; 60 min
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: &gt; 60 min NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+ADD / ADHD
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ADD / ADHD  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+Abnormal / On medication
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Abnormal / On medication  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+Additional Information Requested
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Additional Information Requested NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+Admitted as an Inpatient to this Hospital
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Admitted as an Inpatient to this Hospital NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+Adult and Pediatric
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Adult and Pediatric NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+Agree Upon Care Plan
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: Agree Upon Care Plan NumRows: 61 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+Allergy &amp; Immunology, Clinical &amp; Laboratory Immunology
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Allergy &amp; Immunology, Clinical &amp; Laboratory Immunology NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td>
+AllergyEnvironmentalTypeOther
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: AllergyEnvironmentalTypeOther NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+AllergyReactionTypeNasalCongestion
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: AllergyReactionTypeNasalCongestion NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td>
+Ambulance
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Ambulance  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td>
+Anesthesiology, Addiction Medicine
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Anesthesiology, Addiction Medicine NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td>
+Arabic
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Arabic NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td>
+Assess
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Assess NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td>
+Asthma
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Asthma NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td>
+Audiologist, Assistive Technology Supplier
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Audiologist, Assistive Technology Supplier NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td>
+B Pregnancy
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: B Pregnancy NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+Behavioral Risk
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Behavioral Risk NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td>
+Bipolar
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Bipolar  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td>
+Brain / Central Nervous System
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Brain / Central Nervous System  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td>
+Bruising
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Bruising NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+CC-Transition Ped-to-Adult
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CC-Transition Ped-to-Adult  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+CM-Complex BH
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CM-Complex BH NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+CMProjectCreationNotification
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CMProjectCreationNotification NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+CPS Referral/APS Referral
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CPS Referral/APS Referral NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+Care Coordination-AAPCA Level (Bi-Annual)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Care Coordination-AAPCA Level (Bi-Annual) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+CareBeanTemplateCreationNotification
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CareBeanTemplateCreationNotification NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+CareplanProviderNoteType
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CareplanProviderNoteType NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td>
+CaseMedicationSystemGeneratedNote
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CaseMedicationSystemGeneratedNote NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td>
+Cesarean Section
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Cesarean Section NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td>
+Chinese
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Chinese NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td>
+Chronic Kidney Disease [v2.0]
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Chronic Kidney Disease [v2.0] NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td>
+Claim Question
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Claim Question NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td>
+Clinic/Center, Health Service
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Clinic/Center, Health Service NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td>
+Clinic/Center, Research
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Clinic/Center, Research NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td>
+Clinical Review
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Clinical Review NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td>
+Cognitive Status
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Cognitive Status NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td>
+Collaborate
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Collaborate NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td>
+Community Health Worker
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Community Health Worker NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td>
+Complete Transitional Utilization Assessment
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Complete Transitional Utilization Assessment  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td>
+Comprehensive General, Pediatric [v3.0]
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Comprehensive General, Pediatric [v3.0] NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td>
+Contact Care Manager (family)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Contact Care Manager (family) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td>
+Contact PCP (member)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Contact PCP (member) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td>
+ContactTypeProviderPortal
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ContactTypeProviderPortal NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td>
+Coordinate
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Coordinate NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td>
+Coronary Artery Disease
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Coronary Artery Disease NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td>
+Cramping
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Cramping  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td>
+Cultural or religious beliefs / practices
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Cultural or religious beliefs / practices  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td>
+D
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: D NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td>
+DM On Hold For Full Eligibility Loss
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DM On Hold For Full Eligibility Loss NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td>
+Data from Utilization Management
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Data from Utilization Management  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td>
+Declined CM
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Declined CM NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td>
+Delete Me
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Delete Me NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td>
+Depression
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Depression NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td>
+DeterminationReasonPendingMDReview
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DeterminationReasonPendingMDReview NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td>
+Diabetes, Adult [v3.0]
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Diabetes, Adult [v3.0] NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td>
+Did not finish high school
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Did not finish high school NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td>
+Discharge/Transferred to a Skilled Nursing Facility
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Discharge/Transferred to a Skilled Nursing Facility NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td>
+Discuss Problems/Goals
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: Discuss Problems/Goals NumRows: 61 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td>
+Does not adhere / declines assistance
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Does not adhere / declines assistance  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td>
+Dutch
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Dutch NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td>
+Educate FF (payer)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Educate FF (payer) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td>
+Education
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Education  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td>
+Emergency Medical Technician, Intermediate
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Emergency Medical Technician, Intermediate NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td>
+Engagement
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Engagement NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td>
+Enrolled
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Enrolled NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td>
+Esperanto
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Esperanto NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td>
+Expired
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Expired NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td>
+Facility to Home
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Facility to Home  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td>
+Fast (Dont Eat) (member)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Fast (Dont Eat) (member) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td>
+FfMailContactPrefBusiness
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: FfMailContactPrefBusiness NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td>
+First Fill
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: First Fill NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td>
+Follow Up
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: Follow Up NumRows: 61 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td>
+Follow Up on Benefits
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Follow Up on Benefits NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td>
+Follow-Up Call
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Follow-Up Call NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td>
+Food
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Food NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td>
+Functional Level
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Functional Level NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td>
+General
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: General NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td>
+Genital / Urinary Tract Defect
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Genital / Urinary Tract Defect  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td>
+Group Home
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Group Home NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td>
+HIPAAContactWrittenNotification
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HIPAAContactWrittenNotification NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td>
+HRP - Initial
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HRP - Initial NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td>
+Health Educator
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Health Educator NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td>
+Heart Failure
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Heart Failure NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td>
+Hemochromatosis
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Hemochromatosis NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td>
+High
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: High NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td>
+Hold until Drug Clarified with MD
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Hold until Drug Clarified with MD NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td>
+Homeless / Shelter
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Homeless / Shelter  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td>
+HourDayWeekMonthYearChoiceDay
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HourDayWeekMonthYearChoiceDay NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td>
+Hypertension
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Hypertension  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td>
+I do not have housing. (I am staying with others, in a hotel, in
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: I do not have housing. (I am staying with others, in a hotel, in NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td>
+Improved nutrition
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Improved nutrition NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td>
+Independent Clinic
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Independent Clinic NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td>
+Initial
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Initial  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td>
+Initial Call
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: Initial Call NumRows: 61 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td>
+Inpatient Detox (RF)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Inpatient Detox (RF) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td>
+Insomnia
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Insomnia NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td>
+Internal Medicine, Hepatology
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Internal Medicine, Hepatology NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td>
+Irritability / Anger / Hostility
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Irritability / Anger / Hostility  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td>
+Joint Pain
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Joint Pain  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td>
+Kidney Disease, Chronic / ESRD
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Kidney Disease, Chronic / ESRD  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td>
+LOT
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LOT NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td>
+Late notice
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Late notice NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td>
+Left voicemail
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Left voicemail NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td>
+Leukemia
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Leukemia  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td>
+Liver
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Liver NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td>
+Long Term Goal
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Long Term Goal NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td>
+Lymphoma
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Lymphoma  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td>
+MDCInfectious
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MDCInfectious NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td>
+MRI - Breast and Cardiac Only (RF)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MRI - Breast and Cardiac Only (RF) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td>
+Make Appointment (provider)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Make Appointment (provider) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td>
+Mass Immunization center
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Mass Immunization center NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td>
+MeasuresDiseaseGroupDiabetes
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MeasuresDiseaseGroupDiabetes NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td>
+MeasuresStatusActionable
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MeasuresStatusActionable NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td>
+Medical Genetics, Clinical Cytogenetic
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Medical Genetics, Clinical Cytogenetic NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td>
+MedicationUnitBOX
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MedicationUnitBOX NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td>
+MedicationUnitMEQ
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MedicationUnitMEQ NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td>
+MedicationUnitTBL
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MedicationUnitTBL NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td>
+Member
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Member NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td>
+Member/Caregiver decision
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Member/Caregiver decision  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td>
+Members with Special Healthcare Needs Lubbock
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Members with Special Healthcare Needs Lubbock  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td>
+Metabolic Syndrome
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Metabolic Syndrome  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td>
+Minor, still in school
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Minor, still in school NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td>
+Monitor Progress
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Monitor Progress NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td>
+Multiple Sclerosis
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Multiple Sclerosis  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td>
+NICU admission
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: NICU admission  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td>
+Need Community Resource
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Need Community Resource NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td>
+Neuromusculoskeletal Medicine &amp; OMM
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Neuromusculoskeletal Medicine &amp; OMM NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td>
+No
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: No NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td>
+Non-Covered DME
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Non-Covered DME NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td>
+Non-working Number
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Non-working Number NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td>
+Not Met
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Not Met NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td>
+Not indicated
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Not indicated NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td>
+Nuclear Medicine
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Nuclear Medicine NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td>
+Nutritional Initial Assessment (RF)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Nutritional Initial Assessment (RF) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td>
+Obstetrics &amp; Gynecology, Female Pelvic Medicine and Reconstructi
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Obstetrics &amp; Gynecology, Female Pelvic Medicine and Reconstructi NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td>
+Oncologist
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Oncologist  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td>
+Opt Out
+</td>
+<td align="right">
+                 122
+</td>
+<td align="right">
+             .015748
+</td>
+<td>
+ApproxValue: Opt Out NumRows: 122 Sel: .015748
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td>
+Optometrist, Sports Vision
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Optometrist, Sports Vision NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td>
+Osteosarcoma
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Osteosarcoma  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td>
+Other
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Other NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td>
+Otolaryngology, Facial Plastic Surgery
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Otolaryngology, Facial Plastic Surgery NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td>
+Ovarian Cancer
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Ovarian Cancer  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td>
+Pain management restrictions
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Pain management restrictions  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td>
+Parent
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Parent NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td>
+Pathology, Cytopathology
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Pathology, Cytopathology NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td>
+Pediatric
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Pediatric NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td>
+Pend for Case Management
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Pend for Case Management NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td>
+Personal Task (provider)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Personal Task (provider) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td>
+Physical Medicine &amp; Rehabilitation, Spinal Cord Injury Medicine
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Physical Medicine &amp; Rehabilitation, Spinal Cord Injury Medicine NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td>
+Pilipino or Filipino
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Pilipino or Filipino NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td>
+Polycystic Kidney Disease
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Polycystic Kidney Disease  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td>
+Post-delivery death
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Post-delivery death  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td>
+Pregnancy
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Pregnancy NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td>
+Prescribe Lab Work (provider)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Prescribe Lab Work (provider) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td>
+Primary Care Service
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Primary Care Service NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td>
+Provide
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Provide NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td>
+Provided education on condition management
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Provided education on condition management NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td>
+ProviderContactMethodEmail
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ProviderContactMethodEmail NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td>
+ProviderPhoneContactPrefPager
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ProviderPhoneContactPrefPager NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td>
+Psychiatry &amp; Neurology, Diagnostic Neuroimaging
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Psychiatry &amp; Neurology, Diagnostic Neuroimaging NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td>
+Psychologist, Health
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Psychologist, Health NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+177
+</td>
+<td>
+Q QMB coverage: MEDICARE only
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Q QMB coverage: MEDICARE only NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+178
+</td>
+<td>
+Question
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: Question NumRows: 61 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+179
+</td>
+<td>
+Radiologic Technologist, Radiation Therapy
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Radiologic Technologist, Radiation Therapy NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+180
+</td>
+<td>
+RecordCreationDenialNotification
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RecordCreationDenialNotification NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+181
+</td>
+<td>
+Refer
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Refer NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+182
+</td>
+<td>
+Referral to CPW Program
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Referral to CPW Program NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+183
+</td>
+<td>
+Registered Nurse, Lactation Consultant
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Registered Nurse, Lactation Consultant NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+184
+</td>
+<td>
+Rehabilitation facility
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Rehabilitation facility NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+185
+</td>
+<td>
+Representative
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Representative NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+186
+</td>
+<td>
+Request
+</td>
+<td align="right">
+                  61
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: Request NumRows: 61 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+187
+</td>
+<td>
+Requires Medical Review
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Requires Medical Review NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+188
+</td>
+<td>
+Rett Syndrome
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Rett Syndrome  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+189
+</td>
+<td>
+ReviewCompletionNotification
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ReviewCompletionNotification NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+190
+</td>
+<td>
+Rx Care Coordination
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Rx Care Coordination NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+191
+</td>
+<td>
+Safety
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Safety NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+192
+</td>
+<td>
+Sciatica
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Sciatica  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+193
+</td>
+<td>
+Second Attempt - Unsuccessful
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Second Attempt - Unsuccessful NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+194
+</td>
+<td>
+Setting a Tobacco Quit Date
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Setting a Tobacco Quit Date  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+195
+</td>
+<td>
+Sickle Cell Anemia
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Sickle Cell Anemia  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+196
+</td>
+<td>
+Sleep Apnea
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Sleep Apnea  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+197
+</td>
+<td>
+Spec/Tech, Cardiovascular
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Spec/Tech, Cardiovascular NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+198
+</td>
+<td>
+Spinal Muscular Atrophy
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Spinal Muscular Atrophy NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+199
+</td>
+<td>
+Stage III
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Stage III  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+200
+</td>
+<td>
+Still a Patient
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Still a Patient NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+201
+</td>
+<td>
+Substitute Care
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Substitute Care NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+202
+</td>
+<td>
+Surgery, non pregnancy related
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Surgery, non pregnancy related NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+203
+</td>
+<td>
+T_CNCT
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: T_CNCT NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+204
+</td>
+<td>
+Technician/Technologist, Optician
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Technician/Technologist, Optician NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+205
+</td>
+<td>
+Third Attempt - Unsuccessful
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Third Attempt - Unsuccessful NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+206
+</td>
+<td>
+Tobacco Cessation Slips
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Tobacco Cessation Slips  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+207
+</td>
+<td>
+Toisanese (China)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Toisanese (China) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+208
+</td>
+<td>
+Transitional support-facility discharge
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Transitional support-facility discharge NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+209
+</td>
+<td>
+Traumatic Brain Injury
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Traumatic Brain Injury NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+210
+</td>
+<td>
+UM Replies
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: UM Replies NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+211
+</td>
+<td>
+UTR Letter Sent
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: UTR Letter Sent NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+212
+</td>
+<td>
+Unaware of recommendations
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Unaware of recommendations  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+213
+</td>
+<td>
+Unknown
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Unknown NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+214
+</td>
+<td>
+Unsuccessful Attempt 1
+</td>
+<td align="right">
+                 122
+</td>
+<td align="right">
+             .015748
+</td>
+<td>
+ApproxValue: Unsuccessful Attempt 1 NumRows: 122 Sel: .015748
+</td>
+</tr>
+<tr>
+<td>
+215
+</td>
+<td>
+Unsuccessful Attempt 2
+</td>
+<td align="right">
+                 122
+</td>
+<td align="right">
+             .015748
+</td>
+<td>
+ApproxValue: Unsuccessful Attempt 2 NumRows: 122 Sel: .015748
+</td>
+</tr>
+<tr>
+<td>
+216
+</td>
+<td>
+Unsuccessful Attempt 3
+</td>
+<td align="right">
+                 153
+</td>
+<td align="right">
+             .019685
+</td>
+<td>
+ApproxValue: Unsuccessful Attempt 3 NumRows: 153 Sel: .019685
+</td>
+</tr>
+<tr>
+<td>
+217
+</td>
+<td>
+Updated
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Updated  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+218
+</td>
+<td>
+Utilization Management
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Utilization Management NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+219
+</td>
+<td>
+VIRGINIA
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: VIRGINIA NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+220
+</td>
+<td>
+Vis - Non Prosthetic Contact Lenses (RF)
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Vis - Non Prosthetic Contact Lenses (RF) NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+221
+</td>
+<td>
+Waiting list
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Waiting list  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+222
+</td>
+<td>
+Weight control
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Weight control  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+223
+</td>
+<td>
+Yemen
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: Yemen NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+224
+</td>
+<td>
+_Never exercise
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: _Never exercise  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+225
+</td>
+<td>
+_Other
+</td>
+<td align="right">
+                 122
+</td>
+<td align="right">
+             .015748
+</td>
+<td>
+ApproxValue: _Other NumRows: 122 Sel: .015748
+</td>
+</tr>
+<tr>
+<td>
+226
+</td>
+<td>
+_Other
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: _Other  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+227
+</td>
+<td>
+b. Annually
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: b. Annually  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+228
+</td>
+<td>
+denied as services are available at a lower level of care
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: denied as services are available at a lower level of care NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+229
+</td>
+<td>
+h. Weekly
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: h. Weekly  NumRows: 31 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+230
+</td>
+<td>
+v
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: v NumRows: 31 Sel: .003937
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 7763) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 7763)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_DDL_ITEM'
+AND a.column_name = 'DDLI_LBL'
+ORDER BY a.endpoint_number;
+
+230 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:20:22 for SQL ID 0sjx29v99zfqc (SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be) </font>
+</body>
+</html>

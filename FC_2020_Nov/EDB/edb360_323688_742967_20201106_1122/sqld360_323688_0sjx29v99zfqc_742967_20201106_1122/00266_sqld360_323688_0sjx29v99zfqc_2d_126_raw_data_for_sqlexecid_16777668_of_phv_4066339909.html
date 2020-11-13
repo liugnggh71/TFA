@@ -1,0 +1,2975 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00038_sqld360_323688_0sjx29v99zfqc_2d_34_plan_details v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Raw Data for SQL_EXEC_ID 16777668 of PHV 4066339909</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00266_sqld360_323688_0sjx29v99zfqc_2d_126_raw_data_for_sqlexecid_16777668_of_phv_4066339909.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2d.126. Raw Data for SQL_EXEC_ID 16777668 of PHV 4066339909 <em>(DBA_HIST_ACTIVE_SESS_HISTORY)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+SOURCE
+</th>
+<th scope="col">
+DBID
+</th>
+<th scope="col">
+SNAP_ID
+</th>
+<th scope="col">
+INSTANCE_NUMBER
+</th>
+<th scope="col">
+SAMPLE_ID
+</th>
+<th scope="col">
+SAMPLE_TIME
+</th>
+<th scope="col">
+SQL_EXEC_ID
+</th>
+<th scope="col">
+SQL_EXEC_START
+</th>
+<th scope="col">
+SESSION_ID
+</th>
+<th scope="col">
+SESSION_SERIAL#
+</th>
+<th scope="col">
+USER_ID
+</th>
+<th scope="col">
+SQL_ID
+</th>
+<th scope="col">
+PLAN_HASH_VALUE
+</th>
+<th scope="col">
+SQL_FULL_PLAN_HASH_VALUE
+</th>
+<th scope="col">
+SQL_PLAN_LINE_ID
+</th>
+<th scope="col">
+SQL_PLAN_OPERATION
+</th>
+<th scope="col">
+SQL_PLAN_OPTIONS
+</th>
+<th scope="col">
+CPU_OR_EVENT
+</th>
+<th scope="col">
+WAIT_CLASS
+</th>
+<th scope="col">
+SEQ#
+</th>
+<th scope="col">
+P1TEXT
+</th>
+<th scope="col">
+P1
+</th>
+<th scope="col">
+P2TEXT
+</th>
+<th scope="col">
+P2
+</th>
+<th scope="col">
+P3TEXT
+</th>
+<th scope="col">
+P3
+</th>
+<th scope="col">
+CURRENT_OBJ#
+</th>
+<th scope="col">
+CURRENT_FILE#
+</th>
+<th scope="col">
+CURRENT_BLOCK#
+</th>
+<th scope="col">
+CURRENT_ROW#
+</th>
+<th scope="col">
+IN_PARSE
+</th>
+<th scope="col">
+IN_HARD_PARSE
+</th>
+<th scope="col">
+IN_SQL_EXECUTION
+</th>
+<th scope="col">
+QC_INSTANCE_ID
+</th>
+<th scope="col">
+QC_SESSION_ID
+</th>
+<th scope="col">
+QC_SESSION_SERIAL#
+</th>
+<th scope="col">
+BLOCKING_SESSION_STATUS
+</th>
+<th scope="col">
+BLOCKING_SESSION
+</th>
+<th scope="col">
+BLOCKING_SESSION_SERIAL#
+</th>
+<th scope="col">
+BLOCKING_INST_ID
+</th>
+<th scope="col">
+PX_FLAGS
+</th>
+<th scope="col">
+PGA_ALLOCATED
+</th>
+<th scope="col">
+TEMP_SPACE_ALLOCATED
+</th>
+<th scope="col">
+TM_DELTA_TIME
+</th>
+<th scope="col">
+TM_DELTA_CPU_TIME
+</th>
+<th scope="col">
+TM_DELTA_DB_TIME
+</th>
+<th scope="col">
+DELTA_TIME
+</th>
+<th scope="col">
+DELTA_READ_IO_REQUESTS
+</th>
+<th scope="col">
+DELTA_WRITE_IO_REQUESTS
+</th>
+<th scope="col">
+DELTA_READ_IO_BYTES
+</th>
+<th scope="col">
+DELTA_WRITE_IO_BYTES
+</th>
+<th scope="col">
+DELTA_INTERCONNECT_IO_BYTES
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826397
+</td>
+<td>
+2020-10-22/23:49:59
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+gc cr grant 2-way
+</td>
+<td>
+Cluster
+</td>
+<td align="right">
+               26022
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 257
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+             3910593
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 257
+</td>
+<td align="right">
+             3910593
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+GLOBAL
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            57279488
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           300349352
+</td>
+<td align="right">
+             4636947
+</td>
+<td align="right">
+             6734971
+</td>
+<td align="right">
+           301491996
+</td>
+<td align="right">
+                8508
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+          2520268800
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           277732936
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826407
+</td>
+<td>
+2020-10-22/23:50:09
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+cell single block physical read
+</td>
+<td>
+User I/O
+</td>
+<td align="right">
+                5364
+</td>
+<td>
+cellhash#
+</td>
+<td align="right">
+          1034531217
+</td>
+<td>
+diskhash#
+</td>
+<td align="right">
+          3563495220
+</td>
+<td>
+bytes
+</td>
+<td align="right">
+                8192
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 263
+</td>
+<td align="right">
+              848833
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UNKNOWN
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            58131456
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10009821
+</td>
+<td align="right">
+             3433970
+</td>
+<td align="right">
+            10009821
+</td>
+<td align="right">
+            10035005
+</td>
+<td align="right">
+               15964
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           173490176
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           136213880
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826417
+</td>
+<td>
+2020-10-22/23:50:19
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+gc current block 2-way
+</td>
+<td>
+Cluster
+</td>
+<td align="right">
+               52913
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 256
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              788977
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 256
+</td>
+<td align="right">
+              788977
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+GLOBAL
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            59573248
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+             9998465
+</td>
+<td align="right">
+             3437368
+</td>
+<td align="right">
+             9998465
+</td>
+<td align="right">
+            10031994
+</td>
+<td align="right">
+               17330
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           170106880
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           144655264
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826427
+</td>
+<td>
+2020-10-22/23:50:29
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+SORT
+</td>
+<td>
+UNIQUE
+</td>
+<td>
+ON CPU
+</td>
+<td>
+CPU
+</td>
+<td align="right">
+               35588
+</td>
+<td>
+cellhash#
+</td>
+<td align="right">
+          3178744122
+</td>
+<td>
+diskhash#
+</td>
+<td align="right">
+          4159429204
+</td>
+<td>
+bytes
+</td>
+<td align="right">
+                8192
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 257
+</td>
+<td align="right">
+             3909106
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            14615552
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10007740
+</td>
+<td align="right">
+             3611941
+</td>
+<td align="right">
+            10007740
+</td>
+<td align="right">
+            10024018
+</td>
+<td align="right">
+               18384
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           245284864
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           158793432
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826437
+</td>
+<td>
+2020-10-22/23:50:39
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+gc cr grant 2-way
+</td>
+<td>
+Cluster
+</td>
+<td align="right">
+               19057
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 252
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              790498
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 252
+</td>
+<td align="right">
+              790498
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+GLOBAL
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            16188416
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10013474
+</td>
+<td align="right">
+             3524829
+</td>
+<td align="right">
+            10013474
+</td>
+<td align="right">
+            10026983
+</td>
+<td align="right">
+               19028
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           221290496
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           161087008
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826447
+</td>
+<td>
+2020-10-22/23:50:49
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+cell single block physical read
+</td>
+<td>
+User I/O
+</td>
+<td align="right">
+               65496
+</td>
+<td>
+cellhash#
+</td>
+<td align="right">
+          1034531217
+</td>
+<td>
+diskhash#
+</td>
+<td align="right">
+          3429509404
+</td>
+<td>
+bytes
+</td>
+<td align="right">
+                8192
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 257
+</td>
+<td align="right">
+             4004398
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UNKNOWN
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            18220032
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+             9993336
+</td>
+<td align="right">
+             3463848
+</td>
+<td align="right">
+             9993336
+</td>
+<td align="right">
+            10027029
+</td>
+<td align="right">
+               18037
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           223641600
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           153060608
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826457
+</td>
+<td>
+2020-10-22/23:50:59
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+gc cr grant 2-way
+</td>
+<td>
+Cluster
+</td>
+<td align="right">
+               47699
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 284
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+             2049282
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              126098
+</td>
+<td align="right">
+                 284
+</td>
+<td align="right">
+             2049282
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+GLOBAL
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            20710400
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            12011688
+</td>
+<td align="right">
+             4104984
+</td>
+<td align="right">
+            12011688
+</td>
+<td align="right">
+            10371966
+</td>
+<td align="right">
+               18880
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           233619456
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           159919048
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826467
+</td>
+<td>
+2020-10-22/23:51:09
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+cell single block physical read
+</td>
+<td>
+User I/O
+</td>
+<td align="right">
+               30957
+</td>
+<td>
+cellhash#
+</td>
+<td align="right">
+          1865373893
+</td>
+<td>
+diskhash#
+</td>
+<td align="right">
+          4014583648
+</td>
+<td>
+bytes
+</td>
+<td align="right">
+                8192
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 251
+</td>
+<td align="right">
+             2493499
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UNKNOWN
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            23462912
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10001366
+</td>
+<td align="right">
+             3566789
+</td>
+<td align="right">
+            10001366
+</td>
+<td align="right">
+            10035991
+</td>
+<td align="right">
+               19510
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           245342208
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           165073760
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826477
+</td>
+<td>
+2020-10-22/23:51:19
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+ON CPU
+</td>
+<td>
+CPU
+</td>
+<td align="right">
+               12312
+</td>
+<td>
+file#
+</td>
+<td align="right">
+                 256
+</td>
+<td>
+block#
+</td>
+<td align="right">
+               67823
+</td>
+<td>
+class#
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 256
+</td>
+<td align="right">
+               67823
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            26674176
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10006977
+</td>
+<td align="right">
+             3631836
+</td>
+<td align="right">
+            10006977
+</td>
+<td align="right">
+            10026011
+</td>
+<td align="right">
+               19377
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           256385024
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           166016392
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826487
+</td>
+<td>
+2020-10-22/23:51:29
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+cell single block physical read
+</td>
+<td>
+User I/O
+</td>
+<td align="right">
+               57362
+</td>
+<td>
+cellhash#
+</td>
+<td align="right">
+          1865373893
+</td>
+<td>
+diskhash#
+</td>
+<td align="right">
+          2250619723
+</td>
+<td>
+bytes
+</td>
+<td align="right">
+                8192
+</td>
+<td align="right">
+              126098
+</td>
+<td align="right">
+                 285
+</td>
+<td align="right">
+             2471696
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UNKNOWN
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            30016512
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10006514
+</td>
+<td align="right">
+             3545023
+</td>
+<td align="right">
+            10006514
+</td>
+<td align="right">
+            10022006
+</td>
+<td align="right">
+               18669
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           222593024
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           159254688
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826497
+</td>
+<td>
+2020-10-22/23:51:39
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+cell single block physical read
+</td>
+<td>
+User I/O
+</td>
+<td align="right">
+               37102
+</td>
+<td>
+cellhash#
+</td>
+<td align="right">
+          3178744122
+</td>
+<td>
+diskhash#
+</td>
+<td align="right">
+          1687574234
+</td>
+<td>
+bytes
+</td>
+<td align="right">
+                8192
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 251
+</td>
+<td align="right">
+              390894
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+UNKNOWN
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            34210816
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10010993
+</td>
+<td align="right">
+             3785980
+</td>
+<td align="right">
+            10010993
+</td>
+<td align="right">
+            10028042
+</td>
+<td align="right">
+               18928
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           292986880
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           165870416
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826507
+</td>
+<td>
+2020-10-22/23:51:49
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+gc current block 2-way
+</td>
+<td>
+Cluster
+</td>
+<td align="right">
+               13987
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 249
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              770090
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 249
+</td>
+<td align="right">
+              770090
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+GLOBAL
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            38994944
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+             9996106
+</td>
+<td align="right">
+             3788023
+</td>
+<td align="right">
+             9996106
+</td>
+<td align="right">
+            10023943
+</td>
+<td align="right">
+               17859
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           265060352
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           156950704
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826517
+</td>
+<td>
+2020-10-22/23:51:59
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+ON CPU
+</td>
+<td>
+CPU
+</td>
+<td align="right">
+               55616
+</td>
+<td>
+cellhash#
+</td>
+<td align="right">
+          1034531217
+</td>
+<td>
+diskhash#
+</td>
+<td align="right">
+          3839012037
+</td>
+<td>
+bytes
+</td>
+<td align="right">
+                8192
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 257
+</td>
+<td align="right">
+              738890
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            44368896
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10007291
+</td>
+<td align="right">
+             3811871
+</td>
+<td align="right">
+            10007291
+</td>
+<td align="right">
+            10067030
+</td>
+<td align="right">
+               17513
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           258973696
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           154598008
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826527
+</td>
+<td>
+2020-10-22/23:52:09
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+gc cr grant 2-way
+</td>
+<td>
+Cluster
+</td>
+<td align="right">
+               31526
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 262
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              751823
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 262
+</td>
+<td align="right">
+              751823
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+GLOBAL
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            50463744
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10002467
+</td>
+<td align="right">
+             3972251
+</td>
+<td align="right">
+            10002467
+</td>
+<td align="right">
+            10035967
+</td>
+<td align="right">
+               17292
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           223035392
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           151225112
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826537
+</td>
+<td>
+2020-10-22/23:52:19
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+gc current block 2-way
+</td>
+<td>
+Cluster
+</td>
+<td align="right">
+               11374
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 262
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              746661
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 262
+</td>
+<td align="right">
+              746661
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+GLOBAL
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            57738240
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10007570
+</td>
+<td align="right">
+             4216220
+</td>
+<td align="right">
+            10007570
+</td>
+<td align="right">
+            10032019
+</td>
+<td align="right">
+               16392
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           275456000
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           152728192
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+SQLD360_ASH_DATA_HIST
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                4265
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+             9826547
+</td>
+<td>
+2020-10-22/23:52:29
+</td>
+<td align="right">
+            16777668
+</td>
+<td>
+2020-10-22/23:49:55
+</td>
+<td align="right">
+                5044
+</td>
+<td align="right">
+                4325
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+0sjx29v99zfqc
+</td>
+<td align="right">
+          4066339909
+</td>
+<td align="right">
+          2996191279
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+ON CPU
+</td>
+<td>
+CPU
+</td>
+<td align="right">
+               40586
+</td>
+<td>
+file#
+</td>
+<td align="right">
+                 261
+</td>
+<td>
+block#
+</td>
+<td align="right">
+              526543
+</td>
+<td>
+class#
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+              115430
+</td>
+<td align="right">
+                 261
+</td>
+<td align="right">
+              526543
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+NOT IN WAIT
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            64422912
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            10003699
+</td>
+<td align="right">
+             2636539
+</td>
+<td align="right">
+            10003699
+</td>
+<td align="right">
+            10022986
+</td>
+<td align="right">
+               10429
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+           148815872
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+            90977576
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ SAMPLE_ID                                 NOT NULL NUMBER
+ SAMPLE_TIME                               NOT NULL TIMESTAMP(3)
+ SESSION_ID                                NOT NULL NUMBER
+ SESSION_SERIAL#                                    NUMBER
+ SESSION_TYPE                                       VARCHAR2(10)
+ FLAGS                                              NUMBER
+ USER_ID                                            NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ IS_SQLID_CURRENT                                   VARCHAR2(1)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_OPCODE                                         NUMBER
+ SQL_OPNAME                                         VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ TOP_LEVEL_SQL_ID                                   VARCHAR2(13)
+ TOP_LEVEL_SQL_OPCODE                               NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_FULL_PLAN_HASH_VALUE                           NUMBER
+ SQL_ADAPTIVE_PLAN_RESOLVED                         NUMBER
+ SQL_PLAN_LINE_ID                                   NUMBER
+ SQL_PLAN_OPERATION                                 VARCHAR2(64)
+ SQL_PLAN_OPTIONS                                   VARCHAR2(64)
+ SQL_EXEC_ID                                        NUMBER
+ SQL_EXEC_START                                     DATE
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ QC_INSTANCE_ID                                     NUMBER
+ QC_SESSION_ID                                      NUMBER
+ QC_SESSION_SERIAL#                                 NUMBER
+ PX_FLAGS                                           NUMBER
+ EVENT                                              VARCHAR2(64)
+ EVENT_ID                                           NUMBER
+ SEQ#                                               NUMBER
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_TIME                                          NUMBER
+ SESSION_STATE                                      VARCHAR2(7)
+ TIME_WAITED                                        NUMBER
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_SESSION                                   NUMBER
+ BLOCKING_SESSION_SERIAL#                           NUMBER
+ BLOCKING_INST_ID                                   NUMBER
+ BLOCKING_HANGCHAIN_INFO                            VARCHAR2(1)
+ CURRENT_OBJ#                                       NUMBER
+ CURRENT_FILE#                                      NUMBER
+ CURRENT_BLOCK#                                     NUMBER
+ CURRENT_ROW#                                       NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ TOP_LEVEL_CALL_NAME                                VARCHAR2(64)
+ CONSUMER_GROUP_ID                                  NUMBER
+ XID                                                RAW(8)
+ REMOTE_INSTANCE#                                   NUMBER
+ TIME_MODEL                                         NUMBER
+ IN_CONNECTION_MGMT                                 VARCHAR2(1)
+ IN_PARSE                                           VARCHAR2(1)
+ IN_HARD_PARSE                                      VARCHAR2(1)
+ IN_SQL_EXECUTION                                   VARCHAR2(1)
+ IN_PLSQL_EXECUTION                                 VARCHAR2(1)
+ IN_PLSQL_RPC                                       VARCHAR2(1)
+ IN_PLSQL_COMPILATION                               VARCHAR2(1)
+ IN_JAVA_EXECUTION                                  VARCHAR2(1)
+ IN_BIND                                            VARCHAR2(1)
+ IN_CURSOR_CLOSE                                    VARCHAR2(1)
+ IN_SEQUENCE_LOAD                                   VARCHAR2(1)
+ IN_INMEMORY_QUERY                                  VARCHAR2(1)
+ IN_INMEMORY_POPULATE                               VARCHAR2(1)
+ IN_INMEMORY_PREPOPULATE                            VARCHAR2(1)
+ IN_INMEMORY_REPOPULATE                             VARCHAR2(1)
+ IN_INMEMORY_TREPOPULATE                            VARCHAR2(1)
+ CAPTURE_OVERHEAD                                   VARCHAR2(1)
+ REPLAY_OVERHEAD                                    VARCHAR2(1)
+ IS_CAPTURED                                        VARCHAR2(1)
+ IS_REPLAYED                                        VARCHAR2(1)
+ SERVICE_HASH                                       NUMBER
+ PROGRAM                                            VARCHAR2(64)
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ CLIENT_ID                                          VARCHAR2(64)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ ECID                                               VARCHAR2(64)
+ DBREPLAY_FILE_ID                                   NUMBER
+ DBREPLAY_CALL_COUNTER                              NUMBER
+ TM_DELTA_TIME                                      NUMBER
+ TM_DELTA_CPU_TIME                                  NUMBER
+ TM_DELTA_DB_TIME                                   NUMBER
+ DELTA_TIME                                         NUMBER
+ DELTA_READ_IO_REQUESTS                             NUMBER
+ DELTA_WRITE_IO_REQUESTS                            NUMBER
+ DELTA_READ_IO_BYTES                                NUMBER
+ DELTA_WRITE_IO_BYTES                               NUMBER
+ DELTA_INTERCONNECT_IO_BYTES                        NUMBER
+ PGA_ALLOCATED                                      NUMBER
+ TEMP_SPACE_ALLOCATED                               NUMBER
+ DBOP_NAME                                          VARCHAR2(64)
+ DBOP_EXEC_ID                                       NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+SELECT /*+ NO_MERGE */
+statement_id     source,
+search_columns   dbid,
+cardinality      snap_id,
+position         instance_number,
+parent_id        sample_id,
+TO_CHAR(timestamp, 'YYYY-MM-DD/HH24:MI:SS')        sample_time,
+partition_id     sql_exec_id,
+TO_CHAR(TO_DATE(distribution,'YYYYMMDDHH24MISS'), 'YYYY-MM-DD/HH24:MI:SS')  sql_exec_start,
+cpu_cost         session_id,
+io_cost          session_serial#,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,13)+1))            user_id,
+remarks          sql_id,
+cost             plan_hash_value,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,19)+1)) sql_full_plan_hash_value,
+id               sql_plan_line_id,
+operation        sql_plan_operation,
+options          sql_plan_options,
+object_node      cpu_or_event,
+other_tag        wait_class,
+TO_NUMBER(SUBSTR(partition_start,1,INSTR(partition_start,',',1,1)-1)) seq#,
+SUBSTR(partition_start,INSTR(partition_start,',',1,1)+1,INSTR(partition_start,',',1,2)-INSTR(partition_start,',',1,1)-1) p1text,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,2)+1,INSTR(partition_start,',',1,3)-INSTR(partition_start,',',1,2)-1)) p1,
+SUBSTR(partition_start,INSTR(partition_start,',',1,3)+1,INSTR(partition_start,',',1,4)-INSTR(partition_start,',',1,3)-1) p2text,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,4)+1,INSTR(partition_start,',',1,5)-INSTR(partition_start,',',1,4)-1)) p2,
+SUBSTR(partition_start,INSTR(partition_start,',',1,5)+1,INSTR(partition_start,',',1,6)-INSTR(partition_start,',',1,5)-1) p3text,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,6)+1,INSTR(partition_start,',',1,7)-INSTR(partition_start,',',1,6)-1)) p3,
+object_instance  current_obj#,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,7)+1,INSTR(partition_start,',',1,8)-INSTR(partition_start,',',1,7)-1)) current_file#,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,8)+1,INSTR(partition_start,',',1,9)-INSTR(partition_start,',',1,8)-1)) current_block#,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,9)+1,INSTR(partition_start,',',1,10)-INSTR(partition_start,',',1,9)-1)) current_row#,
+SUBSTR(partition_stop,1,INSTR(partition_stop,',',1,1)-1) in_parse,
+SUBSTR(partition_stop,INSTR(partition_stop,',',1,1)+1,INSTR(partition_stop,',',1,2)-INSTR(partition_stop,',',1,1)-1) in_hard_parse,
+SUBSTR(partition_stop,INSTR(partition_stop,',',1,2)+1,INSTR(partition_stop,',',1,3)-INSTR(partition_stop,',',1,2)-1) in_sql_execution,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)) qc_instance_id,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)) qc_session_id,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)) qc_session_serial#,
+SUBSTR(partition_stop,INSTR(partition_stop,',',1,6)+1,INSTR(partition_stop,',',1,7)-INSTR(partition_stop,',',1,6)-1) blocking_session_status,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,7)+1,INSTR(partition_stop,',',1,8)-INSTR(partition_stop,',',1,7)-1)) blocking_session,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,8)+1,INSTR(partition_stop,',',1,9)-INSTR(partition_stop,',',1,8)-1)) blocking_session_serial#,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,9)+1,INSTR(partition_stop,',',1,10)-INSTR(partition_stop,',',1,9)-1)) blocking_inst_id,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,10)+1,INSTR(partition_stop,',',1,11)-INSTR(partition_stop,',',1,10)-1)) px_flags,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,11)+1,INSTR(partition_stop,',',1,12)-INSTR(partition_stop,',',1,11)-1)) pga_allocated,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,12)+1,INSTR(partition_stop,',',1,13)-INSTR(partition_stop,',',1,12)-1)) temp_space_allocated,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,10)+1,INSTR(partition_start,',',1,11)-INSTR(partition_start,',',1,10)-1)) tm_delta_time,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,11)+1,INSTR(partition_start,',',1,12)-INSTR(partition_start,',',1,11)-1)) tm_delta_cpu_time,
+TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,12)+1,INSTR(partition_start,',',1,13)-INSTR(partition_start,',',1,12)-1)) tm_delta_db_time,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,13)+1,INSTR(partition_stop,',',1,14)-INSTR(partition_stop,',',1,13)-1)) delta_time,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,14)+1,INSTR(partition_stop,',',1,15)-INSTR(partition_stop,',',1,14)-1)) delta_read_io_requests,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,15)+1,INSTR(partition_stop,',',1,16)-INSTR(partition_stop,',',1,15)-1)) delta_write_io_requests,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,16)+1,INSTR(partition_stop,',',1,17)-INSTR(partition_stop,',',1,16)-1)) delta_read_io_bytes,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,17)+1,INSTR(partition_stop,',',1,18)-INSTR(partition_stop,',',1,17)-1)) delta_write_io_bytes,
+TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,18)+1,INSTR(partition_stop,',',1,19)-INSTR(partition_stop,',',1,18)-1)) delta_interconnect_io_bytes
+FROM plan_table
+WHERE remarks = '0sjx29v99zfqc'
+AND statement_id = 'SQLD360_ASH_DATA_HIST'
+AND /*cost*/ bytes =  4066339909
+AND NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position) = 1
+AND NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost) = 5044
+AND NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost) = 4325
+AND timestamp BETWEEN TO_DATE('20201022234959', 'YYYYMMDDHH24MISS') AND TO_DATE('20201022235229', 'YYYYMMDDHH24MISS')
+AND NVL(partition_id, 16777668) = 16777668
+AND NVL(distribution, TO_DATE('20201022234955', 'YYYYMMDDHH24MISS')) = TO_DATE('20201022234955', 'YYYYMMDDHH24MISS')
+AND 'Y' = 'Y'
+ORDER BY sample_time,instance_number;
+
+16 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:16:12 for SQL ID 0sjx29v99zfqc (SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be) </font>
+</body>
+</html>

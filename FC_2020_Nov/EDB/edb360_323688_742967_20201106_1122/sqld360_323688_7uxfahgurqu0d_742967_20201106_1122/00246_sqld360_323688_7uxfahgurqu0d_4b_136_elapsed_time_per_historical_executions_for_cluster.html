@@ -1,0 +1,1756 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_7uxfahgurqu0d_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Elapsed Time per historical executions for Cluster</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00246_sqld360_323688_7uxfahgurqu0d_4b_136_elapsed_time_per_historical_executions_for_cluster.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 4b.136. Elapsed Time per historical executions for Cluster <em>(DBA_HIST_ACTIVE_SESS_HISTORY)</em>  </h1>
+
+<br>
+Elapsed Time per historical execution, in seconds, rounded to the 10 seconds
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INSTANCE_ID
+</th>
+<th scope="col">
+SESSION_ID
+</th>
+<th scope="col">
+SESSION_SERIAL#
+</th>
+<th scope="col">
+USER_ID
+</th>
+<th scope="col">
+SQL_EXEC_ID
+</th>
+<th scope="col">
+SQL_EXEC_START
+</th>
+<th scope="col">
+START_TIME
+</th>
+<th scope="col">
+END_TIME
+</th>
+<th scope="col">
+PLAN_HASH_VALUE
+</th>
+<th scope="col">
+ELAPSED_TIME
+</th>
+<th scope="col">
+CPU_TIME
+</th>
+<th scope="col">
+DB_TIME
+</th>
+<th scope="col">
+NUM_PROCESSES_ASH
+</th>
+<th scope="col">
+MAX_PX_DEGREE_ASH
+</th>
+<th scope="col">
+PX_SERVERS_REQUESTED_SQLMON
+</th>
+<th scope="col">
+PX_SERVERS_ALLOCATED_SQLMON
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2729
+</td>
+<td align="right">
+               44344
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554437
+</td>
+<td>
+2020-10-07 00:11:13
+</td>
+<td>
+2020-10-07 00:11:14
+</td>
+<td>
+2020-10-07 00:35:40
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1476
+</td>
+<td align="right">
+                 770
+</td>
+<td align="right">
+                 950
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 413
+</td>
+<td align="right">
+               49952
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554438
+</td>
+<td>
+2020-10-08 00:12:49
+</td>
+<td>
+2020-10-08 00:13:15
+</td>
+<td>
+2020-10-08 00:37:31
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1466
+</td>
+<td align="right">
+                 740
+</td>
+<td align="right">
+                 980
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 413
+</td>
+<td align="right">
+               49952
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-08 00:24:18
+</td>
+<td>
+2020-10-08 00:24:18
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3896
+</td>
+<td align="right">
+               44314
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554439
+</td>
+<td>
+2020-10-09 00:11:08
+</td>
+<td>
+2020-10-09 00:11:18
+</td>
+<td>
+2020-10-09 00:35:44
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1476
+</td>
+<td align="right">
+                 760
+</td>
+<td align="right">
+                 970
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3116
+</td>
+<td align="right">
+               54039
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16777216
+</td>
+<td>
+2020-10-10 00:09:48
+</td>
+<td>
+2020-10-10 00:09:54
+</td>
+<td>
+2020-10-10 00:34:01
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1457
+</td>
+<td align="right">
+                 670
+</td>
+<td align="right">
+                1030
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3116
+</td>
+<td align="right">
+               54039
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-10-10 00:25:48
+</td>
+<td>
+2020-10-10 00:25:48
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1549
+</td>
+<td align="right">
+               36917
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16777216
+</td>
+<td>
+2020-10-12 00:17:15
+</td>
+<td>
+2020-10-12 00:17:34
+</td>
+<td>
+2020-10-12 00:43:11
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1547
+</td>
+<td align="right">
+                 670
+</td>
+<td align="right">
+                 970
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2706
+</td>
+<td align="right">
+               53319
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-10-13 00:14:58
+</td>
+<td>
+2020-10-13 00:15:03
+</td>
+<td>
+2020-10-13 00:42:10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1637
+</td>
+<td align="right">
+                 900
+</td>
+<td align="right">
+                1180
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                4260
+</td>
+<td align="right">
+                9637
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554433
+</td>
+<td>
+2020-10-14 00:16:59
+</td>
+<td>
+2020-10-14 00:17:00
+</td>
+<td>
+2020-10-14 00:40:46
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1436
+</td>
+<td align="right">
+                 710
+</td>
+<td align="right">
+                 920
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3888
+</td>
+<td align="right">
+               42302
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554434
+</td>
+<td>
+2020-10-15 00:16:02
+</td>
+<td>
+2020-10-15 00:16:06
+</td>
+<td>
+2020-10-15 00:41:03
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1507
+</td>
+<td align="right">
+                 770
+</td>
+<td align="right">
+                1000
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 797
+</td>
+<td align="right">
+               34711
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16777216
+</td>
+<td>
+2020-10-16 00:10:23
+</td>
+<td>
+2020-10-16 00:10:43
+</td>
+<td>
+2020-10-16 00:35:00
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1467
+</td>
+<td align="right">
+                 740
+</td>
+<td align="right">
+                 970
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 396
+</td>
+<td align="right">
+               29504
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16777216
+</td>
+<td>
+2020-10-17 00:07:07
+</td>
+<td>
+2020-10-17 00:07:16
+</td>
+<td>
+2020-10-17 00:31:43
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1477
+</td>
+<td align="right">
+                 810
+</td>
+<td align="right">
+                1060
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1186
+</td>
+<td align="right">
+               44962
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-10-20 00:13:22
+</td>
+<td>
+2020-10-20 00:13:38
+</td>
+<td>
+2020-10-20 00:39:05
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1537
+</td>
+<td align="right">
+                 820
+</td>
+<td align="right">
+                1020
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2736
+</td>
+<td align="right">
+               52149
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16777216
+</td>
+<td>
+2020-10-21 00:20:10
+</td>
+<td>
+2020-10-21 00:20:17
+</td>
+<td>
+2020-10-21 00:46:34
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1587
+</td>
+<td align="right">
+                 880
+</td>
+<td align="right">
+                1130
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3894
+</td>
+<td align="right">
+                 289
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16777217
+</td>
+<td>
+2020-10-22 00:12:04
+</td>
+<td>
+2020-10-22 00:12:23
+</td>
+<td>
+2020-10-22 00:37:00
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1487
+</td>
+<td align="right">
+                 710
+</td>
+<td align="right">
+                 910
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5823
+</td>
+<td align="right">
+               59085
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-10-23 00:16:52
+</td>
+<td>
+2020-10-23 00:17:01
+</td>
+<td>
+2020-10-23 00:42:18
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1527
+</td>
+<td align="right">
+                 700
+</td>
+<td align="right">
+                 980
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2731
+</td>
+<td align="right">
+               31725
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554433
+</td>
+<td>
+2020-10-24 00:07:17
+</td>
+<td>
+2020-10-24 00:07:24
+</td>
+<td>
+2020-10-24 00:31:31
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1457
+</td>
+<td align="right">
+                 840
+</td>
+<td align="right">
+                 980
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2713
+</td>
+<td align="right">
+               24154
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-10-26 00:10:45
+</td>
+<td>
+2020-10-26 00:10:53
+</td>
+<td>
+2020-10-26 00:35:30
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1487
+</td>
+<td align="right">
+                 790
+</td>
+<td align="right">
+                1030
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3100
+</td>
+<td align="right">
+               59260
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554433
+</td>
+<td>
+2020-10-27 00:19:29
+</td>
+<td>
+2020-10-27 00:19:35
+</td>
+<td>
+2020-10-27 00:46:23
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1618
+</td>
+<td align="right">
+                 950
+</td>
+<td align="right">
+                1150
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 790
+</td>
+<td align="right">
+               22117
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-10-28 00:13:37
+</td>
+<td>
+2020-10-28 00:13:46
+</td>
+<td>
+2020-10-28 00:38:23
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1487
+</td>
+<td align="right">
+                 770
+</td>
+<td align="right">
+                1030
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1958
+</td>
+<td align="right">
+               14558
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-10-29 00:11:43
+</td>
+<td>
+2020-10-29 00:11:45
+</td>
+<td>
+2020-10-29 00:37:12
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1537
+</td>
+<td align="right">
+                 740
+</td>
+<td align="right">
+                 940
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                5434
+</td>
+<td align="right">
+               38913
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            16777216
+</td>
+<td>
+2020-10-30 00:17:32
+</td>
+<td>
+2020-10-30 00:17:33
+</td>
+<td>
+2020-10-30 00:43:11
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1548
+</td>
+<td align="right">
+                 750
+</td>
+<td align="right">
+                1020
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5806
+</td>
+<td align="right">
+               58597
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-10-31 00:11:39
+</td>
+<td>
+2020-10-31 00:11:43
+</td>
+<td>
+2020-10-31 00:37:00
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1527
+</td>
+<td align="right">
+                 790
+</td>
+<td align="right">
+                1030
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3118
+</td>
+<td align="right">
+                8198
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-11-02 00:09:56
+</td>
+<td>
+2020-11-02 00:10:03
+</td>
+<td>
+2020-11-02 00:34:49
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1496
+</td>
+<td align="right">
+                 770
+</td>
+<td align="right">
+                 940
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2725
+</td>
+<td align="right">
+                5392
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-11-03 00:08:57
+</td>
+<td>
+2020-11-03 00:09:22
+</td>
+<td>
+2020-11-03 00:34:08
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1496
+</td>
+<td align="right">
+                 820
+</td>
+<td align="right">
+                1060
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1557
+</td>
+<td align="right">
+               56572
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-11-04 00:10:35
+</td>
+<td>
+2020-11-04 00:10:45
+</td>
+<td>
+2020-11-04 00:36:01
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1526
+</td>
+<td align="right">
+                 800
+</td>
+<td align="right">
+                1030
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                5433
+</td>
+<td align="right">
+               35670
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-11-05 00:11:36
+</td>
+<td>
+2020-11-05 00:11:43
+</td>
+<td>
+2020-11-05 00:36:50
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1517
+</td>
+<td align="right">
+                 670
+</td>
+<td align="right">
+                 880
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1575
+</td>
+<td align="right">
+               58369
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+            33554432
+</td>
+<td>
+2020-11-06 00:09:22
+</td>
+<td>
+2020-11-06 00:09:40
+</td>
+<td>
+2020-11-06 00:34:36
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1506
+</td>
+<td align="right">
+                 840
+</td>
+<td align="right">
+                1020
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+<p>
+Data rounded to the 10 seconds
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ SAMPLE_ID                                 NOT NULL NUMBER
+ SAMPLE_TIME                               NOT NULL TIMESTAMP(3)
+ SESSION_ID                                NOT NULL NUMBER
+ SESSION_SERIAL#                                    NUMBER
+ SESSION_TYPE                                       VARCHAR2(10)
+ FLAGS                                              NUMBER
+ USER_ID                                            NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ IS_SQLID_CURRENT                                   VARCHAR2(1)
+ SQL_CHILD_NUMBER                                   NUMBER
+ SQL_OPCODE                                         NUMBER
+ SQL_OPNAME                                         VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ TOP_LEVEL_SQL_ID                                   VARCHAR2(13)
+ TOP_LEVEL_SQL_OPCODE                               NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_FULL_PLAN_HASH_VALUE                           NUMBER
+ SQL_ADAPTIVE_PLAN_RESOLVED                         NUMBER
+ SQL_PLAN_LINE_ID                                   NUMBER
+ SQL_PLAN_OPERATION                                 VARCHAR2(64)
+ SQL_PLAN_OPTIONS                                   VARCHAR2(64)
+ SQL_EXEC_ID                                        NUMBER
+ SQL_EXEC_START                                     DATE
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ QC_INSTANCE_ID                                     NUMBER
+ QC_SESSION_ID                                      NUMBER
+ QC_SESSION_SERIAL#                                 NUMBER
+ PX_FLAGS                                           NUMBER
+ EVENT                                              VARCHAR2(64)
+ EVENT_ID                                           NUMBER
+ SEQ#                                               NUMBER
+ P1TEXT                                             VARCHAR2(64)
+ P1                                                 NUMBER
+ P2TEXT                                             VARCHAR2(64)
+ P2                                                 NUMBER
+ P3TEXT                                             VARCHAR2(64)
+ P3                                                 NUMBER
+ WAIT_CLASS                                         VARCHAR2(64)
+ WAIT_CLASS_ID                                      NUMBER
+ WAIT_TIME                                          NUMBER
+ SESSION_STATE                                      VARCHAR2(7)
+ TIME_WAITED                                        NUMBER
+ BLOCKING_SESSION_STATUS                            VARCHAR2(11)
+ BLOCKING_SESSION                                   NUMBER
+ BLOCKING_SESSION_SERIAL#                           NUMBER
+ BLOCKING_INST_ID                                   NUMBER
+ BLOCKING_HANGCHAIN_INFO                            VARCHAR2(1)
+ CURRENT_OBJ#                                       NUMBER
+ CURRENT_FILE#                                      NUMBER
+ CURRENT_BLOCK#                                     NUMBER
+ CURRENT_ROW#                                       NUMBER
+ TOP_LEVEL_CALL#                                    NUMBER
+ TOP_LEVEL_CALL_NAME                                VARCHAR2(64)
+ CONSUMER_GROUP_ID                                  NUMBER
+ XID                                                RAW(8)
+ REMOTE_INSTANCE#                                   NUMBER
+ TIME_MODEL                                         NUMBER
+ IN_CONNECTION_MGMT                                 VARCHAR2(1)
+ IN_PARSE                                           VARCHAR2(1)
+ IN_HARD_PARSE                                      VARCHAR2(1)
+ IN_SQL_EXECUTION                                   VARCHAR2(1)
+ IN_PLSQL_EXECUTION                                 VARCHAR2(1)
+ IN_PLSQL_RPC                                       VARCHAR2(1)
+ IN_PLSQL_COMPILATION                               VARCHAR2(1)
+ IN_JAVA_EXECUTION                                  VARCHAR2(1)
+ IN_BIND                                            VARCHAR2(1)
+ IN_CURSOR_CLOSE                                    VARCHAR2(1)
+ IN_SEQUENCE_LOAD                                   VARCHAR2(1)
+ IN_INMEMORY_QUERY                                  VARCHAR2(1)
+ IN_INMEMORY_POPULATE                               VARCHAR2(1)
+ IN_INMEMORY_PREPOPULATE                            VARCHAR2(1)
+ IN_INMEMORY_REPOPULATE                             VARCHAR2(1)
+ IN_INMEMORY_TREPOPULATE                            VARCHAR2(1)
+ CAPTURE_OVERHEAD                                   VARCHAR2(1)
+ REPLAY_OVERHEAD                                    VARCHAR2(1)
+ IS_CAPTURED                                        VARCHAR2(1)
+ IS_REPLAYED                                        VARCHAR2(1)
+ SERVICE_HASH                                       NUMBER
+ PROGRAM                                            VARCHAR2(64)
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ CLIENT_ID                                          VARCHAR2(64)
+ MACHINE                                            VARCHAR2(64)
+ PORT                                               NUMBER
+ ECID                                               VARCHAR2(64)
+ DBREPLAY_FILE_ID                                   NUMBER
+ DBREPLAY_CALL_COUNTER                              NUMBER
+ TM_DELTA_TIME                                      NUMBER
+ TM_DELTA_CPU_TIME                                  NUMBER
+ TM_DELTA_DB_TIME                                   NUMBER
+ DELTA_TIME                                         NUMBER
+ DELTA_READ_IO_REQUESTS                             NUMBER
+ DELTA_WRITE_IO_REQUESTS                            NUMBER
+ DELTA_READ_IO_BYTES                                NUMBER
+ DELTA_WRITE_IO_BYTES                               NUMBER
+ DELTA_INTERCONNECT_IO_BYTES                        NUMBER
+ PGA_ALLOCATED                                      NUMBER
+ TEMP_SPACE_ALLOCATED                               NUMBER
+ DBOP_NAME                                          VARCHAR2(64)
+ DBOP_EXEC_ID                                       NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+SELECT NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position) instance_id,
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost) session_id,
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost) session_serial#,
+       TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,13)+1)) user_id,
+       partition_id sql_exec_id,
+       TO_CHAR(TO_DATE(distribution, 'YYYYMMDDHH24MISS'), 'YYYY-MM-DD HH24:MI:SS') sql_exec_start,
+       TO_CHAR(MIN(timestamp), 'YYYY-MM-DD HH24:MI:SS')  start_time,
+       TO_CHAR(MAX(timestamp), 'YYYY-MM-DD HH24:MI:SS')  end_time,
+       bytes plan_hash_value,
+       --LEAST(10+86400*(MAX(timestamp)-MIN(timestamp)),SUM(10)) elapsed_time,
+                         10+86400*(MAX(timestamp)-MIN(timestamp)) elapsed_time,
+       SUM(CASE WHEN object_node = 'ON CPU' THEN                   10 ELSE 0 END) cpu_time,
+       SUM(                  10) db_time,
+       COUNT(DISTINCT position||'-'||cpu_cost||'-'||io_cost) num_processes_ash,
+       MAX(TRUNC(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,10)+1,INSTR(partition_stop,',',1,11)-INSTR(partition_stop,',',1,10)-1)) / 2097152)) max_px_degree_ash,
+       MAX(px_servers_requested) px_servers_requested_sqlmon,
+       MAX(px_servers_allocated) px_servers_allocated_sqlmon
+  FROM plan_table a,
+       (SELECT inst_id,
+               sid,
+               session_serial#,
+               sql_exec_id,
+               sql_exec_start,
+               px_servers_requested,
+               px_servers_allocated
+          FROM gv$sql_monitor
+         WHERE sql_id = '7uxfahgurqu0d'
+           AND 'Y' = 'Y'
+           AND px_qcsid IS NULL) b
+ WHERE statement_id = 'SQLD360_ASH_DATA_HIST'
+   AND position =  position
+   AND remarks = '7uxfahgurqu0d'
+   AND 'Y' = 'Y'
+   AND b.sql_exec_id(+) = a.partition_id
+   AND b.inst_id(+) = NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position)
+   AND b.sid(+) = NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost)
+   AND b.session_serial#(+) = NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost)
+   AND b.sql_exec_start(+) = TO_DATE(distribution, 'YYYYMMDDHH24MISS')
+ GROUP BY partition_id,
+       bytes,
+       TO_CHAR(TO_DATE(distribution, 'YYYYMMDDHH24MISS'), 'YYYY-MM-DD HH24:MI:SS'),
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,3)+1,INSTR(partition_stop,',',1,4)-INSTR(partition_stop,',',1,3)-1)),position),
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,4)+1,INSTR(partition_stop,',',1,5)-INSTR(partition_stop,',',1,4)-1)),cpu_cost),
+       NVL(TO_NUMBER(SUBSTR(partition_stop,INSTR(partition_stop,',',1,5)+1,INSTR(partition_stop,',',1,6)-INSTR(partition_stop,',',1,5)-1)),io_cost),
+       TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,13)+1))
+ ORDER BY
+       TO_CHAR(MIN(timestamp), 'YYYY-MM-DD HH24:MI:SS'),
+       partition_id;
+
+28 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:31:30 for SQL ID 7uxfahgurqu0d (begin dbms_mview.REFRESH('MV_DIM_CLAIM','C'); end;) </font>
+</body>
+</html>

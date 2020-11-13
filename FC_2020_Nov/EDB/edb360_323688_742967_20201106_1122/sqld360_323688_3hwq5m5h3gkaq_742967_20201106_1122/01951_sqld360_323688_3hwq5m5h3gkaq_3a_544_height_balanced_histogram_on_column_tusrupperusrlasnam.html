@@ -1,0 +1,4265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00996_sqld360_323688_3hwq5m5h3gkaq_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_USR.(UPPER("USR_LAS_NAM"))</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 01951_sqld360_323688_3hwq5m5h3gkaq_3a_544_height_balanced_histogram_on_column_tusrupperusrlasnam.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.544. Height Balanced histogram on Column T_USR.(UPPER("USR_LAS_NAM")) <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+APPROXIMATE_VALUE
+</th>
+<th scope="col">
+ROWS_PER_BUCKET
+</th>
+<th scope="col">
+SELECTIVITY
+</th>
+<th scope="col">
+CHART_TEXT
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+ AUWAE
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+ApproxValue:  AUWAE NumRows: 0 Sel: 0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+1213 E TRINITY MILLS RD STE 100
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 1213 E TRINITY MILLS RD STE 100 NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+1635 NORTH LOOP W
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 1635 NORTH LOOP W NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+216 S KINGSHIGHWAY BLVD
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 216 S KINGSHIGHWAY BLVD NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+3095 KINGSWOOD BOULEVARD SUITE 250
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3095 KINGSWOOD BOULEVARD SUITE 250 NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+4107 S CAPITAL OF TEXAS HWY STE 100A
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4107 S CAPITAL OF TEXAS HWY STE 100A NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+555 W 15TH ST
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 555 W 15TH ST NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+725 W CAMERON AVE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 725 W CAMERON AVE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+9695 S YOSEMITE ST STE 150
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 9695 S YOSEMITE ST STE 150 NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+ADAME
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ADAME NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+AGUILAR
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: AGUILAR NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+ALANIZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ALANIZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+ALFARO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ALFARO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+ALONZO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ALONZO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+ALVISO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ALVISO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+ANDERSON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ANDERSON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+APPLE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: APPLE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+ARJON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ARJON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+ARTEAGA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ARTEAGA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+AVERETT
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: AVERETT NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+BAHENA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BAHENA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+BALLARD
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BALLARD NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td>
+BARKLEYI
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BARKLEYI NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+BARRON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BARRON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td>
+BAYONA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BAYONA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td>
+BELL
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BELL NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td>
+BENSON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BENSON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td>
+BHUJEL
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BHUJEL NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td>
+BLAIR
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BLAIR NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td>
+BOLEN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BOLEN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td>
+BOWEN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BOWEN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+BRANDON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BRANDON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td>
+BRIONES
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BRIONES NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td>
+BROWN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BROWN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td>
+BRYAN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BRYAN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+BURGOS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BURGOS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+BUTAUD
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BUTAUD NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+CALAIS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CALAIS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+CAMPBELL
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CAMPBELL NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+CANTU
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CANTU NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+CARNERO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CARNERO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+CARRIZALES
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CARRIZALES NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td>
+CASIAS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CASIAS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td>
+CASTILLO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CASTILLO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td>
+CAVAZOS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CAVAZOS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td>
+CHACON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CHACON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td>
+CHAVANA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CHAVANA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td>
+CHESSON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CHESSON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td>
+CISNEROS DE MARQUEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CISNEROS DE MARQUEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td>
+CLOUGH
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CLOUGH NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td>
+COLLINS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: COLLINS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td>
+CONTRERAS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CONTRERAS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td>
+CORBITT
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CORBITT NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td>
+CORTEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CORTEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td>
+CRAIG
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CRAIG NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td>
+CRUMP
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CRUMP NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td>
+CUMMINGS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: CUMMINGS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td>
+DANIEL J HINCKLEY
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DANIEL J HINCKLEY NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td>
+DAVIS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DAVIS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td>
+DE LA CERDA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DE LA CERDA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td>
+DEL MUNDO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DEL MUNDO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td>
+DELGADO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELGADO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td>
+DEYNE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DEYNE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td>
+DILLARD
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DILLARD NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td>
+DOMINGUEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DOMINGUEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td>
+DRERUP
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DRERUP NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td>
+DURAN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DURAN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td>
+EDDINGTON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: EDDINGTON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td>
+ELLIOTT
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ELLIOTT NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td>
+EPPLER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: EPPLER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td>
+ESPINOLA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ESPINOLA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td>
+ESTRADA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ESTRADA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td>
+FARAH
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: FARAH NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td>
+FERNANDEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: FERNANDEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td>
+FISHER COUNTY HOSPITAL DISTRICT (NPI: 1699898726)
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: FISHER COUNTY HOSPITAL DISTRICT (NPI: 1699898726) NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td>
+FLORES
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: FLORES NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td>
+FLORESIII
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: FLORESIII NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td>
+FOUST
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: FOUST NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td>
+FREEDMAN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: FREEDMAN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td>
+FULLER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: FULLER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td>
+GALLEGOS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GALLEGOS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td>
+GARCIA
+</td>
+<td align="right">
+               31239
+</td>
+<td align="right">
+             .015748
+</td>
+<td>
+ApproxValue: GARCIA NumRows: 31239 Sel: .015748
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td>
+GARST
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GARST NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td>
+GARZA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GARZA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td>
+GERSBACH
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GERSBACH NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td>
+GIRSH
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GIRSH NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td>
+GOMEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GOMEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td>
+GONZALES
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GONZALES NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td>
+GONZALES-HERRERA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GONZALES-HERRERA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td>
+GONZALEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GONZALEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td>
+GOULD
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GOULD NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td>
+GRAY
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GRAY NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td>
+GRIFFIS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GRIFFIS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td>
+GUERRA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GUERRA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td>
+GUTIERREZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GUTIERREZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td>
+GUZMAN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GUZMAN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td>
+HALLER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HALLER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td>
+HARDEN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HARDEN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td>
+HARRIS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HARRIS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td>
+HAWLEY
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HAWLEY NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td>
+HELPERT
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HELPERT NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td>
+HERNANDEZ
+</td>
+<td align="right">
+               23429
+</td>
+<td align="right">
+             .011811
+</td>
+<td>
+ApproxValue: HERNANDEZ NumRows: 23429 Sel: .011811
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td>
+HERRERA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HERRERA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td>
+HILBURN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HILBURN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td>
+HITZELBERGER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HITZELBERGER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td>
+HOLLINGSWORTH
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HOLLINGSWORTH NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td>
+HORTON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HORTON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td>
+HUDSON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HUDSON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td>
+HURLEY
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HURLEY NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td>
+INGRAM
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: INGRAM NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td>
+JACKSON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: JACKSON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td>
+JARAMILLO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: JARAMILLO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td>
+JETT
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: JETT NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td>
+JOHNSON
+</td>
+<td align="right">
+               15620
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: JOHNSON NumRows: 15620 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td>
+JONES
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: JONES NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td>
+JUAREZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: JUAREZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td>
+KEARNS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: KEARNS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td>
+KERR
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: KERR NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td>
+KING
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: KING NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td>
+KNIGHT
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: KNIGHT NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td>
+KURMANALIEVA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: KURMANALIEVA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td>
+LANDRUM
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LANDRUM NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td>
+LASHAUNDA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LASHAUNDA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td>
+LEAVITT
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LEAVITT NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td>
+LEON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LEON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td>
+LEYVA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LEYVA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td>
+LITTLE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LITTLE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td>
+LONGO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LONGO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td>
+LOPEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LOPEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td>
+LOPEZ-GUZMAN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LOPEZ-GUZMAN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td>
+LOZANO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LOZANO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td>
+LUNA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LUNA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td>
+MACIAS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MACIAS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td>
+MALDONADO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MALDONADO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td>
+MANZAY
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MANZAY NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td>
+MARQUEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MARQUEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td>
+MARTIN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MARTIN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td>
+MARTINEZ
+</td>
+<td align="right">
+               23429
+</td>
+<td align="right">
+             .011811
+</td>
+<td>
+ApproxValue: MARTINEZ NumRows: 23429 Sel: .011811
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td>
+MATHEWS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MATHEWS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td>
+MCANALLY
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MCANALLY NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td>
+MCCULLOUGH
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MCCULLOUGH NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td>
+MCINTURF
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MCINTURF NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td>
+MCVEAN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MCVEAN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td>
+MEHTA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MEHTA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td>
+MENDEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MENDEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td>
+MERCADO LARA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MERCADO LARA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td>
+MILES
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MILES NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td>
+MINJAREZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MINJAREZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td>
+MOFFITT
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MOFFITT NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td>
+MONTELONGO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MONTELONGO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td>
+MOORE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MOORE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td>
+MORALES
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MORALES NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td>
+MORGAN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MORGAN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td>
+MOSS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MOSS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td>
+MUNOZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MUNOZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td>
+MYERS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MYERS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td>
+NAVARRO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: NAVARRO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td>
+NEVAREZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: NEVAREZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td>
+NIETO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: NIETO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td>
+NOWAK
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: NOWAK NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td>
+OCHOA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: OCHOA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td>
+OLIVER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: OLIVER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td>
+OROZCO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: OROZCO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td>
+ORTIZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ORTIZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td>
+PACKARD
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PACKARD NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td>
+PANTOJA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PANTOJA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td>
+PATEL
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PATEL NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td>
+PEACE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PEACE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td>
+PENICK
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PENICK NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td>
+PEREZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PEREZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td>
+PEREZI
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PEREZI NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td>
+PHI AIR MEDICAL
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PHI AIR MEDICAL NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td>
+PINEDO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PINEDO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td>
+POLLARD
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: POLLARD NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td>
+POWELL
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: POWELL NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td>
+PRINCE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: PRINCE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+177
+</td>
+<td>
+QUEZADA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: QUEZADA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+178
+</td>
+<td>
+RAJA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RAJA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+179
+</td>
+<td>
+RAMIREZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RAMIREZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+180
+</td>
+<td>
+RAMOS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RAMOS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+181
+</td>
+<td>
+RANKIN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RANKIN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+182
+</td>
+<td>
+REED
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: REED NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+183
+</td>
+<td>
+RENNER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RENNER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+184
+</td>
+<td>
+REYES
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: REYES NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+185
+</td>
+<td>
+RICHARDS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RICHARDS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+186
+</td>
+<td>
+RIOS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RIOS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+187
+</td>
+<td>
+RIVERA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RIVERA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+188
+</td>
+<td>
+ROBERTSON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ROBERTSON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+189
+</td>
+<td>
+ROCKHOLD
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ROCKHOLD NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+190
+</td>
+<td>
+RODRIGUEZ
+</td>
+<td align="right">
+               23429
+</td>
+<td align="right">
+             .011811
+</td>
+<td>
+ApproxValue: RODRIGUEZ NumRows: 23429 Sel: .011811
+</td>
+</tr>
+<tr>
+<td>
+191
+</td>
+<td>
+ROGERS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ROGERS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+192
+</td>
+<td>
+ROSA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ROSA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+193
+</td>
+<td>
+ROWLAND
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ROWLAND NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+194
+</td>
+<td>
+RUIZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: RUIZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+195
+</td>
+<td>
+SAFFRON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SAFFRON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+196
+</td>
+<td>
+SALAZAR
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SALAZAR NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+197
+</td>
+<td>
+SAMANIEGO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SAMANIEGO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+198
+</td>
+<td>
+SANCHEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SANCHEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+199
+</td>
+<td>
+SANDERS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SANDERS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+200
+</td>
+<td>
+SAPIEN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SAPIEN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+201
+</td>
+<td>
+SCHENK
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SCHENK NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+202
+</td>
+<td>
+SCOTT AND WHITE HOSPITAL LLANO (NPI: 1326349986)
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SCOTT AND WHITE HOSPITAL LLANO (NPI: 1326349986) NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+203
+</td>
+<td>
+SERNA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SERNA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+204
+</td>
+<td>
+SHECKLER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHECKLER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+205
+</td>
+<td>
+SHULTS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHULTS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+206
+</td>
+<td>
+SIMMONS
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SIMMONS NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+207
+</td>
+<td>
+SLEEPER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SLEEPER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+208
+</td>
+<td>
+SMITH
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SMITH NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+209
+</td>
+<td>
+SNOW
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SNOW NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+210
+</td>
+<td>
+SOSA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SOSA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+211
+</td>
+<td>
+SPENCER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SPENCER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+212
+</td>
+<td>
+STATEN
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: STATEN NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+213
+</td>
+<td>
+STEWART
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: STEWART NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+214
+</td>
+<td>
+STRONG
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: STRONG NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+215
+</td>
+<td>
+SVANGSTU
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SVANGSTU NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+216
+</td>
+<td>
+TANNER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: TANNER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+217
+</td>
+<td>
+TAYLOR
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: TAYLOR NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+218
+</td>
+<td>
+THANG
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: THANG NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+219
+</td>
+<td>
+THOMPSON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: THOMPSON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+220
+</td>
+<td>
+TINA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: TINA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+221
+</td>
+<td>
+TORRES
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: TORRES NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+222
+</td>
+<td>
+TOWNSEND
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: TOWNSEND NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+223
+</td>
+<td>
+TREVINO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: TREVINO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+224
+</td>
+<td>
+TURNER
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: TURNER NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+225
+</td>
+<td>
+URIBE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: URIBE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+226
+</td>
+<td>
+VALENEZUELA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: VALENEZUELA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+227
+</td>
+<td>
+VARELA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: VARELA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+228
+</td>
+<td>
+VASQUEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: VASQUEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+229
+</td>
+<td>
+VELASQUEZ
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: VELASQUEZ NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+230
+</td>
+<td>
+VIDAURE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: VIDAURE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+231
+</td>
+<td>
+VILLARREAL
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: VILLARREAL NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+232
+</td>
+<td>
+WADE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: WADE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+233
+</td>
+<td>
+WALLACE
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: WALLACE NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+234
+</td>
+<td>
+WASHINGTON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: WASHINGTON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+235
+</td>
+<td>
+WEDGEWORTH
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: WEDGEWORTH NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+236
+</td>
+<td>
+WHATLEY
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: WHATLEY NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+237
+</td>
+<td>
+WHITING
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: WHITING NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+238
+</td>
+<td>
+WILLIAMS
+</td>
+<td align="right">
+               15620
+</td>
+<td align="right">
+             .007874
+</td>
+<td>
+ApproxValue: WILLIAMS NumRows: 15620 Sel: .007874
+</td>
+</tr>
+<tr>
+<td>
+239
+</td>
+<td>
+WILSON
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: WILSON NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+240
+</td>
+<td>
+WOOD
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: WOOD NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+241
+</td>
+<td>
+WRIGHT
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: WRIGHT NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+242
+</td>
+<td>
+YONEYAMA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: YONEYAMA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+243
+</td>
+<td>
+ZAPATA
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ZAPATA NumRows: 7810 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+244
+</td>
+<td>
+ZYSKO
+</td>
+<td align="right">
+                7810
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ZYSKO NumRows: 7810 Sel: .003937
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 1983678) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 1983678)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_USR'
+AND a.column_name = 'SYS_NC00132$'
+ORDER BY a.endpoint_number;
+
+244 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:06:58 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>

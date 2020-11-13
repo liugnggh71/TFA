@@ -1,0 +1,247 @@
+Plans from Memory (GV$SQL_PLAN_STATISTICS_ALL)
+
+
+Inst: 1   Child: 0   Plan hash value: 1942007213
+
+                     -----------------------------------------------------------------------------------------------------------
+                     | Id  | Operation                            | Name              | E-Rows |E-Bytes| Cost (%CPU)| E-Time   |
+                     -----------------------------------------------------------------------------------------------------------
+                     |   0 | DELETE STATEMENT                     |                   |        |       |     1 (100)|          |
+                     |   1 |  DELETE                              | T_OTHER_INSURANCE |        |       |            |          |
+                     |*  2 |   TABLE ACCESS BY INDEX ROWID BATCHED| T_OTHER_INSURANCE |      4 |   128 |     1   (0)| 00:00:01 |
+                     |*  3 |    INDEX RANGE SCAN                  | IX_FK_INS_MEMBER  |      5 |       |     1   (0)| 00:00:01 |
+                     -----------------------------------------------------------------------------------------------------------
+
+                     Query Block Name / Object Alias (identified by operation id):
+                     -------------------------------------------------------------
+
+                        1 - DEL$1
+                        2 - DEL$1 / T_OTHER_INSURANCE@DEL$1
+                        3 - DEL$1 / T_OTHER_INSURANCE@DEL$1
+
+                     Outline Data
+                     -------------
+
+                       /*+
+                           BEGIN_OUTLINE_DATA
+                           IGNORE_OPTIM_EMBEDDED_HINTS
+                           OPTIMIZER_FEATURES_ENABLE('12.1.0.2')
+                           DB_VERSION('12.1.0.2')
+                           OPT_PARAM('optimizer_index_cost_adj' 1)
+                           OPT_PARAM('optimizer_index_caching' 90)
+                           ALL_ROWS
+                           OUTLINE_LEAF(@"DEL$1")
+                           INDEX_RS_ASC(@"DEL$1" "T_OTHER_INSURANCE"@"DEL$1" ("T_OTHER_INSURANCE"."INS_MEMBER"))
+                           BATCH_TABLE_ACCESS_BY_ROWID(@"DEL$1" "T_OTHER_INSURANCE"@"DEL$1")
+                           END_OUTLINE_DATA
+                       */
+
+                     Peeked Binds (identified by position):
+                     --------------------------------------
+
+                        1 - (NUMBER): 11653684
+                        2 - (CHAR(30), CSID=178): 'HRMemberInsuranceId'
+
+                     Predicate Information (identified by operation id):
+                     ---------------------------------------------------
+
+                        2 - filter("CLASSTYPE"=:2)
+                        3 - access("INS_MEMBER"=:1)
+
+                     Column Projection Information (identified by operation id):
+                     -----------------------------------------------------------
+
+                        2 - (cmp=2,4; cpy=3,4) "T_OTHER_INSURANCE".ROWID[ROWID,10], "CLASSTYPE"[VARCHAR2,255],
+                            "T_OTHER_INSURANCE"."INS_ID"[NUMBER,22], "INS_MEMBER"[NUMBER,22]
+                        3 - "T_OTHER_INSURANCE".ROWID[ROWID,10], "INS_MEMBER"[NUMBER,22]
+
+                     Note
+                     -----
+                        - Warning: basic plan statistics not available. These are only collected when:
+                            * hint 'gather_plan_statistics' is used for the statement or
+                            * parameter 'statistics_level' is set to 'ALL', at session or system level
+
+
+Inst: 2   Child: 0   Plan hash value: 1942007213
+
+                     -----------------------------------------------------------------------------------------------------------
+                     | Id  | Operation                            | Name              | E-Rows |E-Bytes| Cost (%CPU)| E-Time   |
+                     -----------------------------------------------------------------------------------------------------------
+                     |   0 | DELETE STATEMENT                     |                   |        |       |     1 (100)|          |
+                     |   1 |  DELETE                              | T_OTHER_INSURANCE |        |       |            |          |
+                     |*  2 |   TABLE ACCESS BY INDEX ROWID BATCHED| T_OTHER_INSURANCE |      4 |   128 |     1   (0)| 00:00:01 |
+                     |*  3 |    INDEX RANGE SCAN                  | IX_FK_INS_MEMBER  |      5 |       |     1   (0)| 00:00:01 |
+                     -----------------------------------------------------------------------------------------------------------
+
+                     Query Block Name / Object Alias (identified by operation id):
+                     -------------------------------------------------------------
+
+                        1 - DEL$1
+                        2 - DEL$1 / T_OTHER_INSURANCE@DEL$1
+                        3 - DEL$1 / T_OTHER_INSURANCE@DEL$1
+
+                     Outline Data
+                     -------------
+
+                       /*+
+                           BEGIN_OUTLINE_DATA
+                           IGNORE_OPTIM_EMBEDDED_HINTS
+                           OPTIMIZER_FEATURES_ENABLE('12.1.0.2')
+                           DB_VERSION('12.1.0.2')
+                           OPT_PARAM('optimizer_index_cost_adj' 1)
+                           OPT_PARAM('optimizer_index_caching' 90)
+                           ALL_ROWS
+                           OUTLINE_LEAF(@"DEL$1")
+                           INDEX_RS_ASC(@"DEL$1" "T_OTHER_INSURANCE"@"DEL$1" ("T_OTHER_INSURANCE"."INS_MEMBER"))
+                           BATCH_TABLE_ACCESS_BY_ROWID(@"DEL$1" "T_OTHER_INSURANCE"@"DEL$1")
+                           END_OUTLINE_DATA
+                       */
+
+                     Peeked Binds (identified by position):
+                     --------------------------------------
+
+                        1 - (NUMBER): 11359475
+                        2 - (CHAR(30), CSID=178): 'HRMemberInsuranceId'
+
+                     Predicate Information (identified by operation id):
+                     ---------------------------------------------------
+
+                        2 - filter("CLASSTYPE"=:2)
+                        3 - access("INS_MEMBER"=:1)
+
+                     Column Projection Information (identified by operation id):
+                     -----------------------------------------------------------
+
+                        2 - (cmp=2,4; cpy=3,4) "T_OTHER_INSURANCE".ROWID[ROWID,10], "CLASSTYPE"[VARCHAR2,255],
+                            "T_OTHER_INSURANCE"."INS_ID"[NUMBER,22], "INS_MEMBER"[NUMBER,22]
+                        3 - "T_OTHER_INSURANCE".ROWID[ROWID,10], "INS_MEMBER"[NUMBER,22]
+
+                     Note
+                     -----
+                        - Warning: basic plan statistics not available. These are only collected when:
+                            * hint 'gather_plan_statistics' is used for the statement or
+                            * parameter 'statistics_level' is set to 'ALL', at session or system level
+
+
+Inst: 1   Child: 0   Plan hash value: 1942007213
+
+                     -----------------------------------------------------------------------------------------------------------
+                     | Id  | Operation                            | Name              | E-Rows |E-Bytes| Cost (%CPU)| E-Time   |
+                     -----------------------------------------------------------------------------------------------------------
+                     |   0 | DELETE STATEMENT                     |                   |        |       |     1 (100)|          |
+                     |   1 |  DELETE                              | T_OTHER_INSURANCE |        |       |            |          |
+                     |*  2 |   TABLE ACCESS BY INDEX ROWID BATCHED| T_OTHER_INSURANCE |      4 |   128 |     1   (0)| 00:00:01 |
+                     |*  3 |    INDEX RANGE SCAN                  | IX_FK_INS_MEMBER  |      5 |       |     1   (0)| 00:00:01 |
+                     -----------------------------------------------------------------------------------------------------------
+
+                     Query Block Name / Object Alias (identified by operation id):
+                     -------------------------------------------------------------
+
+                        1 - DEL$1
+                        2 - DEL$1 / T_OTHER_INSURANCE@DEL$1
+                        3 - DEL$1 / T_OTHER_INSURANCE@DEL$1
+
+                     Outline Data
+                     -------------
+
+                       /*+
+                           BEGIN_OUTLINE_DATA
+                           IGNORE_OPTIM_EMBEDDED_HINTS
+                           OPTIMIZER_FEATURES_ENABLE('12.1.0.2')
+                           DB_VERSION('12.1.0.2')
+                           OPT_PARAM('optimizer_index_cost_adj' 1)
+                           OPT_PARAM('optimizer_index_caching' 90)
+                           ALL_ROWS
+                           OUTLINE_LEAF(@"DEL$1")
+                           INDEX_RS_ASC(@"DEL$1" "T_OTHER_INSURANCE"@"DEL$1" ("T_OTHER_INSURANCE"."INS_MEMBER"))
+                           BATCH_TABLE_ACCESS_BY_ROWID(@"DEL$1" "T_OTHER_INSURANCE"@"DEL$1")
+                           END_OUTLINE_DATA
+                       */
+
+                     Peeked Binds (identified by position):
+                     --------------------------------------
+
+                        1 - (NUMBER): 11653684
+                        2 - (CHAR(30), CSID=178): 'HRMemberInsuranceId'
+
+                     Predicate Information (identified by operation id):
+                     ---------------------------------------------------
+
+                        2 - filter("CLASSTYPE"=:2)
+                        3 - access("INS_MEMBER"=:1)
+
+                     Column Projection Information (identified by operation id):
+                     -----------------------------------------------------------
+
+                        2 - (cmp=2,4; cpy=3,4) "T_OTHER_INSURANCE".ROWID[ROWID,10], "CLASSTYPE"[VARCHAR2,255],
+                            "T_OTHER_INSURANCE"."INS_ID"[NUMBER,22], "INS_MEMBER"[NUMBER,22]
+                        3 - "T_OTHER_INSURANCE".ROWID[ROWID,10], "INS_MEMBER"[NUMBER,22]
+
+                     Note
+                     -----
+                        - Warning: basic plan statistics not available. These are only collected when:
+                            * hint 'gather_plan_statistics' is used for the statement or
+                            * parameter 'statistics_level' is set to 'ALL', at session or system level
+
+
+Inst: 2   Child: 0   Plan hash value: 1942007213
+
+                     -----------------------------------------------------------------------------------------------------------
+                     | Id  | Operation                            | Name              | E-Rows |E-Bytes| Cost (%CPU)| E-Time   |
+                     -----------------------------------------------------------------------------------------------------------
+                     |   0 | DELETE STATEMENT                     |                   |        |       |     1 (100)|          |
+                     |   1 |  DELETE                              | T_OTHER_INSURANCE |        |       |            |          |
+                     |*  2 |   TABLE ACCESS BY INDEX ROWID BATCHED| T_OTHER_INSURANCE |      4 |   128 |     1   (0)| 00:00:01 |
+                     |*  3 |    INDEX RANGE SCAN                  | IX_FK_INS_MEMBER  |      5 |       |     1   (0)| 00:00:01 |
+                     -----------------------------------------------------------------------------------------------------------
+
+                     Query Block Name / Object Alias (identified by operation id):
+                     -------------------------------------------------------------
+
+                        1 - DEL$1
+                        2 - DEL$1 / T_OTHER_INSURANCE@DEL$1
+                        3 - DEL$1 / T_OTHER_INSURANCE@DEL$1
+
+                     Outline Data
+                     -------------
+
+                       /*+
+                           BEGIN_OUTLINE_DATA
+                           IGNORE_OPTIM_EMBEDDED_HINTS
+                           OPTIMIZER_FEATURES_ENABLE('12.1.0.2')
+                           DB_VERSION('12.1.0.2')
+                           OPT_PARAM('optimizer_index_cost_adj' 1)
+                           OPT_PARAM('optimizer_index_caching' 90)
+                           ALL_ROWS
+                           OUTLINE_LEAF(@"DEL$1")
+                           INDEX_RS_ASC(@"DEL$1" "T_OTHER_INSURANCE"@"DEL$1" ("T_OTHER_INSURANCE"."INS_MEMBER"))
+                           BATCH_TABLE_ACCESS_BY_ROWID(@"DEL$1" "T_OTHER_INSURANCE"@"DEL$1")
+                           END_OUTLINE_DATA
+                       */
+
+                     Peeked Binds (identified by position):
+                     --------------------------------------
+
+                        1 - (NUMBER): 11359475
+                        2 - (CHAR(30), CSID=178): 'HRMemberInsuranceId'
+
+                     Predicate Information (identified by operation id):
+                     ---------------------------------------------------
+
+                        2 - filter("CLASSTYPE"=:2)
+                        3 - access("INS_MEMBER"=:1)
+
+                     Column Projection Information (identified by operation id):
+                     -----------------------------------------------------------
+
+                        2 - (cmp=2,4; cpy=3,4) "T_OTHER_INSURANCE".ROWID[ROWID,10], "CLASSTYPE"[VARCHAR2,255],
+                            "T_OTHER_INSURANCE"."INS_ID"[NUMBER,22], "INS_MEMBER"[NUMBER,22]
+                        3 - "T_OTHER_INSURANCE".ROWID[ROWID,10], "INS_MEMBER"[NUMBER,22]
+
+                     Note
+                     -----
+                        - Warning: basic plan statistics not available. These are only collected when:
+                            * hint 'gather_plan_statistics' is used for the statement or
+                            * parameter 'statistics_level' is set to 'ALL', at session or system level
+
+

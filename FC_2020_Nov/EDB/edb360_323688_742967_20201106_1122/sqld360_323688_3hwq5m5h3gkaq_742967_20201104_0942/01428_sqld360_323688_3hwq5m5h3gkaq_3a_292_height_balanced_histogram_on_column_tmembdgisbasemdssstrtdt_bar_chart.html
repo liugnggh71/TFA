@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00978_sqld360_323688_3hwq5m5h3gkaq_3a_68_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_MEMBDGISBASE.MDSS_STRTDT</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 01428_sqld360_323688_3hwq5m5h3gkaq_3a_292_height_balanced_histogram_on_column_tmembdgisbasemdssstrtdt_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,['-3389/06/05 00:00:00', 0, '0', 'ApproxValue: -3389/06/05 00:00:00 NumRows: 0 Sel: 0']
+,[' 1801/01/01 00:00:00', 1515, '.003937', 'ApproxValue:  1801/01/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2001/01/01 00:00:00', 1515, '.003937', 'ApproxValue:  2001/01/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/09/02 00:00:00', 1515, '.003937', 'ApproxValue:  2008/09/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/09/10 00:00:00', 1515, '.003937', 'ApproxValue:  2008/09/10 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/09/18 00:00:00', 1515, '.003937', 'ApproxValue:  2008/09/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/09/25 00:00:00', 1515, '.003937', 'ApproxValue:  2008/09/25 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/10/03 00:00:00', 1515, '.003937', 'ApproxValue:  2008/10/03 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/10/13 00:00:00', 1515, '.003937', 'ApproxValue:  2008/10/13 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/10/22 00:00:00', 1515, '.003937', 'ApproxValue:  2008/10/22 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/10/30 00:00:00', 1515, '.003937', 'ApproxValue:  2008/10/30 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/11/10 00:00:00', 1515, '.003937', 'ApproxValue:  2008/11/10 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/11/18 00:00:00', 1515, '.003937', 'ApproxValue:  2008/11/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/11/26 00:00:00', 1515, '.003937', 'ApproxValue:  2008/11/26 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/12/08 00:00:00', 1515, '.003937', 'ApproxValue:  2008/12/08 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/12/16 00:00:00', 1515, '.003937', 'ApproxValue:  2008/12/16 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2008/12/29 00:00:00', 1515, '.003937', 'ApproxValue:  2008/12/29 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/01/07 00:00:00', 1515, '.003937', 'ApproxValue:  2009/01/07 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/01/14 00:00:00', 1515, '.003937', 'ApproxValue:  2009/01/14 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/01/22 00:00:00', 1515, '.003937', 'ApproxValue:  2009/01/22 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/01/30 00:00:00', 1515, '.003937', 'ApproxValue:  2009/01/30 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/02/06 00:00:00', 1515, '.003937', 'ApproxValue:  2009/02/06 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/02/16 00:00:00', 1515, '.003937', 'ApproxValue:  2009/02/16 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/02/23 00:00:00', 1515, '.003937', 'ApproxValue:  2009/02/23 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/03/04 00:00:00', 1515, '.003937', 'ApproxValue:  2009/03/04 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/03/12 00:00:00', 1515, '.003937', 'ApproxValue:  2009/03/12 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/03/23 00:00:00', 1515, '.003937', 'ApproxValue:  2009/03/23 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/03/31 00:00:00', 1515, '.003937', 'ApproxValue:  2009/03/31 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/04/08 00:00:00', 1515, '.003937', 'ApproxValue:  2009/04/08 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/04/17 00:00:00', 1515, '.003937', 'ApproxValue:  2009/04/17 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/04/27 00:00:00', 1515, '.003937', 'ApproxValue:  2009/04/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/05/06 00:00:00', 1515, '.003937', 'ApproxValue:  2009/05/06 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/05/14 00:00:00', 1515, '.003937', 'ApproxValue:  2009/05/14 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/05/26 00:00:00', 1515, '.003937', 'ApproxValue:  2009/05/26 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/06/03 00:00:00', 1515, '.003937', 'ApproxValue:  2009/06/03 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/06/12 00:00:00', 1515, '.003937', 'ApproxValue:  2009/06/12 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/06/22 00:00:00', 1515, '.003937', 'ApproxValue:  2009/06/22 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/07/01 00:00:00', 1515, '.003937', 'ApproxValue:  2009/07/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/07/13 00:00:00', 1515, '.003937', 'ApproxValue:  2009/07/13 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/07/21 00:00:00', 1515, '.003937', 'ApproxValue:  2009/07/21 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/07/30 00:00:00', 1515, '.003937', 'ApproxValue:  2009/07/30 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/08/10 00:00:00', 1515, '.003937', 'ApproxValue:  2009/08/10 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/08/18 00:00:00', 1515, '.003937', 'ApproxValue:  2009/08/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/08/27 00:00:00', 1515, '.003937', 'ApproxValue:  2009/08/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/09/08 00:00:00', 1515, '.003937', 'ApproxValue:  2009/09/08 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/09/17 00:00:00', 1515, '.003937', 'ApproxValue:  2009/09/17 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/09/29 00:00:00', 1515, '.003937', 'ApproxValue:  2009/09/29 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/10/08 00:00:00', 1515, '.003937', 'ApproxValue:  2009/10/08 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/10/20 00:00:00', 1515, '.003937', 'ApproxValue:  2009/10/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/10/29 00:00:00', 1515, '.003937', 'ApproxValue:  2009/10/29 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/11/09 00:00:00', 1515, '.003937', 'ApproxValue:  2009/11/09 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/11/19 00:00:00', 1515, '.003937', 'ApproxValue:  2009/11/19 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/12/02 00:00:00', 1515, '.003937', 'ApproxValue:  2009/12/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/12/15 00:00:00', 1515, '.003937', 'ApproxValue:  2009/12/15 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2009/12/29 00:00:00', 1515, '.003937', 'ApproxValue:  2009/12/29 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/01/07 00:00:00', 1515, '.003937', 'ApproxValue:  2010/01/07 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/01/19 00:00:00', 1515, '.003937', 'ApproxValue:  2010/01/19 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/01/28 00:00:00', 1515, '.003937', 'ApproxValue:  2010/01/28 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/02/08 00:00:00', 1515, '.003937', 'ApproxValue:  2010/02/08 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/02/17 00:00:00', 1515, '.003937', 'ApproxValue:  2010/02/17 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/02/27 00:00:00', 1515, '.003937', 'ApproxValue:  2010/02/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/03/09 00:00:00', 1515, '.003937', 'ApproxValue:  2010/03/09 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/03/20 00:00:00', 1515, '.003937', 'ApproxValue:  2010/03/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/03/31 00:00:00', 1515, '.003937', 'ApproxValue:  2010/03/31 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/04/12 00:00:00', 1515, '.003937', 'ApproxValue:  2010/04/12 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/04/22 00:00:00', 1515, '.003937', 'ApproxValue:  2010/04/22 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/05/04 00:00:00', 1515, '.003937', 'ApproxValue:  2010/05/04 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/05/14 00:00:00', 1515, '.003937', 'ApproxValue:  2010/05/14 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/05/26 00:00:00', 1515, '.003937', 'ApproxValue:  2010/05/26 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/06/08 00:00:00', 1515, '.003937', 'ApproxValue:  2010/06/08 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/06/20 00:00:00', 1515, '.003937', 'ApproxValue:  2010/06/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/07/02 00:00:00', 1515, '.003937', 'ApproxValue:  2010/07/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/07/20 00:00:00', 1515, '.003937', 'ApproxValue:  2010/07/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/08/04 00:00:00', 1515, '.003937', 'ApproxValue:  2010/08/04 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/08/19 00:00:00', 1515, '.003937', 'ApproxValue:  2010/08/19 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/09/02 00:00:00', 1515, '.003937', 'ApproxValue:  2010/09/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/09/20 00:00:00', 1515, '.003937', 'ApproxValue:  2010/09/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/10/05 00:00:00', 1515, '.003937', 'ApproxValue:  2010/10/05 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/10/20 00:00:00', 1515, '.003937', 'ApproxValue:  2010/10/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/11/05 00:00:00', 1515, '.003937', 'ApproxValue:  2010/11/05 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/11/22 00:00:00', 1515, '.003937', 'ApproxValue:  2010/11/22 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/12/09 00:00:00', 1515, '.003937', 'ApproxValue:  2010/12/09 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2010/12/28 00:00:00', 1515, '.003937', 'ApproxValue:  2010/12/28 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/01/12 00:00:00', 1515, '.003937', 'ApproxValue:  2011/01/12 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/01/28 00:00:00', 1515, '.003937', 'ApproxValue:  2011/01/28 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/02/14 00:00:00', 1515, '.003937', 'ApproxValue:  2011/02/14 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/03/01 00:00:00', 1515, '.003937', 'ApproxValue:  2011/03/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/03/15 00:00:00', 1515, '.003937', 'ApproxValue:  2011/03/15 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/03/30 00:00:00', 1515, '.003937', 'ApproxValue:  2011/03/30 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/04/14 00:00:00', 1515, '.003937', 'ApproxValue:  2011/04/14 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/05/02 00:00:00', 1515, '.003937', 'ApproxValue:  2011/05/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/05/17 00:00:00', 1515, '.003937', 'ApproxValue:  2011/05/17 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/06/03 00:00:00', 1515, '.003937', 'ApproxValue:  2011/06/03 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/06/20 00:00:00', 1515, '.003937', 'ApproxValue:  2011/06/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/07/06 00:00:00', 1515, '.003937', 'ApproxValue:  2011/07/06 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/07/21 00:00:00', 1515, '.003937', 'ApproxValue:  2011/07/21 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/08/07 00:00:00', 1515, '.003937', 'ApproxValue:  2011/08/07 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/08/23 00:00:00', 1515, '.003937', 'ApproxValue:  2011/08/23 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/09/07 00:00:00', 1515, '.003937', 'ApproxValue:  2011/09/07 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/09/19 00:00:00', 1515, '.003937', 'ApproxValue:  2011/09/19 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/10/03 00:00:00', 1515, '.003937', 'ApproxValue:  2011/10/03 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/10/13 00:00:00', 1515, '.003937', 'ApproxValue:  2011/10/13 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/10/27 00:00:00', 1515, '.003937', 'ApproxValue:  2011/10/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/11/09 00:00:00', 1515, '.003937', 'ApproxValue:  2011/11/09 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/11/23 00:00:00', 1515, '.003937', 'ApproxValue:  2011/11/23 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/12/08 00:00:00', 1515, '.003937', 'ApproxValue:  2011/12/08 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2011/12/22 00:00:00', 1515, '.003937', 'ApproxValue:  2011/12/22 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/01/09 00:00:00', 1515, '.003937', 'ApproxValue:  2012/01/09 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/01/20 00:00:00', 1515, '.003937', 'ApproxValue:  2012/01/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/02/02 00:00:00', 1515, '.003937', 'ApproxValue:  2012/02/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/02/16 00:00:00', 1515, '.003937', 'ApproxValue:  2012/02/16 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/02/29 00:00:00', 1515, '.003937', 'ApproxValue:  2012/02/29 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/03/01 00:00:00', 1515, '.003937', 'ApproxValue:  2012/03/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/03/02 00:00:00', 1515, '.003937', 'ApproxValue:  2012/03/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/03/09 00:00:00', 1515, '.003937', 'ApproxValue:  2012/03/09 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/03/19 00:00:00', 1515, '.003937', 'ApproxValue:  2012/03/19 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/03/27 00:00:00', 1515, '.003937', 'ApproxValue:  2012/03/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/04/04 00:00:00', 1515, '.003937', 'ApproxValue:  2012/04/04 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/04/12 00:00:00', 1515, '.003937', 'ApproxValue:  2012/04/12 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/04/23 00:00:00', 1515, '.003937', 'ApproxValue:  2012/04/23 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/05/01 00:00:00', 1515, '.003937', 'ApproxValue:  2012/05/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/05/10 00:00:00', 1515, '.003937', 'ApproxValue:  2012/05/10 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/05/19 00:00:00', 1515, '.003937', 'ApproxValue:  2012/05/19 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/05/30 00:00:00', 1515, '.003937', 'ApproxValue:  2012/05/30 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/06/08 00:00:00', 1515, '.003937', 'ApproxValue:  2012/06/08 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/06/19 00:00:00', 1515, '.003937', 'ApproxValue:  2012/06/19 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/06/29 00:00:00', 1515, '.003937', 'ApproxValue:  2012/06/29 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/07/11 00:00:00', 1515, '.003937', 'ApproxValue:  2012/07/11 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/07/23 00:00:00', 1515, '.003937', 'ApproxValue:  2012/07/23 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/08/02 00:00:00', 1515, '.003937', 'ApproxValue:  2012/08/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/08/14 00:00:00', 1515, '.003937', 'ApproxValue:  2012/08/14 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/08/24 00:00:00', 1515, '.003937', 'ApproxValue:  2012/08/24 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/09/05 00:00:00', 1515, '.003937', 'ApproxValue:  2012/09/05 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/09/15 00:00:00', 1515, '.003937', 'ApproxValue:  2012/09/15 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/09/25 00:00:00', 1515, '.003937', 'ApproxValue:  2012/09/25 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/10/04 00:00:00', 1515, '.003937', 'ApproxValue:  2012/10/04 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/10/15 00:00:00', 1515, '.003937', 'ApproxValue:  2012/10/15 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/10/24 00:00:00', 1515, '.003937', 'ApproxValue:  2012/10/24 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/11/01 00:00:00', 1515, '.003937', 'ApproxValue:  2012/11/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/11/10 00:00:00', 1515, '.003937', 'ApproxValue:  2012/11/10 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/11/19 00:00:00', 1515, '.003937', 'ApproxValue:  2012/11/19 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/11/30 00:00:00', 1515, '.003937', 'ApproxValue:  2012/11/30 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/12/11 00:00:00', 1515, '.003937', 'ApproxValue:  2012/12/11 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2012/12/20 00:00:00', 1515, '.003937', 'ApproxValue:  2012/12/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/01/01 00:00:00', 1515, '.003937', 'ApproxValue:  2013/01/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/01/10 00:00:00', 1515, '.003937', 'ApproxValue:  2013/01/10 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/01/20 00:00:00', 1515, '.003937', 'ApproxValue:  2013/01/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/01/29 00:00:00', 1515, '.003937', 'ApproxValue:  2013/01/29 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/02/06 00:00:00', 1515, '.003937', 'ApproxValue:  2013/02/06 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/02/15 00:00:00', 1515, '.003937', 'ApproxValue:  2013/02/15 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/02/26 00:00:00', 1515, '.003937', 'ApproxValue:  2013/02/26 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/03/07 00:00:00', 1515, '.003937', 'ApproxValue:  2013/03/07 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/03/18 00:00:00', 1515, '.003937', 'ApproxValue:  2013/03/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/03/27 00:00:00', 1515, '.003937', 'ApproxValue:  2013/03/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/04/05 00:00:00', 1515, '.003937', 'ApproxValue:  2013/04/05 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/04/16 00:00:00', 1515, '.003937', 'ApproxValue:  2013/04/16 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/04/26 00:00:00', 1515, '.003937', 'ApproxValue:  2013/04/26 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/05/07 00:00:00', 1515, '.003937', 'ApproxValue:  2013/05/07 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/05/18 00:00:00', 1515, '.003937', 'ApproxValue:  2013/05/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/05/31 00:00:00', 1515, '.003937', 'ApproxValue:  2013/05/31 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/06/13 00:00:00', 1515, '.003937', 'ApproxValue:  2013/06/13 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/07/01 00:00:00', 1515, '.003937', 'ApproxValue:  2013/07/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/07/18 00:00:00', 1515, '.003937', 'ApproxValue:  2013/07/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/07/31 00:00:00', 1515, '.003937', 'ApproxValue:  2013/07/31 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/08/12 00:00:00', 1515, '.003937', 'ApproxValue:  2013/08/12 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/08/27 00:00:00', 1515, '.003937', 'ApproxValue:  2013/08/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/09/09 00:00:00', 1515, '.003937', 'ApproxValue:  2013/09/09 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/09/18 00:00:00', 1515, '.003937', 'ApproxValue:  2013/09/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/09/27 00:00:00', 1515, '.003937', 'ApproxValue:  2013/09/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/10/08 00:00:00', 1515, '.003937', 'ApproxValue:  2013/10/08 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/10/25 10:05:37', 1515, '.003937', 'ApproxValue:  2013/10/25 10:05:37 NumRows: 1515 Sel: .003937']
+,[' 2013/11/19 00:00:00', 1515, '.003937', 'ApproxValue:  2013/11/19 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2013/12/30 00:00:00', 1515, '.003937', 'ApproxValue:  2013/12/30 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2014/03/04 00:00:00', 1515, '.003937', 'ApproxValue:  2014/03/04 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2014/05/30 14:27:27', 1515, '.003937', 'ApproxValue:  2014/05/30 14:27:27 NumRows: 1515 Sel: .003937']
+,[' 2014/07/31 10:32:03', 1515, '.003937', 'ApproxValue:  2014/07/31 10:32:03 NumRows: 1515 Sel: .003937']
+,[' 2014/09/09 00:00:00', 1515, '.003937', 'ApproxValue:  2014/09/09 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2014/10/16 00:00:00', 1515, '.003937', 'ApproxValue:  2014/10/16 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2014/12/02 00:00:00', 1515, '.003937', 'ApproxValue:  2014/12/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2015/01/14 00:00:00', 1515, '.003937', 'ApproxValue:  2015/01/14 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2015/02/17 00:00:00', 1515, '.003937', 'ApproxValue:  2015/02/17 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2015/03/27 00:00:00', 1515, '.003937', 'ApproxValue:  2015/03/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2015/06/02 00:00:00', 1515, '.003937', 'ApproxValue:  2015/06/02 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2015/08/18 00:00:00', 1515, '.003937', 'ApproxValue:  2015/08/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2015/11/04 00:00:00', 1515, '.003937', 'ApproxValue:  2015/11/04 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2016/02/12 00:00:00', 1515, '.003937', 'ApproxValue:  2016/02/12 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2016/05/13 00:00:00', 1515, '.003937', 'ApproxValue:  2016/05/13 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2016/08/30 00:00:00', 1515, '.003937', 'ApproxValue:  2016/08/30 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2016/12/20 00:00:00', 1515, '.003937', 'ApproxValue:  2016/12/20 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2017/03/31 14:42:41', 1515, '.003937', 'ApproxValue:  2017/03/31 14:42:41 NumRows: 1515 Sel: .003937']
+,[' 2017/09/07 17:54:51', 1515, '.003937', 'ApproxValue:  2017/09/07 17:54:51 NumRows: 1515 Sel: .003937']
+,[' 2017/12/14 14:53:46', 1515, '.003937', 'ApproxValue:  2017/12/14 14:53:46 NumRows: 1515 Sel: .003937']
+,[' 2018/08/06 00:00:00', 1515, '.003937', 'ApproxValue:  2018/08/06 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2019/05/01 00:00:00', 3030, '.007874', 'ApproxValue:  2019/05/01 00:00:00 NumRows: 3030 Sel: .007874']
+,[' 2019/09/01 00:00:00', 1515, '.003937', 'ApproxValue:  2019/09/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2019/10/01 00:00:00', 4546, '.011811', 'ApproxValue:  2019/10/01 00:00:00 NumRows: 4546 Sel: .011811']
+,[' 2019/11/01 00:00:00', 1515, '.003937', 'ApproxValue:  2019/11/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/01/01 00:00:00', 1515, '.003937', 'ApproxValue:  2020/01/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/02/11 00:00:00', 1515, '.003937', 'ApproxValue:  2020/02/11 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/03/01 00:00:00', 1515, '.003937', 'ApproxValue:  2020/03/01 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/03/18 00:00:00', 1515, '.003937', 'ApproxValue:  2020/03/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/04/01 00:00:00', 10607, '.027559', 'ApproxValue:  2020/04/01 00:00:00 NumRows: 10607 Sel: .027559']
+,[' 2020/04/15 10:53:57', 1515, '.003937', 'ApproxValue:  2020/04/15 10:53:57 NumRows: 1515 Sel: .003937']
+,[' 2020/04/28 00:00:00', 1515, '.003937', 'ApproxValue:  2020/04/28 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/05/01 00:00:00', 7576, '.019685', 'ApproxValue:  2020/05/01 00:00:00 NumRows: 7576 Sel: .019685']
+,[' 2020/05/04 00:00:00', 1515, '.003937', 'ApproxValue:  2020/05/04 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/05/18 00:00:00', 1515, '.003937', 'ApproxValue:  2020/05/18 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/06/01 00:00:00', 9091, '.023622', 'ApproxValue:  2020/06/01 00:00:00 NumRows: 9091 Sel: .023622']
+,[' 2020/06/17 00:00:00', 1515, '.003937', 'ApproxValue:  2020/06/17 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/07/01 00:00:00', 9091, '.023622', 'ApproxValue:  2020/07/01 00:00:00 NumRows: 9091 Sel: .023622']
+,[' 2020/07/16 00:00:00', 1515, '.003937', 'ApproxValue:  2020/07/16 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/08/01 00:00:00', 6061, '.015748', 'ApproxValue:  2020/08/01 00:00:00 NumRows: 6061 Sel: .015748']
+,[' 2020/08/11 00:00:00', 1515, '.003937', 'ApproxValue:  2020/08/11 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/08/28 00:00:00', 1515, '.003937', 'ApproxValue:  2020/08/28 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/09/01 00:00:00', 6061, '.015748', 'ApproxValue:  2020/09/01 00:00:00 NumRows: 6061 Sel: .015748']
+,[' 2020/09/09 00:00:00', 1515, '.003937', 'ApproxValue:  2020/09/09 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/09/27 00:00:00', 1515, '.003937', 'ApproxValue:  2020/09/27 00:00:00 NumRows: 1515 Sel: .003937']
+,[' 2020/10/01 00:00:00', 6061, '.015748', 'ApproxValue:  2020/10/01 00:00:00 NumRows: 6061 Sel: .015748']
+,[' 2020/10/19 14:57:22', 1515, '.003937', 'ApproxValue:  2020/10/19 14:57:22 NumRows: 1515 Sel: .003937']
+,[' 2020/11/01 00:00:00', 4546, '.011811', 'ApproxValue:  2020/11/01 00:00:00 NumRows: 4546 Sel: .011811']
+DECLARE
+*
+ERROR at line 1:
+ORA-01854: julian date must be between 1 and 5373484
+ORA-06512: at line 14
+
+
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.292. Height Balanced histogram on Column T_MEMBDGISBASE.MDSS_STRTDT',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.292. Height Balanced histogram on Column T_MEMBDGISBASE.MDSS_STRTDT <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'DATE' = 'DATE' or 'DATE' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'DATE' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 384868) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'DATE' = 'DATE' or 'DATE' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'DATE' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 384868)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_MEMBDGISBASE'
+AND a.column_name = 'MDSS_STRTDT'
+ORDER BY a.endpoint_number;
+
+1 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-04/09:46:01 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>

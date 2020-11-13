@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_7uxfahgurqu0d_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Cursors and Plans specific observations</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00024_sqld360_323688_7uxfahgurqu0d_1f_19_cursors_and_plans_specific_observations.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 1f.19. Cursors and Plans specific observations <em>(V$SQL_PLAN)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+SCOPE
+</th>
+<th scope="col">
+MESSAGE
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+LARGE_PERC_PHV0
+</td>
+<td>
+Large number of ASH samples (99.9%) have PHV 0 with a valid SQL_EXEC_ID, very likely unresolved adaptive plan (some info based on ASH could be misleading)
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+MULTIPLE_PLANS
+</td>
+<td>
+This SQL has/had 1 distinct execution plan(s), list of PHV is (0)
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+OPTIMIZER_ENV
+</td>
+<td>
+There is/are 3 distinct CBO environments between memory and history for this SQL
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ADDRESS                                            RAW(8)
+ HASH_VALUE                                         NUMBER
+ SQL_ID                                             VARCHAR2(13)
+ PLAN_HASH_VALUE                                    NUMBER
+ FULL_PLAN_HASH_VALUE                               NUMBER
+ CHILD_ADDRESS                                      RAW(8)
+ CHILD_NUMBER                                       NUMBER
+ TIMESTAMP                                          DATE
+ OPERATION                                          VARCHAR2(30)
+ OPTIONS                                            VARCHAR2(30)
+ OBJECT_NODE                                        VARCHAR2(40)
+ OBJECT#                                            NUMBER
+ OBJECT_OWNER                                       VARCHAR2(30)
+ OBJECT_NAME                                        VARCHAR2(30)
+ OBJECT_ALIAS                                       VARCHAR2(65)
+ OBJECT_TYPE                                        VARCHAR2(20)
+ OPTIMIZER                                          VARCHAR2(20)
+ ID                                                 NUMBER
+ PARENT_ID                                          NUMBER
+ DEPTH                                              NUMBER
+ POSITION                                           NUMBER
+ SEARCH_COLUMNS                                     NUMBER
+ COST                                               NUMBER
+ CARDINALITY                                        NUMBER
+ BYTES                                              NUMBER
+ OTHER_TAG                                          VARCHAR2(35)
+ PARTITION_START                                    VARCHAR2(64)
+ PARTITION_STOP                                     VARCHAR2(64)
+ PARTITION_ID                                       NUMBER
+ OTHER                                              VARCHAR2(4000)
+ DISTRIBUTION                                       VARCHAR2(20)
+ CPU_COST                                           NUMBER
+ IO_COST                                            NUMBER
+ TEMP_SPACE                                         NUMBER
+ ACCESS_PREDICATES                                  VARCHAR2(4000)
+ FILTER_PREDICATES                                  VARCHAR2(4000)
+ PROJECTION                                         VARCHAR2(4000)
+ TIME                                               NUMBER
+ QBLOCK_NAME                                        VARCHAR2(30)
+ REMARKS                                            VARCHAR2(4000)
+ OTHER_XML                                          CLOB
+ CON_ID                                             NUMBER
+
+WITH vsql           AS (SELECT /*+ MATERIALIZE */ DISTINCT plan_hash_value, optimizer_env_hash_value FROM gv$sql WHERE sql_id = '7uxfahgurqu0d'),
+     vsqlplan       AS (SELECT /*+ MATERIALIZE */ DISTINCT plan_hash_value, id, operation, object_owner, object_name, cost, cardinality, filter_predicates FROM gv$sql_plan WHERE sql_id = '7uxfahgurqu0d'),
+     dbahistsql     AS (SELECT /*+ MATERIALIZE */ DISTINCT plan_hash_value, optimizer_env_hash_value FROM dba_hist_sqlstat WHERE sql_id = '7uxfahgurqu0d' AND 'Y' = 'Y'),
+     dbahistsqlplan AS (SELECT /*+ MATERIALIZE */ DISTINCT plan_hash_value, id, operation, object_owner, object_name, cost, cardinality, filter_predicates FROM dba_hist_sql_plan WHERE sql_id = '7uxfahgurqu0d' AND 'Y' = 'Y'),
+     indexes        AS (SELECT /*+ MATERIALIZE */ table_owner, table_name, owner, index_name, degree FROM dba_indexes WHERE (table_owner, table_name) IN (SELECT object_owner, object_name FROM plan_table WHERE statement_id = 'LIST_OF_TABLES' AND remarks = '7uxfahgurqu0d')),
+     ashdata        AS (SELECT /*+ INLINE */ cost sql_plan_hash_value,
+                               operation sql_plan_operation,
+                               options sql_plan_options,
+                               object_node event,
+                               other_tag wait_class,
+                               id sql_plan_line_id,
+                               partition_id sql_exec_id,
+                               TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,2)+1,INSTR(partition_start,',',1,3)-INSTR(partition_start,',',1,2)-1)) p1,
+                               TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,4)+1,INSTR(partition_start,',',1,5)-INSTR(partition_start,',',1,4)-1)) p2,
+                               TO_NUMBER(SUBSTR(partition_start,INSTR(partition_start,',',1,6)+1,INSTR(partition_start,',',1,7)-INSTR(partition_start,',',1,6)-1)) p3,
+                               object_instance obj#
+                          FROM plan_table
+                         WHERE statement_id
+                          LIKE 'SQLD360_ASH_DATA%'
+                          AND remarks = '7uxfahgurqu0d'),
+    list_of_plans AS (SELECT plan_hash_value FROM vsql UNION SELECT plan_hash_value FROM dbahistsql UNION SELECT sql_plan_hash_value FROM ashdata)
+SELECT scope, message
+  FROM (SELECT 'OPTIMIZER_ENV' scope, 'There is/are '||COUNT(DISTINCT optimizer_env_hash_value)||' distinct CBO environments between memory and history for this SQL' message
+         FROM (SELECT optimizer_env_hash_value
+                 FROM vsql
+                UNION ALL
+               SELECT optimizer_env_hash_value
+                 FROM dbahistsql)
+         UNION ALL
+        SELECT 'INTERNAL_FUNCTION', 'Filter predicate potentially include implicit data-type conversion (might be a red herring in case of long in-list)'
+          FROM (SELECT 1
+                  FROM vsqlplan
+                 WHERE filter_predicates LIKE '%INTERNAL FUNCTION%'
+                   AND ROWNUM < 2
+                 UNION ALL
+                SELECT 1
+                  FROM dbahistsqlplan
+                 WHERE filter_predicates LIKE '%INTERNAL FUNCTION%'
+                   AND ROWNUM < 2)
+         WHERE ROWNUM < 2
+         UNION ALL
+        SELECT 'COST_OF_0', 'Plan Hash Value '||plan_hash_value||' includes operation with a cost of 0, VERY suspicious'
+          FROM (SELECT plan_hash_value
+                  FROM vsqlplan
+                 WHERE cost = 0
+                   AND cardinality >= 1 -- always true, btw
+                 UNION
+                SELECT plan_hash_value
+                  FROM dbahistsqlplan
+                 WHERE cost = 0
+                   AND cardinality >= 1 -- always true, btw
+                )
+         UNION ALL
+        SELECT DISTINCT 'INDEX_NOT_FOUND', 'Plan Hash Value '||plan_hash_value||' refences an index that was not found anymore, maybe dropped?'
+          FROM (SELECT plan_hash_value, object_owner, object_name
+                  FROM vsqlplan
+                 WHERE operation = 'INDEX'
+                 UNION
+                SELECT plan_hash_value, object_owner, object_name
+                  FROM dbahistsqlplan
+                 WHERE operation = 'INDEX'
+                ) plans,
+               indexes
+         WHERE plans.object_owner = indexes.owner(+)
+           AND plans.object_name = indexes.index_name(+)
+           AND indexes.index_name IS NULL
+         UNION ALL
+        SELECT 'FULL_SCAN_DOING_SINGLE_READS', 'From the ASH *sampled* data for physical reads, Plan Hash Value '||sql_plan_hash_value||' issued single block reads during full scan operations '||TRUNC(num_single_block_reads/num_samples,3)*100||'% of the times'
+          FROM (SELECT sql_plan_hash_value,
+                       COUNT(*) num_samples,
+                       SUM(CASE WHEN event IN ('db file sequential read', 'cell single block physical read') THEN 1 ELSE 0 END) num_single_block_reads
+                  FROM ashdata
+                 WHERE sql_plan_operation IN ('TABLE ACCESS','INDEX')
+                   AND (sql_plan_options LIKE 'FULL%' OR sql_plan_options LIKE 'STORAGE FULL%')
+                   AND wait_class = 'User I/O'
+                 GROUP BY sql_plan_hash_value)
+         WHERE TRUNC(num_single_block_reads/num_samples,3) >= 0.02 -- 2%
+         UNION ALL
+        SELECT 'FULL_SCAN_READING_FEW_BLOCKS', 'From the ASH *sampled* data for physical reads, Plan Hash Value '||sql_plan_hash_value||' spends most of its time ('||percent_per_phv_and_p3||'%) reading '||p3||' blocks at a time instead of '||POWER(1024,2)/8192||' during full scans'
+          FROM (SELECT sql_plan_hash_value,
+                       p3,
+                       TRUNC(RATIO_TO_REPORT(COUNT(*)) OVER ()*100,3) percent_per_phv_and_p3,
+                       ROW_NUMBER() OVER (PARTITION BY sql_plan_hash_value ORDER BY COUNT(*) DESC) rwn
+                  FROM ashdata
+                 WHERE sql_plan_operation IN ('TABLE ACCESS','INDEX')
+                   AND sql_plan_options LIKE 'FULL%'
+                   AND event IN ('db file scattered read', 'direct path read')
+                 GROUP BY sql_plan_hash_value, p3)
+         WHERE rwn = 1
+           AND p3 < (POWER(1024,2)/8192)
+         UNION ALL
+        SELECT 'SQL_MOSTLY_NOT_ON_CPU', 'From the ASH *sampled* data, Plan Hash Value '||sql_plan_hash_value||' spends '||TRUNC(num_samples_per_class/total_samples_per_phv*100,3)||'% of the time on '||wait_class||'-related wait events instead of CPU (usually preferrable, with exceptions :-)'
+          FROM (SELECT sql_plan_hash_value,
+                       wait_class,
+                       num_samples_per_class,
+                       ROW_NUMBER() OVER (PARTITION BY sql_plan_hash_value ORDER BY num_samples_per_class DESC) rwn,
+                       SUM(num_samples_per_class) OVER(PARTITION BY sql_plan_hash_value) total_samples_per_phv
+                  FROM (SELECT sql_plan_hash_value,
+                               wait_class,
+                               COUNT(*) num_samples_per_class
+                          FROM ashdata
+                         GROUP BY sql_plan_hash_value, wait_class))
+         WHERE rwn = 1
+           AND wait_class <> 'CPU' -- so not on CPU
+         UNION ALL
+        SELECT 'MULTIPLE_PLANS','This SQL has/had '||COUNT(*)||' distinct execution plan(s)'
+               ||', list of PHV is ('||LISTAGG(plan_hash_value, ',') WITHIN GROUP (ORDER BY plan_hash_value)||')'
+          FROM list_of_plans
+         UNION ALL
+        SELECT 'POTENTIAL_PARSE_TIME', 'From the ASH *sampled* data, Plan Hash Value '||sql_plan_hash_value||' spent '||potential_parse_time||'% of the time not executing (SQL_EXEC_ID NULL), which usually is parse time'
+          FROM (SELECT sql_plan_hash_value,
+                       TRUNC(SUM(CASE WHEN sql_exec_id IS NULL THEN 1 ELSE 0 END)/COUNT(*),3) potential_parse_time
+                  FROM ashdata
+                 GROUP BY sql_plan_hash_value)
+         WHERE potential_parse_time >= 0.1
+         UNION ALL
+        SELECT 'POTENTIAL_HWM_DESYNC', 'Object#: '||obj#||' block class#: '||p3||' sampled '||COUNT(*)||' times'
+          FROM ashdata,
+               (SELECT name
+                  FROM v$event_name
+                 WHERE parameter3 = 'class#'
+                    OR (name LIKE '%-way' AND parameter3 IS NULL) --parameter3 not named even though it is populated
+               ) e
+         WHERE e.name = ashdata.event
+           AND p3 IN (8,9,10,11,12)
+         GROUP BY obj#, p3
+         UNION ALL
+        SELECT 'LARGE_PERC_PHV0', 'Large number of ASH samples ('||perc_0||'%) have PHV 0 with a valid SQL_EXEC_ID, very likely unresolved adaptive plan (some info based on ASH could be misleading)'
+          FROM (SELECT TRUNC(SUM(CASE WHEN sql_plan_hash_value = 0 AND sql_exec_id IS NOT NULL THEN 1 ELSE 0 END)/COUNT(*),3)*100 perc_0
+                  FROM ashdata
+                 WHERE 'N' <> 'Y')
+         WHERE perc_0 >= 2
+        )
+ ORDER BY scope, message;
+
+3 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:30:49 for SQL ID 7uxfahgurqu0d (begin dbms_mview.REFRESH('MV_DIM_CLAIM','C'); end;) </font>
+</body>
+</html>

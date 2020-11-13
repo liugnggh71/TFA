@@ -1,0 +1,1146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_fgn8tub10g4ja_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>SQL Statistics from History</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00037_sqld360_323688_fgn8tub10g4ja_2b_33_sql_statistics_from_history.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2b.33. SQL Statistics from History <em>(DBA_HIST_SQLSTAT)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+BEGIN_INTERVAL_TIME
+</th>
+<th scope="col">
+END_INTERVAL_TIME
+</th>
+<th scope="col">
+SNAP_ID
+</th>
+<th scope="col">
+DBID
+</th>
+<th scope="col">
+INSTANCE_NUMBER
+</th>
+<th scope="col">
+SQL_ID
+</th>
+<th scope="col">
+PLAN_HASH_VALUE
+</th>
+<th scope="col">
+OPTIMIZER_COST
+</th>
+<th scope="col">
+OPTIMIZER_
+</th>
+<th scope="col">
+OPTIMIZER_ENV_HASH_VALUE
+</th>
+<th scope="col">
+SHARABLE_MEM
+</th>
+<th scope="col">
+LOADED_VERSIONS
+</th>
+<th scope="col">
+VERSION_COUNT
+</th>
+<th scope="col">
+MODULE
+</th>
+<th scope="col">
+ACTION
+</th>
+<th scope="col">
+SQL_PROFILE
+</th>
+<th scope="col">
+FORCE_MATCHING_SIGNATURE
+</th>
+<th scope="col">
+PARSING_SCHEMA_ID
+</th>
+<th scope="col">
+PARSING_SCHEMA_NAME
+</th>
+<th scope="col">
+PARSING_USER_ID
+</th>
+<th scope="col">
+FETCHES_TOTAL
+</th>
+<th scope="col">
+FETCHES_DELTA
+</th>
+<th scope="col">
+END_OF_FETCH_COUNT_TOTAL
+</th>
+<th scope="col">
+END_OF_FETCH_COUNT_DELTA
+</th>
+<th scope="col">
+SORTS_TOTAL
+</th>
+<th scope="col">
+SORTS_DELTA
+</th>
+<th scope="col">
+EXECUTIONS_TOTAL
+</th>
+<th scope="col">
+EXECUTIONS_DELTA
+</th>
+<th scope="col">
+PX_SERVERS_EXECS_TOTAL
+</th>
+<th scope="col">
+PX_SERVERS_EXECS_DELTA
+</th>
+<th scope="col">
+LOADS_TOTAL
+</th>
+<th scope="col">
+LOADS_DELTA
+</th>
+<th scope="col">
+INVALIDATIONS_TOTAL
+</th>
+<th scope="col">
+INVALIDATIONS_DELTA
+</th>
+<th scope="col">
+PARSE_CALLS_TOTAL
+</th>
+<th scope="col">
+PARSE_CALLS_DELTA
+</th>
+<th scope="col">
+DISK_READS_TOTAL
+</th>
+<th scope="col">
+DISK_READS_DELTA
+</th>
+<th scope="col">
+BUFFER_GETS_TOTAL
+</th>
+<th scope="col">
+BUFFER_GETS_DELTA
+</th>
+<th scope="col">
+ROWS_PROCESSED_TOTAL
+</th>
+<th scope="col">
+ROWS_PROCESSED_DELTA
+</th>
+<th scope="col">
+CPU_TIME_TOTAL
+</th>
+<th scope="col">
+CPU_TIME_DELTA
+</th>
+<th scope="col">
+ELAPSED_TIME_TOTAL
+</th>
+<th scope="col">
+ELAPSED_TIME_DELTA
+</th>
+<th scope="col">
+IOWAIT_TOTAL
+</th>
+<th scope="col">
+IOWAIT_DELTA
+</th>
+<th scope="col">
+CLWAIT_TOTAL
+</th>
+<th scope="col">
+CLWAIT_DELTA
+</th>
+<th scope="col">
+APWAIT_TOTAL
+</th>
+<th scope="col">
+APWAIT_DELTA
+</th>
+<th scope="col">
+CCWAIT_TOTAL
+</th>
+<th scope="col">
+CCWAIT_DELTA
+</th>
+<th scope="col">
+DIRECT_WRITES_TOTAL
+</th>
+<th scope="col">
+DIRECT_WRITES_DELTA
+</th>
+<th scope="col">
+PLSEXEC_TIME_TOTAL
+</th>
+<th scope="col">
+PLSEXEC_TIME_DELTA
+</th>
+<th scope="col">
+JAVEXEC_TIME_TOTAL
+</th>
+<th scope="col">
+JAVEXEC_TIME_DELTA
+</th>
+<th scope="col">
+IO_OFFLOAD_ELIG_BYTES_TOTAL
+</th>
+<th scope="col">
+IO_OFFLOAD_ELIG_BYTES_DELTA
+</th>
+<th scope="col">
+IO_INTERCONNECT_BYTES_TOTAL
+</th>
+<th scope="col">
+IO_INTERCONNECT_BYTES_DELTA
+</th>
+<th scope="col">
+PHYSICAL_READ_REQUESTS_TOTAL
+</th>
+<th scope="col">
+PHYSICAL_READ_REQUESTS_DELTA
+</th>
+<th scope="col">
+PHYSICAL_READ_BYTES_TOTAL
+</th>
+<th scope="col">
+PHYSICAL_READ_BYTES_DELTA
+</th>
+<th scope="col">
+PHYSICAL_WRITE_REQUESTS_TOTAL
+</th>
+<th scope="col">
+PHYSICAL_WRITE_REQUESTS_DELTA
+</th>
+<th scope="col">
+PHYSICAL_WRITE_BYTES_TOTAL
+</th>
+<th scope="col">
+PHYSICAL_WRITE_BYTES_DELTA
+</th>
+<th scope="col">
+OPTIMIZED_PHYSICAL_READS_TOTAL
+</th>
+<th scope="col">
+OPTIMIZED_PHYSICAL_READS_DELTA
+</th>
+<th scope="col">
+CELL_UNCOMPRESSED_BYTES_TOTAL
+</th>
+<th scope="col">
+CELL_UNCOMPRESSED_BYTES_DELTA
+</th>
+<th scope="col">
+IO_OFFLOAD_RETURN_BYTES_TOTAL
+</th>
+<th scope="col">
+IO_OFFLOAD_RETURN_BYTES_DELTA
+</th>
+<th scope="col">
+FLAG
+</th>
+<th scope="col">
+CON_DBID
+</th>
+<th scope="col">
+CON_ID
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+2020-10-20/12:00:33.820
+</td>
+<td>
+2020-10-20/12:30:35.756
+</td>
+<td align="right">
+                4146
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+fgn8tub10g4ja
+</td>
+<td align="right">
+          2040217988
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+          1673403556
+</td>
+<td align="right">
+               27576
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+     2051905033594787775
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+THH_C4C
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                 727
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                 727
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 728
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 728
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                 136
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                9469
+</td>
+<td align="right">
+                 137
+</td>
+<td align="right">
+                 727
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+              838854
+</td>
+<td align="right">
+               53208
+</td>
+<td align="right">
+           360469686
+</td>
+<td align="right">
+           359479264
+</td>
+<td align="right">
+              711625
+</td>
+<td align="right">
+               23012
+</td>
+<td align="right">
+               92122
+</td>
+<td align="right">
+                3095
+</td>
+<td align="right">
+           359449067
+</td>
+<td align="right">
+           359448925
+</td>
+<td align="right">
+                2045
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1114112
+</td>
+<td align="right">
+               16384
+</td>
+<td align="right">
+                 136
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+             1114112
+</td>
+<td align="right">
+               16384
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 136
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+2020-10-20/12:00:33.843
+</td>
+<td>
+2020-10-20/12:30:35.782
+</td>
+<td align="right">
+                4146
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+fgn8tub10g4ja
+</td>
+<td align="right">
+          2040217988
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+          3471178957
+</td>
+<td align="right">
+               52800
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+     2051905033594787775
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+THH_C4C
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                 567
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                 567
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 567
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 567
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                 159
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                7231
+</td>
+<td align="right">
+                 109
+</td>
+<td align="right">
+                 567
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+              966852
+</td>
+<td align="right">
+               49282
+</td>
+<td align="right">
+           295555124
+</td>
+<td align="right">
+           294343152
+</td>
+<td align="right">
+              966843
+</td>
+<td align="right">
+               26449
+</td>
+<td align="right">
+               90637
+</td>
+<td align="right">
+                3304
+</td>
+<td align="right">
+           294308979
+</td>
+<td align="right">
+           294308979
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1302528
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 159
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             1302528
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 159
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+2020-09-24/11:00:18.564
+</td>
+<td>
+2020-09-24/11:30:20.595
+</td>
+<td align="right">
+                2896
+</td>
+<td align="right">
+          2109323688
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+fgn8tub10g4ja
+</td>
+<td align="right">
+          2040217988
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+          1673403556
+</td>
+<td align="right">
+               78224
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+     2051905033594787775
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+THH_C4C
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                 365
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                 365
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 366
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 366
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+                 114
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                4777
+</td>
+<td align="right">
+                 156
+</td>
+<td align="right">
+                 365
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+              763731
+</td>
+<td align="right">
+              184069
+</td>
+<td align="right">
+           980906533
+</td>
+<td align="right">
+           980067751
+</td>
+<td align="right">
+              707130
+</td>
+<td align="right">
+              121107
+</td>
+<td align="right">
+              118019
+</td>
+<td align="right">
+                6601
+</td>
+<td align="right">
+           979932065
+</td>
+<td align="right">
+           979932065
+</td>
+<td align="right">
+                2608
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              933888
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 114
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              933888
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 114
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID                                   NOT NULL NUMBER
+ DBID                                      NOT NULL NUMBER
+ INSTANCE_NUMBER                           NOT NULL NUMBER
+ SQL_ID                                    NOT NULL VARCHAR2(13)
+ PLAN_HASH_VALUE                           NOT NULL NUMBER
+ OPTIMIZER_COST                                     NUMBER
+ OPTIMIZER_MODE                                     VARCHAR2(10)
+ OPTIMIZER_ENV_HASH_VALUE                           NUMBER
+ SHARABLE_MEM                                       NUMBER
+ LOADED_VERSIONS                                    NUMBER
+ VERSION_COUNT                                      NUMBER
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ SQL_PROFILE                                        VARCHAR2(64)
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ PARSING_SCHEMA_ID                                  NUMBER
+ PARSING_SCHEMA_NAME                                VARCHAR2(128)
+ PARSING_USER_ID                                    NUMBER
+ FETCHES_TOTAL                                      NUMBER
+ FETCHES_DELTA                                      NUMBER
+ END_OF_FETCH_COUNT_TOTAL                           NUMBER
+ END_OF_FETCH_COUNT_DELTA                           NUMBER
+ SORTS_TOTAL                                        NUMBER
+ SORTS_DELTA                                        NUMBER
+ EXECUTIONS_TOTAL                                   NUMBER
+ EXECUTIONS_DELTA                                   NUMBER
+ PX_SERVERS_EXECS_TOTAL                             NUMBER
+ PX_SERVERS_EXECS_DELTA                             NUMBER
+ LOADS_TOTAL                                        NUMBER
+ LOADS_DELTA                                        NUMBER
+ INVALIDATIONS_TOTAL                                NUMBER
+ INVALIDATIONS_DELTA                                NUMBER
+ PARSE_CALLS_TOTAL                                  NUMBER
+ PARSE_CALLS_DELTA                                  NUMBER
+ DISK_READS_TOTAL                                   NUMBER
+ DISK_READS_DELTA                                   NUMBER
+ BUFFER_GETS_TOTAL                                  NUMBER
+ BUFFER_GETS_DELTA                                  NUMBER
+ ROWS_PROCESSED_TOTAL                               NUMBER
+ ROWS_PROCESSED_DELTA                               NUMBER
+ CPU_TIME_TOTAL                                     NUMBER
+ CPU_TIME_DELTA                                     NUMBER
+ ELAPSED_TIME_TOTAL                                 NUMBER
+ ELAPSED_TIME_DELTA                                 NUMBER
+ IOWAIT_TOTAL                                       NUMBER
+ IOWAIT_DELTA                                       NUMBER
+ CLWAIT_TOTAL                                       NUMBER
+ CLWAIT_DELTA                                       NUMBER
+ APWAIT_TOTAL                                       NUMBER
+ APWAIT_DELTA                                       NUMBER
+ CCWAIT_TOTAL                                       NUMBER
+ CCWAIT_DELTA                                       NUMBER
+ DIRECT_WRITES_TOTAL                                NUMBER
+ DIRECT_WRITES_DELTA                                NUMBER
+ PLSEXEC_TIME_TOTAL                                 NUMBER
+ PLSEXEC_TIME_DELTA                                 NUMBER
+ JAVEXEC_TIME_TOTAL                                 NUMBER
+ JAVEXEC_TIME_DELTA                                 NUMBER
+ IO_OFFLOAD_ELIG_BYTES_TOTAL                        NUMBER
+ IO_OFFLOAD_ELIG_BYTES_DELTA                        NUMBER
+ IO_INTERCONNECT_BYTES_TOTAL                        NUMBER
+ IO_INTERCONNECT_BYTES_DELTA                        NUMBER
+ PHYSICAL_READ_REQUESTS_TOTAL                       NUMBER
+ PHYSICAL_READ_REQUESTS_DELTA                       NUMBER
+ PHYSICAL_READ_BYTES_TOTAL                          NUMBER
+ PHYSICAL_READ_BYTES_DELTA                          NUMBER
+ PHYSICAL_WRITE_REQUESTS_TOTAL                      NUMBER
+ PHYSICAL_WRITE_REQUESTS_DELTA                      NUMBER
+ PHYSICAL_WRITE_BYTES_TOTAL                         NUMBER
+ PHYSICAL_WRITE_BYTES_DELTA                         NUMBER
+ OPTIMIZED_PHYSICAL_READS_TOTAL                     NUMBER
+ OPTIMIZED_PHYSICAL_READS_DELTA                     NUMBER
+ CELL_UNCOMPRESSED_BYTES_TOTAL                      NUMBER
+ CELL_UNCOMPRESSED_BYTES_DELTA                      NUMBER
+ IO_OFFLOAD_RETURN_BYTES_TOTAL                      NUMBER
+ IO_OFFLOAD_RETURN_BYTES_DELTA                      NUMBER
+ BIND_DATA                                          RAW(2000)
+ FLAG                                               NUMBER
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+SELECT /*+ NO_MERGE */
+       sn.begin_interval_time, sn.end_interval_time,
+       s.*
+  FROM dba_hist_sqlstat s,
+       dba_hist_snapshot sn
+ WHERE s.snap_id = sn.snap_id
+   AND s.instance_number = sn.instance_number
+   AND s.sql_id = 'fgn8tub10g4ja'
+   AND 'Y' = 'Y'
+   AND s.snap_id BETWEEN 1870 AND 4792
+ ORDER BY s.snap_id desc, s.instance_number, s.plan_hash_value;
+
+3 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-02/22:27:21 for SQL ID fgn8tub10g4ja (SELECT * FROM CM_RECORD_CURRENTSTEP WHERE ID = :1   FOR UPDATE ) </font>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00328_sqld360_323688_brg5vk35jcqtv_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_USR.(UPPER("USR_MDLENAM"))</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 00514_sqld360_323688_brg5vk35jcqtv_3a_159_height_balanced_histogram_on_column_tusrupperusrmdlenam_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,[' ', 0, '0', 'ApproxValue:   NumRows: 0 Sel: 0']
+,['A', 55998, '.070866', 'ApproxValue: A NumRows: 55998 Sel: .070866']
+,['ADAM', 3111, '.003937', 'ApproxValue: ADAM NumRows: 3111 Sel: .003937']
+,['ALAN', 3111, '.003937', 'ApproxValue: ALAN NumRows: 3111 Sel: .003937']
+,['ALEXANDER', 3111, '.003937', 'ApproxValue: ALEXANDER NumRows: 3111 Sel: .003937']
+,['ALISE', 3111, '.003937', 'ApproxValue: ALISE NumRows: 3111 Sel: .003937']
+,['AMANDA', 3111, '.003937', 'ApproxValue: AMANDA NumRows: 3111 Sel: .003937']
+,['ANDREW', 3111, '.003937', 'ApproxValue: ANDREW NumRows: 3111 Sel: .003937']
+,['ANN', 9333, '.011811', 'ApproxValue: ANN NumRows: 9333 Sel: .011811']
+,['ANTHONY', 3111, '.003937', 'ApproxValue: ANTHONY NumRows: 3111 Sel: .003937']
+,['AQUILLA-KAMARIE', 3111, '.003937', 'ApproxValue: AQUILLA-KAMARIE NumRows: 3111 Sel: .003937']
+,['ATTN ANNA', 3111, '.003937', 'ApproxValue: ATTN ANNA NumRows: 3111 Sel: .003937']
+,['B', 15555, '.019685', 'ApproxValue: B NumRows: 15555 Sel: .019685']
+,['BENNA', 3111, '.003937', 'ApproxValue: BENNA NumRows: 3111 Sel: .003937']
+,['BOY', 3111, '.003937', 'ApproxValue: BOY NumRows: 3111 Sel: .003937']
+,['BROOKE', 3111, '.003937', 'ApproxValue: BROOKE NumRows: 3111 Sel: .003937']
+,['C', 21777, '.027559', 'ApproxValue: C NumRows: 21777 Sel: .027559']
+,['CARLENE', 3111, '.003937', 'ApproxValue: CARLENE NumRows: 3111 Sel: .003937']
+,['CHANDRA', 3111, '.003937', 'ApproxValue: CHANDRA NumRows: 3111 Sel: .003937']
+,['CHRISTINE', 3111, '.003937', 'ApproxValue: CHRISTINE NumRows: 3111 Sel: .003937']
+,['CONNIE', 3111, '.003937', 'ApproxValue: CONNIE NumRows: 3111 Sel: .003937']
+,['D', 37332, '.047244', 'ApproxValue: D NumRows: 37332 Sel: .047244']
+,['DAVON RAY', 3111, '.003937', 'ApproxValue: DAVON RAY NumRows: 3111 Sel: .003937']
+,['DANIELA', 3111, '.003937', 'ApproxValue: DANIELA NumRows: 3111 Sel: .003937']
+,['DAVID', 3111, '.003937', 'ApproxValue: DAVID NumRows: 3111 Sel: .003937']
+,['DE', 3111, '.003937', 'ApproxValue: DE NumRows: 3111 Sel: .003937']
+,['DEMETR', 3111, '.003937', 'ApproxValue: DEMETR NumRows: 3111 Sel: .003937']
+,['DEVENDRA', 3111, '.003937', 'ApproxValue: DEVENDRA NumRows: 3111 Sel: .003937']
+,['DON', 3111, '.003937', 'ApproxValue: DON NumRows: 3111 Sel: .003937']
+,['E', 24888, '.031496', 'ApproxValue: E NumRows: 24888 Sel: .031496']
+,['EDWARD', 3111, '.003937', 'ApproxValue: EDWARD NumRows: 3111 Sel: .003937']
+,['ELIJAH', 3111, '.003937', 'ApproxValue: ELIJAH NumRows: 3111 Sel: .003937']
+,['ELIZABETH', 3111, '.003937', 'ApproxValue: ELIZABETH NumRows: 3111 Sel: .003937']
+,['ERIC', 3111, '.003937', 'ApproxValue: ERIC NumRows: 3111 Sel: .003937']
+,['EVETTE', 3111, '.003937', 'ApproxValue: EVETTE NumRows: 3111 Sel: .003937']
+,['F', 6222, '.007874', 'ApproxValue: F NumRows: 6222 Sel: .007874']
+,['FAST', 3111, '.003937', 'ApproxValue: FAST NumRows: 3111 Sel: .003937']
+,['FURR', 3111, '.003937', 'ApproxValue: FURR NumRows: 3111 Sel: .003937']
+,['G', 15555, '.019685', 'ApproxValue: G NumRows: 15555 Sel: .019685']
+,['GAYLE', 3111, '.003937', 'ApproxValue: GAYLE NumRows: 3111 Sel: .003937']
+,['GORDON', 3111, '.003937', 'ApproxValue: GORDON NumRows: 3111 Sel: .003937']
+,['GREGORY', 3111, '.003937', 'ApproxValue: GREGORY NumRows: 3111 Sel: .003937']
+,['H', 6222, '.007874', 'ApproxValue: H NumRows: 6222 Sel: .007874']
+,['HELEN', 3111, '.003937', 'ApproxValue: HELEN NumRows: 3111 Sel: .003937']
+,['I', 6222, '.007874', 'ApproxValue: I NumRows: 6222 Sel: .007874']
+,['ILEUS', 3111, '.003937', 'ApproxValue: ILEUS NumRows: 3111 Sel: .003937']
+,['ISHAHAN', 3111, '.003937', 'ApproxValue: ISHAHAN NumRows: 3111 Sel: .003937']
+,['J', 34221, '.043307', 'ApproxValue: J NumRows: 34221 Sel: .043307']
+,['JACOB', 3111, '.003937', 'ApproxValue: JACOB NumRows: 3111 Sel: .003937']
+,['JAMES', 3111, '.003937', 'ApproxValue: JAMES NumRows: 3111 Sel: .003937']
+,['JANAE', 3111, '.003937', 'ApproxValue: JANAE NumRows: 3111 Sel: .003937']
+,['JAY', 3111, '.003937', 'ApproxValue: JAY NumRows: 3111 Sel: .003937']
+,['JEANETTE', 3111, '.003937', 'ApproxValue: JEANETTE NumRows: 3111 Sel: .003937']
+,['JO', 3111, '.003937', 'ApproxValue: JO NumRows: 3111 Sel: .003937']
+,['JOHN', 3111, '.003937', 'ApproxValue: JOHN NumRows: 3111 Sel: .003937']
+,['JOSEPH', 3111, '.003937', 'ApproxValue: JOSEPH NumRows: 3111 Sel: .003937']
+,['JULIA', 3111, '.003937', 'ApproxValue: JULIA NumRows: 3111 Sel: .003937']
+,['K', 15555, '.019685', 'ApproxValue: K NumRows: 15555 Sel: .019685']
+,['KATHRYN', 3111, '.003937', 'ApproxValue: KATHRYN NumRows: 3111 Sel: .003937']
+,['KELECHI', 3111, '.003937', 'ApproxValue: KELECHI NumRows: 3111 Sel: .003937']
+,['KWEE', 3111, '.003937', 'ApproxValue: KWEE NumRows: 3111 Sel: .003937']
+,['L', 55998, '.070866', 'ApproxValue: L NumRows: 55998 Sel: .070866']
+,['LANETTE', 3111, '.003937', 'ApproxValue: LANETTE NumRows: 3111 Sel: .003937']
+,['LEA', 3111, '.003937', 'ApproxValue: LEA NumRows: 3111 Sel: .003937']
+,['LEE', 6222, '.007874', 'ApproxValue: LEE NumRows: 6222 Sel: .007874']
+,['LEIGH', 3111, '.003937', 'ApproxValue: LEIGH NumRows: 3111 Sel: .003937']
+,['LIBRADO', 3111, '.003937', 'ApproxValue: LIBRADO NumRows: 3111 Sel: .003937']
+,['LOU-ANN', 3111, '.003937', 'ApproxValue: LOU-ANN NumRows: 3111 Sel: .003937']
+,['LUNA', 3111, '.003937', 'ApproxValue: LUNA NumRows: 3111 Sel: .003937']
+,['LYNN', 6222, '.007874', 'ApproxValue: LYNN NumRows: 6222 Sel: .007874']
+,['M', 62220, '.07874', 'ApproxValue: M NumRows: 62220 Sel: .07874']
+,['MAISYN', 3111, '.003937', 'ApproxValue: MAISYN NumRows: 3111 Sel: .003937']
+,['MARIA', 3111, '.003937', 'ApproxValue: MARIA NumRows: 3111 Sel: .003937']
+,['MARIE', 9333, '.011811', 'ApproxValue: MARIE NumRows: 9333 Sel: .011811']
+,['MARIEL', 3111, '.003937', 'ApproxValue: MARIEL NumRows: 3111 Sel: .003937']
+,['MATTHEW', 3111, '.003937', 'ApproxValue: MATTHEW NumRows: 3111 Sel: .003937']
+,['MERCEDEZ', 3111, '.003937', 'ApproxValue: MERCEDEZ NumRows: 3111 Sel: .003937']
+,['MICHAEL', 3111, '.003937', 'ApproxValue: MICHAEL NumRows: 3111 Sel: .003937']
+,['MICHELLE', 3111, '.003937', 'ApproxValue: MICHELLE NumRows: 3111 Sel: .003937']
+,['MONIQUE', 3111, '.003937', 'ApproxValue: MONIQUE NumRows: 3111 Sel: .003937']
+,['N', 24888, '.031496', 'ApproxValue: N NumRows: 24888 Sel: .031496']
+,['NATASHA', 3111, '.003937', 'ApproxValue: NATASHA NumRows: 3111 Sel: .003937']
+,['NICHOL', 3111, '.003937', 'ApproxValue: NICHOL NumRows: 3111 Sel: .003937']
+,['NICOLE', 6222, '.007874', 'ApproxValue: NICOLE NumRows: 6222 Sel: .007874']
+,['NOEL', 3111, '.003937', 'ApproxValue: NOEL NumRows: 3111 Sel: .003937']
+,['O', 3111, '.003937', 'ApproxValue: O NumRows: 3111 Sel: .003937']
+,['P', 9333, '.011811', 'ApproxValue: P NumRows: 9333 Sel: .011811']
+,['PAIGE', 3111, '.003937', 'ApproxValue: PAIGE NumRows: 3111 Sel: .003937']
+,['PEREA', 3111, '.003937', 'ApproxValue: PEREA NumRows: 3111 Sel: .003937']
+,['R', 40443, '.051181', 'ApproxValue: R NumRows: 40443 Sel: .051181']
+,['RAE', 3111, '.003937', 'ApproxValue: RAE NumRows: 3111 Sel: .003937']
+,['RASHAD', 3111, '.003937', 'ApproxValue: RASHAD NumRows: 3111 Sel: .003937']
+,['RAYE', 3111, '.003937', 'ApproxValue: RAYE NumRows: 3111 Sel: .003937']
+,['RENAE', 3111, '.003937', 'ApproxValue: RENAE NumRows: 3111 Sel: .003937']
+,['RENEE', 3111, '.003937', 'ApproxValue: RENEE NumRows: 3111 Sel: .003937']
+,['RICARDO', 3111, '.003937', 'ApproxValue: RICARDO NumRows: 3111 Sel: .003937']
+,['ROMERO', 3111, '.003937', 'ApproxValue: ROMERO NumRows: 3111 Sel: .003937']
+,['ROSE', 3111, '.003937', 'ApproxValue: ROSE NumRows: 3111 Sel: .003937']
+,['RYANN', 3111, '.003937', 'ApproxValue: RYANN NumRows: 3111 Sel: .003937']
+,['S', 18666, '.023622', 'ApproxValue: S NumRows: 18666 Sel: .023622']
+,['SAMON', 3111, '.003937', 'ApproxValue: SAMON NumRows: 3111 Sel: .003937']
+,['SELLERS', 3111, '.003937', 'ApproxValue: SELLERS NumRows: 3111 Sel: .003937']
+,['SHONTE', 3111, '.003937', 'ApproxValue: SHONTE NumRows: 3111 Sel: .003937']
+,['STEPHEN', 3111, '.003937', 'ApproxValue: STEPHEN NumRows: 3111 Sel: .003937']
+,['T', 9333, '.011811', 'ApproxValue: T NumRows: 9333 Sel: .011811']
+,['TARA', 3111, '.003937', 'ApproxValue: TARA NumRows: 3111 Sel: .003937']
+,['THUY BAO', 3111, '.003937', 'ApproxValue: THUY BAO NumRows: 3111 Sel: .003937']
+,['U', 3111, '.003937', 'ApproxValue: U NumRows: 3111 Sel: .003937']
+,['V', 3111, '.003937', 'ApproxValue: V NumRows: 3111 Sel: .003937']
+,['VANESSA', 3111, '.003937', 'ApproxValue: VANESSA NumRows: 3111 Sel: .003937']
+,['W', 9333, '.011811', 'ApproxValue: W NumRows: 9333 Sel: .011811']
+,['WESLEY', 3111, '.003937', 'ApproxValue: WESLEY NumRows: 3111 Sel: .003937']
+,['XAVIER', 3111, '.003937', 'ApproxValue: XAVIER NumRows: 3111 Sel: .003937']
+,['Y', 3111, '.003937', 'ApproxValue: Y NumRows: 3111 Sel: .003937']
+,['YZET', 3111, '.003937', 'ApproxValue: YZET NumRows: 3111 Sel: .003937']
+,['`S', 3111, '.003937', 'ApproxValue: `S NumRows: 3111 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.159. Height Balanced histogram on Column T_USR.(UPPER("USR_MDLENAM"))',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.159. Height Balanced histogram on Column T_USR.(UPPER("USR_MDLENAM")) <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 790191) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 790191)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_USR'
+AND a.column_name = 'SYS_NC00138$'
+ORDER BY a.endpoint_number;
+
+116 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:24:31 for SQL ID brg5vk35jcqtv (SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+) </font>
+</body>
+</html>

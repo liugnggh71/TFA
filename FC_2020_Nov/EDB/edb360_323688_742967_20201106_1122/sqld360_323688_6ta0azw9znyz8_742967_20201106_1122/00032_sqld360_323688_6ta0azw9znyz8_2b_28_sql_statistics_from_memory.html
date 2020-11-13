@@ -1,0 +1,997 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_6ta0azw9znyz8_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>SQL Statistics from Memory</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00032_sqld360_323688_6ta0azw9znyz8_2b_28_sql_statistics_from_memory.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2b.28. SQL Statistics from Memory <em>(GV$SQL)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INST_ID
+</th>
+<th scope="col">
+SQL_ID
+</th>
+<th scope="col">
+SHARABLE_MEM
+</th>
+<th scope="col">
+PERSISTENT_MEM
+</th>
+<th scope="col">
+RUNTIME_MEM
+</th>
+<th scope="col">
+SORTS
+</th>
+<th scope="col">
+LOADED_VERSIONS
+</th>
+<th scope="col">
+OPEN_VERSIONS
+</th>
+<th scope="col">
+USERS_OPENING
+</th>
+<th scope="col">
+FETCHES
+</th>
+<th scope="col">
+EXECUTIONS
+</th>
+<th scope="col">
+PX_SERVERS_EXECUTIONS
+</th>
+<th scope="col">
+END_OF_FETCH_COUNT
+</th>
+<th scope="col">
+USERS_EXECUTING
+</th>
+<th scope="col">
+LOADS
+</th>
+<th scope="col">
+FIRST_LOAD_TIME
+</th>
+<th scope="col">
+INVALIDATIONS
+</th>
+<th scope="col">
+PARSE_CALLS
+</th>
+<th scope="col">
+DISK_READS
+</th>
+<th scope="col">
+DIRECT_WRITES
+</th>
+<th scope="col">
+BUFFER_GETS
+</th>
+<th scope="col">
+APPLICATION_WAIT_TIME
+</th>
+<th scope="col">
+CONCURRENCY_WAIT_TIME
+</th>
+<th scope="col">
+CLUSTER_WAIT_TIME
+</th>
+<th scope="col">
+USER_IO_WAIT_TIME
+</th>
+<th scope="col">
+PLSQL_EXEC_TIME
+</th>
+<th scope="col">
+JAVA_EXEC_TIME
+</th>
+<th scope="col">
+ROWS_PROCESSED
+</th>
+<th scope="col">
+COMMAND_TYPE
+</th>
+<th scope="col">
+OPTIMIZER_
+</th>
+<th scope="col">
+OPTIMIZER_COST
+</th>
+<th scope="col">
+OPTIMIZER_ENV_HASH_VALUE
+</th>
+<th scope="col">
+PARSING_USER_ID
+</th>
+<th scope="col">
+PARSING_SCHEMA_ID
+</th>
+<th scope="col">
+PARSING_SCHEMA_NAME
+</th>
+<th scope="col">
+KEPT_VERSIONS
+</th>
+<th scope="col">
+ADDRESS
+</th>
+<th scope="col">
+TYPE_CHK_HEAP
+</th>
+<th scope="col">
+HASH_VALUE
+</th>
+<th scope="col">
+OLD_HASH_VALUE
+</th>
+<th scope="col">
+PLAN_HASH_VALUE
+</th>
+<th scope="col">
+FULL_PLAN_HASH_VALUE
+</th>
+<th scope="col">
+CHILD_NUMBER
+</th>
+<th scope="col">
+SERVICE
+</th>
+<th scope="col">
+SERVICE_HASH
+</th>
+<th scope="col">
+MODULE
+</th>
+<th scope="col">
+MODULE_HASH
+</th>
+<th scope="col">
+ACTION
+</th>
+<th scope="col">
+ACTION_HASH
+</th>
+<th scope="col">
+SERIALIZABLE_ABORTS
+</th>
+<th scope="col">
+OUTLINE_CATEGORY
+</th>
+<th scope="col">
+CPU_TIME
+</th>
+<th scope="col">
+ELAPSED_TIME
+</th>
+<th scope="col">
+OUTLINE_SID
+</th>
+<th scope="col">
+CHILD_ADDRESS
+</th>
+<th scope="col">
+SQLTYPE
+</th>
+<th scope="col">
+R
+</th>
+<th scope="col">
+OBJECT_STATUS
+</th>
+<th scope="col">
+LITERAL_HASH_VALUE
+</th>
+<th scope="col">
+LAST_LOAD_TIME
+</th>
+<th scope="col">
+I
+</th>
+<th scope="col">
+I
+</th>
+<th scope="col">
+I
+</th>
+<th scope="col">
+I
+</th>
+<th scope="col">
+CHILD_LATCH
+</th>
+<th scope="col">
+SQL_PROFILE
+</th>
+<th scope="col">
+SQL_PATCH
+</th>
+<th scope="col">
+SQL_PLAN_BASELINE
+</th>
+<th scope="col">
+PROGRAM_ID
+</th>
+<th scope="col">
+PROGRAM_LINE#
+</th>
+<th scope="col">
+EXACT_MATCHING_SIGNATURE
+</th>
+<th scope="col">
+FORCE_MATCHING_SIGNATURE
+</th>
+<th scope="col">
+LAST_ACTIVE_TIME
+</th>
+<th scope="col">
+TYPECHECK_MEM
+</th>
+<th scope="col">
+IO_CELL_OFFLOAD_ELIGIBLE_BYTES
+</th>
+<th scope="col">
+IO_INTERCONNECT_BYTES
+</th>
+<th scope="col">
+PHYSICAL_READ_REQUESTS
+</th>
+<th scope="col">
+PHYSICAL_READ_BYTES
+</th>
+<th scope="col">
+PHYSICAL_WRITE_REQUESTS
+</th>
+<th scope="col">
+PHYSICAL_WRITE_BYTES
+</th>
+<th scope="col">
+OPTIMIZED_PHY_READ_REQUESTS
+</th>
+<th scope="col">
+LOCKED_TOTAL
+</th>
+<th scope="col">
+PINNED_TOTAL
+</th>
+<th scope="col">
+IO_CELL_UNCOMPRESSED_BYTES
+</th>
+<th scope="col">
+IO_CELL_OFFLOAD_RETURNED_BYTES
+</th>
+<th scope="col">
+CON_ID
+</th>
+<th scope="col">
+I
+</th>
+<th scope="col">
+I
+</th>
+<th scope="col">
+IM_SCANS
+</th>
+<th scope="col">
+IM_SCAN_BYTES_UNCOMPRESSED
+</th>
+<th scope="col">
+IM_SCAN_BYTES_INMEMORY
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+6ta0azw9znyz8
+</td>
+<td align="right">
+               40724
+</td>
+<td align="right">
+               11552
+</td>
+<td align="right">
+               10224
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                5102
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                5102
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  67
+</td>
+<td>
+2020-10-26/07:45:22
+</td>
+<td align="right">
+                  66
+</td>
+<td align="right">
+                5102
+</td>
+<td align="right">
+                3641
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              145389
+</td>
+<td align="right">
+                1698
+</td>
+<td align="right">
+                  70
+</td>
+<td align="right">
+              223706
+</td>
+<td align="right">
+             1165743
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               23185
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+          3471178957
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+THH_C4C
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+0000002D7801EF70
+</td>
+<td>
+00
+</td>
+<td align="right">
+           335182824
+</td>
+<td align="right">
+          1181607244
+</td>
+<td align="right">
+          1942007213
+</td>
+<td align="right">
+          3492691931
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+frstprod
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+JDBC Thin Client
+</td>
+<td align="right">
+         -1748072636
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+             2315578
+</td>
+<td align="right">
+             3146846
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+0000002ECFA1EF68
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+N
+</td>
+<td>
+VALID
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/07:03:23
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              127077
+</td>
+<td align="right">
+                5106
+</td>
+<td align="right">
+     3652124032119528642
+</td>
+<td align="right">
+     3652124032119528642
+</td>
+<td>
+2020-11-06/17:07:36
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+            29827072
+</td>
+<td align="right">
+                3641
+</td>
+<td align="right">
+            29827072
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                3641
+</td>
+<td align="right">
+               65307
+</td>
+<td align="right">
+               65336
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+N
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+6ta0azw9znyz8
+</td>
+<td align="right">
+               44220
+</td>
+<td align="right">
+               11552
+</td>
+<td align="right">
+               10224
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 493
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 493
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  69
+</td>
+<td>
+2020-10-26/07:07:13
+</td>
+<td align="right">
+                  66
+</td>
+<td align="right">
+                 493
+</td>
+<td align="right">
+                 443
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+               13520
+</td>
+<td align="right">
+                 956
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+              304032
+</td>
+<td align="right">
+              125134
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                2154
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+          3471178957
+</td>
+<td align="right">
+                 105
+</td>
+<td align="right">
+                 105
+</td>
+<td>
+THH_C4C
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+0000002DF117B2F8
+</td>
+<td>
+00
+</td>
+<td align="right">
+           335182824
+</td>
+<td align="right">
+          1181607244
+</td>
+<td align="right">
+          1942007213
+</td>
+<td align="right">
+          3492691931
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+frstprod
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SQL Developer
+</td>
+<td align="right">
+          1012150930
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              354372
+</td>
+<td align="right">
+              657601
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+0000002DFE7BCE30
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+N
+</td>
+<td>
+VALID
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+2020-11-06/13:19:56
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td>
+N
+</td>
+<td>
+Y
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              127077
+</td>
+<td align="right">
+                5106
+</td>
+<td align="right">
+     3652124032119528642
+</td>
+<td align="right">
+     3652124032119528642
+</td>
+<td>
+2020-11-06/16:51:20
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+             3629056
+</td>
+<td align="right">
+                 443
+</td>
+<td align="right">
+             3629056
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                 443
+</td>
+<td align="right">
+               61617
+</td>
+<td align="right">
+               61647
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+N
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ SQL_TEXT                                           VARCHAR2(1000)
+ SQL_FULLTEXT                                       CLOB
+ SQL_ID                                             VARCHAR2(13)
+ SHARABLE_MEM                                       NUMBER
+ PERSISTENT_MEM                                     NUMBER
+ RUNTIME_MEM                                        NUMBER
+ SORTS                                              NUMBER
+ LOADED_VERSIONS                                    NUMBER
+ OPEN_VERSIONS                                      NUMBER
+ USERS_OPENING                                      NUMBER
+ FETCHES                                            NUMBER
+ EXECUTIONS                                         NUMBER
+ PX_SERVERS_EXECUTIONS                              NUMBER
+ END_OF_FETCH_COUNT                                 NUMBER
+ USERS_EXECUTING                                    NUMBER
+ LOADS                                              NUMBER
+ FIRST_LOAD_TIME                                    VARCHAR2(19)
+ INVALIDATIONS                                      NUMBER
+ PARSE_CALLS                                        NUMBER
+ DISK_READS                                         NUMBER
+ DIRECT_WRITES                                      NUMBER
+ BUFFER_GETS                                        NUMBER
+ APPLICATION_WAIT_TIME                              NUMBER
+ CONCURRENCY_WAIT_TIME                              NUMBER
+ CLUSTER_WAIT_TIME                                  NUMBER
+ USER_IO_WAIT_TIME                                  NUMBER
+ PLSQL_EXEC_TIME                                    NUMBER
+ JAVA_EXEC_TIME                                     NUMBER
+ ROWS_PROCESSED                                     NUMBER
+ COMMAND_TYPE                                       NUMBER
+ OPTIMIZER_MODE                                     VARCHAR2(10)
+ OPTIMIZER_COST                                     NUMBER
+ OPTIMIZER_ENV                                      RAW(2000)
+ OPTIMIZER_ENV_HASH_VALUE                           NUMBER
+ PARSING_USER_ID                                    NUMBER
+ PARSING_SCHEMA_ID                                  NUMBER
+ PARSING_SCHEMA_NAME                                VARCHAR2(30)
+ KEPT_VERSIONS                                      NUMBER
+ ADDRESS                                            RAW(8)
+ TYPE_CHK_HEAP                                      RAW(8)
+ HASH_VALUE                                         NUMBER
+ OLD_HASH_VALUE                                     NUMBER
+ PLAN_HASH_VALUE                                    NUMBER
+ FULL_PLAN_HASH_VALUE                               NUMBER
+ CHILD_NUMBER                                       NUMBER
+ SERVICE                                            VARCHAR2(64)
+ SERVICE_HASH                                       NUMBER
+ MODULE                                             VARCHAR2(64)
+ MODULE_HASH                                        NUMBER
+ ACTION                                             VARCHAR2(64)
+ ACTION_HASH                                        NUMBER
+ SERIALIZABLE_ABORTS                                NUMBER
+ OUTLINE_CATEGORY                                   VARCHAR2(64)
+ CPU_TIME                                           NUMBER
+ ELAPSED_TIME                                       NUMBER
+ OUTLINE_SID                                        NUMBER
+ CHILD_ADDRESS                                      RAW(8)
+ SQLTYPE                                            NUMBER
+ REMOTE                                             VARCHAR2(1)
+ OBJECT_STATUS                                      VARCHAR2(19)
+ LITERAL_HASH_VALUE                                 NUMBER
+ LAST_LOAD_TIME                                     VARCHAR2(19)
+ IS_OBSOLETE                                        VARCHAR2(1)
+ IS_BIND_SENSITIVE                                  VARCHAR2(1)
+ IS_BIND_AWARE                                      VARCHAR2(1)
+ IS_SHAREABLE                                       VARCHAR2(1)
+ CHILD_LATCH                                        NUMBER
+ SQL_PROFILE                                        VARCHAR2(64)
+ SQL_PATCH                                          VARCHAR2(30)
+ SQL_PLAN_BASELINE                                  VARCHAR2(30)
+ PROGRAM_ID                                         NUMBER
+ PROGRAM_LINE#                                      NUMBER
+ EXACT_MATCHING_SIGNATURE                           NUMBER
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ LAST_ACTIVE_TIME                                   DATE
+ BIND_DATA                                          RAW(2000)
+ TYPECHECK_MEM                                      NUMBER
+ IO_CELL_OFFLOAD_ELIGIBLE_BYTES                     NUMBER
+ IO_INTERCONNECT_BYTES                              NUMBER
+ PHYSICAL_READ_REQUESTS                             NUMBER
+ PHYSICAL_READ_BYTES                                NUMBER
+ PHYSICAL_WRITE_REQUESTS                            NUMBER
+ PHYSICAL_WRITE_BYTES                               NUMBER
+ OPTIMIZED_PHY_READ_REQUESTS                        NUMBER
+ LOCKED_TOTAL                                       NUMBER
+ PINNED_TOTAL                                       NUMBER
+ IO_CELL_UNCOMPRESSED_BYTES                         NUMBER
+ IO_CELL_OFFLOAD_RETURNED_BYTES                     NUMBER
+ CON_ID                                             NUMBER
+ IS_REOPTIMIZABLE                                   VARCHAR2(1)
+ IS_RESOLVED_ADAPTIVE_PLAN                          VARCHAR2(1)
+ IM_SCANS                                           NUMBER
+ IM_SCAN_BYTES_UNCOMPRESSED                         NUMBER
+ IM_SCAN_BYTES_INMEMORY                             NUMBER
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM gv$sql
+ WHERE sql_id = '6ta0azw9znyz8'
+ ORDER BY inst_id, child_number;
+
+2 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:26:08 for SQL ID 6ta0azw9znyz8 (delete from T_OTHER_INSURANCE where INS_MEMBER= :1 and CLASSTYPE=:2) </font>
+</body>
+</html>

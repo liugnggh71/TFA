@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_brg5vk35jcqtv_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>SQL Monitor</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00261_sqld360_323688_brg5vk35jcqtv_2f_48_sql_monitor.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2f.48. SQL Monitor <em>(GV$SQL_MONITOR)</em>  </h1>
+
+<br>
+
+
+
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ KEY                                                NUMBER
+ REPORT_ID                                          NUMBER
+ STATUS                                             VARCHAR2(19)
+ USER#                                              NUMBER
+ USERNAME                                           VARCHAR2(30)
+ MODULE                                             VARCHAR2(64)
+ ACTION                                             VARCHAR2(64)
+ SERVICE_NAME                                       VARCHAR2(64)
+ CLIENT_IDENTIFIER                                  VARCHAR2(64)
+ CLIENT_INFO                                        VARCHAR2(64)
+ PROGRAM                                            VARCHAR2(48)
+ PLSQL_ENTRY_OBJECT_ID                              NUMBER
+ PLSQL_ENTRY_SUBPROGRAM_ID                          NUMBER
+ PLSQL_OBJECT_ID                                    NUMBER
+ PLSQL_SUBPROGRAM_ID                                NUMBER
+ FIRST_REFRESH_TIME                                 DATE
+ LAST_REFRESH_TIME                                  DATE
+ REFRESH_COUNT                                      NUMBER
+ DBOP_EXEC_ID                                       NUMBER
+ DBOP_NAME                                          VARCHAR2(30)
+ SID                                                NUMBER
+ PROCESS_NAME                                       VARCHAR2(5)
+ SQL_ID                                             VARCHAR2(13)
+ SQL_TEXT                                           VARCHAR2(2000)
+ IS_FULL_SQLTEXT                                    VARCHAR2(1)
+ SQL_EXEC_START                                     DATE
+ SQL_EXEC_ID                                        NUMBER
+ SQL_PLAN_HASH_VALUE                                NUMBER
+ SQL_FULL_PLAN_HASH_VALUE                           NUMBER
+ EXACT_MATCHING_SIGNATURE                           NUMBER
+ FORCE_MATCHING_SIGNATURE                           NUMBER
+ SQL_CHILD_ADDRESS                                  RAW(8)
+ SESSION_SERIAL#                                    NUMBER
+ PX_IS_CROSS_INSTANCE                               VARCHAR2(1)
+ PX_MAXDOP                                          NUMBER
+ PX_MAXDOP_INSTANCES                                NUMBER
+ PX_SERVERS_REQUESTED                               NUMBER
+ PX_SERVERS_ALLOCATED                               NUMBER
+ PX_SERVER#                                         NUMBER
+ PX_SERVER_GROUP                                    NUMBER
+ PX_SERVER_SET                                      NUMBER
+ PX_QCINST_ID                                       NUMBER
+ PX_QCSID                                           NUMBER
+ ERROR_NUMBER                                       VARCHAR2(40)
+ ERROR_FACILITY                                     VARCHAR2(4)
+ ERROR_MESSAGE                                      VARCHAR2(256)
+ BINDS_XML                                          CLOB
+ OTHER_XML                                          CLOB
+ ELAPSED_TIME                                       NUMBER
+ QUEUING_TIME                                       NUMBER
+ CPU_TIME                                           NUMBER
+ FETCHES                                            NUMBER
+ BUFFER_GETS                                        NUMBER
+ DISK_READS                                         NUMBER
+ DIRECT_WRITES                                      NUMBER
+ IO_INTERCONNECT_BYTES                              NUMBER
+ PHYSICAL_READ_REQUESTS                             NUMBER
+ PHYSICAL_READ_BYTES                                NUMBER
+ PHYSICAL_WRITE_REQUESTS                            NUMBER
+ PHYSICAL_WRITE_BYTES                               NUMBER
+ APPLICATION_WAIT_TIME                              NUMBER
+ CONCURRENCY_WAIT_TIME                              NUMBER
+ CLUSTER_WAIT_TIME                                  NUMBER
+ USER_IO_WAIT_TIME                                  NUMBER
+ PLSQL_EXEC_TIME                                    NUMBER
+ JAVA_EXEC_TIME                                     NUMBER
+ RM_LAST_ACTION                                     VARCHAR2(48)
+ RM_LAST_ACTION_REASON                              VARCHAR2(30)
+ RM_LAST_ACTION_TIME                                DATE
+ RM_CONSUMER_GROUP                                  VARCHAR2(30)
+ CON_ID                                             NUMBER
+ CON_NAME                                           VARCHAR2(30)
+ ECID                                               VARCHAR2(64)
+ IS_ADAPTIVE_PLAN                                   VARCHAR2(1)
+ IS_FINAL_PLAN                                      VARCHAR2(1)
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM gv$sql_monitor
+ WHERE sql_id = 'brg5vk35jcqtv'
+ ORDER BY inst_id, sid, sql_exec_id desc, sql_exec_start desc;
+
+0 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:24:01 for SQL ID brg5vk35jcqtv (SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+) </font>
+</body>
+</html>

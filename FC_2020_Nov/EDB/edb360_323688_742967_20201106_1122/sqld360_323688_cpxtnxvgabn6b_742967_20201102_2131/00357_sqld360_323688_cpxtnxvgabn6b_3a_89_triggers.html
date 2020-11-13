@@ -1,0 +1,5244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_cpxtnxvgabn6b_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Triggers</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00357_sqld360_323688_cpxtnxvgabn6b_3a_89_triggers.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.89. Triggers <em>(DBA_TRIGGERS)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+OWNER
+</th>
+<th scope="col">
+TRIGGER_NAME
+</th>
+<th scope="col">
+TRIGGER_TYPE
+</th>
+<th scope="col">
+TRIGGERING_EVENT
+</th>
+<th scope="col">
+TABLE_OWNER
+</th>
+<th scope="col">
+BASE_OBJECT_TYPE
+</th>
+<th scope="col">
+TABLE_NAME
+</th>
+<th scope="col">
+COLUMN_NAME
+</th>
+<th scope="col">
+REFERENCING_NAMES
+</th>
+<th scope="col">
+WHEN_CLAUSE
+</th>
+<th scope="col">
+STATUS
+</th>
+<th scope="col">
+DESCRIPTION
+</th>
+<th scope="col">
+ACTION_TYPE
+</th>
+<th scope="col">
+TRIGGER_BODY
+</th>
+<th scope="col">
+CROSSED
+</th>
+<th scope="col">
+BEF
+</th>
+<th scope="col">
+BEF
+</th>
+<th scope="col">
+AFT
+</th>
+<th scope="col">
+AFT
+</th>
+<th scope="col">
+INS
+</th>
+<th scope="col">
+FIR
+</th>
+<th scope="col">
+APP
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_FMCT_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_FRM_CELLTXT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+&quot;THH_C4C&quot;.&quot;TRG_FMCT_AUDITINSERT&quot; BEFORE INSERT ON T_FRM_CELLTXT FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN 
+  curr_date := current_date;
+
+  IF :new.fmct_crtd IS NULL THEN 
+    :new.fmct_crtd := curr_date; 
+  END IF; 
+
+  IF :new.fmct_las_act_tim IS NULL THEN 
+    :new.fmct_las_act_tim := curr_date; 
+  END IF; 
+
+  IF :new.fmct_las_act IS NULL THEN 
+    :new.fmct_las_act := 1; 
+  END IF; 
+
+  IF :new.fmct_obj_stt IS NULL THEN 
+    :new.fmct_obj_stt := 1; 
+  END IF; 
+
+  IF :new.fmct_vers IS NULL THEN 
+    :new.fmct_vers := 0; 
+  END IF; 
+
+  IF :new.fmct_vsbt IS NULL THEN 
+    :new.fmct_vsbt := 1001; 
+  END IF; 
+
+  IF :new.fmct_las_act_by IS NULL THEN 
+    :new.fmct_las_act_by := 1; 
+  END IF; 
+
+  IF :new.fmct_origcrtr IS NULL THEN 
+    :new.fmct_origcrtr := 1; 
+  END IF; 
+
+  IF :new.fmct_origcrtrlogdin IS NULL THEN 
+    :new.fmct_origcrtrlogdin := 1; 
+  END IF; 
+
+  IF :new.fmct_las_act_by_logdin IS NULL THEN 
+    :new.fmct_las_act_by_logdin := 1; 
+  END IF; 
+
+  INSERT INTO a_frm_celltxt 
+  ( 
+   classtype, 
+   fmct_c4c_id, 
+   fmct_crtd, 
+   fmct_las_act, 
+   fmct_las_act_actrtyp, 
+   fmct_obj_stt, 
+   fmct_vers, 
+   fmct_vsbt, 
+   fmct_dltddt, 
+   fmct_las_act_by, 
+   fmct_origcrtr, 
+   fmct_origcrtrlogdin, 
+   fmct_las_act_by_logdin, 
+   fmct_univid, 
+   fmct_row_nmbr, 
+   fmct_clmnnmbr, 
+   fmct_txt, 
+   fmct_rspe, 
+   fmct_id, 
+   valid_from, 
+   valid_to , 
+   fmct_audid, 
+   fmct_prev_audid, 
+   fmct_next_audid
+  ) 
+  VALUES 
+  ( 
+   :new.classtype,
+   :new.fmct_c4c_id,
+   :new.fmct_crtd,
+   :new.fmct_las_act,
+   :new.fmct_las_act_actrtyp,
+   :new.fmct_obj_stt,
+   :new.fmct_vers,
+   :new.fmct_vsbt,
+   :new.fmct_dltddt,
+   :new.fmct_las_act_by,
+   :new.fmct_origcrtr,
+   :new.fmct_origcrtrlogdin,
+   :new.fmct_las_act_by_logdin,
+   :new.fmct_univid,
+   :new.fmct_row_nmbr,
+   :new.fmct_clmnnmbr,
+   :new.fmct_txt,
+   :new.fmct_rspe, 
+   :new.fmct_id, 
+   :new.fmct_las_act_tim, 
+   NULL, 
+   u_frm_celltxt.NEXTVAL, 
+   NULL, 
+   NULL
+  );
+END;
+
+
+
+
+
+
+
+
+
+
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_FMCT_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_FRM_CELLTXT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_fmct_auditupdate BEFORE
+  UPDATE
+    ON T_FRM_CELLTXT FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        fmct_audid
+      INTO
+        last_audid
+      FROM
+        a_frm_celltxt
+      WHERE
+        fmct_id            = :old.fmct_id
+      AND fmct_next_audid IS NULL
+      AND rownum           &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.fmct_las_act_tim = :new.fmct_las_act_tim THEN
+      UPDATE
+        a_frm_celltxt
+      SET
+        fmct_las_act_actrtyp   = :new.fmct_las_act_actrtyp,
+        fmct_obj_stt           = :new.fmct_obj_stt,
+        fmct_vers              = :new.fmct_vers,
+        fmct_vsbt              = :new.fmct_vsbt,
+        fmct_dltddt            = :new.fmct_dltddt,
+        fmct_las_act_by        = :new.fmct_las_act_by,
+        fmct_origcrtr          = :new.fmct_origcrtr,
+        fmct_origcrtrlogdin    = :new.fmct_origcrtrlogdin,
+        fmct_las_act_by_logdin = :new.fmct_las_act_by_logdin,
+        fmct_univid            = :new.fmct_univid,
+        fmct_row_nmbr          = :new.fmct_row_nmbr,
+        fmct_clmnnmbr          = :new.fmct_clmnnmbr,
+        fmct_txt               = :new.fmct_txt,
+        fmct_rspe              = :new.fmct_rspe,
+        classtype              = :new.classtype,
+        fmct_c4c_id            = :new.fmct_c4c_id,
+        fmct_crtd              = :new.fmct_crtd,
+        fmct_las_act           = :new.fmct_las_act
+      WHERE
+        fmct_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_frm_celltxt
+        (
+          fmct_las_act_actrtyp,
+          fmct_obj_stt,
+          fmct_vers,
+          fmct_vsbt,
+          fmct_dltddt,
+          fmct_las_act_by,
+          fmct_origcrtr,
+          fmct_origcrtrlogdin,
+          fmct_las_act
+_by_logdin,
+          fmct_univid,
+          fmct_row_nmbr,
+          fmct_clmnnmbr,
+          fmct_txt,
+          fmct_rspe,
+          classtype,
+          fmct_c4c_id,
+          fmct_crtd,
+          fmct_las_act,
+          fmct_id,
+          valid_from,
+          valid_to,
+          fmct_audid,
+          fmct_prev_audid,
+          fmct_next_audid
+        )
+        VALUES
+        (
+          :new.fmct_las_act_actrtyp,
+          :new.fmct_obj_stt,
+          :new.fmct_vers,
+          :new.fmct_vsbt,
+          :new.fmct_dltddt,
+          :new.fmct_las_act_by,
+          :new.fmct_origcrtr,
+          :new.fmct_origcrtrlogdin,
+          :new.fmct_las_act_by_logdin,
+          :new.fmct_univid,
+          :new.fmct_row_nmbr,
+          :new.fmct_clmnnmbr,
+          :new.fmct_txt,
+          :new.fmct_rspe,
+          :new.classtype,
+          :new.fmct_c4c_id,
+          :new.fmct_crtd,
+          :new.fmct_las_act,
+          :new.fmct_id,
+          :new.fmct_las_act_tim,
+          NULL,
+          u_frm_celltxt.NEXTVAL,
+          last_audid,
+          NULL
+        );
+      /* update last audit record's valid_to to new LastActionTime
+      and next audit ID to newly inserted record's sequence number
+      */
+      UPDATE
+        a_frm_celltxt
+      SET
+        valid_to        = :new.fmct_las_act_tim,
+        fmct_next_audid = u_frm_celltxt.CURRVAL
+      WHERE
+        fmct_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_MBDB_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+TRG_MBDB_AUDITINSERT BEFORE INSERT ON T_MEMBDGISBASE
+REFERENCING NEW AS NEW OLD AS OLD
+FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN
+  curr_date := current_date;
+
+  IF :new.mbdb_crtd IS NULL THEN
+    :new.mbdb_crtd := curr_date;
+  END IF;
+
+  IF :new.mbdb_las_act_tim IS NULL THEN
+    :new.mbdb_las_act_tim := curr_date;
+  END IF;
+
+  IF :new.mbdb_las_act IS NULL THEN
+    :new.mbdb_las_act := 1;
+  END IF;
+
+  IF :new.mbdb_obj_stt IS NULL THEN
+    :new.mbdb_obj_stt := 1;
+  END IF;
+
+  IF :new.mbdb_vers IS NULL THEN
+    :new.mbdb_vers := 0;
+  END IF;
+
+  IF :new.mbdb_vsbt IS NULL THEN
+    :new.mbdb_vsbt := 1001;
+  END IF;
+
+  IF :new.mbdb_las_act_by IS NULL THEN
+    :new.mbdb_las_act_by := 1;
+  END IF;
+
+  IF :new.mbdb_origcrtr IS NULL THEN
+    :new.mbdb_origcrtr := 1;
+  END IF;
+
+  IF :new.mbdb_origcrtrlogdin IS NULL THEN
+    :new.mbdb_origcrtrlogdin := 1;
+  END IF;
+
+  IF :new.mbdb_las_act_by_logdin IS NULL THEN
+    :new.mbdb_las_act_by_logdin := 1;
+  END IF;
+
+  INSERT INTO a_membdgisbase
+  (
+   mdss_prvsrfngtsk_prmn,
+   mdss_ownr,
+   mdss_prvsownr,
+   mdss_prvssndr,
+   mdss_prvsownrprmn,
+   mdss_tnfr,
+   mdss_prvstnfr,
+   mdss_src__asmtcarecalc,
+   mdss_src__pat_id_qry,
+   cmdi_cm_base,
+   cfds_cm_tmpt,
+   cfds_the_brncact,
+   mbdb_dgis,
+   cfds_sentasmt,
+   mdss_caudby,
+   mdss_taknasmtcc,
+   mdss_memb,
+   cbdg_mdclclm,
+   umad_umbs,
+   cfds_amtn,
+   mbdb_cstmflds,
+   umds_dgisum_evnt,
+   umds_snp,
+   mdss_grp,
+   classtype,
+   mbdb_c4c_id,
+   mbdb_crtd,
+   mbdb_las_act,
+   mbdb_las_act_actrtyp,
+   mbdb_obj_stt,
+   mbdb_vers,
+   mbdb_vsbt,
+   mbdb_dltddt,
+   mbdb_las_act_by,
+   mbdb_origcrtr,
+   mbdb_origcrtrlogdin,
+   mbdb_las_act_by_logdin,
+   mbdb_univid,
+   mbdb_resnor_cmmt,
+   cfds_id,
+   mdss_strtdt,
+   mdss_end_dt,
+   mdss_rslvdt,
+   mdss_rstncmmt,
+   mdss_is_pmrydgis,
+   mdss_is_req_and_perfprovsame,
+   mdss_is_sltd,
+   mdss_is_err,
+   mdss_src_usr_nam,
+   mdss_err_txt,
+   mdss_wkfwistcid,
+   mdss_cnv_id,
+   mdss_ownrchndflag,
+   mdss_ownrchndcnt,
+   mdss_src__src_typ,
+   mdss_id,
+   cbdg_id,
+   umad_id,
+   cmdi_id,
+   umds_id,
+   mdss_rfng
+wkfwtsk,
+   mdss_prvsrfngtsk,
+   MPDS_PRBLM_DSCRP,
+   MPDS_PRBLM_NAME,
+   MPDS_PRBLM_COMMENT,
+   MPDS_PRBLM_CLSRRSN,
+   MPDS_PRBLM_STATUS,
+   MPDS_PRBLM_GNRTD_FRM_SRC_ID,
+   MPDS_PRBLM_SRC_ID,
+   cfprblmds_sentasmt,
+   prblm_caudby,
+   prblm_taknasmtcc,
+   mbdb_id,
+   valid_from,
+   valid_to ,
+   mbdb_audid,
+   mbdb_prev_audid,
+   mbdb_next_audid,
+   transaction_id
+  )
+  VALUES
+  (
+   :new.mdss_prvsrfngtsk_prmn,
+   :new.mdss_ownr,
+   :new.mdss_prvsownr,
+   :new.mdss_prvssndr,
+   :new.mdss_prvsownrprmn,
+   :new.mdss_tnfr,
+   :new.mdss_prvstnfr,
+   :new.mdss_src__asmtcarecalc,
+   :new.mdss_src__pat_id_qry,
+   :new.cmdi_cm_base,
+   :new.cfds_cm_tmpt,
+   :new.cfds_the_brncact,
+   :new.mbdb_dgis,
+   :new.cfds_sentasmt,
+   :new.mdss_caudby,
+   :new.mdss_taknasmtcc,
+   :new.mdss_memb,
+   :new.cbdg_mdclclm,
+   :new.umad_umbs,
+   :new.cfds_amtn,
+   :new.mbdb_cstmflds,
+   :new.umds_dgisum_evnt,
+   :new.umds_snp,
+   :new.mdss_grp,
+   :new.classtype,
+   :new.mbdb_c4c_id,
+   :new.mbdb_crtd,
+   :new.mbdb_las_act,
+   :new.mbdb_las_act_actrtyp,
+   :new.mbdb_obj_stt,
+   :new.mbdb_vers,
+   :new.mbdb_vsbt,
+   :new.mbdb_dltddt,
+   :new.mbdb_las_act_by,
+   :new.mbdb_origcrtr,
+   :new.mbdb_origcrtrlogdin,
+   :new.mbdb_las_act_by_logdin,
+   :new.mbdb_univid,
+   :new.mbdb_resnor_cmmt,
+   :new.cfds_id,
+   :new.mdss_strtdt,
+   :new.mdss_end_dt,
+   :new.mdss_rslvdt,
+   :new.mdss_rstncmmt,
+   :new.mdss_is_pmrydgis,
+   :new.mdss_is_req_and_perfprovsame,
+   :new.mdss_is_sltd,
+   :new.mdss_is_err,
+   :new.mdss_src_usr_nam,
+   :new.mdss_err_txt,
+   :new.mdss_wkfwistcid,
+   :new.mdss_cnv_id,
+   :new.mdss_ownrchndflag,
+   :new.mdss_ownrchndcnt,
+   :new.mdss_src__src_typ,
+   :new.mdss_id,
+   :new.cbdg_id,
+   :new.umad_id,
+   :new.cmdi_id,
+   :new.umds_id,
+   :new.mdss_rfngwkfwtsk,
+   :new.mdss_prvsrfngtsk,
+   :new.MPDS_PRBLM_DSCRP,
+   :new.MPDS_PRBLM_NAME,
+   :new.MPDS_PRBLM_COMMENT,
+   :new.MPDS_PRBLM_CLSRRSN,
+   :new.MPDS_PRBLM_STATUS,
+   :new.MPDS_PRBLM_GNRTD_FRM_SRC_ID,
+   :new.MPDS_PRBLM_SRC_ID,
+
+   :new.cfprblmds_sentasmt,
+   :new.prblm_caudby,
+   :new.prblm_taknasmtcc,
+   :new.mbdb_id,
+   :new.mbdb_las_act_tim,
+   NULL,
+   u_membdgisbase.NEXTVAL,
+   NULL,
+   NULL,
+   dbms_transaction.local_transaction_id
+  );
+END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_MBDB_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+TRG_MBDB_AUDITUPDATE BEFORE
+  UPDATE
+    ON T_MEMBDGISBASE REFERENCING NEW AS NEW OLD AS OLD FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        mbdb_audid
+      INTO
+        last_audid
+      FROM
+        a_membdgisbase
+      WHERE
+        mbdb_id            = :old.mbdb_id
+      AND mbdb_next_audid IS NULL
+      AND rownum           &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.mbdb_las_act_tim = :new.mbdb_las_act_tim THEN
+      UPDATE
+        a_membdgisbase
+      SET
+        mbdb_cstmflds                = :new.mbdb_cstmflds,
+        umds_dgisum_evnt             = :new.umds_dgisum_evnt,
+        umds_snp                     = :new.umds_snp,
+        mdss_grp                     = :new.mdss_grp,
+        classtype                    = :new.classtype,
+        mbdb_c4c_id                  = :new.mbdb_c4c_id,
+        mbdb_crtd                    = :new.mbdb_crtd,
+        mbdb_las_act                 = :new.mbdb_las_act,
+        mbdb_las_act_actrtyp         = :new.mbdb_las_act_actrtyp,
+        mbdb_obj_stt                 = :new.mbdb_obj_stt,
+        mbdb_vers                    = :new.mbdb_vers,
+        mbdb_vsbt                    = :new.mbdb_vsbt,
+        mbdb_dltddt                  = :new.mbdb_dltddt,
+        mbdb_las_act_by              = :new.mbdb_las_act_by,
+        mbdb_origcrtr                = :new.mbdb_origcrtr,
+        mbdb_origcrtrlogdin          = :new.mbdb_origcrtrlogdin,
+        mbdb_las_act_by_logdin       = :new.mbdb_las_act_by_logdin,
+        mbdb_univid                  = :new.mbdb_univid,
+        mbdb_resnor_cmmt             = :new.mbdb_resnor_cmmt,
+        cfds_id                      = :new.cfds_id,
+        mdss_strtdt                  = :new.mdss_strtdt,
+        mdss_end_dt                  = :new.mdss_end_dt,
+        mdss_rslvdt                  = :new.mdss_rslvdt,
+        mdss_rstncmmt                = :new.mdss_rstncmmt,
+
+    mdss_is_pmrydgis             = :new.mdss_is_pmrydgis,
+        mdss_is_req_and_perfprovsame = :new.mdss_is_req_and_perfprovsame,
+        mdss_is_sltd                 = :new.mdss_is_sltd,
+        mdss_is_err                  = :new.mdss_is_err,
+        mdss_src_usr_nam             = :new.mdss_src_usr_nam,
+        mdss_err_txt                 = :new.mdss_err_txt,
+        mdss_wkfwistcid              = :new.mdss_wkfwistcid,
+        mdss_cnv_id                  = :new.mdss_cnv_id,
+        mdss_ownrchndflag            = :new.mdss_ownrchndflag,
+        mdss_ownrchndcnt             = :new.mdss_ownrchndcnt,
+        mdss_src__src_typ            = :new.mdss_src__src_typ,
+        mdss_id                      = :new.mdss_id,
+        cbdg_id                      = :new.cbdg_id,
+        umad_id                      = :new.umad_id,
+        cmdi_id                      = :new.cmdi_id,
+        umds_id                      = :new.umds_id,
+        mdss_rfngwkfwtsk             = :new.mdss_rfngwkfwtsk,
+        mdss_prvsrfngtsk             = :new.mdss_prvsrfngtsk,
+        mdss_prvsrfngtsk_prmn        = :new.mdss_prvsrfngtsk_prmn,
+        mdss_ownr                    = :new.mdss_ownr,
+        mdss_prvsownr                = :new.mdss_prvsownr,
+        mdss_prvssndr                = :new.mdss_prvssndr,
+        mdss_prvsownrprmn            = :new.mdss_prvsownrprmn,
+        mdss_tnfr                    = :new.mdss_tnfr,
+        mdss_prvstnfr                = :new.mdss_prvstnfr,
+        mdss_src__asmtcarecalc       = :new.mdss_src__asmtcarecalc,
+        mdss_src__pat_id_qry         = :new.mdss_src__pat_id_qry,
+        cmdi_cm_base                 = :new.cmdi_cm_base,
+        cfds_cm_tmpt                 = :new.cfds_cm_tmpt,
+        cfds_the_brncact             = :new.cfds_the_brncact,
+        mbdb_dgis                    = :new.mbdb_dgis,
+        cfds_sentasmt                = :new.cfds_sentasmt,
+        mdss_caudby                  = :new.mdss_caudby,
+        mdss_taknasmtcc              =
+ :new.mdss_taknasmtcc,
+        mdss_memb                    = :new.mdss_memb,
+        cbdg_mdclclm                 = :new.cbdg_mdclclm,
+        umad_umbs                    = :new.umad_umbs,
+        cfds_amtn                    = :new.cfds_amtn,
+        MPDS_PRBLM_DSCRP             = :new.MPDS_PRBLM_DSCRP,
+        MPDS_PRBLM_NAME              = :new.MPDS_PRBLM_NAME,
+        MPDS_PRBLM_COMMENT           = :new.MPDS_PRBLM_COMMENT,
+        MPDS_PRBLM_CLSRRSN           = :new.MPDS_PRBLM_CLSRRSN,
+        MPDS_PRBLM_STATUS            = :new.MPDS_PRBLM_STATUS,
+        MPDS_PRBLM_GNRTD_FRM_SRC_ID  = :new.MPDS_PRBLM_GNRTD_FRM_SRC_ID,
+        MPDS_PRBLM_SRC_ID            = :new.MPDS_PRBLM_SRC_ID,
+        cfprblmds_sentasmt           = :new.cfprblmds_sentasmt,
+        prblm_caudby                 = :new.prblm_caudby,
+        prblm_taknasmtcc             = :new.prblm_taknasmtcc
+      WHERE
+        mbdb_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_membdgisbase
+        (
+          mbdb_cstmflds,
+          umds_dgisum_evnt,
+          umds_snp,
+          mdss_grp,
+          classtype,
+          mbdb_c4c_id,
+          mbdb_crtd,
+          mbdb_las_act,
+          mbdb_las_act_actrtyp,
+          mbdb_obj_stt,
+          mbdb_vers,
+          mbdb_vsbt,
+          mbdb_dltddt,
+          mbdb_las_act_by,
+          mbdb_origcrtr,
+          mbdb_origcrtrlogdin,
+          mbdb_las_act_by_logdin,
+          mbdb_univid,
+          mbdb_resnor_cmmt,
+          cfds_id,
+          mdss_strtdt,
+          mdss_end_dt,
+          mdss_rslvdt,
+          mdss_rstncmmt,
+          mdss_is_pmrydgis,
+          mdss_is_req_and_perfprovsame,
+          mdss_is_sltd,
+          mdss_is_err,
+          mdss_src_usr_nam,
+          mdss_err_txt,
+          mdss_wkfwistcid,
+          mdss_cnv_id,
+          mdss_ownrchndflag,
+          mdss_ownrchndcnt,
+          mdss_src__src_ty
+p,
+          mdss_id,
+          cbdg_id,
+          umad_id,
+          cmdi_id,
+          umds_id,
+          mdss_rfngwkfwtsk,
+          mdss_prvsrfngtsk,
+          mdss_prvsrfngtsk_prmn,
+          mdss_ownr,
+          mdss_prvsownr,
+          mdss_prvssndr,
+          mdss_prvsownrprmn,
+          mdss_tnfr,
+          mdss_prvstnfr,
+          mdss_src__asmtcarecalc,
+          mdss_src__pat_id_qry,
+          cmdi_cm_base,
+          cfds_cm_tmpt,
+          cfds_the_brncact,
+          mbdb_dgis,
+          cfds_sentasmt,
+          mdss_caudby,
+          mdss_taknasmtcc,
+          mdss_memb,
+          cbdg_mdclclm,
+          umad_umbs,
+          cfds_amtn,
+          MPDS_PRBLM_DSCRP,
+          MPDS_PRBLM_NAME,
+          MPDS_PRBLM_COMMENT,
+          MPDS_PRBLM_CLSRRSN,
+          MPDS_PRBLM_STATUS,
+          MPDS_PRBLM_GNRTD_FRM_SRC_ID,
+          MPDS_PRBLM_SRC_ID,
+          cfprblmds_sentasmt,
+          prblm_caudby,
+          prblm_taknasmtcc,
+          mbdb_id,
+          valid_from,
+          valid_to,
+          mbdb_audid,
+          mbdb_prev_audid,
+          mbdb_next_audid,
+          transaction_id
+        )
+        VALUES
+        (
+          :new.mbdb_cstmflds,
+          :new.umds_dgisum_evnt,
+          :new.umds_snp,
+          :new.mdss_grp,
+          :new.classtype,
+          :new.mbdb_c4c_id,
+          :new.mbdb_crtd,
+          :new.mbdb_las_act,
+          :new.mbdb_las_act_actrtyp,
+          :new.mbdb_obj_stt,
+          :new.mbdb_vers,
+          :new.mbdb_vsbt,
+          :new.mbdb_dltddt,
+          :new.mbdb_las_act_by,
+          :new.mbdb_origcrtr,
+          :new.mbdb_origcrtrlogdin,
+          :new.mbdb_las_act_by_logdin,
+          :new.mbdb_univid,
+          :new.mbdb_resnor_cmmt,
+          :new.cfds_id,
+          :new.mdss_strtdt,
+          :new.mdss_end_dt,
+          :new.mdss_rslvdt,
+          :new.mdss_rstncmmt,
+          :new.mdss_is_pmrydgis,
+          :new.mdss_is_req_and_perfprovsame,
+          :new.mdss_is_sltd,
+          :new.mdss_is_err,
+          :n
+ew.mdss_src_usr_nam,
+          :new.mdss_err_txt,
+          :new.mdss_wkfwistcid,
+          :new.mdss_cnv_id,
+          :new.mdss_ownrchndflag,
+          :new.mdss_ownrchndcnt,
+          :new.mdss_src__src_typ,
+          :new.mdss_id,
+          :new.cbdg_id,
+          :new.umad_id,
+          :new.cmdi_id,
+          :new.umds_id,
+          :new.mdss_rfngwkfwtsk,
+          :new.mdss_prvsrfngtsk,
+          :new.mdss_prvsrfngtsk_prmn,
+          :new.mdss_ownr,
+          :new.mdss_prvsownr,
+          :new.mdss_prvssndr,
+          :new.mdss_prvsownrprmn,
+          :new.mdss_tnfr,
+          :new.mdss_prvstnfr,
+          :new.mdss_src__asmtcarecalc,
+          :new.mdss_src__pat_id_qry,
+          :new.cmdi_cm_base,
+          :new.cfds_cm_tmpt,
+          :new.cfds_the_brncact,
+          :new.mbdb_dgis,
+          :new.cfds_sentasmt,
+          :new.mdss_caudby,
+          :new.mdss_taknasmtcc,
+          :new.mdss_memb,
+          :new.cbdg_mdclclm,
+          :new.umad_umbs,
+          :new.cfds_amtn,
+          :new.MPDS_PRBLM_DSCRP,
+          :new.MPDS_PRBLM_NAME,
+          :new.MPDS_PRBLM_COMMENT,
+          :new.MPDS_PRBLM_CLSRRSN,
+          :new.MPDS_PRBLM_STATUS,
+          :new.MPDS_PRBLM_GNRTD_FRM_SRC_ID,
+          :new.MPDS_PRBLM_SRC_ID,
+          :new.cfprblmds_sentasmt,
+          :new.prblm_caudby,
+          :new.prblm_taknasmtcc,
+          :new.mbdb_id,
+          :new.mbdb_las_act_tim,
+          NULL,
+          u_membdgisbase.NEXTVAL,
+          last_audid,
+          NULL,
+          dbms_transaction.local_transaction_id
+        );
+      /* update last audit records valid_to to new LastActionTime
+      and next audit ID to newly inserted records sequence number
+      */
+      UPDATE
+        a_membdgisbase
+      SET
+        valid_to        = :new.mbdb_las_act_tim,
+        mbdb_next_audid = u_membdgisbase.CURRVAL
+      WHERE
+        mbdb_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_MBDB_DACMEMBER
+</td>
+<td>
+AFTER EACH ROW
+</td>
+<td>
+INSERT OR UPDATE OR DELETE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+
+(nvl(new.MBDB_OBJ_STT,-1) &lt;&gt; nvl(old.MBDB_OBJ_STT,-1) and (new.MBDB_OBJ_STT =2 or old.MBDB_OBJ_STT=2) ) or
+      nvl(new.umds_dgisum_evnt,-1) &lt;&gt;  nvl(old.umds_dgisum_evnt,-1)  or
+      nvl(new.cmdi_cm_base,-1)     &lt;&gt;  nvl(old.cmdi_cm_base,-1)      or
+      nvl(new.umad_umbs,-1)        &lt;&gt;  nvl(old.umad_umbs,-1)       or
+      nvl(new.mdss_memb,-1)        &lt;&gt;  nvl(old.mdss_memb,-1)      or
+      nvl(new.mbdb_dgis,-1)        &lt;&gt;  nvl(old.mbdb_dgis,-1)
+
+</td>
+<td>
+ENABLED
+</td>
+<td>
+TRG_MBDB_DACMEMBER
+AFTER DELETE OR INSERT OR UPDATE
+OF MBDB_OBJ_STT
+  ,CMDI_CM_BASE
+  ,MBDB_DGIS
+  ,MDSS_MEMB
+  ,UMAD_UMBS
+  ,UMDS_DGISUM_EVNT
+ON T_MEMBDGISBASE
+REFERENCING NEW AS NEW OLD AS OLD
+FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+declare
+    t_membdgisbase_NEW_rec t_membdgisbase%rowtype;
+    t_membdgisbase_OLD_rec t_membdgisbase%rowtype;
+   begin
+    t_membdgisbase_NEW_rec.&quot;CBDG_MDCLCLM&quot; := :new.&quot;CBDG_MDCLCLM&quot;;
+    t_membdgisbase_NEW_rec.&quot;CLASSTYPE&quot; := :new.&quot;CLASSTYPE&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_C4C_ID&quot; := :new.&quot;MBDB_C4C_ID&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_CRTD&quot; := :new.&quot;MBDB_CRTD&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_LAS_ACT&quot; := :new.&quot;MBDB_LAS_ACT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_LAS_ACT_ACTRTYP&quot; := :new.&quot;MBDB_LAS_ACT_ACTRTYP&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_LAS_ACT_TIM&quot; := :new.&quot;MBDB_LAS_ACT_TIM&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_OBJ_STT&quot; := :new.&quot;MBDB_OBJ_STT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_VERS&quot; := :new.&quot;MBDB_VERS&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_VSBT&quot; := :new.&quot;MBDB_VSBT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_DLTDDT&quot; := :new.&quot;MBDB_DLTDDT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_LAS_ACT_BY&quot; := :new.&quot;MBDB_LAS_ACT_BY&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_ORIGCRTR&quot; := :new.&quot;MBDB_ORIGCRTR&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_ORIGCRTRLOGDIN&quot; := :new.&quot;MBDB_ORIGCRTRLOGDIN&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_LAS_ACT_BY_LOGDIN&quot; := :new.&quot;MBDB_LAS_ACT_BY_LOGDIN&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_UNIVID&quot; := :new.&quot;MBDB_UNIVID&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_RESNOR_CMMT&quot; := :new.&quot;MBDB_RESNOR_CMMT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_ID&quot; := :new.&quot;MBDB_ID&quot;;
+    t_membdgisbase_NEW_rec.&quot;CFDS_ID&quot; := :new.&quot;CFDS_ID&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_STRTDT&quot; := :new.&quot;MDSS_STRTDT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_END_DT&quot; := :new.&quot;MDSS_END_DT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_RSLVDT&quot; := :new.&quot;MDSS_RSLVDT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_RSTNCMMT&quot; := :new.&quot;MDSS_RSTNCMMT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_IS_PMRYDGIS&quot; := :new.&quot;MDSS_IS_PMRYDGIS&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_IS_REQ_AND_PERFPROVSAME&quot; := :new.&quot;MDSS_IS_REQ_AND_PERFPROVSAME&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_IS_SLTD&quot; := :new.&quot;MDSS_IS_SLTD&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_IS_ERR&quot; := :new.&quot;MDSS_IS_ERR&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_SRC_USR_
+NAM&quot; := :new.&quot;MDSS_SRC_USR_NAM&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_ERR_TXT&quot; := :new.&quot;MDSS_ERR_TXT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_WKFWISTCID&quot; := :new.&quot;MDSS_WKFWISTCID&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_CNV_ID&quot; := :new.&quot;MDSS_CNV_ID&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_OWNRCHNDFLAG&quot; := :new.&quot;MDSS_OWNRCHNDFLAG&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_OWNRCHNDCNT&quot; := :new.&quot;MDSS_OWNRCHNDCNT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_SRC__SRC_TYP&quot; := :new.&quot;MDSS_SRC__SRC_TYP&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_ID&quot; := :new.&quot;MDSS_ID&quot;;
+    t_membdgisbase_NEW_rec.&quot;CBDG_ID&quot; := :new.&quot;CBDG_ID&quot;;
+    t_membdgisbase_NEW_rec.&quot;UMAD_ID&quot; := :new.&quot;UMAD_ID&quot;;
+    t_membdgisbase_NEW_rec.&quot;CMDI_ID&quot; := :new.&quot;CMDI_ID&quot;;
+    t_membdgisbase_NEW_rec.&quot;UMDS_ID&quot; := :new.&quot;UMDS_ID&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_RFNGWKFWTSK&quot; := :new.&quot;MDSS_RFNGWKFWTSK&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_PRVSRFNGTSK&quot; := :new.&quot;MDSS_PRVSRFNGTSK&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_PRVSRFNGTSK_PRMN&quot; := :new.&quot;MDSS_PRVSRFNGTSK_PRMN&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_OWNR&quot; := :new.&quot;MDSS_OWNR&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_PRVSOWNR&quot; := :new.&quot;MDSS_PRVSOWNR&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_PRVSSNDR&quot; := :new.&quot;MDSS_PRVSSNDR&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_PRVSOWNRPRMN&quot; := :new.&quot;MDSS_PRVSOWNRPRMN&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_TNFR&quot; := :new.&quot;MDSS_TNFR&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_PRVSTNFR&quot; := :new.&quot;MDSS_PRVSTNFR&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_SRC__ASMTCARECALC&quot; := :new.&quot;MDSS_SRC__ASMTCARECALC&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_SRC__PAT_ID_QRY&quot; := :new.&quot;MDSS_SRC__PAT_ID_QRY&quot;;
+    t_membdgisbase_NEW_rec.&quot;CMDI_CM_BASE&quot; := :new.&quot;CMDI_CM_BASE&quot;;
+    t_membdgisbase_NEW_rec.&quot;CFDS_CM_TMPT&quot; := :new.&quot;CFDS_CM_TMPT&quot;;
+    t_membdgisbase_NEW_rec.&quot;CFDS_THE_BRNCACT&quot; := :new.&quot;CFDS_THE_BRNCACT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MBDB_DGIS&quot; := :new.&quot;MBDB_DGIS&quot;;
+    t_membdgisbase_NEW_rec.&quot;CFDS_SENTASMT&quot; := :new.&quot;CFDS_SENTASMT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_CAUDBY&quot; := :new.&quot;MDSS_CAUDBY&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_TAKNASMTCC&quot; := :new.&quot;MDSS_TA
+KNASMTCC&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_MEMB&quot; := :new.&quot;MDSS_MEMB&quot;;
+    t_membdgisbase_NEW_rec.&quot;UMAD_UMBS&quot; := :new.&quot;UMAD_UMBS&quot;;
+    t_membdgisbase_NEW_rec.&quot;CFDS_AMTN&quot; := :new.&quot;CFDS_AMTN&quot;;
+    t_membdgisbase_NEW_rec.&quot;UMDS_DGISUM_EVNT&quot; := :new.&quot;UMDS_DGISUM_EVNT&quot;;
+    t_membdgisbase_NEW_rec.&quot;UMDS_SNP&quot; := :new.&quot;UMDS_SNP&quot;;
+    t_membdgisbase_NEW_rec.&quot;MDSS_GRP&quot; := :new.&quot;MDSS_GRP&quot;;
+    t_membdgisbase_NEW_rec.&quot;MPDS_PRBLM_DSCRP&quot; := :new.&quot;MPDS_PRBLM_DSCRP&quot;;
+    t_membdgisbase_NEW_rec.&quot;MPDS_PRBLM_NAME&quot; := :new.&quot;MPDS_PRBLM_NAME&quot;;
+	t_membdgisbase_NEW_rec.&quot;MPDS_PRBLM_COMMENT&quot; := :new.&quot;MPDS_PRBLM_COMMENT&quot;;
+    t_membdgisbase_NEW_rec.&quot;MPDS_PRBLM_CLSRRSN&quot; := :new.&quot;MPDS_PRBLM_CLSRRSN&quot;;
+	t_membdgisbase_NEW_rec.&quot;MPDS_PRBLM_STATUS&quot; := :new.&quot;MPDS_PRBLM_STATUS&quot;;
+	t_membdgisbase_NEW_rec.&quot;MPDS_PRBLM_GNRTD_FRM_SRC_ID&quot; := :new.&quot;MPDS_PRBLM_GNRTD_FRM_SRC_ID&quot;;
+	t_membdgisbase_NEW_rec.&quot;MPDS_PRBLM_SRC_ID&quot; := :new.&quot;MPDS_PRBLM_SRC_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;CBDG_MDCLCLM&quot; := :old.&quot;CBDG_MDCLCLM&quot;;
+    t_membdgisbase_OLD_rec.&quot;CLASSTYPE&quot; := :old.&quot;CLASSTYPE&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_C4C_ID&quot; := :old.&quot;MBDB_C4C_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_CRTD&quot; := :old.&quot;MBDB_CRTD&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_LAS_ACT&quot; := :old.&quot;MBDB_LAS_ACT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_LAS_ACT_ACTRTYP&quot; := :old.&quot;MBDB_LAS_ACT_ACTRTYP&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_LAS_ACT_TIM&quot; := :old.&quot;MBDB_LAS_ACT_TIM&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_OBJ_STT&quot; := :old.&quot;MBDB_OBJ_STT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_VERS&quot; := :old.&quot;MBDB_VERS&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_VSBT&quot; := :old.&quot;MBDB_VSBT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_DLTDDT&quot; := :old.&quot;MBDB_DLTDDT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_LAS_ACT_BY&quot; := :old.&quot;MBDB_LAS_ACT_BY&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_ORIGCRTR&quot; := :old.&quot;MBDB_ORIGCRTR&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_ORIGCRTRLOGDIN&quot; := :old.&quot;MBDB_ORIGCRTRLOGDIN&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_LAS_ACT_BY_LOGDIN&quot; := :old.&quot;MBDB_LAS_ACT_BY_LOGDIN&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_UNIVID&quot; := :old.&quot;MBD
+B_UNIVID&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_RESNOR_CMMT&quot; := :old.&quot;MBDB_RESNOR_CMMT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_ID&quot; := :old.&quot;MBDB_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;CFDS_ID&quot; := :old.&quot;CFDS_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_STRTDT&quot; := :old.&quot;MDSS_STRTDT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_END_DT&quot; := :old.&quot;MDSS_END_DT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_RSLVDT&quot; := :old.&quot;MDSS_RSLVDT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_RSTNCMMT&quot; := :old.&quot;MDSS_RSTNCMMT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_IS_PMRYDGIS&quot; := :old.&quot;MDSS_IS_PMRYDGIS&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_IS_REQ_AND_PERFPROVSAME&quot; := :old.&quot;MDSS_IS_REQ_AND_PERFPROVSAME&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_IS_SLTD&quot; := :old.&quot;MDSS_IS_SLTD&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_IS_ERR&quot; := :old.&quot;MDSS_IS_ERR&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_SRC_USR_NAM&quot; := :old.&quot;MDSS_SRC_USR_NAM&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_ERR_TXT&quot; := :old.&quot;MDSS_ERR_TXT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_WKFWISTCID&quot; := :old.&quot;MDSS_WKFWISTCID&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_CNV_ID&quot; := :old.&quot;MDSS_CNV_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_OWNRCHNDFLAG&quot; := :old.&quot;MDSS_OWNRCHNDFLAG&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_OWNRCHNDCNT&quot; := :old.&quot;MDSS_OWNRCHNDCNT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_SRC__SRC_TYP&quot; := :old.&quot;MDSS_SRC__SRC_TYP&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_ID&quot; := :old.&quot;MDSS_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;CBDG_ID&quot; := :old.&quot;CBDG_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;UMAD_ID&quot; := :old.&quot;UMAD_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;CMDI_ID&quot; := :old.&quot;CMDI_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;UMDS_ID&quot; := :old.&quot;UMDS_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_RFNGWKFWTSK&quot; := :old.&quot;MDSS_RFNGWKFWTSK&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_PRVSRFNGTSK&quot; := :old.&quot;MDSS_PRVSRFNGTSK&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_PRVSRFNGTSK_PRMN&quot; := :old.&quot;MDSS_PRVSRFNGTSK_PRMN&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_OWNR&quot; := :old.&quot;MDSS_OWNR&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_PRVSOWNR&quot; := :old.&quot;MDSS_PRVSOWNR&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_PRVSSNDR&quot; := :old.&quot;MDSS_PRVSSNDR&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDS
+S_PRVSOWNRPRMN&quot; := :old.&quot;MDSS_PRVSOWNRPRMN&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_TNFR&quot; := :old.&quot;MDSS_TNFR&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_PRVSTNFR&quot; := :old.&quot;MDSS_PRVSTNFR&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_SRC__ASMTCARECALC&quot; := :old.&quot;MDSS_SRC__ASMTCARECALC&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_SRC__PAT_ID_QRY&quot; := :old.&quot;MDSS_SRC__PAT_ID_QRY&quot;;
+    t_membdgisbase_OLD_rec.&quot;CMDI_CM_BASE&quot; := :old.&quot;CMDI_CM_BASE&quot;;
+    t_membdgisbase_OLD_rec.&quot;CFDS_CM_TMPT&quot; := :old.&quot;CFDS_CM_TMPT&quot;;
+    t_membdgisbase_OLD_rec.&quot;CFDS_THE_BRNCACT&quot; := :old.&quot;CFDS_THE_BRNCACT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MBDB_DGIS&quot; := :old.&quot;MBDB_DGIS&quot;;
+    t_membdgisbase_OLD_rec.&quot;CFDS_SENTASMT&quot; := :old.&quot;CFDS_SENTASMT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_CAUDBY&quot; := :old.&quot;MDSS_CAUDBY&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_TAKNASMTCC&quot; := :old.&quot;MDSS_TAKNASMTCC&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_MEMB&quot; := :old.&quot;MDSS_MEMB&quot;;
+    t_membdgisbase_OLD_rec.&quot;UMAD_UMBS&quot; := :old.&quot;UMAD_UMBS&quot;;
+    t_membdgisbase_OLD_rec.&quot;CFDS_AMTN&quot; := :old.&quot;CFDS_AMTN&quot;;
+    t_membdgisbase_OLD_rec.&quot;UMDS_DGISUM_EVNT&quot; := :old.&quot;UMDS_DGISUM_EVNT&quot;;
+    t_membdgisbase_OLD_rec.&quot;UMDS_SNP&quot; := :old.&quot;UMDS_SNP&quot;;
+    t_membdgisbase_OLD_rec.&quot;MDSS_GRP&quot; := :old.&quot;MDSS_GRP&quot;;
+    t_membdgisbase_OLD_rec.&quot;MPDS_PRBLM_DSCRP&quot; := :old.&quot;MPDS_PRBLM_DSCRP&quot;;
+    t_membdgisbase_OLD_rec.&quot;MPDS_PRBLM_NAME&quot; := :old.&quot;MPDS_PRBLM_NAME&quot;;
+    t_membdgisbase_OLD_rec.&quot;MPDS_PRBLM_COMMENT&quot; := :old.&quot;MPDS_PRBLM_COMMENT&quot;;
+    t_membdgisbase_OLD_rec.&quot;MPDS_PRBLM_CLSRRSN&quot; := :old.&quot;MPDS_PRBLM_CLSRRSN&quot;;
+	t_membdgisbase_OLD_rec.&quot;MPDS_PRBLM_STATUS&quot; := :old.&quot;MPDS_PRBLM_STATUS&quot;;
+    t_membdgisbase_OLD_rec.&quot;MPDS_PRBLM_GNRTD_FRM_SRC_ID&quot; := :old.&quot;MPDS_PRBLM_GNRTD_FRM_SRC_ID&quot;;
+    t_membdgisbase_OLD_rec.&quot;MPDS_PRBLM_SRC_ID&quot; := :old.&quot;MPDS_PRBLM_SRC_ID&quot;;
+	/*CP-352 */
+	t_membdgisbase_NEW_rec.&quot;CFPRBLMDS_SENTASMT&quot; := :new.&quot;CFPRBLMDS_SENTASMT&quot;;
+    t_membdgisbase_NEW_rec.&quot;PRBLM_CAUDBY&quot; := :new.&quot;PRBLM_CAUDBY&quot;;
+    t_membdgisbase_NEW_rec.&quot;PRBLM_TAKNASMTCC&quot; := :new.&quot;PRBLM_TAKNASMTCC&quot;;
+    pkg_dac_aggr.RowProcessForDIAG_MEMB(t_me
+mbdgisbase_OLD_rec,t_membdgisbase_NEW_rec);
+   end;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_T_MEMBDGISBASE
+</td>
+<td>
+AFTER EACH ROW
+</td>
+<td>
+INSERT OR UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_MEMBDGISBASE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+TRG_T_MEMBDGISBASE
+AFTER INSERT OR UPDATE ON T_MEMBDGISBASE FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+   var1 VARCHAR2(4000);
+  BEGIN
+      -- event (diagnosis-event)
+       var1 := 'INSERT INTO T_EVENT_UPDT  ' ||
+               '(SELECT UMET_ID, :1 FROM T_UM_BASE WHERE UMBS_ID = :2)';
+       EXECUTE IMMEDIATE var1 USING 'P', :NEW.UMDS_DGISUM_EVNT;
+  END;
+
+
+
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_QTN_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_QTN
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_qtn_auditinsert BEFORE INSERT ON T_QTN FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN
+  curr_date := current_date;
+
+  IF :new.qtn_crtd IS NULL THEN
+    :new.qtn_crtd := curr_date;
+  END IF;
+
+  IF :new.qtn_las_act_tim IS NULL THEN
+    :new.qtn_las_act_tim := curr_date;
+  END IF;
+
+  IF :new.qtn_las_act IS NULL THEN
+    :new.qtn_las_act := 1;
+  END IF;
+
+  IF :new.qtn_obj_stt IS NULL THEN
+    :new.qtn_obj_stt := 1;
+  END IF;
+
+  IF :new.qtn_vers IS NULL THEN
+    :new.qtn_vers := 0;
+  END IF;
+
+  IF :new.qtn_vsbt IS NULL THEN
+    :new.qtn_vsbt := 1001;
+  END IF;
+
+  IF :new.qtn_las_act_by IS NULL THEN
+    :new.qtn_las_act_by := 1;
+  END IF;
+
+  IF :new.qtn_origcrtr IS NULL THEN
+    :new.qtn_origcrtr := 1;
+  END IF;
+
+  IF :new.qtn_origcrtrlogdin IS NULL THEN
+    :new.qtn_origcrtrlogdin := 1;
+  END IF;
+
+  IF :new.qtn_las_act_by_logdin IS NULL THEN
+    :new.qtn_las_act_by_logdin := 1;
+  END IF;
+
+  INSERT INTO a_qtn
+  (
+   classtype,
+   qtn_c4c_id,
+   qtn_crtd,
+   qtn_las_act,
+   qtn_las_act_actrtyp,
+   qtn_obj_stt,
+   qtn_vers,
+   qtn_vsbt,
+   qtn_dltddt,
+   qtn_las_act_by,
+   qtn_origcrtr,
+   qtn_origcrtrlogdin,
+   qtn_las_act_by_logdin,
+   qtn_univid,
+   qtn_qtn_txt,
+   qtn_rspefrmt,
+   qtn_multmustsel,
+   qtn_multmx_sltd,
+   qtn_ord,
+   qtn_prmt,
+   qtn_txt_frmt,
+   qtn_val_frmt,
+   qtn_rspetyp,
+   qtn_in_pool,
+   qtn_otxtlmit,
+   qtn_chceas_list,
+   qtn_wght,
+   qtn_mnty,
+   qtn_typ_sbty,
+   qtn_sttsfmls,
+   qtn_skipfrma,
+   qtn_rep_frma,
+   qtn_sclb,
+   qtn_orig,
+   qtn_qtn_frma,
+   qtn_tsk_frma,
+   qtn_asmtcc,
+   qtn_alm_frma,
+   qtn_dgesfrma,
+   qtn_carebeanfrma,
+   qtn_wghtfrma,
+   qtn_prblmfrma,
+   qtn_id,
+   valid_from,
+   valid_to ,
+   qtn_audid,
+   qtn_prev_audid,
+   qtn_next_audid
+  )
+  VALUES
+  (
+   :new.classtype,
+   :new.qtn_c4c_id,
+   :new.qtn_crtd,
+   :new.qtn_las_act,
+   :new.qtn_las_act_actrtyp,
+   :new.qtn_obj_stt,
+   :new.qtn_vers,
+   :new.qtn_vsbt,
+   :new.qtn_dltddt,
+   :new.qtn_las_act_by,
+   :new.qtn_origcrtr,
+   :new.qtn_origcrtrlogdin,
+   :new.qtn_las_act_by_logdin,
+   :new.qtn
+_univid,
+   :new.qtn_qtn_txt,
+   :new.qtn_rspefrmt,
+   :new.qtn_multmustsel,
+   :new.qtn_multmx_sltd,
+   :new.qtn_ord,
+   :new.qtn_prmt,
+   :new.qtn_txt_frmt,
+   :new.qtn_val_frmt,
+   :new.qtn_rspetyp,
+   :new.qtn_in_pool,
+   :new.qtn_otxtlmit,
+   :new.qtn_chceas_list,
+   :new.qtn_wght,
+   :new.qtn_mnty,
+   :new.qtn_typ_sbty,
+   :new.qtn_sttsfmls,
+   :new.qtn_skipfrma,
+   :new.qtn_rep_frma,
+   :new.qtn_sclb,
+   :new.qtn_orig,
+   :new.qtn_qtn_frma,
+   :new.qtn_tsk_frma,
+   :new.qtn_asmtcc,
+   :new.qtn_alm_frma,
+   :new.qtn_dgesfrma,
+   :new.qtn_carebeanfrma,
+   :new.qtn_wghtfrma,
+   :new.qtn_prblmfrma,
+   :new.qtn_id,
+   :new.qtn_las_act_tim,
+   NULL,
+   u_qtn.NEXTVAL,
+   NULL,
+   NULL
+  );
+END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_QTN_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_QTN
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_qtn_auditupdate BEFORE
+  UPDATE
+    ON T_QTN FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        qtn_audid
+      INTO
+        last_audid
+      FROM
+        a_qtn
+      WHERE
+        qtn_id            = :old.qtn_id
+      AND qtn_next_audid IS NULL
+      AND rownum          &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.qtn_las_act_tim = :new.qtn_las_act_tim THEN
+      UPDATE
+        a_qtn
+      SET
+        classtype             = :new.classtype,
+        qtn_c4c_id            = :new.qtn_c4c_id,
+        qtn_crtd              = :new.qtn_crtd,
+        qtn_las_act           = :new.qtn_las_act,
+        qtn_las_act_actrtyp   = :new.qtn_las_act_actrtyp,
+        qtn_obj_stt           = :new.qtn_obj_stt,
+        qtn_vers              = :new.qtn_vers,
+        qtn_vsbt              = :new.qtn_vsbt,
+        qtn_dltddt            = :new.qtn_dltddt,
+        qtn_las_act_by        = :new.qtn_las_act_by,
+        qtn_origcrtr          = :new.qtn_origcrtr,
+        qtn_origcrtrlogdin    = :new.qtn_origcrtrlogdin,
+        qtn_las_act_by_logdin = :new.qtn_las_act_by_logdin,
+        qtn_univid            = :new.qtn_univid,
+        qtn_qtn_txt           = :new.qtn_qtn_txt,
+        qtn_rspefrmt          = :new.qtn_rspefrmt,
+        qtn_multmustsel       = :new.qtn_multmustsel,
+        qtn_multmx_sltd       = :new.qtn_multmx_sltd,
+        qtn_ord               = :new.qtn_ord,
+        qtn_prmt              = :new.qtn_prmt,
+        qtn_txt_frmt          = :new.qtn_txt_frmt,
+        qtn_val_frmt          = :new.qtn_val_frmt,
+        qtn_rspetyp           = :new.qtn_rspetyp,
+        qtn_in_pool           = :new.qtn_in_pool,
+        qtn_otxtlmit          = :new.qtn_otxtlmit,
+        qtn_chceas_list       = :new.qtn_chceas_list,
+        qtn_wght              = :new.qtn_wght,
+        qtn_mnty              = :new.qtn_mnty,
+        qtn
+_typ_sbty          = :new.qtn_typ_sbty,
+        qtn_sttsfmls          = :new.qtn_sttsfmls,
+        qtn_skipfrma          = :new.qtn_skipfrma,
+        qtn_rep_frma          = :new.qtn_rep_frma,
+        qtn_sclb              = :new.qtn_sclb,
+        qtn_orig              = :new.qtn_orig,
+        qtn_qtn_frma          = :new.qtn_qtn_frma,
+        qtn_tsk_frma          = :new.qtn_tsk_frma,
+        qtn_asmtcc            = :new.qtn_asmtcc,
+        qtn_alm_frma          = :new.qtn_alm_frma,
+        qtn_dgesfrma          = :new.qtn_dgesfrma,
+        qtn_carebeanfrma      = :new.qtn_carebeanfrma,
+        qtn_wghtfrma          = :new.qtn_wghtfrma,
+        qtn_prblmfrma         = :new.qtn_prblmfrma
+      WHERE
+        qtn_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_qtn
+        (
+          classtype,
+          qtn_c4c_id,
+          qtn_crtd,
+          qtn_las_act,
+          qtn_las_act_actrtyp,
+          qtn_obj_stt,
+          qtn_vers,
+          qtn_vsbt,
+          qtn_dltddt,
+          qtn_las_act_by,
+          qtn_origcrtr,
+          qtn_origcrtrlogdin,
+          qtn_las_act_by_logdin,
+          qtn_univid,
+          qtn_qtn_txt,
+          qtn_rspefrmt,
+          qtn_multmustsel,
+          qtn_multmx_sltd,
+          qtn_ord,
+          qtn_prmt,
+          qtn_txt_frmt,
+          qtn_val_frmt,
+          qtn_rspetyp,
+          qtn_in_pool,
+          qtn_otxtlmit,
+          qtn_chceas_list,
+          qtn_wght,
+          qtn_mnty,
+          qtn_typ_sbty,
+          qtn_sttsfmls,
+          qtn_skipfrma,
+          qtn_rep_frma,
+          qtn_sclb,
+          qtn_orig,
+          qtn_qtn_frma,
+          qtn_tsk_frma,
+          qtn_asmtcc,
+          qtn_alm_frma,
+          qtn_dgesfrma,
+          qtn_carebeanfrma,
+          qtn_wghtfrma,
+          qtn_prblmfrma,
+          qtn_id,
+          valid_from,
+          valid_to,
+          qtn_audid,
+
+        qtn_prev_audid,
+          qtn_next_audid
+        )
+        VALUES
+        (
+          :new.classtype,
+          :new.qtn_c4c_id,
+          :new.qtn_crtd,
+          :new.qtn_las_act,
+          :new.qtn_las_act_actrtyp,
+          :new.qtn_obj_stt,
+          :new.qtn_vers,
+          :new.qtn_vsbt,
+          :new.qtn_dltddt,
+          :new.qtn_las_act_by,
+          :new.qtn_origcrtr,
+          :new.qtn_origcrtrlogdin,
+          :new.qtn_las_act_by_logdin,
+          :new.qtn_univid,
+          :new.qtn_qtn_txt,
+          :new.qtn_rspefrmt,
+          :new.qtn_multmustsel,
+          :new.qtn_multmx_sltd,
+          :new.qtn_ord,
+          :new.qtn_prmt,
+          :new.qtn_txt_frmt,
+          :new.qtn_val_frmt,
+          :new.qtn_rspetyp,
+          :new.qtn_in_pool,
+          :new.qtn_otxtlmit,
+          :new.qtn_chceas_list,
+          :new.qtn_wght,
+          :new.qtn_mnty,
+          :new.qtn_typ_sbty,
+          :new.qtn_sttsfmls,
+          :new.qtn_skipfrma,
+          :new.qtn_rep_frma,
+          :new.qtn_sclb,
+          :new.qtn_orig,
+          :new.qtn_qtn_frma,
+          :new.qtn_tsk_frma,
+          :new.qtn_asmtcc,
+          :new.qtn_alm_frma,
+          :new.qtn_dgesfrma,
+          :new.qtn_carebeanfrma,
+          :new.qtn_wghtfrma,
+          :new.qtn_prblmfrma,
+          :new.qtn_id,
+          :new.qtn_las_act_tim,
+          NULL,
+          u_qtn.NEXTVAL,
+          last_audid,
+          NULL
+        );
+      /* update last audit record's valid_to to new LastActionTime
+      and next audit ID to newly inserted record's sequence number
+      */
+      UPDATE
+        a_qtn
+      SET
+        valid_to       = :new.qtn_las_act_tim,
+        qtn_next_audid = u_qtn.CURRVAL
+      WHERE
+        qtn_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_RPT_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_REP
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+&quot;THH_C4C&quot;.&quot;TRG_RPT_AUDITINSERT&quot; BEFORE INSERT ON T_REP FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN 
+  curr_date := current_date;
+
+  IF :new.rpt_crtd IS NULL THEN 
+    :new.rpt_crtd := curr_date; 
+  END IF; 
+
+  IF :new.rpt_las_act_tim IS NULL THEN 
+    :new.rpt_las_act_tim := curr_date; 
+  END IF; 
+
+  IF :new.rpt_las_act IS NULL THEN 
+    :new.rpt_las_act := 1; 
+  END IF; 
+
+  IF :new.rpt_obj_stt IS NULL THEN 
+    :new.rpt_obj_stt := 1; 
+  END IF; 
+
+  IF :new.rpt_vers IS NULL THEN 
+    :new.rpt_vers := 0; 
+  END IF; 
+
+  IF :new.rpt_vsbt IS NULL THEN 
+    :new.rpt_vsbt := 1001; 
+  END IF; 
+
+  IF :new.rpt_las_act_by IS NULL THEN 
+    :new.rpt_las_act_by := 1; 
+  END IF; 
+
+  IF :new.rpt_origcrtr IS NULL THEN 
+    :new.rpt_origcrtr := 1; 
+  END IF; 
+
+  IF :new.rpt_origcrtrlogdin IS NULL THEN 
+    :new.rpt_origcrtrlogdin := 1; 
+  END IF; 
+
+  IF :new.rpt_las_act_by_logdin IS NULL THEN 
+    :new.rpt_las_act_by_logdin := 1; 
+  END IF; 
+
+  INSERT INTO a_rep 
+  ( 
+   classtype, 
+   rpt_c4c_id, 
+   rpt_crtd, 
+   rpt_las_act, 
+   rpt_las_act_actrtyp, 
+   rpt_obj_stt, 
+   rpt_vers, 
+   rpt_vsbt, 
+   rpt_dltddt, 
+   rpt_las_act_by, 
+   rpt_origcrtr, 
+   rpt_origcrtrlogdin, 
+   rpt_las_act_by_logdin, 
+   rpt_univid, 
+   rpt_cat, 
+   rpt_txt, 
+   rpt_taknasmtcc, 
+   rpt_caudby, 
+   rpt_the_brncact, 
+   rpt_id, 
+   valid_from, 
+   valid_to , 
+   rpt_audid, 
+   rpt_prev_audid, 
+   rpt_next_audid
+  ) 
+  VALUES 
+  ( 
+   :new.classtype,
+   :new.rpt_c4c_id,
+   :new.rpt_crtd,
+   :new.rpt_las_act,
+   :new.rpt_las_act_actrtyp,
+   :new.rpt_obj_stt,
+   :new.rpt_vers,
+   :new.rpt_vsbt,
+   :new.rpt_dltddt,
+   :new.rpt_las_act_by,
+   :new.rpt_origcrtr,
+   :new.rpt_origcrtrlogdin,
+   :new.rpt_las_act_by_logdin,
+   :new.rpt_univid,
+   :new.rpt_cat,
+   :new.rpt_txt,
+   :new.rpt_taknasmtcc,
+   :new.rpt_caudby,
+   :new.rpt_the_brncact, 
+   :new.rpt_id, 
+   :new.rpt_las_act_tim, 
+   NULL, 
+   u_rep.NEXTVAL, 
+   NULL, 
+   NULL
+  );
+END;
+
+
+
+
+
+
+
+
+
+
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_RPT_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_REP
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_rpt_auditupdate BEFORE
+  UPDATE
+    ON T_REP FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        rpt_audid
+      INTO
+        last_audid
+      FROM
+        a_rep
+      WHERE
+        rpt_id            = :old.rpt_id
+      AND rpt_next_audid IS NULL
+      AND rownum          &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.rpt_las_act_tim = :new.rpt_las_act_tim THEN
+      UPDATE
+        a_rep
+      SET
+        classtype             = :new.classtype,
+        rpt_c4c_id            = :new.rpt_c4c_id,
+        rpt_crtd              = :new.rpt_crtd,
+        rpt_las_act           = :new.rpt_las_act,
+        rpt_las_act_actrtyp   = :new.rpt_las_act_actrtyp,
+        rpt_obj_stt           = :new.rpt_obj_stt,
+        rpt_vers              = :new.rpt_vers,
+        rpt_vsbt              = :new.rpt_vsbt,
+        rpt_dltddt            = :new.rpt_dltddt,
+        rpt_las_act_by        = :new.rpt_las_act_by,
+        rpt_origcrtr          = :new.rpt_origcrtr,
+        rpt_origcrtrlogdin    = :new.rpt_origcrtrlogdin,
+        rpt_las_act_by_logdin = :new.rpt_las_act_by_logdin,
+        rpt_univid            = :new.rpt_univid,
+        rpt_cat               = :new.rpt_cat,
+        rpt_txt               = :new.rpt_txt,
+        rpt_taknasmtcc        = :new.rpt_taknasmtcc,
+        rpt_caudby            = :new.rpt_caudby,
+        rpt_the_brncact       = :new.rpt_the_brncact
+      WHERE
+        rpt_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_rep
+        (
+          classtype,
+          rpt_c4c_id,
+          rpt_crtd,
+          rpt_las_act,
+          rpt_las_act_actrtyp,
+          rpt_obj_stt,
+          rpt_vers,
+          rpt_vsbt,
+          rpt_dltddt,
+          rpt_las_act_by,
+          rp
+t_origcrtr,
+          rpt_origcrtrlogdin,
+          rpt_las_act_by_logdin,
+          rpt_univid,
+          rpt_cat,
+          rpt_txt,
+          rpt_taknasmtcc,
+          rpt_caudby,
+          rpt_the_brncact,
+          rpt_id,
+          valid_from,
+          valid_to,
+          rpt_audid,
+          rpt_prev_audid,
+          rpt_next_audid
+        )
+        VALUES
+        (
+          :new.classtype,
+          :new.rpt_c4c_id,
+          :new.rpt_crtd,
+          :new.rpt_las_act,
+          :new.rpt_las_act_actrtyp,
+          :new.rpt_obj_stt,
+          :new.rpt_vers,
+          :new.rpt_vsbt,
+          :new.rpt_dltddt,
+          :new.rpt_las_act_by,
+          :new.rpt_origcrtr,
+          :new.rpt_origcrtrlogdin,
+          :new.rpt_las_act_by_logdin,
+          :new.rpt_univid,
+          :new.rpt_cat,
+          :new.rpt_txt,
+          :new.rpt_taknasmtcc,
+          :new.rpt_caudby,
+          :new.rpt_the_brncact,
+          :new.rpt_id,
+          :new.rpt_las_act_tim,
+          NULL,
+          u_rep.NEXTVAL,
+          last_audid,
+          NULL
+        );
+      /* update last audit record's valid_to to new LastActionTime
+      and next audit ID to newly inserted record's sequence number
+      */
+      UPDATE
+        a_rep
+      SET
+        valid_to       = :new.rpt_las_act_tim,
+        rpt_next_audid = u_rep.CURRVAL
+      WHERE
+        rpt_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_RESP_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_RSPE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+&quot;THH_C4C&quot;.&quot;TRG_RESP_AUDITINSERT&quot; BEFORE INSERT ON T_RSPE FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN 
+  curr_date := current_date;
+
+  IF :new.resp_crtd IS NULL THEN 
+    :new.resp_crtd := curr_date; 
+  END IF; 
+
+  IF :new.resp_las_act_tim IS NULL THEN 
+    :new.resp_las_act_tim := curr_date; 
+  END IF; 
+
+  IF :new.resp_las_act IS NULL THEN 
+    :new.resp_las_act := 1; 
+  END IF; 
+
+  IF :new.resp_obj_stt IS NULL THEN 
+    :new.resp_obj_stt := 1; 
+  END IF; 
+
+  IF :new.resp_vers IS NULL THEN 
+    :new.resp_vers := 0; 
+  END IF; 
+
+  IF :new.resp_vsbt IS NULL THEN 
+    :new.resp_vsbt := 1001; 
+  END IF; 
+
+  IF :new.resp_las_act_by IS NULL THEN 
+    :new.resp_las_act_by := 1; 
+  END IF; 
+
+  IF :new.resp_origcrtr IS NULL THEN 
+    :new.resp_origcrtr := 1; 
+  END IF; 
+
+  IF :new.resp_origcrtrlogdin IS NULL THEN 
+    :new.resp_origcrtrlogdin := 1; 
+  END IF; 
+
+  IF :new.resp_las_act_by_logdin IS NULL THEN 
+    :new.resp_las_act_by_logdin := 1; 
+  END IF; 
+
+  INSERT INTO a_rspe 
+  ( 
+   resp_c4c_id, 
+   resp_crtd, 
+   resp_las_act, 
+   resp_las_act_actrtyp, 
+   resp_obj_stt, 
+   resp_vers, 
+   resp_vsbt, 
+   resp_dltddt, 
+   resp_las_act_by, 
+   resp_origcrtr, 
+   resp_origcrtrlogdin, 
+   resp_las_act_by_logdin, 
+   resp_univid, 
+   resp_txt, 
+   resp_nmbr, 
+   resp_scor, 
+   resp_qtn, 
+   resp_taknasmtcc, 
+   classtype, 
+   resp_id, 
+   valid_from, 
+   valid_to , 
+   resp_audid, 
+   resp_prev_audid, 
+   resp_next_audid
+  ) 
+  VALUES 
+  ( 
+   :new.resp_c4c_id,
+   :new.resp_crtd,
+   :new.resp_las_act,
+   :new.resp_las_act_actrtyp,
+   :new.resp_obj_stt,
+   :new.resp_vers,
+   :new.resp_vsbt,
+   :new.resp_dltddt,
+   :new.resp_las_act_by,
+   :new.resp_origcrtr,
+   :new.resp_origcrtrlogdin,
+   :new.resp_las_act_by_logdin,
+   :new.resp_univid,
+   :new.resp_txt,
+   :new.resp_nmbr,
+   :new.resp_scor,
+   :new.resp_qtn,
+   :new.resp_taknasmtcc,
+   :new.classtype, 
+   :new.resp_id, 
+   :new.resp_las_act_tim, 
+   NULL, 
+   u_rspe.NEXTVAL, 
+   NULL, 
+   NULL
+  );
+END;
+
+
+
+
+
+
+
+
+
+
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_RESP_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_RSPE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_resp_auditupdate BEFORE
+  UPDATE
+    ON T_RSPE FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        resp_audid
+      INTO
+        last_audid
+      FROM
+        a_rspe
+      WHERE
+        resp_id            = :old.resp_id
+      AND resp_next_audid IS NULL
+      AND rownum           &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.resp_las_act_tim = :new.resp_las_act_tim THEN
+      UPDATE
+        a_rspe
+      SET
+        classtype              = :new.classtype,
+        resp_c4c_id            = :new.resp_c4c_id,
+        resp_crtd              = :new.resp_crtd,
+        resp_las_act           = :new.resp_las_act,
+        resp_las_act_actrtyp   = :new.resp_las_act_actrtyp,
+        resp_obj_stt           = :new.resp_obj_stt,
+        resp_vers              = :new.resp_vers,
+        resp_vsbt              = :new.resp_vsbt,
+        resp_dltddt            = :new.resp_dltddt,
+        resp_las_act_by        = :new.resp_las_act_by,
+        resp_origcrtr          = :new.resp_origcrtr,
+        resp_origcrtrlogdin    = :new.resp_origcrtrlogdin,
+        resp_las_act_by_logdin = :new.resp_las_act_by_logdin,
+        resp_univid            = :new.resp_univid,
+        resp_txt               = :new.resp_txt,
+        resp_nmbr              = :new.resp_nmbr,
+        resp_scor              = :new.resp_scor,
+        resp_qtn               = :new.resp_qtn,
+        resp_taknasmtcc        = :new.resp_taknasmtcc
+      WHERE
+        resp_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_rspe
+        (
+          classtype,
+          resp_c4c_id,
+          resp_crtd,
+          resp_las_act,
+          resp_las_act_actrtyp,
+          resp_obj_stt,
+          resp_vers,
+          resp_vsbt,
+          resp
+_dltddt,
+          resp_las_act_by,
+          resp_origcrtr,
+          resp_origcrtrlogdin,
+          resp_las_act_by_logdin,
+          resp_univid,
+          resp_txt,
+          resp_nmbr,
+          resp_scor,
+          resp_qtn,
+          resp_taknasmtcc,
+          resp_id,
+          valid_from,
+          valid_to,
+          resp_audid,
+          resp_prev_audid,
+          resp_next_audid
+        )
+        VALUES
+        (
+          :new.classtype,
+          :new.resp_c4c_id,
+          :new.resp_crtd,
+          :new.resp_las_act,
+          :new.resp_las_act_actrtyp,
+          :new.resp_obj_stt,
+          :new.resp_vers,
+          :new.resp_vsbt,
+          :new.resp_dltddt,
+          :new.resp_las_act_by,
+          :new.resp_origcrtr,
+          :new.resp_origcrtrlogdin,
+          :new.resp_las_act_by_logdin,
+          :new.resp_univid,
+          :new.resp_txt,
+          :new.resp_nmbr,
+          :new.resp_scor,
+          :new.resp_qtn,
+          :new.resp_taknasmtcc,
+          :new.resp_id,
+          :new.resp_las_act_tim,
+          NULL,
+          u_rspe.NEXTVAL,
+          last_audid,
+          NULL
+        );
+      /* update last audit record's valid_to to new LastActionTime
+      and next audit ID to newly inserted record's sequence number
+      */
+      UPDATE
+        a_rspe
+      SET
+        valid_to        = :new.resp_las_act_tim,
+        resp_next_audid = u_rspe.CURRVAL
+      WHERE
+        resp_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_RPCH_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_RSPECHCS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+&quot;THH_C4C&quot;.&quot;TRG_RPCH_AUDITINSERT&quot; BEFORE INSERT ON T_RSPECHCS FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN 
+  curr_date := current_date;
+
+  IF :new.rpch_crtd IS NULL THEN 
+    :new.rpch_crtd := curr_date; 
+  END IF; 
+
+  IF :new.rpch_las_act_tim IS NULL THEN 
+    :new.rpch_las_act_tim := curr_date; 
+  END IF; 
+
+  IF :new.rpch_las_act IS NULL THEN 
+    :new.rpch_las_act := 1; 
+  END IF; 
+
+  IF :new.rpch_obj_stt IS NULL THEN 
+    :new.rpch_obj_stt := 1; 
+  END IF; 
+
+  IF :new.rpch_vers IS NULL THEN 
+    :new.rpch_vers := 0; 
+  END IF; 
+
+  IF :new.rpch_vsbt IS NULL THEN 
+    :new.rpch_vsbt := 1001; 
+  END IF; 
+
+  IF :new.rpch_las_act_by IS NULL THEN 
+    :new.rpch_las_act_by := 1; 
+  END IF; 
+
+  IF :new.rpch_origcrtr IS NULL THEN 
+    :new.rpch_origcrtr := 1; 
+  END IF; 
+
+  IF :new.rpch_origcrtrlogdin IS NULL THEN 
+    :new.rpch_origcrtrlogdin := 1; 
+  END IF; 
+
+  IF :new.rpch_las_act_by_logdin IS NULL THEN 
+    :new.rpch_las_act_by_logdin := 1; 
+  END IF; 
+
+  INSERT INTO a_rspechcs 
+  ( 
+   classtype, 
+   rpch_c4c_id, 
+   rpch_crtd, 
+   rpch_las_act, 
+   rpch_las_act_actrtyp, 
+   rpch_obj_stt, 
+   rpch_vers, 
+   rpch_vsbt, 
+   rpch_dltddt, 
+   rpch_las_act_by, 
+   rpch_origcrtr, 
+   rpch_origcrtrlogdin, 
+   rpch_las_act_by_logdin, 
+   rpch_univid, 
+   rpch_rspe, 
+   rpch_chcs, 
+   rpch_id, 
+   valid_from, 
+   valid_to , 
+   rpch_audid, 
+   rpch_prev_audid, 
+   rpch_next_audid
+  ) 
+  VALUES 
+  ( 
+   :new.classtype,
+   :new.rpch_c4c_id,
+   :new.rpch_crtd,
+   :new.rpch_las_act,
+   :new.rpch_las_act_actrtyp,
+   :new.rpch_obj_stt,
+   :new.rpch_vers,
+   :new.rpch_vsbt,
+   :new.rpch_dltddt,
+   :new.rpch_las_act_by,
+   :new.rpch_origcrtr,
+   :new.rpch_origcrtrlogdin,
+   :new.rpch_las_act_by_logdin,
+   :new.rpch_univid,
+   :new.rpch_rspe,
+   :new.rpch_chcs, 
+   :new.rpch_id, 
+   :new.rpch_las_act_tim, 
+   NULL, 
+   u_rspechcs.NEXTVAL, 
+   NULL, 
+   NULL
+  );
+END;
+
+
+
+
+
+
+
+
+
+
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_RPCH_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_RSPECHCS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_rpch_auditupdate BEFORE
+  UPDATE
+    ON T_RSPECHCS FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        rpch_audid
+      INTO
+        last_audid
+      FROM
+        a_rspechcs
+      WHERE
+        rpch_id            = :old.rpch_id
+      AND rpch_next_audid IS NULL
+      AND rownum           &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.rpch_las_act_tim = :new.rpch_las_act_tim THEN
+      UPDATE
+        a_rspechcs
+      SET
+        classtype              = :new.classtype,
+        rpch_c4c_id            = :new.rpch_c4c_id,
+        rpch_crtd              = :new.rpch_crtd,
+        rpch_las_act           = :new.rpch_las_act,
+        rpch_las_act_actrtyp   = :new.rpch_las_act_actrtyp,
+        rpch_obj_stt           = :new.rpch_obj_stt,
+        rpch_vers              = :new.rpch_vers,
+        rpch_vsbt              = :new.rpch_vsbt,
+        rpch_dltddt            = :new.rpch_dltddt,
+        rpch_las_act_by        = :new.rpch_las_act_by,
+        rpch_origcrtr          = :new.rpch_origcrtr,
+        rpch_origcrtrlogdin    = :new.rpch_origcrtrlogdin,
+        rpch_las_act_by_logdin = :new.rpch_las_act_by_logdin,
+        rpch_univid            = :new.rpch_univid,
+        rpch_rspe              = :new.rpch_rspe,
+        rpch_chcs              = :new.rpch_chcs
+      WHERE
+        rpch_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_rspechcs
+        (
+          classtype,
+          rpch_c4c_id,
+          rpch_crtd,
+          rpch_las_act,
+          rpch_las_act_actrtyp,
+          rpch_obj_stt,
+          rpch_vers,
+          rpch_vsbt,
+          rpch_dltddt,
+          rpch_las_act_by,
+          rpch_origcrtr,
+          rpch_origcrtrlogdin,
+          rpch_las_act_by_logdin,
+          rpc
+h_univid,
+          rpch_rspe,
+          rpch_chcs,
+          rpch_id,
+          valid_from,
+          valid_to,
+          rpch_audid,
+          rpch_prev_audid,
+          rpch_next_audid
+        )
+        VALUES
+        (
+          :new.classtype,
+          :new.rpch_c4c_id,
+          :new.rpch_crtd,
+          :new.rpch_las_act,
+          :new.rpch_las_act_actrtyp,
+          :new.rpch_obj_stt,
+          :new.rpch_vers,
+          :new.rpch_vsbt,
+          :new.rpch_dltddt,
+          :new.rpch_las_act_by,
+          :new.rpch_origcrtr,
+          :new.rpch_origcrtrlogdin,
+          :new.rpch_las_act_by_logdin,
+          :new.rpch_univid,
+          :new.rpch_rspe,
+          :new.rpch_chcs,
+          :new.rpch_id,
+          :new.rpch_las_act_tim,
+          NULL,
+          u_rspechcs.NEXTVAL,
+          last_audid,
+          NULL
+        );
+      /* update last audit record's valid_to to new LastActionTime
+      and next audit ID to newly inserted record's sequence number
+      */
+      UPDATE
+        a_rspechcs
+      SET
+        valid_to        = :new.rpch_las_act_tim,
+        rpch_next_audid = u_rspechcs.CURRVAL
+      WHERE
+        rpch_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_STCB_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_SENTCAREBEAN
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+&quot;THH_C4C&quot;.&quot;TRG_STCB_AUDITINSERT&quot; BEFORE INSERT ON T_SENTCAREBEAN FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN 
+  curr_date := current_date;
+
+  IF :new.stcb_crtd IS NULL THEN 
+    :new.stcb_crtd := curr_date; 
+  END IF; 
+
+  IF :new.stcb_las_act_tim IS NULL THEN 
+    :new.stcb_las_act_tim := curr_date; 
+  END IF; 
+
+  IF :new.stcb_las_act IS NULL THEN 
+    :new.stcb_las_act := 1; 
+  END IF; 
+
+  IF :new.stcb_obj_stt IS NULL THEN 
+    :new.stcb_obj_stt := 1; 
+  END IF; 
+
+  IF :new.stcb_vers IS NULL THEN 
+    :new.stcb_vers := 0; 
+  END IF; 
+
+  IF :new.stcb_vsbt IS NULL THEN 
+    :new.stcb_vsbt := 1001; 
+  END IF; 
+
+  IF :new.stcb_las_act_by IS NULL THEN 
+    :new.stcb_las_act_by := 1; 
+  END IF; 
+
+  IF :new.stcb_origcrtr IS NULL THEN 
+    :new.stcb_origcrtr := 1; 
+  END IF; 
+
+  IF :new.stcb_origcrtrlogdin IS NULL THEN 
+    :new.stcb_origcrtrlogdin := 1; 
+  END IF; 
+
+  IF :new.stcb_las_act_by_logdin IS NULL THEN 
+    :new.stcb_las_act_by_logdin := 1; 
+  END IF; 
+
+  INSERT INTO a_sentcarebean 
+  ( 
+   classtype, 
+   stcb_c4c_id, 
+   stcb_crtd, 
+   stcb_las_act, 
+   stcb_las_act_actrtyp, 
+   stcb_obj_stt, 
+   stcb_vers, 
+   stcb_vsbt, 
+   stcb_dltddt, 
+   stcb_las_act_by, 
+   stcb_origcrtr, 
+   stcb_origcrtrlogdin, 
+   stcb_las_act_by_logdin, 
+   stcb_univid, 
+   stcb_nam, 
+   stcb_prus, 
+   stcb_sndrspcddts, 
+   stcb_wlcmtxt, 
+   stcb_rcmd, 
+   stcb_sent, 
+   stcb_srtd, 
+   stcb_tmtd, 
+   stcb_otcm, 
+   stcb_las_rtedto_gkprat, 
+   stcb_las_gkpract_at, 
+   stcb_gkprotcm, 
+   stcb_wkfwistcid, 
+   stcb_cnv_id, 
+   stcb_ownrchndflag, 
+   stcb_ownrchndcnt, 
+   stcb_src__src_typ, 
+   stcb_origrcpt, 
+   stcb_las_gkpr, 
+   stcb_rfngwkfwtsk, 
+   stcb_prvsrfngtsk, 
+   stcb_prvsrfngtsk_prmn, 
+   stcb_ownr, 
+   stcb_prvsownr, 
+   stcb_prvssndr, 
+   stcb_prvsownrprmn, 
+   stcb_tnfr, 
+   stcb_prvstnfr, 
+   stcb_src__asmtcarecalc, 
+   stcb_src__pat_id_qry, 
+   stcb_affn_um_evntreqt, 
+   stcb_affn_um_extn, 
+   stcb_affn_pvdr, 
+   stcb_affn_cm, 
+   stcb_affn_memb, 
+   stcb_affn_um_evnt, 
+   stcb_caudby, 
+   stcb_cstmflds, 
+   stcb_grp, 
+
+stcb_carebean, 
+   stcb_taknasmtcc, 
+   stcb_taknasmtcc_base, 
+   stcb_id, 
+   valid_from, 
+   valid_to , 
+   stcb_audid, 
+   stcb_prev_audid, 
+   stcb_next_audid
+  ) 
+  VALUES 
+  ( 
+   :new.classtype,
+   :new.stcb_c4c_id,
+   :new.stcb_crtd,
+   :new.stcb_las_act,
+   :new.stcb_las_act_actrtyp,
+   :new.stcb_obj_stt,
+   :new.stcb_vers,
+   :new.stcb_vsbt,
+   :new.stcb_dltddt,
+   :new.stcb_las_act_by,
+   :new.stcb_origcrtr,
+   :new.stcb_origcrtrlogdin,
+   :new.stcb_las_act_by_logdin,
+   :new.stcb_univid,
+   :new.stcb_nam,
+   :new.stcb_prus,
+   :new.stcb_sndrspcddts,
+   :new.stcb_wlcmtxt,
+   :new.stcb_rcmd,
+   :new.stcb_sent,
+   :new.stcb_srtd,
+   :new.stcb_tmtd,
+   :new.stcb_otcm,
+   :new.stcb_las_rtedto_gkprat,
+   :new.stcb_las_gkpract_at,
+   :new.stcb_gkprotcm,
+   :new.stcb_wkfwistcid,
+   :new.stcb_cnv_id,
+   :new.stcb_ownrchndflag,
+   :new.stcb_ownrchndcnt,
+   :new.stcb_src__src_typ,
+   :new.stcb_origrcpt,
+   :new.stcb_las_gkpr,
+   :new.stcb_rfngwkfwtsk,
+   :new.stcb_prvsrfngtsk,
+   :new.stcb_prvsrfngtsk_prmn,
+   :new.stcb_ownr,
+   :new.stcb_prvsownr,
+   :new.stcb_prvssndr,
+   :new.stcb_prvsownrprmn,
+   :new.stcb_tnfr,
+   :new.stcb_prvstnfr,
+   :new.stcb_src__asmtcarecalc,
+   :new.stcb_src__pat_id_qry,
+   :new.stcb_affn_um_evntreqt,
+   :new.stcb_affn_um_extn,
+   :new.stcb_affn_pvdr,
+   :new.stcb_affn_cm,
+   :new.stcb_affn_memb,
+   :new.stcb_affn_um_evnt,
+   :new.stcb_caudby,
+   :new.stcb_cstmflds,
+   :new.stcb_grp,
+   :new.stcb_carebean,
+   :new.stcb_taknasmtcc,
+   :new.stcb_taknasmtcc_base, 
+   :new.stcb_id, 
+   :new.stcb_las_act_tim, 
+   NULL, 
+   u_sentcarebean.NEXTVAL, 
+   NULL, 
+   NULL
+  );
+END;
+
+
+
+
+
+
+
+
+
+
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_STCB_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_SENTCAREBEAN
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_stcb_auditupdate BEFORE
+  UPDATE
+    ON T_SENTCAREBEAN FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        stcb_audid
+      INTO
+        last_audid
+      FROM
+        a_sentcarebean
+      WHERE
+        stcb_id            = :old.stcb_id
+      AND stcb_next_audid IS NULL
+      AND rownum           &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.stcb_las_act_tim = :new.stcb_las_act_tim THEN
+      UPDATE
+        a_sentcarebean
+      SET
+        classtype              = :new.classtype,
+        stcb_c4c_id            = :new.stcb_c4c_id,
+        stcb_crtd              = :new.stcb_crtd,
+        stcb_las_act           = :new.stcb_las_act,
+        stcb_las_act_actrtyp   = :new.stcb_las_act_actrtyp,
+        stcb_obj_stt           = :new.stcb_obj_stt,
+        stcb_vers              = :new.stcb_vers,
+        stcb_vsbt              = :new.stcb_vsbt,
+        stcb_dltddt            = :new.stcb_dltddt,
+        stcb_las_act_by        = :new.stcb_las_act_by,
+        stcb_origcrtr          = :new.stcb_origcrtr,
+        stcb_origcrtrlogdin    = :new.stcb_origcrtrlogdin,
+        stcb_las_act_by_logdin = :new.stcb_las_act_by_logdin,
+        stcb_univid            = :new.stcb_univid,
+        stcb_nam               = :new.stcb_nam,
+        stcb_prus              = :new.stcb_prus,
+        stcb_sndrspcddts       = :new.stcb_sndrspcddts,
+        stcb_wlcmtxt           = :new.stcb_wlcmtxt,
+        stcb_rcmd              = :new.stcb_rcmd,
+        stcb_sent              = :new.stcb_sent,
+        stcb_srtd              = :new.stcb_srtd,
+        stcb_tmtd              = :new.stcb_tmtd,
+        stcb_otcm              = :new.stcb_otcm,
+        stcb_las_rtedto_gkprat = :new.stcb_las_rtedto_gkprat,
+        stcb_las_gkpract_at    = :new.stcb_las_gkpract_at,
+        stcb_gkprotcm          = :new.stcb_gkprotcm,
+        stcb_wkfwistcid        = :new.
+stcb_wkfwistcid,
+        stcb_cnv_id            = :new.stcb_cnv_id,
+        stcb_ownrchndflag      = :new.stcb_ownrchndflag,
+        stcb_ownrchndcnt       = :new.stcb_ownrchndcnt,
+        stcb_src__src_typ      = :new.stcb_src__src_typ,
+        stcb_origrcpt          = :new.stcb_origrcpt,
+        stcb_las_gkpr          = :new.stcb_las_gkpr,
+        stcb_rfngwkfwtsk       = :new.stcb_rfngwkfwtsk,
+        stcb_prvsrfngtsk       = :new.stcb_prvsrfngtsk,
+        stcb_prvsrfngtsk_prmn  = :new.stcb_prvsrfngtsk_prmn,
+        stcb_ownr              = :new.stcb_ownr,
+        stcb_prvsownr          = :new.stcb_prvsownr,
+        stcb_prvssndr          = :new.stcb_prvssndr,
+        stcb_prvsownrprmn      = :new.stcb_prvsownrprmn,
+        stcb_tnfr              = :new.stcb_tnfr,
+        stcb_prvstnfr          = :new.stcb_prvstnfr,
+        stcb_src__asmtcarecalc = :new.stcb_src__asmtcarecalc,
+        stcb_src__pat_id_qry   = :new.stcb_src__pat_id_qry,
+        stcb_affn_um_evntreqt  = :new.stcb_affn_um_evntreqt,
+        stcb_affn_um_extn      = :new.stcb_affn_um_extn,
+        stcb_affn_pvdr         = :new.stcb_affn_pvdr,
+        stcb_affn_cm           = :new.stcb_affn_cm,
+        stcb_affn_memb         = :new.stcb_affn_memb,
+        stcb_affn_um_evnt      = :new.stcb_affn_um_evnt,
+        stcb_caudby            = :new.stcb_caudby,
+        stcb_cstmflds          = :new.stcb_cstmflds,
+        stcb_grp               = :new.stcb_grp,
+        stcb_carebean          = :new.stcb_carebean,
+        stcb_taknasmtcc        = :new.stcb_taknasmtcc,
+        stcb_taknasmtcc_base   = :new.stcb_taknasmtcc_base
+      WHERE
+        stcb_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_sentcarebean
+        (
+          classtype,
+          stcb_c4c_id,
+          stcb_crtd,
+          stcb_las_act,
+          stcb_las_act_actrtyp,
+          stcb_obj_stt,
+          s
+tcb_vers,
+          stcb_vsbt,
+          stcb_dltddt,
+          stcb_las_act_by,
+          stcb_origcrtr,
+          stcb_origcrtrlogdin,
+          stcb_las_act_by_logdin,
+          stcb_univid,
+          stcb_nam,
+          stcb_prus,
+          stcb_sndrspcddts,
+          stcb_wlcmtxt,
+          stcb_rcmd,
+          stcb_sent,
+          stcb_srtd,
+          stcb_tmtd,
+          stcb_otcm,
+          stcb_las_rtedto_gkprat,
+          stcb_las_gkpract_at,
+          stcb_gkprotcm,
+          stcb_wkfwistcid,
+          stcb_cnv_id,
+          stcb_ownrchndflag,
+          stcb_ownrchndcnt,
+          stcb_src__src_typ,
+          stcb_origrcpt,
+          stcb_las_gkpr,
+          stcb_rfngwkfwtsk,
+          stcb_prvsrfngtsk,
+          stcb_prvsrfngtsk_prmn,
+          stcb_ownr,
+          stcb_prvsownr,
+          stcb_prvssndr,
+          stcb_prvsownrprmn,
+          stcb_tnfr,
+          stcb_prvstnfr,
+          stcb_src__asmtcarecalc,
+          stcb_src__pat_id_qry,
+          stcb_affn_um_evntreqt,
+          stcb_affn_um_extn,
+          stcb_affn_pvdr,
+          stcb_affn_cm,
+          stcb_affn_memb,
+          stcb_affn_um_evnt,
+          stcb_caudby,
+          stcb_cstmflds,
+          stcb_grp,
+          stcb_carebean,
+          stcb_taknasmtcc,
+          stcb_taknasmtcc_base,
+          stcb_id,
+          valid_from,
+          valid_to,
+          stcb_audid,
+          stcb_prev_audid,
+          stcb_next_audid
+        )
+        VALUES
+        (
+          :new.classtype,
+          :new.stcb_c4c_id,
+          :new.stcb_crtd,
+          :new.stcb_las_act,
+          :new.stcb_las_act_actrtyp,
+          :new.stcb_obj_stt,
+          :new.stcb_vers,
+          :new.stcb_vsbt,
+          :new.stcb_dltddt,
+          :new.stcb_las_act_by,
+          :new.stcb_origcrtr,
+          :new.stcb_origcrtrlogdin,
+          :new.stcb_las_act_by_logdin,
+          :new.stcb_univid,
+          :new.stcb_nam,
+          :new.stcb_prus,
+          :new.stcb_sndrspcddts,
+          :new.stcb_wlcmtxt,
+
+  :new.stcb_rcmd,
+          :new.stcb_sent,
+          :new.stcb_srtd,
+          :new.stcb_tmtd,
+          :new.stcb_otcm,
+          :new.stcb_las_rtedto_gkprat,
+          :new.stcb_las_gkpract_at,
+          :new.stcb_gkprotcm,
+          :new.stcb_wkfwistcid,
+          :new.stcb_cnv_id,
+          :new.stcb_ownrchndflag,
+          :new.stcb_ownrchndcnt,
+          :new.stcb_src__src_typ,
+          :new.stcb_origrcpt,
+          :new.stcb_las_gkpr,
+          :new.stcb_rfngwkfwtsk,
+          :new.stcb_prvsrfngtsk,
+          :new.stcb_prvsrfngtsk_prmn,
+          :new.stcb_ownr,
+          :new.stcb_prvsownr,
+          :new.stcb_prvssndr,
+          :new.stcb_prvsownrprmn,
+          :new.stcb_tnfr,
+          :new.stcb_prvstnfr,
+          :new.stcb_src__asmtcarecalc,
+          :new.stcb_src__pat_id_qry,
+          :new.stcb_affn_um_evntreqt,
+          :new.stcb_affn_um_extn,
+          :new.stcb_affn_pvdr,
+          :new.stcb_affn_cm,
+          :new.stcb_affn_memb,
+          :new.stcb_affn_um_evnt,
+          :new.stcb_caudby,
+          :new.stcb_cstmflds,
+          :new.stcb_grp,
+          :new.stcb_carebean,
+          :new.stcb_taknasmtcc,
+          :new.stcb_taknasmtcc_base,
+          :new.stcb_id,
+          :new.stcb_las_act_tim,
+          NULL,
+          u_sentcarebean.NEXTVAL,
+          last_audid,
+          NULL
+        );
+      /* update last audit record's valid_to to new LastActionTime
+      and next audit ID to newly inserted record's sequence number
+      */
+      UPDATE
+        a_sentcarebean
+      SET
+        valid_to        = :new.stcb_las_act_tim,
+        stcb_next_audid = u_sentcarebean.CURRVAL
+      WHERE
+        stcb_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_SETK_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_SENTTSK
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_setk_auditinsert before insert on t_senttsk for each row
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+declare
+  curr_date date;
+begin
+  curr_date := current_date;
+  if :new.setk_crtd is null then
+    :new.setk_crtd := curr_date;
+  end if;
+  if :new.setk_las_act_tim is null then
+    :new.setk_las_act_tim := curr_date;
+  end if;
+  if :new.setk_las_act is null then
+    :new.setk_las_act := 1;
+  end if;
+  if :new.setk_obj_stt is null then
+    :new.setk_obj_stt := 1;
+  end if;
+  if :new.setk_vers is null then
+    :new.setk_vers := 0;
+  end if;
+  if :new.setk_vsbt is null then
+    :new.setk_vsbt := 1001;
+  end if;
+  if :new.setk_las_act_by is null then
+    :new.setk_las_act_by := 1;
+  end if;
+  if :new.setk_origcrtr is null then
+    :new.setk_origcrtr := 1;
+  end if;
+  if :new.setk_origcrtrlogdin is null then
+    :new.setk_origcrtrlogdin := 1;
+  end if;
+  if :new.setk_las_act_by_logdin is null then
+    :new.setk_las_act_by_logdin := 1;
+  end if;
+  insert into a_senttsk (
+    setk_vsbt,
+    setk_dltddt,
+    setk_las_act_by,
+    setk_origcrtr,
+    setk_origcrtrlogdin,
+    setk_las_act_by_logdin,
+    setk_univid,
+    setk_ddlnalrtrcpt,
+    setk_tsk_nam,
+    setk_tsk_dscn,
+    setk_drtn_amnt,
+    setk_drtn_unit,
+    setk_rmdrprcdwth__amnt,
+    setk_rmdrprcdwth__unit,
+    setk_prnl,
+    setk_subj,
+    setk_cmmt,
+    setk_cmpd,
+    setk_rmdrtim_orgn,
+    setk_ddlntim_blck_amnt,
+    setk_ddlntim_blck_unit,
+    setk_cnclcmmt,
+    setk_sent,
+    setk_srtd,
+    setk_tmtd,
+    setk_otcm,
+    setk_wkfwistcid,
+    setk_cnv_id,
+    setk_ownrchndflag,
+    setk_ownrchndcnt,
+    setk_src__src_typ,
+    setk_tsk_timg_ddln_dt,
+    setk_tsk_timg_ddln_tim_in_dy,
+    setk_tsk_timg_ddlnact,
+    setk_tsk_timg_strtdt,
+    setk_tsk_timg_scldat,
+    setk_tsk_timg_snlttsk,
+    setk_tsk_timg_snltdt,
+    setk_tsk_timg_snltact,
+    setk_tsk_timg_ddlnbfr_nxt_irtn,
+    setk_tsk_timg_ddlnsltn,
+    setk_tsk_timg_scld,
+    scbt_strttim_blck_amnt,
+    scbt_strttim_blck_unit,
+    scbt_nmbr,
+    scbt_aft_eachistc,
+    scbt_id,
+    setk_affn_um_evntreqt,
+    setk_affn_um_extn,
+    setk_affn_pvdr,
+    setk_affn_c
+m,
+    setk_affn_memb,
+    setk_affn_um_evnt,
+    setk_origrcpt,
+    setk_rfngwkfwtsk,
+    setk_prvsrfngtsk,
+    setk_prvsrfngtsk_prmn,
+    setk_ownr,
+    setk_prvsownr,
+    setk_prvssndr,
+    setk_prvsownrprmn,
+    setk_tnfr,
+    setk_prvstnfr,
+    setk_src__asmtcarecalc,
+    setk_src__pat_id_qry,
+    setk_caudby,
+    setk_cstmflds,
+    setk_cnclresn,
+    setk_grp,
+    scbt_carebean,
+    scbt_carebeantsk,
+    setk_tsk_typ,
+    setk_retnptrn,
+    setk_tmpt,
+    setk_taknasmtcc_base,
+    setk_um_base,
+    classtype,
+    setk_c4c_id,
+    setk_crtd,
+    setk_las_act,
+    setk_las_act_actrtyp,
+    setk_obj_stt,
+    setk_vers,
+    setk_id,
+    valid_from,
+    valid_to ,
+    setk_audid,
+    setk_prev_audid,
+    setk_next_audid,
+    setk_reschedule_reason,
+    setk_reschedule_comment
+  ) values (
+    :new.setk_vsbt,
+    :new.setk_dltddt,
+    :new.setk_las_act_by,
+    :new.setk_origcrtr,
+    :new.setk_origcrtrlogdin,
+    :new.setk_las_act_by_logdin,
+    :new.setk_univid,
+    :new.setk_ddlnalrtrcpt,
+    :new.setk_tsk_nam,
+    :new.setk_tsk_dscn,
+    :new.setk_drtn_amnt,
+    :new.setk_drtn_unit,
+    :new.setk_rmdrprcdwth__amnt,
+    :new.setk_rmdrprcdwth__unit,
+    :new.setk_prnl,
+    :new.setk_subj,
+    :new.setk_cmmt,
+    :new.setk_cmpd,
+    :new.setk_rmdrtim_orgn,
+    :new.setk_ddlntim_blck_amnt,
+    :new.setk_ddlntim_blck_unit,
+    :new.setk_cnclcmmt,
+    :new.setk_sent,
+    :new.setk_srtd,
+    :new.setk_tmtd,
+    :new.setk_otcm,
+    :new.setk_wkfwistcid,
+    :new.setk_cnv_id,
+    :new.setk_ownrchndflag,
+    :new.setk_ownrchndcnt,
+    :new.setk_src__src_typ,
+    :new.setk_tsk_timg_ddln_dt,
+    :new.setk_tsk_timg_ddln_tim_in_dy,
+    :new.setk_tsk_timg_ddlnact,
+    :new.setk_tsk_timg_strtdt,
+    :new.setk_tsk_timg_scldat,
+    :new.setk_tsk_timg_snlttsk,
+    :new.setk_tsk_timg_snltdt,
+    :new.setk_tsk_timg_snltact,
+    :new.setk_tsk_timg_ddlnbfr_nxt_irtn,
+    :new.setk_tsk_timg_ddlnsltn,
+    :new.setk_tsk_timg_scld,
+    :new.scbt_strttim_blck_amnt,
+    :new.scbt_strttim_blck
+_unit,
+    :new.scbt_nmbr,
+    :new.scbt_aft_eachistc,
+    :new.scbt_id,
+    :new.setk_affn_um_evntreqt,
+    :new.setk_affn_um_extn,
+    :new.setk_affn_pvdr,
+    :new.setk_affn_cm,
+    :new.setk_affn_memb,
+    :new.setk_affn_um_evnt,
+    :new.setk_origrcpt,
+    :new.setk_rfngwkfwtsk,
+    :new.setk_prvsrfngtsk,
+    :new.setk_prvsrfngtsk_prmn,
+    :new.setk_ownr,
+    :new.setk_prvsownr,
+    :new.setk_prvssndr,
+    :new.setk_prvsownrprmn,
+    :new.setk_tnfr,
+    :new.setk_prvstnfr,
+    :new.setk_src__asmtcarecalc,
+    :new.setk_src__pat_id_qry,
+    :new.setk_caudby,
+    :new.setk_cstmflds,
+    :new.setk_cnclresn,
+    :new.setk_grp,
+    :new.scbt_carebean,
+    :new.scbt_carebeantsk,
+    :new.setk_tsk_typ,
+    :new.setk_retnptrn,
+    :new.setk_tmpt,
+    :new.setk_taknasmtcc_base,
+    :new.setk_um_base,
+    :new.classtype,
+    :new.setk_c4c_id,
+    :new.setk_crtd,
+    :new.setk_las_act,
+    :new.setk_las_act_actrtyp,
+    :new.setk_obj_stt,
+    :new.setk_vers,
+    :new.setk_id,
+    :new.setk_las_act_tim,
+    null,
+    u_senttsk.nextval,
+    null,
+    null,
+    :new.setk_reschedule_reason,
+    :new.setk_reschedule_comment
+  );
+end;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_SETK_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_SENTTSK
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_setk_auditupdate before update on t_senttsk for each row
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+declare
+  last_audid number;
+begin
+  begin
+    select
+      setk_audid into last_audid
+    from
+      a_senttsk
+    where
+      setk_id = :old.setk_id
+      and
+      setk_next_audid is null
+      and
+      rownum &lt; 2
+    for update;
+  exception
+    when no_data_found then
+      last_audid := null;
+  end;
+  -- LastActionTime has not changed - no new transaction
+  if :old.setk_las_act_tim = :new.setk_las_act_tim then
+    update a_senttsk
+      set
+        setk_tsk_timg_ddln_dt          = :new.setk_tsk_timg_ddln_dt,
+        setk_tsk_timg_ddln_tim_in_dy   = :new.setk_tsk_timg_ddln_tim_in_dy,
+        setk_tsk_timg_ddlnact          = :new.setk_tsk_timg_ddlnact,
+        setk_tsk_timg_strtdt           = :new.setk_tsk_timg_strtdt,
+        setk_tsk_timg_scldat           = :new.setk_tsk_timg_scldat,
+        setk_tsk_timg_snlttsk          = :new.setk_tsk_timg_snlttsk,
+        setk_tsk_timg_snltdt           = :new.setk_tsk_timg_snltdt,
+        setk_tsk_timg_snltact          = :new.setk_tsk_timg_snltact,
+        setk_tsk_timg_ddlnbfr_nxt_irtn = :new.setk_tsk_timg_ddlnbfr_nxt_irtn,
+        setk_tsk_timg_ddlnsltn         = :new.setk_tsk_timg_ddlnsltn,
+        setk_tsk_timg_scld             = :new.setk_tsk_timg_scld,
+        scbt_strttim_blck_amnt         = :new.scbt_strttim_blck_amnt,
+        scbt_strttim_blck_unit         = :new.scbt_strttim_blck_unit,
+        scbt_nmbr                      = :new.scbt_nmbr,
+        scbt_aft_eachistc              = :new.scbt_aft_eachistc,
+        scbt_id                        = :new.scbt_id,
+        setk_affn_um_evntreqt          = :new.setk_affn_um_evntreqt,
+        setk_affn_um_extn              = :new.setk_affn_um_extn,
+        setk_affn_pvdr                 = :new.setk_affn_pvdr,
+        setk_affn_cm                   = :new.setk_affn_cm,
+        setk_affn_memb                 = :new.setk_affn_memb,
+        setk_affn_um_evnt              = :new.setk_affn_um_evnt,
+        setk_origrcpt                  = :new.setk_origrcpt,
+        setk_rfngw
+kfwtsk               = :new.setk_rfngwkfwtsk,
+        setk_prvsrfngtsk               = :new.setk_prvsrfngtsk,
+        setk_prvsrfngtsk_prmn          = :new.setk_prvsrfngtsk_prmn,
+        setk_ownr                      = :new.setk_ownr,
+        setk_prvsownr                  = :new.setk_prvsownr,
+        setk_prvssndr                  = :new.setk_prvssndr,
+        setk_prvsownrprmn              = :new.setk_prvsownrprmn,
+        setk_tnfr                      = :new.setk_tnfr,
+        setk_prvstnfr                  = :new.setk_prvstnfr,
+        setk_src__asmtcarecalc         = :new.setk_src__asmtcarecalc,
+        setk_src__pat_id_qry           = :new.setk_src__pat_id_qry,
+        setk_caudby                    = :new.setk_caudby,
+        setk_cstmflds                  = :new.setk_cstmflds,
+        setk_cnclresn                  = :new.setk_cnclresn,
+        setk_grp                       = :new.setk_grp,
+        scbt_carebean                  = :new.scbt_carebean,
+        scbt_carebeantsk               = :new.scbt_carebeantsk,
+        setk_tsk_typ                   = :new.setk_tsk_typ,
+        setk_retnptrn                  = :new.setk_retnptrn,
+        setk_tmpt                      = :new.setk_tmpt,
+        setk_taknasmtcc_base           = :new.setk_taknasmtcc_base,
+        setk_um_base                   = :new.setk_um_base,
+        classtype                      = :new.classtype,
+        setk_c4c_id                    = :new.setk_c4c_id,
+        setk_crtd                      = :new.setk_crtd,
+        setk_las_act                   = :new.setk_las_act,
+        setk_las_act_actrtyp           = :new.setk_las_act_actrtyp,
+        setk_obj_stt                   = :new.setk_obj_stt,
+        setk_vers                      = :new.setk_vers,
+        setk_vsbt                      = :new.setk_vsbt,
+        setk_dltddt                    = :new.setk_dltddt,
+        setk_las_act_by                = :new.setk_las_act_by,
+        setk_origcrtr                  = :new.setk_origc
+rtr,
+        setk_origcrtrlogdin            = :new.setk_origcrtrlogdin,
+        setk_las_act_by_logdin         = :new.setk_las_act_by_logdin,
+        setk_univid                    = :new.setk_univid,
+        setk_ddlnalrtrcpt              = :new.setk_ddlnalrtrcpt,
+        setk_tsk_nam                   = :new.setk_tsk_nam,
+        setk_tsk_dscn                  = :new.setk_tsk_dscn,
+        setk_drtn_amnt                 = :new.setk_drtn_amnt,
+        setk_drtn_unit                 = :new.setk_drtn_unit,
+        setk_rmdrprcdwth__amnt         = :new.setk_rmdrprcdwth__amnt,
+        setk_rmdrprcdwth__unit         = :new.setk_rmdrprcdwth__unit,
+        setk_prnl                      = :new.setk_prnl,
+        setk_subj                      = :new.setk_subj,
+        setk_cmmt                      = :new.setk_cmmt,
+        setk_cmpd                      = :new.setk_cmpd,
+        setk_rmdrtim_orgn              = :new.setk_rmdrtim_orgn,
+        setk_ddlntim_blck_amnt         = :new.setk_ddlntim_blck_amnt,
+        setk_ddlntim_blck_unit         = :new.setk_ddlntim_blck_unit,
+        setk_cnclcmmt                  = :new.setk_cnclcmmt,
+        setk_sent                      = :new.setk_sent,
+        setk_srtd                      = :new.setk_srtd,
+        setk_tmtd                      = :new.setk_tmtd,
+        setk_otcm                      = :new.setk_otcm,
+        setk_wkfwistcid                = :new.setk_wkfwistcid,
+        setk_cnv_id                    = :new.setk_cnv_id,
+        setk_ownrchndflag              = :new.setk_ownrchndflag,
+        setk_ownrchndcnt               = :new.setk_ownrchndcnt,
+        setk_src__src_typ              = :new.setk_src__src_typ,
+        setk_reschedule_reason         = :new.setk_reschedule_reason,
+        setk_reschedule_comment        = :new.setk_reschedule_comment
+      where
+        setk_audid = last_audid;
+  -- LastActionTime has changed - new transaction in place
+  else
+    -- insert new values introduced by new transaction
+
+ insert into a_senttsk (
+        setk_tsk_timg_ddln_dt,
+        setk_tsk_timg_ddln_tim_in_dy,
+        setk_tsk_timg_ddlnact,
+        setk_tsk_timg_strtdt,
+        setk_tsk_timg_scldat,
+        setk_tsk_timg_snlttsk,
+        setk_tsk_timg_snltdt,
+        setk_tsk_timg_snltact,
+        setk_tsk_timg_ddlnbfr_nxt_irtn,
+        setk_tsk_timg_ddlnsltn,
+        setk_tsk_timg_scld,
+        scbt_strttim_blck_amnt,
+        scbt_strttim_blck_unit,
+        scbt_nmbr,
+        scbt_aft_eachistc,
+        scbt_id,
+        setk_affn_um_evntreqt,
+        setk_affn_um_extn,
+        setk_affn_pvdr,
+        setk_affn_cm,
+        setk_affn_memb,
+        setk_affn_um_evnt,
+        setk_origrcpt,
+        setk_rfngwkfwtsk,
+        setk_prvsrfngtsk,
+        setk_prvsrfngtsk_prmn,
+        setk_ownr,
+        setk_prvsownr,
+        setk_prvssndr,
+        setk_prvsownrprmn,
+        setk_tnfr,
+        setk_prvstnfr,
+        setk_src__asmtcarecalc,
+        setk_src__pat_id_qry,
+        setk_caudby,
+        setk_cstmflds,
+        setk_cnclresn,
+        setk_grp,
+        scbt_carebean,
+        scbt_carebeantsk,
+        setk_tsk_typ,
+        setk_retnptrn,
+        setk_tmpt,
+        setk_taknasmtcc_base,
+        setk_um_base,
+        classtype,
+        setk_c4c_id,
+        setk_crtd,
+        setk_las_act,
+        setk_las_act_actrtyp,
+        setk_obj_stt,
+        setk_vers,
+        setk_vsbt,
+        setk_dltddt,
+        setk_las_act_by,
+        setk_origcrtr,
+        setk_origcrtrlogdin,
+        setk_las_act_by_logdin,
+        setk_univid,
+        setk_ddlnalrtrcpt,
+        setk_tsk_nam,
+        setk_tsk_dscn,
+        setk_drtn_amnt,
+        setk_drtn_unit,
+        setk_rmdrprcdwth__amnt,
+        setk_rmdrprcdwth__unit,
+        setk_prnl,
+        setk_subj,
+        setk_cmmt,
+        setk_cmpd,
+        setk_rmdrtim_orgn,
+        setk_ddlntim_blck_amnt,
+        setk_ddlntim_blck_unit,
+        setk_cnclcmmt,
+        setk_sent,
+        setk_srtd,
+        setk_tmtd,
+        setk_otcm,
+        setk_wkfw
+istcid,
+        setk_cnv_id,
+        setk_ownrchndflag,
+        setk_ownrchndcnt,
+        setk_src__src_typ,
+        setk_id,
+        valid_from,
+        valid_to,
+        setk_audid,
+        setk_prev_audid,
+        setk_next_audid,
+        setk_reschedule_reason,
+        setk_reschedule_comment
+      ) values (
+        :new.setk_tsk_timg_ddln_dt,
+        :new.setk_tsk_timg_ddln_tim_in_dy,
+        :new.setk_tsk_timg_ddlnact,
+        :new.setk_tsk_timg_strtdt,
+        :new.setk_tsk_timg_scldat,
+        :new.setk_tsk_timg_snlttsk,
+        :new.setk_tsk_timg_snltdt,
+        :new.setk_tsk_timg_snltact,
+        :new.setk_tsk_timg_ddlnbfr_nxt_irtn,
+        :new.setk_tsk_timg_ddlnsltn,
+        :new.setk_tsk_timg_scld,
+        :new.scbt_strttim_blck_amnt,
+        :new.scbt_strttim_blck_unit,
+        :new.scbt_nmbr,
+        :new.scbt_aft_eachistc,
+        :new.scbt_id,
+        :new.setk_affn_um_evntreqt,
+        :new.setk_affn_um_extn,
+        :new.setk_affn_pvdr,
+        :new.setk_affn_cm,
+        :new.setk_affn_memb,
+        :new.setk_affn_um_evnt,
+        :new.setk_origrcpt,
+        :new.setk_rfngwkfwtsk,
+        :new.setk_prvsrfngtsk,
+        :new.setk_prvsrfngtsk_prmn,
+        :new.setk_ownr,
+        :new.setk_prvsownr,
+        :new.setk_prvssndr,
+        :new.setk_prvsownrprmn,
+        :new.setk_tnfr,
+        :new.setk_prvstnfr,
+        :new.setk_src__asmtcarecalc,
+        :new.setk_src__pat_id_qry,
+        :new.setk_caudby,
+        :new.setk_cstmflds,
+        :new.setk_cnclresn,
+        :new.setk_grp,
+        :new.scbt_carebean,
+        :new.scbt_carebeantsk,
+        :new.setk_tsk_typ,
+        :new.setk_retnptrn,
+        :new.setk_tmpt,
+        :new.setk_taknasmtcc_base,
+        :new.setk_um_base,
+        :new.classtype,
+        :new.setk_c4c_id,
+        :new.setk_crtd,
+        :new.setk_las_act,
+        :new.setk_las_act_actrtyp,
+        :new.setk_obj_stt,
+        :new.setk_vers,
+        :new.setk_vsbt,
+        :new.setk_dltddt,
+        :new.setk_las_act_by,
+
+ :new.setk_origcrtr,
+        :new.setk_origcrtrlogdin,
+        :new.setk_las_act_by_logdin,
+        :new.setk_univid,
+        :new.setk_ddlnalrtrcpt,
+        :new.setk_tsk_nam,
+        :new.setk_tsk_dscn,
+        :new.setk_drtn_amnt,
+        :new.setk_drtn_unit,
+        :new.setk_rmdrprcdwth__amnt,
+        :new.setk_rmdrprcdwth__unit,
+        :new.setk_prnl,
+        :new.setk_subj,
+        :new.setk_cmmt,
+        :new.setk_cmpd,
+        :new.setk_rmdrtim_orgn,
+        :new.setk_ddlntim_blck_amnt,
+        :new.setk_ddlntim_blck_unit,
+        :new.setk_cnclcmmt,
+        :new.setk_sent,
+        :new.setk_srtd,
+        :new.setk_tmtd,
+        :new.setk_otcm,
+        :new.setk_wkfwistcid,
+        :new.setk_cnv_id,
+        :new.setk_ownrchndflag,
+        :new.setk_ownrchndcnt,
+        :new.setk_src__src_typ,
+        :new.setk_id,
+        :new.setk_las_act_tim,
+        null,
+        u_senttsk.nextval,
+        last_audid,
+        null,
+        :new.setk_reschedule_reason,
+        :new.setk_reschedule_comment
+      );
+      -- update last audit record's valid_to to new LastActionTime and next audit ID to newly inserted record's sequence number
+      update a_senttsk
+        set
+          valid_to        = :new.setk_las_act_tim,
+          setk_next_audid = u_senttsk.currval
+        where
+          setk_audid = last_audid;
+  end if;
+end;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_STA_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_STTS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+&quot;THH_C4C&quot;.&quot;TRG_STA_AUDITINSERT&quot; BEFORE INSERT ON T_STTS FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN 
+  curr_date := current_date;
+
+  IF :new.sta_crtd IS NULL THEN 
+    :new.sta_crtd := curr_date; 
+  END IF; 
+
+  IF :new.sta_las_act_tim IS NULL THEN 
+    :new.sta_las_act_tim := curr_date; 
+  END IF; 
+
+  IF :new.sta_las_act IS NULL THEN 
+    :new.sta_las_act := 1; 
+  END IF; 
+
+  IF :new.sta_obj_stt IS NULL THEN 
+    :new.sta_obj_stt := 1; 
+  END IF; 
+
+  IF :new.sta_vers IS NULL THEN 
+    :new.sta_vers := 0; 
+  END IF; 
+
+  IF :new.sta_vsbt IS NULL THEN 
+    :new.sta_vsbt := 1001; 
+  END IF; 
+
+  IF :new.sta_las_act_by IS NULL THEN 
+    :new.sta_las_act_by := 1; 
+  END IF; 
+
+  IF :new.sta_origcrtr IS NULL THEN 
+    :new.sta_origcrtr := 1; 
+  END IF; 
+
+  IF :new.sta_origcrtrlogdin IS NULL THEN 
+    :new.sta_origcrtrlogdin := 1; 
+  END IF; 
+
+  IF :new.sta_las_act_by_logdin IS NULL THEN 
+    :new.sta_las_act_by_logdin := 1; 
+  END IF; 
+
+  INSERT INTO a_stts 
+  ( 
+   sta_las_act_by_logdin, 
+   sta_univid, 
+   sta_pysl, 
+   sta_emtn, 
+   sta_cmpc, 
+   sta_finc, 
+   sta_caudby, 
+   sta_taknasmtcc, 
+   sta_the_brncact, 
+   classtype, 
+   sta_c4c_id, 
+   sta_crtd, 
+   sta_las_act, 
+   sta_las_act_actrtyp, 
+   sta_obj_stt, 
+   sta_vers, 
+   sta_vsbt, 
+   sta_dltddt, 
+   sta_las_act_by, 
+   sta_origcrtr, 
+   sta_origcrtrlogdin, 
+   sta_id, 
+   valid_from, 
+   valid_to , 
+   sta_audid, 
+   sta_prev_audid, 
+   sta_next_audid
+  ) 
+  VALUES 
+  ( 
+   :new.sta_las_act_by_logdin,
+   :new.sta_univid,
+   :new.sta_pysl,
+   :new.sta_emtn,
+   :new.sta_cmpc,
+   :new.sta_finc,
+   :new.sta_caudby,
+   :new.sta_taknasmtcc,
+   :new.sta_the_brncact,
+   :new.classtype,
+   :new.sta_c4c_id,
+   :new.sta_crtd,
+   :new.sta_las_act,
+   :new.sta_las_act_actrtyp,
+   :new.sta_obj_stt,
+   :new.sta_vers,
+   :new.sta_vsbt,
+   :new.sta_dltddt,
+   :new.sta_las_act_by,
+   :new.sta_origcrtr,
+   :new.sta_origcrtrlogdin, 
+   :new.sta_id, 
+   :new.sta_las_act_tim, 
+   NULL, 
+   u_stts.NEXTVAL, 
+   NULL, 
+   NULL
+  );
+END;
+
+
+
+
+
+
+
+
+
+
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_STA_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_STTS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_sta_auditupdate BEFORE
+  UPDATE
+    ON T_STTS FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        sta_audid
+      INTO
+        last_audid
+      FROM
+        a_stts
+      WHERE
+        sta_id            = :old.sta_id
+      AND sta_next_audid IS NULL
+      AND rownum          &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.sta_las_act_tim = :new.sta_las_act_tim THEN
+      UPDATE
+        a_stts
+      SET
+        classtype             = :new.classtype,
+        sta_c4c_id            = :new.sta_c4c_id,
+        sta_crtd              = :new.sta_crtd,
+        sta_las_act           = :new.sta_las_act,
+        sta_las_act_actrtyp   = :new.sta_las_act_actrtyp,
+        sta_obj_stt           = :new.sta_obj_stt,
+        sta_vers              = :new.sta_vers,
+        sta_vsbt              = :new.sta_vsbt,
+        sta_dltddt            = :new.sta_dltddt,
+        sta_las_act_by        = :new.sta_las_act_by,
+        sta_origcrtr          = :new.sta_origcrtr,
+        sta_origcrtrlogdin    = :new.sta_origcrtrlogdin,
+        sta_las_act_by_logdin = :new.sta_las_act_by_logdin,
+        sta_univid            = :new.sta_univid,
+        sta_pysl              = :new.sta_pysl,
+        sta_emtn              = :new.sta_emtn,
+        sta_cmpc              = :new.sta_cmpc,
+        sta_finc              = :new.sta_finc,
+        sta_caudby            = :new.sta_caudby,
+        sta_taknasmtcc        = :new.sta_taknasmtcc,
+        sta_the_brncact       = :new.sta_the_brncact
+      WHERE
+        sta_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_stts
+        (
+          classtype,
+          sta_c4c_id,
+          sta_crtd,
+          sta_las_act,
+          sta_las_act_actrtyp,
+          sta_obj_stt,
+
+         sta_vers,
+          sta_vsbt,
+          sta_dltddt,
+          sta_las_act_by,
+          sta_origcrtr,
+          sta_origcrtrlogdin,
+          sta_las_act_by_logdin,
+          sta_univid,
+          sta_pysl,
+          sta_emtn,
+          sta_cmpc,
+          sta_finc,
+          sta_caudby,
+          sta_taknasmtcc,
+          sta_the_brncact,
+          sta_id,
+          valid_from,
+          valid_to,
+          sta_audid,
+          sta_prev_audid,
+          sta_next_audid
+        )
+        VALUES
+        (
+          :new.classtype,
+          :new.sta_c4c_id,
+          :new.sta_crtd,
+          :new.sta_las_act,
+          :new.sta_las_act_actrtyp,
+          :new.sta_obj_stt,
+          :new.sta_vers,
+          :new.sta_vsbt,
+          :new.sta_dltddt,
+          :new.sta_las_act_by,
+          :new.sta_origcrtr,
+          :new.sta_origcrtrlogdin,
+          :new.sta_las_act_by_logdin,
+          :new.sta_univid,
+          :new.sta_pysl,
+          :new.sta_emtn,
+          :new.sta_cmpc,
+          :new.sta_finc,
+          :new.sta_caudby,
+          :new.sta_taknasmtcc,
+          :new.sta_the_brncact,
+          :new.sta_id,
+          :new.sta_las_act_tim,
+          NULL,
+          u_stts.NEXTVAL,
+          last_audid,
+          NULL
+        );
+      /* update last audit record's valid_to to new LastActionTime
+      and next audit ID to newly inserted record's sequence number
+      */
+      UPDATE
+        a_stts
+      SET
+        valid_to       = :new.sta_las_act_tim,
+        sta_next_audid = u_stts.CURRVAL
+      WHERE
+        sta_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_TACB_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_TAKNASMTCC_BASE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_tacb_auditinsert BEFORE INSERT ON T_TAKNASMTCC_BASE FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN
+  curr_date := current_date;
+
+  IF :new.tacb_crtd IS NULL THEN
+    :new.tacb_crtd := curr_date;
+  END IF;
+
+  IF :new.tacb_las_act_tim IS NULL THEN
+    :new.tacb_las_act_tim := curr_date;
+  END IF;
+
+  IF :new.tacb_las_act IS NULL THEN
+    :new.tacb_las_act := 1;
+  END IF;
+
+  IF :new.tacb_obj_stt IS NULL THEN
+    :new.tacb_obj_stt := 1;
+  END IF;
+
+  IF :new.tacb_vers IS NULL THEN
+    :new.tacb_vers := 0;
+  END IF;
+
+  IF :new.tacb_vsbt IS NULL THEN
+    :new.tacb_vsbt := 1001;
+  END IF;
+
+  IF :new.tacb_las_act_by IS NULL THEN
+    :new.tacb_las_act_by := 1;
+  END IF;
+
+  IF :new.tacb_origcrtr IS NULL THEN
+    :new.tacb_origcrtr := 1;
+  END IF;
+
+  IF :new.tacb_origcrtrlogdin IS NULL THEN
+    :new.tacb_origcrtrlogdin := 1;
+  END IF;
+
+  IF :new.tacb_las_act_by_logdin IS NULL THEN
+    :new.tacb_las_act_by_logdin := 1;
+  END IF;
+
+  INSERT INTO a_taknasmtcc_base
+  (
+   tacb_obj_stt,
+   tacb_vers,
+   tacb_vsbt,
+   tacb_dltddt,
+   tacb_las_act_by,
+   tacb_origcrtr,
+   tacb_origcrtrlogdin,
+   tacb_las_act_by_logdin,
+   tacb_univid,
+   tacb_scor,
+   tacb_dscmacpd,
+   cctr_cmpdat,
+   cctr_id,
+   stat_wkfwistcid,
+   stat_cnv_id,
+   stat_ownrchndflag,
+   stat_ownrchndcnt,
+   stat_srtdat,
+   stat_cmpdat,
+   stat_cancat,
+   stat_id,
+   cctr_affn_um_evntreqt,
+   cctr_affn_um_extn,
+   cctr_affn_pvdr,
+   cctr_affn_cm,
+   cctr_affn_memb,
+   cctr_affn_um_evnt,
+   stat_rfngwkfwtsk,
+   stat_prvsrfngtsk,
+   stat_prvsrfngtsk_prmn,
+   stat_ownr,
+   stat_prvsownr,
+   stat_prvssndr,
+   stat_prvsownrprmn,
+   stat_tnfr,
+   stat_prvstnfr,
+   tacb_currqtn,
+   tacb_asmtcc,
+   stat_rtknorig,
+   stat_sentltr,
+   stat_senttsk,
+   tacb_clldstts,
+   tacb_memb,
+   classtype,
+   tacb_c4c_id,
+   tacb_crtd,
+   tacb_las_act,
+   tacb_las_act_actrtyp,
+   tacb_id,
+   valid_from,
+   valid_to ,
+   tacb_audid,
+   tacb_prev_audid,
+   tacb_next_audid,
+   rendered_asmt
+  )
+  VALUES
+  (
+   :new.tacb_obj_stt,
+   :new.tacb_vers,
+   :new.tacb_vsbt,
+   :new.tacb_dltddt,
+
+   :new.tacb_las_act_by,
+   :new.tacb_origcrtr,
+   :new.tacb_origcrtrlogdin,
+   :new.tacb_las_act_by_logdin,
+   :new.tacb_univid,
+   :new.tacb_scor,
+   :new.tacb_dscmacpd,
+   :new.cctr_cmpdat,
+   :new.cctr_id,
+   :new.stat_wkfwistcid,
+   :new.stat_cnv_id,
+   :new.stat_ownrchndflag,
+   :new.stat_ownrchndcnt,
+   :new.stat_srtdat,
+   :new.stat_cmpdat,
+   :new.stat_cancat,
+   :new.stat_id,
+   :new.cctr_affn_um_evntreqt,
+   :new.cctr_affn_um_extn,
+   :new.cctr_affn_pvdr,
+   :new.cctr_affn_cm,
+   :new.cctr_affn_memb,
+   :new.cctr_affn_um_evnt,
+   :new.stat_rfngwkfwtsk,
+   :new.stat_prvsrfngtsk,
+   :new.stat_prvsrfngtsk_prmn,
+   :new.stat_ownr,
+   :new.stat_prvsownr,
+   :new.stat_prvssndr,
+   :new.stat_prvsownrprmn,
+   :new.stat_tnfr,
+   :new.stat_prvstnfr,
+   :new.tacb_currqtn,
+   :new.tacb_asmtcc,
+   :new.stat_rtknorig,
+   :new.stat_sentltr,
+   :new.stat_senttsk,
+   :new.tacb_clldstts,
+   :new.tacb_memb,
+   :new.classtype,
+   :new.tacb_c4c_id,
+   :new.tacb_crtd,
+   :new.tacb_las_act,
+   :new.tacb_las_act_actrtyp,
+   :new.tacb_id,
+   :new.tacb_las_act_tim,
+   NULL,
+   u_taknasmtcc_base.NEXTVAL,
+   NULL,
+   NULL,
+   :new.rendered_asmt
+  );
+END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_TACB_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_TAKNASMTCC_BASE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_tacb_auditupdate BEFORE
+  UPDATE
+    ON T_TAKNASMTCC_BASE FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        tacb_audid
+      INTO
+        last_audid
+      FROM
+        a_taknasmtcc_base
+      WHERE
+        tacb_id            = :old.tacb_id
+      AND tacb_next_audid IS NULL
+      AND rownum           &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.tacb_las_act_tim = :new.tacb_las_act_tim THEN
+      UPDATE
+        a_taknasmtcc_base
+      SET
+        stat_id                = :new.stat_id,
+        cctr_affn_um_evntreqt  = :new.cctr_affn_um_evntreqt,
+        cctr_affn_um_extn      = :new.cctr_affn_um_extn,
+        cctr_affn_pvdr         = :new.cctr_affn_pvdr,
+        cctr_affn_cm           = :new.cctr_affn_cm,
+        cctr_affn_memb         = :new.cctr_affn_memb,
+        cctr_affn_um_evnt      = :new.cctr_affn_um_evnt,
+        stat_rfngwkfwtsk       = :new.stat_rfngwkfwtsk,
+        stat_prvsrfngtsk       = :new.stat_prvsrfngtsk,
+        stat_prvsrfngtsk_prmn  = :new.stat_prvsrfngtsk_prmn,
+        stat_ownr              = :new.stat_ownr,
+        stat_prvsownr          = :new.stat_prvsownr,
+        stat_prvssndr          = :new.stat_prvssndr,
+        stat_prvsownrprmn      = :new.stat_prvsownrprmn,
+        stat_tnfr              = :new.stat_tnfr,
+        stat_prvstnfr          = :new.stat_prvstnfr,
+        tacb_currqtn           = :new.tacb_currqtn,
+        tacb_asmtcc            = :new.tacb_asmtcc,
+        stat_rtknorig          = :new.stat_rtknorig,
+        stat_sentltr           = :new.stat_sentltr,
+        stat_senttsk           = :new.stat_senttsk,
+        tacb_clldstts          = :new.tacb_clldstts,
+        tacb_memb              = :new.tacb_memb,
+        classtype              = :new.classtype,
+        tacb_c4c_id            = :new.tacb_c4c_id,
+        tacb_crtd              = :new.tacb_crtd,
+        tacb_las_a
+ct           = :new.tacb_las_act,
+        tacb_las_act_actrtyp   = :new.tacb_las_act_actrtyp,
+        tacb_obj_stt           = :new.tacb_obj_stt,
+        tacb_vers              = :new.tacb_vers,
+        tacb_vsbt              = :new.tacb_vsbt,
+        tacb_dltddt            = :new.tacb_dltddt,
+        tacb_las_act_by        = :new.tacb_las_act_by,
+        tacb_origcrtr          = :new.tacb_origcrtr,
+        tacb_origcrtrlogdin    = :new.tacb_origcrtrlogdin,
+        tacb_las_act_by_logdin = :new.tacb_las_act_by_logdin,
+        tacb_univid            = :new.tacb_univid,
+        tacb_scor              = :new.tacb_scor,
+        tacb_dscmacpd          = :new.tacb_dscmacpd,
+        cctr_cmpdat            = :new.cctr_cmpdat,
+        cctr_id                = :new.cctr_id,
+        stat_wkfwistcid        = :new.stat_wkfwistcid,
+        stat_cnv_id            = :new.stat_cnv_id,
+        stat_ownrchndflag      = :new.stat_ownrchndflag,
+        stat_ownrchndcnt       = :new.stat_ownrchndcnt,
+        stat_srtdat            = :new.stat_srtdat,
+        stat_cmpdat            = :new.stat_cmpdat,
+        stat_cancat            = :new.stat_cancat,
+		rendered_asmt		   = :new.rendered_asmt
+      WHERE
+        tacb_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_taknasmtcc_base
+        (
+          stat_id,
+          cctr_affn_um_evntreqt,
+          cctr_affn_um_extn,
+          cctr_affn_pvdr,
+          cctr_affn_cm,
+          cctr_affn_memb,
+          cctr_affn_um_evnt,
+          stat_rfngwkfwtsk,
+          stat_prvsrfngtsk,
+          stat_prvsrfngtsk_prmn,
+          stat_ownr,
+          stat_prvsownr,
+          stat_prvssndr,
+          stat_prvsownrprmn,
+          stat_tnfr,
+          stat_prvstnfr,
+          tacb_currqtn,
+          tacb_asmtcc,
+          stat_rtknorig,
+          stat_sentltr,
+          stat_senttsk,
+          tacb_clldstts,
+
+    tacb_memb,
+          classtype,
+          tacb_c4c_id,
+          tacb_crtd,
+          tacb_las_act,
+          tacb_las_act_actrtyp,
+          tacb_obj_stt,
+          tacb_vers,
+          tacb_vsbt,
+          tacb_dltddt,
+          tacb_las_act_by,
+          tacb_origcrtr,
+          tacb_origcrtrlogdin,
+          tacb_las_act_by_logdin,
+          tacb_univid,
+          tacb_scor,
+          tacb_dscmacpd,
+          cctr_cmpdat,
+          cctr_id,
+          stat_wkfwistcid,
+          stat_cnv_id,
+          stat_ownrchndflag,
+          stat_ownrchndcnt,
+          stat_srtdat,
+          stat_cmpdat,
+          stat_cancat,
+          tacb_id,
+          valid_from,
+          valid_to,
+          tacb_audid,
+          tacb_prev_audid,
+          tacb_next_audid,
+		  rendered_asmt
+        )
+        VALUES
+        (
+          :new.stat_id,
+          :new.cctr_affn_um_evntreqt,
+          :new.cctr_affn_um_extn,
+          :new.cctr_affn_pvdr,
+          :new.cctr_affn_cm,
+          :new.cctr_affn_memb,
+          :new.cctr_affn_um_evnt,
+          :new.stat_rfngwkfwtsk,
+          :new.stat_prvsrfngtsk,
+          :new.stat_prvsrfngtsk_prmn,
+          :new.stat_ownr,
+          :new.stat_prvsownr,
+          :new.stat_prvssndr,
+          :new.stat_prvsownrprmn,
+          :new.stat_tnfr,
+          :new.stat_prvstnfr,
+          :new.tacb_currqtn,
+          :new.tacb_asmtcc,
+          :new.stat_rtknorig,
+          :new.stat_sentltr,
+          :new.stat_senttsk,
+          :new.tacb_clldstts,
+          :new.tacb_memb,
+          :new.classtype,
+          :new.tacb_c4c_id,
+          :new.tacb_crtd,
+          :new.tacb_las_act,
+          :new.tacb_las_act_actrtyp,
+          :new.tacb_obj_stt,
+          :new.tacb_vers,
+          :new.tacb_vsbt,
+          :new.tacb_dltddt,
+          :new.tacb_las_act_by,
+          :new.tacb_origcrtr,
+          :new.tacb_origcrtrlogdin,
+          :new.tacb_las_act_by_logdin,
+          :new.tacb_univid,
+          :new.tacb_scor,
+          :new.tacb_dscmacpd,
+
+       :new.cctr_cmpdat,
+          :new.cctr_id,
+          :new.stat_wkfwistcid,
+          :new.stat_cnv_id,
+          :new.stat_ownrchndflag,
+          :new.stat_ownrchndcnt,
+          :new.stat_srtdat,
+          :new.stat_cmpdat,
+          :new.stat_cancat,
+          :new.tacb_id,
+          :new.tacb_las_act_tim,
+          NULL,
+          u_taknasmtcc_base.NEXTVAL,
+          last_audid,
+          NULL,
+		  :new.rendered_asmt
+        );
+      /* update last audit record's valid_to to new LastActionTime
+      and next audit ID to newly inserted record's sequence number
+      */
+      UPDATE
+        a_taknasmtcc_base
+      SET
+        valid_to        = :new.tacb_las_act_tim,
+        tacb_next_audid = u_taknasmtcc_base.CURRVAL
+      WHERE
+        tacb_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TRIGGER_NAME                                       VARCHAR2(128)
+ TRIGGER_TYPE                                       VARCHAR2(16)
+ TRIGGERING_EVENT                                   VARCHAR2(246)
+ TABLE_OWNER                                        VARCHAR2(128)
+ BASE_OBJECT_TYPE                                   VARCHAR2(18)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ REFERENCING_NAMES                                  VARCHAR2(422)
+ WHEN_CLAUSE                                        VARCHAR2(4000)
+ STATUS                                             VARCHAR2(8)
+ DESCRIPTION                                        VARCHAR2(4000)
+ ACTION_TYPE                                        VARCHAR2(11)
+ TRIGGER_BODY                                       LONG
+ CROSSEDITION                                       VARCHAR2(7)
+ BEFORE_STATEMENT                                   VARCHAR2(3)
+ BEFORE_ROW                                         VARCHAR2(3)
+ AFTER_ROW                                          VARCHAR2(3)
+ AFTER_STATEMENT                                    VARCHAR2(3)
+ INSTEAD_OF_ROW                                     VARCHAR2(3)
+ FIRE_ONCE                                          VARCHAR2(3)
+ APPLY_SERVER_ONLY                                  VARCHAR2(3)
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM dba_triggers
+ WHERE (table_owner, table_name) IN (SELECT /*+ UNNEST */ object_owner, object_name
+                                       FROM plan_table
+                                      WHERE statement_id = 'LIST_OF_TABLES'
+                                        AND remarks = 'cpxtnxvgabn6b')
+ ORDER BY table_owner, table_name, trigger_name;
+
+22 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-02/21:33:04 for SQL ID cpxtnxvgabn6b (DELETE FROM T_RSPE WHERE (RESP_ID = :1 )) </font>
+</body>
+</html>

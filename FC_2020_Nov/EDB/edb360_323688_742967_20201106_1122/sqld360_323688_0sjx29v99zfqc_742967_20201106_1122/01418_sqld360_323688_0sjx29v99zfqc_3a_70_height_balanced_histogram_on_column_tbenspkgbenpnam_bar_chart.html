@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 01410_sqld360_323688_0sjx29v99zfqc_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_BENSPKG.BENP_NAM</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 01418_sqld360_323688_0sjx29v99zfqc_3a_70_height_balanced_histogram_on_column_tbenspkgbenpnam_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,['-DO NOT USE-', 0, '0', 'ApproxValue: -DO NOT USE- NumRows: 0 Sel: 0']
+,['0357_FC PPO', 281, '.003937', 'ApproxValue: 0357_FC PPO NumRows: 281 Sel: .003937']
+,['0647_FC HMO', 281, '.003937', 'ApproxValue: 0647_FC HMO NumRows: 281 Sel: .003937']
+,['0999_SMH1AH1A', 281, '.003937', 'ApproxValue: 0999_SMH1AH1A NumRows: 281 Sel: .003937']
+,['1413_FC PPO', 281, '.003937', 'ApproxValue: 1413_FC PPO NumRows: 281 Sel: .003937']
+,['1808_SEI1GI1G', 281, '.003937', 'ApproxValue: 1808_SEI1GI1G NumRows: 281 Sel: .003937']
+,['212H_VBHP PPO', 281, '.003937', 'ApproxValue: 212H_VBHP PPO NumRows: 281 Sel: .003937']
+,['2347_LHRX0AC5', 281, '.003937', 'ApproxValue: 2347_LHRX0AC5 NumRows: 281 Sel: .003937']
+,['2648_COEXIST', 281, '.003937', 'ApproxValue: 2648_COEXIST NumRows: 281 Sel: .003937']
+,['2969_FC PPO', 281, '.003937', 'ApproxValue: 2969_FC PPO NumRows: 281 Sel: .003937']
+,['3155_LHRX0AB5', 281, '.003937', 'ApproxValue: 3155_LHRX0AB5 NumRows: 281 Sel: .003937']
+,['3284_FC PPO', 281, '.003937', 'ApproxValue: 3284_FC PPO NumRows: 281 Sel: .003937']
+,['3409_SHRX0AC5', 281, '.003937', 'ApproxValue: 3409_SHRX0AC5 NumRows: 281 Sel: .003937']
+,['3592_LWCSE926', 281, '.003937', 'ApproxValue: 3592_LWCSE926 NumRows: 281 Sel: .003937']
+,['3650_COEXIST', 281, '.003937', 'ApproxValue: 3650_COEXIST NumRows: 281 Sel: .003937']
+,['3715_LPW2X9YG', 281, '.003937', 'ApproxValue: 3715_LPW2X9YG NumRows: 281 Sel: .003937']
+,['3769_LC1SE526', 281, '.003937', 'ApproxValue: 3769_LC1SE526 NumRows: 281 Sel: .003937']
+,['3842_LHC2X9YG', 281, '.003937', 'ApproxValue: 3842_LHC2X9YG NumRows: 281 Sel: .003937']
+,['3903_COEXIST', 281, '.003937', 'ApproxValue: 3903_COEXIST NumRows: 281 Sel: .003937']
+,['3987_COEXIST', 281, '.003937', 'ApproxValue: 3987_COEXIST NumRows: 281 Sel: .003937']
+,['4074_FC HMO', 281, '.003937', 'ApproxValue: 4074_FC HMO NumRows: 281 Sel: .003937']
+,['4150_COEXIST', 281, '.003937', 'ApproxValue: 4150_COEXIST NumRows: 281 Sel: .003937']
+,['4231_FC PPO', 281, '.003937', 'ApproxValue: 4231_FC PPO NumRows: 281 Sel: .003937']
+,['4302_LHCSXFEC', 281, '.003937', 'ApproxValue: 4302_LHCSXFEC NumRows: 281 Sel: .003937']
+,['4373_COEXIST', 281, '.003937', 'ApproxValue: 4373_COEXIST NumRows: 281 Sel: .003937']
+,['4451_FC HMO', 281, '.003937', 'ApproxValue: 4451_FC HMO NumRows: 281 Sel: .003937']
+,['4534_LHW2X9YG', 281, '.003937', 'ApproxValue: 4534_LHW2X9YG NumRows: 281 Sel: .003937']
+,['4609_SHRX0BB5', 281, '.003937', 'ApproxValue: 4609_SHRX0BB5 NumRows: 281 Sel: .003937']
+,['4695_FC HMO', 281, '.003937', 'ApproxValue: 4695_FC HMO NumRows: 281 Sel: .003937']
+,['4764_LHW2X9YG', 281, '.003937', 'ApproxValue: 4764_LHW2X9YG NumRows: 281 Sel: .003937']
+,['4845_COEXIST', 281, '.003937', 'ApproxValue: 4845_COEXIST NumRows: 281 Sel: .003937']
+,['4926_FC HMO', 281, '.003937', 'ApproxValue: 4926_FC HMO NumRows: 281 Sel: .003937']
+,['5012_FC HMO', 281, '.003937', 'ApproxValue: 5012_FC HMO NumRows: 281 Sel: .003937']
+,['5103_COEXIST', 281, '.003937', 'ApproxValue: 5103_COEXIST NumRows: 281 Sel: .003937']
+,['5189_FC HMO', 281, '.003937', 'ApproxValue: 5189_FC HMO NumRows: 281 Sel: .003937']
+,['5259_COEXIST', 281, '.003937', 'ApproxValue: 5259_COEXIST NumRows: 281 Sel: .003937']
+,['5331_FC HMO', 281, '.003937', 'ApproxValue: 5331_FC HMO NumRows: 281 Sel: .003937']
+,['5406_FC HMO', 281, '.003937', 'ApproxValue: 5406_FC HMO NumRows: 281 Sel: .003937']
+,['5586_FC Dental', 281, '.003937', 'ApproxValue: 5586_FC Dental NumRows: 281 Sel: .003937']
+,['5793_FC PPO', 281, '.003937', 'ApproxValue: 5793_FC PPO NumRows: 281 Sel: .003937']
+,['5902_VBHP PPO', 281, '.003937', 'ApproxValue: 5902_VBHP PPO NumRows: 281 Sel: .003937']
+,['5962_LHCSXFEC', 281, '.003937', 'ApproxValue: 5962_LHCSXFEC NumRows: 281 Sel: .003937']
+,['6038_LCHXSAE6', 281, '.003937', 'ApproxValue: 6038_LCHXSAE6 NumRows: 281 Sel: .003937']
+,['6111_FC HMO', 281, '.003937', 'ApproxValue: 6111_FC HMO NumRows: 281 Sel: .003937']
+,['6185_COEXIST', 281, '.003937', 'ApproxValue: 6185_COEXIST NumRows: 281 Sel: .003937']
+,['6W00_SCH2EH2E', 281, '.003937', 'ApproxValue: 6W00_SCH2EH2E NumRows: 281 Sel: .003937']
+,['BASEMA27_RXRID531_003_MA02', 281, '.003937', 'ApproxValue: BASEMA27_RXRID531_003_MA02 NumRows: 281 Sel: .003937']
+,['BHG17S14_A248', 281, '.003937', 'ApproxValue: BHG17S14_A248 NumRows: 281 Sel: .003937']
+,['BHG18U13_A490', 281, '.003937', 'ApproxValue: BHG18U13_A490 NumRows: 281 Sel: .003937']
+,['BHG19U13_A750', 281, '.003937', 'ApproxValue: BHG19U13_A750 NumRows: 281 Sel: .003937']
+,['BHG20U13_A295', 281, '.003937', 'ApproxValue: BHG20U13_A295 NumRows: 281 Sel: .003937']
+,['BRZ14GZ2_2580', 281, '.003937', 'ApproxValue: BRZ14GZ2_2580 NumRows: 281 Sel: .003937']
+,['BRZ15GZ1_A211', 281, '.003937', 'ApproxValue: BRZ15GZ1_A211 NumRows: 281 Sel: .003937']
+,['BRZ15GZ5_4290', 281, '.003937', 'ApproxValue: BRZ15GZ5_4290 NumRows: 281 Sel: .003937']
+,['BRZ5LCZ5_4146', 281, '.003937', 'ApproxValue: BRZ5LCZ5_4146 NumRows: 281 Sel: .003937']
+,['DELETED_0141_FC HMO_DELETED', 281, '.003937', 'ApproxValue: DELETED_0141_FC HMO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_0508_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_0508_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_0808_SPRX0AB5_DELETED', 281, '.003937', 'ApproxValue: DELETED_0808_SPRX0AB5_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_1179_SHRX0BB5_DELETED', 281, '.003937', 'ApproxValue: DELETED_1179_SHRX0BB5_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_1591_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_1591_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_1A56_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_1A56_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_2232_LCH1LH1L_DELETED', 281, '.003937', 'ApproxValue: DELETED_2232_LCH1LH1L_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_2404_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_2404_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_2726_SCH1LH1L_DELETED', 281, '.003937', 'ApproxValue: DELETED_2726_SCH1LH1L_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_2_LC17P1F1_7512_2_DELETED', 281, '.003937', 'ApproxValue: DELETED_2_LC17P1F1_7512_2_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_3155_BASIWELL_DELETED', 281, '.003937', 'ApproxValue: DELETED_3155_BASIWELL_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_3277_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_3277_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_339W_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_339W_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_3589_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_3589_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_3644_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_3644_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_3705_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_3705_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_3764_LC1SA526_DELETED', 281, '.003937', 'ApproxValue: DELETED_3764_LC1SA526_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_3835_LW1SC528_DELETED', 281, '.003937', 'ApproxValue: DELETED_3835_LW1SC528_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_3894_LCW3WELL_DELETED', 281, '.003937', 'ApproxValue: DELETED_3894_LCW3WELL_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_3973_LCW3WELL_DELETED', 281, '.003937', 'ApproxValue: DELETED_3973_LCW3WELL_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4064_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_4064_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4138_LHW2X528_DELETED', 281, '.003937', 'ApproxValue: DELETED_4138_LHW2X528_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4220_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_4220_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4290_LCHXSAE6_DELETED', 281, '.003937', 'ApproxValue: DELETED_4290_LCHXSAE6_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4361_FC PPO_DELETED', 281, '.003937', 'ApproxValue: DELETED_4361_FC PPO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4424_FC PPO_DELETED', 281, '.003937', 'ApproxValue: DELETED_4424_FC PPO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4502_SCH3HH3H_DELETED', 281, '.003937', 'ApproxValue: DELETED_4502_SCH3HH3H_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4588_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_4588_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4662_FC HMO_DELETED', 281, '.003937', 'ApproxValue: DELETED_4662_FC HMO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4725_SEI1GI1G_DELETED', 281, '.003937', 'ApproxValue: DELETED_4725_SEI1GI1G_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4821_FC HMO_DELETED', 281, '.003937', 'ApproxValue: DELETED_4821_FC HMO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4894_LCCSE926_DELETED', 281, '.003937', 'ApproxValue: DELETED_4894_LCCSE926_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_4965_LWCSA926_DELETED', 281, '.003937', 'ApproxValue: DELETED_4965_LWCSA926_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5051_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_5051_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5146_FC HMO_DELETED', 281, '.003937', 'ApproxValue: DELETED_5146_FC HMO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5227_FC HMO_DELETED', 281, '.003937', 'ApproxValue: DELETED_5227_FC HMO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5294_LW1SA526_DELETED', 281, '.003937', 'ApproxValue: DELETED_5294_LW1SA526_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5366_LW1CC526_DELETED', 281, '.003937', 'ApproxValue: DELETED_5366_LW1CC526_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5466_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_5466_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5682_FC HMO_DELETED', 281, '.003937', 'ApproxValue: DELETED_5682_FC HMO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5860_SHRX0EC5_DELETED', 281, '.003937', 'ApproxValue: DELETED_5860_SHRX0EC5_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5927_SPP2FP2F_DELETED', 281, '.003937', 'ApproxValue: DELETED_5927_SPP2FP2F_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_5985_LHWSXFEC_DELETED', 281, '.003937', 'ApproxValue: DELETED_5985_LHWSXFEC_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_6060_SCH1FH1F_DELETED', 281, '.003937', 'ApproxValue: DELETED_6060_SCH1FH1F_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_6113_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_6113_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_6175_SHRX0AB5_DELETED', 281, '.003937', 'ApproxValue: DELETED_6175_SHRX0AB5_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_6247_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_6247_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_9846_SEI1GI1G_DELETED', 281, '.003937', 'ApproxValue: DELETED_9846_SEI1GI1G_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BHG16F13_A151_DELETED', 281, '.003937', 'ApproxValue: DELETED_BHG16F13_A151_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BHG17U13_A507_DELETED', 281, '.003937', 'ApproxValue: DELETED_BHG17U13_A507_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BHG18U13_A382_DELETED', 281, '.003937', 'ApproxValue: DELETED_BHG18U13_A382_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BHG18U14_A548_DELETED', 281, '.003937', 'ApproxValue: DELETED_BHG18U14_A548_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BHG19U14_5720_DELETED', 281, '.003937', 'ApproxValue: DELETED_BHG19U14_5720_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BHG20U10_L036_DELETED', 281, '.003937', 'ApproxValue: DELETED_BHG20U10_L036_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BRZ14GZ1_2580_DELETED', 281, '.003937', 'ApproxValue: DELETED_BRZ14GZ1_2580_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BRZ15GZ1_4218_DELETED', 281, '.003937', 'ApproxValue: DELETED_BRZ15GZ1_4218_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BRZ15GZ2_A181_DELETED', 281, '.003937', 'ApproxValue: DELETED_BRZ15GZ2_A181_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_BRZ5LCZ1_5993_DELETED', 281, '.003937', 'ApproxValue: DELETED_BRZ5LCZ1_5993_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_EG01_VPS10825_DELETED', 281, '.003937', 'ApproxValue: DELETED_EG01_VPS10825_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_GHG17S01_5340_DELETED', 281, '.003937', 'ApproxValue: DELETED_GHG17S01_5340_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_GHG18S01_A484_DELETED', 281, '.003937', 'ApproxValue: DELETED_GHG18S01_A484_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_GHG18U04_A766_DELETED', 281, '.003937', 'ApproxValue: DELETED_GHG18U04_A766_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_GHG20U02_3739_DELETED', 281, '.003937', 'ApproxValue: DELETED_GHG20U02_3739_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_GLD14GG1_6900_DELETED', 281, '.003937', 'ApproxValue: DELETED_GLD14GG1_6900_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_GLD15GG1_A121_DELETED', 281, '.003937', 'ApproxValue: DELETED_GLD15GG1_A121_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_GLD5LCG1_3612_DELETED', 281, '.003937', 'ApproxValue: DELETED_GLD5LCG1_3612_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_H089_PS10X000_DELETED', 281, '.003937', 'ApproxValue: DELETED_H089_PS10X000_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_H220_VBHP PPO_DELETED', 281, '.003937', 'ApproxValue: DELETED_H220_VBHP PPO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_H282_PS10X000_DELETED', 281, '.003937', 'ApproxValue: DELETED_H282_PS10X000_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_H347_VBHP PPO_DELETED', 281, '.003937', 'ApproxValue: DELETED_H347_VBHP PPO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_H411_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_H411_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_H458_PX10V3IU_DELETED', 281, '.003937', 'ApproxValue: DELETED_H458_PX10V3IU_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_H552_VP11LGPZ_DELETED', 281, '.003937', 'ApproxValue: DELETED_H552_VP11LGPZ_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_HA75_PS20X250_DELETED', 281, '.003937', 'ApproxValue: DELETED_HA75_PS20X250_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_HP16_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_HP16_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_HT56_VPS40825_DELETED', 281, '.003937', 'ApproxValue: DELETED_HT56_VPS40825_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_I056_HX10I4EL_DELETED', 281, '.003937', 'ApproxValue: DELETED_I056_HX10I4EL_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_L058_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_L058_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_L231_SPP1DP1D_DELETED', 281, '.003937', 'ApproxValue: DELETED_L231_SPP1DP1D_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LC16H3G1_5536_DELETED', 281, '.003937', 'ApproxValue: DELETED_LC16H3G1_5536_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LC19P1F1_L000_DELETED', 281, '.003937', 'ApproxValue: DELETED_LC19P1F1_L000_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LC3SA626_9551_DELETED', 281, '.003937', 'ApproxValue: DELETED_LC3SA626_9551_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LC8PH2F2_4414_DELETED', 281, '.003937', 'ApproxValue: DELETED_LC8PH2F2_4414_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LCCCA926_15_4839_DELETED', 281, '.003937', 'ApproxValue: DELETED_LCCCA926_15_4839_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LCCSA926_15_3660_DELETED', 281, '.003937', 'ApproxValue: DELETED_LCCSA926_15_3660_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LCCSA926_15_5886_DELETED', 281, '.003937', 'ApproxValue: DELETED_LCCSA926_15_5886_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LCCSA926_4809_DELETED', 281, '.003937', 'ApproxValue: DELETED_LCCSA926_4809_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LCCSB927_5270_DELETED', 281, '.003937', 'ApproxValue: DELETED_LCCSB927_5270_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LCCSD926_4404_DELETED', 281, '.003937', 'ApproxValue: DELETED_LCCSD926_4404_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LCH3HH3H_4717_DELETED', 281, '.003937', 'ApproxValue: DELETED_LCH3HH3H_4717_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LE16I1O1_SL21_DELETED', 281, '.003937', 'ApproxValue: DELETED_LE16I1O1_SL21_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LPP1EP1E_4054_DELETED', 281, '.003937', 'ApproxValue: DELETED_LPP1EP1E_4054_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LWCCA926_16_3857_DELETED', 281, '.003937', 'ApproxValue: DELETED_LWCCA926_16_3857_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LWCSA926_16_3661_DELETED', 281, '.003937', 'ApproxValue: DELETED_LWCSA926_16_3661_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LWCSA926_4304_DELETED', 281, '.003937', 'ApproxValue: DELETED_LWCSA926_4304_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LWCSB927_P040_DELETED', 281, '.003937', 'ApproxValue: DELETED_LWCSB927_P040_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_LWCSE926_4107_DELETED', 281, '.003937', 'ApproxValue: DELETED_LWCSE926_4107_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_Medicaid Lubbock NON SSI 15 to 18 Child_DELETED', 281, '.003937', 'ApproxValue: DELETED_Medicaid Lubbock NON SSI 15 to 18 Child_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_PB10_COEXIST_DELETED', 281, '.003937', 'ApproxValue: DELETED_PB10_COEXIST_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_S16HLCA1_17_4118_DELETED', 281, '.003937', 'ApproxValue: DELETED_S16HLCA1_17_4118_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_S16HLCA1_18_4721_DELETED', 281, '.003937', 'ApproxValue: DELETED_S16HLCA1_18_4721_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_S16HLCA1_5083_DELETED', 281, '.003937', 'ApproxValue: DELETED_S16HLCA1_5083_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_S16HLCA2_18_5117_DELETED', 281, '.003937', 'ApproxValue: DELETED_S16HLCA2_18_5117_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_S16HLCC1_3719_DELETED', 281, '.003937', 'ApproxValue: DELETED_S16HLCC1_3719_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_S16HLCE1_18_3648_DELETED', 281, '.003937', 'ApproxValue: DELETED_S16HLCE1_18_3648_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_S16PLCB3_4707_DELETED', 281, '.003937', 'ApproxValue: DELETED_S16PLCB3_4707_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_S18HLCA2_19_5216_DELETED', 281, '.003937', 'ApproxValue: DELETED_S18HLCA2_19_5216_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_S18HLCE1_5907_DELETED', 281, '.003937', 'ApproxValue: DELETED_S18HLCE1_5907_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SCH1DH1D_13_L055_DELETED', 281, '.003937', 'ApproxValue: DELETED_SCH1DH1D_13_L055_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SCH1JH1J_15_2068_DELETED', 281, '.003937', 'ApproxValue: DELETED_SCH1JH1J_15_2068_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SCH2EH2E_13_3193_DELETED', 281, '.003937', 'ApproxValue: DELETED_SCH2EH2E_13_3193_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SCH2HH2H_15_6063_DELETED', 281, '.003937', 'ApproxValue: DELETED_SCH2HH2H_15_6063_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SCH3GH3G_6243_DELETED', 281, '.003937', 'ApproxValue: DELETED_SCH3GH3G_6243_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SEI4LI4L_083A_DELETED', 281, '.003937', 'ApproxValue: DELETED_SEI4LI4L_083A_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG16F03_A162_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG16F03_A162_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG17S03_2874_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG17S03_2874_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG17S04_A513_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG17S04_A513_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG17U03_A384_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG17U03_A384_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG17U06_A608_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG17U06_A608_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG18U03_A201_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG18U03_A201_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG18U03_A619_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG18U03_A619_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG18U05_A398_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG18U05_A398_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG19U03_3606_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG19U03_3606_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG19U03_5055_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG19U03_5055_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG19U03_A544_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG19U03_A544_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG20U06_192L_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG20U06_192L_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SHG20U06_A478_DELETED', 281, '.003937', 'ApproxValue: DELETED_SHG20U06_A478_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SIL14GV1_1212_DELETED', 281, '.003937', 'ApproxValue: DELETED_SIL14GV1_1212_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SIL15GV1_A207_DELETED', 281, '.003937', 'ApproxValue: DELETED_SIL15GV1_A207_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SIL15GV4_2260_DELETED', 281, '.003937', 'ApproxValue: DELETED_SIL15GV4_2260_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SIL15GV5_A120_DELETED', 281, '.003937', 'ApproxValue: DELETED_SIL15GV5_A120_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SIL5LCV1_3119_DELETED', 281, '.003937', 'ApproxValue: DELETED_SIL5LCV1_3119_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SIL5LCV5_6269_DELETED', 281, '.003937', 'ApproxValue: DELETED_SIL5LCV5_6269_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SPG17201_A653_DELETED', 281, '.003937', 'ApproxValue: DELETED_SPG17201_A653_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SPG18301_A601_DELETED', 281, '.003937', 'ApproxValue: DELETED_SPG18301_A601_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_SPP1FP1F_4782_DELETED', 281, '.003937', 'ApproxValue: DELETED_SPP1FP1F_4782_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_T112_VBHP PPO_DELETED', 281, '.003937', 'ApproxValue: DELETED_T112_VBHP PPO_DELETED NumRows: 281 Sel: .003937']
+,['DELETED_ZHIN_BASVBNI6_DELETED', 281, '.003937', 'ApproxValue: DELETED_ZHIN_BASVBNI6_DELETED NumRows: 281 Sel: .003937']
+,['GHG17S01_A459', 281, '.003937', 'ApproxValue: GHG17S01_A459 NumRows: 281 Sel: .003937']
+,['GHG18U02_3335', 281, '.003937', 'ApproxValue: GHG18U02_3335 NumRows: 281 Sel: .003937']
+,['GHG20U02_A343', 281, '.003937', 'ApproxValue: GHG20U02_A343 NumRows: 281 Sel: .003937']
+,['GLD14GG2_4001', 281, '.003937', 'ApproxValue: GLD14GG2_4001 NumRows: 281 Sel: .003937']
+,['GLD15GG1_A228', 281, '.003937', 'ApproxValue: GLD15GG1_A228 NumRows: 281 Sel: .003937']
+,['GLD5LCG2_3120', 281, '.003937', 'ApproxValue: GLD5LCG2_3120 NumRows: 281 Sel: .003937']
+,['H136_VPN2HASD', 281, '.003937', 'ApproxValue: H136_VPN2HASD NumRows: 281 Sel: .003937']
+,['H300_VPS15825', 281, '.003937', 'ApproxValue: H300_VPS15825 NumRows: 281 Sel: .003937']
+,['H414_PS15X250', 281, '.003937', 'ApproxValue: H414_PS15X250 NumRows: 281 Sel: .003937']
+,['H522_COEXIST', 281, '.003937', 'ApproxValue: H522_COEXIST NumRows: 281 Sel: .003937']
+,['HC13LBPH_2266', 281, '.003937', 'ApproxValue: HC13LBPH_2266 NumRows: 281 Sel: .003937']
+,['HT77_VBHP PPO', 281, '.003937', 'ApproxValue: HT77_VBHP PPO NumRows: 281 Sel: .003937']
+,['IP10I049_2364', 281, '.003937', 'ApproxValue: IP10I049_2364 NumRows: 281 Sel: .003937']
+,['L103_LW1SA526', 281, '.003937', 'ApproxValue: L103_LW1SA526 NumRows: 281 Sel: .003937']
+,['LC0PH5F2_4414', 281, '.003937', 'ApproxValue: LC0PH5F2_4414 NumRows: 281 Sel: .003937']
+,['LC19P4L1_A782', 281, '.003937', 'ApproxValue: LC19P4L1_A782 NumRows: 281 Sel: .003937']
+,['LC3SE626_13_2503', 281, '.003937', 'ApproxValue: LC3SE626_13_2503 NumRows: 281 Sel: .003937']
+,['LC9SH5H2_A774', 281, '.003937', 'ApproxValue: LC9SH5H2_A774 NumRows: 281 Sel: .003937']
+,['LCCCA926_4112', 281, '.003937', 'ApproxValue: LCCCA926_4112 NumRows: 281 Sel: .003937']
+,['LCCSA926_15_4760', 281, '.003937', 'ApproxValue: LCCSA926_15_4760 NumRows: 281 Sel: .003937']
+,['LCCSA926_16_L01C', 281, '.003937', 'ApproxValue: LCCSA926_16_L01C NumRows: 281 Sel: .003937']
+,['LCCSB927_16_4224', 281, '.003937', 'ApproxValue: LCCSB927_16_4224 NumRows: 281 Sel: .003937']
+,['LCCSD926_16_5008', 281, '.003937', 'ApproxValue: LCCSD926_16_5008 NumRows: 281 Sel: .003937']
+,['LCH2GH2G_6085', 281, '.003937', 'ApproxValue: LCH2GH2G_6085 NumRows: 281 Sel: .003937']
+,['LE16I1O1_5588', 281, '.003937', 'ApproxValue: LE16I1O1_5588 NumRows: 281 Sel: .003937']
+,['LPP4GP4G_8542', 281, '.003937', 'ApproxValue: LPP4GP4G_8542 NumRows: 281 Sel: .003937']
+,['LWCCA926_4386', 281, '.003937', 'ApproxValue: LWCCA926_4386 NumRows: 281 Sel: .003937']
+,['LWCSA926_16_5284', 281, '.003937', 'ApproxValue: LWCSA926_16_5284 NumRows: 281 Sel: .003937']
+,['LWCSA926_L042', 281, '.003937', 'ApproxValue: LWCSA926_L042 NumRows: 281 Sel: .003937']
+,['LWCSD926_W_4452', 281, '.003937', 'ApproxValue: LWCSD926_W_4452 NumRows: 281 Sel: .003937']
+,['MA02_PENALT30', 281, '.003937', 'ApproxValue: MA02_PENALT30 NumRows: 281 Sel: .003937']
+,['P106_SHRX0BB5', 281, '.003937', 'ApproxValue: P106_SHRX0BB5 NumRows: 281 Sel: .003937']
+,['S16HLCA1_17_3853', 281, '.003937', 'ApproxValue: S16HLCA1_17_3853 NumRows: 281 Sel: .003937']
+,['S16HLCA1_18_4637', 281, '.003937', 'ApproxValue: S16HLCA1_18_4637 NumRows: 281 Sel: .003937']
+,['S16HLCA1_5009', 281, '.003937', 'ApproxValue: S16HLCA1_5009 NumRows: 281 Sel: .003937']
+,['S16HLCA2_18_5196', 281, '.003937', 'ApproxValue: S16HLCA2_18_5196 NumRows: 281 Sel: .003937']
+,['S16HLCC1_3973', 281, '.003937', 'ApproxValue: S16HLCC1_3973 NumRows: 281 Sel: .003937']
+,['S16HLCE1_18_4198', 281, '.003937', 'ApproxValue: S16HLCE1_18_4198 NumRows: 281 Sel: .003937']
+,['S18HLCA1_3834', 281, '.003937', 'ApproxValue: S18HLCA1_3834 NumRows: 281 Sel: .003937']
+,['S18HLCA2_L036', 281, '.003937', 'ApproxValue: S18HLCA2_L036 NumRows: 281 Sel: .003937']
+,['SCH18H2H_5449', 281, '.003937', 'ApproxValue: SCH18H2H_5449 NumRows: 281 Sel: .003937']
+,['SCH1GH1G_2016_3225', 281, '.003937', 'ApproxValue: SCH1GH1G_2016_3225 NumRows: 281 Sel: .003937']
+,['SCH2DH2D_2424', 281, '.003937', 'ApproxValue: SCH2DH2D_2424 NumRows: 281 Sel: .003937']
+,['SCH2HH2H_15_3197', 281, '.003937', 'ApproxValue: SCH2HH2H_15_3197 NumRows: 281 Sel: .003937']
+,['SCH3HH3H_13_3220', 281, '.003937', 'ApproxValue: SCH3HH3H_13_3220 NumRows: 281 Sel: .003937']
+,['SEQ1GQ1G_13_5461', 281, '.003937', 'ApproxValue: SEQ1GQ1G_13_5461 NumRows: 281 Sel: .003937']
+,['SHG16F04_1231', 281, '.003937', 'ApproxValue: SHG16F04_1231 NumRows: 281 Sel: .003937']
+,['SHG17S03_A585', 281, '.003937', 'ApproxValue: SHG17S03_A585 NumRows: 281 Sel: .003937']
+,['SHG17U03_A703', 281, '.003937', 'ApproxValue: SHG17U03_A703 NumRows: 281 Sel: .003937']
+,['SHG18U03_A273', 281, '.003937', 'ApproxValue: SHG18U03_A273 NumRows: 281 Sel: .003937']
+,['SHG18U05_A274', 281, '.003937', 'ApproxValue: SHG18U05_A274 NumRows: 281 Sel: .003937']
+,['SHG19U03_4231', 281, '.003937', 'ApproxValue: SHG19U03_4231 NumRows: 281 Sel: .003937']
+,['SHG19U03_A411', 281, '.003937', 'ApproxValue: SHG19U03_A411 NumRows: 281 Sel: .003937']
+,['SHG20U06_5179', 281, '.003937', 'ApproxValue: SHG20U06_5179 NumRows: 281 Sel: .003937']
+,['SHI19M15_HIM', 281, '.003937', 'ApproxValue: SHI19M15_HIM NumRows: 281 Sel: .003937']
+,['SIL15GV1_5617', 281, '.003937', 'ApproxValue: SIL15GV1_5617 NumRows: 281 Sel: .003937']
+,['SIL15GV3_A182', 281, '.003937', 'ApproxValue: SIL15GV3_A182 NumRows: 281 Sel: .003937']
+,['SIL5LCV1_3120', 281, '.003937', 'ApproxValue: SIL5LCV1_3120 NumRows: 281 Sel: .003937']
+,['SPG16F07_3621', 281, '.003937', 'ApproxValue: SPG16F07_3621 NumRows: 281 Sel: .003937']
+,['SPP1DP1D_15_2306', 281, '.003937', 'ApproxValue: SPP1DP1D_15_2306 NumRows: 281 Sel: .003937']
+,['SPP3LP3L_6173', 281, '.003937', 'ApproxValue: SPP3LP3L_6173 NumRows: 281 Sel: .003937']
+,['testing 4.3.1.1.1', 281, '.003937', 'ApproxValue: testing 4.3.1.1.1 NumRows: 281 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.70. Height Balanced histogram on Column T_BENSPKG.BENP_NAM',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.70. Height Balanced histogram on Column T_BENSPKG.BENP_NAM <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 71257) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 71257)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_BENSPKG'
+AND a.column_name = 'BENP_NAM'
+ORDER BY a.endpoint_number;
+
+255 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:20:11 for SQL ID 0sjx29v99zfqc (SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be) </font>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<html>
+<!-- $Header: 00038_sqld360_323688_17vjd1aast5q7_2d_34_plan_details v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<title>Plan Tree for PHV 2283497611 with subtree</title>
+
+<style type="text/css">
+body                {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1                  {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #cccc99; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2                  {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3                  {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre                 {font:8pt monospace;Monaco,"Courier New",Courier;}
+a                   {color:#663300;}
+table               {font-size:8pt; border_collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #cccc99;}
+li                  {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th                  {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr.main             {color:black; background:#fcfcf0;}
+td                  {vertical-align:top; border:1px solid #cccc99;}
+td.c                {text-align:center;}
+font.n              {font-size:8pt; font-style:italic; color:#336699;}
+font.f              {font-size:8pt; color:#999999; border-top:1px solid #cccc99; margin-top:30pt;}
+.myNodeClass        {background:white;vertical-align:middle}
+.myWhiteNodeClass   {background:white;}
+.myYellowNodeClass  {background:yellow;}
+.myOrangeNodeClass  {background:orange;}
+.myRedNodeClass     {background:red;}
+</style>
+
+<!-- 00307_sqld360_323688_17vjd1aast5q7_2d_142_plan_tree_for_phv_2283497611_with_subtree_org_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["orgchart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Step', 'Parent Step','Tooltip' ]
+,[{v: '0',f: '0 - SELECT STATEMENT  '}, '', 'Step ID: 0 (ASH Step ID: 0)\nASH Samples: 8 (7.84%)\nSubstree Impact 99.99%']
+,[{v: '1',f: '1 - HASH UNIQUE '}, '0', 'Step ID: 1 (ASH Step ID: 1)\nASH Samples: 0 (0%)\nSubstree Impact 92.15%']
+,[{v: '2',f: '2 - NESTED LOOPS  '}, '1', 'Step ID: 2 (ASH Step ID: 2)\nASH Samples: 1 (.98%)\nSubstree Impact 92.15%']
+,[{v: '3',f: '3 - NESTED LOOPS  '}, '2', 'Step ID: 3 (ASH Step ID: 3)\nASH Samples: 3 (2.94%)\nSubstree Impact 79.41%']
+,[{v: '4',f: '4 - MERGE JOIN CARTESIAN '}, '3', 'Step ID: 4 (ASH Step ID: 4)\nASH Samples: 0 (0%)\nSubstree Impact 50.98%']
+,[{v: '5',f: '5 - NESTED LOOPS  '}, '4', 'Step ID: 5 (ASH Step ID: 5)\nASH Samples: 0 (0%)\nSubstree Impact 47.06%']
+,[{v: '6',f: '6 - NESTED LOOPS  '}, '5', 'Step ID: 6 (ASH Step ID: 6)\nASH Samples: 0 (0%)\nSubstree Impact 29.41%']
+,[{v: '7',f: '7 - VIEW <br>index$_join$_004'}, '6', 'Step ID: 7 (ASH Step ID: 7)\nASH Samples: 0 (0%)\nSubstree Impact 1.96%']
+,[{v: '8',f: '8 - HASH JOIN  '}, '7', 'Step ID: 8 (ASH Step ID: 8)\nASH Samples: 1 (.98%)\nSubstree Impact 1.96%']
+,[{v: '9',f: '9 - INDEX STORAGE FAST FULL SCAN<br>UK_PAYR'}, '8', 'Step ID: 9 (ASH Step ID: 9)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '10',f: '10 - INDEX STORAGE FAST FULL SCAN<br>IX_USR_IDNODELMSTR'}, '8', 'Step ID: 10 (ASH Step ID: 10)\nASH Samples: 1 (.98%)\nSubstree Impact .98%']
+,[{v: '11',f: '11 - TABLE ACCESS BY INDEX ROWID<br>T_PRMR'}, '6', 'Step ID: 11 (ASH Step ID: 11)\nASH Samples: 25 (24.51%)\nSubstree Impact 27.45%']
+,[{v: '12',f: '12 - INDEX RANGE SCAN<br>T_PRMR_IX_PERF_USR_STTDBY'}, '11', 'Step ID: 12 (ASH Step ID: 12)\nASH Samples: 3 (2.94%)\nSubstree Impact 2.94%']
+,[{v: '13',f: '13 - INDEX UNIQUE SCAN<br>PK_T_WKFWTSK_STT_CNGE'}, '5', 'Step ID: 13 (ASH Step ID: 13)\nASH Samples: 18 (17.65%)\nSubstree Impact 17.65%']
+,[{v: '14',f: '14 - BUFFER SORT '}, '4', 'Step ID: 14 (ASH Step ID: 14)\nASH Samples: 4 (3.92%)\nSubstree Impact 3.92%']
+,[{v: '15',f: '15 - COLLECTION ITERATOR PICKLER FETCH '}, '14', 'Step ID: 15 (ASH Step ID: 15)\nASH Samples: 0 (0%)\nSubstree Impact 0%']
+,[{v: '16',f: '16 - INDEX RANGE SCAN<br>IX_WTSK_CURRSTT'}, '3', 'Step ID: 16 (ASH Step ID: 16)\nASH Samples: 26 (25.49%)\nSubstree Impact 25.49%']
+,[{v: '17',f: '17 - TABLE ACCESS BY INDEX ROWID<br>T_WKFWTSK'}, '2', 'Step ID: 17 (ASH Step ID: 17)\nASH Samples: 12 (11.76%)\nSubstree Impact 11.76%']
+]);
+
+var options = {
+backgroundColor: {fill: '#fcfcf0', stroke: '#336699', strokeWidth: 1},
+title: '2d.142. Plan Tree for PHV 2283497611 with subtree',
+titleTextStyle: {fontSize: 16, bold: false},
+legend: {position: 'none'},
+allowHtml:true,
+allowCollapse:true,
+tooltip: {textStyle: {fontSize: 14}},
+nodeClass: 'myNodeClass'
+}
+
+data.setRowProperty(0, 'style',          'background:#FFEB00');
+data.setRowProperty(0, 'expandedStyle',  'background:#FFEB00');
+data.setRowProperty(0, 'collapsedStyle', 'background:#FF0000');
+data.setRowProperty(1, 'style',          'background:#FFFFFF');
+data.setRowProperty(1, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(1, 'collapsedStyle', 'background:#FF1400');
+data.setRowProperty(2, 'style',          'background:#FFFD00');
+data.setRowProperty(2, 'expandedStyle',  'background:#FFFD00');
+data.setRowProperty(2, 'collapsedStyle', 'background:#FF1400');
+data.setRowProperty(3, 'style',          'background:#FFF800');
+data.setRowProperty(3, 'expandedStyle',  'background:#FFF800');
+data.setRowProperty(3, 'collapsedStyle', 'background:#FF3500');
+data.setRowProperty(4, 'style',          'background:#FFFFFF');
+data.setRowProperty(4, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(4, 'collapsedStyle', 'background:#FF7D00');
+data.setRowProperty(5, 'style',          'background:#FFFFFF');
+data.setRowProperty(5, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(5, 'collapsedStyle', 'background:#FF8700');
+data.setRowProperty(6, 'style',          'background:#FFFFFF');
+data.setRowProperty(6, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(6, 'collapsedStyle', 'background:#FFB400');
+data.setRowProperty(7, 'style',          'background:#FFFFFF');
+data.setRowProperty(7, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(7, 'collapsedStyle', 'background:#FFFA00');
+data.setRowProperty(8, 'style',          'background:#FFFD00');
+data.setRowProperty(8, 'expandedStyle',  'background:#FFFD00');
+data.setRowProperty(8, 'collapsedStyle', 'background:#FFFA00');
+data.setRowProperty(9, 'style',          'background:#FFFFFF');
+data.setRowProperty(9, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(9, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(10, 'style',          'background:#FFFD00');
+data.setRowProperty(10, 'expandedStyle',  'background:#FFFD00');
+data.setRowProperty(10, 'collapsedStyle', 'background:#FFFD00');
+data.setRowProperty(11, 'style',          'background:#FFC000');
+data.setRowProperty(11, 'expandedStyle',  'background:#FFC000');
+data.setRowProperty(11, 'collapsedStyle', 'background:#FFB900');
+data.setRowProperty(12, 'style',          'background:#FFF800');
+data.setRowProperty(12, 'expandedStyle',  'background:#FFF800');
+data.setRowProperty(12, 'collapsedStyle', 'background:#FFF800');
+data.setRowProperty(13, 'style',          'background:#FFD200');
+data.setRowProperty(13, 'expandedStyle',  'background:#FFD200');
+data.setRowProperty(13, 'collapsedStyle', 'background:#FFD200');
+data.setRowProperty(14, 'style',          'background:#FFF500');
+data.setRowProperty(14, 'expandedStyle',  'background:#FFF500');
+data.setRowProperty(14, 'collapsedStyle', 'background:#FFF500');
+data.setRowProperty(15, 'style',          'background:#FFFFFF');
+data.setRowProperty(15, 'expandedStyle',  'background:#FFFFFF');
+data.setRowProperty(15, 'collapsedStyle', 'background:#FFFFFF');
+data.setRowProperty(16, 'style',          'background:#FFBE00');
+data.setRowProperty(16, 'expandedStyle',  'background:#FFBE00');
+data.setRowProperty(16, 'collapsedStyle', 'background:#FFBE00');
+data.setRowProperty(17, 'style',          'background:#FFE100');
+data.setRowProperty(17, 'expandedStyle',  'background:#FFE100');
+data.setRowProperty(17, 'collapsedStyle', 'background:#FFE100');
+
+var chart = new google.visualization.OrgChart(document.getElementById('orgchart'))
+chart.draw(data, options)
+
+function reset_children_color(idx) {
+var subtree_children = chart.getChildrenIndexes(idx)
+var collapsed = chart.getCollapsedNodes()
+for (var j = 0; j < subtree_children.length; j++) {
+if (collapsed.indexOf(subtree_children[j]) == -1) {
+data.setRowProperty(subtree_children[j], 'style', data.getRowProperty(subtree_children[j],'expandedStyle'))
+reset_children_color(subtree_children[j])
+} else {
+data.setRowProperty(subtree_children[j], 'style', data.getRowProperty(subtree_children[j],'collapsedStyle'))
+}
+}
+}
+
+// this is used to stop the recursion, only user initiated ones are allowed
+// no recursion due to code calling itself (chart.collapse)
+var top_level_collapse = true
+google.visualization.events.addListener(chart, 'collapse', function(e) {
+// Get the list of collapsed node
+var collapsed = chart.getCollapsedNodes()
+if (top_level_collapse) {
+if (e.collapsed) {
+// We are collapsing a node, just care about the node itself (kids will disappear)
+data.setRowProperty(e.row, 'style', data.getRowProperty(e.row,'collapsedStyle'))
+} else {
+// We are expanding a node, need to change the color of the node and its kids recursively
+data.setRowProperty(e.row, 'style', data.getRowProperty(e.row,'expandedStyle'))
+var children = chart.getChildrenIndexes(e.row)
+for (i = 0; i < children.length; i++) {
+// Child node can be collapsed too or not
+if (collapsed.indexOf(children[i]) == -1) {
+data.setRowProperty(children[i], 'style', data.getRowProperty(children[i],'expandedStyle'))
+reset_children_color(children[i])
+} else {
+data.setRowProperty(children[i], 'style', data.getRowProperty(children[i],'collapsedStyle'))
+}
+}
+}
+chart.draw(data, options)
+top_level_collapse = false
+chart.collapse(e.row, e.collapsed)
+// need to set the other node to collapsed, otherwise you close one branch and another expands
+for (var i = 0; i < collapsed.length; i++) {
+chart.collapse(collapsed[i], true)
+}
+top_level_collapse = true
+}
+})
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2d.142. Plan Tree for PHV 2283497611 with subtree <em>(DBA_HIST_SQL_PLAN)</em>  </h1>
+
+<br>
+
+
+
+<div id="orgchart"></div>
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DBID                                      NOT NULL NUMBER
+ SQL_ID                                    NOT NULL VARCHAR2(13)
+ PLAN_HASH_VALUE                           NOT NULL NUMBER
+ ID                                        NOT NULL NUMBER
+ OPERATION                                          VARCHAR2(30)
+ OPTIONS                                            VARCHAR2(30)
+ OBJECT_NODE                                        VARCHAR2(128)
+ OBJECT#                                            NUMBER
+ OBJECT_OWNER                                       VARCHAR2(128)
+ OBJECT_NAME                                        VARCHAR2(128)
+ OBJECT_ALIAS                                       VARCHAR2(261)
+ OBJECT_TYPE                                        VARCHAR2(20)
+ OPTIMIZER                                          VARCHAR2(20)
+ PARENT_ID                                          NUMBER
+ DEPTH                                              NUMBER
+ POSITION                                           NUMBER
+ SEARCH_COLUMNS                                     NUMBER
+ COST                                               NUMBER
+ CARDINALITY                                        NUMBER
+ BYTES                                              NUMBER
+ OTHER_TAG                                          VARCHAR2(35)
+ PARTITION_START                                    VARCHAR2(64)
+ PARTITION_STOP                                     VARCHAR2(64)
+ PARTITION_ID                                       NUMBER
+ OTHER                                              VARCHAR2(4000)
+ DISTRIBUTION                                       VARCHAR2(20)
+ CPU_COST                                           NUMBER
+ IO_COST                                            NUMBER
+ TEMP_SPACE                                         NUMBER
+ ACCESS_PREDICATES                                  VARCHAR2(4000)
+ FILTER_PREDICATES                                  VARCHAR2(4000)
+ PROJECTION                                         VARCHAR2(4000)
+ TIME                                               NUMBER
+ QBLOCK_NAME                                        VARCHAR2(128)
+ REMARKS                                            VARCHAR2(4000)
+ TIMESTAMP                                          DATE
+ OTHER_XML                                          CLOB
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+WITH ashdata AS (-- count the number of samples in ASH for each step
+-- goal is to compute RATIO_TO_REPORT
+SELECT NVL(id,0) id,
+COUNT(*) num_samples,
+ROUND(100*NVL(RATIO_TO_REPORT(COUNT(*)) OVER (),0),2) perc_impact
+FROM plan_table
+WHERE statement_id LIKE 'SQLD360_ASH_DATA%'
+AND /*cost*/ bytes =2283497611
+AND remarks = '17vjd1aast5q7'
+GROUP BY NVL(id,0)),
+orig_plan AS (-- extract the plan steps "as is", just replace to single quote in the filter predicates
+-- precedence is given to plan from memory since it has filters
+-- using RANK since there could be more than one entry but with different predicate ordering
+SELECT sql_id, plan_hash_value, id, parent_id, operation, options, object_name, access_predicates, filter_predicates, other_xml
+FROM (SELECT sql_id, plan_hash_value, id, parent_id, operation, options, object_name,
+REPLACE(SUBSTR(access_predicates,1,1500), CHR(39) , CHR(92)||CHR(39)) access_predicates,
+REPLACE(SUBSTR(filter_predicates,1,1500), CHR(39) , CHR(92)||CHR(39)) filter_predicates,
+other_xml,
+RANK() OVER (ORDER BY inst_id, child_number) rnk
+FROM gv$sql_plan_statistics_all
+WHERE sql_id = '17vjd1aast5q7'
+AND plan_hash_value =2283497611)
+WHERE rnk = 1
+UNION ALL
+SELECT sql_id, plan_hash_value, id, parent_id, operation, options, object_name,
+REPLACE(access_predicates, CHR(39), CHR(92)||CHR(39)) access_predicates,
+REPLACE(filter_predicates, CHR(39), CHR(92)||CHR(39)) filter_predicates,
+other_xml
+FROM dba_hist_sql_plan
+WHERE sql_id = '17vjd1aast5q7'
+AND plan_hash_value =2283497611
+AND NOT EXISTS (SELECT 1
+FROM gv$sql_plan_statistics_all
+WHERE plan_hash_value =2283497611
+AND sql_id = '17vjd1aast5q7'
+AND 'Y' = 'Y')),
+skip_steps AS (-- extract the display_map for the plan, to identify why steps are "skipped" because of adaptive
+SELECT sql_id, plan_hash_value, EXTRACTVALUE(VALUE(b),'/row/@op') stepid, EXTRACTVALUE(VALUE(b),'/row/@skp') skp, EXTRACTVALUE(VALUE(b),'/row/@dep') dep
+FROM orig_plan a,
+TABLE(XMLSEQUENCE(EXTRACT(XMLTYPE(a.other_xml),'/*/display_map/row'))) b
+WHERE sql_id = '17vjd1aast5q7'
+AND other_xml IS NOT NULL),
+adapt_plan_no_parent AS (-- generate adaptive_id (aka step_id) once the adaptive steps are excluded
+SELECT a.sql_id, a.plan_hash_value, a.id, a.parent_id, b.dep,
+(ROW_NUMBER() OVER (ORDER BY a.id))-1 adapt_id, a.operation, a.options, a.object_name, a.access_predicates, a.filter_predicates, b.skp
+FROM orig_plan a,
+skip_steps b
+WHERE a.id = b.stepid(+)
+AND (b.skp = 0 OR b.skp IS NULL)),
+full_adaptive_plan AS (-- generate the parent adaptive step id
+SELECT id, adapt_id, NVL(adapt_parent_id, parent_id) parent_id, operation, options, object_name, access_predicates, filter_predicates
+FROM (SELECT dep, adapt_id, id, (SELECT MAX(adapt_id) FROM adapt_plan_no_parent b WHERE a.dep-1 = NVL(b.dep,0) AND b.adapt_id < a.adapt_id ) adapt_parent_id,
+parent_id, a.operation operation, a.options, a.object_name, a.access_predicates, a.filter_predicates
+FROM adapt_plan_no_parent a)),
+plan_with_ash AS (SELECT full_adaptive_plan.*, NVL(ashdata.num_samples,0) num_samples, NVL(ashdata.perc_impact,0) perc_impact
+FROM full_adaptive_plan,
+ashdata
+WHERE ashdata.id(+) = full_adaptive_plan.id),
+plan_with_rec_impact AS (-- compute recursive impact (substree impact)
+SELECT a.*, (SELECT sum(b.perc_impact)
+FROM plan_with_ash b
+START WITH b.adapt_id = a.adapt_id
+CONNECT BY prior b.adapt_id = b.parent_id) sum_perc_impact
+FROM plan_with_ash a)
+SELECT '{v: '''||adapt_id||''',f: '''||adapt_id||' - '||operation||' '||options||NVL2(object_name,'<br>',' ')||object_name||'''}' id,
+parent_id,
+SUBSTR('Step ID: '||adapt_id||' (ASH Step ID: '||id||')\nASH Samples: '||num_samples||' ('||perc_impact||'%)'||
+'\nSubstree Impact '||sum_perc_impact||'%'||
+NVL2(access_predicates,'\n\nAccess Predicates: '||access_predicates,'')||NVL2(filter_predicates,'\n\nFilter Predicates: '||filter_predicates,''),1,4000) message,
+adapt_id id3
+FROM plan_with_rec_impact
+ORDER BY id3;
+
+0 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:12:44 for SQL ID 17vjd1aast5q7 (SELECT DISTINCT PF.PERF_USR FROM T_WKFWTSK WF , T_WKFWTSK_STT_CNGE CNG , T_PRMR ) </font>
+</body>
+</html>

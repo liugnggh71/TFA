@@ -1,0 +1,83 @@
+Plan from Plan Table (PLAN_TABLE)
+
+
+SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+     INNER JOIN T_MEMBDGISBASE diag ON diag.UMDS_DGISUM_EVNT = T.UMBS_ID
+     INNER JOIN T_APBL msrv ON msrv.MSRV_SRVCDGIS = diag.MBDB_ID AND msrv.APBL_IS_ERR = :"SYS_B_0"
+   WHERE T.UMBS_OBJ_STT = :"SYS_B_1" AND (T.UMBS_MEMB = :b1  OR T.UMBS_MEMB in (select MBUR_ID from T_USR where USR_MRGEMSTR=:b2 ))),
+  (SELECT count(DISTINCT T.UMBS_ID) AS closed
+   FROM T_UM_BASE T
+     INNER JOIN T_MEMBDGISBASE diag ON diag.UMDS_DGISUM_EVNT = T.UMBS_ID
+     INNER JOIN T_APBL msrv ON msrv.MSRV_SRVCDGIS = diag.MBDB_ID AND msrv.APBL_IS_ERR = :"SYS_B_2"
+   WHERE T.UMBS_OBJ_STT = :"SYS_B_3" AND (T.UMBS_MEMB = :b3  OR T.UMBS_MEMB in (select MBUR_ID from T_USR where USR_MRGEMSTR=:b4 )))
+Plan hash value: 7014475
+
+----------------------------------------------------------------------------------------------------------------
+| Id  | Operation                              | Name                  | Rows  | Bytes | Cost (%CPU)| Time     |
+----------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                       |                       |     1 |    26 | 13021   (1)| 00:00:01 |
+|   1 |  NESTED LOOPS                          |                       |     1 |    26 | 13021   (1)| 00:00:01 |
+|   2 |   VIEW                                 |                       |     1 |    13 |  6511   (1)| 00:00:01 |
+|   3 |    SORT AGGREGATE                      |                       |     1 |    13 |            |          |
+|   4 |     VIEW                               | VW_DAG_1              |   777 | 10101 |  6511   (1)| 00:00:01 |
+|   5 |      HASH GROUP BY                     |                       |   777 | 27195 |  6511   (1)| 00:00:01 |
+|*  6 |       FILTER                           |                       |       |       |            |          |
+|*  7 |        HASH JOIN                       |                       | 15539 |   531K|  6509   (1)| 00:00:01 |
+|*  8 |         TABLE ACCESS STORAGE FULL      | T_APBL                | 77694 |   606K|  5268   (1)| 00:00:01 |
+|*  9 |         HASH JOIN                      |                       | 50786 |  1339K|  1240   (1)| 00:00:01 |
+|* 10 |          VIEW                          | index$_join$_002      | 50138 |   783K|   925   (1)| 00:00:01 |
+|* 11 |           HASH JOIN                    |                       |       |       |            |          |
+|* 12 |            INDEX RANGE SCAN            | IX_UMBS_OBJ_STT       | 50138 |   783K|   111   (1)| 00:00:01 |
+|  13 |            INDEX STORAGE FAST FULL SCAN| IX_UMBS_MEMB_ID       | 50138 |   783K|  1017   (1)| 00:00:01 |
+|* 14 |          INDEX STORAGE FAST FULL SCAN  | IX_MBDB_DGISUMEVNT_ID |   253K|  2727K|   314   (1)| 00:00:01 |
+|* 15 |        TABLE ACCESS BY INDEX ROWID     | T_USR                 |     1 |     6 |     3   (0)| 00:00:01 |
+|* 16 |         INDEX UNIQUE SCAN              | UK_MBUR               |     1 |       |     2   (0)| 00:00:01 |
+|  17 |   VIEW                                 |                       |     1 |    13 |  6511   (1)| 00:00:01 |
+|  18 |    SORT AGGREGATE                      |                       |     1 |    13 |            |          |
+|  19 |     VIEW                               | VW_DAG_0              |   777 | 10101 |  6511   (1)| 00:00:01 |
+|  20 |      SORT GROUP BY                     |                       |   777 | 27195 |  6511   (1)| 00:00:01 |
+|* 21 |       FILTER                           |                       |       |       |            |          |
+|* 22 |        HASH JOIN                       |                       | 15539 |   531K|  6509   (1)| 00:00:01 |
+|* 23 |         TABLE ACCESS STORAGE FULL      | T_APBL                | 77694 |   606K|  5268   (1)| 00:00:01 |
+|* 24 |         HASH JOIN                      |                       | 50786 |  1339K|  1240   (1)| 00:00:01 |
+|* 25 |          VIEW                          | index$_join$_009      | 50138 |   783K|   925   (1)| 00:00:01 |
+|* 26 |           HASH JOIN                    |                       |       |       |            |          |
+|* 27 |            INDEX RANGE SCAN            | IX_UMBS_OBJ_STT       | 50138 |   783K|   111   (1)| 00:00:01 |
+|  28 |            INDEX STORAGE FAST FULL SCAN| IX_UMBS_MEMB_ID       | 50138 |   783K|  1017   (1)| 00:00:01 |
+|* 29 |          INDEX STORAGE FAST FULL SCAN  | IX_MBDB_DGISUMEVNT_ID |   253K|  2727K|   314   (1)| 00:00:01 |
+|* 30 |        TABLE ACCESS BY INDEX ROWID     | T_USR                 |     1 |     6 |     3   (0)| 00:00:01 |
+|* 31 |         INDEX UNIQUE SCAN              | UK_MBUR               |     1 |       |     2   (0)| 00:00:01 |
+----------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   6 - filter("T"."UMBS_MEMB"=TO_NUMBER(:B1) OR  EXISTS (SELECT 0 FROM "T_USR" "T_USR" WHERE
+              "MBUR_ID"=:B1 AND "USR_MRGEMSTR"=TO_NUMBER(:B2)))
+   7 - access("MSRV"."MSRV_SRVCDGIS"="DIAG"."MBDB_ID")
+   8 - storage("MSRV"."APBL_IS_ERR"=TO_NUMBER(:SYS_B_0))
+       filter("MSRV"."APBL_IS_ERR"=TO_NUMBER(:SYS_B_0))
+   9 - access("DIAG"."UMDS_DGISUM_EVNT"="T"."UMBS_ID")
+  10 - filter("T"."UMBS_OBJ_STT"=TO_NUMBER(:SYS_B_1))
+  11 - access(ROWID=ROWID)
+  12 - access("T"."UMBS_OBJ_STT"=TO_NUMBER(:SYS_B_1))
+  14 - storage("DIAG"."UMDS_DGISUM_EVNT" IS NOT NULL)
+       filter("DIAG"."UMDS_DGISUM_EVNT" IS NOT NULL)
+  15 - filter("USR_MRGEMSTR"=TO_NUMBER(:B2))
+  16 - access("MBUR_ID"=:B1)
+  21 - filter("T"."UMBS_MEMB"=TO_NUMBER(:B3) OR  EXISTS (SELECT 0 FROM "T_USR" "T_USR" WHERE
+              "MBUR_ID"=:B1 AND "USR_MRGEMSTR"=TO_NUMBER(:B4)))
+  22 - access("MSRV"."MSRV_SRVCDGIS"="DIAG"."MBDB_ID")
+  23 - storage("MSRV"."APBL_IS_ERR"=TO_NUMBER(:SYS_B_2))
+       filter("MSRV"."APBL_IS_ERR"=TO_NUMBER(:SYS_B_2))
+  24 - access("DIAG"."UMDS_DGISUM_EVNT"="T"."UMBS_ID")
+  25 - filter("T"."UMBS_OBJ_STT"=TO_NUMBER(:SYS_B_3))
+  26 - access(ROWID=ROWID)
+  27 - access("T"."UMBS_OBJ_STT"=TO_NUMBER(:SYS_B_3))
+  29 - storage("DIAG"."UMDS_DGISUM_EVNT" IS NOT NULL)
+       filter("DIAG"."UMDS_DGISUM_EVNT" IS NOT NULL)
+  30 - filter("USR_MRGEMSTR"=TO_NUMBER(:B4))
+  31 - access("MBUR_ID"=:B1)

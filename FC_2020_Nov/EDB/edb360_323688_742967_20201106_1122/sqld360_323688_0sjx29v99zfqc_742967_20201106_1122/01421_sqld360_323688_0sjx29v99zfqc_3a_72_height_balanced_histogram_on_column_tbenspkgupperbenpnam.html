@@ -1,0 +1,4454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 01410_sqld360_323688_0sjx29v99zfqc_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_BENSPKG.(UPPER("BENP_NAM"))</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 01421_sqld360_323688_0sjx29v99zfqc_3a_72_height_balanced_histogram_on_column_tbenspkgupperbenpnam.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.72. Height Balanced histogram on Column T_BENSPKG.(UPPER("BENP_NAM")) <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+APPROXIMATE_VALUE
+</th>
+<th scope="col">
+ROWS_PER_BUCKET
+</th>
+<th scope="col">
+SELECTIVITY
+</th>
+<th scope="col">
+CHART_TEXT
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-DO NOT USE-
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+ApproxValue: -DO NOT USE- NumRows: 0 Sel: 0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0357_FC PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 0357_FC PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0647_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 0647_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0999_SMH1AH1A
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 0999_SMH1AH1A NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+1413_FC PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 1413_FC PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+1808_SEI1GI1G
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 1808_SEI1GI1G NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+212H_VBHP PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 212H_VBHP PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+2347_LHRX0AC5
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 2347_LHRX0AC5 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+2648_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 2648_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+2969_FC PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 2969_FC PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+3155_LHRX0AB5
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3155_LHRX0AB5 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+3284_FC PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3284_FC PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+3409_SHRX0AC5
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3409_SHRX0AC5 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+3592_LWCSE926
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3592_LWCSE926 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+3650_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3650_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+3715_LPW2X9YG
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3715_LPW2X9YG NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+3769_LC1SE526
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3769_LC1SE526 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+3842_LHC2X9YG
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3842_LHC2X9YG NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+3903_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3903_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+3987_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 3987_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+4074_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4074_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+4150_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4150_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td>
+4231_FC PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4231_FC PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+4302_LHCSXFEC
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4302_LHCSXFEC NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td>
+4373_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4373_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td>
+4451_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4451_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td>
+4534_LHW2X9YG
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4534_LHW2X9YG NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td>
+4609_SHRX0BB5
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4609_SHRX0BB5 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td>
+4695_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4695_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td>
+4764_LHW2X9YG
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4764_LHW2X9YG NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td>
+4845_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4845_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+4926_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 4926_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td>
+5012_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5012_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td>
+5103_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5103_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td>
+5189_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5189_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+5259_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5259_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+5331_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5331_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+5406_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5406_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+5586_FC DENTAL
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5586_FC DENTAL NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+5793_FC PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5793_FC PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+5902_VBHP PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5902_VBHP PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+5962_LHCSXFEC
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 5962_LHCSXFEC NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td>
+6038_LCHXSAE6
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 6038_LCHXSAE6 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td>
+6111_FC HMO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 6111_FC HMO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td>
+6185_COEXIST
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 6185_COEXIST NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td>
+6W00_SCH2EH2E
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: 6W00_SCH2EH2E NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td>
+BASEMA27_RXRID531_003_MA02
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BASEMA27_RXRID531_003_MA02 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td>
+BHG17S14_A248
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BHG17S14_A248 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td>
+BHG18U13_A490
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BHG18U13_A490 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td>
+BHG19U13_A750
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BHG19U13_A750 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td>
+BHG20U13_A282
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BHG20U13_A282 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td>
+BRZ14GZ2_2580
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BRZ14GZ2_2580 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td>
+BRZ15GZ1_A211
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BRZ15GZ1_A211 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td>
+BRZ15GZ5_4290
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BRZ15GZ5_4290 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td>
+BRZ5LCZ5_4146
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: BRZ5LCZ5_4146 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td>
+DELETED_0141_FC HMO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_0141_FC HMO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td>
+DELETED_0508_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_0508_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td>
+DELETED_0808_SPRX0AB5_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_0808_SPRX0AB5_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td>
+DELETED_1179_SHRX0BB5_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_1179_SHRX0BB5_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td>
+DELETED_1591_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_1591_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td>
+DELETED_1A56_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_1A56_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td>
+DELETED_2232_LCH1LH1L_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_2232_LCH1LH1L_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td>
+DELETED_2404_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_2404_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td>
+DELETED_2726_SCH1LH1L_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_2726_SCH1LH1L_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td>
+DELETED_2_LC17P1F1_7512_2_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_2_LC17P1F1_7512_2_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td>
+DELETED_3155_BASIWELL_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_3155_BASIWELL_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td>
+DELETED_3277_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_3277_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td>
+DELETED_339W_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_339W_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td>
+DELETED_3589_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_3589_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td>
+DELETED_3644_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_3644_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td>
+DELETED_3705_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_3705_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td>
+DELETED_3764_LC1SA526_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_3764_LC1SA526_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td>
+DELETED_3835_LW1SC528_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_3835_LW1SC528_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td>
+DELETED_3894_LCW3WELL_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_3894_LCW3WELL_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td>
+DELETED_3973_LCW3WELL_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_3973_LCW3WELL_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td>
+DELETED_4064_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4064_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td>
+DELETED_4138_LHW2X528_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4138_LHW2X528_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td>
+DELETED_4220_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4220_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td>
+DELETED_4290_LCHXSAE6_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4290_LCHXSAE6_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td>
+DELETED_4361_FC PPO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4361_FC PPO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td>
+DELETED_4424_FC PPO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4424_FC PPO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td>
+DELETED_4502_SCH3HH3H_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4502_SCH3HH3H_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td>
+DELETED_4588_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4588_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td>
+DELETED_4662_FC HMO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4662_FC HMO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td>
+DELETED_4725_SEI1GI1G_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4725_SEI1GI1G_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td>
+DELETED_4821_FC HMO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4821_FC HMO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td>
+DELETED_4894_LCCSE926_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4894_LCCSE926_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td>
+DELETED_4965_LWCSA926_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_4965_LWCSA926_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td>
+DELETED_5051_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5051_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td>
+DELETED_5146_FC HMO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5146_FC HMO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td>
+DELETED_5227_FC HMO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5227_FC HMO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td>
+DELETED_5294_LW1SA526_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5294_LW1SA526_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td>
+DELETED_5366_LW1CC526_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5366_LW1CC526_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td>
+DELETED_5466_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5466_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td>
+DELETED_5682_FC HMO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5682_FC HMO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td>
+DELETED_5860_SHRX0EC5_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5860_SHRX0EC5_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td>
+DELETED_5927_SPP2FP2F_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5927_SPP2FP2F_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td>
+DELETED_5985_LHWSXFEC_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_5985_LHWSXFEC_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td>
+DELETED_6060_SCH1FH1F_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_6060_SCH1FH1F_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td>
+DELETED_6113_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_6113_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td>
+DELETED_6175_SHRX0AB5_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_6175_SHRX0AB5_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td>
+DELETED_6247_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_6247_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td>
+DELETED_9846_SEI1GI1G_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_9846_SEI1GI1G_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td>
+DELETED_BHG16F13_A151_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BHG16F13_A151_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td>
+DELETED_BHG17U13_A507_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BHG17U13_A507_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td>
+DELETED_BHG18U13_A382_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BHG18U13_A382_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td>
+DELETED_BHG18U14_A548_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BHG18U14_A548_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td>
+DELETED_BHG19U14_5720_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BHG19U14_5720_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td>
+DELETED_BHG20U10_A820_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BHG20U10_A820_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td>
+DELETED_BRZ14GZ1_2580_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BRZ14GZ1_2580_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td>
+DELETED_BRZ15GZ1_4218_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BRZ15GZ1_4218_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td>
+DELETED_BRZ15GZ2_A181_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BRZ15GZ2_A181_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td>
+DELETED_BRZ5LCZ1_5993_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_BRZ5LCZ1_5993_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td>
+DELETED_EG01_VBHP PPO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_EG01_VBHP PPO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td>
+DELETED_GHG17S01_3621_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_GHG17S01_3621_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td>
+DELETED_GHG18S01_4221_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_GHG18S01_4221_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td>
+DELETED_GHG18U04_A641_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_GHG18U04_A641_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td>
+DELETED_GHG20U02_3612_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_GHG20U02_3612_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td>
+DELETED_GLD14GG1_6268_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_GLD14GG1_6268_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td>
+DELETED_GLD15GG1_A117_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_GLD15GG1_A117_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td>
+DELETED_GLD5LCG1_3341_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_GLD5LCG1_3341_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td>
+DELETED_H089_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_H089_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td>
+DELETED_H220_PS10X100_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_H220_PS10X100_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td>
+DELETED_H279_VPS15825_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_H279_VPS15825_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td>
+DELETED_H346_VPN1G760_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_H346_VPN1G760_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td>
+DELETED_H410_VBHP PPO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_H410_VBHP PPO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td>
+DELETED_H458_PS10X000_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_H458_PS10X000_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td>
+DELETED_H552_VHL10820_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_H552_VHL10820_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td>
+DELETED_HA73_VBHP PPO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_HA73_VBHP PPO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td>
+DELETED_HP15_VHS20820_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_HP15_VHS20820_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td>
+DELETED_HT56_PS10X000_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_HT56_PS10X000_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td>
+DELETED_I056_COEXIST_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_I056_COEXIST_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td>
+DELETED_L056_FC HMO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_L056_FC HMO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td>
+DELETED_L16PLCB3_4522_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_L16PLCB3_4522_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td>
+DELETED_LC16H3G1_3296_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LC16H3G1_3296_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td>
+DELETED_LC19P1E1_4209_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LC19P1E1_4209_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td>
+DELETED_LC3SA626_6269_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LC3SA626_6269_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td>
+DELETED_LC8PH2F1_A186_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LC8PH2F1_A186_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td>
+DELETED_LCCCA926_15_4823_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LCCCA926_15_4823_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td>
+DELETED_LCCSA926_15_3647_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LCCSA926_15_3647_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td>
+DELETED_LCCSA926_15_5805_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LCCSA926_15_5805_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td>
+DELETED_LCCSA926_4695_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LCCSA926_4695_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td>
+DELETED_LCCSB927_5262_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LCCSB927_5262_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td>
+DELETED_LCCSD926_4228_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LCCSD926_4228_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td>
+DELETED_LCH3HH3H_2347_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LCH3HH3H_2347_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td>
+DELETED_LE16I1O1_A_5588_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LE16I1O1_A_5588_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td>
+DELETED_LPP1EP1E_0573_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LPP1EP1E_0573_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td>
+DELETED_LWCCA926_16_3801_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LWCCA926_16_3801_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td>
+DELETED_LWCSA926_16_3647_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LWCSA926_16_3647_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td>
+DELETED_LWCSA926_4279_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LWCSA926_4279_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td>
+DELETED_LWCSB927_DONOTUSE_4130_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LWCSB927_DONOTUSE_4130_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td>
+DELETED_LWCSE926_3894_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_LWCSE926_3894_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td>
+DELETED_MEDICAID LUBBOCK NON SSI AAPCA_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_MEDICAID LUBBOCK NON SSI AAPCA_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td>
+DELETED_PB04_FC PPO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_PB04_FC PPO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td>
+DELETED_S16HLCA1_17_4096_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_S16HLCA1_17_4096_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td>
+DELETED_S16HLCA1_18_4704_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_S16HLCA1_18_4704_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td>
+DELETED_S16HLCA1_5045_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_S16HLCA1_5045_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td>
+DELETED_S16HLCA2_18_5055_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_S16HLCA2_18_5055_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td>
+DELETED_S16HLCC1_3651_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_S16HLCC1_3651_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td>
+DELETED_S16HLCE1_18_3611_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_S16HLCE1_18_3611_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td>
+DELETED_S16PLCB3_4674_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_S16PLCB3_4674_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td>
+DELETED_S18HLCA2_19_5042_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_S18HLCA2_19_5042_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td>
+DELETED_S18HLCE1_5780_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_S18HLCE1_5780_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+164
+</td>
+<td>
+DELETED_SCH1DH1D_13_6225_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SCH1DH1D_13_6225_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+165
+</td>
+<td>
+DELETED_SCH1HH1H_L016_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SCH1HH1H_L016_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+166
+</td>
+<td>
+DELETED_SCH2DH2D_A235_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SCH2DH2D_A235_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+167
+</td>
+<td>
+DELETED_SCH2HH2H_15_5461_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SCH2HH2H_15_5461_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+168
+</td>
+<td>
+DELETED_SCH3GH3G_4615_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SCH3GH3G_4615_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+169
+</td>
+<td>
+DELETED_SEI3JI3J_5873_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SEI3JI3J_5873_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+170
+</td>
+<td>
+DELETED_SHG16F03_A150_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG16F03_A150_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+171
+</td>
+<td>
+DELETED_SHG17S03_2068_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG17S03_2068_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+172
+</td>
+<td>
+DELETED_SHG17S04_A302_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG17S04_A302_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+173
+</td>
+<td>
+DELETED_SHG17U03_A383_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG17U03_A383_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+174
+</td>
+<td>
+DELETED_SHG17U06_A390_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG17U06_A390_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+175
+</td>
+<td>
+DELETED_SHG18U03_A196_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG18U03_A196_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+176
+</td>
+<td>
+DELETED_SHG18U03_A618_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG18U03_A618_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+177
+</td>
+<td>
+DELETED_SHG18U05_A353_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG18U05_A353_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+178
+</td>
+<td>
+DELETED_SHG19U03_3596_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG19U03_3596_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+179
+</td>
+<td>
+DELETED_SHG19U03_5043_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG19U03_5043_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+180
+</td>
+<td>
+DELETED_SHG19U03_A535_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG19U03_A535_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+181
+</td>
+<td>
+DELETED_SHG20U06_1655_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG20U06_1655_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+182
+</td>
+<td>
+DELETED_SHG20U06_A460_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SHG20U06_A460_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+183
+</td>
+<td>
+DELETED_SIL14GV1_0921_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SIL14GV1_0921_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+184
+</td>
+<td>
+DELETED_SIL15GV1_A203_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SIL15GV1_A203_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+185
+</td>
+<td>
+DELETED_SIL15GV4_2180_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SIL15GV4_2180_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+186
+</td>
+<td>
+DELETED_SIL15GV5_A115_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SIL15GV5_A115_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+187
+</td>
+<td>
+DELETED_SIL5LCV1_1212_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SIL5LCV1_1212_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+188
+</td>
+<td>
+DELETED_SIL5LCV5_6133_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SIL5LCV5_6133_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+189
+</td>
+<td>
+DELETED_SPG17201_A640_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SPG17201_A640_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+190
+</td>
+<td>
+DELETED_SPG18301_A560_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SPG18301_A560_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+191
+</td>
+<td>
+DELETED_SPP1FP1F_4194_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_SPP1FP1F_4194_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+192
+</td>
+<td>
+DELETED_T111_VHS10820_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_T111_VHS10820_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+193
+</td>
+<td>
+DELETED_Z930_VBHP PPO_DELETED
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: DELETED_Z930_VBHP PPO_DELETED NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+194
+</td>
+<td>
+GHG17S01_A413
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GHG17S01_A413 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+195
+</td>
+<td>
+GHG18U02_2242
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GHG18U02_2242 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+196
+</td>
+<td>
+GHG20U02_A321
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GHG20U02_A321 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+197
+</td>
+<td>
+GLD14GG2_3512
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GLD14GG2_3512 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+198
+</td>
+<td>
+GLD15GG1_A223
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GLD15GG1_A223 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+199
+</td>
+<td>
+GLD5LCG2_1L15
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: GLD5LCG2_1L15 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+200
+</td>
+<td>
+H136_VP12HIS1
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: H136_VP12HIS1 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+201
+</td>
+<td>
+H300_VP12S265
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: H300_VP12S265 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+202
+</td>
+<td>
+H413_VBHP PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: H413_VBHP PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+203
+</td>
+<td>
+H519_VP12S272
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: H519_VP12S272 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+204
+</td>
+<td>
+HC13I013_IWIP
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HC13I013_IWIP NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+205
+</td>
+<td>
+HT76_VBHP PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: HT76_VBHP PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+206
+</td>
+<td>
+IP10I049_2335
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: IP10I049_2335 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+207
+</td>
+<td>
+L103_LHCSXFEC
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: L103_LHCSXFEC NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+208
+</td>
+<td>
+LC0PH5F1_4414
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LC0PH5F1_4414 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+209
+</td>
+<td>
+LC19P4F1_4414
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LC19P4F1_4414 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+210
+</td>
+<td>
+LC3SE626_1197
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LC3SE626_1197 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+211
+</td>
+<td>
+LC9SH2L1_3633
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LC9SH2L1_3633 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+212
+</td>
+<td>
+LCCCA926_4105
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LCCCA926_4105 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+213
+</td>
+<td>
+LCCSA926_15_4719
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LCCSA926_15_4719 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+214
+</td>
+<td>
+LCCSA926_16_5824
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LCCSA926_16_5824 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+215
+</td>
+<td>
+LCCSB927_16_4055
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LCCSB927_16_4055 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+216
+</td>
+<td>
+LCCSD926_16_4870
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LCCSD926_16_4870 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+217
+</td>
+<td>
+LCH2GH2G_4092
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LCH2GH2G_4092 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+218
+</td>
+<td>
+LE16I1L2_A281
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LE16I1L2_A281 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+219
+</td>
+<td>
+LPP4GP4G_0309
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LPP4GP4G_0309 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+220
+</td>
+<td>
+LWCCA926_4300
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LWCCA926_4300 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+221
+</td>
+<td>
+LWCSA926_16_5200
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LWCSA926_16_5200 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+222
+</td>
+<td>
+LWCSA926_DONOTUSE_5113
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LWCSA926_DONOTUSE_5113 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+223
+</td>
+<td>
+LWCSD926_L116
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: LWCSD926_L116 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+224
+</td>
+<td>
+MA02_PENALT28
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: MA02_PENALT28 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+225
+</td>
+<td>
+P106_SCH1XH1X
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: P106_SCH1XH1X NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+226
+</td>
+<td>
+S16HLCA1_17_3834
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: S16HLCA1_17_3834 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+227
+</td>
+<td>
+S16HLCA1_18_4554
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: S16HLCA1_18_4554 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+228
+</td>
+<td>
+S16HLCA1_5007
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: S16HLCA1_5007 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+229
+</td>
+<td>
+S16HLCA2_18_5178
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: S16HLCA2_18_5178 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+230
+</td>
+<td>
+S16HLCC1_3954
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: S16HLCC1_3954 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+231
+</td>
+<td>
+S16HLCE1_18_4110
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: S16HLCE1_18_4110 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+232
+</td>
+<td>
+S18HLCA1_3832
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: S18HLCA1_3832 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+233
+</td>
+<td>
+S18HLCA2_6179
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: S18HLCA2_6179 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+234
+</td>
+<td>
+SCH18H2H_4490
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SCH18H2H_4490 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+235
+</td>
+<td>
+SCH1GH1G_2016_2473
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SCH1GH1G_2016_2473 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+236
+</td>
+<td>
+SCH2DH2D_2016_5726
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SCH2DH2D_2016_5726 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+237
+</td>
+<td>
+SCH2HH2H_15_238W
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SCH2HH2H_15_238W NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+238
+</td>
+<td>
+SCH3HH3H_13_0661
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SCH3HH3H_13_0661 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+239
+</td>
+<td>
+SEI4LI4L_T009
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SEI4LI4L_T009 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+240
+</td>
+<td>
+SHG16F04_0300
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHG16F04_0300 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+241
+</td>
+<td>
+SHG17S03_A580
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHG17S03_A580 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+242
+</td>
+<td>
+SHG17U03_A695
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHG17U03_A695 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+243
+</td>
+<td>
+SHG18U03_A256
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHG18U03_A256 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+244
+</td>
+<td>
+SHG18U05_A253
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHG18U05_A253 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+245
+</td>
+<td>
+SHG19U03_4206
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHG19U03_4206 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+246
+</td>
+<td>
+SHG19U03_A400
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHG19U03_A400 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+247
+</td>
+<td>
+SHG20U06_5146
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHG20U06_5146 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+248
+</td>
+<td>
+SHI19M14_HIM
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SHI19M14_HIM NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+249
+</td>
+<td>
+SIL15GV1_5461
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SIL15GV1_5461 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+250
+</td>
+<td>
+SIL15GV3_A180
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SIL15GV3_A180 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+251
+</td>
+<td>
+SIL5LCV1_1L15
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SIL5LCV1_1L15 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+252
+</td>
+<td>
+SPG16F07_3521
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SPG16F07_3521 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+253
+</td>
+<td>
+SPP1DP1D_15_1910
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SPP1DP1D_15_1910 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+254
+</td>
+<td>
+SPP3LP3L_4777
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: SPP3LP3L_4777 NumRows: 281 Sel: .003937
+</td>
+</tr>
+<tr>
+<td>
+255
+</td>
+<td>
+ZHIN_VBHP PPO
+</td>
+<td align="right">
+                 281
+</td>
+<td align="right">
+             .003937
+</td>
+<td>
+ApproxValue: ZHIN_VBHP PPO NumRows: 281 Sel: .003937
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 71257) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 71257)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_BENSPKG'
+AND a.column_name = 'SYS_NC00027$'
+ORDER BY a.endpoint_number;
+
+255 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:20:11 for SQL ID 0sjx29v99zfqc (SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be) </font>
+</body>
+</html>

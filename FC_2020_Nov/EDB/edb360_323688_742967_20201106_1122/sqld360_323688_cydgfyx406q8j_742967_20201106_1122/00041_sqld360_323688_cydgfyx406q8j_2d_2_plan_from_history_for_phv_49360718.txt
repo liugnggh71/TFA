@@ -1,0 +1,230 @@
+Plan from History for PHV 49360718 (DBA_HIST_SQL_PLAN)
+
+
+SQL_ID cydgfyx406q8j
+--------------------
+INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO
+"THH_C4C"."MV_PATID_CM_COND_PROVIDER" SELECT get_aud_mrgmstr(member_id,
+valid_from, valid_to) member_id,        get_aud_mrgmstr(care_giver,
+valid_from, valid_to) care_giver,        valid_from,        valid_to,
+     PRAS_STRTDT,        PRAS_END_DT   FROM (SELECT
+a_cm_basebase.cmbs_memb member_id,                a_pvdrastn.pras_pvdr
+care_giver,                GREATEST(a_pvdrastn.valid_from,
+NVL(a_cm_basebase.valid_from, TO_DATE(:"SYS_B_00", :"SYS_B_01")))
+valid_from,                CASE WHEN a_pvdrastn.valid_to IS NULL AND
+a_cm_basebase.valid_to IS NULL THEN
+TO_DATE(:"SYS_B_02", :"SYS_B_03")                    WHEN
+a_pvdrastn.valid_to IS NOT NULL AND a_cm_basebase.valid_to IS NOT NULL
+THEN                        LEAST(a_pvdrastn.valid_to,
+a_cm_basebase.valid_to)                    WHEN a_pvdrastn.valid_to IS
+NULL THEN  a_cm_basebase.valid_to                    ELSE
+a_pvdrastn.valid_to                END valid_to,
+a_pvdrastn.PRAS_STRTDT, 			   a_pvdrastn.PRAS_END_DT           FROM
+a_pvdrastn                INNER JOIN a_cm_basebase
+ON a_pvdrastn.cpas_cm_base = a_cm_basebase.cmbb_id
+AND ((a_pvdrastn.valid_from >= a_cm_basebase.valid_from
+    AND (a_pvdrastn.valid_from <= a_cm_basebase.valid_to OR
+a_cm_basebase.valid_to IS NULL))                     OR
+(a_pvdrastn.valid_from <= a_cm_basebase.valid_from
+AND (a_pvdrastn.valid_to >= a_cm_basebase.valid_from OR
+a_pvdrastn.valid_to IS NULL)))                   AND
+a_pvdrastn.pras_obj_stt != :"SYS_B_04"                   AND
+a_cm_basebase.cmbb_obj_stt != :"SYS_B_05"                   AND
+a_pvdrastn.pras_pvdr IS NOT NULL                   AND
+a_cm_basebase.cmbs_memb IS NOT NULL         UNION         SELECT
+a_usr.mbur_id member_id,                a_pvdrastn.pras_pvdr
+care_giver,                GREATEST(a_pvdrastn.valid_from,
+NVL(a_usr.valid_from, TO_DATE(:"SYS_B_06", :"SYS_B_07"))) valid_from,
+             CASE WHEN a_pvdrastn.valid_to IS NULL AND a_usr.valid_to
+IS NULL THEN TO_DATE(:"SYS_B_08", :"SYS_B_09")                    WHEN
+a_pvdrastn.valid_to IS NOT NULL AND a_usr.valid_to IS NOT NULL THEN
+LEAST(a_pvdrastn.valid_to, a_usr.valid_to)                    WHEN
+a_pvdrastn.valid_to IS NULL THEN a_usr.valid_to                    ELSE
+a_pvdrastn.valid_to                END valid_to,           	
+a_pvdrastn.PRAS_STRTDT, 			   a_pvdrastn.PRAS_END_DT           FROM
+a_pvdrastn                INNER JOIN a_usr                    ON
+a_pvdrastn.mpas_memb = a_usr.mbur_id                   AND
+((a_pvdrastn.valid_from >= a_usr.valid_from                     AND
+(a_pvdrastn.valid_from <= a_usr.valid_to OR a_usr.valid_to IS NULL))
+                 OR (a_pvdrastn.valid_from <= a_usr.valid_from
+           AND (a_pvdrastn.valid_to >= a_usr.valid_from OR
+a_pvdrastn.valid_to IS NULL)))                   AND
+a_pvdrastn.pras_obj_stt != :"SYS_B_10"                   AND
+a_pvdrastn.pras_pvdr IS NOT NULL         UNION         SELECT
+a_cm_basebase.cmbs_memb member_id,
+a_cm_basebase.cmbb_pmrypvdr care_giver,
+a_cm_basebase.valid_from,                a_cm_basebase.valid_to,
+        null as PRAS_STRTDT, 			   null as PRAS_END_DT           FROM
+a_cm_basebase          WHERE a_cm_basebase.cmbb_obj_stt != :"SYS_B_11"
+          AND a_cm_basebase.cmbb_pmrypvdr IS NOT NULL            AND
+a_cm_basebase.cmbs_memb IS NOT NULL UNION   SELECT a_um_base.umbs_memb
+member_id,                a_pvdrastn.pras_pvdr care_giver,
+  GREATEST(a_pvdrastn.valid_from, NVL(a_um_base.valid_from,
+TO_DATE(:"SYS_B_12", :"SYS_B_13"))) valid_from,                CASE
+WHEN a_pvdrastn.valid_to IS NULL AND a_um_base.valid_to IS NULL THEN
+                    TO_DATE(:"SYS_B_14", :"SYS_B_15")
+ WHEN a_pvdrastn.valid_to IS NOT NULL AND a_um_base.valid_to IS NOT
+NULL THEN                        LEAST(a_pvdrastn.valid_to,
+
+Plan hash value: 49360718
+
+----------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                                   | Name                       | Rows  | Bytes |TempSpc| Cost (%CPU)| Time     |
+----------------------------------------------------------------------------------------------------------------------------------
+|   0 | INSERT STATEMENT                            |                            |       |       |       |   184K(100)|          |
+|   1 |  LOAD TABLE CONVENTIONAL                    | MV_PATID_CM_COND_PROVIDER  |       |       |       |            |          |
+|   2 |   SORT UNIQUE                               |                            |   498K|    29M|    38M|   184K  (1)| 00:00:08 |
+|   3 |    UNION-ALL                                |                            |       |       |       |            |          |
+|   4 |     VIEW                                    |                            |   498K|    29M|       |   163K  (1)| 00:00:07 |
+|   5 |      SORT UNIQUE                            |                            |   498K|    19M|    28M|   163K  (1)| 00:00:07 |
+|   6 |       UNION-ALL                             |                            |       |       |       |            |          |
+|   7 |        NESTED LOOPS                         |                            |     1 |    69 |       |     2   (0)| 00:00:01 |
+|   8 |         NESTED LOOPS                        |                            |     9 |    69 |       |     2   (0)| 00:00:01 |
+|   9 |          TABLE ACCESS BY INDEX ROWID BATCHED| A_PVDRASTN                 |     1 |    37 |       |     1   (0)| 00:00:01 |
+|  10 |           INDEX FULL SCAN                   | AX_CPAS_CM_BASE            |    43 |       |       |     1   (0)| 00:00:01 |
+|  11 |          INDEX RANGE SCAN                   | IX_A_CMBB_IDVALIDFROM      |     9 |       |       |     1   (0)| 00:00:01 |
+|  12 |         TABLE ACCESS BY INDEX ROWID         | A_CM_BASEBASE              |     5 |   160 |       |     1   (0)| 00:00:01 |
+|  13 |        NESTED LOOPS                         |                            |     3 |   183 |       | 69991   (1)| 00:00:03 |
+|  14 |         NESTED LOOPS                        |                            |     6 |   183 |       | 69991   (1)| 00:00:03 |
+|  15 |          TABLE ACCESS STORAGE FULL          | A_PVDRASTN                 |     1 |    41 |       | 69990   (1)| 00:00:03 |
+|  16 |          INDEX RANGE SCAN                   | A_USR_IX_MBUR_ID_CLASSTYPE |     6 |       |       |     1   (0)| 00:00:01 |
+|  17 |         TABLE ACCESS BY INDEX ROWID         | A_USR                      |     3 |    60 |       |     1   (0)| 00:00:01 |
+|  18 |        TABLE ACCESS BY INDEX ROWID BATCHED  | A_CM_BASEBASE              |     1 |    39 |       |     1   (0)| 00:00:01 |
+|  19 |         INDEX FULL SCAN                     | AX_CMBB_PMRYPVDR           |     1 |       |       |     1   (0)| 00:00:01 |
+|  20 |        NESTED LOOPS                         |                            |     1 |    66 |       | 11678   (1)| 00:00:01 |
+|  21 |         NESTED LOOPS                        |                            |   498K|    66 |       | 11678   (1)| 00:00:01 |
+|  22 |          TABLE ACCESS STORAGE FULL          | A_UM_BASE                  |   498K|    13M|       |  6690   (1)| 00:00:01 |
+|  23 |          INDEX RANGE SCAN                   | AX_UPAS_PVDRUM_BASE        |     1 |       |       |     1   (0)| 00:00:01 |
+|  24 |         TABLE ACCESS BY INDEX ROWID         | A_PVDRASTN                 |     1 |    37 |       |     1   (0)| 00:00:01 |
+|  25 |        NESTED LOOPS                         |                            |     3 |   183 |       | 69991   (1)| 00:00:03 |
+|  26 |         NESTED LOOPS                        |                            |     6 |   183 |       | 69991   (1)| 00:00:03 |
+|  27 |          TABLE ACCESS STORAGE FULL          | A_PVDRASTN                 |     1 |    41 |       | 69990   (1)| 00:00:03 |
+|  28 |          INDEX RANGE SCAN                   | A_USR_IX_MBUR_ID_CLASSTYPE |     6 |       |       |     1   (0)| 00:00:01 |
+|  29 |         TABLE ACCESS BY INDEX ROWID         | A_USR                      |     3 |    60 |       |     1   (0)| 00:00:01 |
+|  30 |        TABLE ACCESS STORAGE FULL            | A_UM_BASE                  |   498K|    19M|       |  6690   (1)| 00:00:01 |
+|  31 |     NESTED LOOPS                            |                            |     1 |    98 |       | 14410   (1)| 00:00:01 |
+|  32 |      NESTED LOOPS                           |                            |     1 |    98 |       | 14410   (1)| 00:00:01 |
+|  33 |       NESTED LOOPS                          |                            |     1 |    70 |       | 14409   (1)| 00:00:01 |
+|  34 |        TABLE ACCESS STORAGE FULL            | A_MEMBDGISBASE             |   620K|    18M|       |  8203   (1)| 00:00:01 |
+|  35 |        TABLE ACCESS BY INDEX ROWID BATCHED  | A_PVDRASTN                 |     1 |    39 |       |     1   (0)| 00:00:01 |
+|  36 |         INDEX RANGE SCAN                    | AX_UPAS_PVDRUM_BASE        |     1 |       |       |     1   (0)| 00:00:01 |
+|  37 |       INDEX RANGE SCAN                      | AX_MSRV_PVDRASTN           |     1 |       |       |     1   (0)| 00:00:01 |
+|  38 |      TABLE ACCESS BY INDEX ROWID            | A_APBL                     |     1 |    28 |       |     1   (0)| 00:00:01 |
+----------------------------------------------------------------------------------------------------------------------------------
+
+Query Block Name / Object Alias (identified by operation id):
+-------------------------------------------------------------
+
+   1 - SET$1
+   4 - SET$2        / from$_subquery$_002@SEL$3
+   5 - SET$2
+   7 - SEL$83632299
+   9 - SEL$83632299 / A_PVDRASTN@SEL$4
+  10 - SEL$83632299 / A_PVDRASTN@SEL$4
+  11 - SEL$83632299 / A_CM_BASEBASE@SEL$4
+  12 - SEL$83632299 / A_CM_BASEBASE@SEL$4
+  13 - SEL$8C13D988
+  15 - SEL$8C13D988 / A_PVDRASTN@SEL$5
+  16 - SEL$8C13D988 / A_USR@SEL$5
+  17 - SEL$8C13D988 / A_USR@SEL$5
+  18 - SEL$10       / A_CM_BASEBASE@SEL$10
+  19 - SEL$10       / A_CM_BASEBASE@SEL$10
+  20 - SEL$4188C1FF
+  22 - SEL$4188C1FF / A_UM_BASE@SEL$6
+  23 - SEL$4188C1FF / A_PVDRASTN@SEL$6
+  24 - SEL$4188C1FF / A_PVDRASTN@SEL$6
+  25 - SEL$014556B1
+  27 - SEL$014556B1 / A_PVDRASTN@SEL$7
+  28 - SEL$014556B1 / A_USR@SEL$7
+  29 - SEL$014556B1 / A_USR@SEL$7
+  30 - SEL$13       / A_UM_BASE@SEL$13
+  31 - SEL$20DAB4D6
+  34 - SEL$20DAB4D6 / A_MEMBDGISBASE@SEL$2
+  35 - SEL$20DAB4D6 / A_PVDRASTN@SEL$1
+  36 - SEL$20DAB4D6 / A_PVDRASTN@SEL$1
+  37 - SEL$20DAB4D6 / A_APBL@SEL$1
+  38 - SEL$20DAB4D6 / A_APBL@SEL$1
+
+Outline Data
+-------------
+
+  /*+
+      BEGIN_OUTLINE_DATA
+      IGNORE_OPTIM_EMBEDDED_HINTS
+      OPTIMIZER_FEATURES_ENABLE('12.1.0.2')
+      DB_VERSION('12.1.0.2')
+      OPT_PARAM('_optim_peek_user_binds' 'false')
+      OPT_PARAM('optimizer_index_cost_adj' 1)
+      OPT_PARAM('optimizer_index_caching' 90)
+      ALL_ROWS
+      OUTLINE_LEAF(@"SEL$83632299")
+      MERGE(@"SEL$4")
+      OUTLINE_LEAF(@"SEL$8C13D988")
+      MERGE(@"SEL$5")
+      OUTLINE_LEAF(@"SEL$10")
+      OUTLINE_LEAF(@"SEL$4188C1FF")
+      MERGE(@"SEL$6")
+      OUTLINE_LEAF(@"SEL$014556B1")
+      MERGE(@"SEL$7")
+      OUTLINE_LEAF(@"SEL$13")
+      OUTLINE_LEAF(@"SET$2")
+      OUTLINE_LEAF(@"SEL$3")
+      OUTLINE_LEAF(@"SEL$20DAB4D6")
+      MERGE(@"SEL$58A6D7F6")
+      OUTLINE_LEAF(@"SET$1")
+      OUTLINE_LEAF(@"INS$1")
+      OUTLINE(@"SEL$8")
+      OUTLINE(@"SEL$4")
+      OUTLINE(@"SEL$9")
+      OUTLINE(@"SEL$5")
+      OUTLINE(@"SEL$11")
+      OUTLINE(@"SEL$6")
+      OUTLINE(@"SEL$12")
+      OUTLINE(@"SEL$7")
+      OUTLINE(@"SEL$14")
+      OUTLINE(@"SEL$58A6D7F6")
+      MERGE(@"SEL$1")
+      OUTLINE(@"SEL$2")
+      OUTLINE(@"SEL$1")
+      FULL(@"INS$1" "MV_PATID_CM_COND_PROVIDER"@"INS$1")
+      FULL(@"SEL$20DAB4D6" "A_MEMBDGISBASE"@"SEL$2")
+      INDEX_RS_ASC(@"SEL$20DAB4D6" "A_PVDRASTN"@"SEL$1" ("A_PVDRASTN"."UPAS_PVDRUM_BASE"))
+      BATCH_TABLE_ACCESS_BY_ROWID(@"SEL$20DAB4D6" "A_PVDRASTN"@"SEL$1")
+      INDEX(@"SEL$20DAB4D6" "A_APBL"@"SEL$1" ("A_APBL"."MSRV_PVDRASTN"))
+      LEADING(@"SEL$20DAB4D6" "A_MEMBDGISBASE"@"SEL$2" "A_PVDRASTN"@"SEL$1" "A_APBL"@"SEL$1")
+      USE_NL(@"SEL$20DAB4D6" "A_PVDRASTN"@"SEL$1")
+      USE_NL(@"SEL$20DAB4D6" "A_APBL"@"SEL$1")
+      NLJ_BATCHING(@"SEL$20DAB4D6" "A_APBL"@"SEL$1")
+      NO_ACCESS(@"SEL$3" "from$_subquery$_002"@"SEL$3")
+      FULL(@"SEL$13" "A_UM_BASE"@"SEL$13")
+      FULL(@"SEL$014556B1" "A_PVDRASTN"@"SEL$7")
+      INDEX(@"SEL$014556B1" "A_USR"@"SEL$7" ("A_USR"."MBUR_ID" "A_USR"."CLASSTYPE"))
+      LEADING(@"SEL$014556B1" "A_PVDRASTN"@"SEL$7" "A_USR"@"SEL$7")
+      USE_NL(@"SEL$014556B1" "A_USR"@"SEL$7")
+      NLJ_BATCHING(@"SEL$014556B1" "A_USR"@"SEL$7")
+      FULL(@"SEL$4188C1FF" "A_UM_BASE"@"SEL$6")
+      INDEX(@"SEL$4188C1FF" "A_PVDRASTN"@"SEL$6" ("A_PVDRASTN"."UPAS_PVDRUM_BASE"))
+      LEADING(@"SEL$4188C1FF" "A_UM_BASE"@"SEL$6" "A_PVDRASTN"@"SEL$6")
+      USE_NL(@"SEL$4188C1FF" "A_PVDRASTN"@"SEL$6")
+      NLJ_BATCHING(@"SEL$4188C1FF" "A_PVDRASTN"@"SEL$6")
+      INDEX(@"SEL$10" "A_CM_BASEBASE"@"SEL$10" ("A_CM_BASEBASE"."CMBB_PMRYPVDR"))
+      BATCH_TABLE_ACCESS_BY_ROWID(@"SEL$10" "A_CM_BASEBASE"@"SEL$10")
+      FULL(@"SEL$8C13D988" "A_PVDRASTN"@"SEL$5")
+      INDEX(@"SEL$8C13D988" "A_USR"@"SEL$5" ("A_USR"."MBUR_ID" "A_USR"."CLASSTYPE"))
+      LEADING(@"SEL$8C13D988" "A_PVDRASTN"@"SEL$5" "A_USR"@"SEL$5")
+      USE_NL(@"SEL$8C13D988" "A_USR"@"SEL$5")
+      NLJ_BATCHING(@"SEL$8C13D988" "A_USR"@"SEL$5")
+      INDEX(@"SEL$83632299" "A_PVDRASTN"@"SEL$4" ("A_PVDRASTN"."CPAS_CM_BASE"))
+      BATCH_TABLE_ACCESS_BY_ROWID(@"SEL$83632299" "A_PVDRASTN"@"SEL$4")
+      INDEX(@"SEL$83632299" "A_CM_BASEBASE"@"SEL$4" ("A_CM_BASEBASE"."CMBB_ID" "A_CM_BASEBASE"."VALID_FROM"))
+      LEADING(@"SEL$83632299" "A_PVDRASTN"@"SEL$4" "A_CM_BASEBASE"@"SEL$4")
+      USE_NL(@"SEL$83632299" "A_CM_BASEBASE"@"SEL$4")
+      NLJ_BATCHING(@"SEL$83632299" "A_CM_BASEBASE"@"SEL$4")
+      END_OUTLINE_DATA
+  */
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 1 Sql Plan Directive used for this statement
+

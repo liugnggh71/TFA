@@ -1,0 +1,1742 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_3hwq5m5h3gkaq_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Table-level observations</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00025_sqld360_323688_3hwq5m5h3gkaq_1f_20_tablelevel_observations.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 1f.20. Table-level observations <em>(DBA_TABLES)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+SCOPE
+</th>
+<th scope="col">
+OWNER
+</th>
+<th scope="col">
+TABLE_NAME
+</th>
+<th scope="col">
+MESSAGE
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+CLINICALDATA_ASSN
+</td>
+<td>
+Table CLINICALDATA_ASSN seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+CLINICALDATA_AUTH_ASSN
+</td>
+<td>
+Table CLINICALDATA_AUTH_ASSN seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IHCIS_RISK
+</td>
+<td>
+Table IHCIS_RISK seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+INSTRUCTION_CARD
+</td>
+<td>
+Table INSTRUCTION_CARD has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+TABLE_MISSING_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+MLOG$_T_USR
+</td>
+<td>
+Table MLOG$_T_USR has no stats
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_ALRT
+</td>
+<td>
+Table T_ALRT has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_APBL
+</td>
+<td>
+Index IX_UMXT_PRNTEVNT (UMXT_PRNTEVNT) is redundant because of T_APBL_UX_PRNTEVNT_ID (UMXT_PRNTEVNT:UMXT_ID)
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_APVLTRKGDEND
+</td>
+<td>
+Table T_APVLTRKGDEND seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_ASMTCC_BASE
+</td>
+<td>
+Table T_ASMTCC_BASE has 2 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_BLR_PLT
+</td>
+<td>
+Table T_BLR_PLT has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_CAREBEANBASE
+</td>
+<td>
+Table T_CAREBEANBASE seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_CAREBEANRCTN
+</td>
+<td>
+Table T_CAREBEANRCTN seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_CFRDREVW
+</td>
+<td>
+Table T_CFRDREVW seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_CFTS
+</td>
+<td>
+Table T_CFTS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_CM_CSFNPVRS
+</td>
+<td>
+Table T_CM_CSFNPVRS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_CM_NTCERCTS
+</td>
+<td>
+Table T_CM_NTCERCTS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_CNRTSRVCFEES
+</td>
+<td>
+Table T_CNRTSRVCFEES seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_CNRTSRVCFEE_HNTS
+</td>
+<td>
+Table T_CNRTSRVCFEE_HNTS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_DAT_ACC_RTN
+</td>
+<td>
+Table T_DAT_ACC_RTN seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_DDL_ITEMPVDRSSPS
+</td>
+<td>
+Table T_DDL_ITEMPVDRSSPS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_DRUGCLM
+</td>
+<td>
+Table T_DRUGCLM seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_FAX_CSFNCASEPVDR
+</td>
+<td>
+Table T_FAX_CSFNCASEPVDR seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_FAX_CSFNMEMBPCP
+</td>
+<td>
+Table T_FAX_CSFNMEMBPCP seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_FAX_CSFNPFNGPVDR
+</td>
+<td>
+Table T_FAX_CSFNPFNGPVDR seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_FAX_CSFNRQNGPVDR
+</td>
+<td>
+Table T_FAX_CSFNRQNGPVDR seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_GRIEVANCE
+</td>
+<td>
+Table T_GRIEVANCE seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_GRIEVANCE
+</td>
+<td>
+Table T_GRIEVANCE has 2 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_GRP_MEMS
+</td>
+<td>
+Table T_GRP_MEMS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_ICMGFAX
+</td>
+<td>
+Table T_ICMGFAX has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_LCNSLIST
+</td>
+<td>
+Table T_LCNSLIST seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_LTR_HEAD
+</td>
+<td>
+Table T_LTR_HEAD seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_LTR_TMPT
+</td>
+<td>
+Table T_LTR_TMPT has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_LWSTCOSTPVDR
+</td>
+<td>
+Table T_LWSTCOSTPVDR seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_MDCLREC_CSFNMEMS
+</td>
+<td>
+Table T_MDCLREC_CSFNMEMS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_MEMBPAYRDAT
+</td>
+<td>
+Table T_MEMBPAYRDAT seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_NOTE
+</td>
+<td>
+Index IX_NOTE_UM_BASENOTE (NOTE_UM_BASENOTE) is redundant because of IX_NOTE_BASENOTE_NID_CT_NCRTD (NOTE_UM_BASENOTE:NOTE_CRTD:CLASSTYPE:NOTE_ID)
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_NOTE
+</td>
+<td>
+Index IX_NOTE_NOTEDGIS (NOTE_NOTEDGIS) is redundant because of IX_NOTE_NOTEDGIS_NID_CT_NCRTD (NOTE_NOTEDGIS:NOTE_CRTD:CLASSTYPE:NOTE_ID)
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_NOTE
+</td>
+<td>
+Index IX_NOTE_MDCLSRVC (NOTE_MDCLSRVC) is redundant because of IX_NOTE_MDCLSRVC_NID_CT_NCRTD (NOTE_MDCLSRVC:NOTE_CRTD:CLASSTYPE:NOTE_ID)
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_NOTE
+</td>
+<td>
+Table T_NOTE has 2 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_NTCE
+</td>
+<td>
+Table T_NTCE has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PAT_ID_QRY
+</td>
+<td>
+Table T_PAT_ID_QRY has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PAYRPAYRDAT
+</td>
+<td>
+Table T_PAYRPAYRDAT seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PAYRSRVCSCTY
+</td>
+<td>
+Table T_PAYRSRVCSCTY seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PRMR
+</td>
+<td>
+Index IX_PERF_STT (PERF_STT) is redundant because of IX_PRMR_PERF_STT_PERF_USR (PERF_STT:PERF_USR)
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PRODCAT_CNTDPVDR
+</td>
+<td>
+Table T_PRODCAT_CNTDPVDR seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PRSC
+</td>
+<td>
+Table T_PRSC seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PVDRADVEGRP_PVRS
+</td>
+<td>
+Table T_PVDRADVEGRP_PVRS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PVDRAFFDHPTS
+</td>
+<td>
+Table T_PVDRAFFDHPTS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PVDRAFFDPHYS
+</td>
+<td>
+Table T_PVDRAFFDPHYS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PVDRPAYRDAT
+</td>
+<td>
+Table T_PVDRPAYRDAT seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PVDRPLNSAFFS
+</td>
+<td>
+Table T_PVDRPLNSAFFS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PVDR_DIR_DETAILS
+</td>
+<td>
+Table T_PVDR_DIR_DETAILS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_PVRSRQRGAUTH
+</td>
+<td>
+Table T_PVRSRQRGAUTH seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_REP_TMPT
+</td>
+<td>
+Table T_REP_TMPT seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_REVWHEAD
+</td>
+<td>
+Table T_REVWHEAD has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_REVWRCPTTRKG
+</td>
+<td>
+Table T_REVWRCPTTRKG seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_REVWREC
+</td>
+<td>
+Table T_REVWREC has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_REVWTRKGACTL
+</td>
+<td>
+Table T_REVWTRKGACTL seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTCAREBEAN
+</td>
+<td>
+Table T_SENTCAREBEAN seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTEDNLCNTT
+</td>
+<td>
+Table T_SENTEDNLCNTT seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTEMALRCTS
+</td>
+<td>
+Table T_SENTEMALRCTS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTTSK
+</td>
+<td>
+Index IX_SETK_AFFN_CM (SETK_AFFN_CM) is redundant because of T_SENTTSK_UX_CM_ID (SETK_AFFN_CM:SETK_ID)
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTTSK
+</td>
+<td>
+Index IX_SETK_OBJ_STT (SETK_OBJ_STT) is redundant because of IX_OBJ_STT_AFFN_MEMB_SETK_ID (SETK_OBJ_STT:SETK_AFFN_MEMB:SETK_ID)
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTTSK
+</td>
+<td>
+Index IX_SETK_AFFN_UM_EVNTREQT (SETK_AFFN_UM_EVNTREQT) is redundant because of T_SENTSK_UX_EVNTREQT_ID (SETK_AFFN_UM_EVNTREQT:SETK_ID)
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTTSK
+</td>
+<td>
+Index IX_SETK_ORIGRCPT (SETK_ORIGRCPT) is redundant because of T_SENTTSK_UX_ORIG_ID (SETK_ORIGRCPT:SETK_ID)
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTTSK
+</td>
+<td>
+Index IX_SETK_AFFN_MEMB (SETK_AFFN_MEMB) is redundant because of T_SENTTSK_UX_MEMB_ID (SETK_AFFN_MEMB:SETK_ID)
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTTSK
+</td>
+<td>
+Index IX_SETK_AFFN_UM_EXTN (SETK_AFFN_UM_EXTN) is redundant because of T_SENTTSK_UX_EXTN_ID (SETK_AFFN_UM_EXTN:SETK_ID)
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SENTTSK
+</td>
+<td>
+Index IX_SETK_AFFN_UM_EVNT (SETK_AFFN_UM_EVNT) is redundant because of T_SENTTSK_UX_EVNT_ID (SETK_AFFN_UM_EVNT:SETK_ID)
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SRVCDVONCNTR
+</td>
+<td>
+Table T_SRVCDVONCNTR seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SVGS
+</td>
+<td>
+Table T_SVGS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SVGSALT_COST
+</td>
+<td>
+Table T_SVGSALT_COST seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_SVGSCAT_DTLS
+</td>
+<td>
+Table T_SVGSCAT_DTLS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_TAKNASMTCC_BASE
+</td>
+<td>
+Table T_TAKNASMTCC_BASE has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_UM_CSFNRQNGPVRS
+</td>
+<td>
+Table T_UM_CSFNRQNGPVRS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_UM_EXTNNTCERCTS
+</td>
+<td>
+Table T_UM_EXTNNTCERCTS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_UM_NTCERCTS
+</td>
+<td>
+Table T_UM_NTCERCTS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR_BIOS
+</td>
+<td>
+Table T_USR_BIOS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR_DEVICE
+</td>
+<td>
+Table T_USR_DEVICE seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR_GRANT_DGIS_XREF
+</td>
+<td>
+Table T_USR_GRANT_DGIS_XREF seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR_GRANT_RESTRICTED_XREF
+</td>
+<td>
+Table T_USR_GRANT_RESTRICTED_XREF seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_WKFWTSK
+</td>
+<td>
+Index T_WKFWTSK_IX_WTSK_RFRDOBJ_TYP (WTSK_RFRDOBJ_TYP) is redundant because of IX_ROTYP_ROID_OBJ_STT_WTSK_ID (WTSK_RFRDOBJ_TYP:WTSK_RFRDOBJ_ID:WTSK_OBJ_STT:WTSK_ID:WTSK_DDLN_DT:WTSK_DDLN_TIM_IN_DY)
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td>
+REDUNDANT_INDEX
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_WKFWTSK
+</td>
+<td>
+Index IX_WKFWTSK_TYP (WTSK_WKFWTSK_TYP) is redundant because of IX_TYP_TYP_OBJ_STT_ID_CURRSTT (WTSK_WKFWTSK_TYP:WTSK_RFRDOBJ_TYP:WTSK_OBJ_STT:WTSK_RFRDOBJ_ID:WTSK_CURRSTT)
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td>
+INDEX_DEGREE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_WKFWTSK
+</td>
+<td>
+Table T_WKFWTSK has 1 indexes with DEGREE different than the table itself
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td>
+TABLE_STATS
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_XMPTPVRS
+</td>
+<td>
+Table T_XMPTPVRS seems empty (0 rows and 0 blocks)
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ TABLE_NAME                                NOT NULL VARCHAR2(128)
+ TABLESPACE_NAME                                    VARCHAR2(30)
+ CLUSTER_NAME                                       VARCHAR2(128)
+ IOT_NAME                                           VARCHAR2(128)
+ STATUS                                             VARCHAR2(8)
+ PCT_FREE                                           NUMBER
+ PCT_USED                                           NUMBER
+ INI_TRANS                                          NUMBER
+ MAX_TRANS                                          NUMBER
+ INITIAL_EXTENT                                     NUMBER
+ NEXT_EXTENT                                        NUMBER
+ MIN_EXTENTS                                        NUMBER
+ MAX_EXTENTS                                        NUMBER
+ PCT_INCREASE                                       NUMBER
+ FREELISTS                                          NUMBER
+ FREELIST_GROUPS                                    NUMBER
+ LOGGING                                            VARCHAR2(3)
+ BACKED_UP                                          VARCHAR2(1)
+ NUM_ROWS                                           NUMBER
+ BLOCKS                                             NUMBER
+ EMPTY_BLOCKS                                       NUMBER
+ AVG_SPACE                                          NUMBER
+ CHAIN_CNT                                          NUMBER
+ AVG_ROW_LEN                                        NUMBER
+ AVG_SPACE_FREELIST_BLOCKS                          NUMBER
+ NUM_FREELIST_BLOCKS                                NUMBER
+ DEGREE                                             VARCHAR2(10)
+ INSTANCES                                          VARCHAR2(10)
+ CACHE                                              VARCHAR2(5)
+ TABLE_LOCK                                         VARCHAR2(8)
+ SAMPLE_SIZE                                        NUMBER
+ LAST_ANALYZED                                      DATE
+ PARTITIONED                                        VARCHAR2(3)
+ IOT_TYPE                                           VARCHAR2(12)
+ TEMPORARY                                          VARCHAR2(1)
+ SECONDARY                                          VARCHAR2(1)
+ NESTED                                             VARCHAR2(3)
+ BUFFER_POOL                                        VARCHAR2(7)
+ FLASH_CACHE                                        VARCHAR2(7)
+ CELL_FLASH_CACHE                                   VARCHAR2(7)
+ ROW_MOVEMENT                                       VARCHAR2(8)
+ GLOBAL_STATS                                       VARCHAR2(3)
+ USER_STATS                                         VARCHAR2(3)
+ DURATION                                           VARCHAR2(15)
+ SKIP_CORRUPT                                       VARCHAR2(8)
+ MONITORING                                         VARCHAR2(3)
+ CLUSTER_OWNER                                      VARCHAR2(128)
+ DEPENDENCIES                                       VARCHAR2(8)
+ COMPRESSION                                        VARCHAR2(8)
+ COMPRESS_FOR                                       VARCHAR2(30)
+ DROPPED                                            VARCHAR2(3)
+ READ_ONLY                                          VARCHAR2(3)
+ SEGMENT_CREATED                                    VARCHAR2(3)
+ RESULT_CACHE                                       VARCHAR2(7)
+ CLUSTERING                                         VARCHAR2(3)
+ ACTIVITY_TRACKING                                  VARCHAR2(23)
+ DML_TIMESTAMP                                      VARCHAR2(25)
+ HAS_IDENTITY                                       VARCHAR2(3)
+ CONTAINER_DATA                                     VARCHAR2(3)
+ INMEMORY                                           VARCHAR2(8)
+ INMEMORY_PRIORITY                                  VARCHAR2(8)
+ INMEMORY_DISTRIBUTE                                VARCHAR2(15)
+ INMEMORY_COMPRESSION                               VARCHAR2(17)
+ INMEMORY_DUPLICATE                                 VARCHAR2(13)
+
+WITH tablespaces AS (SELECT /*+ MATERIALIZE */ tablespace_name, block_size
+                       FROM dba_tablespaces),
+     tables    AS (SELECT /*+ MATERIALIZE */ owner, table_name, tablespace_name, num_rows, blocks, last_analyzed, degree
+                     FROM dba_tables
+                    WHERE (owner, table_name) IN (SELECT object_owner, object_name
+                                                    FROM plan_table
+                                                   WHERE statement_id = 'LIST_OF_TABLES'
+                                                     AND remarks = '3hwq5m5h3gkaq')),
+     partitions AS (SELECT /*+ MATERIALIZE */ table_owner, table_name, partition_name, num_rows, blocks, last_analyzed
+                      FROM dba_tab_partitions
+                     WHERE (table_owner, table_name) IN (SELECT object_owner, object_name
+                                                           FROM plan_table
+                                                          WHERE statement_id = 'LIST_OF_TABLES'
+                                                            AND remarks = '3hwq5m5h3gkaq')),
+     table_and_part_stats AS (SELECT /*+ MATERIALIZE */ owner, table_name, partition_name, stale_stats, stattype_locked
+                                FROM dba_tab_statistics
+                               WHERE (owner, table_name) IN (SELECT object_owner, object_name
+                                                               FROM plan_table
+                                                              WHERE statement_id = 'LIST_OF_TABLES'
+                                                                AND remarks = '3hwq5m5h3gkaq')
+                                 AND subpartition_name IS NULL),
+     indexes    AS (SELECT /*+ MATERIALIZE */ table_owner, table_name, index_name, degree
+                      FROM dba_indexes
+                     WHERE (table_owner, table_name) IN (SELECT object_owner, object_name
+                                                           FROM plan_table
+                                                          WHERE statement_id = 'LIST_OF_TABLES'
+                                                            AND remarks = '3hwq5m5h3gkaq')),
+     ind_cols AS (SELECT col.index_owner, col.index_name, col.table_owner, col.table_name, idx.index_type, idx.uniqueness,
+                         MAX(CASE col.column_position WHEN 01 THEN      col.column_name END)||
+                         MAX(CASE col.column_position WHEN 02 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 03 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 04 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 05 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 06 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 07 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 08 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 09 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 10 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 11 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 12 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 13 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 14 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 15 THEN ':'||col.column_name END)||
+                         MAX(CASE col.column_position WHEN 16 THEN ':'||col.column_name END) indexed_columns
+                    FROM dba_ind_columns col,
+                         dba_indexes idx
+                   WHERE (idx.table_owner, idx.table_name) IN (SELECT object_owner, object_name
+                                                                 FROM plan_table
+                                                                WHERE statement_id = 'LIST_OF_TABLES'
+                                                                  AND remarks = '3hwq5m5h3gkaq')
+                     AND idx.owner = col.index_owner
+                     AND idx.index_name = col.index_name
+                   GROUP BY col.index_owner,col.index_name,col.table_owner,col.table_name,idx.index_type,idx.uniqueness)
+     , tab_stats_history AS (SELECT o.owner, o.object_name, h.analyzetime, h.rowcnt
+                               FROM sys.wri$_optstat_tab_history h,
+                                    dba_objects o
+                              WHERE (o.owner, o.object_name) IN (SELECT object_owner, object_name
+                                                                   FROM plan_table
+                                                                  WHERE statement_id = 'LIST_OF_TABLES'
+                                                                    AND remarks = '3hwq5m5h3gkaq')
+                                AND o.object_type = 'TABLE'
+                                AND o.object_id = h.obj#
+                                AND 'Y' = 'Y'
+                              UNION ALL
+                             SELECT owner, table_name, last_analyzed, num_rows
+                               FROM tables
+                            )
+SELECT scope, owner, table_name, message
+  FROM (SELECT 'TABLE_STATS' scope, owner, table_name,  'Table '||table_name||' has statistics more than a month old ('||TRUNC(SYSDATE-last_analyzed)||' days old)' message
+          FROM tables
+         WHERE last_analyzed < ADD_MONTHS(TRUNC(SYSDATE),-1)
+         UNION ALL
+        SELECT 'TABLE_STALE_STATS', owner, table_name,  'Table '||table_name||' has stale stats'
+          FROM table_and_part_stats
+         WHERE stale_stats = 'YES'
+           AND partition_name IS NULL
+         UNION ALL
+        SELECT 'TABLE_LOCKED_STATS', owner, table_name,  'Table '||table_name||' has locked stats'
+          FROM table_and_part_stats
+         WHERE stattype_locked IN ('ALL','DATA')
+           AND partition_name IS NULL
+         UNION ALL
+        SELECT 'TABLE_MISSING_STATS', owner, table_name,  'Table '||table_name||' has no stats'
+          FROM tables
+         WHERE num_rows IS NULL
+         UNION ALL
+        SELECT 'PARTITION_STATS', table_owner, table_name,  'Table '||table_name||' has '||num_old_parts||' partition(s) with statistics more than a month old'
+          FROM (SELECT COUNT(*) num_old_parts, table_owner, table_name
+                  FROM partitions
+                 WHERE last_analyzed < ADD_MONTHS(TRUNC(SYSDATE),-1)
+                 GROUP BY table_owner, table_name)
+         WHERE num_old_parts > 0
+         UNION ALL
+        SELECT 'PARTITION_STALE_STATS', owner, table_name,  'Table partition '||table_name||'.'||partition_name||' has stale stats'
+          FROM table_and_part_stats
+         WHERE stale_stats = 'YES'
+           AND partition_name IS NOT NULL
+         UNION ALL
+        SELECT 'PARTITION_LOCKED_STATS', owner, table_name,  'Table partition '||table_name||'.'||partition_name||' has locked stats'
+          FROM table_and_part_stats
+         WHERE stattype_locked IN ('ALL','DATA')
+           AND partition_name IS NOT NULL
+         UNION ALL
+        SELECT 'PARTITION_MISSING_STATS', table_owner, table_name,  'Table partition '||table_name||'.'||partition_name||' has no stats'
+          FROM partitions
+         WHERE num_rows IS NULL
+         UNION ALL
+        SELECT 'TABLE_STATS', owner, table_name,  'Table '||table_name||' stores 0 rows but accounts for more than 0 blocks'
+          FROM tables
+         WHERE num_rows = 0 and blocks > 0
+         UNION ALL
+        SELECT 'PARTITION_STATS', table_owner, table_name||'.'||partition_name,  'Table partition '||table_name||'.'||partition_name||' stores 0 rows but accounts for more than 0 blocks'
+          FROM partitions
+         WHERE num_rows = 0 and blocks > 0
+         UNION ALL
+        SELECT 'TABLE_STATS', owner, table_name,  'Table '||table_name||' seems empty (0 rows and 0 blocks)'
+          FROM tables
+         WHERE num_rows = 0 and blocks = 0
+         UNION ALL
+        SELECT 'PARTITION_STATS', table_owner, table_name||'.'||partition_name,  'Table partition '||table_name||'.'||partition_name||' seems empty (0 rows and 0 blocks)'
+          FROM partitions
+         WHERE num_rows = 0 and blocks = 0
+         UNION ALL
+        SELECT 'TABLE_DEGREE', owner, table_name,  'Table '||table_name||' has a non-default DEGREE ('||TRIM(degree)||')'
+          FROM tables
+         WHERE TRIM(degree) <> '1'
+         UNION ALL
+        SELECT 'TABLE_DEGREE', owner, table_name,  'Table '||table_name||' is smaller than 1G in size ('||TRUNC((tbs.block_size * t.blocks)/POWER(10,9),3)||'G) but has DEGREE different than 1 ('||TRIM(degree)||')'
+          FROM tables t, tablespaces tbs
+         WHERE t.tablespace_name = tbs.tablespace_name
+           AND TRIM(degree) <> '1'
+           AND (tbs.block_size * t.blocks)/POWER(10,9) <= 1
+         UNION ALL
+        SELECT 'INDEX_DEGREE', tables.owner, tables.table_name, 'Table '||tables.table_name||' has '||COUNT(*)||' indexes with DEGREE different than the table itself'
+          FROM tables,
+               indexes
+         WHERE tables.owner = indexes.table_owner
+           AND tables.table_name = indexes.table_name
+           AND TRIM(tables.degree) <> TRIM(indexes.degree)
+         GROUP BY tables.owner, tables.table_name
+         HAVING COUNT(*) > 0
+         UNION ALL
+        SELECT 'REDUNDANT_INDEX', r.table_owner, r.table_name, 'Index '||r.index_name||' ('||r.indexed_columns||') is redundant because of '||i.index_name||' ('||i.indexed_columns||')'
+          FROM ind_cols r,
+               ind_cols i
+         WHERE i.table_owner = r.table_owner
+           AND i.table_name = r.table_name
+           AND i.index_type = r.index_type
+           AND i.index_name != r.index_name
+           AND i.indexed_columns LIKE r.indexed_columns||':%'
+           AND r.uniqueness = 'NONUNIQUE'
+         UNION ALL
+         SELECT 'TABLE_STATS_HISTORY', owner, table_name, 'Stats were 0 at some point, starting '||init_zero||' up until stats gathering on '||end_zero
+           FROM (SELECT owner, object_name table_name, to_char(init_zero,'YYYY-MM-DD/HH24:MI:SS') init_zero, to_char(end_zero,'YYYY-MM-DD/HH24:MI:SS') end_zero
+                   FROM tab_stats_history
+                   MATCH_RECOGNIZE (
+                     PARTITION BY owner, object_name ORDER BY analyzetime
+                     MEASURES FIRST(iszero.analyzetime) init_zero,
+                              FIRST(a_nonzero.analyzetime) end_zero
+                     --ALL ROWS PER MATCH
+                     AFTER MATCH SKIP TO FIRST a_nonzero
+                     PATTERN (b_nonzero+ iszero+ a_nonzero+)
+                     DEFINE b_nonzero AS rowcnt <> 0,
+                            iszero  AS rowcnt = 0,
+                            a_nonzero AS rowcnt <> 0
+                   )
+                )
+        )
+ ORDER BY owner, table_name, scope DESC;
+
+84 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/16:40:37 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_LAS_ACT" = :B4 ,"USR_) </font>
+</body>
+</html>

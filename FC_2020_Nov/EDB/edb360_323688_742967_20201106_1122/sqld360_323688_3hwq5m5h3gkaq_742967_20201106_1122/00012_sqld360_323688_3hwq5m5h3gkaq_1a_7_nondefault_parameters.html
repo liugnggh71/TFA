@@ -1,0 +1,10258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_3hwq5m5h3gkaq_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Non-default Parameters</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00012_sqld360_323688_3hwq5m5h3gkaq_1a_7_nondefault_parameters.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 1a.7. Non-default Parameters <em>(GV$SYSTEM_PARAMETER2)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+INST_ID
+</th>
+<th scope="col">
+NUM
+</th>
+<th scope="col">
+NAME
+</th>
+<th scope="col">
+TYPE
+</th>
+<th scope="col">
+VALUE
+</th>
+<th scope="col">
+DISPLAY_VALUE
+</th>
+<th scope="col">
+ISDEFA
+</th>
+<th scope="col">
+ISSES
+</th>
+<th scope="col">
+ISSYS_MOD
+</th>
+<th scope="col">
+ISPDB
+</th>
+<th scope="col">
+ISINS
+</th>
+<th scope="col">
+ISMODIFI
+</th>
+<th scope="col">
+ISADJ
+</th>
+<th scope="col">
+ISDEP
+</th>
+<th scope="col">
+ISBAS
+</th>
+<th scope="col">
+DESCRIPTION
+</th>
+<th scope="col">
+ORDINAL
+</th>
+<th scope="col">
+UPDATE_COMMENT
+</th>
+<th scope="col">
+CON_ID
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1846
+</td>
+<td>
+_bct_public_dba_buffer_size
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+16777200
+</td>
+<td>
+16777200
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+total size of all public change tracking dba buffers, in bytes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+_bct_public_dba_buffer_size
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 120
+</td>
+<td>
+_enable_NUMA_support
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Enable NUMA support and optimizations
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 120
+</td>
+<td>
+_enable_NUMA_support
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Enable NUMA support and optimizations
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2844
+</td>
+<td>
+_parallel_adaptive_max_users
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+maximum number of users running with default DOP
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2844
+</td>
+<td>
+_parallel_adaptive_max_users
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+maximum number of users running with default DOP
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2947
+</td>
+<td>
+_smm_auto_max_io_size
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1024
+</td>
+<td>
+1024
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Maximum IO size (in KB) used by sort/hash-join in auto mode
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2947
+</td>
+<td>
+_smm_auto_max_io_size
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1024
+</td>
+<td>
+1024
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Maximum IO size (in KB) used by sort/hash-join in auto mode
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3489
+</td>
+<td>
+aq_tm_processes
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+number of AQ Time Managers to start
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3489
+</td>
+<td>
+aq_tm_processes
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+number of AQ Time Managers to start
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1551
+</td>
+<td>
+archive_lag_target
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Maximum number of seconds of redos the standby could lose
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1551
+</td>
+<td>
+archive_lag_target
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Maximum number of seconds of redos the standby could lose
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2487
+</td>
+<td>
+audit_sys_operations
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable sys auditing
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2487
+</td>
+<td>
+audit_sys_operations
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable sys auditing
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2743
+</td>
+<td>
+audit_trail
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DB
+</td>
+<td>
+DB
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable system auditing
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2743
+</td>
+<td>
+audit_trail
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DB
+</td>
+<td>
+DB
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable system auditing
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1607
+</td>
+<td>
+cluster_database
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+if TRUE startup in cluster database mode
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1607
+</td>
+<td>
+cluster_database
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+if TRUE startup in cluster database mode
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 619
+</td>
+<td>
+cluster_interconnects
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+192.168.132.26:192.168.132.27
+</td>
+<td>
+192.168.132.26:192.168.132.27
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+interconnects for RAC use
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 619
+</td>
+<td>
+cluster_interconnects
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+192.168.132.28:192.168.132.29
+</td>
+<td>
+192.168.132.28:192.168.132.29
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+interconnects for RAC use
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1409
+</td>
+<td>
+compatible
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+12.1.0.2.0
+</td>
+<td>
+12.1.0.2.0
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Database will be completely compatible with this software version
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1409
+</td>
+<td>
+compatible
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+12.1.0.2.0
+</td>
+<td>
+12.1.0.2.0
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Database will be completely compatible with this software version
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1224
+</td>
+<td>
+control_file_record_keep_time
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+39
+</td>
+<td>
+39
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+control file record keep time in days
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1224
+</td>
+<td>
+control_file_record_keep_time
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+39
+</td>
+<td>
+39
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+control file record keep time in days
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1213
+</td>
+<td>
+control_files
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_iad3vt/CONTROLFILE/control.ctl
+</td>
+<td>
++DATAC1/PRD_iad3vt/CONTROLFILE/control.ctl
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+control file names list
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1213
+</td>
+<td>
+control_files
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_iad3vt/CONTROLFILE/control.ctl
+</td>
+<td>
++DATAC1/PRD_iad3vt/CONTROLFILE/control.ctl
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+control file names list
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3792
+</td>
+<td>
+control_management_pack_access
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DIAGNOSTIC+TUNING
+</td>
+<td>
+DIAGNOSTIC+TUNING
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+declares which manageability packs are enabled
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3792
+</td>
+<td>
+control_management_pack_access
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DIAGNOSTIC+TUNING
+</td>
+<td>
+DIAGNOSTIC+TUNING
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+declares which manageability packs are enabled
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2599
+</td>
+<td>
+cursor_sharing
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+FORCE
+</td>
+<td>
+FORCE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+cursor sharing mode
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2599
+</td>
+<td>
+cursor_sharing
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+FORCE
+</td>
+<td>
+FORCE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+cursor sharing mode
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2170
+</td>
+<td>
+db_block_checking
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+OFF
+</td>
+<td>
+OFF
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+header checking and data and index block checking
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2170
+</td>
+<td>
+db_block_checking
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+OFF
+</td>
+<td>
+OFF
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+header checking and data and index block checking
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1233
+</td>
+<td>
+db_block_checksum
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+TYPICAL
+</td>
+<td>
+TYPICAL
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+store checksum in db blocks and check during reads
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1233
+</td>
+<td>
+db_block_checksum
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+TYPICAL
+</td>
+<td>
+TYPICAL
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+store checksum in db blocks and check during reads
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1235
+</td>
+<td>
+db_block_size
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+8192
+</td>
+<td>
+8192
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Size of database block in bytes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1235
+</td>
+<td>
+db_block_size
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+8192
+</td>
+<td>
+8192
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Size of database block in bytes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1611
+</td>
+<td>
+db_create_file_dest
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1
+</td>
+<td>
++DATAC1
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+default database location
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1611
+</td>
+<td>
+db_create_file_dest
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1
+</td>
+<td>
++DATAC1
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+default database location
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1612
+</td>
+<td>
+db_create_online_log_dest_1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1
+</td>
+<td>
++DATAC1
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+online log/controlfile destination #1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1612
+</td>
+<td>
+db_create_online_log_dest_1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1
+</td>
+<td>
++DATAC1
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+online log/controlfile destination #1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2509
+</td>
+<td>
+db_domain
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+directory part of global database name stored with CREATE DATABASE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2509
+</td>
+<td>
+db_domain
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+directory part of global database name stored with CREATE DATABASE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1222
+</td>
+<td>
+db_file_name_convert
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_PHX2XR
+</td>
+<td>
++DATAC1/PRD_PHX2XR
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+datafile name convert patterns and strings for standby/clone db
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1222
+</td>
+<td>
+db_file_name_convert
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_IAD3VT
+</td>
+<td>
++DATAC1/PRD_IAD3VT
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+datafile name convert patterns and strings for standby/clone db
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1222
+</td>
+<td>
+db_file_name_convert
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_PHX2XR
+</td>
+<td>
++DATAC1/PRD_PHX2XR
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+datafile name convert patterns and strings for standby/clone db
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1222
+</td>
+<td>
+db_file_name_convert
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_IAD3VT
+</td>
+<td>
++DATAC1/PRD_IAD3VT
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+datafile name convert patterns and strings for standby/clone db
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1601
+</td>
+<td>
+db_files
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1024
+</td>
+<td>
+1024
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+max allowable # db files
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1601
+</td>
+<td>
+db_files
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1024
+</td>
+<td>
+1024
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+max allowable # db files
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1864
+</td>
+<td>
+db_flashback_retention_target
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1440
+</td>
+<td>
+1440
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Maximum Flashback Database log retention time in minutes.
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1864
+</td>
+<td>
+db_flashback_retention_target
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1440
+</td>
+<td>
+1440
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Maximum Flashback Database log retention time in minutes.
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1729
+</td>
+<td>
+db_lost_write_protect
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+typical
+</td>
+<td>
+typical
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable lost write detection
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1729
+</td>
+<td>
+db_lost_write_protect
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+typical
+</td>
+<td>
+typical
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable lost write detection
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2768
+</td>
+<td>
+db_name
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD
+</td>
+<td>
+PRD
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+database name specified in CREATE DATABASE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2768
+</td>
+<td>
+db_name
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD
+</td>
+<td>
+PRD
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+database name specified in CREATE DATABASE
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1617
+</td>
+<td>
+db_recovery_file_dest
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++RECOC1
+</td>
+<td>
++RECOC1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+default database recovery file location
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1617
+</td>
+<td>
+db_recovery_file_dest
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++RECOC1
+</td>
+<td>
++RECOC1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+default database recovery file location
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1618
+</td>
+<td>
+db_recovery_file_dest_size
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+31041876131840
+</td>
+<td>
+28910G
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+database recovery files size limit
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1618
+</td>
+<td>
+db_recovery_file_dest_size
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+31041876131840
+</td>
+<td>
+28910G
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+database recovery files size limit
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2769
+</td>
+<td>
+db_unique_name
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD_iad3vt
+</td>
+<td>
+PRD_iad3vt
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Database Unique Name
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2769
+</td>
+<td>
+db_unique_name
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRD_iad3vt
+</td>
+<td>
+PRD_iad3vt
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Database Unique Name
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3548
+</td>
+<td>
+dg_broker_config_file1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_IAD3VT/DGCONFIG/dr1prd.dat
+</td>
+<td>
++DATAC1/PRD_IAD3VT/DGCONFIG/dr1prd.dat
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+data guard broker configuration file #1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3548
+</td>
+<td>
+dg_broker_config_file1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_IAD3VT/DGCONFIG/dr1prd.dat
+</td>
+<td>
++DATAC1/PRD_IAD3VT/DGCONFIG/dr1prd.dat
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+data guard broker configuration file #1
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3549
+</td>
+<td>
+dg_broker_config_file2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_IAD3VT/DGCONFIG/dr2prd.dat
+</td>
+<td>
++DATAC1/PRD_IAD3VT/DGCONFIG/dr2prd.dat
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+data guard broker configuration file #2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3549
+</td>
+<td>
+dg_broker_config_file2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_IAD3VT/DGCONFIG/dr2prd.dat
+</td>
+<td>
++DATAC1/PRD_IAD3VT/DGCONFIG/dr2prd.dat
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+data guard broker configuration file #2
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3547
+</td>
+<td>
+dg_broker_start
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+start Data Guard broker (DMON process)
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3547
+</td>
+<td>
+dg_broker_start
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+start Data Guard broker (DMON process)
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3877
+</td>
+<td>
+diagnostic_dest
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+/u02/app/oracle
+</td>
+<td>
+/u02/app/oracle
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+diagnostic base directory
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+67
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3877
+</td>
+<td>
+diagnostic_dest
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+/u02/app/oracle
+</td>
+<td>
+/u02/app/oracle
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+diagnostic base directory
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+68
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2511
+</td>
+<td>
+distributed_lock_timeout
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+360
+</td>
+<td>
+360
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+number of seconds a distributed transaction waits for a lock
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+69
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2511
+</td>
+<td>
+distributed_lock_timeout
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+360
+</td>
+<td>
+360
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+number of seconds a distributed transaction waits for a lock
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+70
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3455
+</td>
+<td>
+enable_ddl_logging
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable ddl logging
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+71
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3455
+</td>
+<td>
+enable_ddl_logging
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable ddl logging
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+72
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3938
+</td>
+<td>
+enable_pluggable_database
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Enable Pluggable Database
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+73
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3938
+</td>
+<td>
+enable_pluggable_database
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Enable Pluggable Database
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+74
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+encrypt_new_tablespaces
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+ALWAYS
+</td>
+<td>
+ALWAYS
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+whether to encrypt newly created tablespaces
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+75
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 512
+</td>
+<td>
+encrypt_new_tablespaces
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+ALWAYS
+</td>
+<td>
+ALWAYS
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+whether to encrypt newly created tablespaces
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+76
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1491
+</td>
+<td>
+fal_client
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRDPRIM
+</td>
+<td>
+PRDPRIM
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FAL client
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+77
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1491
+</td>
+<td>
+fal_client
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PRDPRIM
+</td>
+<td>
+PRDPRIM
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FAL client
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+78
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1492
+</td>
+<td>
+fal_server
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PSDSTBY
+</td>
+<td>
+PSDSTBY
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FAL server list
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+79
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1492
+</td>
+<td>
+fal_server
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+PSDSTBY
+</td>
+<td>
+PSDSTBY
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FAL server list
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+80
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1721
+</td>
+<td>
+fast_start_mttr_target
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+300
+</td>
+<td>
+300
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+MTTR target in seconds
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+81
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1721
+</td>
+<td>
+fast_start_mttr_target
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+300
+</td>
+<td>
+300
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+MTTR target in seconds
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+82
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 303
+</td>
+<td>
+filesystemio_options
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+setall
+</td>
+<td>
+setall
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IO operations on filesystem files
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+83
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 303
+</td>
+<td>
+filesystemio_options
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+setall
+</td>
+<td>
+setall
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IO operations on filesystem files
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+84
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2510
+</td>
+<td>
+global_names
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enforce that database links have same name as remote database
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+85
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2510
+</td>
+<td>
+global_names
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enforce that database links have same name as remote database
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+86
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2159
+</td>
+<td>
+inmemory_size
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+1610612736
+</td>
+<td>
+1536M
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+size in bytes of in-memory area
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+87
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2159
+</td>
+<td>
+inmemory_size
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+1610612736
+</td>
+<td>
+1536M
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+size in bytes of in-memory area
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+88
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2071
+</td>
+<td>
+instance_number
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+instance number
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+89
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2071
+</td>
+<td>
+instance_number
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+instance number
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+90
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2585
+</td>
+<td>
+job_queue_processes
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1000
+</td>
+<td>
+1000
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+maximum number of job queue slave processes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+91
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2585
+</td>
+<td>
+job_queue_processes
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1000
+</td>
+<td>
+1000
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+maximum number of job queue slave processes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+92
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1511
+</td>
+<td>
+log_archive_config
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DG_CONFIG=(PRD_IAD3VT,PRD_PHX2XR,CLSTD_UNIQ)
+</td>
+<td>
+DG_CONFIG=(PRD_IAD3VT,PRD_PHX2XR,CLSTD_UNIQ)
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+log archive config parameter
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+93
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1511
+</td>
+<td>
+log_archive_config
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DG_CONFIG=(PRD_IAD3VT,PRD_PHX2XR,CLSTD_UNIQ)
+</td>
+<td>
+DG_CONFIG=(PRD_IAD3VT,PRD_PHX2XR,CLSTD_UNIQ)
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+log archive config parameter
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+94
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1420
+</td>
+<td>
+log_archive_dest_1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+location=USE_DB_RECOVERY_FILE_DEST
+</td>
+<td>
+location=USE_DB_RECOVERY_FILE_DEST
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+archival destination #1 text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+95
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1420
+</td>
+<td>
+log_archive_dest_1
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+location=USE_DB_RECOVERY_FILE_DEST
+</td>
+<td>
+location=USE_DB_RECOVERY_FILE_DEST
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+archival destination #1 text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+96
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1421
+</td>
+<td>
+log_archive_dest_2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+SERVICE=PSDSTBY LGWR ASYNC REGISTER VALID_FOR=(online_logfile,primary_role) REOPEN=60 DB_UNIQUE_NAME=PRD_PHX2XR
+</td>
+<td>
+SERVICE=PSDSTBY LGWR ASYNC REGISTER VALID_FOR=(online_logfile,primary_role) REOPEN=60 DB_UNIQUE_NAME=PRD_PHX2XR
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+archival destination #2 text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+97
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1421
+</td>
+<td>
+log_archive_dest_2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+SERVICE=PSDSTBY LGWR ASYNC REGISTER VALID_FOR=(online_logfile,primary_role) REOPEN=60 DB_UNIQUE_NAME=PRD_PHX2XR
+</td>
+<td>
+SERVICE=PSDSTBY LGWR ASYNC REGISTER VALID_FOR=(online_logfile,primary_role) REOPEN=60 DB_UNIQUE_NAME=PRD_PHX2XR
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+archival destination #2 text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+98
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1422
+</td>
+<td>
+log_archive_dest_3
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+SERVICE=CLSTD ARCH DB_UNIQUE_NAME=CLSTD_UNIQ
+</td>
+<td>
+SERVICE=CLSTD ARCH DB_UNIQUE_NAME=CLSTD_UNIQ
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+archival destination #3 text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+99
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1422
+</td>
+<td>
+log_archive_dest_3
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+SERVICE=CLSTD ARCH DB_UNIQUE_NAME=CLSTD_UNIQ
+</td>
+<td>
+SERVICE=CLSTD ARCH DB_UNIQUE_NAME=CLSTD_UNIQ
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+archival destination #3 text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1452
+</td>
+<td>
+log_archive_dest_state_2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+ENABLE
+</td>
+<td>
+ENABLE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+archival destination #2 state text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+101
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1452
+</td>
+<td>
+log_archive_dest_state_2
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+ENABLE
+</td>
+<td>
+ENABLE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+archival destination #2 state text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+102
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1453
+</td>
+<td>
+log_archive_dest_state_3
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+enable
+</td>
+<td>
+enable
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+archival destination #3 state text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+103
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1453
+</td>
+<td>
+log_archive_dest_state_3
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+enable
+</td>
+<td>
+enable
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+archival destination #3 state text string
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+104
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1516
+</td>
+<td>
+log_archive_format
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+%t_%s_%r.dbf
+</td>
+<td>
+%t_%s_%r.dbf
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+archival destination format
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+105
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1516
+</td>
+<td>
+log_archive_format
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+%t_%s_%r.dbf
+</td>
+<td>
+%t_%s_%r.dbf
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+archival destination format
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+106
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1529
+</td>
+<td>
+log_archive_max_processes
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+4
+</td>
+<td>
+4
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+maximum number of active ARCH processes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+107
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1529
+</td>
+<td>
+log_archive_max_processes
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+4
+</td>
+<td>
+4
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+maximum number of active ARCH processes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+108
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1485
+</td>
+<td>
+log_archive_min_succeed_dest
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+minimum number of archive destinations that must succeed
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+109
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1485
+</td>
+<td>
+log_archive_min_succeed_dest
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+minimum number of archive destinations that must succeed
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+110
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1482
+</td>
+<td>
+log_archive_start
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+start archival process on SGA initialization
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+111
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1482
+</td>
+<td>
+log_archive_start
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+start archival process on SGA initialization
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+112
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1495
+</td>
+<td>
+log_archive_trace
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+8191
+</td>
+<td>
+8191
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Establish archivelog operation tracing level
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+113
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1495
+</td>
+<td>
+log_archive_trace
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+8191
+</td>
+<td>
+8191
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Establish archivelog operation tracing level
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+114
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1544
+</td>
+<td>
+log_buffer
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+67108864
+</td>
+<td>
+64M
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+redo circular buffer size
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+log buffer update
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+115
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1544
+</td>
+<td>
+log_buffer
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+67108864
+</td>
+<td>
+64M
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+redo circular buffer size
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+log buffer update
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+116
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1223
+</td>
+<td>
+log_file_name_convert
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_PHX2XR
+</td>
+<td>
++DATAC1/PRD_PHX2XR
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+logfile name convert patterns and strings for standby/clone db
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+117
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1223
+</td>
+<td>
+log_file_name_convert
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_IAD3VT
+</td>
+<td>
++DATAC1/PRD_IAD3VT
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+logfile name convert patterns and strings for standby/clone db
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+118
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1223
+</td>
+<td>
+log_file_name_convert
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_PHX2XR
+</td>
+<td>
++DATAC1/PRD_PHX2XR
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+logfile name convert patterns and strings for standby/clone db
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+119
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1223
+</td>
+<td>
+log_file_name_convert
+</td>
+<td align="right">
+                   2
+</td>
+<td>
++DATAC1/PRD_IAD3VT
+</td>
+<td>
++DATAC1/PRD_IAD3VT
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+logfile name convert patterns and strings for standby/clone db
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+120
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 281
+</td>
+<td>
+nls_date_format
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MM/DD/YYYY HH24:MI
+</td>
+<td>
+MM/DD/YYYY HH24:MI
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+NLS Oracle date format
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+121
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 281
+</td>
+<td>
+nls_date_format
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+MM/DD/YYYY HH24:MI
+</td>
+<td>
+MM/DD/YYYY HH24:MI
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+NLS Oracle date format
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+122
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2770
+</td>
+<td>
+open_cursors
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+65535
+</td>
+<td>
+65535
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+max # cursors per session
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+123
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2770
+</td>
+<td>
+open_cursors
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+65535
+</td>
+<td>
+65535
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+max # cursors per session
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+124
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2871
+</td>
+<td>
+optimizer_index_caching
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+90
+</td>
+<td>
+90
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+optimizer percent index caching
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+125
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2871
+</td>
+<td>
+optimizer_index_caching
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+90
+</td>
+<td>
+90
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+optimizer percent index caching
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+126
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2870
+</td>
+<td>
+optimizer_index_cost_adj
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+optimizer index cost adjustment
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+127
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2870
+</td>
+<td>
+optimizer_index_cost_adj
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+optimizer index cost adjustment
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+128
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2773
+</td>
+<td>
+os_authent_prefix
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+prefix for auto-logon accounts
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+129
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2773
+</td>
+<td>
+os_authent_prefix
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+prefix for auto-logon accounts
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+130
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2841
+</td>
+<td>
+parallel_adaptive_multi_user
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable adaptive setting of degree for multiple user streams
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+131
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2841
+</td>
+<td>
+parallel_adaptive_multi_user
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+enable adaptive setting of degree for multiple user streams
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+132
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2842
+</td>
+<td>
+parallel_threads_per_cpu
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+number of parallel execution threads per CPU
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+133
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2842
+</td>
+<td>
+parallel_threads_per_cpu
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+number of parallel execution threads per CPU
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+134
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2942
+</td>
+<td>
+pga_aggregate_target
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+75161927680
+</td>
+<td>
+70G
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Target size for the aggregate PGA memory consumed by the instance
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+135
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2942
+</td>
+<td>
+pga_aggregate_target
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+75161927680
+</td>
+<td>
+70G
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Target size for the aggregate PGA memory consumed by the instance
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+136
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 128
+</td>
+<td>
+pre_page_sga
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+pre-page sga for process
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+137
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 128
+</td>
+<td>
+pre_page_sga
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+pre-page sga for process
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+138
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  42
+</td>
+<td>
+processes
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+4096
+</td>
+<td>
+4096
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+user processes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+139
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  42
+</td>
+<td>
+processes
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+4096
+</td>
+<td>
+4096
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+user processes
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+140
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2174
+</td>
+<td>
+recyclebin
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+on
+</td>
+<td>
+on
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+DEFERRED
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+recyclebin processing
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+141
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2174
+</td>
+<td>
+recyclebin
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+on
+</td>
+<td>
+on
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+DEFERRED
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+recyclebin processing
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+142
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2533
+</td>
+<td>
+remote_listener
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+aupp-hroradb-f9exx-scan.hlthedgexap.pvthlthedgeprod.oraclevcn.com:1521
+</td>
+<td>
+aupp-hroradb-f9exx-scan.hlthedgexap.pvthlthedgeprod.oraclevcn.com:1521
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+remote listener
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+143
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2533
+</td>
+<td>
+remote_listener
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+aupp-hroradb-f9exx-scan.hlthedgexap.pvthlthedgeprod.oraclevcn.com:1521
+</td>
+<td>
+aupp-hroradb-f9exx-scan.hlthedgexap.pvthlthedgeprod.oraclevcn.com:1521
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+remote listener
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+144
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2483
+</td>
+<td>
+remote_login_passwordfile
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+EXCLUSIVE
+</td>
+<td>
+EXCLUSIVE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+password file usage parameter
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+145
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2483
+</td>
+<td>
+remote_login_passwordfile
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+EXCLUSIVE
+</td>
+<td>
+EXCLUSIVE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+password file usage parameter
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+146
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                3450
+</td>
+<td>
+sec_protocol_error_further_action
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DROP,3
+</td>
+<td>
+DROP,3
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TTC protocol error continue action
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+147
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                3450
+</td>
+<td>
+sec_protocol_error_further_action
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+DROP,3
+</td>
+<td>
+DROP,3
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TTC protocol error continue action
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+148
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  43
+</td>
+<td>
+sessions
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+3096
+</td>
+<td>
+3096
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+user and system sessions
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+149
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                  43
+</td>
+<td>
+sessions
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+3096
+</td>
+<td>
+3096
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+user and system sessions
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+150
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1181
+</td>
+<td>
+sga_target
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+214748364800
+</td>
+<td>
+200G
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Target size of SGA
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+151
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1181
+</td>
+<td>
+sga_target
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+214748364800
+</td>
+<td>
+200G
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+Target size of SGA
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+152
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2566
+</td>
+<td>
+smtp_out_server
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+192.168.121.140:25
+</td>
+<td>
+192.168.121.140:25
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+utl_smtp server and port configuration parameter
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+153
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2566
+</td>
+<td>
+smtp_out_server
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+192.168.121.140:25
+</td>
+<td>
+192.168.121.140:25
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+utl_smtp server and port configuration parameter
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+154
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2780
+</td>
+<td>
+sql92_security
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+require select privilege for searched update/delete
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+155
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2780
+</td>
+<td>
+sql92_security
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+TRUE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+require select privilege for searched update/delete
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+156
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1620
+</td>
+<td>
+standby_file_management
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+AUTO
+</td>
+<td>
+AUTO
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+if auto then files are created/dropped automatically on standby
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+157
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1620
+</td>
+<td>
+standby_file_management
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+AUTO
+</td>
+<td>
+AUTO
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+if auto then files are created/dropped automatically on standby
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+158
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                1712
+</td>
+<td>
+thread
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Redo thread to mount
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+159
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                1712
+</td>
+<td>
+thread
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Redo thread to mount
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+160
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                2003
+</td>
+<td>
+undo_tablespace
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+UNDOTBS1
+</td>
+<td>
+UNDOTBS1
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+use/switch undo tablespace
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+161
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                2003
+</td>
+<td>
+undo_tablespace
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+UNDOTBS2
+</td>
+<td>
+UNDOTBS2
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+IMMEDIATE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+TRUE
+</td>
+<td>
+use/switch undo tablespace
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+162
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 123
+</td>
+<td>
+use_large_pages
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+ONLY
+</td>
+<td>
+ONLY
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Use large pages if available (TRUE/FALSE/ONLY)
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+<tr>
+<td>
+163
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                 123
+</td>
+<td>
+use_large_pages
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+ONLY
+</td>
+<td>
+ONLY
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+FALSE
+</td>
+<td>
+Use large pages if available (TRUE/FALSE/ONLY)
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_ID                                            NUMBER
+ NUM                                                NUMBER
+ NAME                                               VARCHAR2(80)
+ TYPE                                               NUMBER
+ VALUE                                              VARCHAR2(4000)
+ DISPLAY_VALUE                                      VARCHAR2(4000)
+ ISDEFAULT                                          VARCHAR2(6)
+ ISSES_MODIFIABLE                                   VARCHAR2(5)
+ ISSYS_MODIFIABLE                                   VARCHAR2(9)
+ ISPDB_MODIFIABLE                                   VARCHAR2(5)
+ ISINSTANCE_MODIFIABLE                              VARCHAR2(5)
+ ISMODIFIED                                         VARCHAR2(8)
+ ISADJUSTED                                         VARCHAR2(5)
+ ISDEPRECATED                                       VARCHAR2(5)
+ ISBASIC                                            VARCHAR2(5)
+ DESCRIPTION                                        VARCHAR2(255)
+ ORDINAL                                            NUMBER
+ UPDATE_COMMENT                                     VARCHAR2(255)
+ CON_ID                                             NUMBER
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM gv$system_parameter2
+ WHERE isdefault = 'FALSE'
+ ORDER BY
+       name,
+       inst_id,
+       ordinal;
+
+163 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/16:53:27 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>

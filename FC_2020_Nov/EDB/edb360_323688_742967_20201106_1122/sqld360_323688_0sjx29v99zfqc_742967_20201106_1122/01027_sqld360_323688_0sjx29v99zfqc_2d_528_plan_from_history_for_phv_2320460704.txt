@@ -1,0 +1,434 @@
+Plan from History for PHV 2320460704 (DBA_HIST_SQL_PLAN)
+
+
+SQL_ID 0sjx29v99zfqc
+--------------------
+SELECT INFO_WITH_MEMBER_ID.*,     enrollment.ELNS_INSCPRSRGRP
+ipgGroupId,     benefit.BENP_LWSTLVL_PRODCAT productCategoryId,
+affMember.USR_FRSTNAM affiliatedMemberFirstName,
+affMember.USR_LAS_NAM affiliatedMemberLastName FROM (   SELECT INFO.*,
+   CASE     WHEN INFO.memberAffiliationId IS NOT NULL THEN
+(INFO.memberAffiliationId)     WHEN INFO.authAffiliationId IS NOT NULL
+THEN (SELECT UMBS_MEMB FROM T_UM_BASE WHERE
+UMBS_ID=INFO.authAffiliationId)     WHEN
+INFO.careManagementAffiliationId IS NOT NULL THEN (SELECT CMBS_MEMB
+FROM T_CM_BASEBASE WHERE CMBB_ID=INFO.careManagementAffiliationId)
+WHEN INFO.providerAffiliationId IS NOT NULL THEN
+(INFO.providerAffiliationId)     ELSE (NULL)     END
+affiliatedMemberId   FROM (   SELECT * FROM (     SELECT
+T.SETK_ID AS id,         T.SETK_C4C_ID AS c4cId,         T.SETK_UNIVID
+AS universalId,         taskType.TSKT_RCPTTYP AS categoryId,
+T.SETK_TSK_TYP AS taskTypeId,         taskType.DDLI_LBL AS
+taskTypeLabel,         T.SETK_TSK_NAM AS taskName,         T.SETK_SUBJ
+AS subject,         T.SETK_CRTD AS createDate,         T.SETK_SENT AS
+sentDate,         T.SETK_SRTD AS startedDate,
+T.SETK_TSK_TIMG_STRTDT AS startDate,         T.SETK_TSK_TIMG_SCLDAT AS
+startDateSeconds,         T.SETK_TSK_TIMG_DDLN_DT AS dueDate,
+T.SETK_TSK_TIMG_DDLN_TIM_IN_DY AS dueDateSeconds,         T.SETK_OWNR
+AS ownerId,         own.USR_FRSTNAM AS ownerFirstName,
+own.USR_LAS_NAM AS ownerLastName,         own.CLASSTYPE AS ownerType,
+      T.SETK_OBJ_STT AS status,         T.SETK_AFFN_MEMB AS
+memberAffiliationId,         member.USR_C4C_ID AS memberC4cId,
+member.USR_FRSTNAM AS memberFirstName,         member.USR_LAS_NAM AS
+memberLastName,         T.SETK_AFFN_CM AS careManagementAffiliationId,
+       caseOrCm.CMBB_C4C_ID AS caseOrCmC4cId,
+T.SETK_AFFN_UM_EVNT AS authAffiliationId,         auth.UMBS_C4C_ID AS
+authAffiliationC4cId,         T.SETK_AFFN_PVDR AS
+providerAffiliationId,         provider.USR_C4C_ID AS providerC4cId,
+     T.SETK_TSK_TIMG_SNLTDT AS startNoLaterThanDate,
+T.SETK_CNCLRESN AS cancelReasonId,         T.SETK_ORIGCRTR AS
+originalCreatorId,         origCreator.USR_FRSTNAM AS
+originalCreatorFirstName,         origCreator.USR_LAS_NAM AS
+originalCreatorLastName,         caseOrCm.CLASSTYPE AS
+caseOrCmClasstype,         T.SETK_TSK_DSCN AS description,
+T.SETK_CMPD AS completedDate,         T.SETK_LAS_ACT_TIM AS
+lastActionDate,         mod.USR_FRSTNAM lastModifiedByFirstName,
+ mod.USR_LAS_NAM lastModifiedByLastName,         T.SETK_PRVSOWNR AS
+previousOwnerId,         prevOwner.USR_FRSTNAM AS
+previousOwnerFirstName,         prevOwner.USR_LAS_NAM AS
+previousOwnerLastName,         prevOwner.CLASSTYPE AS
+previousOwnerType,         CASE             WHEN
+T.SETK_TSK_TIMG_DDLN_DT IS NOT NULL THEN (T.SETK_TSK_TIMG_DDLN_DT)
+       WHEN T.SETK_TSK_TIMG_STRTDT IS NOT NULL THEN
+(T.SETK_TSK_TIMG_STRTDT)             WHEN T.SETK_TSK_TIMG_SNLTDT IS NOT
+NULL THEN (T.SETK_TSK_TIMG_SNLTDT)             ELSE (NULL)         END
+       filterDate,         sender.USR_FRSTNAM fromUserFirstName,
+ sender.USR_LAS_NAM fromUserLastName,         T.SETK_RESCHEDULE_REASON
+AS rescheduleReason,         reason.DDLI_LBL AS rescheduleReasonLabel,
+       T.SETK_RESCHEDULE_COMMENT AS rescheduleComment       FROM
+T_SENTTSK T       LEFT OUTER JOIN T_USR own ON own.USR_ID=T.SETK_OWNR
+    LEFT OUTER JOIN T_USR prevOwner ON prevOwner.USR_ID=T.SETK_PRVSOWNR
+      LEFT OUTER JOIN T_USR member ON member.USR_ID=T.SETK_AFFN_MEMB
+   LEFT OUTER JOIN T_USR origCreator ON
+origCreator.USR_ID=T.SETK_ORIGCRTR       LEFT OUTER JOIN T_DDL_ITEM
+taskType ON taskType.DDLI_ID=T.SETK_TSK_TYP       LEFT OUTER JOIN
+T_DDL_ITEM reason ON reason.DDLI_ID=T.SETK_RESCHEDULE_REASON       LEFT
+OUTER JOIN T_CM_BASEBASE caseOrCm ON caseOrCm.CMBB_ID=T.SETK_AFFN_CM
+   LEFT OUTER JOIN T_UM_BASE auth ON auth.UMBS_ID=T.SETK_AFFN_UM_EVNT
+    LEFT OUTER JOIN T_USR provider
+
+Plan hash value: 2320460704
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                                               | Name                          | Rows  | Bytes | Cost (%CPU)| Time     |
+-----------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                                        |                               |       |       |  2282K(100)|          |
+|   1 |  TABLE ACCESS BY INDEX ROWID                            | T_UM_BASE                     |     1 |    12 |     1   (0)| 00:00:01 |
+|   2 |   INDEX UNIQUE SCAN                                     | PK_T_UM_BASE                  |     1 |       |     1   (0)| 00:00:01 |
+|   3 |   TABLE ACCESS BY INDEX ROWID                           | T_CM_BASEBASE                 |     1 |    12 |     1   (0)| 00:00:01 |
+|   4 |    INDEX UNIQUE SCAN                                    | PK_T_CM_BASEBASE              |     1 |       |     1   (0)| 00:00:01 |
+|   5 |  NESTED LOOPS OUTER                                     |                               |   130 |  5957K|  2282K  (1)| 00:01:30 |
+|   6 |   NESTED LOOPS OUTER                                    |                               |   130 |  5954K|  2282K  (1)| 00:01:30 |
+|   7 |    HASH JOIN RIGHT OUTER                                |                               |   130 |  5952K|  2282K  (1)| 00:01:30 |
+|   8 |     VIEW                                                | V_CURR_ENROLLMENT             |     2 |    78 |  2282K  (1)| 00:01:30 |
+|   9 |      SORT UNIQUE                                        |                               |     2 |  1092 |  2282K  (1)| 00:01:30 |
+|  10 |       UNION-ALL                                         |                               |       |       |            |          |
+|  11 |        FILTER                                           |                               |       |       |            |          |
+|  12 |         FILTER                                          |                               |       |       |            |          |
+|  13 |          TABLE ACCESS STORAGE FULL                      | T_ENNS                        |   248K|    64M|   160K  (1)| 00:00:07 |
+|  14 |          FAST DUAL                                      |                               |     1 |       |     2   (0)| 00:00:01 |
+|  15 |         SORT GROUP BY NOSORT                            |                               |     1 |    72 |     4   (0)| 00:00:01 |
+|  16 |          NESTED LOOPS OUTER                             |                               |     1 |    72 |     4   (0)| 00:00:01 |
+|  17 |           NESTED LOOPS                                  |                               |     1 |    50 |     3   (0)| 00:00:01 |
+|  18 |            NESTED LOOPS                                 |                               |     1 |    12 |     2   (0)| 00:00:01 |
+|  19 |             INDEX UNIQUE SCAN                           | PK_T_USR                      |     1 |     6 |     1   (0)| 00:00:01 |
+|  20 |             INDEX RANGE SCAN                            | IX_NVL_USR_MRGEMSTR_USR_ID    |     1 |     6 |     1   (0)| 00:00:01 |
+|  21 |            TABLE ACCESS BY INDEX ROWID                  | T_ENNS                        |     1 |    38 |     1   (0)| 00:00:01 |
+|  22 |             INDEX RANGE SCAN                            | IX_ELNS_MEMBENLTDTDSNTDTSTTID |     2 |       |     1   (0)| 00:00:01 |
+|  23 |           TABLE ACCESS BY INDEX ROWID                   | T_ENNS                        |     1 |    22 |     1   (0)| 00:00:01 |
+|  24 |            INDEX RANGE SCAN                             | IX_ELNS_MEMBENLTDTDSNTDTID    |     1 |       |     1   (0)| 00:00:01 |
+|  25 |        FILTER                                           |                               |       |       |            |          |
+|  26 |         FILTER                                          |                               |       |       |            |          |
+|  27 |          TABLE ACCESS STORAGE FULL                      | T_ENNS                        |   248K|    64M|   160K  (1)| 00:00:07 |
+|  28 |          FAST DUAL                                      |                               |     1 |       |     2   (0)| 00:00:01 |
+|  29 |         SORT GROUP BY NOSORT                            |                               |     1 |    72 |     4   (0)| 00:00:01 |
+|  30 |          NESTED LOOPS OUTER                             |                               |     1 |    72 |     4   (0)| 00:00:01 |
+|  31 |           NESTED LOOPS                                  |                               |     1 |    50 |     3   (0)| 00:00:01 |
+|  32 |            NESTED LOOPS                                 |                               |     1 |    12 |     2   (0)| 00:00:01 |
+|  33 |             INDEX UNIQUE SCAN                           | PK_T_USR                      |     1 |     6 |     1   (0)| 00:00:01 |
+|  34 |             INDEX RANGE SCAN                            | IX_NVL_USR_MRGEMSTR_USR_ID    |     1 |     6 |     1   (0)| 00:00:01 |
+|  35 |            TABLE ACCESS BY INDEX ROWID                  | T_ENNS                        |     1 |    38 |     1   (0)| 00:00:01 |
+|  36 |             INDEX RANGE SCAN                            | IX_ELNS_MEMBENLTDTDSNTDTSTTID |     2 |       |     1   (0)| 00:00:01 |
+|  37 |           TABLE ACCESS BY INDEX ROWID                   | T_ENNS                        |     1 |    22 |     1   (0)| 00:00:01 |
+|  38 |            INDEX RANGE SCAN                             | IX_ELNS_MEMBENLTDTDSNTDTID    |     1 |       |     1   (0)| 00:00:01 |
+|  39 |     VIEW                                                |                               |   130 |  5947K|   101   (1)| 00:00:01 |
+|  40 |      VIEW                                               |                               |   130 |  5946K|    16   (7)| 00:00:01 |
+|  41 |       COUNT STOPKEY                                     |                               |       |       |            |          |
+|  42 |        VIEW                                             |                               |   130 |  5946K|    16   (7)| 00:00:01 |
+|  43 |         SORT ORDER BY STOPKEY                           |                               |   130 |    99K|    16   (7)| 00:00:01 |
+|  44 |          NESTED LOOPS OUTER                             |                               |   130 |    99K|    15   (0)| 00:00:01 |
+|  45 |           NESTED LOOPS OUTER                            |                               |   130 | 98540 |    14   (0)| 00:00:01 |
+|  46 |            NESTED LOOPS OUTER                           |                               |   130 | 95680 |    12   (0)| 00:00:01 |
+|  47 |             NESTED LOOPS OUTER                          |                               |   130 | 93210 |    11   (0)| 00:00:01 |
+|  48 |              NESTED LOOPS OUTER                         |                               |   130 | 90350 |    10   (0)| 00:00:01 |
+|  49 |               NESTED LOOPS OUTER                        |                               |   130 | 85800 |     9   (0)| 00:00:01 |
+|  50 |                NESTED LOOPS OUTER                       |                               |   130 | 81120 |     8   (0)| 00:00:01 |
+|  51 |                 NESTED LOOPS OUTER                      |                               |   130 | 77480 |     7   (0)| 00:00:01 |
+|  52 |                  NESTED LOOPS OUTER                     |                               |   130 | 75140 |     6   (0)| 00:00:01 |
+|  53 |                   NESTED LOOPS OUTER                    |                               |   130 | 72280 |     5   (0)| 00:00:01 |
+|  54 |                    HASH JOIN RIGHT OUTER                |                               |   130 | 69160 |     4   (0)| 00:00:01 |
+|  55 |                     TABLE ACCESS BY INDEX ROWID         | T_USR                         |     1 |    36 |     1   (0)| 00:00:01 |
+|  56 |                      INDEX UNIQUE SCAN                  | PK_T_USR                      |     1 |       |     1   (0)| 00:00:01 |
+|  57 |                     INLIST ITERATOR                     |                               |       |       |            |          |
+|  58 |                      TABLE ACCESS BY INDEX ROWID BATCHED| T_SENTTSK                     |   130 | 64480 |     3   (0)| 00:00:01 |
+|  59 |                       INDEX RANGE SCAN                  | IX_SETK_OBJ_STT               |  1913 |       |     1   (0)| 00:00:01 |
+|  60 |                    TABLE ACCESS BY INDEX ROWID          | T_DDL_ITEM                    |     1 |    24 |     1   (0)| 00:00:01 |
+|  61 |                     INDEX UNIQUE SCAN                   | PK_T_DDL_ITEM                 |     1 |       |     1   (0)| 00:00:01 |
+|  62 |                   TABLE ACCESS BY INDEX ROWID           | T_DDL_ITEM                    |     1 |    22 |     1   (0)| 00:00:01 |
+|  63 |                    INDEX UNIQUE SCAN                    | PK_T_DDL_ITEM                 |     1 |       |     1   (0)| 00:00:01 |
+|  64 |                  TABLE ACCESS BY INDEX ROWID            | T_UM_BASE                     |     1 |    18 |     1   (0)| 00:00:01 |
+|  65 |                   INDEX UNIQUE SCAN                     | PK_T_UM_BASE                  |     1 |       |     1   (0)| 00:00:01 |
+|  66 |                 TABLE ACCESS BY INDEX ROWID             | T_CM_BASEBASE                 |     1 |    28 |     1   (0)| 00:00:01 |
+|  67 |                  INDEX UNIQUE SCAN                      | PK_T_CM_BASEBASE              |     1 |       |     1   (0)| 00:00:01 |
+|  68 |                TABLE ACCESS BY INDEX ROWID              | T_USR                         |     1 |    36 |     1   (0)| 00:00:01 |
+|  69 |                 INDEX UNIQUE SCAN                       | PK_T_USR                      |     1 |       |     1   (0)| 00:00:01 |
+|  70 |               TABLE ACCESS BY INDEX ROWID               | T_USR                         |     1 |    35 |     1   (0)| 00:00:01 |
+|  71 |                INDEX UNIQUE SCAN                        | PK_T_USR                      |     1 |       |     1   (0)| 00:00:01 |
+|  72 |              TABLE ACCESS BY INDEX ROWID                | T_USR                         |     1 |    22 |     1   (0)| 00:00:01 |
+|  73 |               INDEX UNIQUE SCAN                         | PK_T_USR                      |     1 |       |     1   (0)| 00:00:01 |
+|  74 |             TABLE ACCESS BY INDEX ROWID                 | T_USR                         |     1 |    19 |     1   (0)| 00:00:01 |
+|  75 |              INDEX UNIQUE SCAN                          | PK_T_USR                      |     1 |       |     1   (0)| 00:00:01 |
+|  76 |            TABLE ACCESS BY INDEX ROWID                  | T_USR                         |     1 |    22 |     1   (0)| 00:00:01 |
+|  77 |             INDEX UNIQUE SCAN                           | PK_T_USR                      |     1 |       |     1   (0)| 00:00:01 |
+|  78 |           TABLE ACCESS BY INDEX ROWID                   | T_USR                         |     1 |    22 |     1   (0)| 00:00:01 |
+|  79 |            INDEX UNIQUE SCAN                            | PK_T_USR                      |     1 |       |     1   (0)| 00:00:01 |
+|  80 |    TABLE ACCESS BY INDEX ROWID                          | T_BENSPKG                     |     1 |    12 |     1   (0)| 00:00:01 |
+|  81 |     INDEX UNIQUE SCAN                                   | PK_T_BENSPKG                  |     1 |       |     1   (0)| 00:00:01 |
+|  82 |   TABLE ACCESS BY INDEX ROWID                           | T_USR                         |     1 |    22 |     1   (0)| 00:00:01 |
+|  83 |    INDEX UNIQUE SCAN                                    | PK_T_USR                      |     1 |       |     1   (0)| 00:00:01 |
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Query Block Name / Object Alias (identified by operation id):
+-------------------------------------------------------------
+
+   1 - SEL$4        / T_UM_BASE@SEL$4
+   2 - SEL$4        / T_UM_BASE@SEL$4
+   3 - SEL$5        / T_CM_BASEBASE@SEL$5
+   4 - SEL$5        / T_CM_BASEBASE@SEL$5
+   5 - SEL$0C04A374
+   8 - SET$1        / ENROLLMENT@SEL$30
+   9 - SET$1
+  11 - SEL$35
+  13 - SEL$35       / T_SRC_ENNS@SEL$35
+  14 - SEL$40       / DUAL@SEL$40
+  15 - SEL$5F185B4C
+  19 - SEL$5F185B4C / T_ENNS_MASTERUSER@SEL$31
+  20 - SEL$5F185B4C / T_ENNS_SLAVEUSER@SEL$31
+  21 - SEL$5F185B4C / T_CURR_ENNS@SEL$32
+  22 - SEL$5F185B4C / T_CURR_ENNS@SEL$32
+  23 - SEL$5F185B4C / T_MAX_DISENROLLMENT_ENROLLMENT@SEL$33
+  24 - SEL$5F185B4C / T_MAX_DISENROLLMENT_ENROLLMENT@SEL$33
+  25 - SEL$42
+  27 - SEL$42       / T_SRC_ENNS@SEL$42
+  28 - SEL$43       / DUAL@SEL$43
+  29 - SEL$CDBEA42D
+  33 - SEL$CDBEA42D / T_ENNS_MASTERUSER@SEL$36
+  34 - SEL$CDBEA42D / T_ENNS_SLAVEUSER@SEL$36
+  35 - SEL$CDBEA42D / T_CURR_ENNS@SEL$37
+  36 - SEL$CDBEA42D / T_CURR_ENNS@SEL$37
+  37 - SEL$CDBEA42D / T_MAX_DISENROLLMENT_ENROLLMENT@SEL$38
+  38 - SEL$CDBEA42D / T_MAX_DISENROLLMENT_ENROLLMENT@SEL$38
+  39 - SEL$3        / INFO_WITH_MEMBER_ID@SEL$2
+  40 - SEL$6        / INFO@SEL$3
+  41 - SEL$6
+  42 - SEL$2D594895 / from$_subquery$_005@SEL$6
+  43 - SEL$2D594895
+  55 - SEL$2D594895 / OWN@SEL$7
+  56 - SEL$2D594895 / OWN@SEL$7
+  58 - SEL$2D594895 / T@SEL$8
+  59 - SEL$2D594895 / T@SEL$8
+  60 - SEL$2D594895 / TASKTYPE@SEL$15
+  61 - SEL$2D594895 / TASKTYPE@SEL$15
+  62 - SEL$2D594895 / REASON@SEL$17
+  63 - SEL$2D594895 / REASON@SEL$17
+  64 - SEL$2D594895 / AUTH@SEL$21
+  65 - SEL$2D594895 / AUTH@SEL$21
+  66 - SEL$2D594895 / CASEORCM@SEL$19
+  67 - SEL$2D594895 / CASEORCM@SEL$19
+  68 - SEL$2D594895 / PREVOWNER@SEL$9
+  69 - SEL$2D594895 / PREVOWNER@SEL$9
+  70 - SEL$2D594895 / MEMBER@SEL$11
+  71 - SEL$2D594895 / MEMBER@SEL$11
+  72 - SEL$2D594895 / ORIGCREATOR@SEL$13
+  73 - SEL$2D594895 / ORIGCREATOR@SEL$13
+  74 - SEL$2D594895 / PROVIDER@SEL$23
+  75 - SEL$2D594895 / PROVIDER@SEL$23
+  76 - SEL$2D594895 / MOD@SEL$25
+  77 - SEL$2D594895 / MOD@SEL$25
+  78 - SEL$2D594895 / SENDER@SEL$27
+  79 - SEL$2D594895 / SENDER@SEL$27
+  80 - SEL$0C04A374 / BENEFIT@SEL$46
+  81 - SEL$0C04A374 / BENEFIT@SEL$46
+  82 - SEL$0C04A374 / AFFMEMBER@SEL$1
+  83 - SEL$0C04A374 / AFFMEMBER@SEL$1
+
+Outline Data
+-------------
+
+  /*+
+      BEGIN_OUTLINE_DATA
+      IGNORE_OPTIM_EMBEDDED_HINTS
+      OPTIMIZER_FEATURES_ENABLE('12.1.0.2')
+      DB_VERSION('12.1.0.2')
+      OPT_PARAM('optimizer_index_cost_adj' 1)
+      OPT_PARAM('optimizer_index_caching' 90)
+      ALL_ROWS
+      OUTLINE_LEAF(@"SEL$4")
+      OUTLINE_LEAF(@"SEL$5")
+      OUTLINE_LEAF(@"SEL$2D594895")
+      MERGE(@"SEL$2DE0C8FF")
+      OUTLINE_LEAF(@"SEL$6")
+      OUTLINE_LEAF(@"SEL$3")
+      OUTLINE_LEAF(@"SEL$40")
+      OUTLINE_LEAF(@"SEL$5F185B4C")
+      MERGE(@"SEL$6B15F4E0")
+      OUTLINE_LEAF(@"SEL$35")
+      OUTLINE_LEAF(@"SEL$43")
+      OUTLINE_LEAF(@"SEL$CDBEA42D")
+      MERGE(@"SEL$57BA8109")
+      OUTLINE_LEAF(@"SEL$42")
+      OUTLINE_LEAF(@"SET$1")
+      OUTLINE_LEAF(@"SEL$0C04A374")
+      MERGE(@"SEL$BC270230")
+      OUTLINE(@"SEL$29")
+      OUTLINE(@"SEL$2DE0C8FF")
+      MERGE(@"SEL$27")
+      MERGE(@"SEL$3B95C159")
+      OUTLINE(@"SEL$41")
+      OUTLINE(@"SEL$6B15F4E0")
+      MERGE(@"SEL$78FE80F3")
+      OUTLINE(@"SEL$44")
+      OUTLINE(@"SEL$57BA8109")
+      MERGE(@"SEL$516D3A01")
+      OUTLINE(@"SEL$48")
+      OUTLINE(@"SEL$BC270230")
+      MERGE(@"SEL$409758B4")
+      MERGE(@"SEL$46")
+      OUTLINE(@"SEL$28")
+      OUTLINE(@"SEL$27")
+      OUTLINE(@"SEL$3B95C159")
+      MERGE(@"SEL$25")
+      MERGE(@"SEL$6D003707")
+      OUTLINE(@"SEL$D570F096")
+      MERGE(@"SEL$33")
+      OUTLINE(@"SEL$78FE80F3")
+      MERGE(@"SEL$31")
+      OUTLINE(@"SEL$067B9A3E")
+      MERGE(@"SEL$38")
+      OUTLINE(@"SEL$516D3A01")
+      MERGE(@"SEL$36")
+      OUTLINE(@"SEL$47")
+      OUTLINE(@"SEL$409758B4")
+      MERGE(@"SEL$30")
+      MERGE(@"SEL$58A6D7F6")
+      OUTLINE(@"SEL$46")
+      OUTLINE(@"SEL$26")
+      OUTLINE(@"SEL$25")
+      OUTLINE(@"SEL$6D003707")
+      MERGE(@"SEL$23")
+      MERGE(@"SEL$23FAB6D1")
+      OUTLINE(@"SEL$34")
+      OUTLINE(@"SEL$33")
+      OUTLINE(@"SEL$32")
+      OUTLINE(@"SEL$31")
+      OUTLINE(@"SEL$39")
+      OUTLINE(@"SEL$38")
+      OUTLINE(@"SEL$37")
+      OUTLINE(@"SEL$36")
+      OUTLINE(@"SEL$45")
+      OUTLINE(@"SEL$30")
+      OUTLINE(@"SEL$58A6D7F6")
+      MERGE(@"SEL$1")
+      OUTLINE(@"SEL$24")
+      OUTLINE(@"SEL$23")
+      OUTLINE(@"SEL$23FAB6D1")
+      MERGE(@"SEL$21")
+      MERGE(@"SEL$97A30ECD")
+      OUTLINE(@"SEL$2")
+      OUTLINE(@"SEL$1")
+      OUTLINE(@"SEL$22")
+      OUTLINE(@"SEL$21")
+      OUTLINE(@"SEL$97A30ECD")
+      MERGE(@"SEL$19")
+      MERGE(@"SEL$CF22A5CA")
+      OUTLINE(@"SEL$20")
+      OUTLINE(@"SEL$19")
+      OUTLINE(@"SEL$CF22A5CA")
+      MERGE(@"SEL$17")
+      MERGE(@"SEL$FF97D7FC")
+      OUTLINE(@"SEL$18")
+      OUTLINE(@"SEL$17")
+      OUTLINE(@"SEL$FF97D7FC")
+      MERGE(@"SEL$15")
+      MERGE(@"SEL$DE5D921C")
+      OUTLINE(@"SEL$16")
+      OUTLINE(@"SEL$15")
+      OUTLINE(@"SEL$DE5D921C")
+      MERGE(@"SEL$01DD7F33")
+      MERGE(@"SEL$13")
+      OUTLINE(@"SEL$14")
+      OUTLINE(@"SEL$01DD7F33")
+      MERGE(@"SEL$11")
+      MERGE(@"SEL$BDFBA881")
+      OUTLINE(@"SEL$13")
+      OUTLINE(@"SEL$12")
+      OUTLINE(@"SEL$11")
+      OUTLINE(@"SEL$BDFBA881")
+      MERGE(@"SEL$9")
+      MERGE(@"SEL$FC56C448")
+      OUTLINE(@"SEL$10")
+      OUTLINE(@"SEL$9")
+      OUTLINE(@"SEL$FC56C448")
+      MERGE(@"SEL$7")
+      OUTLINE(@"SEL$8")
+      OUTLINE(@"SEL$7")
+      NO_ACCESS(@"SEL$0C04A374" "INFO_WITH_MEMBER_ID"@"SEL$2")
+      NO_ACCESS(@"SEL$0C04A374" "ENROLLMENT"@"SEL$30")
+      INDEX_RS_ASC(@"SEL$0C04A374" "BENEFIT"@"SEL$46" ("T_BENSPKG"."BENP_ID"))
+      INDEX_RS_ASC(@"SEL$0C04A374" "AFFMEMBER"@"SEL$1" ("T_USR"."USR_ID"))
+      LEADING(@"SEL$0C04A374" "INFO_WITH_MEMBER_ID"@"SEL$2" "ENROLLMENT"@"SEL$30" "BENEFIT"@"SEL$46" "AFFMEMBER"@"SEL$1")
+      USE_HASH(@"SEL$0C04A374" "ENROLLMENT"@"SEL$30")
+      USE_NL(@"SEL$0C04A374" "BENEFIT"@"SEL$46")
+      USE_NL(@"SEL$0C04A374" "AFFMEMBER"@"SEL$1")
+      SWAP_JOIN_INPUTS(@"SEL$0C04A374" "ENROLLMENT"@"SEL$30")
+      NO_ACCESS(@"SEL$3" "INFO"@"SEL$3")
+      FULL(@"SEL$42" "T_SRC_ENNS"@"SEL$42")
+      PQ_FILTER(@"SEL$42" SERIAL)
+      FULL(@"SEL$35" "T_SRC_ENNS"@"SEL$35")
+      PQ_FILTER(@"SEL$35" SERIAL)
+      INDEX(@"SEL$5F185B4C" "T_ENNS_MASTERUSER"@"SEL$31" ("T_USR"."USR_ID"))
+      INDEX(@"SEL$5F185B4C" "T_ENNS_SLAVEUSER"@"SEL$31" "IX_NVL_USR_MRGEMSTR_USR_ID")
+      INDEX_RS_ASC(@"SEL$5F185B4C" "T_CURR_ENNS"@"SEL$32" "IX_ELNS_MEMBENLTDTDSNTDTSTTID")
+      INDEX_RS_ASC(@"SEL$5F185B4C" "T_MAX_DISENROLLMENT_ENROLLMENT"@"SEL$33" ("T_ENNS"."ELNS_MEMB" "T_ENNS"."ELNS_ENLTDT"
+              "T_ENNS"."ELNS_DSNTDT" "T_ENNS"."ELNS_ID"))
+      LEADING(@"SEL$5F185B4C" "T_ENNS_MASTERUSER"@"SEL$31" "T_ENNS_SLAVEUSER"@"SEL$31" "T_CURR_ENNS"@"SEL$32"
+              "T_MAX_DISENROLLMENT_ENROLLMENT"@"SEL$33")
+      USE_NL(@"SEL$5F185B4C" "T_ENNS_SLAVEUSER"@"SEL$31")
+      USE_NL(@"SEL$5F185B4C" "T_CURR_ENNS"@"SEL$32")
+      USE_NL(@"SEL$5F185B4C" "T_MAX_DISENROLLMENT_ENROLLMENT"@"SEL$33")
+      INDEX(@"SEL$CDBEA42D" "T_ENNS_MASTERUSER"@"SEL$36" ("T_USR"."USR_ID"))
+      INDEX(@"SEL$CDBEA42D" "T_ENNS_SLAVEUSER"@"SEL$36" "IX_NVL_USR_MRGEMSTR_USR_ID")
+      INDEX_RS_ASC(@"SEL$CDBEA42D" "T_CURR_ENNS"@"SEL$37" "IX_ELNS_MEMBENLTDTDSNTDTSTTID")
+      INDEX_RS_ASC(@"SEL$CDBEA42D" "T_MAX_DISENROLLMENT_ENROLLMENT"@"SEL$38" ("T_ENNS"."ELNS_MEMB" "T_ENNS"."ELNS_ENLTDT"
+              "T_ENNS"."ELNS_DSNTDT" "T_ENNS"."ELNS_ID"))
+      LEADING(@"SEL$CDBEA42D" "T_ENNS_MASTERUSER"@"SEL$36" "T_ENNS_SLAVEUSER"@"SEL$36" "T_CURR_ENNS"@"SEL$37"
+              "T_MAX_DISENROLLMENT_ENROLLMENT"@"SEL$38")
+      USE_NL(@"SEL$CDBEA42D" "T_ENNS_SLAVEUSER"@"SEL$36")
+      USE_NL(@"SEL$CDBEA42D" "T_CURR_ENNS"@"SEL$37")
+      USE_NL(@"SEL$CDBEA42D" "T_MAX_DISENROLLMENT_ENROLLMENT"@"SEL$38")
+      NO_ACCESS(@"SEL$6" "from$_subquery$_005"@"SEL$6")
+      INDEX_RS_ASC(@"SEL$2D594895" "T"@"SEL$8" ("T_SENTTSK"."SETK_OBJ_STT"))
+      BATCH_TABLE_ACCESS_BY_ROWID(@"SEL$2D594895" "T"@"SEL$8")
+      INDEX_RS_ASC(@"SEL$2D594895" "OWN"@"SEL$7" ("T_USR"."USR_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "TASKTYPE"@"SEL$15" ("T_DDL_ITEM"."DDLI_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "REASON"@"SEL$17" ("T_DDL_ITEM"."DDLI_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "AUTH"@"SEL$21" ("T_UM_BASE"."UMBS_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "CASEORCM"@"SEL$19" ("T_CM_BASEBASE"."CMBB_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "PREVOWNER"@"SEL$9" ("T_USR"."USR_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "MEMBER"@"SEL$11" ("T_USR"."USR_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "ORIGCREATOR"@"SEL$13" ("T_USR"."USR_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "PROVIDER"@"SEL$23" ("T_USR"."USR_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "MOD"@"SEL$25" ("T_USR"."USR_ID"))
+      INDEX_RS_ASC(@"SEL$2D594895" "SENDER"@"SEL$27" ("T_USR"."USR_ID"))
+      LEADING(@"SEL$2D594895" "T"@"SEL$8" "OWN"@"SEL$7" "TASKTYPE"@"SEL$15" "REASON"@"SEL$17" "AUTH"@"SEL$21" "CASEORCM"@"SEL$19"
+              "PREVOWNER"@"SEL$9" "MEMBER"@"SEL$11" "ORIGCREATOR"@"SEL$13" "PROVIDER"@"SEL$23" "MOD"@"SEL$25" "SENDER"@"SEL$27")
+      USE_HASH(@"SEL$2D594895" "OWN"@"SEL$7")
+      USE_NL(@"SEL$2D594895" "TASKTYPE"@"SEL$15")
+      USE_NL(@"SEL$2D594895" "REASON"@"SEL$17")
+      USE_NL(@"SEL$2D594895" "AUTH"@"SEL$21")
+      USE_NL(@"SEL$2D594895" "CASEORCM"@"SEL$19")
+      USE_NL(@"SEL$2D594895" "PREVOWNER"@"SEL$9")
+      USE_NL(@"SEL$2D594895" "MEMBER"@"SEL$11")
+      USE_NL(@"SEL$2D594895" "ORIGCREATOR"@"SEL$13")
+      USE_NL(@"SEL$2D594895" "PROVIDER"@"SEL$23")
+      USE_NL(@"SEL$2D594895" "MOD"@"SEL$25")
+      USE_NL(@"SEL$2D594895" "SENDER"@"SEL$27")
+      SWAP_JOIN_INPUTS(@"SEL$2D594895" "OWN"@"SEL$7")
+      INDEX_RS_ASC(@"SEL$5" "T_CM_BASEBASE"@"SEL$5" ("T_CM_BASEBASE"."CMBB_ID"))
+      INDEX_RS_ASC(@"SEL$4" "T_UM_BASE"@"SEL$4" ("T_UM_BASE"."UMBS_ID"))
+      END_OUTLINE_DATA
+  */
+
+Peeked Binds (identified by position):
+--------------------------------------
+
+   1 - :SYS_B_0 (NUMBER): 2
+   2 - :1 (NUMBER): 11657619
+   3 - :2 (NUMBER): 1
+   4 - :3 (NUMBER): 3
+   5 - :4 (NUMBER): 905
+   6 - :5 (NUMBER): 906
+   7 - :6 (NUMBER): 907
+   8 - :7 (NUMBER): 908
+   9 - :8 (NUMBER): 911
+  10 - :9 (NUMBER): 912
+  11 - :10 (NUMBER): 913
+  12 - :SYS_B_1 (NUMBER): 500
+  13 - :SYS_B_2 (VARCHAR2(30), CSID=178): '2021.09.23'
+  14 - :SYS_B_3 (VARCHAR2(30), CSID=178): 'yyyy.MM.dd'
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 5 Sql Plan Directives used for this statement
+

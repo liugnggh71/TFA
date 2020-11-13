@@ -1,0 +1,30 @@
+BEGIN
+:myreport :=
+DBMS_AUTO_REPORT.REPORT_REPOSITORY_DETAIL
+( rid => 90981
+, type => 'ACTIVE' );
+END;
+/
+SPO sqld360_sqlmon_00540ttuxh7n9_16777216_09182020224653_hist.html;
+PRINT :myreport;
+SPO OFF;
+BEGIN
+:myreport :=
+DBMS_AUTO_REPORT.REPORT_REPOSITORY_DETAIL
+( rid => 178793
+, type => 'ACTIVE' );
+END;
+/
+SPO sqld360_sqlmon_00540ttuxh7n9_16777216_10122020224521_hist.html;
+PRINT :myreport;
+SPO OFF;
+BEGIN
+:myreport :=
+DBMS_AUTO_REPORT.REPORT_REPOSITORY_DETAIL
+( rid => 196418
+, type => 'ACTIVE' );
+END;
+/
+SPO sqld360_sqlmon_00540ttuxh7n9_33554432_10182020224503_hist.html;
+PRINT :myreport;
+SPO OFF;

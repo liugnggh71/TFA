@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 01410_sqld360_323688_0sjx29v99zfqc_3a_67_histograms v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Height Balanced histogram on Column T_BENSPKG.BENP_UNIVID</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<!-- 01416_sqld360_323688_0sjx29v99zfqc_3a_69_height_balanced_histogram_on_column_tbenspkgbenpunivid_bar_chart.html $ -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart)
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Bucket', 'Number of Rows', { role: 'style' }, { role: 'tooltip' }]
+,['/FirstCare/Insurance Company of Scott & White/Fully Funded/EPI/E', 0, '0', 'ApproxValue: /FirstCare/Insurance Company of Scott & White/Fully Funded/EPI/E NumRows: 0 Sel: 0']
+,['/FirstCare/SHA, LLC/Fully Funded/FMA/FC Medicare Advantage/BASEM', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/FMA/FC Medicare Advantage/BASEM NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/0001_FC HMO', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/0001_FC HMO NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/0935_SCH1FH1F', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/0935_SCH1FH1F NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/1L30_LWCSA926', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/1L30_LWCSA926 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/3075_SCH2DH2D', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/3075_SCH2DH2D NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/3600_LWCSA926', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/3600_LWCSA926 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/3749_LCCCA926', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/3749_LCCCA926 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/3890_LW1SA526', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/3890_LW1SA526 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4102_FC HMO', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4102_FC HMO NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4296_LCCSE926', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4296_LCCSE926 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4486_SEI4LI4L', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4486_SEI4LI4L NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4698_LWCSA926', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4698_LWCSA926 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4887_LWCCA926', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/4887_LWCCA926 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/5103_LW1SA526', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/5103_LW1SA526 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/5296_FC HMO', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/5296_FC HMO NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/5592_FC HMO', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/5592_FC HMO NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/5936_LW1SA526', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/5936_LW1SA526 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/6114_FC HMO', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/6114_FC HMO NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BH16LC12_A152', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BH16LC12_A152 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BHG17U13_A530', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BHG17U13_A530 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BHG18U14_3997', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BHG18U14_3997 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BHG19U14_6265', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BHG19U14_6265 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BHI16D06_HIM', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BHI16D06_HIM NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BRZ14GZ4_1229', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BRZ14GZ4_1229 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BRZ15GZ2_3927', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BRZ15GZ2_3927 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BRZ15GZ5_A163', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/BRZ15GZ5_A163 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/DONOTUSEHE4LCMBH_056', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/DONOTUSEHE4LCMBH_056 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GHG17U01_4146', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GHG17U01_4146 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GHG19U01_15L1', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GHG19U01_15L1 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GHG20U04_a_4861', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GHG20U04_a_4861 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GLD14GG4_5858', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GLD14GG4_5858 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GLD15GG2_3621', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/GLD15GG2_3621 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/HC11G269_8562', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/HC11G269_8562 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/L124_LWCSA926', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/L124_LWCSA926 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LC3CA626_6223', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LC3CA626_6223 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LC7PH2E1_A166', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LC7PH2E1_A166 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCCA926_15_4302', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCCA926_15_4302 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCCA926_6044', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCCA926_6044 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCSA926_15_5087', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCSA926_15_5087 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCSA926_3847', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCSA926_3847 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCSC928_3739', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCSC928_3739 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCSE926_15_5769', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCCSE926_15_5769 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCH5LH5L_A113', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LCH5LH5L_A113 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LEI2NI2N_15_P001', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LEI2NI2N_15_P001 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LWCCA926_L073', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LWCCA926_L073 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LWCSA926_3735', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LWCSA926_3735 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LWCSC928_16_5935', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LWCSC928_16_5935 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LWCSE926_5334', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/LWCSE926_5334 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCA1_17_5368', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCA1_17_5368 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCA1_3647', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCA1_3647 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCA2_17_3813', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCA2_17_3813 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCA2_4494', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCA2_4494 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCD1_17_5893', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCD1_17_5893 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCE1_4296', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S16HLCE1_4296 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S18HLCA1_5886', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S18HLCA1_5886 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S18HLCE1_19_6022', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/S18HLCE1_19_6022 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH1DH1D_2223', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH1DH1D_2223 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH1LH1L_4029', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH1LH1L_4029 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH2FH2F_15_3992', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH2FH2F_15_3992 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH2JH2J_5850', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH2JH2J_5850 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH4LH4L_13_1179', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SCH4LH4L_13_1179 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SH16LC04_A144', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SH16LC04_A144 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG16F06_A230', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG16F06_A230 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG17S06_A481', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG17S06_A481 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG17U05_HIM', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG17U05_HIM NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG18U03_A411', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG18U03_A411 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG18U06_A221', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG18U06_A221 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG19U03_4406', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG19U03_4406 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG19U03_A524', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG19U03_A524 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG20U06_5408', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SHG20U06_5408 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SIL14GV1_2180', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SIL14GV1_2180 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SIL15GV1_A204', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SIL15GV1_A204 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SIL15GV7_1435', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SIL15GV7_1435 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SIL5LCV2_6091', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/HMO/FC HMO/SIL5LCV2_6091 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/0106_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/0106_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/1373_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/1373_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/237H_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/237H_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/3221_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/3221_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/3672_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/3672_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/4019_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/4019_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/4345_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/4345_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/4660_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/4660_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/5021_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/5021_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/5366_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/5366_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/5925_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/5925_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/6240_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/6240_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/H374_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/H374_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/I011_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/I011_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/PP34_COEXIST', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC COEXIST/PP34_COEXIST NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/1204_SHRX0ED5', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/1204_SHRX0ED5 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/3035_SHRX0AC5', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/3035_SHRX0AC5 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/3665_LHW2X9YG', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/3665_LHW2X9YG NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/3883_LHW2X9YG', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/3883_LHW2X9YG NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/4215_LCHXSAE6', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/4215_LCHXSAE6 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/4493_LHWSXFEC', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/4493_LHWSXFEC NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/4821_LHC2X9YG', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/4821_LHC2X9YG NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/5123_LHW2X9YG', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/5123_LHW2X9YG NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/541A_SHRX0AB5', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/541A_SHRX0AB5 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/6018_SHRX0ED5', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/6018_SHRX0ED5 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC RX/H091_LCHXSAE6', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC RX/H091_LCHXSAE6 NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC SMI/0513_HM100SMI', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC SMI/0513_HM100SMI NumRows: 266 Sel: .003937']
+,['/FirstCare/SHA, LLC/Fully Funded/NA/FC Wellness/5414_BASIWELL', 266, '.003937', 'ApproxValue: /FirstCare/SHA, LLC/Fully Funded/NA/FC Wellness/5414_BASIWELL NumRows: 266 Sel: .003937']
+,['/FirstCare/Supplemental/Fully Funded/NA/Admin Dental/MLDENHI1_00', 266, '.003937', 'ApproxValue: /FirstCare/Supplemental/Fully Funded/NA/Admin Dental/MLDENHI1_00 NumRows: 266 Sel: .003937']
+,['/FirstCare/Valley Baptist Health Plan/ASO (Self Funded)/NA/VBHP ', 266, '.003937', 'ApproxValue: /FirstCare/Valley Baptist Health Plan/ASO (Self Funded)/NA/VBHP  NumRows: 266 Sel: .003937']
+,['/FirstCare/Valley Baptist Health Plan/Fully Funded/NA/VBHP PPO/1', 266, '.003937', 'ApproxValue: /FirstCare/Valley Baptist Health Plan/Fully Funded/NA/VBHP PPO/1 NumRows: 266 Sel: .003937']
+,['/FirstCare/Valley Baptist Health Plan/Fully Funded/NA/VBHP PPO/H', 799, '.011811', 'ApproxValue: /FirstCare/Valley Baptist Health Plan/Fully Funded/NA/VBHP PPO/H NumRows: 799 Sel: .011811']
+,['DELETED_/FirstCare/Valley Baptist Health Plan/4672/RX only ASO (', 266, '.003937', 'ApproxValue: DELETED_/FirstCare/Valley Baptist Health Plan/4672/RX only ASO ( NumRows: 266 Sel: .003937']
+,['DELETED_/FirstCare/Valley Baptist Health Plan/H028/PPO Fully Fun', 266, '.003937', 'ApproxValue: DELETED_/FirstCare/Valley Baptist Health Plan/H028/PPO Fully Fun NumRows: 266 Sel: .003937']
+,['DELETED_/FirstCare/Valley Baptist Health Plan/H261/RX only ASO (', 266, '.003937', 'ApproxValue: DELETED_/FirstCare/Valley Baptist Health Plan/H261/RX only ASO ( NumRows: 266 Sel: .003937']
+,['DELETED_/FirstCare/Valley Baptist Health Plan/H412/PPO Fully Fun', 266, '.003937', 'ApproxValue: DELETED_/FirstCare/Valley Baptist Health Plan/H412/PPO Fully Fun NumRows: 266 Sel: .003937']
+,['DELETED_/FirstCare/Valley Baptist Health Plan/H98T/RX only ASO (', 266, '.003937', 'ApproxValue: DELETED_/FirstCare/Valley Baptist Health Plan/H98T/RX only ASO ( NumRows: 266 Sel: .003937']
+,['DELETED_/FirstCare/Valley Baptist Health Plan/HT01/HMO Fully Fun', 266, '.003937', 'ApproxValue: DELETED_/FirstCare/Valley Baptist Health Plan/HT01/HMO Fully Fun NumRows: 266 Sel: .003937']
+,['DELETED_0047_FC HMO_DELETED', 266, '.003937', 'ApproxValue: DELETED_0047_FC HMO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_0401_FC HMO_DELETED', 266, '.003937', 'ApproxValue: DELETED_0401_FC HMO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_06_P1_DELETED', 266, '.003937', 'ApproxValue: DELETED_06_P1_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_1022_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_1022_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_1386_LCH2DH2D_DELETED', 266, '.003937', 'ApproxValue: DELETED_1386_LCH2DH2D_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_1773_HH12ATT2_DELETED', 266, '.003937', 'ApproxValue: DELETED_1773_HH12ATT2_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_2066_HM100SMI_DELETED', 266, '.003937', 'ApproxValue: DELETED_2066_HM100SMI_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_2305_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_2305_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_2501_LC3SD626_DELETED', 266, '.003937', 'ApproxValue: DELETED_2501_LC3SD626_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_2852_SPP2EP2E_DELETED', 266, '.003937', 'ApproxValue: DELETED_2852_SPP2EP2E_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3050_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_3050_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3203_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_3203_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3311_PP11G212_DELETED', 266, '.003937', 'ApproxValue: DELETED_3311_PP11G212_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3451_FC HMO_DELETED', 266, '.003937', 'ApproxValue: DELETED_3451_FC HMO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3596_LHW2X9YG_DELETED', 266, '.003937', 'ApproxValue: DELETED_3596_LHW2X9YG_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3651_LHW2X9YG_DELETED', 266, '.003937', 'ApproxValue: DELETED_3651_LHW2X9YG_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3712_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_3712_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3764_LHWSXFEC_DELETED', 266, '.003937', 'ApproxValue: DELETED_3764_LHWSXFEC_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3834_LCCSA926_DELETED', 266, '.003937', 'ApproxValue: DELETED_3834_LCCSA926_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3889_FC PPO_DELETED', 266, '.003937', 'ApproxValue: DELETED_3889_FC PPO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_3965_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_3965_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4054_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_4054_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4124_LHWSXFEC_DELETED', 266, '.003937', 'ApproxValue: DELETED_4124_LHWSXFEC_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4203_LHWSXFEC_DELETED', 266, '.003937', 'ApproxValue: DELETED_4203_LHWSXFEC_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4264_LW1SB527_DELETED', 266, '.003937', 'ApproxValue: DELETED_4264_LW1SB527_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4334_FC PPO_DELETED', 266, '.003937', 'ApproxValue: DELETED_4334_FC PPO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4398_LC1CC526_DELETED', 266, '.003937', 'ApproxValue: DELETED_4398_LC1CC526_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4474_FC HMO_DELETED', 266, '.003937', 'ApproxValue: DELETED_4474_FC HMO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4546_FC HMO_DELETED', 266, '.003937', 'ApproxValue: DELETED_4546_FC HMO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4622_LC3SA626_DELETED', 266, '.003937', 'ApproxValue: DELETED_4622_LC3SA626_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4699_LHWSX928_DELETED', 266, '.003937', 'ApproxValue: DELETED_4699_LHWSX928_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4769_SPRX0ED5_DELETED', 266, '.003937', 'ApproxValue: DELETED_4769_SPRX0ED5_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4840_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_4840_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4919_LHW2X9YG_DELETED', 266, '.003937', 'ApproxValue: DELETED_4919_LHW2X9YG_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_4990_LHWSXFEC_DELETED', 266, '.003937', 'ApproxValue: DELETED_4990_LHWSXFEC_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5083_LC1SA526_DELETED', 266, '.003937', 'ApproxValue: DELETED_5083_LC1SA526_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5167_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_5167_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5235_FC HMO_DELETED', 266, '.003937', 'ApproxValue: DELETED_5235_FC HMO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5304_BASIWELL_DELETED', 266, '.003937', 'ApproxValue: DELETED_5304_BASIWELL_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5369_LPW2X9YG_DELETED', 266, '.003937', 'ApproxValue: DELETED_5369_LPW2X9YG_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5466_SCH1FH1F_DELETED', 266, '.003937', 'ApproxValue: DELETED_5466_SCH1FH1F_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5678_BASIWELL_DELETED', 266, '.003937', 'ApproxValue: DELETED_5678_BASIWELL_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5843_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_5843_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5922_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_5922_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_5981_BASIWELL_DELETED', 266, '.003937', 'ApproxValue: DELETED_5981_BASIWELL_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_6059_VBHP PPO_DELETED', 266, '.003937', 'ApproxValue: DELETED_6059_VBHP PPO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_6116_LCPXSAE6_DELETED', 266, '.003937', 'ApproxValue: DELETED_6116_LCPXSAE6_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_6187_VPS50040_DELETED', 266, '.003937', 'ApproxValue: DELETED_6187_VPS50040_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_6L76_LPW2X9YG_DELETED', 266, '.003937', 'ApproxValue: DELETED_6L76_LPW2X9YG_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_AM0S7025_00008_DELETED', 266, '.003937', 'ApproxValue: DELETED_AM0S7025_00008_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_BHG17S13_A418_DELETED', 266, '.003937', 'ApproxValue: DELETED_BHG17S13_A418_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_BHG18U13_A163_DELETED', 266, '.003937', 'ApproxValue: DELETED_BHG18U13_A163_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_BHG19U13_5025_DELETED', 266, '.003937', 'ApproxValue: DELETED_BHG19U13_5025_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_BHG20U10_A517_DELETED', 266, '.003937', 'ApproxValue: DELETED_BHG20U10_A517_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_BRZ14GZ1_6240_DELETED', 266, '.003937', 'ApproxValue: DELETED_BRZ14GZ1_6240_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_BRZ15GZ1_6248_DELETED', 266, '.003937', 'ApproxValue: DELETED_BRZ15GZ1_6248_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_BRZ15GZ2_A224_DELETED', 266, '.003937', 'ApproxValue: DELETED_BRZ15GZ2_A224_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_BRZ5LCZ1_A141_DELETED', 266, '.003937', 'ApproxValue: DELETED_BRZ5LCZ1_A141_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_FISD19HH_A630_DELETED', 266, '.003937', 'ApproxValue: DELETED_FISD19HH_A630_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_GHG17U01_17_4964_DELETED', 266, '.003937', 'ApproxValue: DELETED_GHG17U01_17_4964_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_GHG18U04_A451_DELETED', 266, '.003937', 'ApproxValue: DELETED_GHG18U04_A451_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_GHG20U04_A779_DELETED', 266, '.003937', 'ApproxValue: DELETED_GHG20U04_A779_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_GLD14GG2__5225_DELETED', 266, '.003937', 'ApproxValue: DELETED_GLD14GG2__5225_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_GLD15GG2_3221_DELETED', 266, '.003937', 'ApproxValue: DELETED_GLD15GG2_3221_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_GLD5LCG2_A229_DELETED', 266, '.003937', 'ApproxValue: DELETED_GLD5LCG2_A229_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_H228_VBHP PPO_DELETED', 266, '.003937', 'ApproxValue: DELETED_H228_VBHP PPO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_H336_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_H336_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_H436_VBHP PPO_DELETED', 266, '.003937', 'ApproxValue: DELETED_H436_VBHP PPO_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_H852_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_H852_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_HEN16EPO_1022_DELETED', 266, '.003937', 'ApproxValue: DELETED_HEN16EPO_1022_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_HT82_VPS25840_DELETED', 266, '.003937', 'ApproxValue: DELETED_HT82_VPS25840_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_IP10I048_2362_DELETED', 266, '.003937', 'ApproxValue: DELETED_IP10I048_2362_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_L079_COEXIST_DELETED', 266, '.003937', 'ApproxValue: DELETED_L079_COEXIST_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LC0PH1E1_4209_DELETED', 266, '.003937', 'ApproxValue: DELETED_LC0PH1E1_4209_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LC17P2L1_2219_DELETED', 266, '.003937', 'ApproxValue: DELETED_LC17P2L1_2219_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LC3CE626_6276_DELETED', 266, '.003937', 'ApproxValue: DELETED_LC3CE626_6276_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LC7PH3L1_A335_DELETED', 266, '.003937', 'ApproxValue: DELETED_LC7PH3L1_A335_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LCCCA926_15_4864_DELETED', 266, '.003937', 'ApproxValue: DELETED_LCCCA926_15_4864_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LCCSA926_15_3618_DELETED', 266, '.003937', 'ApproxValue: DELETED_LCCSA926_15_3618_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LCCSA926_15_5304_DELETED', 266, '.003937', 'ApproxValue: DELETED_LCCSA926_15_5304_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LCCSA926_4226_DELETED', 266, '.003937', 'ApproxValue: DELETED_LCCSA926_4226_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LCCSB927_16_5271_DELETED', 266, '.003937', 'ApproxValue: DELETED_LCCSB927_16_5271_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LCCSD926_15_5195_DELETED', 266, '.003937', 'ApproxValue: DELETED_LCCSD926_15_5195_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LCH1EH1E_0115_DELETED', 266, '.003937', 'ApproxValue: DELETED_LCH1EH1E_0115_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LCH8FH8F_3864_DELETED', 266, '.003937', 'ApproxValue: DELETED_LCH8FH8F_3864_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LEQ4JQ4J_4910_DELETED', 266, '.003937', 'ApproxValue: DELETED_LEQ4JQ4J_4910_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LPP7LP7L_7523_DELETED', 266, '.003937', 'ApproxValue: DELETED_LPP7LP7L_7523_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LWCCA926_L069_DELETED', 266, '.003937', 'ApproxValue: DELETED_LWCCA926_L069_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LWCSA926_3659_DELETED', 266, '.003937', 'ApproxValue: DELETED_LWCSA926_3659_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LWCSB927_16_4139_DELETED', 266, '.003937', 'ApproxValue: DELETED_LWCSB927_16_4139_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_LWCSD926_4536_DELETED', 266, '.003937', 'ApproxValue: DELETED_LWCSD926_4536_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_MA01_RXRID502_DELETED', 266, '.003937', 'ApproxValue: DELETED_MA01_RXRID502_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_P0B1_SHRX0BB5_DELETED', 266, '.003937', 'ApproxValue: DELETED_P0B1_SHRX0BB5_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_PP15G209_2016_AM92_DELETED', 266, '.003937', 'ApproxValue: DELETED_PP15G209_2016_AM92_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_S16HLCA1_17_L076_DELETED', 266, '.003937', 'ApproxValue: DELETED_S16HLCA1_17_L076_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_S16HLCA1_3878_DELETED', 266, '.003937', 'ApproxValue: DELETED_S16HLCA1_3878_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_S16HLCA2_17_4398_DELETED', 266, '.003937', 'ApproxValue: DELETED_S16HLCA2_17_4398_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_S16HLCA2_5042_DELETED', 266, '.003937', 'ApproxValue: DELETED_S16HLCA2_5042_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_S16HLCD1_18_4446_DELETED', 266, '.003937', 'ApproxValue: DELETED_S16HLCD1_18_4446_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_S16HLCE1_541L_DELETED', 266, '.003937', 'ApproxValue: DELETED_S16HLCE1_541L_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_S18HLCA1_3853_DELETED', 266, '.003937', 'ApproxValue: DELETED_S18HLCA1_3853_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_S18HLCA2_5333_DELETED', 266, '.003937', 'ApproxValue: DELETED_S18HLCA2_5333_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SCH18H1D_6225_DELETED', 266, '.003937', 'ApproxValue: DELETED_SCH18H1D_6225_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SCH1FH1F_1229_DELETED', 266, '.003937', 'ApproxValue: DELETED_SCH1FH1F_1229_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SCH1XH1X_13_3399_DELETED', 266, '.003937', 'ApproxValue: DELETED_SCH1XH1X_13_3399_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SCH2GH2G_15_4246_DELETED', 266, '.003937', 'ApproxValue: DELETED_SCH2GH2G_15_4246_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SCH2LH2L_3450_DELETED', 266, '.003937', 'ApproxValue: DELETED_SCH2LH2L_3450_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SEI2HI2H_13_5589_DELETED', 266, '.003937', 'ApproxValue: DELETED_SEI2HI2H_13_5589_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SH16LC06_A229_DELETED', 266, '.003937', 'ApproxValue: DELETED_SH16LC06_A229_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SHG17S03_2473_DELETED', 266, '.003937', 'ApproxValue: DELETED_SHG17S03_2473_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SHG17U03_4295_DELETED', 266, '.003937', 'ApproxValue: DELETED_SHG17U03_4295_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SHG17U06_A397_DELETED', 266, '.003937', 'ApproxValue: DELETED_SHG17U06_A397_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SHG18U03_A518_DELETED', 266, '.003937', 'ApproxValue: DELETED_SHG18U03_A518_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SHG18U06_A608_DELETED', 266, '.003937', 'ApproxValue: DELETED_SHG18U06_A608_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SHG19U03_4560_DELETED', 266, '.003937', 'ApproxValue: DELETED_SHG19U03_4560_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SHG19U03_A649_DELETED', 266, '.003937', 'ApproxValue: DELETED_SHG19U03_A649_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SHG20U06_6063_DELETED', 266, '.003937', 'ApproxValue: DELETED_SHG20U06_6063_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SIL14GV1_5617_DELETED', 266, '.003937', 'ApproxValue: DELETED_SIL14GV1_5617_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SIL15GV1_A256_DELETED', 266, '.003937', 'ApproxValue: DELETED_SIL15GV1_A256_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SIL15GV4_3249_DELETED', 266, '.003937', 'ApproxValue: DELETED_SIL15GV4_3249_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SIL15GV5_A112_DELETED', 266, '.003937', 'ApproxValue: DELETED_SIL15GV5_A112_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SIL15GV7_PP34_DELETED', 266, '.003937', 'ApproxValue: DELETED_SIL15GV7_PP34_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SIL5LCV5_3589_DELETED', 266, '.003937', 'ApproxValue: DELETED_SIL5LCV5_3589_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SPG17201_A665_DELETED', 266, '.003937', 'ApproxValue: DELETED_SPG17201_A665_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SPP18P2H_0333_DELETED', 266, '.003937', 'ApproxValue: DELETED_SPP18P2H_0333_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_SPP2HP2H_I02T_DELETED', 266, '.003937', 'ApproxValue: DELETED_SPP2HP2H_I02T_DELETED NumRows: 266 Sel: .003937']
+,['DELETED_Z006_TRS2013V_DELETED', 266, '.003937', 'ApproxValue: DELETED_Z006_TRS2013V_DELETED NumRows: 266 Sel: .003937']
+,['DELETED__DELETED', 3198, '.047244', 'ApproxValue: DELETED__DELETED NumRows: 3198 Sel: .047244']
+,['SHIW1M40_HIM02', 266, '.003937', 'ApproxValue: SHIW1M40_HIM02 NumRows: 266 Sel: .003937']
+]);
+
+var options = {
+chartArea:{left:90, top:90, width:'85%', height:'65%'},
+backgroundColor: {fill: '#ffffff', stroke: '#336699', strokeWidth: 1},
+title: '3a.69. Height Balanced histogram on Column T_BENSPKG.BENP_UNIVID',
+titleTextStyle: {fontSize: 18, bold: false},
+legend: {position: 'none'},
+vAxis: {minValue: 0},
+tooltip: {textStyle: {fontSize: 14}}
+}
+
+var chart = new google.visualization.ColumnChart(document.getElementById('barchart'))
+chart.draw(data, options)
+}
+</script>
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.69. Height Balanced histogram on Column T_BENSPKG.BENP_UNIVID <em>(DBA_TAB_HISTOGRAMS)</em>  </h1>
+
+<br />
+
+
+<br />
+
+<div id="barchart" class="google-chart"></div>
+
+<font class="n">Notes:<br>1) Values are approximated<br>2) Hovering on the bars show more info.</font>
+<font class="n"><br>3) </font>
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ ENDPOINT_NUMBER                                    NUMBER
+ ENDPOINT_VALUE                                     NUMBER
+ ENDPOINT_ACTUAL_VALUE                              VARCHAR2(4000)
+ ENDPOINT_ACTUAL_VALUE_RAW                          RAW(1000)
+ ENDPOINT_REPEAT_COUNT                              NUMBER
+ SCOPE                                              VARCHAR2(7)
+
+SELECT /*+ NO_MERGE */
+CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END approximate_value,
+round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 67687) rows_per_bucket,
+trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254,6) selectivity,
+'ApproxValue: '||CASE WHEN endpoint_actual_value IS NOT NULL THEN REPLACE(endpoint_actual_value, '''', '')
+WHEN endpoint_actual_value IS NULL THEN
+CASE WHEN 'VARCHAR2' = 'DATE' or 'VARCHAR2' LIKE 'TIMESTAMP%' THEN
+TO_CHAR(TO_DATE(TO_CHAR(TRUNC(endpoint_value)), 'J') + (endpoint_value - TRUNC(endpoint_value)),'SYYYY/MM/DD HH24:MI:SS')
+WHEN 'VARCHAR2' IN ('NUMBER', 'FLOAT', 'BINARY_FLOAT') THEN
+TO_CHAR(endpoint_value)
+ELSE
+UTL_RAW.CAST_TO_VARCHAR2(SUBSTR(LPAD(TO_CHAR(endpoint_value,'fmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),30,'0'),1,12))
+END
+END||' NumRows: '||round((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 * 67687)||' Sel: '||trunc((a.endpoint_number - lag(a.endpoint_number,1,0) over (order by a.endpoint_number)) / 254 , 6) chart_text
+FROM dba_tab_histograms a
+WHERE a.owner = 'THH_C4C'
+AND a.table_name = 'T_BENSPKG'
+AND a.column_name = 'BENP_UNIVID'
+ORDER BY a.endpoint_number;
+
+242 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:20:10 for SQL ID 0sjx29v99zfqc (SELECT INFO_WITH_MEMBER_ID.*,
+    enrollment.ELNS_INSCPRSRGRP ipgGroupId,
+    be) </font>
+</body>
+</html>

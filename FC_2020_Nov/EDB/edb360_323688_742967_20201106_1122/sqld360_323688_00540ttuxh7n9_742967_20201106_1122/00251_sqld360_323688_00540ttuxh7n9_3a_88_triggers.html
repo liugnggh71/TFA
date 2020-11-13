@@ -1,0 +1,2087 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_00540ttuxh7n9_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Triggers</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00251_sqld360_323688_00540ttuxh7n9_3a_88_triggers.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 3a.88. Triggers <em>(DBA_TRIGGERS)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+OWNER
+</th>
+<th scope="col">
+TRIGGER_NAME
+</th>
+<th scope="col">
+TRIGGER_TYPE
+</th>
+<th scope="col">
+TRIGGERING_EVENT
+</th>
+<th scope="col">
+TABLE_OWNER
+</th>
+<th scope="col">
+BASE_OBJECT_TYPE
+</th>
+<th scope="col">
+TABLE_NAME
+</th>
+<th scope="col">
+COLUMN_NAME
+</th>
+<th scope="col">
+REFERENCING_NAMES
+</th>
+<th scope="col">
+WHEN_CLAUSE
+</th>
+<th scope="col">
+STATUS
+</th>
+<th scope="col">
+DESCRIPTION
+</th>
+<th scope="col">
+ACTION_TYPE
+</th>
+<th scope="col">
+TRIGGER_BODY
+</th>
+<th scope="col">
+CROSSED
+</th>
+<th scope="col">
+BEF
+</th>
+<th scope="col">
+BEF
+</th>
+<th scope="col">
+AFT
+</th>
+<th scope="col">
+AFT
+</th>
+<th scope="col">
+INS
+</th>
+<th scope="col">
+FIR
+</th>
+<th scope="col">
+APP
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_DDLI_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_DDL_ITEM
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_ddli_auditinsert BEFORE
+	INSERT
+		ON T_DDL_ITEM FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN
+  curr_date := current_date;
+
+  IF :new.ddli_crtd IS NULL THEN
+    :new.ddli_crtd := curr_date;
+  END IF;
+
+  IF :new.ddli_las_act_tim IS NULL THEN
+    :new.ddli_las_act_tim := curr_date;
+  END IF;
+
+  IF :new.ddli_las_act IS NULL THEN
+    :new.ddli_las_act := 1;
+  END IF;
+
+  IF :new.ddli_obj_stt IS NULL THEN
+    :new.ddli_obj_stt := 1;
+  END IF;
+
+  IF :new.ddli_vers IS NULL THEN
+    :new.ddli_vers := 0;
+  END IF;
+
+  IF :new.ddli_vsbt IS NULL THEN
+    :new.ddli_vsbt := 1001;
+  END IF;
+
+  IF :new.ddli_las_act_by IS NULL THEN
+    :new.ddli_las_act_by := 1;
+  END IF;
+
+  IF :new.ddli_origcrtr IS NULL THEN
+    :new.ddli_origcrtr := 1;
+  END IF;
+
+  IF :new.ddli_origcrtrlogdin IS NULL THEN
+    :new.ddli_origcrtrlogdin := 1;
+  END IF;
+
+  IF :new.ddli_las_act_by_logdin IS NULL THEN
+    :new.ddli_las_act_by_logdin := 1;
+  END IF;
+
+  INSERT INTO a_ddl_item
+  (
+   ddli_las_atvd,
+   ddli_las_dctd,
+   ddli_wkfwistcid,
+   ddli_cnv_id,
+   ddli_ownrchndflag,
+   ddli_ownrchndcnt,
+   umty_id,
+   cpny_id,
+   plns_id,
+   mmgy_id,
+   qtyp_id,
+   pttp_prj_pvtncase,
+   pttp_prj_pvtncasereqt,
+   pttp_prj_pvtncm_prj,
+   pttp_prj_pvtncm_prj_reqt,
+   pttp_id,
+   bmty_id,
+   ncty_id,
+   ueny_id,
+   cntp_id,
+   mnty_id,
+   ctyb_mndtapvl,
+   ctyb_id,
+   imdy_id,
+   tity_id,
+   tskt_rcpttyp,
+   tskt_id,
+   piqt_id,
+   lltp_id,
+   lttp_mntygkprrevw,
+   lttp_id,
+   cbty_id,
+   lhtp_id,
+   cdtp_id,
+   fctp_id,
+   rpty_id,
+   bptp_id,
+   cctp_id,
+   attp_id,
+   eucy_id,
+   ettp_id,
+   prny_id,
+   ddli_las_dctdby,
+   ddli_frstatvdby,
+   ddli_las_atvdby,
+   ddli_ratnapvl,
+   ddli_rfngwkfwtsk,
+   ddli_prvsrfngtsk,
+   ddli_prvsrfngtsk_prmn,
+   ddli_ownr,
+   ddli_prvsownr,
+   ddli_prvssndr,
+   ddli_prvsownrprmn,
+   ddli_tnfr,
+   ddli_prvstnfr,
+   attp_dscm,
+   cctp_dfltldngmsg,
+   tskt_icon,
+   ddli_prnt,
+   attp_dfltltr_head,
+   ddli_ddl,
+   classtype,
+   ddli_c4c_id,
+   ddli_crtd,
+   ddli_las_act,
+   ddli_las_act_actrtyp,
+   ddli_obj_stt,
+   ddli_ve
+rs,
+   ddli_vsbt,
+   ddli_dltddt,
+   ddli_las_act_by,
+   ddli_origcrtr,
+   ddli_origcrtrlogdin,
+   ddli_las_act_by_logdin,
+   ddli_univid,
+   ddli_lbl,
+   ddli_cmmt,
+   ddli_val,
+   ddli_sytm,
+   ddli_ddl_itemconsid,
+   ddli_frstatvd,
+   ddli_id,
+   valid_from,
+   valid_to ,
+   ddli_audid,
+   ddli_prev_audid,
+   ddli_next_audid,
+   stnt_id,
+   careplan_note_id,
+   ddli_code_value,
+   ddli_reference
+  )
+  VALUES
+  (
+   :new.ddli_las_atvd,
+   :new.ddli_las_dctd,
+   :new.ddli_wkfwistcid,
+   :new.ddli_cnv_id,
+   :new.ddli_ownrchndflag,
+   :new.ddli_ownrchndcnt,
+   :new.umty_id,
+   :new.cpny_id,
+   :new.plns_id,
+   :new.mmgy_id,
+   :new.qtyp_id,
+   :new.pttp_prj_pvtncase,
+   :new.pttp_prj_pvtncasereqt,
+   :new.pttp_prj_pvtncm_prj,
+   :new.pttp_prj_pvtncm_prj_reqt,
+   :new.pttp_id,
+   :new.bmty_id,
+   :new.ncty_id,
+   :new.ueny_id,
+   :new.cntp_id,
+   :new.mnty_id,
+   :new.ctyb_mndtapvl,
+   :new.ctyb_id,
+   :new.imdy_id,
+   :new.tity_id,
+   :new.tskt_rcpttyp,
+   :new.tskt_id,
+   :new.piqt_id,
+   :new.lltp_id,
+   :new.lttp_mntygkprrevw,
+   :new.lttp_id,
+   :new.cbty_id,
+   :new.lhtp_id,
+   :new.cdtp_id,
+   :new.fctp_id,
+   :new.rpty_id,
+   :new.bptp_id,
+   :new.cctp_id,
+   :new.attp_id,
+   :new.eucy_id,
+   :new.ettp_id,
+   :new.prny_id,
+   :new.ddli_las_dctdby,
+   :new.ddli_frstatvdby,
+   :new.ddli_las_atvdby,
+   :new.ddli_ratnapvl,
+   :new.ddli_rfngwkfwtsk,
+   :new.ddli_prvsrfngtsk,
+   :new.ddli_prvsrfngtsk_prmn,
+   :new.ddli_ownr,
+   :new.ddli_prvsownr,
+   :new.ddli_prvssndr,
+   :new.ddli_prvsownrprmn,
+   :new.ddli_tnfr,
+   :new.ddli_prvstnfr,
+   :new.attp_dscm,
+   :new.cctp_dfltldngmsg,
+   :new.tskt_icon,
+   :new.ddli_prnt,
+   :new.attp_dfltltr_head,
+   :new.ddli_ddl,
+   :new.classtype,
+   :new.ddli_c4c_id,
+   :new.ddli_crtd,
+   :new.ddli_las_act,
+   :new.ddli_las_act_actrtyp,
+   :new.ddli_obj_stt,
+   :new.ddli_vers,
+   :new.ddli_vsbt,
+   :new.ddli_dltddt,
+   :new.ddli_las_act_by,
+   :new.ddli_origcrtr,
+   :new.ddli_origcrtrlogdin,
+   :new.ddli_las_act_by_logdin,
+   :ne
+w.ddli_univid,
+   :new.ddli_lbl,
+   :new.ddli_cmmt,
+   :new.ddli_val,
+   :new.ddli_sytm,
+   :new.ddli_ddl_itemconsid,
+   :new.ddli_frstatvd,
+   :new.ddli_id,
+   :new.ddli_las_act_tim,
+   NULL,
+   u_ddl_item.NEXTVAL,
+   NULL,
+   NULL,
+   :new.stnt_id,
+   :new.careplan_note_id,
+   :new.ddli_code_value,
+   :new.ddli_reference
+  );
+END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_DDLI_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_DDL_ITEM
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_ddli_auditupdate BEFORE
+  UPDATE
+    ON T_DDL_ITEM FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        ddli_audid
+      INTO
+        last_audid
+      FROM
+        a_ddl_item
+      WHERE
+        ddli_id            = :old.ddli_id
+      AND ddli_next_audid IS NULL
+      AND rownum           &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.ddli_las_act_tim = :new.ddli_las_act_tim THEN
+      UPDATE
+        a_ddl_item
+      SET
+        ddli_las_act_by_logdin   = :new.ddli_las_act_by_logdin,
+        ddli_univid              = :new.ddli_univid,
+        ddli_lbl                 = :new.ddli_lbl,
+        ddli_cmmt                = :new.ddli_cmmt,
+        ddli_val                 = :new.ddli_val,
+        ddli_sytm                = :new.ddli_sytm,
+        ddli_ddl_itemconsid      = :new.ddli_ddl_itemconsid,
+        ddli_frstatvd            = :new.ddli_frstatvd,
+        ddli_las_atvd            = :new.ddli_las_atvd,
+        ddli_las_dctd            = :new.ddli_las_dctd,
+        ddli_wkfwistcid          = :new.ddli_wkfwistcid,
+        ddli_cnv_id              = :new.ddli_cnv_id,
+        ddli_ownrchndflag        = :new.ddli_ownrchndflag,
+        ddli_ownrchndcnt         = :new.ddli_ownrchndcnt,
+        umty_id                  = :new.umty_id,
+        cpny_id                  = :new.cpny_id,
+        plns_id                  = :new.plns_id,
+        mmgy_id                  = :new.mmgy_id,
+        qtyp_id                  = :new.qtyp_id,
+        pttp_prj_pvtncase        = :new.pttp_prj_pvtncase,
+        pttp_prj_pvtncasereqt    = :new.pttp_prj_pvtncasereqt,
+        pttp_prj_pvtncm_prj      = :new.pttp_prj_pvtncm_prj,
+        pttp_prj_pvtncm_prj_reqt = :new.pttp_prj_pvtncm_prj_reqt,
+        pttp_id                  = :new.pttp_id,
+        bmty_id                  = :new.bmty_id,
+        ncty_id                  = :new.ncty_id,
+
+        ueny_id                  = :new.ueny_id,
+        cntp_id                  = :new.cntp_id,
+        mnty_id                  = :new.mnty_id,
+        ctyb_mndtapvl            = :new.ctyb_mndtapvl,
+        ctyb_id                  = :new.ctyb_id,
+        imdy_id                  = :new.imdy_id,
+        tity_id                  = :new.tity_id,
+        tskt_rcpttyp             = :new.tskt_rcpttyp,
+        tskt_id                  = :new.tskt_id,
+        piqt_id                  = :new.piqt_id,
+        lltp_id                  = :new.lltp_id,
+        lttp_mntygkprrevw        = :new.lttp_mntygkprrevw,
+        lttp_id                  = :new.lttp_id,
+        cbty_id                  = :new.cbty_id,
+        lhtp_id                  = :new.lhtp_id,
+        cdtp_id                  = :new.cdtp_id,
+        fctp_id                  = :new.fctp_id,
+        rpty_id                  = :new.rpty_id,
+        bptp_id                  = :new.bptp_id,
+        cctp_id                  = :new.cctp_id,
+        attp_id                  = :new.attp_id,
+        eucy_id                  = :new.eucy_id,
+        ettp_id                  = :new.ettp_id,
+        prny_id                  = :new.prny_id,
+        ddli_las_dctdby          = :new.ddli_las_dctdby,
+        ddli_frstatvdby          = :new.ddli_frstatvdby,
+        ddli_las_atvdby          = :new.ddli_las_atvdby,
+        ddli_ratnapvl            = :new.ddli_ratnapvl,
+        ddli_rfngwkfwtsk         = :new.ddli_rfngwkfwtsk,
+        ddli_prvsrfngtsk         = :new.ddli_prvsrfngtsk,
+        ddli_prvsrfngtsk_prmn    = :new.ddli_prvsrfngtsk_prmn,
+        ddli_ownr                = :new.ddli_ownr,
+        ddli_prvsownr            = :new.ddli_prvsownr,
+        ddli_prvssndr            = :new.ddli_prvssndr,
+        ddli_prvsownrprmn        = :new.ddli_prvsownrprmn,
+        ddli_tnfr                = :new.ddli_tnfr,
+        ddli_prvstnfr            = :new.ddli_prvstnfr,
+        attp_dscm                = :new.attp_dscm,
+        cctp_dfltldn
+gmsg         = :new.cctp_dfltldngmsg,
+        tskt_icon                = :new.tskt_icon,
+        ddli_prnt                = :new.ddli_prnt,
+        attp_dfltltr_head        = :new.attp_dfltltr_head,
+        ddli_ddl                 = :new.ddli_ddl,
+        classtype                = :new.classtype,
+        ddli_c4c_id              = :new.ddli_c4c_id,
+        ddli_crtd                = :new.ddli_crtd,
+        ddli_las_act             = :new.ddli_las_act,
+        ddli_las_act_actrtyp     = :new.ddli_las_act_actrtyp,
+        ddli_obj_stt             = :new.ddli_obj_stt,
+        ddli_vers                = :new.ddli_vers,
+        ddli_vsbt                = :new.ddli_vsbt,
+        ddli_dltddt              = :new.ddli_dltddt,
+        ddli_las_act_by          = :new.ddli_las_act_by,
+        ddli_origcrtr            = :new.ddli_origcrtr,
+        ddli_origcrtrlogdin      = :new.ddli_origcrtrlogdin,
+        stnt_id                  = :new.stnt_id,
+        careplan_note_id		 = :new.careplan_note_id,
+        ddli_code_value			 = :new.ddli_code_value,
+        ddli_reference			 = :new.ddli_reference
+      WHERE
+        ddli_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_ddl_item
+        (
+          ddli_las_act_by_logdin,
+          ddli_univid,
+          ddli_lbl,
+          ddli_cmmt,
+          ddli_val,
+          ddli_sytm,
+          ddli_ddl_itemconsid,
+          ddli_frstatvd,
+          ddli_las_atvd,
+          ddli_las_dctd,
+          ddli_wkfwistcid,
+          ddli_cnv_id,
+          ddli_ownrchndflag,
+          ddli_ownrchndcnt,
+          umty_id,
+          cpny_id,
+          plns_id,
+          mmgy_id,
+          qtyp_id,
+          pttp_prj_pvtncase,
+          pttp_prj_pvtncasereqt,
+          pttp_prj_pvtncm_prj,
+          pttp_prj_pvtncm_prj_reqt,
+          pttp_id,
+          bmty_id,
+          ncty_id,
+          ueny_id,
+          cnt
+p_id,
+          mnty_id,
+          ctyb_mndtapvl,
+          ctyb_id,
+          imdy_id,
+          tity_id,
+          tskt_rcpttyp,
+          tskt_id,
+          piqt_id,
+          lltp_id,
+          lttp_mntygkprrevw,
+          lttp_id,
+          cbty_id,
+          lhtp_id,
+          cdtp_id,
+          fctp_id,
+          rpty_id,
+          bptp_id,
+          cctp_id,
+          attp_id,
+          eucy_id,
+          ettp_id,
+          prny_id,
+          ddli_las_dctdby,
+          ddli_frstatvdby,
+          ddli_las_atvdby,
+          ddli_ratnapvl,
+          ddli_rfngwkfwtsk,
+          ddli_prvsrfngtsk,
+          ddli_prvsrfngtsk_prmn,
+          ddli_ownr,
+          ddli_prvsownr,
+          ddli_prvssndr,
+          ddli_prvsownrprmn,
+          ddli_tnfr,
+          ddli_prvstnfr,
+          attp_dscm,
+          cctp_dfltldngmsg,
+          tskt_icon,
+          ddli_prnt,
+          attp_dfltltr_head,
+          ddli_ddl,
+          classtype,
+          ddli_c4c_id,
+          ddli_crtd,
+          ddli_las_act,
+          ddli_las_act_actrtyp,
+          ddli_obj_stt,
+          ddli_vers,
+          ddli_vsbt,
+          ddli_dltddt,
+          ddli_las_act_by,
+          ddli_origcrtr,
+          ddli_origcrtrlogdin,
+          ddli_id,
+          valid_from,
+          valid_to,
+          ddli_audid,
+          ddli_prev_audid,
+          ddli_next_audid,
+          stnt_id,
+          careplan_note_id,
+          ddli_code_value,
+          ddli_reference
+        )
+        VALUES
+        (
+          :new.ddli_las_act_by_logdin,
+          :new.ddli_univid,
+          :new.ddli_lbl,
+          :new.ddli_cmmt,
+          :new.ddli_val,
+          :new.ddli_sytm,
+          :new.ddli_ddl_itemconsid,
+          :new.ddli_frstatvd,
+          :new.ddli_las_atvd,
+          :new.ddli_las_dctd,
+          :new.ddli_wkfwistcid,
+          :new.ddli_cnv_id,
+          :new.ddli_ownrchndflag,
+          :new.ddli_ownrchndcnt,
+          :new.umty_id,
+          :new.cpny_id,
+          :new.plns_id,
+          :new.m
+mgy_id,
+          :new.qtyp_id,
+          :new.pttp_prj_pvtncase,
+          :new.pttp_prj_pvtncasereqt,
+          :new.pttp_prj_pvtncm_prj,
+          :new.pttp_prj_pvtncm_prj_reqt,
+          :new.pttp_id,
+          :new.bmty_id,
+          :new.ncty_id,
+          :new.ueny_id,
+          :new.cntp_id,
+          :new.mnty_id,
+          :new.ctyb_mndtapvl,
+          :new.ctyb_id,
+          :new.imdy_id,
+          :new.tity_id,
+          :new.tskt_rcpttyp,
+          :new.tskt_id,
+          :new.piqt_id,
+          :new.lltp_id,
+          :new.lttp_mntygkprrevw,
+          :new.lttp_id,
+          :new.cbty_id,
+          :new.lhtp_id,
+          :new.cdtp_id,
+          :new.fctp_id,
+          :new.rpty_id,
+          :new.bptp_id,
+          :new.cctp_id,
+          :new.attp_id,
+          :new.eucy_id,
+          :new.ettp_id,
+          :new.prny_id,
+          :new.ddli_las_dctdby,
+          :new.ddli_frstatvdby,
+          :new.ddli_las_atvdby,
+          :new.ddli_ratnapvl,
+          :new.ddli_rfngwkfwtsk,
+          :new.ddli_prvsrfngtsk,
+          :new.ddli_prvsrfngtsk_prmn,
+          :new.ddli_ownr,
+          :new.ddli_prvsownr,
+          :new.ddli_prvssndr,
+          :new.ddli_prvsownrprmn,
+          :new.ddli_tnfr,
+          :new.ddli_prvstnfr,
+          :new.attp_dscm,
+          :new.cctp_dfltldngmsg,
+          :new.tskt_icon,
+          :new.ddli_prnt,
+          :new.attp_dfltltr_head,
+          :new.ddli_ddl,
+          :new.classtype,
+          :new.ddli_c4c_id,
+          :new.ddli_crtd,
+          :new.ddli_las_act,
+          :new.ddli_las_act_actrtyp,
+          :new.ddli_obj_stt,
+          :new.ddli_vers,
+          :new.ddli_vsbt,
+          :new.ddli_dltddt,
+          :new.ddli_las_act_by,
+          :new.ddli_origcrtr,
+          :new.ddli_origcrtrlogdin,
+          :new.ddli_id,
+          :new.ddli_las_act_tim,
+          NULL,
+          u_ddl_item.NEXTVAL,
+          last_audid,
+          NULL,
+          :new.stnt_id,
+          :new.careplan_note_id,
+          :new.ddli_cod
+e_value,
+          :new.ddli_reference
+        );
+      /* update last audit record's valid_to to new LastActionTime
+      and next audit ID to newly inserted record's sequence number
+      */
+      UPDATE
+        a_ddl_item
+      SET
+        valid_to        = :new.ddli_las_act_tim,
+        ddli_next_audid = u_ddl_item.CURRVAL
+      WHERE
+        ddli_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_NOTE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT OR UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_NOTE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_note before insert or update on t_note
+for each row
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+declare
+    v_affiliation_id number(19,0);
+    v_member_id number(19,0);
+    v_classtype varchar2(255);
+	v_case_aff_id number(19,0);
+	v_um_aff_id number(19,0);
+
+  begin
+
+    -- Member
+    if :new.note_memb is not null then
+      select usr.classtype, usr.usr_id into v_classtype, v_member_id
+      from t_usr usr
+      where :new.note_memb = usr.mbur_id;
+      if v_classtype is not null then
+        :new.affiliation_type := 'Member';
+      end if;
+      if v_member_id is not null then
+        :new.member_id := v_member_id;
+        :new.affiliation_id := v_member_id;
+      end if;
+      if :new.note_membnotetyp is not null then
+        :new.note_type := :new.note_membnotetyp;
+      end if;
+    end if;
+
+    -- Case / Case Request
+    if :new.note_cm_base is not null then
+      select cm.classtype, cm.cmbs_id, cm.cmbs_memb into v_classtype, v_affiliation_id, v_member_id
+      from t_cm_basebase cm
+      where :new.note_cm_base = cm.cmbs_id;
+      if v_classtype is not null then
+        :new.affiliation_type := v_classtype;
+      end if;
+      if v_affiliation_id is not null then
+        :new.affiliation_id := v_affiliation_id;
+      end if;
+      if v_member_id is not null then
+        :new.member_id := v_member_id;
+      end if;
+      if :new.note_casenotetyp is not null then
+        :new.note_type := :new.note_casenotetyp;
+        --:new.affiliation_type := 'Case';
+      end if;
+      if :new.note_cm_notetyp is not null then
+        :new.note_type := :new.note_cm_notetyp;
+        --:new.affiliation_type := 'CMProject';
+      end if;
+    end if;
+
+    -- Authorization (UM)
+    IF (:new.note_um_basenote IS NOT NULL) THEN
+      :new.affiliation_id := :new.note_um_basenote;
+      :new.affiliation_type := 'UMEvent';
+
+      IF (:new.note_um_notetyp IS NOT NULL) THEN
+        :new.note_type := :new.note_um_notetyp;
+      END IF;
+
+      -- hijacking the note_memb column to avoid
+      -- changing lots of layers to support the member_id column
+      -- move the member id from the
+ note_memb to the member_id column
+      IF (:new.note_memb IS NOT NULL) THEN
+        :new.member_id := :new.note_memb;
+        :new.note_memb := NULL;
+      END IF;
+
+      -- preserving UM note creation where we are able to lookup
+      -- the member id from the t_um_base table the hijack above
+      -- was due to cases where the t_um_base records was not yet persisted
+      IF (:new.member_id IS NULL) THEN
+        SELECT um.umbs_memb
+        INTO   v_member_id
+        FROM   t_um_base um
+        WHERE  :new.note_um_basenote = um.umbs_id;
+
+        :new.member_id := v_member_id;
+      END IF;
+
+    END IF;
+
+    -- Diagnosis
+    if :new.note_notedgis is not null then
+      select diag.classtype, diag.mbdb_id, diag.mdss_memb into v_classtype, v_affiliation_id, v_member_id
+      from t_membdgisbase diag
+      where :new.note_notedgis = diag.mbdb_id;
+      :new.affiliation_id := :new.note_notedgis;
+      if v_classtype is not null then
+        :new.affiliation_type := 'UMDiagnosis';
+      end if;
+      if v_affiliation_id is not null then
+        :new.affiliation_id := v_affiliation_id;
+      end if;
+      if v_member_id is not null then
+        :new.member_id := v_member_id;
+      end if;
+      if :new.note_um_notetyp is not null then
+        :new.note_type := :new.note_um_notetyp;
+      end if;
+    end if;
+
+    -- Medical Service associated with a Diagnosis
+    if :new.note_mdclsrvc is not null then
+      select apbl.classtype, apbl.msrv_id, diag.mdss_memb into v_classtype, v_affiliation_id, v_member_id
+      from t_apbl apbl
+      left outer join t_membdgisbase diag on msrv_srvcdgis = mbdb_id
+      where :new.note_mdclsrvc = apbl.msrv_id;
+      if v_classtype is not null then
+        :new.affiliation_type := 'MedicalService';
+      end if;
+      if v_affiliation_id is not null then
+        :new.affiliation_id := v_affiliation_id;
+      end if;
+      if v_member_id is not null then
+        :new.member_id := v_member_id;
+      end if;
+      if :new.note_um_notetyp is no
+t null then
+        :new.note_type := :new.note_um_notetyp;
+      end if;
+    end if;
+
+    -- Medical Service associated with a UM Event (CAREMGR-19252)
+    if :new.note_mdclsrvc is not null then
+      select apbl.classtype, apbl.msrv_id, auth.umbs_memb into v_classtype, v_affiliation_id, v_member_id
+      from t_apbl apbl
+      left outer join t_um_base auth on apbl.apbl_umevent = auth.umbs_id
+      where :new.note_mdclsrvc = apbl.msrv_id;
+      if v_classtype is not null then
+        :new.affiliation_type := 'MedicalService';
+      end if;
+      if v_affiliation_id is not null then
+        :new.affiliation_id := v_affiliation_id;
+      end if;
+      if v_member_id is not null then
+        :new.member_id := v_member_id;
+      end if;
+      if :new.note_um_notetyp is not null then
+        :new.note_type := :new.note_um_notetyp;
+      end if;
+    end if;
+
+    -- Extension
+    if :new.note_um_extn is not null then
+      select extn.classtype, extn.umxt_id, um.umbs_memb into v_classtype, v_affiliation_id, v_member_id
+      from t_apbl extn
+      inner join t_um_base um on extn.umxt_prntevnt = um.umbs_id
+      where :new.note_um_extn = extn.umxt_id;
+      if v_classtype is not null then
+        :new.affiliation_type := 'UMExtension';
+      end if;
+      if v_affiliation_id is not null then
+        :new.affiliation_id := v_affiliation_id;
+      end if;
+      if v_member_id is not null then
+        :new.member_id := v_member_id;
+      end if;
+      if :new.note_um_notetyp is not null then
+        :new.note_type := :new.note_um_notetyp;
+      end if;
+    end if;
+
+
+    if :new.note_careplan_notetype is not null then
+      -- Care Plan
+    /*  if :new.note_careplan_notetype = 93007 then
+        select cp.classtype, cp.cp_id, cm.cmbs_memb into v_classtype, v_affiliation_id, v_member_id
+        from t_careplan cp
+        inner join t_careplan_note_xref xref on xref.t_careplan_cp_id = cp.cp_id
+        inner join t_cm_basebase cm on cp.t_cm_basebase_cmbb_id = cm.cmbs_id
+
+where xref.t_note_note_id = :new.note_id;
+        if v_classtype is not null then
+          :new.affiliation_type := 'CarePlan';
+        end if;
+        if v_affiliation_id is not null then
+          :new.affiliation_id := v_affiliation_id;
+        end if;
+        if v_member_id is not null then
+          :new.member_id := v_member_id;
+        end if;
+      end if;
+
+      -- Opportunity (Problem)
+      if :new.note_careplan_notetype = 93008 then
+        select opp.classtype, opp.mbdb_id, opp.mdss_memb into v_classtype, v_affiliation_id, v_member_id
+        from t_membdgisbase opp
+        inner join t_membdgisbase_note_xref xref on xref.t_membdgisbase_mbdb_id = opp.mbdb_id
+        where xref.t_note_note_id = :new.note_id;
+        if v_classtype is not null then
+          :new.affiliation_type := 'CarePlanProblem';
+        end if;
+        if v_affiliation_id is not null then
+          :new.affiliation_id := v_affiliation_id;
+        end if;
+        if v_member_id is not null then
+          :new.member_id := v_member_id;
+        end if;
+      end if;
+
+      -- Goal
+      if :new.note_careplan_notetype = 93009 then
+        select goal.classtype, goal.goal_id, opp.mdss_memb into v_classtype, v_affiliation_id, v_member_id
+        from t_goalcp goal
+        inner join t_goalcp_note_xref xref on xref.t_goalcp_goal_id = goal.goal_id
+        inner join t_membdgisbase_goalcp_xref xref2 on xref2.t_goalcp_goal_id = goal.goal_id
+        inner join t_membdgisbase opp on xref2.t_membdgisbase_mbdb_id = opp.mbdb_id
+        where xref.t_note_note_id = :new.note_id;
+        if v_classtype is not null then
+          :new.affiliation_type := 'CarePlanGoal';
+        end if;
+        if v_affiliation_id is not null then
+          :new.affiliation_id := v_affiliation_id;
+        end if;
+        if v_member_id is not null then
+          :new.member_id := v_member_id;
+        end if;
+      end if;
+
+      -- Action (ToDo)
+      if :new.note_careplan_notetype = 93010 then
+        select action.c
+lasstype, action.todo_id, opp.mdss_memb into v_classtype, v_affiliation_id, v_member_id
+        from t_todo action
+        inner join t_todo_note_xref xref on xref.t_todo_todo_id = action.todo_id
+        inner join t_goalcp_todo_xref goal_xref on goal_xref.t_todo_todo_id = xref.t_todo_todo_id
+        inner join t_membdgisbase_goalcp_xref opp_xref on opp_xref.t_goalcp_goal_id = goal_xref.t_goalcp_goal_id
+        inner join t_membdgisbase opp on opp.mbdb_id = opp_xref.t_membdgisbase_mbdb_id
+        where xref.t_note_note_id = :new.note_id;
+        if v_classtype is not null then
+          :new.affiliation_type := 'CarePlanTodo';
+        end if;
+        if v_affiliation_id is not null then
+          :new.affiliation_id := v_affiliation_id;
+        end if;
+        if v_member_id is not null then
+          :new.member_id := v_member_id;
+        end if;
+      end if;
+
+      -- Barrier
+      if :new.note_careplan_notetype = 93011 then
+        select barrier.classtype, barrier.barrier_id, barrier_member_id into v_classtype, v_affiliation_id, v_member_id
+        from t_barrier barrier
+        inner join t_barrier_note_xref xref on xref.t_barrier_barrier_id = barrier.barrier_id
+        where xref.t_note_note_id = :new.note_id;
+        if v_classtype is not null then
+          :new.affiliation_type := 'CarePlanBarrier';
+        end if;
+        if v_affiliation_id is not null then
+          :new.affiliation_id := v_affiliation_id;
+        end if;
+        if v_member_id is not null then
+          :new.member_id := v_member_id;
+        end if;
+      end if;*/
+      :new.note_type := :new.note_careplan_notetype;
+    end if;
+
+
+    -- Group
+    if :new.note_grp is not null then
+      select grp.classtype, grp.gpbs_id, null into v_classtype, v_affiliation_id, v_member_id
+      from t_grp_base grp
+      where grp.gpbs_id = :new.note_grp;
+      if v_classtype is not null then
+        :new.affiliation_type := 'MemberGroup';
+      end if;
+      if v_affiliation_id is not null then
+
+  :new.affiliation_id := v_affiliation_id;
+      end if;
+      if v_member_id is not null then
+        :new.member_id := v_member_id;
+      end if;
+      if :new.note_membnotetyp is not null then
+        :new.note_type := :new.note_membnotetyp;
+      end if;
+    end if;
+
+    -- Provider
+    if :new.note_atcdpvdr is not null then
+      select pvdr.classtype, pvdr.usr_id, null into v_classtype, v_affiliation_id, v_member_id
+      from t_usr pvdr
+      where pvdr.prv_id = :new.note_atcdpvdr;
+      if v_classtype is not null then
+        :new.affiliation_type := 'Provider';
+      end if;
+      if v_affiliation_id is not null then
+        :new.affiliation_id := v_affiliation_id;
+      end if;
+      if v_member_id is not null then
+        :new.member_id := v_member_id;
+      end if;
+      if :new.note_pvdrnotetyp is not null then
+        :new.note_type := :new.note_pvdrnotetyp;
+      end if;
+    end if;
+
+    -- Provider
+    if :new.note_rltdpvdr is not null then
+      select pvdr.classtype, pvdr.usr_id, null into v_classtype, v_affiliation_id, v_member_id
+      from t_usr pvdr
+      where pvdr.prv_id = :new.note_rltdpvdr;
+      if v_classtype is not null then
+        :new.affiliation_type := 'Provider';
+      end if;
+      if v_affiliation_id is not null then
+        :new.affiliation_id := v_affiliation_id;
+      end if;
+      if v_member_id is not null then
+        :new.member_id := v_member_id;
+      end if;
+      if :new.note_pvdrnotetyp is not null then
+        :new.note_type := :new.note_pvdrnotetyp;
+      end if;
+    end if;
+
+    -- Sent Task
+    if :new.note_setk is not null then
+		select task.classtype, task.setk_id, task.setk_affn_memb into v_classtype, v_affiliation_id, v_member_id
+		from t_senttsk task
+		where task.setk_id = :new.note_setk;
+		if v_classtype is not null then
+			:new.affiliation_type := 'SentTask';
+		end if;
+		if v_affiliation_id is not null then
+			:new.affiliation_id := v_affiliation_id;
+		end if;
+		if v_member_id is null then
+			-- Sent Task a
+ttached to Case and Program
+			select task.setk_affn_cm into v_case_aff_id
+			from t_senttsk task
+			where task.setk_id = :new.note_setk;
+			if v_case_aff_id is not null then
+				select cm.cmbs_memb into v_member_id
+				from t_cm_basebase cm where cm.cmbs_id=v_case_aff_id;
+			else -- Sent Tasks attached to Authorization
+				select COALESCE (task.setk_affn_um_evnt, task.setk_affn_um_evntreqt)
+				into v_um_aff_id from t_senttsk task
+				where task.setk_id = :new.note_setk;
+				if v_um_aff_id is not null then
+					select um.umbs_memb into v_member_id
+					from t_um_base um where  um.umbs_id = v_um_aff_id;
+				end if;
+			end if;
+
+
+		-- Sent Task attached to Diagnosis
+		-- Sent Task attached to Medical Service
+		-- Sent Task attached to Appeal
+		-- Sent Task attached to Extension
+		end if;
+		if v_member_id is not null then
+			:new.member_id := v_member_id;
+		end if;
+		if :new.note_setk_notetyp is not null then
+			:new.note_type := :new.note_setk_notetyp;
+		end if;
+	end if;
+
+
+	  -- AssessmentNote
+    if :new.note_taknasmt is not null then
+      select ttb.classtype, ttb.TACB_ID, ttb.TACB_MEMB
+	  into v_classtype, v_affiliation_id,  v_member_id
+      from T_TAKNASMTCC_BASE ttb
+      where :new.note_taknasmt = ttb.TACB_ID;
+      if v_classtype is not null then
+        :new.affiliation_type := 'Assessment';
+      end if;
+      if v_affiliation_id is not null then
+        :new.affiliation_id := v_affiliation_id;
+      end if;
+      if :new.ASSESSMENT_NOTE_TYPE is not null then
+        :new.note_type := :new.ASSESSMENT_NOTE_TYPE;
+      end if;
+	   if v_member_id is not null then
+        :new.member_id := v_member_id;
+      end if;
+    end if;
+
+	 -- Sent Task Completion
+    if :new.NOTE_TASK_COMPLETION is not null then
+		SELECT task.classtype, task.setk_id, task.setk_affn_memb
+		INTO v_classtype, v_affiliation_id, v_member_id
+		FROM t_senttsk task
+		WHERE task.setk_id = :new.NOTE_TASK_COMPLETION;
+		if v_classtype is not null then
+			:new.affiliation_type := 'Task';
+		end if;
+	
+	if v_affiliation_id is not null then
+			:new.affiliation_id := v_affiliation_id;
+		end if;
+		if v_member_id is null then
+			SELECT task.setk_affn_cm
+			INTO v_case_aff_id
+			FROM t_senttsk task
+			WHERE task.setk_id = :new.NOTE_TASK_COMPLETION;
+			if v_case_aff_id is not null then
+				SELECT cm.cmbs_memb
+				INTO v_member_id
+				FROM t_cm_basebase cm
+				WHERE cm.cmbs_id=v_case_aff_id;
+			else
+				SELECT COALESCE (task.setk_affn_um_evnt, task.setk_affn_um_evntreqt)
+				INTO v_um_aff_id
+				FROM t_senttsk task
+				WHERE task.setk_id = :new.NOTE_TASK_COMPLETION;
+				if v_um_aff_id is not null then
+					select um.umbs_memb
+					INTO v_member_id
+					FROM t_um_base um
+					WHERE  um.umbs_id = v_um_aff_id;
+				end if;
+			end if;
+		end if;
+		if v_member_id is not null then
+			:new.member_id := v_member_id;
+		end if;
+		if :new.TASK_COMPLETION_NOTE_TYPE is not null then
+			:new.note_type := :new.TASK_COMPLETION_NOTE_TYPE;
+		end if;
+	end if;
+  end;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_NOTE_AUDITINSERT
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+INSERT
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_NOTE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_note_auditinsert BEFORE INSERT ON T_NOTE FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+  /* save current date */
+  curr_date DATE;
+BEGIN
+  curr_date := current_date;
+
+  IF :new.note_crtd IS NULL THEN
+    :new.note_crtd := curr_date;
+  END IF;
+
+  IF :new.note_las_act_tim IS NULL THEN
+    :new.note_las_act_tim := curr_date;
+  END IF;
+
+  IF :new.note_las_act IS NULL THEN
+    :new.note_las_act := 1;
+  END IF;
+
+  IF :new.note_obj_stt IS NULL THEN
+    :new.note_obj_stt := 1;
+  END IF;
+
+  IF :new.note_vers IS NULL THEN
+    :new.note_vers := 0;
+  END IF;
+
+  IF :new.note_vsbt IS NULL THEN
+    :new.note_vsbt := 1001;
+  END IF;
+
+  IF :new.note_las_act_by IS NULL THEN
+    :new.note_las_act_by := 1;
+  END IF;
+
+  IF :new.note_origcrtr IS NULL THEN
+    :new.note_origcrtr := 1;
+  END IF;
+
+  IF :new.note_origcrtrlogdin IS NULL THEN
+    :new.note_origcrtrlogdin := 1;
+  END IF;
+
+  IF :new.note_las_act_by_logdin IS NULL THEN
+    :new.note_las_act_by_logdin := 1;
+  END IF;
+
+  INSERT INTO a_note
+  (
+   classtype,
+   note_c4c_id,
+   note_crtd,
+   note_las_act,
+   note_las_act_actrtyp,
+   note_obj_stt,
+   note_vers,
+   note_vsbt,
+   note_dltddt,
+   note_las_act_by,
+   note_origcrtr,
+   note_origcrtrlogdin,
+   note_las_act_by_logdin,
+   note_univid,
+   note_txt,
+   note_subj,
+   note_grvcnote,
+   note_phnenote,
+   note_calldt_tim,
+   note_calldrtn,
+   note_calr,
+   note_callrcpt,
+   note_nmbrdled,
+   note_err_cmmt,
+   note_rstncmmt,
+   note_wkfwistcid,
+   note_cnv_id,
+   note_ownrchndflag,
+   note_ownrchndcnt,
+   note_mrkdas_grvc,
+   note_rsld,
+   note_rfngwkfwtsk,
+   note_prvsrfngtsk,
+   note_prvsrfngtsk_prmn,
+   note_ownr,
+   note_prvsownr,
+   note_prvssndr,
+   note_prvsownrprmn,
+   note_tnfr,
+   note_prvstnfr,
+   note_mrkdrsldby,
+   note_mrkdgrvcby,
+   note_cm_base,
+   note_rltdpvdr,
+   note_um_notetyp,
+   note_pvdrnotetyp,
+   note_um_extn,
+   note_um_basenote,
+   note_atcdpvdr,
+   note_notedgis,
+   note_cstmflds,
+   note_pity,
+   note_calldrtnunts,
+   note_cm_notetyp,
+   note_casenotetyp,
+   note_membnotetyp,
+   note_mdclsrvc,
+   note_memb,
+   note_grp,
+   note_id
+,
+   valid_from,
+   valid_to ,
+   note_audid,
+   note_prev_audid,
+   note_next_audid,
+   transaction_id,
+   note_source,
+   note_reason,
+   note_outcome_attempt,
+   note_call_outcome,
+   note_call_disposition,
+   note_contact_id,
+   note_clinicaldataentry_id
+  )
+  VALUES
+  (
+   :new.classtype,
+   :new.note_c4c_id,
+   :new.note_crtd,
+   :new.note_las_act,
+   :new.note_las_act_actrtyp,
+   :new.note_obj_stt,
+   :new.note_vers,
+   :new.note_vsbt,
+   :new.note_dltddt,
+   :new.note_las_act_by,
+   :new.note_origcrtr,
+   :new.note_origcrtrlogdin,
+   :new.note_las_act_by_logdin,
+   :new.note_univid,
+   :new.note_txt,
+   :new.note_subj,
+   :new.note_grvcnote,
+   :new.note_phnenote,
+   :new.note_calldt_tim,
+   :new.note_calldrtn,
+   :new.note_calr,
+   :new.note_callrcpt,
+   :new.note_nmbrdled,
+   :new.note_err_cmmt,
+   :new.note_rstncmmt,
+   :new.note_wkfwistcid,
+   :new.note_cnv_id,
+   :new.note_ownrchndflag,
+   :new.note_ownrchndcnt,
+   :new.note_mrkdas_grvc,
+   :new.note_rsld,
+   :new.note_rfngwkfwtsk,
+   :new.note_prvsrfngtsk,
+   :new.note_prvsrfngtsk_prmn,
+   :new.note_ownr,
+   :new.note_prvsownr,
+   :new.note_prvssndr,
+   :new.note_prvsownrprmn,
+   :new.note_tnfr,
+   :new.note_prvstnfr,
+   :new.note_mrkdrsldby,
+   :new.note_mrkdgrvcby,
+   :new.note_cm_base,
+   :new.note_rltdpvdr,
+   :new.note_um_notetyp,
+   :new.note_pvdrnotetyp,
+   :new.note_um_extn,
+   :new.note_um_basenote,
+   :new.note_atcdpvdr,
+   :new.note_notedgis,
+   :new.note_cstmflds,
+   :new.note_pity,
+   :new.note_calldrtnunts,
+   :new.note_cm_notetyp,
+   :new.note_casenotetyp,
+   :new.note_membnotetyp,
+   :new.note_mdclsrvc,
+   :new.note_memb,
+   :new.note_grp,
+   :new.note_id,
+   :new.note_las_act_tim,
+   NULL,
+   u_note.NEXTVAL,
+   NULL,
+   NULL,
+   dbms_transaction.local_transaction_id,
+   :new.note_source,
+   :new.note_reason,
+   :new.note_outcome_attempt,
+   :new.note_call_outcome,
+   :new.note_call_disposition,
+   :new.note_contact_id,
+   :new.note_clinicaldataentry_id
+  );
+END;
+
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_NOTE_AUDITUPDATE
+</td>
+<td>
+BEFORE EACH ROW
+</td>
+<td>
+UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_NOTE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+trg_note_auditupdate BEFORE
+  UPDATE
+    ON T_NOTE FOR EACH ROW
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+    /* last audit ID of record */
+    last_audid NUMBER;
+  BEGIN
+    /* retrieve last audit ID of record */
+    BEGIN
+      SELECT
+        note_audid
+      INTO
+        last_audid
+      FROM
+        a_note
+      WHERE
+        note_id            = :old.note_id
+      AND note_next_audid IS NULL
+      AND rownum           &lt; 2 FOR UPDATE;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      last_audid := NULL;
+    END;
+    /* LastActionTime has not changed - no new transaction */
+    IF :old.note_las_act_tim = :new.note_las_act_tim THEN
+      UPDATE
+        a_note
+      SET
+        classtype              = :new.classtype,
+        note_c4c_id            = :new.note_c4c_id,
+        note_crtd              = :new.note_crtd,
+        note_las_act           = :new.note_las_act,
+        note_las_act_actrtyp   = :new.note_las_act_actrtyp,
+        note_obj_stt           = :new.note_obj_stt,
+        note_vers              = :new.note_vers,
+        note_vsbt              = :new.note_vsbt,
+        note_dltddt            = :new.note_dltddt,
+        note_las_act_by        = :new.note_las_act_by,
+        note_origcrtr          = :new.note_origcrtr,
+        note_origcrtrlogdin    = :new.note_origcrtrlogdin,
+        note_las_act_by_logdin = :new.note_las_act_by_logdin,
+        note_univid            = :new.note_univid,
+        note_txt               = :new.note_txt,
+        note_subj              = :new.note_subj,
+        note_grvcnote          = :new.note_grvcnote,
+        note_phnenote          = :new.note_phnenote,
+        note_calldt_tim        = :new.note_calldt_tim,
+        note_calldrtn          = :new.note_calldrtn,
+        note_calr              = :new.note_calr,
+        note_callrcpt          = :new.note_callrcpt,
+        note_nmbrdled          = :new.note_nmbrdled,
+        note_err_cmmt          = :new.note_err_cmmt,
+        note_rstncmmt          = :new.note_rstncmmt,
+        note_wkfwistcid        = :new.note_wkfwistcid,
+        note_cnv_id            = :new.note_cnv_id,
+
+        note_ownrchndflag      = :new.note_ownrchndflag,
+        note_ownrchndcnt       = :new.note_ownrchndcnt,
+        note_mrkdas_grvc       = :new.note_mrkdas_grvc,
+        note_rsld              = :new.note_rsld,
+        note_rfngwkfwtsk       = :new.note_rfngwkfwtsk,
+        note_prvsrfngtsk       = :new.note_prvsrfngtsk,
+        note_prvsrfngtsk_prmn  = :new.note_prvsrfngtsk_prmn,
+        note_ownr              = :new.note_ownr,
+        note_prvsownr          = :new.note_prvsownr,
+        note_prvssndr          = :new.note_prvssndr,
+        note_prvsownrprmn      = :new.note_prvsownrprmn,
+        note_tnfr              = :new.note_tnfr,
+        note_prvstnfr          = :new.note_prvstnfr,
+        note_mrkdrsldby        = :new.note_mrkdrsldby,
+        note_mrkdgrvcby        = :new.note_mrkdgrvcby,
+        note_cm_base           = :new.note_cm_base,
+        note_rltdpvdr          = :new.note_rltdpvdr,
+        note_um_notetyp        = :new.note_um_notetyp,
+        note_pvdrnotetyp       = :new.note_pvdrnotetyp,
+        note_um_extn           = :new.note_um_extn,
+        note_um_basenote       = :new.note_um_basenote,
+        note_atcdpvdr          = :new.note_atcdpvdr,
+        note_notedgis          = :new.note_notedgis,
+        note_cstmflds          = :new.note_cstmflds,
+        note_pity              = :new.note_pity,
+        note_calldrtnunts      = :new.note_calldrtnunts,
+        note_cm_notetyp        = :new.note_cm_notetyp,
+        note_casenotetyp       = :new.note_casenotetyp,
+        note_membnotetyp       = :new.note_membnotetyp,
+        note_mdclsrvc          = :new.note_mdclsrvc,
+        note_memb              = :new.note_memb,
+        note_grp               = :new.note_grp,
+        note_setk              = :new.note_setk,
+        note_setk_notetyp      = :new.note_setk_notetyp,
+		note_source            = :new.note_source,
+		note_reason            = :new.note_reason,
+		note_outcome_attempt   = :new.note_outcome_attempt,
+		note_call_outcome      = :n
+ew.note_call_outcome,
+        note_call_disposition  = :new.note_call_disposition,
+		note_contact_id        = :new.note_contact_id,
+		note_clinicaldataentry_id = :new.note_clinicaldataentry_id
+      WHERE
+        note_audid = last_audid;
+      /* LastActionTime has changed - new transaction in place */
+    ELSE
+      /* insert new values introduced by new transaction */
+      INSERT
+      INTO
+        a_note
+        (
+          classtype,
+          note_c4c_id,
+          note_crtd,
+          note_las_act,
+          note_las_act_actrtyp,
+          note_obj_stt,
+          note_vers,
+          note_vsbt,
+          note_dltddt,
+          note_las_act_by,
+          note_origcrtr,
+          note_origcrtrlogdin,
+          note_las_act_by_logdin,
+          note_univid,
+          note_txt,
+          note_subj,
+          note_grvcnote,
+          note_phnenote,
+          note_calldt_tim,
+          note_calldrtn,
+          note_calr,
+          note_callrcpt,
+          note_nmbrdled,
+          note_err_cmmt,
+          note_rstncmmt,
+          note_wkfwistcid,
+          note_cnv_id,
+          note_ownrchndflag,
+          note_ownrchndcnt,
+          note_mrkdas_grvc,
+          note_rsld,
+          note_rfngwkfwtsk,
+          note_prvsrfngtsk,
+          note_prvsrfngtsk_prmn,
+          note_ownr,
+          note_prvsownr,
+          note_prvssndr,
+          note_prvsownrprmn,
+          note_tnfr,
+          note_prvstnfr,
+          note_mrkdrsldby,
+          note_mrkdgrvcby,
+          note_cm_base,
+          note_rltdpvdr,
+          note_um_notetyp,
+          note_pvdrnotetyp,
+          note_um_extn,
+          note_um_basenote,
+          note_atcdpvdr,
+          note_notedgis,
+          note_cstmflds,
+          note_pity,
+          note_calldrtnunts,
+          note_cm_notetyp,
+          note_casenotetyp,
+          note_membnotetyp,
+          note_mdclsrvc,
+          note_memb,
+          note_grp,
+          note_id,
+          valid_from,
+          valid_to,
+          note_audid,
+
+    note_prev_audid,
+          note_next_audid,
+          note_setk,
+          note_setk_notetyp,
+          transaction_id,
+		  note_source,
+		  note_reason,
+		  note_outcome_attempt,
+		  note_call_outcome,
+          note_call_disposition,
+		  note_contact_id,
+		  note_clinicaldataentry_id
+        )
+        VALUES
+        (
+          :new.classtype,
+          :new.note_c4c_id,
+          :new.note_crtd,
+          :new.note_las_act,
+          :new.note_las_act_actrtyp,
+          :new.note_obj_stt,
+          :new.note_vers,
+          :new.note_vsbt,
+          :new.note_dltddt,
+          :new.note_las_act_by,
+          :new.note_origcrtr,
+          :new.note_origcrtrlogdin,
+          :new.note_las_act_by_logdin,
+          :new.note_univid,
+          :new.note_txt,
+          :new.note_subj,
+          :new.note_grvcnote,
+          :new.note_phnenote,
+          :new.note_calldt_tim,
+          :new.note_calldrtn,
+          :new.note_calr,
+          :new.note_callrcpt,
+          :new.note_nmbrdled,
+          :new.note_err_cmmt,
+          :new.note_rstncmmt,
+          :new.note_wkfwistcid,
+          :new.note_cnv_id,
+          :new.note_ownrchndflag,
+          :new.note_ownrchndcnt,
+          :new.note_mrkdas_grvc,
+          :new.note_rsld,
+          :new.note_rfngwkfwtsk,
+          :new.note_prvsrfngtsk,
+          :new.note_prvsrfngtsk_prmn,
+          :new.note_ownr,
+          :new.note_prvsownr,
+          :new.note_prvssndr,
+          :new.note_prvsownrprmn,
+          :new.note_tnfr,
+          :new.note_prvstnfr,
+          :new.note_mrkdrsldby,
+          :new.note_mrkdgrvcby,
+          :new.note_cm_base,
+          :new.note_rltdpvdr,
+          :new.note_um_notetyp,
+          :new.note_pvdrnotetyp,
+          :new.note_um_extn,
+          :new.note_um_basenote,
+          :new.note_atcdpvdr,
+          :new.note_notedgis,
+          :new.note_cstmflds,
+          :new.note_pity,
+          :new.note_calldrtnunts,
+          :new.note_cm_notetyp,
+          :new.note_casenotetyp,
+
+      :new.note_membnotetyp,
+          :new.note_mdclsrvc,
+          :new.note_memb,
+          :new.note_grp,
+          :new.note_id,
+          :new.note_las_act_tim,
+          NULL,
+          u_note.NEXTVAL,
+          last_audid,
+          NULL,
+          :new.note_setk,
+          :new.note_setk_notetyp,
+          dbms_transaction.local_transaction_id,
+		  :new.note_source,
+		  :new.note_reason,
+		  :new.note_outcome_attempt,
+		  :new.note_call_outcome,
+          :new.note_call_disposition,
+		  :new.note_contact_id,
+		  :new.note_clinicaldataentry_id
+        );
+      /* update last audit records valid_to to new LastActionTime
+      and next audit ID to newly inserted records sequence number
+      */
+      UPDATE
+        a_note
+      SET
+        valid_to        = :new.note_las_act_tim,
+        note_next_audid = u_note.CURRVAL
+      WHERE
+        note_audid = last_audid;
+    END IF;
+  END;
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TRG_T_NOTE
+</td>
+<td>
+AFTER EACH ROW
+</td>
+<td>
+INSERT OR UPDATE
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+TABLE
+</td>
+<td>
+T_NOTE
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+REFERENCING NEW AS NEW OLD AS OLD
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ENABLED
+</td>
+<td>
+TRG_T_NOTE
+AFTER INSERT OR UPDATE ON T_NOTE FOR EACH ROW
+
+</td>
+<td>
+PL/SQL
+</td>
+<td>
+DECLARE
+ var1 varchar2(4000);
+BEGIN
+ -- event (note-event)
+  var1 := 'INSERT INTO T_EVENT_UPDT (SELECT UMET_ID, :1 FROM T_UM_BASE WHERE UMBS_ID = :2)';
+ EXECUTE IMMEDIATE var1 USING 'P',:new.note_um_basenote;
+
+ -- extension (note-service-diagnosis-event) regular note
+ var1 := 'INSERT INTO T_EVENT_UPDT  ' ||
+         '(SELECT UMET_ID, :1 FROM T_UM_BASE WHERE UMBS_ID IN  ' ||
+         '(SELECT UMDS_DGISUM_EVNT FROM T_MEMBDGISBASE WHERE UMDS_ID IN  ' ||
+         '(SELECT MSRV_SRVCDGIS FROM T_APBL WHERE MSRV_ID = :2 )))';
+ EXECUTE IMMEDIATE var1 USING 'P',:new.note_mdclsrvc;
+
+ -- diagnosis (note-diagnosis-event)
+ var1 := 'INSERT INTO T_EVENT_UPDT  ' ||
+         '(SELECT UMET_ID, :1 FROM T_UM_BASE WHERE UMBS_ID IN  ' ||
+         '(SELECT UMDS_DGISUM_EVNT FROM T_MEMBDGISBASE WHERE MDSS_ID = :2 ))';
+ EXECUTE IMMEDIATE var1 USING 'P',:new.note_notedgis;
+
+ -- extension (note-service-diagnosis-event) note extension
+ var1 := 'INSERT INTO T_EVENT_UPDT  ' ||
+         '(SELECT UMET_ID, :1 FROM T_UM_BASE WHERE UMBS_ID IN  ' ||
+         '(SELECT UMDS_DGISUM_EVNT FROM T_MEMBDGISBASE WHERE UMDS_ID IN  ' ||
+         '(SELECT MSRV_SRVCDGIS FROM T_APBL WHERE UMXT_ID = :2 )))';
+ EXECUTE IMMEDIATE var1 USING 'P',:new.note_um_extn;
+
+END;
+
+
+
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+NO
+</td>
+<td>
+YES
+</td>
+<td>
+NO
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                              VARCHAR2(128)
+ TRIGGER_NAME                                       VARCHAR2(128)
+ TRIGGER_TYPE                                       VARCHAR2(16)
+ TRIGGERING_EVENT                                   VARCHAR2(246)
+ TABLE_OWNER                                        VARCHAR2(128)
+ BASE_OBJECT_TYPE                                   VARCHAR2(18)
+ TABLE_NAME                                         VARCHAR2(128)
+ COLUMN_NAME                                        VARCHAR2(4000)
+ REFERENCING_NAMES                                  VARCHAR2(422)
+ WHEN_CLAUSE                                        VARCHAR2(4000)
+ STATUS                                             VARCHAR2(8)
+ DESCRIPTION                                        VARCHAR2(4000)
+ ACTION_TYPE                                        VARCHAR2(11)
+ TRIGGER_BODY                                       LONG
+ CROSSEDITION                                       VARCHAR2(7)
+ BEFORE_STATEMENT                                   VARCHAR2(3)
+ BEFORE_ROW                                         VARCHAR2(3)
+ AFTER_ROW                                          VARCHAR2(3)
+ AFTER_STATEMENT                                    VARCHAR2(3)
+ INSTEAD_OF_ROW                                     VARCHAR2(3)
+ FIRE_ONCE                                          VARCHAR2(3)
+ APPLY_SERVER_ONLY                                  VARCHAR2(3)
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM dba_triggers
+ WHERE (table_owner, table_name) IN (SELECT /*+ UNNEST */ object_owner, object_name
+                                       FROM plan_table
+                                      WHERE statement_id = 'LIST_OF_TABLES'
+                                        AND remarks = '00540ttuxh7n9')
+ ORDER BY table_owner, table_name, trigger_name;
+
+6 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/16:51:23 for SQL ID 00540ttuxh7n9 (MERGE INTO DW_DIM_NOTE A USING (SELECT MAIN.NOTE_ID AS NOTE_ID, MAIN.NOTE_C4C_ID) </font>
+</body>
+</html>

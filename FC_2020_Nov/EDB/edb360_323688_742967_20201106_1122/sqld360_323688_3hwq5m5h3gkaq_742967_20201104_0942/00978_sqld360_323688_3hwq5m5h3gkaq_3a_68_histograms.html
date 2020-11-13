@@ -1,0 +1,2783 @@
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_3hwq5m5h3gkaq_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>Histograms</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<body>
+<h1><em><a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank">SQLd360</a></em> v192: SQL 360-degree view - 3a. Histograms Page </h1>
+
+<pre>
+sqlid:3hwq5m5h3gkaq dbname:prd version:12.1.0.2.0 host:742967 license:T days:61 today:2020-11-04/09:45:11
+</pre>
+
+<table><tr class="main">
+<td class="c">THH_C4C.CLAIM_REVIEW</td>
+<td class="c">THH_C4C.T_ALRT</td>
+<td class="c">THH_C4C.T_APBL</td>
+<td class="c">THH_C4C.T_APL</td>
+<td class="c">THH_C4C.T_APVLHEAD</td>
+<td class="c">THH_C4C.T_APVLREC</td>
+<td class="c">THH_C4C.T_ASMTCC_BASE</td>
+<td class="c">THH_C4C.T_BARRIER</td>
+<td class="c">THH_C4C.T_BARRIER_TEMPLATE</td>
+<td class="c">THH_C4C.T_BLR_PLT</td>
+<td class="c">THH_C4C.T_CAREPLAN</td>
+<td class="c">THH_C4C.T_CM_BASEBASE</td>
+<td class="c">THH_C4C.T_CNCT</td>
+<td class="c">THH_C4C.T_COORDINATION_OF_BENEFITS</td>
+<td class="c">THH_C4C.T_CSTMFLDS</td>
+<td class="c">THH_C4C.T_DAYSOFF_AWNC</td>
+<td class="c">THH_C4C.T_DDL_ITEM</td>
+<td class="c">THH_C4C.T_DDL_ITEMPVDRSLTS</td>
+<td class="c">THH_C4C.T_DGIS</td>
+<td class="c">THH_C4C.T_EDNLCNTT</td>
+<td class="c">THH_C4C.T_ENNS</td>
+<td class="c">THH_C4C.T_FIL</td>
+<td class="c">THH_C4C.T_FRDSAND_FMLYLIST</td>
+<td class="c">THH_C4C.T_GOALCP</td>
+<td class="c">THH_C4C.T_GOALCP_TEMPLATE</td>
+<td class="c">THH_C4C.T_ICMGFAX</td>
+<td class="c">THH_C4C.T_LNGSLIST</td>
+<td class="c">THH_C4C.T_LTR_RCPT</td>
+<td class="c">THH_C4C.T_LTR_SUBJ</td>
+<td class="c">THH_C4C.T_LTR_TMPT</td>
+<td class="c">THH_C4C.T_MDCLCLM</td>
+<td class="c">THH_C4C.T_MDCT</td>
+<td class="c">THH_C4C.T_MEMBDGISBASE</td>
+<td class="c">THH_C4C.T_NOTE</td>
+<td class="c">THH_C4C.T_NTCE</td>
+<td class="c">THH_C4C.T_ORG_CHRTITEM</td>
+<td class="c">THH_C4C.T_ORG_CHRTITEMPRSS</td>
+<td class="c">THH_C4C.T_OTHER_INSURANCE</td>
+<td class="c">THH_C4C.T_OUTCOME</td>
+<td class="c">THH_C4C.T_PAT_ID_QRY</td>
+<td class="c">THH_C4C.T_PAYRDGISSCTY</td>
+<td class="c">THH_C4C.T_PAYRROLS</td>
+<td class="c">THH_C4C.T_PHI</td>
+<td class="c">THH_C4C.T_PRACTITIONER_ROLE</td>
+<td class="c">THH_C4C.T_PRMR</td>
+<td class="c">THH_C4C.T_PRODCAT_PVDR</td>
+<td class="c">THH_C4C.T_PROVIDER_CHOICE</td>
+<td class="c">THH_C4C.T_PRPDLTR</td>
+<td class="c">THH_C4C.T_PVDRASTN</td>
+<td class="c">THH_C4C.T_QCK_SEA_SNGS</td>
+<td class="c">THH_C4C.T_REVWHEAD</td>
+<td class="c">THH_C4C.T_REVWREC</td>
+<td class="c">THH_C4C.T_SENTEMAL</td>
+<td class="c">THH_C4C.T_SENTLTR</td>
+<td class="c">THH_C4C.T_SENTTSK</td>
+<td class="c">THH_C4C.T_SYTMSTNGDAT</td>
+<td class="c">THH_C4C.T_TAKNASMTCC_BASE</td>
+<td class="c">THH_C4C.T_TIM_OFF_ITVL</td>
+<td class="c">THH_C4C.T_TIM_OFF_REQT</td>
+<td class="c">THH_C4C.T_TNFRREC</td>
+<td class="c">THH_C4C.T_TODO</td>
+<td class="c">THH_C4C.T_TODO_TEMPLATE</td>
+<td class="c">THH_C4C.T_TSK_BASE</td>
+<td class="c">THH_C4C.T_UM_BASE</td>
+<td class="c">THH_C4C.T_USR</td>
+<td class="c">THH_C4C.T_USR_CNCTINFO</td>
+<td class="c">THH_C4C.T_USR_LOGN</td>
+<td class="c">THH_C4C.T_WKFWTSK</td>
+</tr><tr class="main">
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column CLAIM_REVIEW.PROVIDER_ID
+<a href="00979_sqld360_323688_3hwq5m5h3gkaq_3a_68_frequency_histogram_on_column_claimreviewproviderid.html">html</a>
+<a href="00980_sqld360_323688_3hwq5m5h3gkaq_3a_68_frequency_histogram_on_column_claimreviewproviderid_bar_chart.html">bar</a>
+<small><em>(140)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ALRT.CLASSTYPE
+<a href="00981_sqld360_323688_3hwq5m5h3gkaq_3a_69_frequency_histogram_on_column_talrtclasstype.html">html</a>
+<a href="00982_sqld360_323688_3hwq5m5h3gkaq_3a_69_frequency_histogram_on_column_talrtclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ALRT.ALRT_LAS_ACT_TIM
+<a href="00983_sqld360_323688_3hwq5m5h3gkaq_3a_70_frequency_histogram_on_column_talrtalrtlasacttim.html">html</a>
+<a href="00984_sqld360_323688_3hwq5m5h3gkaq_3a_70_frequency_histogram_on_column_talrtalrtlasacttim_bar_chart.html">bar</a>
+<small><em>(186)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ALRT.ALRT_OBJ_STT
+<a href="00985_sqld360_323688_3hwq5m5h3gkaq_3a_71_frequency_histogram_on_column_talrtalrtobjstt.html">html</a>
+<a href="00986_sqld360_323688_3hwq5m5h3gkaq_3a_71_frequency_histogram_on_column_talrtalrtobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ALRT.ALRT_OWNR
+<a href="00987_sqld360_323688_3hwq5m5h3gkaq_3a_72_frequency_histogram_on_column_talrtalrtownr.html">html</a>
+<a href="00988_sqld360_323688_3hwq5m5h3gkaq_3a_72_frequency_histogram_on_column_talrtalrtownr_bar_chart.html">bar</a>
+<small><em>(28)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ALRT.ALRT_OTCM
+<a href="00989_sqld360_323688_3hwq5m5h3gkaq_3a_73_frequency_histogram_on_column_talrtalrtotcm.html">html</a>
+<a href="00990_sqld360_323688_3hwq5m5h3gkaq_3a_73_frequency_histogram_on_column_talrtalrtotcm_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.CLASSTYPE
+<a href="00991_sqld360_323688_3hwq5m5h3gkaq_3a_74_frequency_histogram_on_column_tapblclasstype.html">html</a>
+<a href="00992_sqld360_323688_3hwq5m5h3gkaq_3a_74_frequency_histogram_on_column_tapblclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_APBL.APBL_LAS_ACT_TIM
+<a href="00993_sqld360_323688_3hwq5m5h3gkaq_3a_75_height_balanced_histogram_on_column_tapblapbllasacttim.html">html</a>
+<a href="00994_sqld360_323688_3hwq5m5h3gkaq_3a_75_height_balanced_histogram_on_column_tapblapbllasacttim_bar_chart.html">bar</a>
+<small><em>(84)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.APBL_OBJ_STT
+<a href="00995_sqld360_323688_3hwq5m5h3gkaq_3a_76_frequency_histogram_on_column_tapblapblobjstt.html">html</a>
+<a href="00996_sqld360_323688_3hwq5m5h3gkaq_3a_76_frequency_histogram_on_column_tapblapblobjstt_bar_chart.html">bar</a>
+<small><em>(10)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.APBL_LAS_ACT_BY
+<a href="00997_sqld360_323688_3hwq5m5h3gkaq_3a_77_frequency_histogram_on_column_tapblapbllasactby.html">html</a>
+<a href="00998_sqld360_323688_3hwq5m5h3gkaq_3a_77_frequency_histogram_on_column_tapblapbllasactby_bar_chart.html">bar</a>
+<small><em>(65)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.APBL_DTMN
+<a href="00999_sqld360_323688_3hwq5m5h3gkaq_3a_78_frequency_histogram_on_column_tapblapbldtmn.html">html</a>
+<a href="01000_sqld360_323688_3hwq5m5h3gkaq_3a_78_frequency_histogram_on_column_tapblapbldtmn_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.APBL_IS_ERR
+<a href="01001_sqld360_323688_3hwq5m5h3gkaq_3a_79_frequency_histogram_on_column_tapblapbliserr.html">html</a>
+<a href="01002_sqld360_323688_3hwq5m5h3gkaq_3a_79_frequency_histogram_on_column_tapblapbliserr_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.MSRV_MDCLSRVCTYP
+<a href="01003_sqld360_323688_3hwq5m5h3gkaq_3a_80_frequency_histogram_on_column_tapblmsrvmdclsrvctyp.html">html</a>
+<a href="01004_sqld360_323688_3hwq5m5h3gkaq_3a_80_frequency_histogram_on_column_tapblmsrvmdclsrvctyp_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.MSRV_PLCEOF_SRVCTYP
+<a href="01005_sqld360_323688_3hwq5m5h3gkaq_3a_81_frequency_histogram_on_column_tapblmsrvplceofsrvctyp.html">html</a>
+<a href="01006_sqld360_323688_3hwq5m5h3gkaq_3a_81_frequency_histogram_on_column_tapblmsrvplceofsrvctyp_bar_chart.html">bar</a>
+<small><em>(37)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.MSRV_BED_TYP
+<a href="01007_sqld360_323688_3hwq5m5h3gkaq_3a_82_frequency_histogram_on_column_tapblmsrvbedtyp.html">html</a>
+<a href="01008_sqld360_323688_3hwq5m5h3gkaq_3a_82_frequency_histogram_on_column_tapblmsrvbedtyp_bar_chart.html">bar</a>
+<small><em>(17)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.APBL_DENLRESN
+<a href="01009_sqld360_323688_3hwq5m5h3gkaq_3a_83_frequency_histogram_on_column_tapblapbldenlresn.html">html</a>
+<a href="01010_sqld360_323688_3hwq5m5h3gkaq_3a_83_frequency_histogram_on_column_tapblapbldenlresn_bar_chart.html">bar</a>
+<small><em>(46)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.APBL_ACTLUNTS
+<a href="01011_sqld360_323688_3hwq5m5h3gkaq_3a_84_frequency_histogram_on_column_tapblapblactlunts.html">html</a>
+<a href="01012_sqld360_323688_3hwq5m5h3gkaq_3a_84_frequency_histogram_on_column_tapblapblactlunts_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.APBL_APRDUNTS
+<a href="01013_sqld360_323688_3hwq5m5h3gkaq_3a_85_frequency_histogram_on_column_tapblapblaprdunts.html">html</a>
+<a href="01014_sqld360_323688_3hwq5m5h3gkaq_3a_85_frequency_histogram_on_column_tapblapblaprdunts_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.APBL_RQTDUNTS
+<a href="01015_sqld360_323688_3hwq5m5h3gkaq_3a_86_frequency_histogram_on_column_tapblapblrqtdunts.html">html</a>
+<a href="01016_sqld360_323688_3hwq5m5h3gkaq_3a_86_frequency_histogram_on_column_tapblapblrqtdunts_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.APBL_DET_RSN
+<a href="01017_sqld360_323688_3hwq5m5h3gkaq_3a_87_frequency_histogram_on_column_tapblapbldetrsn.html">html</a>
+<a href="01018_sqld360_323688_3hwq5m5h3gkaq_3a_87_frequency_histogram_on_column_tapblapbldetrsn_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.MSRV_SRVC_AGRMNT
+<a href="01019_sqld360_323688_3hwq5m5h3gkaq_3a_88_frequency_histogram_on_column_tapblmsrvsrvcagrmnt.html">html</a>
+<a href="01020_sqld360_323688_3hwq5m5h3gkaq_3a_88_frequency_histogram_on_column_tapblmsrvsrvcagrmnt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APBL.MSRV_LEVEL_OF_SERV
+<a href="01021_sqld360_323688_3hwq5m5h3gkaq_3a_89_frequency_histogram_on_column_tapblmsrvlevelofserv.html">html</a>
+<a href="01022_sqld360_323688_3hwq5m5h3gkaq_3a_89_frequency_histogram_on_column_tapblmsrvlevelofserv_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.CLASSTYPE
+<a href="01023_sqld360_323688_3hwq5m5h3gkaq_3a_90_frequency_histogram_on_column_taplclasstype.html">html</a>
+<a href="01024_sqld360_323688_3hwq5m5h3gkaq_3a_90_frequency_histogram_on_column_taplclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_LAS_ACT_TIM
+<a href="01025_sqld360_323688_3hwq5m5h3gkaq_3a_91_frequency_histogram_on_column_taplappllasacttim.html">html</a>
+<a href="01026_sqld360_323688_3hwq5m5h3gkaq_3a_91_frequency_histogram_on_column_taplappllasacttim_bar_chart.html">bar</a>
+<small><em>(179)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_OBJ_STT
+<a href="01027_sqld360_323688_3hwq5m5h3gkaq_3a_92_frequency_histogram_on_column_taplapplobjstt.html">html</a>
+<a href="01028_sqld360_323688_3hwq5m5h3gkaq_3a_92_frequency_histogram_on_column_taplapplobjstt_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_LAS_ACT_BY
+<a href="01029_sqld360_323688_3hwq5m5h3gkaq_3a_93_frequency_histogram_on_column_taplappllasactby.html">html</a>
+<a href="01030_sqld360_323688_3hwq5m5h3gkaq_3a_93_frequency_histogram_on_column_taplappllasactby_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_DTMN
+<a href="01031_sqld360_323688_3hwq5m5h3gkaq_3a_94_frequency_histogram_on_column_taplappldtmn.html">html</a>
+<a href="01032_sqld360_323688_3hwq5m5h3gkaq_3a_94_frequency_histogram_on_column_taplappldtmn_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_OWNR
+<a href="01033_sqld360_323688_3hwq5m5h3gkaq_3a_95_frequency_histogram_on_column_taplapplownr.html">html</a>
+<a href="01034_sqld360_323688_3hwq5m5h3gkaq_3a_95_frequency_histogram_on_column_taplapplownr_bar_chart.html">bar</a>
+<small><em>(8)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_APLD
+<a href="01035_sqld360_323688_3hwq5m5h3gkaq_3a_96_frequency_histogram_on_column_taplapplapld.html">html</a>
+<a href="01036_sqld360_323688_3hwq5m5h3gkaq_3a_96_frequency_histogram_on_column_taplapplapld_bar_chart.html">bar</a>
+<small><em>(170)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_APL_TYP
+<a href="01037_sqld360_323688_3hwq5m5h3gkaq_3a_97_frequency_histogram_on_column_taplapplapltyp.html">html</a>
+<a href="01038_sqld360_323688_3hwq5m5h3gkaq_3a_97_frequency_histogram_on_column_taplapplapltyp_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_APL_RESN
+<a href="01039_sqld360_323688_3hwq5m5h3gkaq_3a_98_frequency_histogram_on_column_taplapplaplresn.html">html</a>
+<a href="01040_sqld360_323688_3hwq5m5h3gkaq_3a_98_frequency_histogram_on_column_taplapplaplresn_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_DTRM_RESN
+<a href="01041_sqld360_323688_3hwq5m5h3gkaq_3a_99_frequency_histogram_on_column_taplappldtrmresn.html">html</a>
+<a href="01042_sqld360_323688_3hwq5m5h3gkaq_3a_99_frequency_histogram_on_column_taplappldtrmresn_bar_chart.html">bar</a>
+<small><em>(11)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_PRTY
+<a href="01043_sqld360_323688_3hwq5m5h3gkaq_3a_100_frequency_histogram_on_column_taplapplprty.html">html</a>
+<a href="01044_sqld360_323688_3hwq5m5h3gkaq_3a_100_frequency_histogram_on_column_taplapplprty_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APL.APPL_RQT_BY
+<a href="01045_sqld360_323688_3hwq5m5h3gkaq_3a_101_frequency_histogram_on_column_taplapplrqtby.html">html</a>
+<a href="01046_sqld360_323688_3hwq5m5h3gkaq_3a_101_frequency_histogram_on_column_taplapplrqtby_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APVLHEAD.APHD_RFRDOBJ_TYP
+<a href="01047_sqld360_323688_3hwq5m5h3gkaq_3a_102_frequency_histogram_on_column_tapvlheadaphdrfrdobjtyp.html">html</a>
+<a href="01048_sqld360_323688_3hwq5m5h3gkaq_3a_102_frequency_histogram_on_column_tapvlheadaphdrfrdobjtyp_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APVLHEAD.APHD_RET_TO
+<a href="01049_sqld360_323688_3hwq5m5h3gkaq_3a_103_frequency_histogram_on_column_tapvlheadaphdretto.html">html</a>
+<a href="01050_sqld360_323688_3hwq5m5h3gkaq_3a_103_frequency_histogram_on_column_tapvlheadaphdretto_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APVLREC.APRC_OBJ_STT
+<a href="01051_sqld360_323688_3hwq5m5h3gkaq_3a_104_frequency_histogram_on_column_tapvlrecaprcobjstt.html">html</a>
+<a href="01052_sqld360_323688_3hwq5m5h3gkaq_3a_104_frequency_histogram_on_column_tapvlrecaprcobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_APVLREC.APRC_OWNR
+<a href="01053_sqld360_323688_3hwq5m5h3gkaq_3a_105_frequency_histogram_on_column_tapvlrecaprcownr.html">html</a>
+<a href="01054_sqld360_323688_3hwq5m5h3gkaq_3a_105_frequency_histogram_on_column_tapvlrecaprcownr_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ASMTCC_BASE.CLASSTYPE
+<a href="01055_sqld360_323688_3hwq5m5h3gkaq_3a_106_frequency_histogram_on_column_tasmtccbaseclasstype.html">html</a>
+<a href="01056_sqld360_323688_3hwq5m5h3gkaq_3a_106_frequency_histogram_on_column_tasmtccbaseclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ASMTCC_BASE.ACCB_OBJ_STT
+<a href="01057_sqld360_323688_3hwq5m5h3gkaq_3a_107_frequency_histogram_on_column_tasmtccbaseaccbobjstt.html">html</a>
+<a href="01058_sqld360_323688_3hwq5m5h3gkaq_3a_107_frequency_histogram_on_column_tasmtccbaseaccbobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ASMTCC_BASE.ACCB_VSBT
+<a href="01059_sqld360_323688_3hwq5m5h3gkaq_3a_108_frequency_histogram_on_column_tasmtccbaseaccbvsbt.html">html</a>
+<a href="01060_sqld360_323688_3hwq5m5h3gkaq_3a_108_frequency_histogram_on_column_tasmtccbaseaccbvsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ASMTCC_BASE.ACCB_ORIGCRTR
+<a href="01061_sqld360_323688_3hwq5m5h3gkaq_3a_109_frequency_histogram_on_column_tasmtccbaseaccborigcrtr.html">html</a>
+<a href="01062_sqld360_323688_3hwq5m5h3gkaq_3a_109_frequency_histogram_on_column_tasmtccbaseaccborigcrtr_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ASMTCC_BASE.ACCB_NAM
+<a href="01063_sqld360_323688_3hwq5m5h3gkaq_3a_110_frequency_histogram_on_column_tasmtccbaseaccbnam.html">html</a>
+<a href="01064_sqld360_323688_3hwq5m5h3gkaq_3a_110_frequency_histogram_on_column_tasmtccbaseaccbnam_bar_chart.html">bar</a>
+<small><em>(184)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ASMTCC_BASE.ACCB_ID
+<a href="01065_sqld360_323688_3hwq5m5h3gkaq_3a_111_frequency_histogram_on_column_tasmtccbaseaccbid.html">html</a>
+<a href="01066_sqld360_323688_3hwq5m5h3gkaq_3a_111_frequency_histogram_on_column_tasmtccbaseaccbid_bar_chart.html">bar</a>
+<small><em>(185)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ASMTCC_BASE.ASMT_TYP_SBTY
+<a href="01067_sqld360_323688_3hwq5m5h3gkaq_3a_112_frequency_histogram_on_column_tasmtccbaseasmttypsbty.html">html</a>
+<a href="01068_sqld360_323688_3hwq5m5h3gkaq_3a_112_frequency_histogram_on_column_tasmtccbaseasmttypsbty_bar_chart.html">bar</a>
+<small><em>(41)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ASMTCC_BASE.(UPPER("THH_C4C"."REVERSE_STR"("ACCB_NAM")))
+<a href="01069_sqld360_323688_3hwq5m5h3gkaq_3a_113_frequency_histogram_on_column_tasmtccbaseupperthhc4creversestraccbnam.html">html</a>
+<a href="01070_sqld360_323688_3hwq5m5h3gkaq_3a_113_frequency_histogram_on_column_tasmtccbaseupperthhc4creversestraccbnam_bar_chart.html">bar</a>
+<small><em>(183)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ASMTCC_BASE.(UPPER("ACCB_NAM"))
+<a href="01071_sqld360_323688_3hwq5m5h3gkaq_3a_114_frequency_histogram_on_column_tasmtccbaseupperaccbnam.html">html</a>
+<a href="01072_sqld360_323688_3hwq5m5h3gkaq_3a_114_frequency_histogram_on_column_tasmtccbaseupperaccbnam_bar_chart.html">bar</a>
+<small><em>(183)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_BARRIER.CLASSTYPE
+<a href="01073_sqld360_323688_3hwq5m5h3gkaq_3a_115_frequency_histogram_on_column_tbarrierclasstype.html">html</a>
+<a href="01074_sqld360_323688_3hwq5m5h3gkaq_3a_115_frequency_histogram_on_column_tbarrierclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_BARRIER.BARRIER_OBJ_STT
+<a href="01075_sqld360_323688_3hwq5m5h3gkaq_3a_116_frequency_histogram_on_column_tbarrierbarrierobjstt.html">html</a>
+<a href="01076_sqld360_323688_3hwq5m5h3gkaq_3a_116_frequency_histogram_on_column_tbarrierbarrierobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_BARRIER.BARRIER_VERS
+<a href="01077_sqld360_323688_3hwq5m5h3gkaq_3a_117_frequency_histogram_on_column_tbarrierbarriervers.html">html</a>
+<a href="01078_sqld360_323688_3hwq5m5h3gkaq_3a_117_frequency_histogram_on_column_tbarrierbarriervers_bar_chart.html">bar</a>
+<small><em>(17)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_BARRIER.BARRIER_STATUS
+<a href="01079_sqld360_323688_3hwq5m5h3gkaq_3a_118_frequency_histogram_on_column_tbarrierbarrierstatus.html">html</a>
+<a href="01080_sqld360_323688_3hwq5m5h3gkaq_3a_118_frequency_histogram_on_column_tbarrierbarrierstatus_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_BARRIER_TEMPLATE.BARRIER_LAS_ACT_TIM
+<a href="01081_sqld360_323688_3hwq5m5h3gkaq_3a_119_frequency_histogram_on_column_tbarriertemplatebarrierlasacttim.html">html</a>
+<a href="01082_sqld360_323688_3hwq5m5h3gkaq_3a_119_frequency_histogram_on_column_tbarriertemplatebarrierlasacttim_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_BARRIER_TEMPLATE.BARRIER_OBJ_STT
+<a href="01083_sqld360_323688_3hwq5m5h3gkaq_3a_120_frequency_histogram_on_column_tbarriertemplatebarrierobjstt.html">html</a>
+<a href="01084_sqld360_323688_3hwq5m5h3gkaq_3a_120_frequency_histogram_on_column_tbarriertemplatebarrierobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_BLR_PLT.CLASSTYPE
+<a href="01085_sqld360_323688_3hwq5m5h3gkaq_3a_121_frequency_histogram_on_column_tblrpltclasstype.html">html</a>
+<a href="01086_sqld360_323688_3hwq5m5h3gkaq_3a_121_frequency_histogram_on_column_tblrpltclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_BLR_PLT.BP_VSBT
+<a href="01087_sqld360_323688_3hwq5m5h3gkaq_3a_122_frequency_histogram_on_column_tblrpltbpvsbt.html">html</a>
+<a href="01088_sqld360_323688_3hwq5m5h3gkaq_3a_122_frequency_histogram_on_column_tblrpltbpvsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CAREPLAN.CLASSTYPE
+<a href="01089_sqld360_323688_3hwq5m5h3gkaq_3a_123_frequency_histogram_on_column_tcareplanclasstype.html">html</a>
+<a href="01090_sqld360_323688_3hwq5m5h3gkaq_3a_123_frequency_histogram_on_column_tcareplanclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_CAREPLAN.CP_LAS_ACT_TIM
+<a href="01091_sqld360_323688_3hwq5m5h3gkaq_3a_124_hybrid_histogram_on_column_tcareplancplasacttim.html">html</a>
+<a href="01092_sqld360_323688_3hwq5m5h3gkaq_3a_124_hybrid_histogram_on_column_tcareplancplasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CAREPLAN.CP_VERS
+<a href="01093_sqld360_323688_3hwq5m5h3gkaq_3a_125_frequency_histogram_on_column_tcareplancpvers.html">html</a>
+<a href="01094_sqld360_323688_3hwq5m5h3gkaq_3a_125_frequency_histogram_on_column_tcareplancpvers_bar_chart.html">bar</a>
+<small><em>(18)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CAREPLAN.CP_STATUS
+<a href="01095_sqld360_323688_3hwq5m5h3gkaq_3a_126_frequency_histogram_on_column_tcareplancpstatus.html">html</a>
+<a href="01096_sqld360_323688_3hwq5m5h3gkaq_3a_126_frequency_histogram_on_column_tcareplancpstatus_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CLASSTYPE
+<a href="01097_sqld360_323688_3hwq5m5h3gkaq_3a_127_frequency_histogram_on_column_tcmbasebaseclasstype.html">html</a>
+<a href="01098_sqld360_323688_3hwq5m5h3gkaq_3a_127_frequency_histogram_on_column_tcmbasebaseclasstype_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_CM_BASEBASE.CMBB_CRTD
+<a href="01099_sqld360_323688_3hwq5m5h3gkaq_3a_128_height_balanced_histogram_on_column_tcmbasebasecmbbcrtd.html">html</a>
+<a href="01100_sqld360_323688_3hwq5m5h3gkaq_3a_128_height_balanced_histogram_on_column_tcmbasebasecmbbcrtd_bar_chart.html">bar</a>
+<small><em>(173)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMBB_LAS_ACT
+<a href="01101_sqld360_323688_3hwq5m5h3gkaq_3a_129_frequency_histogram_on_column_tcmbasebasecmbblasact.html">html</a>
+<a href="01102_sqld360_323688_3hwq5m5h3gkaq_3a_129_frequency_histogram_on_column_tcmbasebasecmbblasact_bar_chart.html">bar</a>
+<small><em>(15)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_CM_BASEBASE.CMBB_LAS_ACT_TIM
+<a href="01103_sqld360_323688_3hwq5m5h3gkaq_3a_130_height_balanced_histogram_on_column_tcmbasebasecmbblasacttim.html">html</a>
+<a href="01104_sqld360_323688_3hwq5m5h3gkaq_3a_130_height_balanced_histogram_on_column_tcmbasebasecmbblasacttim_bar_chart.html">bar</a>
+<small><em>(140)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMBB_OBJ_STT
+<a href="01105_sqld360_323688_3hwq5m5h3gkaq_3a_131_frequency_histogram_on_column_tcmbasebasecmbbobjstt.html">html</a>
+<a href="01106_sqld360_323688_3hwq5m5h3gkaq_3a_131_frequency_histogram_on_column_tcmbasebasecmbbobjstt_bar_chart.html">bar</a>
+<small><em>(7)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMBB_LAS_ACT_BY
+<a href="01107_sqld360_323688_3hwq5m5h3gkaq_3a_132_frequency_histogram_on_column_tcmbasebasecmbblasactby.html">html</a>
+<a href="01108_sqld360_323688_3hwq5m5h3gkaq_3a_132_frequency_histogram_on_column_tcmbasebasecmbblasactby_bar_chart.html">bar</a>
+<small><em>(85)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMBB_ORIGCRTR
+<a href="01109_sqld360_323688_3hwq5m5h3gkaq_3a_133_frequency_histogram_on_column_tcmbasebasecmbborigcrtr.html">html</a>
+<a href="01110_sqld360_323688_3hwq5m5h3gkaq_3a_133_frequency_histogram_on_column_tcmbasebasecmbborigcrtr_bar_chart.html">bar</a>
+<small><em>(111)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CSRQ_OWNR
+<a href="01111_sqld360_323688_3hwq5m5h3gkaq_3a_134_frequency_histogram_on_column_tcmbasebasecsrqownr.html">html</a>
+<a href="01112_sqld360_323688_3hwq5m5h3gkaq_3a_134_frequency_histogram_on_column_tcmbasebasecsrqownr_bar_chart.html">bar</a>
+<small><em>(75)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CASE_CLSRRESN
+<a href="01113_sqld360_323688_3hwq5m5h3gkaq_3a_135_frequency_histogram_on_column_tcmbasebasecaseclsrresn.html">html</a>
+<a href="01114_sqld360_323688_3hwq5m5h3gkaq_3a_135_frequency_histogram_on_column_tcmbasebasecaseclsrresn_bar_chart.html">bar</a>
+<small><em>(14)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CASE_PRJ_OTCM
+<a href="01115_sqld360_323688_3hwq5m5h3gkaq_3a_136_frequency_histogram_on_column_tcmbasebasecaseprjotcm.html">html</a>
+<a href="01116_sqld360_323688_3hwq5m5h3gkaq_3a_136_frequency_histogram_on_column_tcmbasebasecaseprjotcm_bar_chart.html">bar</a>
+<small><em>(29)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CASE_OWNR
+<a href="01117_sqld360_323688_3hwq5m5h3gkaq_3a_137_frequency_histogram_on_column_tcmbasebasecaseownr.html">html</a>
+<a href="01118_sqld360_323688_3hwq5m5h3gkaq_3a_137_frequency_histogram_on_column_tcmbasebasecaseownr_bar_chart.html">bar</a>
+<small><em>(89)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CASE_PRVSOWNR
+<a href="01119_sqld360_323688_3hwq5m5h3gkaq_3a_138_frequency_histogram_on_column_tcmbasebasecaseprvsownr.html">html</a>
+<a href="01120_sqld360_323688_3hwq5m5h3gkaq_3a_138_frequency_histogram_on_column_tcmbasebasecaseprvsownr_bar_chart.html">bar</a>
+<small><em>(75)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CASE_REONRESN
+<a href="01121_sqld360_323688_3hwq5m5h3gkaq_3a_139_frequency_histogram_on_column_tcmbasebasecasereonresn.html">html</a>
+<a href="01122_sqld360_323688_3hwq5m5h3gkaq_3a_139_frequency_histogram_on_column_tcmbasebasecasereonresn_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMPQ_OWNR
+<a href="01123_sqld360_323688_3hwq5m5h3gkaq_3a_140_frequency_histogram_on_column_tcmbasebasecmpqownr.html">html</a>
+<a href="01124_sqld360_323688_3hwq5m5h3gkaq_3a_140_frequency_histogram_on_column_tcmbasebasecmpqownr_bar_chart.html">bar</a>
+<small><em>(11)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMPR_CLSRRESN
+<a href="01125_sqld360_323688_3hwq5m5h3gkaq_3a_141_frequency_histogram_on_column_tcmbasebasecmprclsrresn.html">html</a>
+<a href="01126_sqld360_323688_3hwq5m5h3gkaq_3a_141_frequency_histogram_on_column_tcmbasebasecmprclsrresn_bar_chart.html">bar</a>
+<small><em>(10)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMPR_PRJ_OTCM
+<a href="01127_sqld360_323688_3hwq5m5h3gkaq_3a_142_frequency_histogram_on_column_tcmbasebasecmprprjotcm.html">html</a>
+<a href="01128_sqld360_323688_3hwq5m5h3gkaq_3a_142_frequency_histogram_on_column_tcmbasebasecmprprjotcm_bar_chart.html">bar</a>
+<small><em>(8)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMPR_OWNR
+<a href="01129_sqld360_323688_3hwq5m5h3gkaq_3a_143_frequency_histogram_on_column_tcmbasebasecmprownr.html">html</a>
+<a href="01130_sqld360_323688_3hwq5m5h3gkaq_3a_143_frequency_histogram_on_column_tcmbasebasecmprownr_bar_chart.html">bar</a>
+<small><em>(42)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMBB_SRC
+<a href="01131_sqld360_323688_3hwq5m5h3gkaq_3a_144_frequency_histogram_on_column_tcmbasebasecmbbsrc.html">html</a>
+<a href="01132_sqld360_323688_3hwq5m5h3gkaq_3a_144_frequency_histogram_on_column_tcmbasebasecmbbsrc_bar_chart.html">bar</a>
+<small><em>(39)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMBB_TYP
+<a href="01133_sqld360_323688_3hwq5m5h3gkaq_3a_145_frequency_histogram_on_column_tcmbasebasecmbbtyp.html">html</a>
+<a href="01134_sqld360_323688_3hwq5m5h3gkaq_3a_145_frequency_histogram_on_column_tcmbasebasecmbbtyp_bar_chart.html">bar</a>
+<small><em>(40)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMBB_RESN
+<a href="01135_sqld360_323688_3hwq5m5h3gkaq_3a_146_frequency_histogram_on_column_tcmbasebasecmbbresn.html">html</a>
+<a href="01136_sqld360_323688_3hwq5m5h3gkaq_3a_146_frequency_histogram_on_column_tcmbasebasecmbbresn_bar_chart.html">bar</a>
+<small><em>(108)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMBB_PITY
+<a href="01137_sqld360_323688_3hwq5m5h3gkaq_3a_147_frequency_histogram_on_column_tcmbasebasecmbbpity.html">html</a>
+<a href="01138_sqld360_323688_3hwq5m5h3gkaq_3a_147_frequency_histogram_on_column_tcmbasebasecmbbpity_bar_chart.html">bar</a>
+<small><em>(26)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.CMBB_SVTY
+<a href="01139_sqld360_323688_3hwq5m5h3gkaq_3a_148_frequency_histogram_on_column_tcmbasebasecmbbsvty.html">html</a>
+<a href="01140_sqld360_323688_3hwq5m5h3gkaq_3a_148_frequency_histogram_on_column_tcmbasebasecmbbsvty_bar_chart.html">bar</a>
+<small><em>(28)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_CM_BASEBASE.CMBS_MEMB
+<a href="01141_sqld360_323688_3hwq5m5h3gkaq_3a_149_height_balanced_histogram_on_column_tcmbasebasecmbsmemb.html">html</a>
+<a href="01142_sqld360_323688_3hwq5m5h3gkaq_3a_149_height_balanced_histogram_on_column_tcmbasebasecmbsmemb_bar_chart.html">bar</a>
+<small><em>(169)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.PARTICIPATION
+<a href="01143_sqld360_323688_3hwq5m5h3gkaq_3a_150_frequency_histogram_on_column_tcmbasebaseparticipation.html">html</a>
+<a href="01144_sqld360_323688_3hwq5m5h3gkaq_3a_150_frequency_histogram_on_column_tcmbasebaseparticipation_bar_chart.html">bar</a>
+<small><em>(7)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.REQUESTOR
+<a href="01145_sqld360_323688_3hwq5m5h3gkaq_3a_151_frequency_histogram_on_column_tcmbasebaserequestor.html">html</a>
+<a href="01146_sqld360_323688_3hwq5m5h3gkaq_3a_151_frequency_histogram_on_column_tcmbasebaserequestor_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.STAGE
+<a href="01147_sqld360_323688_3hwq5m5h3gkaq_3a_152_frequency_histogram_on_column_tcmbasebasestage.html">html</a>
+<a href="01148_sqld360_323688_3hwq5m5h3gkaq_3a_152_frequency_histogram_on_column_tcmbasebasestage_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.TGT_INTERVENTION
+<a href="01149_sqld360_323688_3hwq5m5h3gkaq_3a_153_frequency_histogram_on_column_tcmbasebasetgtintervention.html">html</a>
+<a href="01150_sqld360_323688_3hwq5m5h3gkaq_3a_153_frequency_histogram_on_column_tcmbasebasetgtintervention_bar_chart.html">bar</a>
+<small><em>(7)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CM_BASEBASE.PARTICIPATIONSTATUS
+<a href="01151_sqld360_323688_3hwq5m5h3gkaq_3a_154_frequency_histogram_on_column_tcmbasebaseparticipationstatus.html">html</a>
+<a href="01152_sqld360_323688_3hwq5m5h3gkaq_3a_154_frequency_histogram_on_column_tcmbasebaseparticipationstatus_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_CM_BASEBASE.(UPPER("CMBB_C4C_ID"))
+<a href="01153_sqld360_323688_3hwq5m5h3gkaq_3a_155_height_balanced_histogram_on_column_tcmbasebaseuppercmbbc4cid.html">html</a>
+<a href="01154_sqld360_323688_3hwq5m5h3gkaq_3a_155_height_balanced_histogram_on_column_tcmbasebaseuppercmbbc4cid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CNCT.CLASSTYPE
+<a href="01155_sqld360_323688_3hwq5m5h3gkaq_3a_156_frequency_histogram_on_column_tcnctclasstype.html">html</a>
+<a href="01156_sqld360_323688_3hwq5m5h3gkaq_3a_156_frequency_histogram_on_column_tcnctclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_CNCT.COAT_LAS_ACT_TIM
+<a href="01157_sqld360_323688_3hwq5m5h3gkaq_3a_157_hybrid_histogram_on_column_tcnctcoatlasacttim.html">html</a>
+<a href="01158_sqld360_323688_3hwq5m5h3gkaq_3a_157_hybrid_histogram_on_column_tcnctcoatlasacttim_bar_chart.html">bar</a>
+<small><em>(39)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CNCT.COAT_OBJ_STT
+<a href="01159_sqld360_323688_3hwq5m5h3gkaq_3a_158_frequency_histogram_on_column_tcnctcoatobjstt.html">html</a>
+<a href="01160_sqld360_323688_3hwq5m5h3gkaq_3a_158_frequency_histogram_on_column_tcnctcoatobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CNCT.COAT_CNCTTYP
+<a href="01161_sqld360_323688_3hwq5m5h3gkaq_3a_159_frequency_histogram_on_column_tcnctcoatcncttyp.html">html</a>
+<a href="01162_sqld360_323688_3hwq5m5h3gkaq_3a_159_frequency_histogram_on_column_tcnctcoatcncttyp_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CNCT.COAT_CONTACT_RELATIONSHIP
+<a href="01163_sqld360_323688_3hwq5m5h3gkaq_3a_160_frequency_histogram_on_column_tcnctcoatcontactrelationship.html">html</a>
+<a href="01164_sqld360_323688_3hwq5m5h3gkaq_3a_160_frequency_histogram_on_column_tcnctcoatcontactrelationship_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_COORDINATION_OF_BENEFITS.CLASSTYPE
+<a href="01165_sqld360_323688_3hwq5m5h3gkaq_3a_161_frequency_histogram_on_column_tcoordinationofbenefitsclasstype.html">html</a>
+<a href="01166_sqld360_323688_3hwq5m5h3gkaq_3a_161_frequency_histogram_on_column_tcoordinationofbenefitsclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CSTMFLDS.CLASSTYPE
+<a href="01167_sqld360_323688_3hwq5m5h3gkaq_3a_162_frequency_histogram_on_column_tcstmfldsclasstype.html">html</a>
+<a href="01168_sqld360_323688_3hwq5m5h3gkaq_3a_162_frequency_histogram_on_column_tcstmfldsclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_CSTMFLDS.CSMF_CRTD
+<a href="01169_sqld360_323688_3hwq5m5h3gkaq_3a_163_hybrid_histogram_on_column_tcstmfldscsmfcrtd.html">html</a>
+<a href="01170_sqld360_323688_3hwq5m5h3gkaq_3a_163_hybrid_histogram_on_column_tcstmfldscsmfcrtd_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_CSTMFLDS.CSMF_LAS_ACT_TIM
+<a href="01171_sqld360_323688_3hwq5m5h3gkaq_3a_164_hybrid_histogram_on_column_tcstmfldscsmflasacttim.html">html</a>
+<a href="01172_sqld360_323688_3hwq5m5h3gkaq_3a_164_hybrid_histogram_on_column_tcstmfldscsmflasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_CSTMFLDS.CSMF_UNIVID
+<a href="01173_sqld360_323688_3hwq5m5h3gkaq_3a_165_hybrid_histogram_on_column_tcstmfldscsmfunivid.html">html</a>
+<a href="01174_sqld360_323688_3hwq5m5h3gkaq_3a_165_hybrid_histogram_on_column_tcstmfldscsmfunivid_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CSTMFLDS.CSMF_REF4
+<a href="01175_sqld360_323688_3hwq5m5h3gkaq_3a_166_frequency_histogram_on_column_tcstmfldscsmfref4.html">html</a>
+<a href="01176_sqld360_323688_3hwq5m5h3gkaq_3a_166_frequency_histogram_on_column_tcstmfldscsmfref4_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CSTMFLDS.CSMF_REF1
+<a href="01177_sqld360_323688_3hwq5m5h3gkaq_3a_167_frequency_histogram_on_column_tcstmfldscsmfref1.html">html</a>
+<a href="01178_sqld360_323688_3hwq5m5h3gkaq_3a_167_frequency_histogram_on_column_tcstmfldscsmfref1_bar_chart.html">bar</a>
+<small><em>(10)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CSTMFLDS.CSMF_REF3
+<a href="01179_sqld360_323688_3hwq5m5h3gkaq_3a_168_frequency_histogram_on_column_tcstmfldscsmfref3.html">html</a>
+<a href="01180_sqld360_323688_3hwq5m5h3gkaq_3a_168_frequency_histogram_on_column_tcstmfldscsmfref3_bar_chart.html">bar</a>
+<small><em>(90)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CSTMFLDS.CSMF_REF2
+<a href="01181_sqld360_323688_3hwq5m5h3gkaq_3a_169_frequency_histogram_on_column_tcstmfldscsmfref2.html">html</a>
+<a href="01182_sqld360_323688_3hwq5m5h3gkaq_3a_169_frequency_histogram_on_column_tcstmfldscsmfref2_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CSTMFLDS.CSMF_RF5
+<a href="01183_sqld360_323688_3hwq5m5h3gkaq_3a_170_frequency_histogram_on_column_tcstmfldscsmfrf5.html">html</a>
+<a href="01184_sqld360_323688_3hwq5m5h3gkaq_3a_170_frequency_histogram_on_column_tcstmfldscsmfrf5_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CSTMFLDS.CSMF_RF6
+<a href="01185_sqld360_323688_3hwq5m5h3gkaq_3a_171_frequency_histogram_on_column_tcstmfldscsmfrf6.html">html</a>
+<a href="01186_sqld360_323688_3hwq5m5h3gkaq_3a_171_frequency_histogram_on_column_tcstmfldscsmfrf6_bar_chart.html">bar</a>
+<small><em>(27)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_CSTMFLDS.CSMF_RF9
+<a href="01187_sqld360_323688_3hwq5m5h3gkaq_3a_172_frequency_histogram_on_column_tcstmfldscsmfrf9.html">html</a>
+<a href="01188_sqld360_323688_3hwq5m5h3gkaq_3a_172_frequency_histogram_on_column_tcstmfldscsmfrf9_bar_chart.html">bar</a>
+<small><em>(20)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_DAYSOFF_AWNC.DOAL_PAYR
+<a href="01189_sqld360_323688_3hwq5m5h3gkaq_3a_173_hybrid_histogram_on_column_tdaysoffawncdoalpayr.html">html</a>
+<a href="01190_sqld360_323688_3hwq5m5h3gkaq_3a_173_hybrid_histogram_on_column_tdaysoffawncdoalpayr_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DDL_ITEM.CLASSTYPE
+<a href="01191_sqld360_323688_3hwq5m5h3gkaq_3a_174_frequency_histogram_on_column_tddlitemclasstype.html">html</a>
+<a href="01192_sqld360_323688_3hwq5m5h3gkaq_3a_174_frequency_histogram_on_column_tddlitemclasstype_bar_chart.html">bar</a>
+<small><em>(22)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_DDL_ITEM.DDLI_CRTD
+<a href="01193_sqld360_323688_3hwq5m5h3gkaq_3a_175_height_balanced_histogram_on_column_tddlitemddlicrtd.html">html</a>
+<a href="01194_sqld360_323688_3hwq5m5h3gkaq_3a_175_height_balanced_histogram_on_column_tddlitemddlicrtd_bar_chart.html">bar</a>
+<small><em>(204)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_DDL_ITEM.DDLI_LAS_ACT_TIM
+<a href="01195_sqld360_323688_3hwq5m5h3gkaq_3a_176_height_balanced_histogram_on_column_tddlitemddlilasacttim.html">html</a>
+<a href="01196_sqld360_323688_3hwq5m5h3gkaq_3a_176_height_balanced_histogram_on_column_tddlitemddlilasacttim_bar_chart.html">bar</a>
+<small><em>(203)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DDL_ITEM.DDLI_OBJ_STT
+<a href="01197_sqld360_323688_3hwq5m5h3gkaq_3a_177_frequency_histogram_on_column_tddlitemddliobjstt.html">html</a>
+<a href="01198_sqld360_323688_3hwq5m5h3gkaq_3a_177_frequency_histogram_on_column_tddlitemddliobjstt_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DDL_ITEM.DDLI_VSBT
+<a href="01199_sqld360_323688_3hwq5m5h3gkaq_3a_178_frequency_histogram_on_column_tddlitemddlivsbt.html">html</a>
+<a href="01200_sqld360_323688_3hwq5m5h3gkaq_3a_178_frequency_histogram_on_column_tddlitemddlivsbt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_DDL_ITEM.DDLI_UNIVID
+<a href="01201_sqld360_323688_3hwq5m5h3gkaq_3a_179_height_balanced_histogram_on_column_tddlitemddliunivid.html">html</a>
+<a href="01202_sqld360_323688_3hwq5m5h3gkaq_3a_179_height_balanced_histogram_on_column_tddlitemddliunivid_bar_chart.html">bar</a>
+<small><em>(192)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_DDL_ITEM.DDLI_LBL
+<a href="01203_sqld360_323688_3hwq5m5h3gkaq_3a_180_height_balanced_histogram_on_column_tddlitemddlilbl.html">html</a>
+<a href="01204_sqld360_323688_3hwq5m5h3gkaq_3a_180_height_balanced_histogram_on_column_tddlitemddlilbl_bar_chart.html">bar</a>
+<small><em>(230)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_DDL_ITEM.DDLI_VAL
+<a href="01205_sqld360_323688_3hwq5m5h3gkaq_3a_181_height_balanced_histogram_on_column_tddlitemddlival.html">html</a>
+<a href="01206_sqld360_323688_3hwq5m5h3gkaq_3a_181_height_balanced_histogram_on_column_tddlitemddlival_bar_chart.html">bar</a>
+<small><em>(158)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DDL_ITEM.DDLI_SYTM
+<a href="01207_sqld360_323688_3hwq5m5h3gkaq_3a_182_frequency_histogram_on_column_tddlitemddlisytm.html">html</a>
+<a href="01208_sqld360_323688_3hwq5m5h3gkaq_3a_182_frequency_histogram_on_column_tddlitemddlisytm_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_DDL_ITEM.DDLI_DDL_ITEMCONSID
+<a href="01209_sqld360_323688_3hwq5m5h3gkaq_3a_183_height_balanced_histogram_on_column_tddlitemddliddlitemconsid.html">html</a>
+<a href="01210_sqld360_323688_3hwq5m5h3gkaq_3a_183_height_balanced_histogram_on_column_tddlitemddliddlitemconsid_bar_chart.html">bar</a>
+<small><em>(61)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_DDL_ITEM.DDLI_ID
+<a href="01211_sqld360_323688_3hwq5m5h3gkaq_3a_184_height_balanced_histogram_on_column_tddlitemddliid.html">html</a>
+<a href="01212_sqld360_323688_3hwq5m5h3gkaq_3a_184_height_balanced_histogram_on_column_tddlitemddliid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DDL_ITEM.TSKT_RCPTTYP
+<a href="01213_sqld360_323688_3hwq5m5h3gkaq_3a_185_frequency_histogram_on_column_tddlitemtsktrcpttyp.html">html</a>
+<a href="01214_sqld360_323688_3hwq5m5h3gkaq_3a_185_frequency_histogram_on_column_tddlitemtsktrcpttyp_bar_chart.html">bar</a>
+<small><em>(9)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_DDL_ITEM.DDLI_PRNT
+<a href="01215_sqld360_323688_3hwq5m5h3gkaq_3a_186_height_balanced_histogram_on_column_tddlitemddliprnt.html">html</a>
+<a href="01216_sqld360_323688_3hwq5m5h3gkaq_3a_186_height_balanced_histogram_on_column_tddlitemddliprnt_bar_chart.html">bar</a>
+<small><em>(229)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_DDL_ITEM.DDLI_DDL
+<a href="01217_sqld360_323688_3hwq5m5h3gkaq_3a_187_height_balanced_histogram_on_column_tddlitemddliddl.html">html</a>
+<a href="01218_sqld360_323688_3hwq5m5h3gkaq_3a_187_height_balanced_histogram_on_column_tddlitemddliddl_bar_chart.html">bar</a>
+<small><em>(150)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DDL_ITEM.("CLASSTYPE","DDLI_OBJ_STT")
+<a href="01219_sqld360_323688_3hwq5m5h3gkaq_3a_188_frequency_histogram_on_column_tddlitemclasstypeddliobjstt.html">html</a>
+<a href="01220_sqld360_323688_3hwq5m5h3gkaq_3a_188_frequency_histogram_on_column_tddlitemclasstypeddliobjstt_bar_chart.html">bar</a>
+<small><em>(39)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DDL_ITEMPVDRSLTS.CLASSTYPE
+<a href="01221_sqld360_323688_3hwq5m5h3gkaq_3a_189_frequency_histogram_on_column_tddlitempvdrsltsclasstype.html">html</a>
+<a href="01222_sqld360_323688_3hwq5m5h3gkaq_3a_189_frequency_histogram_on_column_tddlitempvdrsltsclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_DDL_ITEMPVDRSLTS.DLIS_LAS_ACT_TIM
+<a href="01223_sqld360_323688_3hwq5m5h3gkaq_3a_190_hybrid_histogram_on_column_tddlitempvdrsltsdlislasacttim.html">html</a>
+<a href="01224_sqld360_323688_3hwq5m5h3gkaq_3a_190_hybrid_histogram_on_column_tddlitempvdrsltsdlislasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DDL_ITEMPVDRSLTS.DLIS_OBJ_STT
+<a href="01225_sqld360_323688_3hwq5m5h3gkaq_3a_191_frequency_histogram_on_column_tddlitempvdrsltsdlisobjstt.html">html</a>
+<a href="01226_sqld360_323688_3hwq5m5h3gkaq_3a_191_frequency_histogram_on_column_tddlitempvdrsltsdlisobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_DDL_ITEMPVDRSLTS.DLIS_SLTS
+<a href="01227_sqld360_323688_3hwq5m5h3gkaq_3a_192_hybrid_histogram_on_column_tddlitempvdrsltsdlisslts.html">html</a>
+<a href="01228_sqld360_323688_3hwq5m5h3gkaq_3a_192_hybrid_histogram_on_column_tddlitempvdrsltsdlisslts_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DGIS.CLASSTYPE
+<a href="01229_sqld360_323688_3hwq5m5h3gkaq_3a_193_frequency_histogram_on_column_tdgisclasstype.html">html</a>
+<a href="01230_sqld360_323688_3hwq5m5h3gkaq_3a_193_frequency_histogram_on_column_tdgisclasstype_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_DGIS.DSS_LAS_ACT_TIM
+<a href="01231_sqld360_323688_3hwq5m5h3gkaq_3a_194_hybrid_histogram_on_column_tdgisdsslasacttim.html">html</a>
+<a href="01232_sqld360_323688_3hwq5m5h3gkaq_3a_194_hybrid_histogram_on_column_tdgisdsslasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DGIS.DSS_OBJ_STT
+<a href="01233_sqld360_323688_3hwq5m5h3gkaq_3a_195_frequency_histogram_on_column_tdgisdssobjstt.html">html</a>
+<a href="01234_sqld360_323688_3hwq5m5h3gkaq_3a_195_frequency_histogram_on_column_tdgisdssobjstt_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DGIS.DSS_VSBT
+<a href="01235_sqld360_323688_3hwq5m5h3gkaq_3a_196_frequency_histogram_on_column_tdgisdssvsbt.html">html</a>
+<a href="01236_sqld360_323688_3hwq5m5h3gkaq_3a_196_frequency_histogram_on_column_tdgisdssvsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DGIS.DSS_ORIGCRTR
+<a href="01237_sqld360_323688_3hwq5m5h3gkaq_3a_197_frequency_histogram_on_column_tdgisdssorigcrtr.html">html</a>
+<a href="01238_sqld360_323688_3hwq5m5h3gkaq_3a_197_frequency_histogram_on_column_tdgisdssorigcrtr_bar_chart.html">bar</a>
+<small><em>(10)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_DGIS.DSS_ID
+<a href="01239_sqld360_323688_3hwq5m5h3gkaq_3a_198_hybrid_histogram_on_column_tdgisdssid.html">html</a>
+<a href="01240_sqld360_323688_3hwq5m5h3gkaq_3a_198_hybrid_histogram_on_column_tdgisdssid_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DGIS.CDSS_NAM
+<a href="01241_sqld360_323688_3hwq5m5h3gkaq_3a_199_frequency_histogram_on_column_tdgiscdssnam.html">html</a>
+<a href="01242_sqld360_323688_3hwq5m5h3gkaq_3a_199_frequency_histogram_on_column_tdgiscdssnam_bar_chart.html">bar</a>
+<small><em>(232)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DGIS.TMDS_CAT
+<a href="01243_sqld360_323688_3hwq5m5h3gkaq_3a_200_frequency_histogram_on_column_tdgistmdscat.html">html</a>
+<a href="01244_sqld360_323688_3hwq5m5h3gkaq_3a_200_frequency_histogram_on_column_tdgistmdscat_bar_chart.html">bar</a>
+<small><em>(87)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DGIS.CDSS_TYP_SBTY
+<a href="01245_sqld360_323688_3hwq5m5h3gkaq_3a_201_frequency_histogram_on_column_tdgiscdsstypsbty.html">html</a>
+<a href="01246_sqld360_323688_3hwq5m5h3gkaq_3a_201_frequency_histogram_on_column_tdgiscdsstypsbty_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DGIS.("CLASSTYPE","DSS_OBJ_STT")
+<a href="01247_sqld360_323688_3hwq5m5h3gkaq_3a_202_frequency_histogram_on_column_tdgisclasstypedssobjstt.html">html</a>
+<a href="01248_sqld360_323688_3hwq5m5h3gkaq_3a_202_frequency_histogram_on_column_tdgisclasstypedssobjstt_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_DGIS.(UPPER("CDSS_NAM"))
+<a href="01249_sqld360_323688_3hwq5m5h3gkaq_3a_203_frequency_histogram_on_column_tdgisuppercdssnam.html">html</a>
+<a href="01250_sqld360_323688_3hwq5m5h3gkaq_3a_203_frequency_histogram_on_column_tdgisuppercdssnam_bar_chart.html">bar</a>
+<small><em>(232)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_EDNLCNTT.CLASSTYPE
+<a href="01251_sqld360_323688_3hwq5m5h3gkaq_3a_204_frequency_histogram_on_column_tednlcnttclasstype.html">html</a>
+<a href="01252_sqld360_323688_3hwq5m5h3gkaq_3a_204_frequency_histogram_on_column_tednlcnttclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_EDNLCNTT.ECNT_OBJ_STT
+<a href="01253_sqld360_323688_3hwq5m5h3gkaq_3a_205_frequency_histogram_on_column_tednlcnttecntobjstt.html">html</a>
+<a href="01254_sqld360_323688_3hwq5m5h3gkaq_3a_205_frequency_histogram_on_column_tednlcnttecntobjstt_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_EDNLCNTT.ECNT_VSBT
+<a href="01255_sqld360_323688_3hwq5m5h3gkaq_3a_206_frequency_histogram_on_column_tednlcnttecntvsbt.html">html</a>
+<a href="01256_sqld360_323688_3hwq5m5h3gkaq_3a_206_frequency_histogram_on_column_tednlcnttecntvsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_EDNLCNTT.ECNT_ORIGCRTR
+<a href="01257_sqld360_323688_3hwq5m5h3gkaq_3a_207_frequency_histogram_on_column_tednlcnttecntorigcrtr.html">html</a>
+<a href="01258_sqld360_323688_3hwq5m5h3gkaq_3a_207_frequency_histogram_on_column_tednlcnttecntorigcrtr_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_EDNLCNTT.ECNT_FIL_TYP
+<a href="01259_sqld360_323688_3hwq5m5h3gkaq_3a_208_frequency_histogram_on_column_tednlcnttecntfiltyp.html">html</a>
+<a href="01260_sqld360_323688_3hwq5m5h3gkaq_3a_208_frequency_histogram_on_column_tednlcnttecntfiltyp_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_EDNLCNTT.ECNT_TYP
+<a href="01261_sqld360_323688_3hwq5m5h3gkaq_3a_209_frequency_histogram_on_column_tednlcnttecnttyp.html">html</a>
+<a href="01262_sqld360_323688_3hwq5m5h3gkaq_3a_209_frequency_histogram_on_column_tednlcnttecnttyp_bar_chart.html">bar</a>
+<small><em>(7)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_EDNLCNTT.(UPPER("ECNT_NAM"))
+<a href="01263_sqld360_323688_3hwq5m5h3gkaq_3a_210_hybrid_histogram_on_column_tednlcnttupperecntnam.html">html</a>
+<a href="01264_sqld360_323688_3hwq5m5h3gkaq_3a_210_hybrid_histogram_on_column_tednlcnttupperecntnam_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ENNS.CLASSTYPE
+<a href="01265_sqld360_323688_3hwq5m5h3gkaq_3a_211_frequency_histogram_on_column_tennsclasstype.html">html</a>
+<a href="01266_sqld360_323688_3hwq5m5h3gkaq_3a_211_frequency_histogram_on_column_tennsclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.ELNS_LAS_ACT_TIM
+<a href="01267_sqld360_323688_3hwq5m5h3gkaq_3a_212_height_balanced_histogram_on_column_tennselnslasacttim.html">html</a>
+<a href="01268_sqld360_323688_3hwq5m5h3gkaq_3a_212_height_balanced_histogram_on_column_tennselnslasacttim_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ENNS.ELNS_OBJ_STT
+<a href="01269_sqld360_323688_3hwq5m5h3gkaq_3a_213_frequency_histogram_on_column_tennselnsobjstt.html">html</a>
+<a href="01270_sqld360_323688_3hwq5m5h3gkaq_3a_213_frequency_histogram_on_column_tennselnsobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.ELNS_UNIVID
+<a href="01271_sqld360_323688_3hwq5m5h3gkaq_3a_214_height_balanced_histogram_on_column_tennselnsunivid.html">html</a>
+<a href="01272_sqld360_323688_3hwq5m5h3gkaq_3a_214_height_balanced_histogram_on_column_tennselnsunivid_bar_chart.html">bar</a>
+<small><em>(248)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.ELNS_ENLTDT
+<a href="01273_sqld360_323688_3hwq5m5h3gkaq_3a_215_height_balanced_histogram_on_column_tennselnsenltdt.html">html</a>
+<a href="01274_sqld360_323688_3hwq5m5h3gkaq_3a_215_height_balanced_histogram_on_column_tennselnsenltdt_bar_chart.html">bar</a>
+<small><em>(120)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.ELNS_EFTVDT
+<a href="01275_sqld360_323688_3hwq5m5h3gkaq_3a_216_height_balanced_histogram_on_column_tennselnseftvdt.html">html</a>
+<a href="01276_sqld360_323688_3hwq5m5h3gkaq_3a_216_height_balanced_histogram_on_column_tennselnseftvdt_bar_chart.html">bar</a>
+<small><em>(125)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.ELNS_DSNTDT
+<a href="01277_sqld360_323688_3hwq5m5h3gkaq_3a_217_height_balanced_histogram_on_column_tennselnsdsntdt.html">html</a>
+<a href="01278_sqld360_323688_3hwq5m5h3gkaq_3a_217_height_balanced_histogram_on_column_tennselnsdsntdt_bar_chart.html">bar</a>
+<small><em>(139)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.ELNS_TERMDT
+<a href="01279_sqld360_323688_3hwq5m5h3gkaq_3a_218_height_balanced_histogram_on_column_tennselnstermdt.html">html</a>
+<a href="01280_sqld360_323688_3hwq5m5h3gkaq_3a_218_height_balanced_histogram_on_column_tennselnstermdt_bar_chart.html">bar</a>
+<small><em>(140)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.ELNS_BENSPKG
+<a href="01281_sqld360_323688_3hwq5m5h3gkaq_3a_219_height_balanced_histogram_on_column_tennselnsbenspkg.html">html</a>
+<a href="01282_sqld360_323688_3hwq5m5h3gkaq_3a_219_height_balanced_histogram_on_column_tennselnsbenspkg_bar_chart.html">bar</a>
+<small><em>(157)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.ELNS_INSCPRSRGRP
+<a href="01283_sqld360_323688_3hwq5m5h3gkaq_3a_220_height_balanced_histogram_on_column_tennselnsinscprsrgrp.html">html</a>
+<a href="01284_sqld360_323688_3hwq5m5h3gkaq_3a_220_height_balanced_histogram_on_column_tennselnsinscprsrgrp_bar_chart.html">bar</a>
+<small><em>(70)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.ELNS_PVDR
+<a href="01285_sqld360_323688_3hwq5m5h3gkaq_3a_221_height_balanced_histogram_on_column_tennselnspvdr.html">html</a>
+<a href="01286_sqld360_323688_3hwq5m5h3gkaq_3a_221_height_balanced_histogram_on_column_tennselnspvdr_bar_chart.html">bar</a>
+<small><em>(235)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.(TRUNC("ELNS_ENLTDT"))
+<a href="01287_sqld360_323688_3hwq5m5h3gkaq_3a_222_height_balanced_histogram_on_column_tennstruncelnsenltdt.html">html</a>
+<a href="01288_sqld360_323688_3hwq5m5h3gkaq_3a_222_height_balanced_histogram_on_column_tennstruncelnsenltdt_bar_chart.html">bar</a>
+<small><em>(120)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_ENNS.(TRUNC(NVL("ELNS_DSNTDT",TO_DATE(
+<a href="01289_sqld360_323688_3hwq5m5h3gkaq_3a_223_height_balanced_histogram_on_column_tennstruncnvlelnsdsntdttodate.html">html</a>
+<a href="01290_sqld360_323688_3hwq5m5h3gkaq_3a_223_height_balanced_histogram_on_column_tennstruncnvlelnsdsntdttodate_bar_chart.html">bar</a>
+<small><em>(130)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ENNS.(DECODE("ELNS_OBJ_STT",2,NULL,
+<a href="01291_sqld360_323688_3hwq5m5h3gkaq_3a_224_frequency_histogram_on_column_tennsdecodeelnsobjstt2null.html">html</a>
+<a href="01292_sqld360_323688_3hwq5m5h3gkaq_3a_224_frequency_histogram_on_column_tennsdecodeelnsobjstt2null_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_FIL.CLASSTYPE
+<a href="01293_sqld360_323688_3hwq5m5h3gkaq_3a_225_frequency_histogram_on_column_tfilclasstype.html">html</a>
+<a href="01294_sqld360_323688_3hwq5m5h3gkaq_3a_225_frequency_histogram_on_column_tfilclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_FIL.FILE_ORIGCRTR
+<a href="01295_sqld360_323688_3hwq5m5h3gkaq_3a_226_frequency_histogram_on_column_tfilfileorigcrtr.html">html</a>
+<a href="01296_sqld360_323688_3hwq5m5h3gkaq_3a_226_frequency_histogram_on_column_tfilfileorigcrtr_bar_chart.html">bar</a>
+<small><em>(126)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_FIL.FILE_FIL_NAM
+<a href="01297_sqld360_323688_3hwq5m5h3gkaq_3a_227_hybrid_histogram_on_column_tfilfilefilnam.html">html</a>
+<a href="01298_sqld360_323688_3hwq5m5h3gkaq_3a_227_hybrid_histogram_on_column_tfilfilefilnam_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_FIL.FILE_FIL_MEMBDGIS
+<a href="01299_sqld360_323688_3hwq5m5h3gkaq_3a_228_hybrid_histogram_on_column_tfilfilefilmembdgis.html">html</a>
+<a href="01300_sqld360_323688_3hwq5m5h3gkaq_3a_228_hybrid_histogram_on_column_tfilfilefilmembdgis_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_FIL.FILE_PRPDLTR
+<a href="01301_sqld360_323688_3hwq5m5h3gkaq_3a_229_frequency_histogram_on_column_tfilfileprpdltr.html">html</a>
+<a href="01302_sqld360_323688_3hwq5m5h3gkaq_3a_229_frequency_histogram_on_column_tfilfileprpdltr_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_FRDSAND_FMLYLIST.FFL_OBJ_STT
+<a href="01303_sqld360_323688_3hwq5m5h3gkaq_3a_230_frequency_histogram_on_column_tfrdsandfmlylistfflobjstt.html">html</a>
+<a href="01304_sqld360_323688_3hwq5m5h3gkaq_3a_230_frequency_histogram_on_column_tfrdsandfmlylistfflobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_FRDSAND_FMLYLIST.FFL_RLSPTO_MEMB
+<a href="01305_sqld360_323688_3hwq5m5h3gkaq_3a_231_frequency_histogram_on_column_tfrdsandfmlylistfflrlsptomemb.html">html</a>
+<a href="01306_sqld360_323688_3hwq5m5h3gkaq_3a_231_frequency_histogram_on_column_tfrdsandfmlylistfflrlsptomemb_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_GOALCP.CLASSTYPE
+<a href="01307_sqld360_323688_3hwq5m5h3gkaq_3a_232_frequency_histogram_on_column_tgoalcpclasstype.html">html</a>
+<a href="01308_sqld360_323688_3hwq5m5h3gkaq_3a_232_frequency_histogram_on_column_tgoalcpclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_GOALCP.GOAL_TYP_SBTY
+<a href="01309_sqld360_323688_3hwq5m5h3gkaq_3a_233_frequency_histogram_on_column_tgoalcpgoaltypsbty.html">html</a>
+<a href="01310_sqld360_323688_3hwq5m5h3gkaq_3a_233_frequency_histogram_on_column_tgoalcpgoaltypsbty_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_GOALCP.GOAL_LAS_ACT_TIM
+<a href="01311_sqld360_323688_3hwq5m5h3gkaq_3a_234_hybrid_histogram_on_column_tgoalcpgoallasacttim.html">html</a>
+<a href="01312_sqld360_323688_3hwq5m5h3gkaq_3a_234_hybrid_histogram_on_column_tgoalcpgoallasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_GOALCP.GOAL_OBJ_STT
+<a href="01313_sqld360_323688_3hwq5m5h3gkaq_3a_235_frequency_histogram_on_column_tgoalcpgoalobjstt.html">html</a>
+<a href="01314_sqld360_323688_3hwq5m5h3gkaq_3a_235_frequency_histogram_on_column_tgoalcpgoalobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_GOALCP.GOAL_VERS
+<a href="01315_sqld360_323688_3hwq5m5h3gkaq_3a_236_frequency_histogram_on_column_tgoalcpgoalvers.html">html</a>
+<a href="01316_sqld360_323688_3hwq5m5h3gkaq_3a_236_frequency_histogram_on_column_tgoalcpgoalvers_bar_chart.html">bar</a>
+<small><em>(25)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_GOALCP.GOAL_STATUS
+<a href="01317_sqld360_323688_3hwq5m5h3gkaq_3a_237_frequency_histogram_on_column_tgoalcpgoalstatus.html">html</a>
+<a href="01318_sqld360_323688_3hwq5m5h3gkaq_3a_237_frequency_histogram_on_column_tgoalcpgoalstatus_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_GOALCP_TEMPLATE.CLASSTYPE
+<a href="01319_sqld360_323688_3hwq5m5h3gkaq_3a_238_frequency_histogram_on_column_tgoalcptemplateclasstype.html">html</a>
+<a href="01320_sqld360_323688_3hwq5m5h3gkaq_3a_238_frequency_histogram_on_column_tgoalcptemplateclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_GOALCP_TEMPLATE.GOAL_LAS_ACT_TIM
+<a href="01321_sqld360_323688_3hwq5m5h3gkaq_3a_239_hybrid_histogram_on_column_tgoalcptemplategoallasacttim.html">html</a>
+<a href="01322_sqld360_323688_3hwq5m5h3gkaq_3a_239_hybrid_histogram_on_column_tgoalcptemplategoallasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_GOALCP_TEMPLATE.GOAL_OBJ_STT
+<a href="01323_sqld360_323688_3hwq5m5h3gkaq_3a_240_frequency_histogram_on_column_tgoalcptemplategoalobjstt.html">html</a>
+<a href="01324_sqld360_323688_3hwq5m5h3gkaq_3a_240_frequency_histogram_on_column_tgoalcptemplategoalobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_GOALCP_TEMPLATE.GOAL_VSBT
+<a href="01325_sqld360_323688_3hwq5m5h3gkaq_3a_241_frequency_histogram_on_column_tgoalcptemplategoalvsbt.html">html</a>
+<a href="01326_sqld360_323688_3hwq5m5h3gkaq_3a_241_frequency_histogram_on_column_tgoalcptemplategoalvsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_GOALCP_TEMPLATE.GOAL_TYP_SBTY
+<a href="01327_sqld360_323688_3hwq5m5h3gkaq_3a_242_frequency_histogram_on_column_tgoalcptemplategoaltypsbty.html">html</a>
+<a href="01328_sqld360_323688_3hwq5m5h3gkaq_3a_242_frequency_histogram_on_column_tgoalcptemplategoaltypsbty_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ICMGFAX.IFAX_LAS_ACT_BY
+<a href="01329_sqld360_323688_3hwq5m5h3gkaq_3a_243_frequency_histogram_on_column_ticmgfaxifaxlasactby.html">html</a>
+<a href="01330_sqld360_323688_3hwq5m5h3gkaq_3a_243_frequency_histogram_on_column_ticmgfaxifaxlasactby_bar_chart.html">bar</a>
+<small><em>(10)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ICMGFAX.IFAX_ORIGCRTR
+<a href="01331_sqld360_323688_3hwq5m5h3gkaq_3a_244_frequency_histogram_on_column_ticmgfaxifaxorigcrtr.html">html</a>
+<a href="01332_sqld360_323688_3hwq5m5h3gkaq_3a_244_frequency_histogram_on_column_ticmgfaxifaxorigcrtr_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LNGSLIST.LLT_OBJ_STT
+<a href="01333_sqld360_323688_3hwq5m5h3gkaq_3a_245_frequency_histogram_on_column_tlngslistlltobjstt.html">html</a>
+<a href="01334_sqld360_323688_3hwq5m5h3gkaq_3a_245_frequency_histogram_on_column_tlngslistlltobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LNGSLIST.LLT_LANGCODE
+<a href="01335_sqld360_323688_3hwq5m5h3gkaq_3a_246_frequency_histogram_on_column_tlngslistlltlangcode.html">html</a>
+<a href="01336_sqld360_323688_3hwq5m5h3gkaq_3a_246_frequency_histogram_on_column_tlngslistlltlangcode_bar_chart.html">bar</a>
+<small><em>(118)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_LTR_RCPT.LRCP_USR_RCPT
+<a href="01337_sqld360_323688_3hwq5m5h3gkaq_3a_247_hybrid_histogram_on_column_tltrrcptlrcpusrrcpt.html">html</a>
+<a href="01338_sqld360_323688_3hwq5m5h3gkaq_3a_247_hybrid_histogram_on_column_tltrrcptlrcpusrrcpt_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LTR_RCPT.LRCP_QUE
+<a href="01339_sqld360_323688_3hwq5m5h3gkaq_3a_248_frequency_histogram_on_column_tltrrcptlrcpque.html">html</a>
+<a href="01340_sqld360_323688_3hwq5m5h3gkaq_3a_248_frequency_histogram_on_column_tltrrcptlrcpque_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LTR_SUBJ.LTSJ_AFFN_PVDR
+<a href="01341_sqld360_323688_3hwq5m5h3gkaq_3a_249_frequency_histogram_on_column_tltrsubjltsjaffnpvdr.html">html</a>
+<a href="01342_sqld360_323688_3hwq5m5h3gkaq_3a_249_frequency_histogram_on_column_tltrsubjltsjaffnpvdr_bar_chart.html">bar</a>
+<small><em>(209)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_LTR_SUBJ.LTSJ_AFFN_CM
+<a href="01343_sqld360_323688_3hwq5m5h3gkaq_3a_250_hybrid_histogram_on_column_tltrsubjltsjaffncm.html">html</a>
+<a href="01344_sqld360_323688_3hwq5m5h3gkaq_3a_250_hybrid_histogram_on_column_tltrsubjltsjaffncm_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_LTR_SUBJ.LTSJ_AFFN_MEMB
+<a href="01345_sqld360_323688_3hwq5m5h3gkaq_3a_251_hybrid_histogram_on_column_tltrsubjltsjaffnmemb.html">html</a>
+<a href="01346_sqld360_323688_3hwq5m5h3gkaq_3a_251_hybrid_histogram_on_column_tltrsubjltsjaffnmemb_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LTR_TMPT.CLASSTYPE
+<a href="01347_sqld360_323688_3hwq5m5h3gkaq_3a_252_frequency_histogram_on_column_tltrtmptclasstype.html">html</a>
+<a href="01348_sqld360_323688_3hwq5m5h3gkaq_3a_252_frequency_histogram_on_column_tltrtmptclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LTR_TMPT.LTLT_OBJ_STT
+<a href="01349_sqld360_323688_3hwq5m5h3gkaq_3a_253_frequency_histogram_on_column_tltrtmptltltobjstt.html">html</a>
+<a href="01350_sqld360_323688_3hwq5m5h3gkaq_3a_253_frequency_histogram_on_column_tltrtmptltltobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LTR_TMPT.LTLT_ORIGCRTR
+<a href="01351_sqld360_323688_3hwq5m5h3gkaq_3a_254_frequency_histogram_on_column_tltrtmptltltorigcrtr.html">html</a>
+<a href="01352_sqld360_323688_3hwq5m5h3gkaq_3a_254_frequency_histogram_on_column_tltrtmptltltorigcrtr_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LTR_TMPT.LTLT_ASTNTYP
+<a href="01353_sqld360_323688_3hwq5m5h3gkaq_3a_255_frequency_histogram_on_column_tltrtmptltltastntyp.html">html</a>
+<a href="01354_sqld360_323688_3hwq5m5h3gkaq_3a_255_frequency_histogram_on_column_tltrtmptltltastntyp_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LTR_TMPT.LTLT_TYP_SBTY
+<a href="01355_sqld360_323688_3hwq5m5h3gkaq_3a_256_frequency_histogram_on_column_tltrtmptltlttypsbty.html">html</a>
+<a href="01356_sqld360_323688_3hwq5m5h3gkaq_3a_256_frequency_histogram_on_column_tltrtmptltlttypsbty_bar_chart.html">bar</a>
+<small><em>(47)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_LTR_TMPT.LTLT_WEB_TMPT
+<a href="01357_sqld360_323688_3hwq5m5h3gkaq_3a_257_frequency_histogram_on_column_tltrtmptltltwebtmpt.html">html</a>
+<a href="01358_sqld360_323688_3hwq5m5h3gkaq_3a_257_frequency_histogram_on_column_tltrtmptltltwebtmpt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_LTR_TMPT.(UPPER("LTLT_NAM"))
+<a href="01359_sqld360_323688_3hwq5m5h3gkaq_3a_258_hybrid_histogram_on_column_tltrtmptupperltltnam.html">html</a>
+<a href="01360_sqld360_323688_3hwq5m5h3gkaq_3a_258_hybrid_histogram_on_column_tltrtmptupperltltnam_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCLCLM.MCLM_LAS_ACT_TIM
+<a href="01361_sqld360_323688_3hwq5m5h3gkaq_3a_259_hybrid_histogram_on_column_tmdclclmmclmlasacttim.html">html</a>
+<a href="01362_sqld360_323688_3hwq5m5h3gkaq_3a_259_hybrid_histogram_on_column_tmdclclmmclmlasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCLCLM.MCLM_OBJ_STT
+<a href="01363_sqld360_323688_3hwq5m5h3gkaq_3a_260_frequency_histogram_on_column_tmdclclmmclmobjstt.html">html</a>
+<a href="01364_sqld360_323688_3hwq5m5h3gkaq_3a_260_frequency_histogram_on_column_tmdclclmmclmobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCLCLM.MCLM_ORIGCRTR
+<a href="01365_sqld360_323688_3hwq5m5h3gkaq_3a_261_frequency_histogram_on_column_tmdclclmmclmorigcrtr.html">html</a>
+<a href="01366_sqld360_323688_3hwq5m5h3gkaq_3a_261_frequency_histogram_on_column_tmdclclmmclmorigcrtr_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCLCLM.MCLM_CLM_TYP
+<a href="01367_sqld360_323688_3hwq5m5h3gkaq_3a_262_frequency_histogram_on_column_tmdclclmmclmclmtyp.html">html</a>
+<a href="01368_sqld360_323688_3hwq5m5h3gkaq_3a_262_frequency_histogram_on_column_tmdclclmmclmclmtyp_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCLCLM.MCLM_FRSTDT_OF_SRVC
+<a href="01369_sqld360_323688_3hwq5m5h3gkaq_3a_263_hybrid_histogram_on_column_tmdclclmmclmfrstdtofsrvc.html">html</a>
+<a href="01370_sqld360_323688_3hwq5m5h3gkaq_3a_263_hybrid_histogram_on_column_tmdclclmmclmfrstdtofsrvc_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCLCLM.MCLM_LAS_DT_OF_SRVC
+<a href="01371_sqld360_323688_3hwq5m5h3gkaq_3a_264_hybrid_histogram_on_column_tmdclclmmclmlasdtofsrvc.html">html</a>
+<a href="01372_sqld360_323688_3hwq5m5h3gkaq_3a_264_hybrid_histogram_on_column_tmdclclmmclmlasdtofsrvc_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCLCLM.MCLM_CPT4CODE
+<a href="01373_sqld360_323688_3hwq5m5h3gkaq_3a_265_hybrid_histogram_on_column_tmdclclmmclmcpt4code.html">html</a>
+<a href="01374_sqld360_323688_3hwq5m5h3gkaq_3a_265_hybrid_histogram_on_column_tmdclclmmclmcpt4code_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCLCLM.MCLM_ICD9DX1
+<a href="01375_sqld360_323688_3hwq5m5h3gkaq_3a_266_hybrid_histogram_on_column_tmdclclmmclmicd9dx1.html">html</a>
+<a href="01376_sqld360_323688_3hwq5m5h3gkaq_3a_266_hybrid_histogram_on_column_tmdclclmmclmicd9dx1_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCLCLM.MCLM_SENGPVDR
+<a href="01377_sqld360_323688_3hwq5m5h3gkaq_3a_267_hybrid_histogram_on_column_tmdclclmmclmsengpvdr.html">html</a>
+<a href="01378_sqld360_323688_3hwq5m5h3gkaq_3a_267_hybrid_histogram_on_column_tmdclclmmclmsengpvdr_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Top-Frequency histogram on Column T_MDCLCLM.MCLM_RVNECODE
+<a href="01379_sqld360_323688_3hwq5m5h3gkaq_3a_268_topfrequency_histogram_on_column_tmdclclmmclmrvnecode.html">html</a>
+<a href="01380_sqld360_323688_3hwq5m5h3gkaq_3a_268_topfrequency_histogram_on_column_tmdclclmmclmrvnecode_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCLCLM.MCLM_RFNGPVDR
+<a href="01381_sqld360_323688_3hwq5m5h3gkaq_3a_269_hybrid_histogram_on_column_tmdclclmmclmrfngpvdr.html">html</a>
+<a href="01382_sqld360_323688_3hwq5m5h3gkaq_3a_269_hybrid_histogram_on_column_tmdclclmmclmrfngpvdr_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCT.MDCT_LAS_ACT_TIM
+<a href="01383_sqld360_323688_3hwq5m5h3gkaq_3a_270_hybrid_histogram_on_column_tmdctmdctlasacttim.html">html</a>
+<a href="01384_sqld360_323688_3hwq5m5h3gkaq_3a_270_hybrid_histogram_on_column_tmdctmdctlasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_OBJ_STT
+<a href="01385_sqld360_323688_3hwq5m5h3gkaq_3a_271_frequency_histogram_on_column_tmdctmdctobjstt.html">html</a>
+<a href="01386_sqld360_323688_3hwq5m5h3gkaq_3a_271_frequency_histogram_on_column_tmdctmdctobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_ORIGCRTR
+<a href="01387_sqld360_323688_3hwq5m5h3gkaq_3a_272_frequency_histogram_on_column_tmdctmdctorigcrtr.html">html</a>
+<a href="01388_sqld360_323688_3hwq5m5h3gkaq_3a_272_frequency_histogram_on_column_tmdctmdctorigcrtr_bar_chart.html">bar</a>
+<small><em>(42)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCT.MDCT_STRTDT
+<a href="01389_sqld360_323688_3hwq5m5h3gkaq_3a_273_hybrid_histogram_on_column_tmdctmdctstrtdt.html">html</a>
+<a href="01390_sqld360_323688_3hwq5m5h3gkaq_3a_273_hybrid_histogram_on_column_tmdctmdctstrtdt_bar_chart.html">bar</a>
+<small><em>(0)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCT.MDCT_END_DT
+<a href="01391_sqld360_323688_3hwq5m5h3gkaq_3a_274_hybrid_histogram_on_column_tmdctmdctenddt.html">html</a>
+<a href="01392_sqld360_323688_3hwq5m5h3gkaq_3a_274_hybrid_histogram_on_column_tmdctmdctenddt_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCT.MDCT_AFFDREC__MEMB
+<a href="01393_sqld360_323688_3hwq5m5h3gkaq_3a_275_hybrid_histogram_on_column_tmdctmdctaffdrecmemb.html">html</a>
+<a href="01394_sqld360_323688_3hwq5m5h3gkaq_3a_275_hybrid_histogram_on_column_tmdctmdctaffdrecmemb_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_MDCT.MDCT_NDC_CODE
+<a href="01395_sqld360_323688_3hwq5m5h3gkaq_3a_276_hybrid_histogram_on_column_tmdctmdctndccode.html">html</a>
+<a href="01396_sqld360_323688_3hwq5m5h3gkaq_3a_276_hybrid_histogram_on_column_tmdctmdctndccode_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_PRTDBY
+<a href="01397_sqld360_323688_3hwq5m5h3gkaq_3a_277_frequency_histogram_on_column_tmdctmdctprtdby.html">html</a>
+<a href="01398_sqld360_323688_3hwq5m5h3gkaq_3a_277_frequency_histogram_on_column_tmdctmdctprtdby_bar_chart.html">bar</a>
+<small><em>(178)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_DOSGUNIT
+<a href="01399_sqld360_323688_3hwq5m5h3gkaq_3a_278_frequency_histogram_on_column_tmdctmdctdosgunit.html">html</a>
+<a href="01400_sqld360_323688_3hwq5m5h3gkaq_3a_278_frequency_histogram_on_column_tmdctmdctdosgunit_bar_chart.html">bar</a>
+<small><em>(35)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_TYP
+<a href="01401_sqld360_323688_3hwq5m5h3gkaq_3a_279_frequency_histogram_on_column_tmdctmdcttyp.html">html</a>
+<a href="01402_sqld360_323688_3hwq5m5h3gkaq_3a_279_frequency_histogram_on_column_tmdctmdcttyp_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_ROUTE
+<a href="01403_sqld360_323688_3hwq5m5h3gkaq_3a_280_frequency_histogram_on_column_tmdctmdctroute.html">html</a>
+<a href="01404_sqld360_323688_3hwq5m5h3gkaq_3a_280_frequency_histogram_on_column_tmdctmdctroute_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_CURRENT_LIST
+<a href="01405_sqld360_323688_3hwq5m5h3gkaq_3a_281_frequency_histogram_on_column_tmdctmdctcurrentlist.html">html</a>
+<a href="01406_sqld360_323688_3hwq5m5h3gkaq_3a_281_frequency_histogram_on_column_tmdctmdctcurrentlist_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_SOURCE_OF_LIST
+<a href="01407_sqld360_323688_3hwq5m5h3gkaq_3a_282_frequency_histogram_on_column_tmdctmdctsourceoflist.html">html</a>
+<a href="01408_sqld360_323688_3hwq5m5h3gkaq_3a_282_frequency_histogram_on_column_tmdctmdctsourceoflist_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_STATUS
+<a href="01409_sqld360_323688_3hwq5m5h3gkaq_3a_283_frequency_histogram_on_column_tmdctmdctstatus.html">html</a>
+<a href="01410_sqld360_323688_3hwq5m5h3gkaq_3a_283_frequency_histogram_on_column_tmdctmdctstatus_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MDCT.MDCT_REVIEWED_BY
+<a href="01411_sqld360_323688_3hwq5m5h3gkaq_3a_284_frequency_histogram_on_column_tmdctmdctreviewedby.html">html</a>
+<a href="01412_sqld360_323688_3hwq5m5h3gkaq_3a_284_frequency_histogram_on_column_tmdctmdctreviewedby_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.CLASSTYPE
+<a href="01413_sqld360_323688_3hwq5m5h3gkaq_3a_285_frequency_histogram_on_column_tmembdgisbaseclasstype.html">html</a>
+<a href="01414_sqld360_323688_3hwq5m5h3gkaq_3a_285_frequency_histogram_on_column_tmembdgisbaseclasstype_bar_chart.html">bar</a>
+<small><em>(8)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_MEMBDGISBASE.MBDB_C4C_ID
+<a href="01415_sqld360_323688_3hwq5m5h3gkaq_3a_286_height_balanced_histogram_on_column_tmembdgisbasembdbc4cid.html">html</a>
+<a href="01416_sqld360_323688_3hwq5m5h3gkaq_3a_286_height_balanced_histogram_on_column_tmembdgisbasembdbc4cid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_MEMBDGISBASE.MBDB_CRTD
+<a href="01417_sqld360_323688_3hwq5m5h3gkaq_3a_287_height_balanced_histogram_on_column_tmembdgisbasembdbcrtd.html">html</a>
+<a href="01418_sqld360_323688_3hwq5m5h3gkaq_3a_287_height_balanced_histogram_on_column_tmembdgisbasembdbcrtd_bar_chart.html">bar</a>
+<small><em>(146)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_MEMBDGISBASE.MBDB_LAS_ACT_TIM
+<a href="01419_sqld360_323688_3hwq5m5h3gkaq_3a_288_height_balanced_histogram_on_column_tmembdgisbasembdblasacttim.html">html</a>
+<a href="01420_sqld360_323688_3hwq5m5h3gkaq_3a_288_height_balanced_histogram_on_column_tmembdgisbasembdblasacttim_bar_chart.html">bar</a>
+<small><em>(142)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.MBDB_OBJ_STT
+<a href="01421_sqld360_323688_3hwq5m5h3gkaq_3a_289_frequency_histogram_on_column_tmembdgisbasembdbobjstt.html">html</a>
+<a href="01422_sqld360_323688_3hwq5m5h3gkaq_3a_289_frequency_histogram_on_column_tmembdgisbasembdbobjstt_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.MBDB_VSBT
+<a href="01423_sqld360_323688_3hwq5m5h3gkaq_3a_290_frequency_histogram_on_column_tmembdgisbasembdbvsbt.html">html</a>
+<a href="01424_sqld360_323688_3hwq5m5h3gkaq_3a_290_frequency_histogram_on_column_tmembdgisbasembdbvsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.MBDB_ORIGCRTR
+<a href="01425_sqld360_323688_3hwq5m5h3gkaq_3a_291_frequency_histogram_on_column_tmembdgisbasembdborigcrtr.html">html</a>
+<a href="01426_sqld360_323688_3hwq5m5h3gkaq_3a_291_frequency_histogram_on_column_tmembdgisbasembdborigcrtr_bar_chart.html">bar</a>
+<small><em>(111)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_MEMBDGISBASE.MDSS_STRTDT
+<a href="01427_sqld360_323688_3hwq5m5h3gkaq_3a_292_height_balanced_histogram_on_column_tmembdgisbasemdssstrtdt.html">html</a>
+<a href="01428_sqld360_323688_3hwq5m5h3gkaq_3a_292_height_balanced_histogram_on_column_tmembdgisbasemdssstrtdt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_MEMBDGISBASE.MDSS_END_DT
+<a href="01429_sqld360_323688_3hwq5m5h3gkaq_3a_293_height_balanced_histogram_on_column_tmembdgisbasemdssenddt.html">html</a>
+<a href="01430_sqld360_323688_3hwq5m5h3gkaq_3a_293_height_balanced_histogram_on_column_tmembdgisbasemdssenddt_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.MDSS_IS_PMRYDGIS
+<a href="01431_sqld360_323688_3hwq5m5h3gkaq_3a_294_frequency_histogram_on_column_tmembdgisbasemdssispmrydgis.html">html</a>
+<a href="01432_sqld360_323688_3hwq5m5h3gkaq_3a_294_frequency_histogram_on_column_tmembdgisbasemdssispmrydgis_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.MDSS_IS_ERR
+<a href="01433_sqld360_323688_3hwq5m5h3gkaq_3a_295_frequency_histogram_on_column_tmembdgisbasemdssiserr.html">html</a>
+<a href="01434_sqld360_323688_3hwq5m5h3gkaq_3a_295_frequency_histogram_on_column_tmembdgisbasemdssiserr_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.MDSS_SRC__ASMTCARECALC
+<a href="01435_sqld360_323688_3hwq5m5h3gkaq_3a_296_frequency_histogram_on_column_tmembdgisbasemdsssrcasmtcarecalc.html">html</a>
+<a href="01436_sqld360_323688_3hwq5m5h3gkaq_3a_296_frequency_histogram_on_column_tmembdgisbasemdsssrcasmtcarecalc_bar_chart.html">bar</a>
+<small><em>(30)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_MEMBDGISBASE.MBDB_DGIS
+<a href="01437_sqld360_323688_3hwq5m5h3gkaq_3a_297_height_balanced_histogram_on_column_tmembdgisbasembdbdgis.html">html</a>
+<a href="01438_sqld360_323688_3hwq5m5h3gkaq_3a_297_height_balanced_histogram_on_column_tmembdgisbasembdbdgis_bar_chart.html">bar</a>
+<small><em>(169)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_MEMBDGISBASE.MDSS_CAUDBY
+<a href="01439_sqld360_323688_3hwq5m5h3gkaq_3a_298_height_balanced_histogram_on_column_tmembdgisbasemdsscaudby.html">html</a>
+<a href="01440_sqld360_323688_3hwq5m5h3gkaq_3a_298_height_balanced_histogram_on_column_tmembdgisbasemdsscaudby_bar_chart.html">bar</a>
+<small><em>(250)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.UMAD_UMBS
+<a href="01441_sqld360_323688_3hwq5m5h3gkaq_3a_299_frequency_histogram_on_column_tmembdgisbaseumadumbs.html">html</a>
+<a href="01442_sqld360_323688_3hwq5m5h3gkaq_3a_299_frequency_histogram_on_column_tmembdgisbaseumadumbs_bar_chart.html">bar</a>
+<small><em>(154)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.MPDS_PRBLM_STATUS
+<a href="01443_sqld360_323688_3hwq5m5h3gkaq_3a_300_frequency_histogram_on_column_tmembdgisbasempdsprblmstatus.html">html</a>
+<a href="01444_sqld360_323688_3hwq5m5h3gkaq_3a_300_frequency_histogram_on_column_tmembdgisbasempdsprblmstatus_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_MEMBDGISBASE.MPDS_PRBLM_SRC
+<a href="01445_sqld360_323688_3hwq5m5h3gkaq_3a_301_frequency_histogram_on_column_tmembdgisbasempdsprblmsrc.html">html</a>
+<a href="01446_sqld360_323688_3hwq5m5h3gkaq_3a_301_frequency_histogram_on_column_tmembdgisbasempdsprblmsrc_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_MEMBDGISBASE.("CLASSTYPE","MBDB_DGIS","MDSS_MEMB")
+<a href="01447_sqld360_323688_3hwq5m5h3gkaq_3a_302_height_balanced_histogram_on_column_tmembdgisbaseclasstypembdbdgismdssmemb.html">html</a>
+<a href="01448_sqld360_323688_3hwq5m5h3gkaq_3a_302_height_balanced_histogram_on_column_tmembdgisbaseclasstypembdbdgismdssmemb_bar_chart.html">bar</a>
+<small><em>(234)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.CLASSTYPE
+<a href="01449_sqld360_323688_3hwq5m5h3gkaq_3a_303_frequency_histogram_on_column_tnoteclasstype.html">html</a>
+<a href="01450_sqld360_323688_3hwq5m5h3gkaq_3a_303_frequency_histogram_on_column_tnoteclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_NOTE.NOTE_CRTD
+<a href="01451_sqld360_323688_3hwq5m5h3gkaq_3a_304_hybrid_histogram_on_column_tnotenotecrtd.html">html</a>
+<a href="01452_sqld360_323688_3hwq5m5h3gkaq_3a_304_hybrid_histogram_on_column_tnotenotecrtd_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_NOTE.NOTE_LAS_ACT_TIM
+<a href="01453_sqld360_323688_3hwq5m5h3gkaq_3a_305_hybrid_histogram_on_column_tnotenotelasacttim.html">html</a>
+<a href="01454_sqld360_323688_3hwq5m5h3gkaq_3a_305_hybrid_histogram_on_column_tnotenotelasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_OBJ_STT
+<a href="01455_sqld360_323688_3hwq5m5h3gkaq_3a_306_frequency_histogram_on_column_tnotenoteobjstt.html">html</a>
+<a href="01456_sqld360_323688_3hwq5m5h3gkaq_3a_306_frequency_histogram_on_column_tnotenoteobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_ORIGCRTR
+<a href="01457_sqld360_323688_3hwq5m5h3gkaq_3a_307_frequency_histogram_on_column_tnotenoteorigcrtr.html">html</a>
+<a href="01458_sqld360_323688_3hwq5m5h3gkaq_3a_307_frequency_histogram_on_column_tnotenoteorigcrtr_bar_chart.html">bar</a>
+<small><em>(148)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_PHNENOTE
+<a href="01459_sqld360_323688_3hwq5m5h3gkaq_3a_308_frequency_histogram_on_column_tnotenotephnenote.html">html</a>
+<a href="01460_sqld360_323688_3hwq5m5h3gkaq_3a_308_frequency_histogram_on_column_tnotenotephnenote_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_UM_NOTETYP
+<a href="01461_sqld360_323688_3hwq5m5h3gkaq_3a_309_frequency_histogram_on_column_tnotenoteumnotetyp.html">html</a>
+<a href="01462_sqld360_323688_3hwq5m5h3gkaq_3a_309_frequency_histogram_on_column_tnotenoteumnotetyp_bar_chart.html">bar</a>
+<small><em>(8)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_PITY
+<a href="01463_sqld360_323688_3hwq5m5h3gkaq_3a_310_frequency_histogram_on_column_tnotenotepity.html">html</a>
+<a href="01464_sqld360_323688_3hwq5m5h3gkaq_3a_310_frequency_histogram_on_column_tnotenotepity_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_CALLDRTNUNTS
+<a href="01465_sqld360_323688_3hwq5m5h3gkaq_3a_311_frequency_histogram_on_column_tnotenotecalldrtnunts.html">html</a>
+<a href="01466_sqld360_323688_3hwq5m5h3gkaq_3a_311_frequency_histogram_on_column_tnotenotecalldrtnunts_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_CM_NOTETYP
+<a href="01467_sqld360_323688_3hwq5m5h3gkaq_3a_312_frequency_histogram_on_column_tnotenotecmnotetyp.html">html</a>
+<a href="01468_sqld360_323688_3hwq5m5h3gkaq_3a_312_frequency_histogram_on_column_tnotenotecmnotetyp_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_CASENOTETYP
+<a href="01469_sqld360_323688_3hwq5m5h3gkaq_3a_313_frequency_histogram_on_column_tnotenotecasenotetyp.html">html</a>
+<a href="01470_sqld360_323688_3hwq5m5h3gkaq_3a_313_frequency_histogram_on_column_tnotenotecasenotetyp_bar_chart.html">bar</a>
+<small><em>(251)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_MEMBNOTETYP
+<a href="01471_sqld360_323688_3hwq5m5h3gkaq_3a_314_frequency_histogram_on_column_tnotenotemembnotetyp.html">html</a>
+<a href="01472_sqld360_323688_3hwq5m5h3gkaq_3a_314_frequency_histogram_on_column_tnotenotemembnotetyp_bar_chart.html">bar</a>
+<small><em>(127)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_SETK_NOTETYP
+<a href="01473_sqld360_323688_3hwq5m5h3gkaq_3a_315_frequency_histogram_on_column_tnotenotesetknotetyp.html">html</a>
+<a href="01474_sqld360_323688_3hwq5m5h3gkaq_3a_315_frequency_histogram_on_column_tnotenotesetknotetyp_bar_chart.html">bar</a>
+<small><em>(8)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_CAREPLAN_NOTETYPE
+<a href="01475_sqld360_323688_3hwq5m5h3gkaq_3a_316_frequency_histogram_on_column_tnotenotecareplannotetype.html">html</a>
+<a href="01476_sqld360_323688_3hwq5m5h3gkaq_3a_316_frequency_histogram_on_column_tnotenotecareplannotetype_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_SOURCE
+<a href="01477_sqld360_323688_3hwq5m5h3gkaq_3a_317_frequency_histogram_on_column_tnotenotesource.html">html</a>
+<a href="01478_sqld360_323688_3hwq5m5h3gkaq_3a_317_frequency_histogram_on_column_tnotenotesource_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_REASON
+<a href="01479_sqld360_323688_3hwq5m5h3gkaq_3a_318_frequency_histogram_on_column_tnotenotereason.html">html</a>
+<a href="01480_sqld360_323688_3hwq5m5h3gkaq_3a_318_frequency_histogram_on_column_tnotenotereason_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_CALL_OUTCOME
+<a href="01481_sqld360_323688_3hwq5m5h3gkaq_3a_319_frequency_histogram_on_column_tnotenotecalloutcome.html">html</a>
+<a href="01482_sqld360_323688_3hwq5m5h3gkaq_3a_319_frequency_histogram_on_column_tnotenotecalloutcome_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.NOTE_CALL_DISPOSITION
+<a href="01483_sqld360_323688_3hwq5m5h3gkaq_3a_320_frequency_histogram_on_column_tnotenotecalldisposition.html">html</a>
+<a href="01484_sqld360_323688_3hwq5m5h3gkaq_3a_320_frequency_histogram_on_column_tnotenotecalldisposition_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_NOTE.NOTE_CONTACT_ID
+<a href="01485_sqld360_323688_3hwq5m5h3gkaq_3a_321_hybrid_histogram_on_column_tnotenotecontactid.html">html</a>
+<a href="01486_sqld360_323688_3hwq5m5h3gkaq_3a_321_hybrid_histogram_on_column_tnotenotecontactid_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NOTE.AFFILIATION_TYPE
+<a href="01487_sqld360_323688_3hwq5m5h3gkaq_3a_322_frequency_histogram_on_column_tnoteaffiliationtype.html">html</a>
+<a href="01488_sqld360_323688_3hwq5m5h3gkaq_3a_322_frequency_histogram_on_column_tnoteaffiliationtype_bar_chart.html">bar</a>
+<small><em>(13)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Top-Frequency histogram on Column T_NOTE.NOTE_TYPE
+<a href="01489_sqld360_323688_3hwq5m5h3gkaq_3a_323_topfrequency_histogram_on_column_tnotenotetype.html">html</a>
+<a href="01490_sqld360_323688_3hwq5m5h3gkaq_3a_323_topfrequency_histogram_on_column_tnotenotetype_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_NTCE.NTC_LAS_ACT_TIM
+<a href="01491_sqld360_323688_3hwq5m5h3gkaq_3a_324_height_balanced_histogram_on_column_tntcentclasacttim.html">html</a>
+<a href="01492_sqld360_323688_3hwq5m5h3gkaq_3a_324_height_balanced_histogram_on_column_tntcentclasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NTCE.NTC_OBJ_STT
+<a href="01493_sqld360_323688_3hwq5m5h3gkaq_3a_325_frequency_histogram_on_column_tntcentcobjstt.html">html</a>
+<a href="01494_sqld360_323688_3hwq5m5h3gkaq_3a_325_frequency_histogram_on_column_tntcentcobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NTCE.NTC_LAS_ACT_BY
+<a href="01495_sqld360_323688_3hwq5m5h3gkaq_3a_326_frequency_histogram_on_column_tntcentclasactby.html">html</a>
+<a href="01496_sqld360_323688_3hwq5m5h3gkaq_3a_326_frequency_histogram_on_column_tntcentclasactby_bar_chart.html">bar</a>
+<small><em>(86)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NTCE.NTC_RFRDOBJ_TYP
+<a href="01497_sqld360_323688_3hwq5m5h3gkaq_3a_327_frequency_histogram_on_column_tntcentcrfrdobjtyp.html">html</a>
+<a href="01498_sqld360_323688_3hwq5m5h3gkaq_3a_327_frequency_histogram_on_column_tntcentcrfrdobjtyp_bar_chart.html">bar</a>
+<small><em>(8)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_NTCE.NTC_OWNR
+<a href="01499_sqld360_323688_3hwq5m5h3gkaq_3a_328_height_balanced_histogram_on_column_tntcentcownr.html">html</a>
+<a href="01500_sqld360_323688_3hwq5m5h3gkaq_3a_328_height_balanced_histogram_on_column_tntcentcownr_bar_chart.html">bar</a>
+<small><em>(61)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NTCE.NTC_SENTBY
+<a href="01501_sqld360_323688_3hwq5m5h3gkaq_3a_329_frequency_histogram_on_column_tntcentcsentby.html">html</a>
+<a href="01502_sqld360_323688_3hwq5m5h3gkaq_3a_329_frequency_histogram_on_column_tntcentcsentby_bar_chart.html">bar</a>
+<small><em>(14)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_NTCE.NTC_TYP
+<a href="01503_sqld360_323688_3hwq5m5h3gkaq_3a_330_frequency_histogram_on_column_tntcentctyp.html">html</a>
+<a href="01504_sqld360_323688_3hwq5m5h3gkaq_3a_330_frequency_histogram_on_column_tntcentctyp_bar_chart.html">bar</a>
+<small><em>(18)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ORG_CHRTITEM.OCHI_OBJ_STT
+<a href="01505_sqld360_323688_3hwq5m5h3gkaq_3a_331_frequency_histogram_on_column_torgchrtitemochiobjstt.html">html</a>
+<a href="01506_sqld360_323688_3hwq5m5h3gkaq_3a_331_frequency_histogram_on_column_torgchrtitemochiobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ORG_CHRTITEM.OCHI_LVL
+<a href="01507_sqld360_323688_3hwq5m5h3gkaq_3a_332_frequency_histogram_on_column_torgchrtitemochilvl.html">html</a>
+<a href="01508_sqld360_323688_3hwq5m5h3gkaq_3a_332_frequency_histogram_on_column_torgchrtitemochilvl_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ORG_CHRTITEM.OCHI_PRNT
+<a href="01509_sqld360_323688_3hwq5m5h3gkaq_3a_333_frequency_histogram_on_column_torgchrtitemochiprnt.html">html</a>
+<a href="01510_sqld360_323688_3hwq5m5h3gkaq_3a_333_frequency_histogram_on_column_torgchrtitemochiprnt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_ORG_CHRTITEMPRSS.OCRP_PRSNCHRTITEM
+<a href="01511_sqld360_323688_3hwq5m5h3gkaq_3a_334_frequency_histogram_on_column_torgchrtitemprssocrpprsnchrtitem.html">html</a>
+<a href="01512_sqld360_323688_3hwq5m5h3gkaq_3a_334_frequency_histogram_on_column_torgchrtitemprssocrpprsnchrtitem_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_OTHER_INSURANCE.CLASSTYPE
+<a href="01513_sqld360_323688_3hwq5m5h3gkaq_3a_335_frequency_histogram_on_column_totherinsuranceclasstype.html">html</a>
+<a href="01514_sqld360_323688_3hwq5m5h3gkaq_3a_335_frequency_histogram_on_column_totherinsuranceclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_OTHER_INSURANCE.INS_LAS_ACT_TIM
+<a href="01515_sqld360_323688_3hwq5m5h3gkaq_3a_336_hybrid_histogram_on_column_totherinsuranceinslasacttim.html">html</a>
+<a href="01516_sqld360_323688_3hwq5m5h3gkaq_3a_336_hybrid_histogram_on_column_totherinsuranceinslasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_OUTCOME.CLASSTYPE
+<a href="01517_sqld360_323688_3hwq5m5h3gkaq_3a_337_frequency_histogram_on_column_toutcomeclasstype.html">html</a>
+<a href="01518_sqld360_323688_3hwq5m5h3gkaq_3a_337_frequency_histogram_on_column_toutcomeclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_OUTCOME.OUTCOME_LAS_ACT_TIM
+<a href="01519_sqld360_323688_3hwq5m5h3gkaq_3a_338_hybrid_histogram_on_column_toutcomeoutcomelasacttim.html">html</a>
+<a href="01520_sqld360_323688_3hwq5m5h3gkaq_3a_338_hybrid_histogram_on_column_toutcomeoutcomelasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_OUTCOME.OUTCOME_VERS
+<a href="01521_sqld360_323688_3hwq5m5h3gkaq_3a_339_frequency_histogram_on_column_toutcomeoutcomevers.html">html</a>
+<a href="01522_sqld360_323688_3hwq5m5h3gkaq_3a_339_frequency_histogram_on_column_toutcomeoutcomevers_bar_chart.html">bar</a>
+<small><em>(11)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_OUTCOME.OUTCOME_RESULT
+<a href="01523_sqld360_323688_3hwq5m5h3gkaq_3a_340_frequency_histogram_on_column_toutcomeoutcomeresult.html">html</a>
+<a href="01524_sqld360_323688_3hwq5m5h3gkaq_3a_340_frequency_histogram_on_column_toutcomeoutcomeresult_bar_chart.html">bar</a>
+<small><em>(13)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_OUTCOME.OUTCOME_REASON
+<a href="01525_sqld360_323688_3hwq5m5h3gkaq_3a_341_frequency_histogram_on_column_toutcomeoutcomereason.html">html</a>
+<a href="01526_sqld360_323688_3hwq5m5h3gkaq_3a_341_frequency_histogram_on_column_toutcomeoutcomereason_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PAT_ID_QRY.PIDQ_VSBT
+<a href="01527_sqld360_323688_3hwq5m5h3gkaq_3a_342_frequency_histogram_on_column_tpatidqrypidqvsbt.html">html</a>
+<a href="01528_sqld360_323688_3hwq5m5h3gkaq_3a_342_frequency_histogram_on_column_tpatidqrypidqvsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PAT_ID_QRY.PIDQ_ORIGCRTR
+<a href="01529_sqld360_323688_3hwq5m5h3gkaq_3a_343_frequency_histogram_on_column_tpatidqrypidqorigcrtr.html">html</a>
+<a href="01530_sqld360_323688_3hwq5m5h3gkaq_3a_343_frequency_histogram_on_column_tpatidqrypidqorigcrtr_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PAYRDGISSCTY.PDIS_PAYR
+<a href="01531_sqld360_323688_3hwq5m5h3gkaq_3a_344_frequency_histogram_on_column_tpayrdgissctypdispayr.html">html</a>
+<a href="01532_sqld360_323688_3hwq5m5h3gkaq_3a_344_frequency_histogram_on_column_tpayrdgissctypdispayr_bar_chart.html">bar</a>
+<small><em>(78)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PAYRDGISSCTY.PDIS_DGISSCTY
+<a href="01533_sqld360_323688_3hwq5m5h3gkaq_3a_345_frequency_histogram_on_column_tpayrdgissctypdisdgisscty.html">html</a>
+<a href="01534_sqld360_323688_3hwq5m5h3gkaq_3a_345_frequency_histogram_on_column_tpayrdgissctypdisdgisscty_bar_chart.html">bar</a>
+<small><em>(26)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PAYRROLS.PYRL_OBJ_STT
+<a href="01535_sqld360_323688_3hwq5m5h3gkaq_3a_346_frequency_histogram_on_column_tpayrrolspyrlobjstt.html">html</a>
+<a href="01536_sqld360_323688_3hwq5m5h3gkaq_3a_346_frequency_histogram_on_column_tpayrrolspyrlobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PAYRROLS.PYRL_PMRYROLE
+<a href="01537_sqld360_323688_3hwq5m5h3gkaq_3a_347_frequency_histogram_on_column_tpayrrolspyrlpmryrole.html">html</a>
+<a href="01538_sqld360_323688_3hwq5m5h3gkaq_3a_347_frequency_histogram_on_column_tpayrrolspyrlpmryrole_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PAYRROLS.PYRL_WKLDLMTD
+<a href="01539_sqld360_323688_3hwq5m5h3gkaq_3a_348_frequency_histogram_on_column_tpayrrolspyrlwkldlmtd.html">html</a>
+<a href="01540_sqld360_323688_3hwq5m5h3gkaq_3a_348_frequency_histogram_on_column_tpayrrolspyrlwkldlmtd_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_PAYRROLS.PYRL_PAYR
+<a href="01541_sqld360_323688_3hwq5m5h3gkaq_3a_349_hybrid_histogram_on_column_tpayrrolspyrlpayr.html">html</a>
+<a href="01542_sqld360_323688_3hwq5m5h3gkaq_3a_349_hybrid_histogram_on_column_tpayrrolspyrlpayr_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PAYRROLS.PYRL_USR_ROLS
+<a href="01543_sqld360_323688_3hwq5m5h3gkaq_3a_350_frequency_histogram_on_column_tpayrrolspyrlusrrols.html">html</a>
+<a href="01544_sqld360_323688_3hwq5m5h3gkaq_3a_350_frequency_histogram_on_column_tpayrrolspyrlusrrols_bar_chart.html">bar</a>
+<small><em>(95)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_PHI.LAST_ACTION_TIME
+<a href="01545_sqld360_323688_3hwq5m5h3gkaq_3a_351_hybrid_histogram_on_column_tphilastactiontime.html">html</a>
+<a href="01546_sqld360_323688_3hwq5m5h3gkaq_3a_351_hybrid_histogram_on_column_tphilastactiontime_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PHI.PHI_TYPE
+<a href="01547_sqld360_323688_3hwq5m5h3gkaq_3a_352_frequency_histogram_on_column_tphiphitype.html">html</a>
+<a href="01548_sqld360_323688_3hwq5m5h3gkaq_3a_352_frequency_histogram_on_column_tphiphitype_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PHI.RELATIONSHIP
+<a href="01549_sqld360_323688_3hwq5m5h3gkaq_3a_353_frequency_histogram_on_column_tphirelationship.html">html</a>
+<a href="01550_sqld360_323688_3hwq5m5h3gkaq_3a_353_frequency_histogram_on_column_tphirelationship_bar_chart.html">bar</a>
+<small><em>(11)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PHI.PHONE_TYPE
+<a href="01551_sqld360_323688_3hwq5m5h3gkaq_3a_354_frequency_histogram_on_column_tphiphonetype.html">html</a>
+<a href="01552_sqld360_323688_3hwq5m5h3gkaq_3a_354_frequency_histogram_on_column_tphiphonetype_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PHI.AUTH_SOURCE
+<a href="01553_sqld360_323688_3hwq5m5h3gkaq_3a_355_frequency_histogram_on_column_tphiauthsource.html">html</a>
+<a href="01554_sqld360_323688_3hwq5m5h3gkaq_3a_355_frequency_histogram_on_column_tphiauthsource_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PHI.AUTH_TYPE
+<a href="01555_sqld360_323688_3hwq5m5h3gkaq_3a_356_frequency_histogram_on_column_tphiauthtype.html">html</a>
+<a href="01556_sqld360_323688_3hwq5m5h3gkaq_3a_356_frequency_histogram_on_column_tphiauthtype_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PHI.AUTH_PURPOSE
+<a href="01557_sqld360_323688_3hwq5m5h3gkaq_3a_357_frequency_histogram_on_column_tphiauthpurpose.html">html</a>
+<a href="01558_sqld360_323688_3hwq5m5h3gkaq_3a_357_frequency_histogram_on_column_tphiauthpurpose_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PHI.CONF_COMM_TYPE
+<a href="01559_sqld360_323688_3hwq5m5h3gkaq_3a_358_frequency_histogram_on_column_tphiconfcommtype.html">html</a>
+<a href="01560_sqld360_323688_3hwq5m5h3gkaq_3a_358_frequency_histogram_on_column_tphiconfcommtype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PHI.LEGAL_TYPE
+<a href="01561_sqld360_323688_3hwq5m5h3gkaq_3a_359_frequency_histogram_on_column_tphilegaltype.html">html</a>
+<a href="01562_sqld360_323688_3hwq5m5h3gkaq_3a_359_frequency_histogram_on_column_tphilegaltype_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PHI.REP_TYPE
+<a href="01563_sqld360_323688_3hwq5m5h3gkaq_3a_360_frequency_histogram_on_column_tphireptype.html">html</a>
+<a href="01564_sqld360_323688_3hwq5m5h3gkaq_3a_360_frequency_histogram_on_column_tphireptype_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_PRACTITIONER_ROLE.SUPPLIER_ID
+<a href="01565_sqld360_323688_3hwq5m5h3gkaq_3a_361_hybrid_histogram_on_column_tpractitionerrolesupplierid.html">html</a>
+<a href="01566_sqld360_323688_3hwq5m5h3gkaq_3a_361_hybrid_histogram_on_column_tpractitionerrolesupplierid_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_PRACTITIONER_ROLE.SUPPLIER_LOCATION_ID
+<a href="01567_sqld360_323688_3hwq5m5h3gkaq_3a_362_hybrid_histogram_on_column_tpractitionerrolesupplierlocationid.html">html</a>
+<a href="01568_sqld360_323688_3hwq5m5h3gkaq_3a_362_hybrid_histogram_on_column_tpractitionerrolesupplierlocationid_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRACTITIONER_ROLE.OBJECT_STATE
+<a href="01569_sqld360_323688_3hwq5m5h3gkaq_3a_363_frequency_histogram_on_column_tpractitionerroleobjectstate.html">html</a>
+<a href="01570_sqld360_323688_3hwq5m5h3gkaq_3a_363_frequency_histogram_on_column_tpractitionerroleobjectstate_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Top-Frequency histogram on Column T_PRMR.PERF_USR
+<a href="01571_sqld360_323688_3hwq5m5h3gkaq_3a_364_topfrequency_histogram_on_column_tprmrperfusr.html">html</a>
+<a href="01572_sqld360_323688_3hwq5m5h3gkaq_3a_364_topfrequency_histogram_on_column_tprmrperfusr_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRODCAT_PVDR.CLASSTYPE
+<a href="01573_sqld360_323688_3hwq5m5h3gkaq_3a_365_frequency_histogram_on_column_tprodcatpvdrclasstype.html">html</a>
+<a href="01574_sqld360_323688_3hwq5m5h3gkaq_3a_365_frequency_histogram_on_column_tprodcatpvdrclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRODCAT_PVDR.PCPR_OBJ_STT
+<a href="01575_sqld360_323688_3hwq5m5h3gkaq_3a_366_frequency_histogram_on_column_tprodcatpvdrpcprobjstt.html">html</a>
+<a href="01576_sqld360_323688_3hwq5m5h3gkaq_3a_366_frequency_histogram_on_column_tprodcatpvdrpcprobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRODCAT_PVDR.APPLIES_TO_ALL_PRACTITIONERS
+<a href="01577_sqld360_323688_3hwq5m5h3gkaq_3a_367_frequency_histogram_on_column_tprodcatpvdrappliestoallpractitioners.html">html</a>
+<a href="01578_sqld360_323688_3hwq5m5h3gkaq_3a_367_frequency_histogram_on_column_tprodcatpvdrappliestoallpractitioners_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRODCAT_PVDR.BENEFIT_NETWORK_NAME
+<a href="01579_sqld360_323688_3hwq5m5h3gkaq_3a_368_frequency_histogram_on_column_tprodcatpvdrbenefitnetworkname.html">html</a>
+<a href="01580_sqld360_323688_3hwq5m5h3gkaq_3a_368_frequency_histogram_on_column_tprodcatpvdrbenefitnetworkname_bar_chart.html">bar</a>
+<small><em>(21)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_PROVIDER_CHOICE.PRCE_PVDR
+<a href="01581_sqld360_323688_3hwq5m5h3gkaq_3a_369_hybrid_histogram_on_column_tproviderchoiceprcepvdr.html">html</a>
+<a href="01582_sqld360_323688_3hwq5m5h3gkaq_3a_369_hybrid_histogram_on_column_tproviderchoiceprcepvdr_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRPDLTR.CLASSTYPE
+<a href="01583_sqld360_323688_3hwq5m5h3gkaq_3a_370_frequency_histogram_on_column_tprpdltrclasstype.html">html</a>
+<a href="01584_sqld360_323688_3hwq5m5h3gkaq_3a_370_frequency_histogram_on_column_tprpdltrclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_PRPDLTR.PRLT_LAS_ACT_TIM
+<a href="01585_sqld360_323688_3hwq5m5h3gkaq_3a_371_hybrid_histogram_on_column_tprpdltrprltlasacttim.html">html</a>
+<a href="01586_sqld360_323688_3hwq5m5h3gkaq_3a_371_hybrid_histogram_on_column_tprpdltrprltlasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRPDLTR.PRLT_OBJ_STT
+<a href="01587_sqld360_323688_3hwq5m5h3gkaq_3a_372_frequency_histogram_on_column_tprpdltrprltobjstt.html">html</a>
+<a href="01588_sqld360_323688_3hwq5m5h3gkaq_3a_372_frequency_histogram_on_column_tprpdltrprltobjstt_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRPDLTR.PRLT_ORIGCRTR
+<a href="01589_sqld360_323688_3hwq5m5h3gkaq_3a_373_frequency_histogram_on_column_tprpdltrprltorigcrtr.html">html</a>
+<a href="01590_sqld360_323688_3hwq5m5h3gkaq_3a_373_frequency_histogram_on_column_tprpdltrprltorigcrtr_bar_chart.html">bar</a>
+<small><em>(71)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRPDLTR.PRLT_ASTNTYP
+<a href="01591_sqld360_323688_3hwq5m5h3gkaq_3a_374_frequency_histogram_on_column_tprpdltrprltastntyp.html">html</a>
+<a href="01592_sqld360_323688_3hwq5m5h3gkaq_3a_374_frequency_histogram_on_column_tprpdltrprltastntyp_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRPDLTR.PRLT_TYP_SBTY
+<a href="01593_sqld360_323688_3hwq5m5h3gkaq_3a_375_frequency_histogram_on_column_tprpdltrprlttypsbty.html">html</a>
+<a href="01594_sqld360_323688_3hwq5m5h3gkaq_3a_375_frequency_histogram_on_column_tprpdltrprlttypsbty_bar_chart.html">bar</a>
+<small><em>(20)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRPDLTR.PRLT_LTR_TMPT
+<a href="01595_sqld360_323688_3hwq5m5h3gkaq_3a_376_frequency_histogram_on_column_tprpdltrprltltrtmpt.html">html</a>
+<a href="01596_sqld360_323688_3hwq5m5h3gkaq_3a_376_frequency_histogram_on_column_tprpdltrprltltrtmpt_bar_chart.html">bar</a>
+<small><em>(213)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PRPDLTR.PRLT_QUE
+<a href="01597_sqld360_323688_3hwq5m5h3gkaq_3a_377_frequency_histogram_on_column_tprpdltrprltque.html">html</a>
+<a href="01598_sqld360_323688_3hwq5m5h3gkaq_3a_377_frequency_histogram_on_column_tprpdltrprltque_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PVDRASTN.CLASSTYPE
+<a href="01599_sqld360_323688_3hwq5m5h3gkaq_3a_378_frequency_histogram_on_column_tpvdrastnclasstype.html">html</a>
+<a href="01600_sqld360_323688_3hwq5m5h3gkaq_3a_378_frequency_histogram_on_column_tpvdrastnclasstype_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_PVDRASTN.PRAS_CRTD
+<a href="01601_sqld360_323688_3hwq5m5h3gkaq_3a_379_height_balanced_histogram_on_column_tpvdrastnprascrtd.html">html</a>
+<a href="01602_sqld360_323688_3hwq5m5h3gkaq_3a_379_height_balanced_histogram_on_column_tpvdrastnprascrtd_bar_chart.html">bar</a>
+<small><em>(193)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_PVDRASTN.PRAS_LAS_ACT_TIM
+<a href="01603_sqld360_323688_3hwq5m5h3gkaq_3a_380_height_balanced_histogram_on_column_tpvdrastnpraslasacttim.html">html</a>
+<a href="01604_sqld360_323688_3hwq5m5h3gkaq_3a_380_height_balanced_histogram_on_column_tpvdrastnpraslasacttim_bar_chart.html">bar</a>
+<small><em>(213)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PVDRASTN.PRAS_OBJ_STT
+<a href="01605_sqld360_323688_3hwq5m5h3gkaq_3a_381_frequency_histogram_on_column_tpvdrastnprasobjstt.html">html</a>
+<a href="01606_sqld360_323688_3hwq5m5h3gkaq_3a_381_frequency_histogram_on_column_tpvdrastnprasobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PVDRASTN.PRAS_ORIGCRTR
+<a href="01607_sqld360_323688_3hwq5m5h3gkaq_3a_382_frequency_histogram_on_column_tpvdrastnprasorigcrtr.html">html</a>
+<a href="01608_sqld360_323688_3hwq5m5h3gkaq_3a_382_frequency_histogram_on_column_tpvdrastnprasorigcrtr_bar_chart.html">bar</a>
+<small><em>(62)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_PVDRASTN.PRAS_STRTDT
+<a href="01609_sqld360_323688_3hwq5m5h3gkaq_3a_383_height_balanced_histogram_on_column_tpvdrastnprasstrtdt.html">html</a>
+<a href="01610_sqld360_323688_3hwq5m5h3gkaq_3a_383_height_balanced_histogram_on_column_tpvdrastnprasstrtdt_bar_chart.html">bar</a>
+<small><em>(181)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_PVDRASTN.PRAS_END_DT
+<a href="01611_sqld360_323688_3hwq5m5h3gkaq_3a_384_height_balanced_histogram_on_column_tpvdrastnprasenddt.html">html</a>
+<a href="01612_sqld360_323688_3hwq5m5h3gkaq_3a_384_height_balanced_histogram_on_column_tpvdrastnprasenddt_bar_chart.html">bar</a>
+<small><em>(141)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PVDRASTN.UPAS_RQNGPVDR
+<a href="01613_sqld360_323688_3hwq5m5h3gkaq_3a_385_frequency_histogram_on_column_tpvdrastnupasrqngpvdr.html">html</a>
+<a href="01614_sqld360_323688_3hwq5m5h3gkaq_3a_385_frequency_histogram_on_column_tpvdrastnupasrqngpvdr_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PVDRASTN.UPAS_PFNGPVDR
+<a href="01615_sqld360_323688_3hwq5m5h3gkaq_3a_386_frequency_histogram_on_column_tpvdrastnupaspfngpvdr.html">html</a>
+<a href="01616_sqld360_323688_3hwq5m5h3gkaq_3a_386_frequency_histogram_on_column_tpvdrastnupaspfngpvdr_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PVDRASTN.CPAS_CM_BASE
+<a href="01617_sqld360_323688_3hwq5m5h3gkaq_3a_387_frequency_histogram_on_column_tpvdrastncpascmbase.html">html</a>
+<a href="01618_sqld360_323688_3hwq5m5h3gkaq_3a_387_frequency_histogram_on_column_tpvdrastncpascmbase_bar_chart.html">bar</a>
+<small><em>(29)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PVDRASTN.PRAS_ROLE
+<a href="01619_sqld360_323688_3hwq5m5h3gkaq_3a_388_frequency_histogram_on_column_tpvdrastnprasrole.html">html</a>
+<a href="01620_sqld360_323688_3hwq5m5h3gkaq_3a_388_frequency_histogram_on_column_tpvdrastnprasrole_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_PVDRASTN.PRAS_PVDR
+<a href="01621_sqld360_323688_3hwq5m5h3gkaq_3a_389_height_balanced_histogram_on_column_tpvdrastnpraspvdr.html">html</a>
+<a href="01622_sqld360_323688_3hwq5m5h3gkaq_3a_389_height_balanced_histogram_on_column_tpvdrastnpraspvdr_bar_chart.html">bar</a>
+<small><em>(226)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_PVDRASTN.PRAS_PRACTITIONER_LOCATION
+<a href="01623_sqld360_323688_3hwq5m5h3gkaq_3a_390_frequency_histogram_on_column_tpvdrastnpraspractitionerlocation.html">html</a>
+<a href="01624_sqld360_323688_3hwq5m5h3gkaq_3a_390_frequency_histogram_on_column_tpvdrastnpraspractitionerlocation_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_QCK_SEA_SNGS.QSS_DFLTUI_PFR
+<a href="01625_sqld360_323688_3hwq5m5h3gkaq_3a_391_frequency_histogram_on_column_tqckseasngsqssdfltuipfr.html">html</a>
+<a href="01626_sqld360_323688_3hwq5m5h3gkaq_3a_391_frequency_histogram_on_column_tqckseasngsqssdfltuipfr_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_QCK_SEA_SNGS.QSS_PAYR
+<a href="01627_sqld360_323688_3hwq5m5h3gkaq_3a_392_frequency_histogram_on_column_tqckseasngsqsspayr.html">html</a>
+<a href="01628_sqld360_323688_3hwq5m5h3gkaq_3a_392_frequency_histogram_on_column_tqckseasngsqsspayr_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWHEAD.CLASSTYPE
+<a href="01629_sqld360_323688_3hwq5m5h3gkaq_3a_393_frequency_histogram_on_column_trevwheadclasstype.html">html</a>
+<a href="01630_sqld360_323688_3hwq5m5h3gkaq_3a_393_frequency_histogram_on_column_trevwheadclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWHEAD.RWHD_OBJ_STT
+<a href="01631_sqld360_323688_3hwq5m5h3gkaq_3a_394_frequency_histogram_on_column_trevwheadrwhdobjstt.html">html</a>
+<a href="01632_sqld360_323688_3hwq5m5h3gkaq_3a_394_frequency_histogram_on_column_trevwheadrwhdobjstt_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWHEAD.RWHD_RFRDOBJ_TYP
+<a href="01633_sqld360_323688_3hwq5m5h3gkaq_3a_395_frequency_histogram_on_column_trevwheadrwhdrfrdobjtyp.html">html</a>
+<a href="01634_sqld360_323688_3hwq5m5h3gkaq_3a_395_frequency_histogram_on_column_trevwheadrwhdrfrdobjtyp_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWHEAD.RWHD_RESN
+<a href="01635_sqld360_323688_3hwq5m5h3gkaq_3a_396_frequency_histogram_on_column_trevwheadrwhdresn.html">html</a>
+<a href="01636_sqld360_323688_3hwq5m5h3gkaq_3a_396_frequency_histogram_on_column_trevwheadrwhdresn_bar_chart.html">bar</a>
+<small><em>(12)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWHEAD.RWHD_SNDR
+<a href="01637_sqld360_323688_3hwq5m5h3gkaq_3a_397_frequency_histogram_on_column_trevwheadrwhdsndr.html">html</a>
+<a href="01638_sqld360_323688_3hwq5m5h3gkaq_3a_397_frequency_histogram_on_column_trevwheadrwhdsndr_bar_chart.html">bar</a>
+<small><em>(41)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWHEAD.RWHD_RET_TO
+<a href="01639_sqld360_323688_3hwq5m5h3gkaq_3a_398_frequency_histogram_on_column_trevwheadrwhdretto.html">html</a>
+<a href="01640_sqld360_323688_3hwq5m5h3gkaq_3a_398_frequency_histogram_on_column_trevwheadrwhdretto_bar_chart.html">bar</a>
+<small><em>(45)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWREC.CLASSTYPE
+<a href="01641_sqld360_323688_3hwq5m5h3gkaq_3a_399_frequency_histogram_on_column_trevwrecclasstype.html">html</a>
+<a href="01642_sqld360_323688_3hwq5m5h3gkaq_3a_399_frequency_histogram_on_column_trevwrecclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_REVWREC.RWRC_CRTD
+<a href="01643_sqld360_323688_3hwq5m5h3gkaq_3a_400_height_balanced_histogram_on_column_trevwrecrwrccrtd.html">html</a>
+<a href="01644_sqld360_323688_3hwq5m5h3gkaq_3a_400_height_balanced_histogram_on_column_trevwrecrwrccrtd_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_REVWREC.RWRC_LAS_ACT_TIM
+<a href="01645_sqld360_323688_3hwq5m5h3gkaq_3a_401_height_balanced_histogram_on_column_trevwrecrwrclasacttim.html">html</a>
+<a href="01646_sqld360_323688_3hwq5m5h3gkaq_3a_401_height_balanced_histogram_on_column_trevwrecrwrclasacttim_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWREC.RWRC_OBJ_STT
+<a href="01647_sqld360_323688_3hwq5m5h3gkaq_3a_402_frequency_histogram_on_column_trevwrecrwrcobjstt.html">html</a>
+<a href="01648_sqld360_323688_3hwq5m5h3gkaq_3a_402_frequency_histogram_on_column_trevwrecrwrcobjstt_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWREC.RWRC_LAS_ACT_BY
+<a href="01649_sqld360_323688_3hwq5m5h3gkaq_3a_403_frequency_histogram_on_column_trevwrecrwrclasactby.html">html</a>
+<a href="01650_sqld360_323688_3hwq5m5h3gkaq_3a_403_frequency_histogram_on_column_trevwrecrwrclasactby_bar_chart.html">bar</a>
+<small><em>(38)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWREC.RWRC_RFRDOBJ_TYP
+<a href="01651_sqld360_323688_3hwq5m5h3gkaq_3a_404_frequency_histogram_on_column_trevwrecrwrcrfrdobjtyp.html">html</a>
+<a href="01652_sqld360_323688_3hwq5m5h3gkaq_3a_404_frequency_histogram_on_column_trevwrecrwrcrfrdobjtyp_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_REVWREC.RWRC_OWNR
+<a href="01653_sqld360_323688_3hwq5m5h3gkaq_3a_405_frequency_histogram_on_column_trevwrecrwrcownr.html">html</a>
+<a href="01654_sqld360_323688_3hwq5m5h3gkaq_3a_405_frequency_histogram_on_column_trevwrecrwrcownr_bar_chart.html">bar</a>
+<small><em>(29)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTEMAL.STEL_CNXT_CM
+<a href="01655_sqld360_323688_3hwq5m5h3gkaq_3a_406_frequency_histogram_on_column_tsentemalstelcnxtcm.html">html</a>
+<a href="01656_sqld360_323688_3hwq5m5h3gkaq_3a_406_frequency_histogram_on_column_tsentemalstelcnxtcm_bar_chart.html">bar</a>
+<small><em>(91)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTEMAL.STEL_CNXT_MEMB
+<a href="01657_sqld360_323688_3hwq5m5h3gkaq_3a_407_frequency_histogram_on_column_tsentemalstelcnxtmemb.html">html</a>
+<a href="01658_sqld360_323688_3hwq5m5h3gkaq_3a_407_frequency_histogram_on_column_tsentemalstelcnxtmemb_bar_chart.html">bar</a>
+<small><em>(17)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTEMAL.STEL_CNXT_UM_EVNT
+<a href="01659_sqld360_323688_3hwq5m5h3gkaq_3a_408_frequency_histogram_on_column_tsentemalstelcnxtumevnt.html">html</a>
+<a href="01660_sqld360_323688_3hwq5m5h3gkaq_3a_408_frequency_histogram_on_column_tsentemalstelcnxtumevnt_bar_chart.html">bar</a>
+<small><em>(15)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTLTR.SLTT_LAS_ACT_TIM
+<a href="01661_sqld360_323688_3hwq5m5h3gkaq_3a_409_hybrid_histogram_on_column_tsentltrslttlasacttim.html">html</a>
+<a href="01662_sqld360_323688_3hwq5m5h3gkaq_3a_409_hybrid_histogram_on_column_tsentltrslttlasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTLTR.SLTT_AFFN_CM
+<a href="01663_sqld360_323688_3hwq5m5h3gkaq_3a_410_hybrid_histogram_on_column_tsentltrslttaffncm.html">html</a>
+<a href="01664_sqld360_323688_3hwq5m5h3gkaq_3a_410_hybrid_histogram_on_column_tsentltrslttaffncm_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTLTR.SLTT_AFFN_MEMB
+<a href="01665_sqld360_323688_3hwq5m5h3gkaq_3a_411_hybrid_histogram_on_column_tsentltrslttaffnmemb.html">html</a>
+<a href="01666_sqld360_323688_3hwq5m5h3gkaq_3a_411_hybrid_histogram_on_column_tsentltrslttaffnmemb_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.CLASSTYPE
+<a href="01667_sqld360_323688_3hwq5m5h3gkaq_3a_412_frequency_histogram_on_column_tsenttskclasstype.html">html</a>
+<a href="01668_sqld360_323688_3hwq5m5h3gkaq_3a_412_frequency_histogram_on_column_tsenttskclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTTSK.SETK_CRTD
+<a href="01669_sqld360_323688_3hwq5m5h3gkaq_3a_413_hybrid_histogram_on_column_tsenttsksetkcrtd.html">html</a>
+<a href="01670_sqld360_323688_3hwq5m5h3gkaq_3a_413_hybrid_histogram_on_column_tsenttsksetkcrtd_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_LAS_ACT
+<a href="01671_sqld360_323688_3hwq5m5h3gkaq_3a_414_frequency_histogram_on_column_tsenttsksetklasact.html">html</a>
+<a href="01672_sqld360_323688_3hwq5m5h3gkaq_3a_414_frequency_histogram_on_column_tsenttsksetklasact_bar_chart.html">bar</a>
+<small><em>(10)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTTSK.SETK_LAS_ACT_TIM
+<a href="01673_sqld360_323688_3hwq5m5h3gkaq_3a_415_hybrid_histogram_on_column_tsenttsksetklasacttim.html">html</a>
+<a href="01674_sqld360_323688_3hwq5m5h3gkaq_3a_415_hybrid_histogram_on_column_tsenttsksetklasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_OBJ_STT
+<a href="01675_sqld360_323688_3hwq5m5h3gkaq_3a_416_frequency_histogram_on_column_tsenttsksetkobjstt.html">html</a>
+<a href="01676_sqld360_323688_3hwq5m5h3gkaq_3a_416_frequency_histogram_on_column_tsenttsksetkobjstt_bar_chart.html">bar</a>
+<small><em>(10)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_VERS
+<a href="01677_sqld360_323688_3hwq5m5h3gkaq_3a_417_frequency_histogram_on_column_tsenttsksetkvers.html">html</a>
+<a href="01678_sqld360_323688_3hwq5m5h3gkaq_3a_417_frequency_histogram_on_column_tsenttsksetkvers_bar_chart.html">bar</a>
+<small><em>(117)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_LAS_ACT_BY
+<a href="01679_sqld360_323688_3hwq5m5h3gkaq_3a_418_frequency_histogram_on_column_tsenttsksetklasactby.html">html</a>
+<a href="01680_sqld360_323688_3hwq5m5h3gkaq_3a_418_frequency_histogram_on_column_tsenttsksetklasactby_bar_chart.html">bar</a>
+<small><em>(98)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_ORIGCRTR
+<a href="01681_sqld360_323688_3hwq5m5h3gkaq_3a_419_frequency_histogram_on_column_tsenttsksetkorigcrtr.html">html</a>
+<a href="01682_sqld360_323688_3hwq5m5h3gkaq_3a_419_frequency_histogram_on_column_tsenttsksetkorigcrtr_bar_chart.html">bar</a>
+<small><em>(98)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_DRTN_UNIT
+<a href="01683_sqld360_323688_3hwq5m5h3gkaq_3a_420_frequency_histogram_on_column_tsenttsksetkdrtnunit.html">html</a>
+<a href="01684_sqld360_323688_3hwq5m5h3gkaq_3a_420_frequency_histogram_on_column_tsenttsksetkdrtnunit_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_RMDRPRCDWTH__UNIT
+<a href="01685_sqld360_323688_3hwq5m5h3gkaq_3a_421_frequency_histogram_on_column_tsenttsksetkrmdrprcdwthunit.html">html</a>
+<a href="01686_sqld360_323688_3hwq5m5h3gkaq_3a_421_frequency_histogram_on_column_tsenttsksetkrmdrprcdwthunit_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTTSK.SETK_CMPD
+<a href="01687_sqld360_323688_3hwq5m5h3gkaq_3a_422_hybrid_histogram_on_column_tsenttsksetkcmpd.html">html</a>
+<a href="01688_sqld360_323688_3hwq5m5h3gkaq_3a_422_hybrid_histogram_on_column_tsenttsksetkcmpd_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTTSK.SETK_TSK_TIMG_DDLN_DT
+<a href="01689_sqld360_323688_3hwq5m5h3gkaq_3a_423_hybrid_histogram_on_column_tsenttsksetktsktimgddlndt.html">html</a>
+<a href="01690_sqld360_323688_3hwq5m5h3gkaq_3a_423_hybrid_histogram_on_column_tsenttsksetktsktimgddlndt_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_TSK_TIMG_DDLNACT
+<a href="01691_sqld360_323688_3hwq5m5h3gkaq_3a_424_frequency_histogram_on_column_tsenttsksetktsktimgddlnact.html">html</a>
+<a href="01692_sqld360_323688_3hwq5m5h3gkaq_3a_424_frequency_histogram_on_column_tsenttsksetktsktimgddlnact_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTTSK.SETK_TSK_TIMG_STRTDT
+<a href="01693_sqld360_323688_3hwq5m5h3gkaq_3a_425_hybrid_histogram_on_column_tsenttsksetktsktimgstrtdt.html">html</a>
+<a href="01694_sqld360_323688_3hwq5m5h3gkaq_3a_425_hybrid_histogram_on_column_tsenttsksetktsktimgstrtdt_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_AFFN_UM_EVNT
+<a href="01695_sqld360_323688_3hwq5m5h3gkaq_3a_426_frequency_histogram_on_column_tsenttsksetkaffnumevnt.html">html</a>
+<a href="01696_sqld360_323688_3hwq5m5h3gkaq_3a_426_frequency_histogram_on_column_tsenttsksetkaffnumevnt_bar_chart.html">bar</a>
+<small><em>(20)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTTSK.SETK_ORIGRCPT
+<a href="01697_sqld360_323688_3hwq5m5h3gkaq_3a_427_hybrid_histogram_on_column_tsenttsksetkorigrcpt.html">html</a>
+<a href="01698_sqld360_323688_3hwq5m5h3gkaq_3a_427_hybrid_histogram_on_column_tsenttsksetkorigrcpt_bar_chart.html">bar</a>
+<small><em>(190)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_OWNR
+<a href="01699_sqld360_323688_3hwq5m5h3gkaq_3a_428_frequency_histogram_on_column_tsenttsksetkownr.html">html</a>
+<a href="01700_sqld360_323688_3hwq5m5h3gkaq_3a_428_frequency_histogram_on_column_tsenttsksetkownr_bar_chart.html">bar</a>
+<small><em>(144)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_PRVSOWNR
+<a href="01701_sqld360_323688_3hwq5m5h3gkaq_3a_429_frequency_histogram_on_column_tsenttsksetkprvsownr.html">html</a>
+<a href="01702_sqld360_323688_3hwq5m5h3gkaq_3a_429_frequency_histogram_on_column_tsenttsksetkprvsownr_bar_chart.html">bar</a>
+<small><em>(103)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_PRVSSNDR
+<a href="01703_sqld360_323688_3hwq5m5h3gkaq_3a_430_frequency_histogram_on_column_tsenttsksetkprvssndr.html">html</a>
+<a href="01704_sqld360_323688_3hwq5m5h3gkaq_3a_430_frequency_histogram_on_column_tsenttsksetkprvssndr_bar_chart.html">bar</a>
+<small><em>(103)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_CNCLRESN
+<a href="01705_sqld360_323688_3hwq5m5h3gkaq_3a_431_frequency_histogram_on_column_tsenttsksetkcnclresn.html">html</a>
+<a href="01706_sqld360_323688_3hwq5m5h3gkaq_3a_431_frequency_histogram_on_column_tsenttsksetkcnclresn_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_TSK_TYP
+<a href="01707_sqld360_323688_3hwq5m5h3gkaq_3a_432_frequency_histogram_on_column_tsenttsksetktsktyp.html">html</a>
+<a href="01708_sqld360_323688_3hwq5m5h3gkaq_3a_432_frequency_histogram_on_column_tsenttsksetktsktyp_bar_chart.html">bar</a>
+<small><em>(33)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.SETK_RESCHEDULE_REASON
+<a href="01709_sqld360_323688_3hwq5m5h3gkaq_3a_433_frequency_histogram_on_column_tsenttsksetkreschedulereason.html">html</a>
+<a href="01710_sqld360_323688_3hwq5m5h3gkaq_3a_433_frequency_histogram_on_column_tsenttsksetkreschedulereason_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTTSK.("SETK_OBJ_STT","SETK_AFFN_MEMB")
+<a href="01711_sqld360_323688_3hwq5m5h3gkaq_3a_434_hybrid_histogram_on_column_tsenttsksetkobjsttsetkaffnmemb.html">html</a>
+<a href="01712_sqld360_323688_3hwq5m5h3gkaq_3a_434_hybrid_histogram_on_column_tsenttsksetkobjsttsetkaffnmemb_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SENTTSK.(NVL("SETK_PRNL",0))
+<a href="01713_sqld360_323688_3hwq5m5h3gkaq_3a_435_frequency_histogram_on_column_tsenttsknvlsetkprnl0.html">html</a>
+<a href="01714_sqld360_323688_3hwq5m5h3gkaq_3a_435_frequency_histogram_on_column_tsenttsknvlsetkprnl0_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTTSK.(NVL("SETK_OWNR","SETK_ORIGRCPT"))
+<a href="01715_sqld360_323688_3hwq5m5h3gkaq_3a_436_hybrid_histogram_on_column_tsenttsknvlsetkownrsetkorigrcpt.html">html</a>
+<a href="01716_sqld360_323688_3hwq5m5h3gkaq_3a_436_hybrid_histogram_on_column_tsenttsknvlsetkownrsetkorigrcpt_bar_chart.html">bar</a>
+<small><em>(189)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_SENTTSK.(TRUNC("SETK_SENT"))
+<a href="01717_sqld360_323688_3hwq5m5h3gkaq_3a_437_hybrid_histogram_on_column_tsenttsktruncsetksent.html">html</a>
+<a href="01718_sqld360_323688_3hwq5m5h3gkaq_3a_437_hybrid_histogram_on_column_tsenttsktruncsetksent_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SYTMSTNGDAT.SSDT_OBJ_STT
+<a href="01719_sqld360_323688_3hwq5m5h3gkaq_3a_438_frequency_histogram_on_column_tsytmstngdatssdtobjstt.html">html</a>
+<a href="01720_sqld360_323688_3hwq5m5h3gkaq_3a_438_frequency_histogram_on_column_tsytmstngdatssdtobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SYTMSTNGDAT.SSDT_DFLTDAT
+<a href="01721_sqld360_323688_3hwq5m5h3gkaq_3a_439_frequency_histogram_on_column_tsytmstngdatssdtdfltdat.html">html</a>
+<a href="01722_sqld360_323688_3hwq5m5h3gkaq_3a_439_frequency_histogram_on_column_tsytmstngdatssdtdfltdat_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SYTMSTNGDAT.SGSD_STRGVAL
+<a href="01723_sqld360_323688_3hwq5m5h3gkaq_3a_440_frequency_histogram_on_column_tsytmstngdatsgsdstrgval.html">html</a>
+<a href="01724_sqld360_323688_3hwq5m5h3gkaq_3a_440_frequency_histogram_on_column_tsytmstngdatsgsdstrgval_bar_chart.html">bar</a>
+<small><em>(66)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_SYTMSTNGDAT.BSGD_BOLNVAL
+<a href="01725_sqld360_323688_3hwq5m5h3gkaq_3a_441_frequency_histogram_on_column_tsytmstngdatbsgdbolnval.html">html</a>
+<a href="01726_sqld360_323688_3hwq5m5h3gkaq_3a_441_frequency_histogram_on_column_tsytmstngdatbsgdbolnval_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TAKNASMTCC_BASE.CLASSTYPE
+<a href="01727_sqld360_323688_3hwq5m5h3gkaq_3a_442_frequency_histogram_on_column_ttaknasmtccbaseclasstype.html">html</a>
+<a href="01728_sqld360_323688_3hwq5m5h3gkaq_3a_442_frequency_histogram_on_column_ttaknasmtccbaseclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TAKNASMTCC_BASE.TACB_LAS_ACT
+<a href="01729_sqld360_323688_3hwq5m5h3gkaq_3a_443_frequency_histogram_on_column_ttaknasmtccbasetacblasact.html">html</a>
+<a href="01730_sqld360_323688_3hwq5m5h3gkaq_3a_443_frequency_histogram_on_column_ttaknasmtccbasetacblasact_bar_chart.html">bar</a>
+<small><em>(7)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TAKNASMTCC_BASE.TACB_OBJ_STT
+<a href="01731_sqld360_323688_3hwq5m5h3gkaq_3a_444_frequency_histogram_on_column_ttaknasmtccbasetacbobjstt.html">html</a>
+<a href="01732_sqld360_323688_3hwq5m5h3gkaq_3a_444_frequency_histogram_on_column_ttaknasmtccbasetacbobjstt_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TAKNASMTCC_BASE.TACB_LAS_ACT_BY
+<a href="01733_sqld360_323688_3hwq5m5h3gkaq_3a_445_frequency_histogram_on_column_ttaknasmtccbasetacblasactby.html">html</a>
+<a href="01734_sqld360_323688_3hwq5m5h3gkaq_3a_445_frequency_histogram_on_column_ttaknasmtccbasetacblasactby_bar_chart.html">bar</a>
+<small><em>(95)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TAKNASMTCC_BASE.TACB_ORIGCRTR
+<a href="01735_sqld360_323688_3hwq5m5h3gkaq_3a_446_frequency_histogram_on_column_ttaknasmtccbasetacborigcrtr.html">html</a>
+<a href="01736_sqld360_323688_3hwq5m5h3gkaq_3a_446_frequency_histogram_on_column_ttaknasmtccbasetacborigcrtr_bar_chart.html">bar</a>
+<small><em>(92)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TAKNASMTCC_BASE.STAT_OWNR
+<a href="01737_sqld360_323688_3hwq5m5h3gkaq_3a_447_frequency_histogram_on_column_ttaknasmtccbasestatownr.html">html</a>
+<a href="01738_sqld360_323688_3hwq5m5h3gkaq_3a_447_frequency_histogram_on_column_ttaknasmtccbasestatownr_bar_chart.html">bar</a>
+<small><em>(125)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TAKNASMTCC_BASE.TACB_ASMTCC
+<a href="01739_sqld360_323688_3hwq5m5h3gkaq_3a_448_frequency_histogram_on_column_ttaknasmtccbasetacbasmtcc.html">html</a>
+<a href="01740_sqld360_323688_3hwq5m5h3gkaq_3a_448_frequency_histogram_on_column_ttaknasmtccbasetacbasmtcc_bar_chart.html">bar</a>
+<small><em>(146)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TIM_OFF_ITVL.TOIT_APRD
+<a href="01741_sqld360_323688_3hwq5m5h3gkaq_3a_449_frequency_histogram_on_column_ttimoffitvltoitaprd.html">html</a>
+<a href="01742_sqld360_323688_3hwq5m5h3gkaq_3a_449_frequency_histogram_on_column_ttimoffitvltoitaprd_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TIM_OFF_ITVL.TOIT_PAYR
+<a href="01743_sqld360_323688_3hwq5m5h3gkaq_3a_450_frequency_histogram_on_column_ttimoffitvltoitpayr.html">html</a>
+<a href="01744_sqld360_323688_3hwq5m5h3gkaq_3a_450_frequency_histogram_on_column_ttimoffitvltoitpayr_bar_chart.html">bar</a>
+<small><em>(12)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TIM_OFF_ITVL.TOIT_TIM_OFF_REQT
+<a href="01745_sqld360_323688_3hwq5m5h3gkaq_3a_451_frequency_histogram_on_column_ttimoffitvltoittimoffreqt.html">html</a>
+<a href="01746_sqld360_323688_3hwq5m5h3gkaq_3a_451_frequency_histogram_on_column_ttimoffitvltoittimoffreqt_bar_chart.html">bar</a>
+<small><em>(14)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TIM_OFF_REQT.TOFR_OBJ_STT
+<a href="01747_sqld360_323688_3hwq5m5h3gkaq_3a_452_frequency_histogram_on_column_ttimoffreqttofrobjstt.html">html</a>
+<a href="01748_sqld360_323688_3hwq5m5h3gkaq_3a_452_frequency_histogram_on_column_ttimoffreqttofrobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TIM_OFF_REQT.TOFR_PAYRMY_TO_RQS
+<a href="01749_sqld360_323688_3hwq5m5h3gkaq_3a_453_frequency_histogram_on_column_ttimoffreqttofrpayrmytorqs.html">html</a>
+<a href="01750_sqld360_323688_3hwq5m5h3gkaq_3a_453_frequency_histogram_on_column_ttimoffreqttofrpayrmytorqs_bar_chart.html">bar</a>
+<small><em>(9)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TNFRREC.TRRC_OBJ_STT
+<a href="01751_sqld360_323688_3hwq5m5h3gkaq_3a_454_frequency_histogram_on_column_ttnfrrectrrcobjstt.html">html</a>
+<a href="01752_sqld360_323688_3hwq5m5h3gkaq_3a_454_frequency_histogram_on_column_ttnfrrectrrcobjstt_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TNFRREC.TRRC_RFRDOBJ_TYP
+<a href="01753_sqld360_323688_3hwq5m5h3gkaq_3a_455_frequency_histogram_on_column_ttnfrrectrrcrfrdobjtyp.html">html</a>
+<a href="01754_sqld360_323688_3hwq5m5h3gkaq_3a_455_frequency_histogram_on_column_ttnfrrectrrcrfrdobjtyp_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TNFRREC.TRRC_SNDR
+<a href="01755_sqld360_323688_3hwq5m5h3gkaq_3a_456_frequency_histogram_on_column_ttnfrrectrrcsndr.html">html</a>
+<a href="01756_sqld360_323688_3hwq5m5h3gkaq_3a_456_frequency_histogram_on_column_ttnfrrectrrcsndr_bar_chart.html">bar</a>
+<small><em>(138)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TNFRREC.TRRC_RCPT
+<a href="01757_sqld360_323688_3hwq5m5h3gkaq_3a_457_frequency_histogram_on_column_ttnfrrectrrcrcpt.html">html</a>
+<a href="01758_sqld360_323688_3hwq5m5h3gkaq_3a_457_frequency_histogram_on_column_ttnfrrectrrcrcpt_bar_chart.html">bar</a>
+<small><em>(149)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.CLASSTYPE
+<a href="01759_sqld360_323688_3hwq5m5h3gkaq_3a_458_frequency_histogram_on_column_ttodoclasstype.html">html</a>
+<a href="01760_sqld360_323688_3hwq5m5h3gkaq_3a_458_frequency_histogram_on_column_ttodoclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.TODO_TYP_SBTY
+<a href="01761_sqld360_323688_3hwq5m5h3gkaq_3a_459_frequency_histogram_on_column_ttodotodotypsbty.html">html</a>
+<a href="01762_sqld360_323688_3hwq5m5h3gkaq_3a_459_frequency_histogram_on_column_ttodotodotypsbty_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_TODO.TODO_CRTD
+<a href="01763_sqld360_323688_3hwq5m5h3gkaq_3a_460_hybrid_histogram_on_column_ttodotodocrtd.html">html</a>
+<a href="01764_sqld360_323688_3hwq5m5h3gkaq_3a_460_hybrid_histogram_on_column_ttodotodocrtd_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_TODO.TODO_LAS_ACT_TIM
+<a href="01765_sqld360_323688_3hwq5m5h3gkaq_3a_461_hybrid_histogram_on_column_ttodotodolasacttim.html">html</a>
+<a href="01766_sqld360_323688_3hwq5m5h3gkaq_3a_461_hybrid_histogram_on_column_ttodotodolasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.TODO_OBJ_STT
+<a href="01767_sqld360_323688_3hwq5m5h3gkaq_3a_462_frequency_histogram_on_column_ttodotodoobjstt.html">html</a>
+<a href="01768_sqld360_323688_3hwq5m5h3gkaq_3a_462_frequency_histogram_on_column_ttodotodoobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.TODO_VERS
+<a href="01769_sqld360_323688_3hwq5m5h3gkaq_3a_463_frequency_histogram_on_column_ttodotodovers.html">html</a>
+<a href="01770_sqld360_323688_3hwq5m5h3gkaq_3a_463_frequency_histogram_on_column_ttodotodovers_bar_chart.html">bar</a>
+<small><em>(28)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.TODO_VSBT
+<a href="01771_sqld360_323688_3hwq5m5h3gkaq_3a_464_frequency_histogram_on_column_ttodotodovsbt.html">html</a>
+<a href="01772_sqld360_323688_3hwq5m5h3gkaq_3a_464_frequency_histogram_on_column_ttodotodovsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.TODO_LAS_ACT_BY
+<a href="01773_sqld360_323688_3hwq5m5h3gkaq_3a_465_frequency_histogram_on_column_ttodotodolasactby.html">html</a>
+<a href="01774_sqld360_323688_3hwq5m5h3gkaq_3a_465_frequency_histogram_on_column_ttodotodolasactby_bar_chart.html">bar</a>
+<small><em>(66)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.TODO_ORIGCRTR
+<a href="01775_sqld360_323688_3hwq5m5h3gkaq_3a_466_frequency_histogram_on_column_ttodotodoorigcrtr.html">html</a>
+<a href="01776_sqld360_323688_3hwq5m5h3gkaq_3a_466_frequency_histogram_on_column_ttodotodoorigcrtr_bar_chart.html">bar</a>
+<small><em>(67)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.TODO_ORIGCRTRLOGDIN
+<a href="01777_sqld360_323688_3hwq5m5h3gkaq_3a_467_frequency_histogram_on_column_ttodotodoorigcrtrlogdin.html">html</a>
+<a href="01778_sqld360_323688_3hwq5m5h3gkaq_3a_467_frequency_histogram_on_column_ttodotodoorigcrtrlogdin_bar_chart.html">bar</a>
+<small><em>(67)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.TODO_LAS_ACT_BY_LOGDIN
+<a href="01779_sqld360_323688_3hwq5m5h3gkaq_3a_468_frequency_histogram_on_column_ttodotodolasactbylogdin.html">html</a>
+<a href="01780_sqld360_323688_3hwq5m5h3gkaq_3a_468_frequency_histogram_on_column_ttodotodolasactbylogdin_bar_chart.html">bar</a>
+<small><em>(66)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_TODO.TODO_TEMPLATE
+<a href="01781_sqld360_323688_3hwq5m5h3gkaq_3a_469_hybrid_histogram_on_column_ttodotodotemplate.html">html</a>
+<a href="01782_sqld360_323688_3hwq5m5h3gkaq_3a_469_hybrid_histogram_on_column_ttodotodotemplate_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_TODO.TODO_START
+<a href="01783_sqld360_323688_3hwq5m5h3gkaq_3a_470_hybrid_histogram_on_column_ttodotodostart.html">html</a>
+<a href="01784_sqld360_323688_3hwq5m5h3gkaq_3a_470_hybrid_histogram_on_column_ttodotodostart_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_TODO.TODO_END
+<a href="01785_sqld360_323688_3hwq5m5h3gkaq_3a_471_hybrid_histogram_on_column_ttodotodoend.html">html</a>
+<a href="01786_sqld360_323688_3hwq5m5h3gkaq_3a_471_hybrid_histogram_on_column_ttodotodoend_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO.TODO_STATUS
+<a href="01787_sqld360_323688_3hwq5m5h3gkaq_3a_472_frequency_histogram_on_column_ttodotodostatus.html">html</a>
+<a href="01788_sqld360_323688_3hwq5m5h3gkaq_3a_472_frequency_histogram_on_column_ttodotodostatus_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO_TEMPLATE.CLASSTYPE
+<a href="01789_sqld360_323688_3hwq5m5h3gkaq_3a_473_frequency_histogram_on_column_ttodotemplateclasstype.html">html</a>
+<a href="01790_sqld360_323688_3hwq5m5h3gkaq_3a_473_frequency_histogram_on_column_ttodotemplateclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_TODO_TEMPLATE.TODO_LAS_ACT_TIM
+<a href="01791_sqld360_323688_3hwq5m5h3gkaq_3a_474_hybrid_histogram_on_column_ttodotemplatetodolasacttim.html">html</a>
+<a href="01792_sqld360_323688_3hwq5m5h3gkaq_3a_474_hybrid_histogram_on_column_ttodotemplatetodolasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO_TEMPLATE.TODO_OBJ_STT
+<a href="01793_sqld360_323688_3hwq5m5h3gkaq_3a_475_frequency_histogram_on_column_ttodotemplatetodoobjstt.html">html</a>
+<a href="01794_sqld360_323688_3hwq5m5h3gkaq_3a_475_frequency_histogram_on_column_ttodotemplatetodoobjstt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO_TEMPLATE.TODO_VSBT
+<a href="01795_sqld360_323688_3hwq5m5h3gkaq_3a_476_frequency_histogram_on_column_ttodotemplatetodovsbt.html">html</a>
+<a href="01796_sqld360_323688_3hwq5m5h3gkaq_3a_476_frequency_histogram_on_column_ttodotemplatetodovsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TODO_TEMPLATE.TODO_TYP_SBTY
+<a href="01797_sqld360_323688_3hwq5m5h3gkaq_3a_477_frequency_histogram_on_column_ttodotemplatetodotypsbty.html">html</a>
+<a href="01798_sqld360_323688_3hwq5m5h3gkaq_3a_477_frequency_histogram_on_column_ttodotemplatetodotypsbty_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TSK_BASE.CLASSTYPE
+<a href="01799_sqld360_323688_3hwq5m5h3gkaq_3a_478_frequency_histogram_on_column_ttskbaseclasstype.html">html</a>
+<a href="01800_sqld360_323688_3hwq5m5h3gkaq_3a_478_frequency_histogram_on_column_ttskbaseclasstype_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TSK_BASE.TKBS_OBJ_STT
+<a href="01801_sqld360_323688_3hwq5m5h3gkaq_3a_479_frequency_histogram_on_column_ttskbasetkbsobjstt.html">html</a>
+<a href="01802_sqld360_323688_3hwq5m5h3gkaq_3a_479_frequency_histogram_on_column_ttskbasetkbsobjstt_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TSK_BASE.TKBS_VSBT
+<a href="01803_sqld360_323688_3hwq5m5h3gkaq_3a_480_frequency_histogram_on_column_ttskbasetkbsvsbt.html">html</a>
+<a href="01804_sqld360_323688_3hwq5m5h3gkaq_3a_480_frequency_histogram_on_column_ttskbasetkbsvsbt_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TSK_BASE.TKBS_ORIGCRTR
+<a href="01805_sqld360_323688_3hwq5m5h3gkaq_3a_481_frequency_histogram_on_column_ttskbasetkbsorigcrtr.html">html</a>
+<a href="01806_sqld360_323688_3hwq5m5h3gkaq_3a_481_frequency_histogram_on_column_ttskbasetkbsorigcrtr_bar_chart.html">bar</a>
+<small><em>(101)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TSK_BASE.TKBS_NAM
+<a href="01807_sqld360_323688_3hwq5m5h3gkaq_3a_482_frequency_histogram_on_column_ttskbasetkbsnam.html">html</a>
+<a href="01808_sqld360_323688_3hwq5m5h3gkaq_3a_482_frequency_histogram_on_column_ttskbasetkbsnam_bar_chart.html">bar</a>
+<small><em>(192)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_TSK_BASE.TKBS_ID
+<a href="01809_sqld360_323688_3hwq5m5h3gkaq_3a_483_hybrid_histogram_on_column_ttskbasetkbsid.html">html</a>
+<a href="01810_sqld360_323688_3hwq5m5h3gkaq_3a_483_hybrid_histogram_on_column_ttskbasetkbsid_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TSK_BASE.TKBS_TSK_TYP
+<a href="01811_sqld360_323688_3hwq5m5h3gkaq_3a_484_frequency_histogram_on_column_ttskbasetkbstsktyp.html">html</a>
+<a href="01812_sqld360_323688_3hwq5m5h3gkaq_3a_484_frequency_histogram_on_column_ttskbasetkbstsktyp_bar_chart.html">bar</a>
+<small><em>(38)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TSK_BASE.CTSK_ORIG
+<a href="01813_sqld360_323688_3hwq5m5h3gkaq_3a_485_frequency_histogram_on_column_ttskbasectskorig.html">html</a>
+<a href="01814_sqld360_323688_3hwq5m5h3gkaq_3a_485_frequency_histogram_on_column_ttskbasectskorig_bar_chart.html">bar</a>
+<small><em>(182)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TSK_BASE.("CLASSTYPE","TKBS_TSK_TYP")
+<a href="01815_sqld360_323688_3hwq5m5h3gkaq_3a_486_frequency_histogram_on_column_ttskbaseclasstypetkbstsktyp.html">html</a>
+<a href="01816_sqld360_323688_3hwq5m5h3gkaq_3a_486_frequency_histogram_on_column_ttskbaseclasstypetkbstsktyp_bar_chart.html">bar</a>
+<small><em>(71)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_TSK_BASE.(UPPER("TKBS_NAM"))
+<a href="01817_sqld360_323688_3hwq5m5h3gkaq_3a_487_frequency_histogram_on_column_ttskbaseuppertkbsnam.html">html</a>
+<a href="01818_sqld360_323688_3hwq5m5h3gkaq_3a_487_frequency_histogram_on_column_ttskbaseuppertkbsnam_bar_chart.html">bar</a>
+<small><em>(192)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.CLASSTYPE
+<a href="01819_sqld360_323688_3hwq5m5h3gkaq_3a_488_frequency_histogram_on_column_tumbaseclasstype.html">html</a>
+<a href="01820_sqld360_323688_3hwq5m5h3gkaq_3a_488_frequency_histogram_on_column_tumbaseclasstype_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_LAS_ACT
+<a href="01821_sqld360_323688_3hwq5m5h3gkaq_3a_489_frequency_histogram_on_column_tumbaseumbslasact.html">html</a>
+<a href="01822_sqld360_323688_3hwq5m5h3gkaq_3a_489_frequency_histogram_on_column_tumbaseumbslasact_bar_chart.html">bar</a>
+<small><em>(15)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_UM_BASE.UMBS_LAS_ACT_TIM
+<a href="01823_sqld360_323688_3hwq5m5h3gkaq_3a_490_height_balanced_histogram_on_column_tumbaseumbslasacttim.html">html</a>
+<a href="01824_sqld360_323688_3hwq5m5h3gkaq_3a_490_height_balanced_histogram_on_column_tumbaseumbslasacttim_bar_chart.html">bar</a>
+<small><em>(93)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_OBJ_STT
+<a href="01825_sqld360_323688_3hwq5m5h3gkaq_3a_491_frequency_histogram_on_column_tumbaseumbsobjstt.html">html</a>
+<a href="01826_sqld360_323688_3hwq5m5h3gkaq_3a_491_frequency_histogram_on_column_tumbaseumbsobjstt_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_LAS_ACT_BY
+<a href="01827_sqld360_323688_3hwq5m5h3gkaq_3a_492_frequency_histogram_on_column_tumbaseumbslasactby.html">html</a>
+<a href="01828_sqld360_323688_3hwq5m5h3gkaq_3a_492_frequency_histogram_on_column_tumbaseumbslasactby_bar_chart.html">bar</a>
+<small><em>(64)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_DDLNTYP
+<a href="01829_sqld360_323688_3hwq5m5h3gkaq_3a_493_frequency_histogram_on_column_tumbaseumbsddlntyp.html">html</a>
+<a href="01830_sqld360_323688_3hwq5m5h3gkaq_3a_493_frequency_histogram_on_column_tumbaseumbsddlntyp_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_REQTTYP
+<a href="01831_sqld360_323688_3hwq5m5h3gkaq_3a_494_frequency_histogram_on_column_tumbaseumbsreqttyp.html">html</a>
+<a href="01832_sqld360_323688_3hwq5m5h3gkaq_3a_494_frequency_histogram_on_column_tumbaseumbsreqttyp_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_DRVDDTMNSTT
+<a href="01833_sqld360_323688_3hwq5m5h3gkaq_3a_495_frequency_histogram_on_column_tumbaseumbsdrvddtmnstt.html">html</a>
+<a href="01834_sqld360_323688_3hwq5m5h3gkaq_3a_495_frequency_histogram_on_column_tumbaseumbsdrvddtmnstt_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMET_OWNR
+<a href="01835_sqld360_323688_3hwq5m5h3gkaq_3a_496_frequency_histogram_on_column_tumbaseumetownr.html">html</a>
+<a href="01836_sqld360_323688_3hwq5m5h3gkaq_3a_496_frequency_histogram_on_column_tumbaseumetownr_bar_chart.html">bar</a>
+<small><em>(82)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMER_OWNR
+<a href="01837_sqld360_323688_3hwq5m5h3gkaq_3a_497_frequency_histogram_on_column_tumbaseumerownr.html">html</a>
+<a href="01838_sqld360_323688_3hwq5m5h3gkaq_3a_497_frequency_histogram_on_column_tumbaseumerownr_bar_chart.html">bar</a>
+<small><em>(30)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMET_UM_EVNTOTCM
+<a href="01839_sqld360_323688_3hwq5m5h3gkaq_3a_498_frequency_histogram_on_column_tumbaseumetumevntotcm.html">html</a>
+<a href="01840_sqld360_323688_3hwq5m5h3gkaq_3a_498_frequency_histogram_on_column_tumbaseumetumevntotcm_bar_chart.html">bar</a>
+<small><em>(13)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMET_CLSRRESN
+<a href="01841_sqld360_323688_3hwq5m5h3gkaq_3a_499_frequency_histogram_on_column_tumbaseumetclsrresn.html">html</a>
+<a href="01842_sqld360_323688_3hwq5m5h3gkaq_3a_499_frequency_histogram_on_column_tumbaseumetclsrresn_bar_chart.html">bar</a>
+<small><em>(7)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_SVTY
+<a href="01843_sqld360_323688_3hwq5m5h3gkaq_3a_500_frequency_histogram_on_column_tumbaseumbssvty.html">html</a>
+<a href="01844_sqld360_323688_3hwq5m5h3gkaq_3a_500_frequency_histogram_on_column_tumbaseumbssvty_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_PITY
+<a href="01845_sqld360_323688_3hwq5m5h3gkaq_3a_501_frequency_histogram_on_column_tumbaseumbspity.html">html</a>
+<a href="01846_sqld360_323688_3hwq5m5h3gkaq_3a_501_frequency_histogram_on_column_tumbaseumbspity_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_SRC
+<a href="01847_sqld360_323688_3hwq5m5h3gkaq_3a_502_frequency_histogram_on_column_tumbaseumbssrc.html">html</a>
+<a href="01848_sqld360_323688_3hwq5m5h3gkaq_3a_502_frequency_histogram_on_column_tumbaseumbssrc_bar_chart.html">bar</a>
+<small><em>(9)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMET_REONRESN
+<a href="01849_sqld360_323688_3hwq5m5h3gkaq_3a_503_frequency_histogram_on_column_tumbaseumetreonresn.html">html</a>
+<a href="01850_sqld360_323688_3hwq5m5h3gkaq_3a_503_frequency_histogram_on_column_tumbaseumetreonresn_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_TYP
+<a href="01851_sqld360_323688_3hwq5m5h3gkaq_3a_504_frequency_histogram_on_column_tumbaseumbstyp.html">html</a>
+<a href="01852_sqld360_323688_3hwq5m5h3gkaq_3a_504_frequency_histogram_on_column_tumbaseumbstyp_bar_chart.html">bar</a>
+<small><em>(25)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_RQTR
+<a href="01853_sqld360_323688_3hwq5m5h3gkaq_3a_505_frequency_histogram_on_column_tumbaseumbsrqtr.html">html</a>
+<a href="01854_sqld360_323688_3hwq5m5h3gkaq_3a_505_frequency_histogram_on_column_tumbaseumbsrqtr_bar_chart.html">bar</a>
+<small><em>(54)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_UM_BASE.UMBS_PFNGPVDR
+<a href="01855_sqld360_323688_3hwq5m5h3gkaq_3a_506_height_balanced_histogram_on_column_tumbaseumbspfngpvdr.html">html</a>
+<a href="01856_sqld360_323688_3hwq5m5h3gkaq_3a_506_height_balanced_histogram_on_column_tumbaseumbspfngpvdr_bar_chart.html">bar</a>
+<small><em>(175)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_UM_BASE.UMBS_RQNGPVDR
+<a href="01857_sqld360_323688_3hwq5m5h3gkaq_3a_507_height_balanced_histogram_on_column_tumbaseumbsrqngpvdr.html">html</a>
+<a href="01858_sqld360_323688_3hwq5m5h3gkaq_3a_507_height_balanced_histogram_on_column_tumbaseumbsrqngpvdr_bar_chart.html">bar</a>
+<small><em>(239)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_AUTH_TYP
+<a href="01859_sqld360_323688_3hwq5m5h3gkaq_3a_508_frequency_histogram_on_column_tumbaseumbsauthtyp.html">html</a>
+<a href="01860_sqld360_323688_3hwq5m5h3gkaq_3a_508_frequency_histogram_on_column_tumbaseumbsauthtyp_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_UM_BASE.UMBS_AUTH_SRC
+<a href="01861_sqld360_323688_3hwq5m5h3gkaq_3a_509_frequency_histogram_on_column_tumbaseumbsauthsrc.html">html</a>
+<a href="01862_sqld360_323688_3hwq5m5h3gkaq_3a_509_frequency_histogram_on_column_tumbaseumbsauthsrc_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_UM_BASE.(UPPER("UMBS_C4C_ID"))
+<a href="01863_sqld360_323688_3hwq5m5h3gkaq_3a_510_height_balanced_histogram_on_column_tumbaseupperumbsc4cid.html">html</a>
+<a href="01864_sqld360_323688_3hwq5m5h3gkaq_3a_510_height_balanced_histogram_on_column_tumbaseupperumbsc4cid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.CLASSTYPE
+<a href="01865_sqld360_323688_3hwq5m5h3gkaq_3a_511_frequency_histogram_on_column_tusrclasstype.html">html</a>
+<a href="01866_sqld360_323688_3hwq5m5h3gkaq_3a_511_frequency_histogram_on_column_tusrclasstype_bar_chart.html">bar</a>
+<small><em>(5)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_C4C_ID
+<a href="01867_sqld360_323688_3hwq5m5h3gkaq_3a_512_height_balanced_histogram_on_column_tusrusrc4cid.html">html</a>
+<a href="01868_sqld360_323688_3hwq5m5h3gkaq_3a_512_height_balanced_histogram_on_column_tusrusrc4cid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.USR_LAS_ACT
+<a href="01869_sqld360_323688_3hwq5m5h3gkaq_3a_513_frequency_histogram_on_column_tusrusrlasact.html">html</a>
+<a href="01870_sqld360_323688_3hwq5m5h3gkaq_3a_513_frequency_histogram_on_column_tusrusrlasact_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_LAS_ACT_TIM
+<a href="01871_sqld360_323688_3hwq5m5h3gkaq_3a_514_height_balanced_histogram_on_column_tusrusrlasacttim.html">html</a>
+<a href="01872_sqld360_323688_3hwq5m5h3gkaq_3a_514_height_balanced_histogram_on_column_tusrusrlasacttim_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.USR_OBJ_STT
+<a href="01873_sqld360_323688_3hwq5m5h3gkaq_3a_515_frequency_histogram_on_column_tusrusrobjstt.html">html</a>
+<a href="01874_sqld360_323688_3hwq5m5h3gkaq_3a_515_frequency_histogram_on_column_tusrusrobjstt_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.USR_LAS_ACT_BY
+<a href="01875_sqld360_323688_3hwq5m5h3gkaq_3a_516_frequency_histogram_on_column_tusrusrlasactby.html">html</a>
+<a href="01876_sqld360_323688_3hwq5m5h3gkaq_3a_516_frequency_histogram_on_column_tusrusrlasactby_bar_chart.html">bar</a>
+<small><em>(115)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_UNIVID
+<a href="01877_sqld360_323688_3hwq5m5h3gkaq_3a_517_height_balanced_histogram_on_column_tusrusrunivid.html">html</a>
+<a href="01878_sqld360_323688_3hwq5m5h3gkaq_3a_517_height_balanced_histogram_on_column_tusrusrunivid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_FRSTNAM
+<a href="01879_sqld360_323688_3hwq5m5h3gkaq_3a_518_height_balanced_histogram_on_column_tusrusrfrstnam.html">html</a>
+<a href="01880_sqld360_323688_3hwq5m5h3gkaq_3a_518_height_balanced_histogram_on_column_tusrusrfrstnam_bar_chart.html">bar</a>
+<small><em>(249)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_LAS_NAM
+<a href="01881_sqld360_323688_3hwq5m5h3gkaq_3a_519_height_balanced_histogram_on_column_tusrusrlasnam.html">html</a>
+<a href="01882_sqld360_323688_3hwq5m5h3gkaq_3a_519_height_balanced_histogram_on_column_tusrusrlasnam_bar_chart.html">bar</a>
+<small><em>(243)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_DT_OF_BRTH
+<a href="01883_sqld360_323688_3hwq5m5h3gkaq_3a_520_height_balanced_histogram_on_column_tusrusrdtofbrth.html">html</a>
+<a href="01884_sqld360_323688_3hwq5m5h3gkaq_3a_520_height_balanced_histogram_on_column_tusrusrdtofbrth_bar_chart.html">bar</a>
+<small><em>(246)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.USR_GNDRCODE
+<a href="01885_sqld360_323688_3hwq5m5h3gkaq_3a_521_frequency_histogram_on_column_tusrusrgndrcode.html">html</a>
+<a href="01886_sqld360_323688_3hwq5m5h3gkaq_3a_521_frequency_histogram_on_column_tusrusrgndrcode_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_ID
+<a href="01887_sqld360_323688_3hwq5m5h3gkaq_3a_522_height_balanced_histogram_on_column_tusrusrid.html">html</a>
+<a href="01888_sqld360_323688_3hwq5m5h3gkaq_3a_522_height_balanced_histogram_on_column_tusrusrid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.PRV_IS_ADM
+<a href="01889_sqld360_323688_3hwq5m5h3gkaq_3a_523_frequency_histogram_on_column_tusrprvisadm.html">html</a>
+<a href="01890_sqld360_323688_3hwq5m5h3gkaq_3a_523_frequency_histogram_on_column_tusrprvisadm_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.MBUR_ELBL
+<a href="01891_sqld360_323688_3hwq5m5h3gkaq_3a_524_frequency_histogram_on_column_tusrmburelbl.html">html</a>
+<a href="01892_sqld360_323688_3hwq5m5h3gkaq_3a_524_frequency_histogram_on_column_tusrmburelbl_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.MBUR_PMRYINSR
+<a href="01893_sqld360_323688_3hwq5m5h3gkaq_3a_525_frequency_histogram_on_column_tusrmburpmryinsr.html">html</a>
+<a href="01894_sqld360_323688_3hwq5m5h3gkaq_3a_525_frequency_histogram_on_column_tusrmburpmryinsr_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.MBUR_INSCID
+<a href="01895_sqld360_323688_3hwq5m5h3gkaq_3a_526_height_balanced_histogram_on_column_tusrmburinscid.html">html</a>
+<a href="01896_sqld360_323688_3hwq5m5h3gkaq_3a_526_height_balanced_histogram_on_column_tusrmburinscid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.MBUR_CNFTCNCT
+<a href="01897_sqld360_323688_3hwq5m5h3gkaq_3a_527_frequency_histogram_on_column_tusrmburcnftcnct.html">html</a>
+<a href="01898_sqld360_323688_3hwq5m5h3gkaq_3a_527_frequency_histogram_on_column_tusrmburcnftcnct_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.PAYR_WKLDLMITBY
+<a href="01899_sqld360_323688_3hwq5m5h3gkaq_3a_528_frequency_histogram_on_column_tusrpayrwkldlmitby.html">html</a>
+<a href="01900_sqld360_323688_3hwq5m5h3gkaq_3a_528_frequency_histogram_on_column_tusrpayrwkldlmitby_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.PAYR_ID
+<a href="01901_sqld360_323688_3hwq5m5h3gkaq_3a_529_height_balanced_histogram_on_column_tusrpayrid.html">html</a>
+<a href="01902_sqld360_323688_3hwq5m5h3gkaq_3a_529_height_balanced_histogram_on_column_tusrpayrid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.PRV_PVDRTYP
+<a href="01903_sqld360_323688_3hwq5m5h3gkaq_3a_530_frequency_histogram_on_column_tusrprvpvdrtyp.html">html</a>
+<a href="01904_sqld360_323688_3hwq5m5h3gkaq_3a_530_frequency_histogram_on_column_tusrprvpvdrtyp_bar_chart.html">bar</a>
+<small><em>(4)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.USR_ECTY
+<a href="01905_sqld360_323688_3hwq5m5h3gkaq_3a_531_frequency_histogram_on_column_tusrusrecty.html">html</a>
+<a href="01906_sqld360_323688_3hwq5m5h3gkaq_3a_531_frequency_histogram_on_column_tusrusrecty_bar_chart.html">bar</a>
+<small><em>(53)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.USR_NAM_SFIX
+<a href="01907_sqld360_323688_3hwq5m5h3gkaq_3a_532_frequency_histogram_on_column_tusrusrnamsfix.html">html</a>
+<a href="01908_sqld360_323688_3hwq5m5h3gkaq_3a_532_frequency_histogram_on_column_tusrusrnamsfix_bar_chart.html">bar</a>
+<small><em>(99)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.USR_NAM_PRFX
+<a href="01909_sqld360_323688_3hwq5m5h3gkaq_3a_533_frequency_histogram_on_column_tusrusrnamprfx.html">html</a>
+<a href="01910_sqld360_323688_3hwq5m5h3gkaq_3a_533_frequency_histogram_on_column_tusrusrnamprfx_bar_chart.html">bar</a>
+<small><em>(49)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.MBUR_RLSPTO_SBCR
+<a href="01911_sqld360_323688_3hwq5m5h3gkaq_3a_534_frequency_histogram_on_column_tusrmburrlsptosbcr.html">html</a>
+<a href="01912_sqld360_323688_3hwq5m5h3gkaq_3a_534_frequency_histogram_on_column_tusrmburrlsptosbcr_bar_chart.html">bar</a>
+<small><em>(21)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_MRGEMSTR
+<a href="01913_sqld360_323688_3hwq5m5h3gkaq_3a_535_height_balanced_histogram_on_column_tusrusrmrgemstr.html">html</a>
+<a href="01914_sqld360_323688_3hwq5m5h3gkaq_3a_535_height_balanced_histogram_on_column_tusrusrmrgemstr_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.PAYR_BCK1
+<a href="01915_sqld360_323688_3hwq5m5h3gkaq_3a_536_frequency_histogram_on_column_tusrpayrbck1.html">html</a>
+<a href="01916_sqld360_323688_3hwq5m5h3gkaq_3a_536_frequency_histogram_on_column_tusrpayrbck1_bar_chart.html">bar</a>
+<small><em>(63)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.PAYR_SVSR
+<a href="01917_sqld360_323688_3hwq5m5h3gkaq_3a_537_frequency_histogram_on_column_tusrpayrsvsr.html">html</a>
+<a href="01918_sqld360_323688_3hwq5m5h3gkaq_3a_537_frequency_histogram_on_column_tusrpayrsvsr_bar_chart.html">bar</a>
+<small><em>(47)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.PAYR_BCK2
+<a href="01919_sqld360_323688_3hwq5m5h3gkaq_3a_538_frequency_histogram_on_column_tusrpayrbck2.html">html</a>
+<a href="01920_sqld360_323688_3hwq5m5h3gkaq_3a_538_frequency_histogram_on_column_tusrpayrbck2_bar_chart.html">bar</a>
+<small><em>(11)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.PAYR_BCK3
+<a href="01921_sqld360_323688_3hwq5m5h3gkaq_3a_539_frequency_histogram_on_column_tusrpayrbck3.html">html</a>
+<a href="01922_sqld360_323688_3hwq5m5h3gkaq_3a_539_frequency_histogram_on_column_tusrpayrbck3_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.PRV_SPLRTYP
+<a href="01923_sqld360_323688_3hwq5m5h3gkaq_3a_540_frequency_histogram_on_column_tusrprvsplrtyp.html">html</a>
+<a href="01924_sqld360_323688_3hwq5m5h3gkaq_3a_540_frequency_histogram_on_column_tusrprvsplrtyp_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_IPGROUPID
+<a href="01925_sqld360_323688_3hwq5m5h3gkaq_3a_541_height_balanced_histogram_on_column_tusrusripgroupid.html">html</a>
+<a href="01926_sqld360_323688_3hwq5m5h3gkaq_3a_541_height_balanced_histogram_on_column_tusrusripgroupid_bar_chart.html">bar</a>
+<small><em>(27)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.USR_PRODUCTCATEGORYID
+<a href="01927_sqld360_323688_3hwq5m5h3gkaq_3a_542_height_balanced_histogram_on_column_tusrusrproductcategoryid.html">html</a>
+<a href="01928_sqld360_323688_3hwq5m5h3gkaq_3a_542_height_balanced_histogram_on_column_tusrusrproductcategoryid_bar_chart.html">bar</a>
+<small><em>(29)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.(UPPER("PRV_PLN_ID"))
+<a href="01929_sqld360_323688_3hwq5m5h3gkaq_3a_543_height_balanced_histogram_on_column_tusrupperprvplnid.html">html</a>
+<a href="01930_sqld360_323688_3hwq5m5h3gkaq_3a_543_height_balanced_histogram_on_column_tusrupperprvplnid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.(UPPER("PRV_UPN_ID"))
+<a href="01931_sqld360_323688_3hwq5m5h3gkaq_3a_544_height_balanced_histogram_on_column_tusrupperprvupnid.html">html</a>
+<a href="01932_sqld360_323688_3hwq5m5h3gkaq_3a_544_height_balanced_histogram_on_column_tusrupperprvupnid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.(UPPER("USR_LAS_NAM"))
+<a href="01933_sqld360_323688_3hwq5m5h3gkaq_3a_545_height_balanced_histogram_on_column_tusrupperusrlasnam.html">html</a>
+<a href="01934_sqld360_323688_3hwq5m5h3gkaq_3a_545_height_balanced_histogram_on_column_tusrupperusrlasnam_bar_chart.html">bar</a>
+<small><em>(244)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.(UPPER("USR_MDLENAM"))
+<a href="01935_sqld360_323688_3hwq5m5h3gkaq_3a_546_height_balanced_histogram_on_column_tusrupperusrmdlenam.html">html</a>
+<a href="01936_sqld360_323688_3hwq5m5h3gkaq_3a_546_height_balanced_histogram_on_column_tusrupperusrmdlenam_bar_chart.html">bar</a>
+<small><em>(115)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.(UPPER("USR_C4C_ID"))
+<a href="01937_sqld360_323688_3hwq5m5h3gkaq_3a_547_height_balanced_histogram_on_column_tusrupperusrc4cid.html">html</a>
+<a href="01938_sqld360_323688_3hwq5m5h3gkaq_3a_547_height_balanced_histogram_on_column_tusrupperusrc4cid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.(CASE "USR_OBJ_STT" WHEN 2 THEN 0 ELSE CASE  WHEN "USR_MRGEMSTR" IS NULL THEN 1 ELSE 0 END  END )
+<a href="01939_sqld360_323688_3hwq5m5h3gkaq_3a_548_frequency_histogram_on_column_tusrcase_usrobjstt_when_2_then_0_else_case_when_usrmrgemstr_is_null_then_1_else_0_end_end_.html">html</a>
+<a href="01940_sqld360_323688_3hwq5m5h3gkaq_3a_548_frequency_histogram_on_column_tusrcase_usrobjstt_when_2_then_0_else_case_when_usrmrgemstr_is_null_then_1_else_0_end_end__bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.(UPPER("MBUR_MEDICAID"))
+<a href="01941_sqld360_323688_3hwq5m5h3gkaq_3a_549_frequency_histogram_on_column_tusruppermburmedicaid.html">html</a>
+<a href="01942_sqld360_323688_3hwq5m5h3gkaq_3a_549_frequency_histogram_on_column_tusruppermburmedicaid_bar_chart.html">bar</a>
+<small><em>(9)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.(UPPER("MBUR_HICNID"))
+<a href="01943_sqld360_323688_3hwq5m5h3gkaq_3a_550_height_balanced_histogram_on_column_tusruppermburhicnid.html">html</a>
+<a href="01944_sqld360_323688_3hwq5m5h3gkaq_3a_550_height_balanced_histogram_on_column_tusruppermburhicnid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.(UPPER("MBUR_INSCID"))
+<a href="01945_sqld360_323688_3hwq5m5h3gkaq_3a_551_height_balanced_histogram_on_column_tusruppermburinscid.html">html</a>
+<a href="01946_sqld360_323688_3hwq5m5h3gkaq_3a_551_height_balanced_histogram_on_column_tusruppermburinscid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR.(UPPER("PAYR_EMPEID"))
+<a href="01947_sqld360_323688_3hwq5m5h3gkaq_3a_552_frequency_histogram_on_column_tusrupperpayrempeid.html">html</a>
+<a href="01948_sqld360_323688_3hwq5m5h3gkaq_3a_552_frequency_histogram_on_column_tusrupperpayrempeid_bar_chart.html">bar</a>
+<small><em>(29)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.(UPPER("USR_FRSTNAM"))
+<a href="01949_sqld360_323688_3hwq5m5h3gkaq_3a_553_height_balanced_histogram_on_column_tusrupperusrfrstnam.html">html</a>
+<a href="01950_sqld360_323688_3hwq5m5h3gkaq_3a_553_height_balanced_histogram_on_column_tusrupperusrfrstnam_bar_chart.html">bar</a>
+<small><em>(247)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Height Balanced histogram on Column T_USR.(UPPER("THH_C4C"."REVERSE_STR"("MBUR_INSCID")))
+<a href="01951_sqld360_323688_3hwq5m5h3gkaq_3a_554_height_balanced_histogram_on_column_tusrupperthhc4creversestrmburinscid.html">html</a>
+<a href="01952_sqld360_323688_3hwq5m5h3gkaq_3a_554_height_balanced_histogram_on_column_tusrupperthhc4creversestrmburinscid_bar_chart.html">bar</a>
+<small><em>(255)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR_CNCTINFO.UCTI_OBJ_STT
+<a href="01953_sqld360_323688_3hwq5m5h3gkaq_3a_555_frequency_histogram_on_column_tusrcnctinfouctiobjstt.html">html</a>
+<a href="01954_sqld360_323688_3hwq5m5h3gkaq_3a_555_frequency_histogram_on_column_tusrcnctinfouctiobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_USR_CNCTINFO.UCTI_UNIVID
+<a href="01955_sqld360_323688_3hwq5m5h3gkaq_3a_556_hybrid_histogram_on_column_tusrcnctinfouctiunivid.html">html</a>
+<a href="01956_sqld360_323688_3hwq5m5h3gkaq_3a_556_hybrid_histogram_on_column_tusrcnctinfouctiunivid_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR_CNCTINFO.UCTI_CNCTMTHD
+<a href="01957_sqld360_323688_3hwq5m5h3gkaq_3a_557_frequency_histogram_on_column_tusrcnctinfoucticnctmthd.html">html</a>
+<a href="01958_sqld360_323688_3hwq5m5h3gkaq_3a_557_frequency_histogram_on_column_tusrcnctinfoucticnctmthd_bar_chart.html">bar</a>
+<small><em>(3)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR_CNCTINFO.UCTI_PRFSEMAL
+<a href="01959_sqld360_323688_3hwq5m5h3gkaq_3a_558_frequency_histogram_on_column_tusrcnctinfouctiprfsemal.html">html</a>
+<a href="01960_sqld360_323688_3hwq5m5h3gkaq_3a_558_frequency_histogram_on_column_tusrcnctinfouctiprfsemal_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR_CNCTINFO.UCTI_PRFSPHNE
+<a href="01961_sqld360_323688_3hwq5m5h3gkaq_3a_559_frequency_histogram_on_column_tusrcnctinfouctiprfsphne.html">html</a>
+<a href="01962_sqld360_323688_3hwq5m5h3gkaq_3a_559_frequency_histogram_on_column_tusrcnctinfouctiprfsphne_bar_chart.html">bar</a>
+<small><em>(7)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Top-Frequency histogram on Column T_USR_CNCTINFO.UCTI_PRFSMAIL
+<a href="01963_sqld360_323688_3hwq5m5h3gkaq_3a_560_topfrequency_histogram_on_column_tusrcnctinfouctiprfsmail.html">html</a>
+<a href="01964_sqld360_323688_3hwq5m5h3gkaq_3a_560_topfrequency_histogram_on_column_tusrcnctinfouctiprfsmail_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR_LOGN.CLASSTYPE
+<a href="01965_sqld360_323688_3hwq5m5h3gkaq_3a_561_frequency_histogram_on_column_tusrlognclasstype.html">html</a>
+<a href="01966_sqld360_323688_3hwq5m5h3gkaq_3a_561_frequency_histogram_on_column_tusrlognclasstype_bar_chart.html">bar</a>
+<small><em>(1)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_USR_LOGN.ULGN_LAS_ACT_TIM
+<a href="01967_sqld360_323688_3hwq5m5h3gkaq_3a_562_hybrid_histogram_on_column_tusrlognulgnlasacttim.html">html</a>
+<a href="01968_sqld360_323688_3hwq5m5h3gkaq_3a_562_hybrid_histogram_on_column_tusrlognulgnlasacttim_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR_LOGN.ULGN_OBJ_STT
+<a href="01969_sqld360_323688_3hwq5m5h3gkaq_3a_563_frequency_histogram_on_column_tusrlognulgnobjstt.html">html</a>
+<a href="01970_sqld360_323688_3hwq5m5h3gkaq_3a_563_frequency_histogram_on_column_tusrlognulgnobjstt_bar_chart.html">bar</a>
+<small><em>(2)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_USR_LOGN.ULGN_ORIGCRTR
+<a href="01971_sqld360_323688_3hwq5m5h3gkaq_3a_564_frequency_histogram_on_column_tusrlognulgnorigcrtr.html">html</a>
+<a href="01972_sqld360_323688_3hwq5m5h3gkaq_3a_564_frequency_histogram_on_column_tusrlognulgnorigcrtr_bar_chart.html">bar</a>
+<small><em>(42)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_USR_LOGN.ULGN_UNIVID
+<a href="01973_sqld360_323688_3hwq5m5h3gkaq_3a_565_hybrid_histogram_on_column_tusrlognulgnunivid.html">html</a>
+<a href="01974_sqld360_323688_3hwq5m5h3gkaq_3a_565_hybrid_histogram_on_column_tusrlognulgnunivid_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Hybrid histogram on Column T_USR_LOGN.ULGN_USRM
+<a href="01975_sqld360_323688_3hwq5m5h3gkaq_3a_566_hybrid_histogram_on_column_tusrlognulgnusrm.html">html</a>
+<a href="01976_sqld360_323688_3hwq5m5h3gkaq_3a_566_hybrid_histogram_on_column_tusrlognulgnusrm_bar_chart.html">bar</a>
+<small><em>(254)</em></small>
+</li>
+</td>
+<td>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_WKFWTSK.WTSK_OBJ_STT
+<a href="01977_sqld360_323688_3hwq5m5h3gkaq_3a_567_frequency_histogram_on_column_twkfwtskwtskobjstt.html">html</a>
+<a href="01978_sqld360_323688_3hwq5m5h3gkaq_3a_567_frequency_histogram_on_column_twkfwtskwtskobjstt_bar_chart.html">bar</a>
+<small><em>(6)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_WKFWTSK.WTSK_LAS_ACT_BY
+<a href="01979_sqld360_323688_3hwq5m5h3gkaq_3a_568_frequency_histogram_on_column_twkfwtskwtsklasactby.html">html</a>
+<a href="01980_sqld360_323688_3hwq5m5h3gkaq_3a_568_frequency_histogram_on_column_twkfwtskwtsklasactby_bar_chart.html">bar</a>
+<small><em>(150)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_WKFWTSK.WTSK_WKFWTSK_TYP
+<a href="01981_sqld360_323688_3hwq5m5h3gkaq_3a_569_frequency_histogram_on_column_twkfwtskwtskwkfwtsktyp.html">html</a>
+<a href="01982_sqld360_323688_3hwq5m5h3gkaq_3a_569_frequency_histogram_on_column_twkfwtskwtskwkfwtsktyp_bar_chart.html">bar</a>
+<small><em>(38)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_WKFWTSK.WTSK_RFRDOBJ_TYP
+<a href="01983_sqld360_323688_3hwq5m5h3gkaq_3a_570_frequency_histogram_on_column_twkfwtskwtskrfrdobjtyp.html">html</a>
+<a href="01984_sqld360_323688_3hwq5m5h3gkaq_3a_570_frequency_histogram_on_column_twkfwtskwtskrfrdobjtyp_bar_chart.html">bar</a>
+<small><em>(22)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_WKFWTSK.("WTSK_WKFWTSK_TYP","WTSK_RFRDOBJ_TYP")
+<a href="01985_sqld360_323688_3hwq5m5h3gkaq_3a_571_frequency_histogram_on_column_twkfwtskwtskwkfwtsktypwtskrfrdobjtyp.html">html</a>
+<a href="01986_sqld360_323688_3hwq5m5h3gkaq_3a_571_frequency_histogram_on_column_twkfwtskwtskwkfwtsktypwtskrfrdobjtyp_bar_chart.html">bar</a>
+<small><em>(38)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_WKFWTSK.("WTSK_OBJ_STT","WTSK_WKFWTSK_TYP","WTSK_RFRDOBJ_TYP")
+<a href="01987_sqld360_323688_3hwq5m5h3gkaq_3a_572_frequency_histogram_on_column_twkfwtskwtskobjsttwtskwkfwtsktypwtskrfrdobjtyp.html">html</a>
+<a href="01988_sqld360_323688_3hwq5m5h3gkaq_3a_572_frequency_histogram_on_column_twkfwtskwtskobjsttwtskwkfwtsktypwtskrfrdobjtyp_bar_chart.html">bar</a>
+<small><em>(60)</em></small>
+</li>
+<li title="DBA_TAB_HISTOGRAMS">Frequency histogram on Column T_WKFWTSK.("WTSK_OBJ_STT","WTSK_RFRDOBJ_TYP")
+<a href="01989_sqld360_323688_3hwq5m5h3gkaq_3a_573_frequency_histogram_on_column_twkfwtskwtskobjsttwtskrfrdobjtyp.html">html</a>
+<a href="01990_sqld360_323688_3hwq5m5h3gkaq_3a_573_frequency_histogram_on_column_twkfwtskwtskobjsttwtskrfrdobjtyp_bar_chart.html">bar</a>
+<small><em>(41)</em></small>
+</li>
+</td>
+</tr></table>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-04/09:47:14 for SQL ID 3hwq5m5h3gkaq (UPDATE T_USR SET "CLASSTYPE" = :B1 ,"USR_C4C_ID" = :B2 ,"USR_CRTD" = :B3 ,"USR_L) </font>
+</body>
+</html>

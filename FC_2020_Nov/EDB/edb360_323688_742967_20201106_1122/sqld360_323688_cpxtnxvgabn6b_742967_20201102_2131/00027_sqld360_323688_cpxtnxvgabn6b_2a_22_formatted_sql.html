@@ -1,0 +1,17 @@
+<html>
+<script src="sql-formatter.js"></script>
+<script src="highlight.pack.js"></script>
+<link rel="stylesheet" href="vs.css">
+<body>
+Credits for formatting go to https://github.com/zeroturnaround/sql-formatter
+<br>
+Credits for syntax highlight go to https://highlightjs.org/
+<pre><code class="sql" id="output"></code></pre>
+<script>
+document.getElementById("output").innerHTML = window.sqlFormatter.format(" " +
+"DELETE FROM T_RSPE WHERE (RESP_ID = :b1 )"+
+" ")
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

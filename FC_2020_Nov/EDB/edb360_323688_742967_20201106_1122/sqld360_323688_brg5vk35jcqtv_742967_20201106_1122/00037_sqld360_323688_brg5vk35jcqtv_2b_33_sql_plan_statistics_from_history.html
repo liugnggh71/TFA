@@ -1,0 +1,8290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $Header: 00001_sqld360_323688_brg5vk35jcqtv_index v192 (2019-03-23) mauro.pagano $ -->
+<!-- Copyright (c) 2015, All rights reserved. -->
+<!-- Author: mauro.pagano@gmail.com -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="SQLd360_favicon.ico">
+<title>SQL Plan Statistics from History</title>
+
+<style type="text/css">
+body             {font:10pt Arial,Helvetica,Geneva,sans-serif; color:black; background:white;}
+h1               {font-size:16pt; font-weight:bold; color:#336699; border-bottom:1px solid #336699; margin-top:0pt; margin-bottom:0pt; padding:0px 0px 0px 0px;}
+h2               {font-size:14pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+h3               {font-size:12pt; font-weight:bold; color:#336699; margin-top:4pt; margin-bottom:0pt;}
+pre              {font:8pt monospace,Monaco,"Courier New",Courier;}
+a                {color:#663300;}
+table            {font-size:8pt; border-collapse:collapse; empty-cells:show; white-space:nowrap; border:1px solid #336699;}
+li               {font-size:8pt; color:black; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+th               {font-weight:bold; color:white; background:#0066CC; padding-left:4px; padding-right:4px; padding-bottom:2px;}
+tr               {color:black; background:#ffffff;}
+tr.main          {color:black; background:#ffffff;}
+tr.main:hover    {color:black; background:#ffffff;}
+td               {vertical-align:top; border:1px solid #336699;}
+td.c             {text-align:center;}
+tr:hover         {background:#0066CC; color:white;}
+font.n           {font-size:8pt; font-style:italic; color:#336699;}
+font.f           {font-size:8pt; color:#999999; border-top:1px solid #336699; margin-top:30pt;}
+div.google-chart {width:809px; height:500px;}
+</style>
+
+<script src="sorttable.js"></script>
+
+<!-- 00037_sqld360_323688_brg5vk35jcqtv_2b_33_sql_plan_statistics_from_history.html $ -->
+</head>
+<body>
+<h1> <a href="http://mauro-pagano.com/2015/02/16/sqld360-sql-diagnostics-collection-made-faster/" target="_blank"><img src="SQLd360_img.jpg" alt="SQLd360" height="33" width="52"></a> 2b.33. SQL Plan Statistics from History <em>(DBA_HIST_SQL_PLAN)</em>  </h1>
+
+<br>
+
+
+
+<p>
+<table class=sortable>
+<tr>
+<th scope="col">
+#
+</th>
+<th scope="col">
+DBID
+</th>
+<th scope="col">
+SQL_ID
+</th>
+<th scope="col">
+PLAN_HASH_VALUE
+</th>
+<th scope="col">
+ID
+</th>
+<th scope="col">
+OPERATION
+</th>
+<th scope="col">
+OPTIONS
+</th>
+<th scope="col">
+OBJECT_NODE
+</th>
+<th scope="col">
+OBJECT#
+</th>
+<th scope="col">
+OBJECT_OWNER
+</th>
+<th scope="col">
+OBJECT_NAME
+</th>
+<th scope="col">
+OBJECT_ALIAS
+</th>
+<th scope="col">
+OBJECT_TYPE
+</th>
+<th scope="col">
+OPTIMIZER
+</th>
+<th scope="col">
+PARENT_ID
+</th>
+<th scope="col">
+DEPTH
+</th>
+<th scope="col">
+POSITION
+</th>
+<th scope="col">
+SEARCH_COLUMNS
+</th>
+<th scope="col">
+COST
+</th>
+<th scope="col">
+CARDINALITY
+</th>
+<th scope="col">
+BYTES
+</th>
+<th scope="col">
+OTHER_TAG
+</th>
+<th scope="col">
+PARTITION_START
+</th>
+<th scope="col">
+PARTITION_STOP
+</th>
+<th scope="col">
+PARTITION_ID
+</th>
+<th scope="col">
+OTHER
+</th>
+<th scope="col">
+DISTRIBUTION
+</th>
+<th scope="col">
+CPU_COST
+</th>
+<th scope="col">
+IO_COST
+</th>
+<th scope="col">
+TEMP_SPACE
+</th>
+<th scope="col">
+ACCESS_PREDICATES
+</th>
+<th scope="col">
+FILTER_PREDICATES
+</th>
+<th scope="col">
+PROJECTION
+</th>
+<th scope="col">
+TIME
+</th>
+<th scope="col">
+QBLOCK_NAME
+</th>
+<th scope="col">
+REMARKS
+</th>
+<th scope="col">
+TIMESTAMP
+</th>
+<th scope="col">
+OTHER_XML
+</th>
+<th scope="col">
+CON_DBID
+</th>
+<th scope="col">
+CON_ID
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SELECT STATEMENT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9120
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9120
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9120
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           347945061
+</td>
+<td align="right">
+                9106
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&lt;other_xml&gt;&lt;info type=&quot;db_version&quot;&gt;12.1.0.2&lt;/info&gt;&lt;info type=&quot;parse_schema&quot;&gt;&lt;![CDATA[&quot;THH_C4C&quot;]]&gt;&lt;/info&gt;&lt;info type=&quot;dynamic_sampling&quot; note=&quot;y&quot;&gt;2&lt;/info&gt;&lt;info type=&quot;plan_hash_full&quot;&gt;1419537067&lt;/info&gt;&lt;info type=&quot;plan_hash&quot;&gt;1395218688&lt;/info&gt;&lt;info type=&quot;plan_hash_2&quot;&gt;1419537067&lt;/info&gt;&lt;peeked_binds&gt;&lt;bind nam=&quot;:SYS_B_0&quot; pos=&quot;1&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;80&lt;/bind&gt;&lt;bind nam=&quot;:SYS_B_1&quot; pos=&quot;2&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c21403&lt;/bind&gt;&lt;bind nam=&quot;:1&quot; pos=&quot;3&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c40b304a27&lt;/bind&gt;&lt;bind nam=&quot;:2&quot; pos=&quot;4&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c40b304a27&lt;/bind&gt;&lt;bind nam=&quot;:SYS_B_2&quot; pos=&quot;5&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;80&lt;/bind&gt;&lt;bind nam=&quot;:SYS_B_3&quot; pos=&quot;6&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c21404&lt;/bind&gt;&lt;bind nam=&quot;:3&quot; pos=&quot;7&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c40b304a27&lt;/bind&gt;&lt;bind nam=&quot;:4&quot; pos=&quot;8&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c40b304a27&lt;/bind&gt;&lt;/peeked_binds&gt;&lt;spd&gt;&lt;cv&gt;2&lt;/cv&gt;&lt;cu&gt;3&lt;/cu&gt;&lt;/spd&gt;&lt;outline_data&gt;&lt;hint&gt;&lt;![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPTIMIZER_FEATURES_ENABLE('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[DB_VERSION('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_cost_adj' 1)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_caching' 90)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[ALL_ROWS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$5&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$E9CE40F4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[TRANSFORM_DISTINCT_AGG(@&quot;SEL$54D64B3C&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$A5ECA6B2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$9&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$62621A67&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[TRANSFORM_DISTINCT_AGG(@&quot;SEL$E16E17DA&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$F8C6667F&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$54D64B3C&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$64EAE176&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$E9CE40F4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[TRANSFORM_DISTINCT_AGG(@&quot;SEL$54D64B3C&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$E16E17DA&quot;)]]&gt;&lt;/hint
+&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$6DE49B00&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$62621A67&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[TRANSFORM_DISTINCT_AGG(@&quot;SEL$E16E17DA&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$64EAE176&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$8&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$6DE49B00&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NO_ACCESS(@&quot;SEL$1&quot; &quot;from$_subquery$_001&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NO_ACCESS(@&quot;SEL$1&quot; &quot;from$_subquery$_008&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$1&quot; &quot;from$_subquery$_001&quot;@&quot;SEL$1&quot; &quot;from$_subquery$_008&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$1&quot; &quot;from$_subquery$_008&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NO_ACCESS(@&quot;SEL$A5ECA6B2&quot; &quot;VW_DAG_1&quot;@&quot;SEL$A5ECA6B2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NO_ACCESS(@&quot;SEL$F8C6667F&quot; &quot;VW_DAG_0&quot;@&quot;SEL$F8C6667F&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$62621A67&quot; &quot;DIAG&quot;@&quot;SEL$6&quot; (&quot;T_MEMBDGISBASE&quot;.&quot;UMDS_DGISUM_EVNT&quot; &quot;T_MEMBDGISBASE&quot;.&quot;MBDB_ID&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;SEL$62621A67&quot; &quot;T&quot;@&quot;SEL$6&quot; (&quot;T_UM_BASE&quot;.&quot;UMBS_OBJ_STT&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[BATCH_TABLE_ACCESS_BY_ROWID(@&quot;SEL$62621A67&quot; &quot;T&quot;@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$62621A67&quot; &quot;MSRV&quot;@&quot;SEL$7&quot; (&quot;T_APBL&quot;.&quot;MSRV_SRVCDGIS&quot; &quot;T_APBL&quot;.&quot;MSRV_ID&quot; &quot;T_APBL&quot;.&quot;CLASSTYPE&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$62621A67&quot; &quot;DIAG&quot;@&quot;SEL$6&quot; &quot;T&quot;@&quot;SEL$6&quot; &quot;MSRV&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_MERGE(@&quot;SEL$62621A67&quot; &quot;T&quot;@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$62621A67&quot; &quot;MSRV&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NLJ_BATCHING(@&quot;SEL$62621A67&quot; &quot;MSRV&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[PQ_FILTER(@&quot;SEL$62621A67&quot; SERIAL)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;SEL$9&quot; &quot;T_USR&quot;@&quot;SEL$9&quot; (&quot;T_USR&quot;.&quot;USR_MRGEMSTR&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[BATCH_TABLE_ACCESS_BY_ROWID(@&quot;SEL$9&quot; &quot;T_USR&quot;@&quot;SEL$9&quot;)]]
+&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;SEL$E9CE40F4&quot; &quot;T&quot;@&quot;SEL$2&quot; (&quot;T_UM_BASE&quot;.&quot;UMBS_OBJ_STT&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[BATCH_TABLE_ACCESS_BY_ROWID(@&quot;SEL$E9CE40F4&quot; &quot;T&quot;@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$E9CE40F4&quot; &quot;DIAG&quot;@&quot;SEL$2&quot; (&quot;T_MEMBDGISBASE&quot;.&quot;UMDS_DGISUM_EVNT&quot; &quot;T_MEMBDGISBASE&quot;.&quot;MBDB_ID&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$E9CE40F4&quot; &quot;MSRV&quot;@&quot;SEL$3&quot; (&quot;T_APBL&quot;.&quot;MSRV_SRVCDGIS&quot; &quot;T_APBL&quot;.&quot;MSRV_ID&quot; &quot;T_APBL&quot;.&quot;CLASSTYPE&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$E9CE40F4&quot; &quot;T&quot;@&quot;SEL$2&quot; &quot;DIAG&quot;@&quot;SEL$2&quot; &quot;MSRV&quot;@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$E9CE40F4&quot; &quot;DIAG&quot;@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$E9CE40F4&quot; &quot;MSRV&quot;@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NLJ_BATCHING(@&quot;SEL$E9CE40F4&quot; &quot;MSRV&quot;@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_HASH_AGGREGATION(@&quot;SEL$E9CE40F4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[PQ_FILTER(@&quot;SEL$E9CE40F4&quot; SERIAL)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;SEL$5&quot; &quot;T_USR&quot;@&quot;SEL$5&quot; (&quot;T_USR&quot;.&quot;USR_MRGEMSTR&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[BATCH_TABLE_ACCESS_BY_ROWID(@&quot;SEL$5&quot; &quot;T_USR&quot;@&quot;SEL$5&quot;)]]&gt;&lt;/hint&gt;&lt;/outline_data&gt;&lt;/other_xml&gt;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+from$_subquery$_001@SEL$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+            24512781
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$A5ECA6B2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+SORT
+</td>
+<td>
+AGGREGATE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+SEL$A5ECA6B2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+VW_DAG_1
+</td>
+<td>
+VW_DAG_1@SEL$A5ECA6B2
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                 286
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+            24512781
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+HASH
+</td>
+<td>
+GROUP BY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                 770
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+            24512781
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+FILTER
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                 437
+</td>
+<td align="right">
+               15295
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              284081
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                1446
+</td>
+<td align="right">
+               15295
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              284081
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                 723
+</td>
+<td align="right">
+               19521
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+               87897
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115401
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+T@SEL$2
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 876
+</td>
+<td align="right">
+               14016
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+               21658
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119204
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_UMBS_OBJ_STT
+</td>
+<td>
+T@SEL$2
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 782
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                1849
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118389
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_MBDB_DGISUMEVNT_ID
+</td>
+<td>
+DIAG@SEL$2
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  76
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              237107
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_T_APBL_MSDG_MID_CT
+</td>
+<td>
+MSRV@SEL$3
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+15
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115402
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV@SEL$3
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 271
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115418
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+T_USR@SEL$5
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 195
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$5
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+17
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119458
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_USR_MRGEMSTR
+</td>
+<td>
+T_USR@SEL$5
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  75
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$5
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+18
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  17
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+from$_subquery$_008@SEL$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432279
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$F8C6667F
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+19
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  18
+</td>
+<td>
+SORT
+</td>
+<td>
+AGGREGATE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  17
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+SEL$F8C6667F
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+20
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  19
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+VW_DAG_0
+</td>
+<td>
+VW_DAG_0@SEL$F8C6667F
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+                7654
+</td>
+<td align="right">
+               99502
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432279
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+21
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+SORT
+</td>
+<td>
+GROUP BY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+                7654
+</td>
+<td align="right">
+              267890
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432279
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+22
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+FILTER
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+23
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+              153059
+</td>
+<td align="right">
+             5357065
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432279
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+              506490
+</td>
+<td align="right">
+             5357065
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432279
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+MERGE JOIN
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1487
+</td>
+<td align="right">
+              253245
+</td>
+<td align="right">
+             6837615
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           254714883
+</td>
+<td align="right">
+                1477
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+26
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  25
+</td>
+<td>
+INDEX
+</td>
+<td>
+FULL SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118389
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_MBDB_DGISUMEVNT_ID
+</td>
+<td>
+DIAG@SEL$6
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  24
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+              253921
+</td>
+<td align="right">
+             2793131
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              920674
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+27
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+SORT
+</td>
+<td>
+JOIN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  24
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1476
+</td>
+<td align="right">
+              249811
+</td>
+<td align="right">
+             3996976
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           253794210
+</td>
+<td align="right">
+                1465
+</td>
+<td align="right">
+            14083000
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+28
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  27
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115401
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+T@SEL$6
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  99
+</td>
+<td align="right">
+              249811
+</td>
+<td align="right">
+             3996976
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+             6845363
+</td>
+<td align="right">
+                  98
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+29
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  28
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119204
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_UMBS_OBJ_STT
+</td>
+<td>
+T@SEL$6
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+              249810
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              537933
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+30
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              237107
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_T_APBL_MSDG_MID_CT
+</td>
+<td>
+MSRV@SEL$7
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+31
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  30
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115402
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV@SEL$7
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 271
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  31
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115418
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+T_USR@SEL$9
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 195
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$9
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+33
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          1395218688
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119458
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_USR_MRGEMSTR
+</td>
+<td>
+T_USR@SEL$9
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  75
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$9
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-19/16:37:40
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+34
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   0
+</td>
+<td>
+SELECT STATEMENT
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+ALL_ROWS
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9120
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9120
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+35
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9120
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           347945543
+</td>
+<td align="right">
+                9106
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&lt;other_xml&gt;&lt;info type=&quot;db_version&quot;&gt;12.1.0.2&lt;/info&gt;&lt;info type=&quot;parse_schema&quot;&gt;&lt;![CDATA[&quot;THH_C4C&quot;]]&gt;&lt;/info&gt;&lt;info type=&quot;dynamic_sampling&quot; note=&quot;y&quot;&gt;2&lt;/info&gt;&lt;info type=&quot;plan_hash_full&quot;&gt;68577086&lt;/info&gt;&lt;info type=&quot;plan_hash&quot;&gt;4242918885&lt;/info&gt;&lt;info type=&quot;plan_hash_2&quot;&gt;68577086&lt;/info&gt;&lt;peeked_binds&gt;&lt;bind nam=&quot;:SYS_B_0&quot; pos=&quot;1&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;80&lt;/bind&gt;&lt;bind nam=&quot;:SYS_B_1&quot; pos=&quot;2&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c21403&lt;/bind&gt;&lt;bind nam=&quot;:1&quot; pos=&quot;3&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c40b304a27&lt;/bind&gt;&lt;bind nam=&quot;:2&quot; pos=&quot;4&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c40b304a27&lt;/bind&gt;&lt;bind nam=&quot;:SYS_B_2&quot; pos=&quot;5&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;80&lt;/bind&gt;&lt;bind nam=&quot;:SYS_B_3&quot; pos=&quot;6&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c21404&lt;/bind&gt;&lt;bind nam=&quot;:3&quot; pos=&quot;7&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c40b304a27&lt;/bind&gt;&lt;bind nam=&quot;:4&quot; pos=&quot;8&quot; dty=&quot;2&quot; pre=&quot;0&quot; scl=&quot;0&quot; mxl=&quot;22&quot;&gt;c40b304a27&lt;/bind&gt;&lt;/peeked_binds&gt;&lt;spd&gt;&lt;cv&gt;2&lt;/cv&gt;&lt;cu&gt;3&lt;/cu&gt;&lt;/spd&gt;&lt;outline_data&gt;&lt;hint&gt;&lt;![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPTIMIZER_FEATURES_ENABLE('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[DB_VERSION('12.1.0.2')]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_cost_adj' 1)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OPT_PARAM('optimizer_index_caching' 90)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[ALL_ROWS]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$5&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$E9CE40F4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[TRANSFORM_DISTINCT_AGG(@&quot;SEL$54D64B3C&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$A5ECA6B2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$9&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$62621A67&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[TRANSFORM_DISTINCT_AGG(@&quot;SEL$E16E17DA&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$F8C6667F&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE_LEAF(@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$54D64B3C&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$64EAE176&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$E9CE40F4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[TRANSFORM_DISTINCT_AGG(@&quot;SEL$54D64B3C&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$E16E17DA&quot;)]]&gt;&lt;/hint&gt;&lt;hi
+nt&gt;&lt;![CDATA[MERGE(@&quot;SEL$6DE49B00&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$62621A67&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[TRANSFORM_DISTINCT_AGG(@&quot;SEL$E16E17DA&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$64EAE176&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$8&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$6DE49B00&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[MERGE(@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[OUTLINE(@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NO_ACCESS(@&quot;SEL$1&quot; &quot;from$_subquery$_001&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NO_ACCESS(@&quot;SEL$1&quot; &quot;from$_subquery$_008&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$1&quot; &quot;from$_subquery$_001&quot;@&quot;SEL$1&quot; &quot;from$_subquery$_008&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$1&quot; &quot;from$_subquery$_008&quot;@&quot;SEL$1&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NO_ACCESS(@&quot;SEL$A5ECA6B2&quot; &quot;VW_DAG_1&quot;@&quot;SEL$A5ECA6B2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NO_ACCESS(@&quot;SEL$F8C6667F&quot; &quot;VW_DAG_0&quot;@&quot;SEL$F8C6667F&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$62621A67&quot; &quot;DIAG&quot;@&quot;SEL$6&quot; (&quot;T_MEMBDGISBASE&quot;.&quot;UMDS_DGISUM_EVNT&quot; &quot;T_MEMBDGISBASE&quot;.&quot;MBDB_ID&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;SEL$62621A67&quot; &quot;T&quot;@&quot;SEL$6&quot; (&quot;T_UM_BASE&quot;.&quot;UMBS_OBJ_STT&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[BATCH_TABLE_ACCESS_BY_ROWID(@&quot;SEL$62621A67&quot; &quot;T&quot;@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$62621A67&quot; &quot;MSRV&quot;@&quot;SEL$7&quot; (&quot;T_APBL&quot;.&quot;MSRV_SRVCDGIS&quot; &quot;T_APBL&quot;.&quot;MSRV_ID&quot; &quot;T_APBL&quot;.&quot;CLASSTYPE&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$62621A67&quot; &quot;DIAG&quot;@&quot;SEL$6&quot; &quot;T&quot;@&quot;SEL$6&quot; &quot;MSRV&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_MERGE(@&quot;SEL$62621A67&quot; &quot;T&quot;@&quot;SEL$6&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$62621A67&quot; &quot;MSRV&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NLJ_BATCHING(@&quot;SEL$62621A67&quot; &quot;MSRV&quot;@&quot;SEL$7&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[PQ_FILTER(@&quot;SEL$62621A67&quot; SERIAL)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;SEL$9&quot; &quot;T_USR&quot;@&quot;SEL$9&quot; (&quot;T_USR&quot;.&quot;MBUR_ID&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;SEL$E9CE40F4&quot; &quot;T&quot;@&quot;SEL$2&quot; (&quot;T_UM_BASE&quot;.&quot;UMBS_OBJ_
+STT&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[BATCH_TABLE_ACCESS_BY_ROWID(@&quot;SEL$E9CE40F4&quot; &quot;T&quot;@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$E9CE40F4&quot; &quot;DIAG&quot;@&quot;SEL$2&quot; (&quot;T_MEMBDGISBASE&quot;.&quot;UMDS_DGISUM_EVNT&quot; &quot;T_MEMBDGISBASE&quot;.&quot;MBDB_ID&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX(@&quot;SEL$E9CE40F4&quot; &quot;MSRV&quot;@&quot;SEL$3&quot; (&quot;T_APBL&quot;.&quot;MSRV_SRVCDGIS&quot; &quot;T_APBL&quot;.&quot;MSRV_ID&quot; &quot;T_APBL&quot;.&quot;CLASSTYPE&quot;))]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[LEADING(@&quot;SEL$E9CE40F4&quot; &quot;T&quot;@&quot;SEL$2&quot; &quot;DIAG&quot;@&quot;SEL$2&quot; &quot;MSRV&quot;@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$E9CE40F4&quot; &quot;DIAG&quot;@&quot;SEL$2&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_NL(@&quot;SEL$E9CE40F4&quot; &quot;MSRV&quot;@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[NLJ_BATCHING(@&quot;SEL$E9CE40F4&quot; &quot;MSRV&quot;@&quot;SEL$3&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[USE_HASH_AGGREGATION(@&quot;SEL$E9CE40F4&quot;)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[PQ_FILTER(@&quot;SEL$E9CE40F4&quot; SERIAL)]]&gt;&lt;/hint&gt;&lt;hint&gt;&lt;![CDATA[INDEX_RS_ASC(@&quot;SEL$5&quot; &quot;T_USR&quot;@&quot;SEL$5&quot; (&quot;T_USR&quot;.&quot;MBUR_ID&quot;))]]&gt;&lt;/hint&gt;&lt;/outline_data&gt;&lt;/other_xml&gt;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   2
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+from$_subquery$_001@SEL$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+            24512807
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$A5ECA6B2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   3
+</td>
+<td>
+SORT
+</td>
+<td>
+AGGREGATE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+SEL$A5ECA6B2
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   4
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+VW_DAG_1
+</td>
+<td>
+VW_DAG_1@SEL$A5ECA6B2
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                 286
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+            24512807
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   5
+</td>
+<td>
+HASH
+</td>
+<td>
+GROUP BY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  32
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                 770
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+            24512807
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+FILTER
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   7
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                 437
+</td>
+<td align="right">
+               15295
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              284107
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                1446
+</td>
+<td align="right">
+               15295
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              284107
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+43
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                   9
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                 723
+</td>
+<td align="right">
+               19521
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+               87921
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+44
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  10
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115401
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+T@SEL$2
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 876
+</td>
+<td align="right">
+               14016
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+               21683
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+45
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119204
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_UMBS_OBJ_STT
+</td>
+<td>
+T@SEL$2
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                 783
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                1851
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+46
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  12
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118389
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_MBDB_DGISUMEVNT_ID
+</td>
+<td>
+DIAG@SEL$2
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  11
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  76
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+47
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              237107
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_T_APBL_MSDG_MID_CT
+</td>
+<td>
+MSRV@SEL$3
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+48
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  14
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115402
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV@SEL$3
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 271
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$E9CE40F4
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+49
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  15
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115418
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+T_USR@SEL$5
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 249
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$5
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+50
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  16
+</td>
+<td>
+INDEX
+</td>
+<td>
+UNIQUE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119439
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_MBUR
+</td>
+<td>
+T_USR@SEL$5
+</td>
+<td>
+INDEX (UNIQUE)
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  15
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 153
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$5
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+51
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  17
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+from$_subquery$_008@SEL$1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432735
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$F8C6667F
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+52
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  18
+</td>
+<td>
+SORT
+</td>
+<td>
+AGGREGATE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  17
+</td>
+<td align="right">
+                   3
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                  13
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+SEL$F8C6667F
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+53
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  19
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+VW_DAG_0
+</td>
+<td>
+VW_DAG_0@SEL$F8C6667F
+</td>
+<td>
+VIEW
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  18
+</td>
+<td align="right">
+                   4
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+                7654
+</td>
+<td align="right">
+               99502
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432735
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+54
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  20
+</td>
+<td>
+SORT
+</td>
+<td>
+GROUP BY
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  19
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+                7654
+</td>
+<td align="right">
+              267890
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432735
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+55
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  21
+</td>
+<td>
+FILTER
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  20
+</td>
+<td align="right">
+                   6
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+56
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  22
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+              153059
+</td>
+<td align="right">
+             5357065
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432735
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+57
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  23
+</td>
+<td>
+NESTED LOOPS
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                9088
+</td>
+<td align="right">
+              506490
+</td>
+<td align="right">
+             5357065
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           323432735
+</td>
+<td align="right">
+                9074
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+58
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  24
+</td>
+<td>
+MERGE JOIN
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1487
+</td>
+<td align="right">
+              253245
+</td>
+<td align="right">
+             6837615
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           254714885
+</td>
+<td align="right">
+                1477
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+59
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  25
+</td>
+<td>
+INDEX
+</td>
+<td>
+FULL SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              118389
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_MBDB_DGISUMEVNT_ID
+</td>
+<td>
+DIAG@SEL$6
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  24
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+              253922
+</td>
+<td align="right">
+             2793142
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              920676
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+60
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  26
+</td>
+<td>
+SORT
+</td>
+<td>
+JOIN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  24
+</td>
+<td align="right">
+                  10
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                1476
+</td>
+<td align="right">
+              249811
+</td>
+<td align="right">
+             3996976
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+           253794210
+</td>
+<td align="right">
+                1465
+</td>
+<td align="right">
+            14083000
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+61
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  27
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID BATCHED
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115401
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_UM_BASE
+</td>
+<td>
+T@SEL$6
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  26
+</td>
+<td align="right">
+                  11
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                  99
+</td>
+<td align="right">
+              249811
+</td>
+<td align="right">
+             3996976
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+             6845363
+</td>
+<td align="right">
+                  98
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+62
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  28
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119204
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_UMBS_OBJ_STT
+</td>
+<td>
+T@SEL$6
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  27
+</td>
+<td align="right">
+                  12
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+              249810
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              537933
+</td>
+<td align="right">
+                   5
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+63
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  29
+</td>
+<td>
+INDEX
+</td>
+<td>
+RANGE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              237107
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+IX_T_APBL_MSDG_MID_CT
+</td>
+<td>
+MSRV@SEL$7
+</td>
+<td>
+INDEX
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  23
+</td>
+<td align="right">
+                   9
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  77
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+64
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  30
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115402
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_APBL
+</td>
+<td>
+MSRV@SEL$7
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  22
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   8
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 271
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$62621A67
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+65
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  31
+</td>
+<td>
+TABLE ACCESS
+</td>
+<td>
+BY INDEX ROWID
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              115418
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+T_USR
+</td>
+<td>
+T_USR@SEL$9
+</td>
+<td>
+TABLE
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  21
+</td>
+<td align="right">
+                   7
+</td>
+<td align="right">
+                   2
+</td>
+<td align="right">
+                   0
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   6
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 249
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$9
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+<tr>
+<td>
+66
+</td>
+<td align="right">
+          2109323688
+</td>
+<td>
+brg5vk35jcqtv
+</td>
+<td align="right">
+          4242918885
+</td>
+<td align="right">
+                  32
+</td>
+<td>
+INDEX
+</td>
+<td>
+UNIQUE SCAN
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+              119439
+</td>
+<td>
+THH_C4C
+</td>
+<td>
+UK_MBUR
+</td>
+<td>
+T_USR@SEL$9
+</td>
+<td>
+INDEX (UNIQUE)
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                  31
+</td>
+<td align="right">
+                   8
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                 153
+</td>
+<td align="right">
+                   1
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+                   1
+</td>
+<td>
+SEL$9
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+2020-09-20/09:05:55
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+          3242645605
+</td>
+<td align="right">
+                   4
+</td>
+</tr>
+</table>
+<p>
+
+#: click on a column heading to sort on it
+
+<pre>
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DBID                                      NOT NULL NUMBER
+ SQL_ID                                    NOT NULL VARCHAR2(13)
+ PLAN_HASH_VALUE                           NOT NULL NUMBER
+ ID                                        NOT NULL NUMBER
+ OPERATION                                          VARCHAR2(30)
+ OPTIONS                                            VARCHAR2(30)
+ OBJECT_NODE                                        VARCHAR2(128)
+ OBJECT#                                            NUMBER
+ OBJECT_OWNER                                       VARCHAR2(128)
+ OBJECT_NAME                                        VARCHAR2(128)
+ OBJECT_ALIAS                                       VARCHAR2(261)
+ OBJECT_TYPE                                        VARCHAR2(20)
+ OPTIMIZER                                          VARCHAR2(20)
+ PARENT_ID                                          NUMBER
+ DEPTH                                              NUMBER
+ POSITION                                           NUMBER
+ SEARCH_COLUMNS                                     NUMBER
+ COST                                               NUMBER
+ CARDINALITY                                        NUMBER
+ BYTES                                              NUMBER
+ OTHER_TAG                                          VARCHAR2(35)
+ PARTITION_START                                    VARCHAR2(64)
+ PARTITION_STOP                                     VARCHAR2(64)
+ PARTITION_ID                                       NUMBER
+ OTHER                                              VARCHAR2(4000)
+ DISTRIBUTION                                       VARCHAR2(20)
+ CPU_COST                                           NUMBER
+ IO_COST                                            NUMBER
+ TEMP_SPACE                                         NUMBER
+ ACCESS_PREDICATES                                  VARCHAR2(4000)
+ FILTER_PREDICATES                                  VARCHAR2(4000)
+ PROJECTION                                         VARCHAR2(4000)
+ TIME                                               NUMBER
+ QBLOCK_NAME                                        VARCHAR2(128)
+ REMARKS                                            VARCHAR2(4000)
+ TIMESTAMP                                          DATE
+ OTHER_XML                                          CLOB
+ CON_DBID                                           NUMBER
+ CON_ID                                             NUMBER
+
+SELECT /*+ NO_MERGE */
+       *
+  FROM dba_hist_sql_plan
+ WHERE sql_id = 'brg5vk35jcqtv'
+   AND 'Y' = 'Y'
+ ORDER BY plan_hash_value, id;
+
+66 rows selected.
+</pre>
+
+<br>
+<font class="f">sqld360 (c) 2015. Version v192 (2019-03-23). Report executed on 2020-11-06/17:23:19 for SQL ID brg5vk35jcqtv (SELECT *
+FROM
+  (SELECT count(DISTINCT T.UMBS_ID) AS opened
+   FROM T_UM_BASE T
+) </font>
+</body>
+</html>
