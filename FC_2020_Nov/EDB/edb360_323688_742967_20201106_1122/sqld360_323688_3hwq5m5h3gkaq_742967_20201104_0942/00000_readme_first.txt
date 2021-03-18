@@ -1,2 +1,0 @@
-1. Unzip sqld360_323688_3hwq5m5h3gkaq_742967_20201104_0942.zip into a directory
-2. Review 00001_sqld360_323688_3hwq5m5h3gkaq_index.html

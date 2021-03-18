@@ -1,2 +1,0 @@
-1. Unzip sqld360_323688_fgn8tub10g4ja_742967_20201102_2227.zip into a directory
-2. Review 00001_sqld360_323688_fgn8tub10g4ja_index.html
